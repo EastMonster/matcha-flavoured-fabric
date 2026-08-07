@@ -48,9 +48,7 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "minecraft:rotten_flesh"
-						}
+						"items": "matcha-flavoured:glow_mash"
 					}
 				]
 			}

@@ -10,23 +10,15 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "crafting:hay_bed"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_bricks"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crafting:yellow_bed",
       "crafting:yellow_carpet"
     ]
   }

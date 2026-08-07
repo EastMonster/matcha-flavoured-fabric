@@ -6,7 +6,7 @@
 			"conditions": {
 				"villager": {},
 				"item": {
-					"items": "minecraft:villager_spawn_egg"
+					"items": "matcha-flavoured:application"
 				}
 			}
 		}
