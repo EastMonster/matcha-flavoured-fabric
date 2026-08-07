@@ -9,7 +9,8 @@
 		"RecipeManagerMixin",
 		"ServerAdvancementManagerMixin",
 		"ExperienceMixin",
-		"EnchantmentHelperMixin"
+		"EnchantmentHelperMixin",
+		"FoodHealMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -49,6 +49,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		EffectsMechanics.init();
 		MechanicMechanics.init();
 		WorldMechanics.init();
+		FoodHealMechanics.init();
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		List<Item> foods = registerFoods();
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
