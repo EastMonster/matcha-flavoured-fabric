@@ -24,8 +24,8 @@ Use a new world when possible. Existing items from the data-pack version are not
 
 ## Major changes in the Fabric version
 
-- Registers custom equipment, food, fish, blessings, behavior items, and music discs as independent items under the `matcha-flavoured` namespace instead of repurposing vanilla items.
-- Makes the added items easier to distinguish and browse in inventory tools such as JEI and Jade. Item IDs and commands therefore differ from the data-pack version, and existing data-pack stacks are not converted automatically.
+- Food healing is now scheduled per meal instead of relying on the regeneration effect the data pack uses. Vanilla regeneration refreshes in place (its duration never stacks), so eating the same food twice in a row silently lost part of the heal. Each food's hidden healing-simulation segment now ticks independently, so consecutive bites heal their full intended amount. Icon-bearing lingering regeneration (e.g. baked apple's 10-second regen) stays a real effect: it shows its icon and refreshes like a vanilla potion rather than stacking.
+- Registers custom equipment, food, fish, blessings, behavior items, and music discs as independent items under the `matcha-flavoured` namespace instead of repurposing vanilla items, which makes the added items easier to distinguish and browse in inventory tools such as JEI and Jade. Item IDs and commands therefore differ from the data-pack version, and **existing data-pack stacks are not converted automatically**.
 - Places registered items across relevant vanilla creative tabs.
 - Reimplements command-driven mechanics in Java. Tested gameplay is intended to match the data pack, but very short timing windows, multiplayer target selection, and server restarts during delayed actions may behave differently.
 - Anemos uses an internal 20-tick player cooldown instead of the visible Unluck effect used as a timer by the data pack. Milk and cleansing cannot reset this cooldown.
@@ -41,6 +41,8 @@ Bug reports are welcome, but exact one-to-one compatibility with every data-pack
 This is an unofficial Fabric port of Klei's original [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) data pack. All credit for the original design, content, textures, and data pack goes to Klei and the contributors credited by the original project.
 
 See [CREDITS.txt](CREDITS.txt) for the original acknowledgements and sources of inspiration.
+
+Thanks to OpenAI and Deepseek.
 
 ## License
 
