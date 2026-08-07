@@ -1,0 +1,35 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"SbS",
+		"FBF",
+		"SFS"
+	],
+	"key": {
+		"S": "minecraft:golden_apple",
+		"B": "minecraft:enchanted_book",
+		"F": "minecraft:blue_ice",
+		"b": "minecraft:golden_hoe"
+	},
+	"result": {
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:frost_walker": 2,
+				"matcha-flavoured:freezing_protection": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_demeter"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.demeter",
+					"color": "dark_gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:blessing_demeter"
+	}
+}

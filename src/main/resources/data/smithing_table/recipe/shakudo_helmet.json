@@ -1,0 +1,55 @@
+{
+	"type": "minecraft:smithing_transform",
+	"addition": "minecraft:shulker_shell",
+	"base": "minecraft:copper_helmet",
+	"result": {
+		"id": "matcha-flavoured:shakudo_helmet",
+		"components": {
+			"minecraft:max_damage": 500,
+			"minecraft:lore": [
+				{
+					"translate": "matcha.lore.cleanse_blindness",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "matcha.lore.cleanse_darkness",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"text": "⛊ 2",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.shakudo_helmet",
+				"color": "#c96691"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 2,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:enchantments": {
+				"matcha-flavoured:cleanse_armor_head": 1
+			},
+			"minecraft:enchantment_glint_override": false,
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "minecraft:shakudo"
+			}
+		}
+	},
+	"template": "minecraft:copper_ingot"
+}

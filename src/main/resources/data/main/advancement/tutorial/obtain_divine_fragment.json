@@ -1,0 +1,36 @@
+{
+	"parent": "main:tutorial/obtain_estus",
+	"criteria": {
+		"get_heart": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:turtle_scute"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_divine_fragment.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:turtle_scute"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_divine_fragment.title"
+		},
+		"frame": "goal",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_heart"
+		]
+	]
+}

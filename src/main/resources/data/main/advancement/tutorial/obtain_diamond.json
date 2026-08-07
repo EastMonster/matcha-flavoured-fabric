@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_blast_furnace",
+	"criteria": {
+		"get_diamond": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:diamond"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_diamond.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:diamond"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_diamond.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_diamond"
+		]
+	]
+}

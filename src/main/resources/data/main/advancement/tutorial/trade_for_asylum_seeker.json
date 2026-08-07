@@ -1,0 +1,32 @@
+{
+	"parent": "main:tutorial/obtain_obol",
+	"criteria": {
+		"traded": {
+			"trigger": "minecraft:villager_trade",
+			"conditions": {
+				"villager": {},
+				"item": {
+					"items": "minecraft:villager_spawn_egg"
+				}
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.trade_for_asylum_seeker.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:application"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.trade_for_asylum_seeker.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"traded"
+		]
+	]
+}

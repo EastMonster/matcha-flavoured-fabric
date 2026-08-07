@@ -1,0 +1,35 @@
+{
+	"parent": "main:tutorial/obtain_kiln",
+	"criteria": {
+		"get_copper": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:copper_ingot"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_copper.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:copper_ingot"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_copper.title"
+		},
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_copper"
+		]
+	]
+}

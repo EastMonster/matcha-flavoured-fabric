@@ -1,0 +1,46 @@
+{
+	"parent": "main:tutorial/light_campfire",
+	"criteria": {
+		"get_short_dry_grass": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:short_dry_grass"
+					}
+				]
+			}
+		},
+		"get_tall_dry_grass": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:tall_dry_grass"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_dry_grass.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:tall_dry_grass"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_dry_grass.title"
+		},
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_short_dry_grass",
+			"get_tall_dry_grass"
+		]
+	]
+}

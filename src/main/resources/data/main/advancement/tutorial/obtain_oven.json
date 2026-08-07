@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/cook_food",
+	"criteria": {
+		"get_furnace": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:furnace"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_oven.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:furnace"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_oven.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_furnace"
+		]
+	]
+}

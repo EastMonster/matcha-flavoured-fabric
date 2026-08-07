@@ -1,0 +1,32 @@
+{
+	"parent": "main:tutorial/obtain_amber",
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha-flavoured:topaz"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_topaz.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:topaz"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_topaz.title"
+		}
+	},
+	"requirements": [
+		[
+			"get_item"
+		]
+	]
+}

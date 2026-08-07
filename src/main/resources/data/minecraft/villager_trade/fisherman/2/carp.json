@@ -1,0 +1,26 @@
+{
+	"gives": {
+		"id": "minecraft:emerald",
+		"count": 1
+	},
+	"given_item_modifiers": [],
+	"max_uses": 999,
+	"wants": {
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.carp"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		},
+		"count": 12,
+		"id": "matcha-flavoured:carp"
+	},
+	"reputation_discount": 0,
+	"xp": 24
+}

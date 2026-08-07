@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"key": {
+		"#": "minecraft:disc_fragment_5",
+		"a": "minecraft:mossy_stone_bricks"
+	},
+	"pattern": [
+		"###",
+		"#a#",
+		"###"
+	],
+	"result": {
+		"id": "matcha-flavoured:music_disc_labyrinthine",
+		"components": {
+			"minecraft:jukebox_playable": "main:labyrinthine"
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_steel",
+	"criteria": {
+		"get_smithing": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:anvil"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_avil.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:anvil"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_avil.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_smithing"
+		]
+	]
+}

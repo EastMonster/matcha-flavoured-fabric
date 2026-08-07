@@ -1,0 +1,30 @@
+{
+	"parent": "main:hell/obtain_stabilised_estus",
+	"criteria": {
+		"hell_bound_book": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "blessings:hell_bound_book"
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.hell.craft_hell_bound_book.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:enchanted_book"
+		},
+		"title": {
+			"translate": "advancements.main.hell.craft_hell_bound_book.title"
+		},
+		"frame": "task",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"hell_bound_book"
+		]
+	]
+}

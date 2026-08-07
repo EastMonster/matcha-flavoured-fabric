@@ -1,0 +1,26 @@
+{
+	"gives": {
+		"id": "minecraft:emerald",
+		"count": 1
+	},
+	"given_item_modifiers": [],
+	"max_uses": 999,
+	"wants": {
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.muskellunge"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:muskellunge"
+	},
+	"reputation_discount": 0,
+	"xp": 75
+}

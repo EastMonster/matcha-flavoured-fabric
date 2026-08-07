@@ -1,0 +1,17 @@
+{
+	"criteria": {
+		"eat_glow_mash": {
+			"conditions": {
+				"item": {
+					"items": "matcha-flavoured:glow_mash"
+				}
+			},
+			"trigger": "minecraft:consume_item"
+		}
+	},
+	"requirements": [
+		[
+			"eat_glow_mash"
+		]
+	]
+}

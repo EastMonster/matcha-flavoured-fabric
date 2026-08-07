@@ -1,0 +1,35 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"ESE",
+		"EBE",
+		"EDE"
+	],
+	"key": {
+		"S": "minecraft:nether_star",
+		"B": "minecraft:enchanted_book",
+		"E": "minecraft:diamond",
+		"D": "minecraft:diamond_block"
+	},
+	"result": {
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:mending": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_lu_ban"
+			},
+			"minecraft:rarity": "epic",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.lu_ban",
+					"color": "dark_gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:blessing_lu_ban"
+	}
+}

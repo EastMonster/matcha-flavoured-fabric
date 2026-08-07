@@ -1,0 +1,58 @@
+{
+	"wants": {
+		"id": "minecraft:emerald",
+		"count": 4
+	},
+	"additional_wants": {
+		"id": "matcha-flavoured:opal",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.opal",
+				"color": "#ab85ad"
+			}
+		}
+	},
+	"gives": {
+		"id": "matcha-flavoured:opal_earrings",
+		"components": {
+			"minecraft:max_damage": 250,
+			"minecraft:lore": [
+				{
+					"text": "⛊ 1",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.opal_earrings",
+				"color": "#ab85ad"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 1,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "minecraft:opal_earrings"
+			},
+			"minecraft:enchantments": {
+				"matcha-flavoured:conduit_power": 1
+			},
+			"minecraft:unbreakable": {}
+		},
+		"count": 1
+	},
+	"max_uses": 999,
+	"reputation_discount": 0,
+	"xp": 10
+}

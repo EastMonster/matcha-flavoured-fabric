@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_gold",
+	"criteria": {
+		"get_smithing": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:netherite_ingot"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_adamant.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:netherite_ingot"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_adamant.title"
+		},
+		"hidden": true
+	},
+	"requirements": [
+		[
+			"get_smithing"
+		]
+	]
+}

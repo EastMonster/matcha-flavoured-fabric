@@ -1,0 +1,10 @@
+{
+	"comparator_output": 1,
+	"description": {
+		"translate": "matcha.jukebox.golden"
+	},
+	"length_in_seconds": 188,
+	"sound_event": {
+		"sound_id": "minecraft:custom.golden"
+	}
+}

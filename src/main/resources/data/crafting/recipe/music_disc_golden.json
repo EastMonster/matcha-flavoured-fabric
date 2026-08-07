@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"key": {
+		"#": "minecraft:disc_fragment_5",
+		"X": "minecraft:sunflower"
+	},
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"result": {
+		"id": "matcha-flavoured:music_disc_golden",
+		"components": {
+			"minecraft:jukebox_playable": "main:golden"
+		}
+	}
+}

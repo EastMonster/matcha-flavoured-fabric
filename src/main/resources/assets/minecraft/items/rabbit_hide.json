@@ -1,0 +1,19 @@
+{
+    "model":{
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/rabbit_hide"
+      },
+      "cases": [
+        {
+          "when": "fox_pelt",
+          "model": {
+            "type": "model",
+            "model": "item/fox_pelt"
+          }
+        }
+      ]
+    }
+  }

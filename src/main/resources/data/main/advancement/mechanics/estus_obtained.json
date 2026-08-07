@@ -1,0 +1,20 @@
+{
+	"parent": "main:mechanics/root",
+	"criteria": {
+		"has_estus": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:blaze_powder"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_estus"
+		]
+	]
+}

@@ -1,0 +1,36 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"SsS",
+		"LBL",
+		"SLS"
+	],
+	"key": {
+		"S": "minecraft:glistering_melon_slice",
+		"B": "minecraft:enchanted_book",
+		"s": "minecraft:prismarine_crystals",
+		"L": "minecraft:lapis_lazuli"
+	},
+	"result": {
+		"components": {
+			"minecraft:stored_enchantments": {
+				"matcha-flavoured:warding2": 1,
+				"minecraft:smite": 2
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_warding"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.man",
+					"color": "dark_gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:blessing_warding"
+	}
+}

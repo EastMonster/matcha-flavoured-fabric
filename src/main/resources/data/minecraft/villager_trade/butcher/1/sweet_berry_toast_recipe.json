@@ -1,0 +1,23 @@
+{
+	"wants": {
+		"id": "minecraft:emerald"
+	},
+	"gives": {
+		"id": "matcha-flavoured:sweet_berry_toast_recipe",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.sweet_berry_toast_recipe"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.sweet_berry_toast",
+					"color": "#e85e8f",
+					"italic": false
+				}
+			]
+		}
+	},
+	"max_uses": 999,
+	"reputation_discount": 0,
+	"xp": 20
+}

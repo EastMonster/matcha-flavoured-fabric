@@ -1,0 +1,29 @@
+{
+	"parent": "main:tutorial/obtain_bowl",
+	"criteria": {
+		"get_food": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "food:paneer_makhani"
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_paneer_mahkani.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:paneer_makhani"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_paneer_mahkani.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_food"
+		]
+	]
+}

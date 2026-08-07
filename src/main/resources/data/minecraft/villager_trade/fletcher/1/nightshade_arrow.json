@@ -1,0 +1,20 @@
+{
+	"gives": {
+		"id": "matcha-flavoured:nightshade_arrow",
+		"components": {
+			"minecraft:potion_contents": {
+				"potion": "minecraft:strong_poison",
+				"custom_name": "nightshade_arrow"
+			}
+		},
+		"count": 64
+	},
+	"given_item_modifiers": [],
+	"max_uses": 999,
+	"reputation_discount": 0,
+	"wants": {
+		"count": 1,
+		"id": "minecraft:emerald"
+	},
+	"xp": 10
+}

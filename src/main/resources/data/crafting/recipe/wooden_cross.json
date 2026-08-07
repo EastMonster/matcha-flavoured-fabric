@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "equipment",
+	"key": {
+		"X": "minecraft:stick",
+		"e": "minecraft:glowstone_dust"
+	},
+	"pattern": [
+		" X ",
+		"XeX",
+		" X "
+	],
+	"result": {
+		"id": "matcha-flavoured:wooden_cross",
+		"components": {
+			"!minecraft:consumable": {},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.wooden_cross",
+				"color": "white"
+			},
+			"minecraft:enchantments": {
+				"matcha-flavoured:warding0": 1
+			},
+			"minecraft:enchantment_glint_override": false
+		}
+	}
+}

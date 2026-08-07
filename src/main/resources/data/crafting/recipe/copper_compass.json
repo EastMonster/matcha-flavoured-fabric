@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "equipment",
+	"key": {
+		"#": "minecraft:copper_ingot",
+		"X": "minecraft:redstone"
+	},
+	"pattern": [
+		" # ",
+		"#X#",
+		" # "
+	],
+	"result": {
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.copper_compass"
+			}
+		},
+		"count": 1,
+		"id": "matcha-flavoured:copper_compass"
+	}
+}

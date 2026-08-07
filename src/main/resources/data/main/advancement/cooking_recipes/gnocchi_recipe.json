@@ -1,0 +1,25 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_the_recipe_paper": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha-flavoured:gnocchi_recipe"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_the_recipe_paper"
+		]
+	],
+	"rewards": {
+		"recipes": [
+			"food:gnocchi"
+		]
+	}
+}

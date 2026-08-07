@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "equipment",
+	"ingredients": [
+		"minecraft:stick",
+		"minecraft:short_grass",
+		"minecraft:stick"
+	],
+	"result": {
+		"id": "matcha-flavoured:tinder",
+		"components": {
+			"minecraft:max_damage": 1,
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.tinder"
+			}
+		}
+	}
+}

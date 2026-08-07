@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_dry_grass",
+	"criteria": {
+		"get_smoker": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:smoker"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_kiln.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:smoker"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_kiln.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_smoker"
+		]
+	]
+}

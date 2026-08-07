@@ -1,0 +1,33 @@
+{
+	"parent": "main:hell/root",
+	"criteria": {
+		"get_benzene": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:endermite_spawn_egg"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.hell.obtain_benzene.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:endermite_spawn_egg"
+		},
+		"title": {
+			"translate": "advancements.main.hell.obtain_benzene.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_benzene"
+		]
+	]
+}

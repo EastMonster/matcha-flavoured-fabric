@@ -1,0 +1,33 @@
+{
+	"type": "minecraft:fishing",
+	"pools": [
+		{
+			"rolls": 1,
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "matcha-flavoured:armoured_catfish",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_name": {
+									"translate": "item.matcha-flavoured.armoured_catfish"
+								},
+								"minecraft:lore": [
+									{
+										"text": "⭐⭐⭐",
+										"color": "aqua",
+										"italic": false
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"random_sequence": "minecraft:gameplay/fishing"
+}

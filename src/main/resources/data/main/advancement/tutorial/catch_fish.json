@@ -1,0 +1,58 @@
+{
+	"parent": "main:tutorial/light_campfire",
+	"criteria": {
+		"cod": {
+			"conditions": {
+				"item": {
+					"items": "minecraft:cod"
+				}
+			},
+			"trigger": "minecraft:fishing_rod_hooked"
+		},
+		"pufferfish": {
+			"conditions": {
+				"item": {
+					"items": "minecraft:pufferfish"
+				}
+			},
+			"trigger": "minecraft:fishing_rod_hooked"
+		},
+		"salmon": {
+			"conditions": {
+				"item": {
+					"items": "minecraft:salmon"
+				}
+			},
+			"trigger": "minecraft:fishing_rod_hooked"
+		},
+		"tropical_fish": {
+			"conditions": {
+				"item": {
+					"items": "minecraft:tropical_fish"
+				}
+			},
+			"trigger": "minecraft:fishing_rod_hooked"
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.catch_fish.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:crappie"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.catch_fish.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"cod",
+			"pufferfish",
+			"salmon",
+			"tropical_fish"
+		]
+	]
+}

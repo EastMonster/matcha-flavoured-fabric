@@ -1,0 +1,45 @@
+{
+	"parent": "main:tutorial/obtain_blast_furnace",
+	"criteria": {
+		"get_silver_ore": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:prismarine_shard"
+					}
+				]
+			}
+		},
+		"get_silver": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:prismarine_crystals"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_silver.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:prismarine_crystals"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_silver.title"
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_silver",
+			"get_silver_ore"
+		]
+	]
+}

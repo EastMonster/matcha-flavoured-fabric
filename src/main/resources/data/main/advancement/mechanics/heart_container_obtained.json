@@ -1,0 +1,20 @@
+{
+	"parent": "main:mechanics/root",
+	"criteria": {
+		"obtained_heart_container": {
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha-flavoured:heart_container"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [
+		[
+			"obtained_heart_container"
+		]
+	]
+}

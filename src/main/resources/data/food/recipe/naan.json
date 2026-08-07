@@ -1,0 +1,44 @@
+{
+	"type": "minecraft:smoking",
+	"category": "food",
+	"cookingtime": 100,
+	"experience": 0.35,
+	"ingredient": "minecraft:shulker_spawn_egg",
+	"result": {
+		"id": "matcha-flavoured:naan",
+		"components": {
+			"minecraft:lore": [
+				{
+					"text": "❤",
+					"color": "red",
+					"italic": false
+				}
+			],
+			"minecraft:consumable": {
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "minecraft:regeneration",
+								"amplifier": 3,
+								"duration": 15,
+								"show_particles": false,
+								"show_icon": false
+							}
+						],
+						"probability": 1
+					}
+				]
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.naan"
+			},
+			"minecraft:food": {
+				"nutrition": 0,
+				"saturation": 0,
+				"can_always_eat": true
+			}
+		}
+	}
+}

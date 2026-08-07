@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_silver",
+	"criteria": {
+		"get_smithing": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:phantom_membrane"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_bronze.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:phantom_membrane"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_bronze.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_smithing"
+		]
+	]
+}

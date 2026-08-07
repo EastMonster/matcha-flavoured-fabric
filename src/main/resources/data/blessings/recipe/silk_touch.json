@@ -1,0 +1,33 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"ASA",
+		"SBS",
+		"ASA"
+	],
+	"key": {
+		"S": "minecraft:shulker_shell",
+		"B": "minecraft:enchanted_book",
+		"A": "minecraft:glowstone_dust"
+	},
+	"result": {
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:silk_touch": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_eros"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.eros",
+					"color": "dark_gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:blessing_eros"
+	}
+}

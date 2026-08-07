@@ -1,0 +1,17 @@
+{
+	"required": true,
+	"package": "monster.east.matchaff.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"SpawnPlacementsMixin",
+		"PlayerCanEatMixin",
+		"AnvilMenuMixin",
+		"RecipeManagerMixin",
+		"ServerAdvancementManagerMixin",
+		"ExperienceMixin",
+		"EnchantmentHelperMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

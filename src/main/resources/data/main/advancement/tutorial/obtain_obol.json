@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_estus",
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:emerald"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_obol.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:emerald"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_obol.title"
+		},
+		"hidden": true
+	},
+	"requirements": [
+		[
+			"get_item"
+		]
+	]
+}

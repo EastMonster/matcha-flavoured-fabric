@@ -1,0 +1,2539 @@
+[
+	{
+		"id": "apple_empanada",
+		"source": "data/food/recipe/apple_empanada.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.regen",
+		    "with": [
+		      "3:00"
+		    ],
+		    "color": "#e85e8f",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 3600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": true
+	},
+	{
+		"id": "baked_golden_apple",
+		"source": "data/food/recipe/baked_golden_apple.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "❤❤ (2:00)",
+		    "color": "aqua",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.regen",
+		    "with": [
+		      "1:00"
+		    ],
+		    "color": "#e85e8f",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:absorption",
+						"duration": 2400,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 1200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.6
+	},
+	{
+		"id": "bokguk",
+		"source": "data/food/recipe/bokguk.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.conduit_power",
+		    "with": [
+		      "8:00"
+		    ],
+		    "color": "#7ec9e7",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:conduit_power",
+						"duration": 9600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 144,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"sound": "minecraft:entity.generic.drink",
+		"remainder": "minecraft:bowl"
+	},
+	{
+		"id": "braised_crimson_fungus",
+		"source": "data/food/recipe/braised_crimson_fungus.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.weakness",
+		    "with": [
+		      "00:30"
+		    ],
+		    "color": "#b6a09a",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:weakness",
+						"duration": 600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8
+	},
+	{
+		"id": "braised_red_mushroom",
+		"source": "data/food/recipe/braised_red_mushroom.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.poison",
+		    "with": [
+		      "00:30"
+		    ],
+		    "color": "#48a53b",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:poison",
+						"duration": 600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": true,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8
+	},
+	{
+		"id": "braised_warped_fungus",
+		"source": "data/food/recipe/brasied_warped_fungus.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.invisibility",
+		    "with": [
+		      "00:30"
+		    ],
+		    "color": "#92b7ce",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:invisibility",
+						"duration": 600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8
+	},
+	{
+		"id": "brownie",
+		"source": "data/food/recipe/brownie.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.haste_ii",
+		    "with": [
+		      "2:30"
+		    ],
+		    "color": "yellow",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 72,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:haste",
+						"duration": 3000,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.6
+	},
+	{
+		"id": "bruschetta",
+		"source": "data/food/recipe/bruschetta.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.strength_ii",
+		    "with": [
+		      "2:30"
+		    ],
+		    "color": "#e65f33",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:strength",
+						"duration": 3000,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": true
+	},
+	{
+		"id": "canned_apples",
+		"source": "data/food/recipe/canned_apples.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.regen",
+		    "with": [
+		      "1:00"
+		    ],
+		    "color": "#e85e8f",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 1200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 72,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "canned_golden_apples",
+		"source": "data/food/recipe/canned_golden_apples.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "❤❤❤❤ (2:00)",
+		    "color": "aqua",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.regen_ii",
+		    "with": [
+		      "0:20"
+		    ],
+		    "color": "#e85e8f",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 400,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:absorption",
+						"duration": 2400,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "carrot_cupcake",
+		"source": "data/food/recipe/carrot_cupcake.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.night_vision",
+		    "with": [
+		      "10:00"
+		    ],
+		    "color": "green",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:night_vision",
+						"duration": 12000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "charred_fish",
+		"source": "data/food/recipe/charred_fish.json",
+		"lore": {
+		  "text": "❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 15,
+						"amplifier": 3,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "charred_meat",
+		"source": "data/food/recipe/charred_meat.json",
+		"lore": {
+		  "text": "❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 15,
+						"amplifier": 3,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "charred_potato",
+		"source": "data/food/recipe/charred_potato.json",
+		"lore": {
+		  "text": "❣",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 20,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "chocolate_chip_cookie",
+		"source": "data/food/recipe/chocolate_chip_cookie.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.haste",
+		    "with": [
+		      "5:00"
+		    ],
+		    "color": "yellow",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:haste",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8
+	},
+	{
+		"id": "chorus_mochi",
+		"source": "data/food/recipe/chorus_mochi.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.levitation_xxx",
+		    "with": [
+		      "0:01"
+		    ],
+		    "color": "#ae6cbc",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:levitation",
+						"duration": 20,
+						"amplifier": 29,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8
+	},
+	{
+		"id": "cooked_pufferfish",
+		"source": "data/food/recipe/cooked_pufferfish.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.conduit_power",
+		    "with": [
+		      "0:30"
+		    ],
+		    "color": "#7ec9e7",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:conduit_power",
+						"duration": 600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "crimson_stroganoff",
+		"source": "data/food/recipe/crimson_stroganoff.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.weakness",
+		    "with": [
+		      "05:00"
+		    ],
+		    "color": "#b6a09a",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:weakness",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 144,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.8,
+		"remainder": "bowl"
+	},
+	{
+		"id": "french_toast",
+		"source": "data/food/recipe/french_toast.json",
+		"lore": {
+		  "text": "❤❤❤❤❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 120,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.8
+	},
+	{
+		"id": "fried_egg",
+		"source": "data/food/recipe/fried_egg.json",
+		"lore": {
+		  "text": "❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8
+	},
+	{
+		"id": "gimmari",
+		"source": "data/food/recipe/gimmari.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.gills",
+		    "with": [
+		      "8:00"
+		    ],
+		    "color": "#7ec9e7",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:water_breathing",
+						"duration": 9600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 72,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.2
+	},
+	{
+		"id": "glow_berry_crumble",
+		"source": "data/food/recipe/glow_berry_crumble.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.aura",
+		    "with": [
+		      "1:00"
+		    ],
+		    "color": "#0fffa3",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.6
+	},
+	{
+		"id": "glow_jam",
+		"source": "data/food/recipe/glow_jam.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.aura",
+		    "with": [
+		      "0:30"
+		    ],
+		    "color": "#0fffa3",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"animation": "drink",
+		"sound": "minecraft:item.honey_bottle.drink",
+		"particles": true,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "gnocchi",
+		"source": "data/food/recipe/gnocchi.json",
+		"lore": {
+		  "text": "❤❤❤❤❤❤❤❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 192,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"remainder": "minecraft:bowl"
+	},
+	{
+		"id": "golden_apple_empanada",
+		"source": "data/food/recipe/golden_apple_empanada.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "❤❤❤❤ (4:00)",
+		    "color": "aqua",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.regen_ii",
+		    "with": [
+		      "0:45"
+		    ],
+		    "color": "#e85e8f",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 900,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:absorption",
+						"duration": 4800,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": true,
+						"icon": true
+					}
+				]
+			}
+		],
+		"particles": true
+	},
+	{
+		"id": "golden_carrot_cupcake",
+		"source": "data/food/recipe/golden_carrot_cupcake.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.night_vision",
+		    "with": [
+		      "20:00"
+		    ],
+		    "color": "green",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:night_vision",
+						"duration": 24000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "golden_pickled_carrots",
+		"source": "data/food/recipe/golden_pickled_carrots.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.night_vision",
+		    "with": [
+		      "10:00"
+		    ],
+		    "color": "green",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:night_vision",
+						"duration": 12000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "golden_steamed_carrots",
+		"source": "data/food/recipe/golden_steamed_carrots.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.night_vision",
+		    "with": [
+		      "1:00"
+		    ],
+		    "color": "green",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 15,
+						"amplifier": 3,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:night_vision",
+						"duration": 1200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8,
+		"particles": true
+	},
+	{
+		"id": "green_curry",
+		"source": "data/food/recipe/green_curry.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "🏃 +40% (30:00)",
+		    "color": "#37cafb",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 240,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:speed",
+						"duration": 36000,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 3,
+		"animation": "drink",
+		"particles": true,
+		"remainder": "minecraft:bowl"
+	},
+	{
+		"id": "grilled_melon",
+		"source": "data/food/recipe/grilled_melon.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.fire_resistance",
+		    "with": [
+		      "0:10"
+		    ],
+		    "color": "gold",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:fire_resistance",
+						"duration": 200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8
+	},
+	{
+		"id": "grilled_tomatoes",
+		"source": "data/food/recipe/grilled_tomatoes.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.strength",
+		    "with": [
+		      "0:10"
+		    ],
+		    "color": "#e65f33",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:strength",
+						"duration": 200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"particles": true
+	},
+	{
+		"id": "honey_ginger_tea",
+		"source": "data/food/recipe/honey_ginger_tea.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "🏃 +20% (0:30)",
+		    "color": "#37cafb",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.cleanse_maleffect",
+		    "color": "gray",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:speed",
+						"duration": 600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			},
+			{
+				"type": "remove",
+				"effectIds": [
+					"minecraft:poison",
+					"minecraft:mining_fatigue",
+					"minecraft:wither",
+					"minecraft:weakness",
+					"minecraft:bad_omen",
+					"minecraft:blindness",
+					"minecraft:darkness",
+					"minecraft:infested",
+					"minecraft:weaving",
+					"minecraft:nausea",
+					"minecraft:oozing",
+					"minecraft:slowness"
+				]
+			}
+		],
+		"consumeSeconds": 0.8,
+		"animation": "drink",
+		"sound": "minecraft:entity.generic.drink",
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "honied_french_toast",
+		"source": "data/food/recipe/honied_french_toast.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "🏃 +40% (3:00)",
+		    "color": "#37cafb",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:speed",
+						"duration": 3600,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 120,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.8
+	},
+	{
+		"id": "japanese_curry",
+		"source": "data/food/recipe/japanese_curry.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.strength",
+		    "with": [
+		      "30:00"
+		    ],
+		    "color": "#e65f33",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 240,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:strength",
+						"duration": 36000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 3,
+		"animation": "drink",
+		"particles": true,
+		"remainder": "minecraft:bowl"
+	},
+	{
+		"id": "latke",
+		"source": "data/food/recipe/latke.json",
+		"lore": {
+		  "text": "❤❤❤❤❤❤❤❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 192,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 2,
+		"particles": true
+	},
+	{
+		"id": "mead",
+		"source": "data/food/recipe/mead.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "🏃 +20% (5:00)",
+		    "color": "#37cafb",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:speed",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 72,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.6,
+		"animation": "drink",
+		"sound": "minecraft:item.honey_bottle.drink",
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "melon_sorbet",
+		"source": "data/food/recipe/melon_sorbet.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.fire_resistance",
+		    "with": [
+		      "10:00"
+		    ],
+		    "color": "gold",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:fire_resistance",
+						"duration": 12000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.2,
+		"sound": "minecraft:item.honey_bottle.drink",
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "naan",
+		"source": "data/food/recipe/naan.json",
+		"lore": {
+		  "text": "❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 15,
+						"amplifier": 3,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "paneer_makhani",
+		"source": "data/food/recipe/paneer_makhani.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.regen",
+		    "with": [
+		      "10:00"
+		    ],
+		    "color": "#e85e8f",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 240,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 12000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 3,
+		"animation": "drink",
+		"particles": true,
+		"remainder": "minecraft:bowl"
+	},
+	{
+		"id": "pickled_carrots",
+		"source": "data/food/recipe/pickled_carrots.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.night_vision",
+		    "with": [
+		      "5:00"
+		    ],
+		    "color": "green",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:night_vision",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "pickled_mushrooms",
+		"source": "data/food/recipe/pickled_mushrooms.json",
+		"lore": {
+		  "text": "❤❤❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 72,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "pickled_potatoes",
+		"source": "data/food/recipe/pickled_potatoes.json",
+		"lore": {
+		  "text": "❤❤❤❤❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:resistance",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 120,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "pickled_tomatoes",
+		"source": "data/food/recipe/pickled_tomatoes.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.strength",
+		    "with": [
+		      "5:00"
+		    ],
+		    "color": "#e65f33",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:strength",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 72,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "pickled_warped_fungus",
+		"source": "data/food/recipe/pickled_warped_fungus.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.invisibility",
+		    "with": [
+		      "05:00"
+		    ],
+		    "color": "#92b7ce",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:invisibility",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "puerquito",
+		"source": "data/food/recipe/puerquito.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.regen",
+		    "with": [
+		      "0:30"
+		    ],
+		    "color": "#e85e8f",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": true
+	},
+	{
+		"id": "pumpkin_empanada",
+		"source": "data/food/recipe/pumpkin_empanada.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.resistance",
+		    "with": [
+		      "8:00"
+		    ],
+		    "color": "blue",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:resistance",
+						"duration": 9600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": true
+	},
+	{
+		"id": "pumpkin_jam",
+		"source": "data/food/recipe/pumpkin_jam.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.resistance",
+		    "with": [
+		      "3:00"
+		    ],
+		    "color": "blue",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:resistance",
+						"duration": 3600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"animation": "drink",
+		"sound": "minecraft:item.honey_bottle.drink",
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "pupusa",
+		"source": "data/food/recipe/pupusa.json",
+		"lore": {
+		  "text": "❤❣",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 36,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": true
+	},
+	{
+		"id": "ramen",
+		"source": "data/food/recipe/ramen.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.haste_ii",
+		    "with": [
+		      "30:00"
+		    ],
+		    "color": "yellow",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 240,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:haste",
+						"duration": 36000,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 3,
+		"animation": "drink",
+		"particles": true,
+		"remainder": "minecraft:bowl"
+	},
+	{
+		"id": "red_mushroom_stroganoff",
+		"source": "data/food/recipe/red_mushroom_stroganoff.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.poison",
+		    "with": [
+		      "05:00"
+		    ],
+		    "color": "#48a53b",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:poison",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 144,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.8,
+		"remainder": "bowl"
+	},
+	{
+		"id": "rind_jam",
+		"source": "data/food/recipe/rind_jam.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.fire_resistance",
+		    "with": [
+		      "5:00"
+		    ],
+		    "color": "gold",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:fire_resistance",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "steamed_carrots",
+		"source": "data/food/recipe/steamed_carrots.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.night_vision",
+		    "with": [
+		      "0:10"
+		    ],
+		    "color": "green",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:night_vision",
+						"duration": 200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"consumeSeconds": 0.8,
+		"particles": true
+	},
+	{
+		"id": "stroganoff",
+		"source": "data/food/recipe/stroganoff.json",
+		"lore": {
+		  "text": "❤❤❤❤❤❤❤❤",
+		  "color": "red",
+		  "italic": false
+		},
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 192,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.8,
+		"remainder": "bowl"
+	},
+	{
+		"id": "sweet_berry_danish",
+		"source": "data/food/recipe/sweet_berry_danish.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "❤❤❤❤ (8:00)",
+		    "color": "gray",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:health_boost",
+						"duration": 9600,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.6
+	},
+	{
+		"id": "sweet_berry_jam",
+		"source": "data/food/recipe/sweet_berry_jam.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "❤❤ (3:00)",
+		    "color": "gray",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:health_boost",
+						"duration": 3600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		],
+		"animation": "drink",
+		"sound": "minecraft:item.honey_bottle.drink",
+		"particles": false,
+		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "sweet_berry_toast",
+		"source": "data/food/recipe/sweet_berry_toast.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "❤❤❤❤ (8:00)",
+		    "color": "gray",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:health_boost",
+						"duration": 9600,
+						"amplifier": 1,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 120,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.8
+	},
+	{
+		"id": "warped_stroganoff",
+		"source": "data/food/recipe/warped_stroganoff.json",
+		"lore": [
+		  {
+		    "text": "❤❤❤❤❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.invisibility",
+		    "with": [
+		      "10:00"
+		    ],
+		    "color": "#92b7ce",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1.0,
+				"effects": [
+					{
+						"id": "minecraft:invisibility",
+						"duration": 12000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 144,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		],
+		"consumeSeconds": 1.8,
+		"remainder": "bowl"
+	}
+]

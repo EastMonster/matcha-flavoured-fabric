@@ -1,0 +1,65 @@
+{
+	"parent": "main:tutorial/obtain_copper",
+	"criteria": {
+		"copper_dolabra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:copper_dolabra"
+			}
+		},
+		"copper_mattock": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:copper_mattock"
+			}
+		},
+		"iron_dolabra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:iron_dolabra"
+			}
+		},
+		"iron_mattock": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:iron_mattock"
+			}
+		},
+		"diamond_dolabra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:diamond_dolabra"
+			}
+		},
+		"diamond_mattock": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:diamond_mattock"
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_mattock.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:copper_dolabra"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_mattock.title"
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"diamond_mattock",
+			"diamond_dolabra",
+			"iron_dolabra",
+			"iron_mattock",
+			"copper_dolabra",
+			"copper_mattock"
+		]
+	]
+}

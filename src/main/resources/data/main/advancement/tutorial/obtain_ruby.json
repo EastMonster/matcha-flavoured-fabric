@@ -1,0 +1,32 @@
+{
+	"parent": "main:tutorial/obtain_opal",
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha-flavoured:ruby"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_ruby.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:ruby"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_ruby.title"
+		}
+	},
+	"requirements": [
+		[
+			"get_item"
+		]
+	]
+}

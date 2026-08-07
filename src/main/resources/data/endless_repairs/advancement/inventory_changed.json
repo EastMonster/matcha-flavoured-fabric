@@ -1,0 +1,22 @@
+{
+	"criteria": {
+		"inventory_changed": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"components": {},
+						"predicates": {
+							"minecraft:repair_cost": {}
+						}
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"inventory_changed"
+		]
+	]
+}

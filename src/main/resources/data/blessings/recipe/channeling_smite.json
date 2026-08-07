@@ -1,0 +1,35 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"ESE",
+		"SBS",
+		"EIE"
+	],
+	"key": {
+		"S": "minecraft:prismarine_crystals",
+		"B": "minecraft:enchanted_book",
+		"I": "iron_ingot",
+		"E": "minecraft:glowstone_dust"
+	},
+	"result": {
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:smite": 3,
+				"minecraft:channeling": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_god_king"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.god_king",
+					"color": "dark_gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:blessing_god_king"
+	}
+}

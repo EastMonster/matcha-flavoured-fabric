@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_oven",
+	"criteria": {
+		"get_primary_material": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:bowl"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_bowl.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:bowl"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_bowl.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_primary_material"
+		]
+	]
+}

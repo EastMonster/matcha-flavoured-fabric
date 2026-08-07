@@ -1,0 +1,39 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		" b ",
+		"aBc",
+		" F "
+	],
+	"key": {
+		"B": "minecraft:enchanted_book",
+		"F": "minecraft:iron_helmet",
+		"b": "minecraft:red_dye",
+		"a": [
+			"minecraft:iron_sword",
+			"minecraft:iron_spear"
+		],
+		"c": "minecraft:shield"
+	},
+	"result": {
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:lunge": 2,
+				"minecraft:breach": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_ares"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.ares",
+					"color": "dark_gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:blessing_ares"
+	}
+}

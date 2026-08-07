@@ -1,0 +1,44 @@
+{
+	"type": "minecraft:smithing_transform",
+	"addition": "minecraft:resin_clump",
+	"base": "minecraft:copper_helmet",
+	"result": {
+		"id": "matcha-flavoured:amber_earrings",
+		"components": {
+			"minecraft:max_damage": 250,
+			"minecraft:lore": [
+				{
+					"text": "⛊ 1",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.amber_earrings",
+				"color": "#e58904"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 1,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "minecraft:amber_earrings"
+			},
+			"minecraft:enchantments": {
+				"matcha-flavoured:regeneration": 1
+			}
+		}
+	},
+	"template": "minecraft:copper_ingot"
+}

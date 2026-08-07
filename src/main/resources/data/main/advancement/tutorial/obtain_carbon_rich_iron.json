@@ -1,0 +1,35 @@
+{
+	"parent": "main:tutorial/obtain_iron_ingot",
+	"criteria": {
+		"has_primary_material": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"components": {
+							"minecraft:item_model": "minecraft:piglin_brute_spawn_egg"
+						}
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_carbon_rich_iron.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:piglin_brute_spawn_egg"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_carbon_rich_iron.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"has_primary_material"
+		]
+	]
+}

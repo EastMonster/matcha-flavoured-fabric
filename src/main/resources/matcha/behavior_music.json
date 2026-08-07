@@ -1,0 +1,368 @@
+[
+	{
+		"id": "application",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/wandering_trader/adult_asylum_seeker_1.json",
+		"carrier": "minecraft:villager_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:villager",
+				"active_effects": [
+					{
+						"id": "minecraft:invisibility",
+						"amplifier": 0,
+						"duration": 1,
+						"show_particles": false
+					}
+				],
+				"VillagerData": {
+					"type": "minecraft:desert"
+				}
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.application"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "matcha.asylum.age_adult",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "matcha.asylum.culture_desert",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "matcha.asylum.cause_political",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "matcha.asylum.summon_hint",
+					"color": "gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "axolotl",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/axolotl.json",
+		"carrier": "minecraft:chicken_spawn_egg",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.axolotl"
+			},
+			"minecraft:entity_data": {
+				"id": "minecraft:axolotl"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "bedrock_buster",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/crafting/recipe/bedrock_buster.json",
+		"carrier": "minecraft:chicken_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:tnt",
+				"Glowing": true,
+				"fuse": 80,
+				"explosion_power": 4
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.bedrock_buster"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "cheerful_clay_statue",
+		"type": "instrument",
+		"tab": "tools",
+		"source": "data/minecraft/loot_table/archaeology/statues.json",
+		"carrier": "minecraft:goat_horn",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.cheerful_clay_statue"
+			},
+			"minecraft:instrument": {
+				"sound_event": "minecraft:ambient.soul_sand_valley.mood",
+				"range": 16,
+				"use_duration": 30,
+				"description": {
+					"translate": "item.kleispack.cheerful_clay_statue.desc"
+				}
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_cold_cow",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/3/baby_cold_cow.json",
+		"carrier": "minecraft:cow_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:cow",
+				"Age": -24000,
+				"variant": "minecraft:cold"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_cold_cow"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_cold_pig",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/3/baby_cold_pig.json",
+		"carrier": "minecraft:pig_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:pig",
+				"Age": -24000,
+				"variant": "minecraft:cold"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_cold_pig"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_sheep_black",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/shepherd/2/baby_cold_sheep.json",
+		"carrier": "minecraft:sheep_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:sheep",
+				"Age": -24000,
+				"Color": 15
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_sheep_black"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_sheep_brown",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/shepherd/2/baby_warm_sheep.json",
+		"carrier": "minecraft:sheep_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:sheep",
+				"Age": -24000,
+				"Color": 12
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_sheep_brown"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_sheep_white",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/shepherd/2/baby_temperate_sheep.json",
+		"carrier": "minecraft:sheep_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:sheep",
+				"Age": -24000,
+				"Color": 0
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_sheep_white"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_temperate_cow",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/3/baby_temperate_cow.json",
+		"carrier": "minecraft:cow_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:cow",
+				"Age": -24000,
+				"variant": "minecraft:temperate"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_temperate_cow"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_temperate_pig",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/3/baby_temperate_pig.json",
+		"carrier": "minecraft:pig_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:pig",
+				"Age": -24000,
+				"variant": "minecraft:temperate"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_temperate_pig"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_warm_cow",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/3/baby_warm_cow.json",
+		"carrier": "minecraft:cow_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:cow",
+				"Age": -24000,
+				"variant": "minecraft:warm"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_warm_cow"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "crate_warm_pig",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/3/baby_warm_pig.json",
+		"carrier": "minecraft:pig_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:pig",
+				"Age": -24000,
+				"variant": "minecraft:warm"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crate_warm_pig"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "heart_container",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/crafting/recipe/crystal_heart.json",
+		"carrier": "minecraft:poisonous_potato",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.heart_container"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:enchantment_glint_override": true
+		}
+	},
+	{
+		"id": "invisible_item_frame",
+		"type": "item_frame",
+		"tab": "tools",
+		"source": "data/crafting/recipe/invisible_item_frame.json",
+		"carrier": "minecraft:item_frame",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:item_frame",
+				"Invisible": true
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.invisible_item_frame"
+			}
+		}
+	},
+	{
+		"id": "mournful_clay_statue",
+		"type": "instrument",
+		"tab": "tools",
+		"source": "data/minecraft/loot_table/archaeology/statues.json",
+		"carrier": "minecraft:goat_horn",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.mournful_clay_statue"
+			},
+			"minecraft:instrument": {
+				"sound_event": "minecraft:ambient.soul_sand_valley.mood",
+				"range": 16,
+				"use_duration": 30,
+				"description": {
+					"translate": "item.kleispack.mournful_clay_statue.desc"
+				}
+			},
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "music_disc_golden",
+		"type": "music_disc",
+		"tab": "tools",
+		"source": "data/crafting/recipe/music_disc_golden.json",
+		"carrier": "minecraft:music_disc_11",
+		"components": {
+			"minecraft:jukebox_playable": "main:golden",
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "music_disc_labyrinthine",
+		"type": "music_disc",
+		"tab": "tools",
+		"source": "data/custom_music/recipe/music_disc_labyrinthine.json",
+		"carrier": "minecraft:music_disc_cat",
+		"components": {
+			"minecraft:jukebox_playable": "main:labyrinthine",
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "warding_stone",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/crafting/recipe/warding_stone.json",
+		"carrier": "minecraft:chicken_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:armor_stand",
+				"NoGravity": true,
+				"Invulnerable": true,
+				"Tags": [
+					"WardingStone"
+				],
+				"Invisible": true,
+				"Small": true,
+				"DisabledSlots": 4144959
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.warding_stone",
+				"color": "aqua"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	}
+]

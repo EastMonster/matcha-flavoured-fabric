@@ -1,0 +1,26 @@
+{
+	"gives": {
+		"id": "minecraft:emerald",
+		"count": 1
+	},
+	"given_item_modifiers": [],
+	"max_uses": 999,
+	"wants": {
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.humpback_whitefish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 23,
+		"id": "matcha-flavoured:humpback_whitefish"
+	},
+	"reputation_discount": 0,
+	"xp": 10
+}

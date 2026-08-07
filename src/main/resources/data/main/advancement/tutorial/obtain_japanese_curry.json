@@ -1,0 +1,29 @@
+{
+	"parent": "main:tutorial/obtain_bowl",
+	"criteria": {
+		"get_food": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "food:japanese_curry"
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_japanese_curry.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:japanese_curry"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_japanese_curry.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_food"
+		]
+	]
+}

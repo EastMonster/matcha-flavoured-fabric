@@ -1,0 +1,17 @@
+{
+	"criteria": {
+		"eat_glow_jam": {
+			"conditions": {
+				"item": {
+					"items": "matcha-flavoured:glow_jam"
+				}
+			},
+			"trigger": "minecraft:consume_item"
+		}
+	},
+	"requirements": [
+		[
+			"eat_glow_jam"
+		]
+	]
+}

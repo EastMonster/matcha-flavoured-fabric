@@ -1,0 +1,35 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"SbS",
+		"FBF",
+		"SFS"
+	],
+	"key": {
+		"S": "minecraft:spectral_arrow",
+		"B": "minecraft:enchanted_book",
+		"F": "minecraft:gold_ingot",
+		"b": "minecraft:disc_fragment_5"
+	},
+	"result": {
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:impaling": 3,
+				"minecraft:piercing": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_apollo"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.apollo",
+					"color": "dark_gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:blessing_apollo"
+	}
+}

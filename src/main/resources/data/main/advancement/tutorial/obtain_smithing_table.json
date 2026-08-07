@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_steel",
+	"criteria": {
+		"get_smithing": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:smithing_table"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_smithing_table.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:smithing_table"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_smithing_table.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_smithing"
+		]
+	]
+}

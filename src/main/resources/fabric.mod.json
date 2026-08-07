@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "matcha-flavoured",
+	"version": "${version}",
+	"name": "Matcha Flavoured",
+	"description": "Klei Wright's Matcha Flavoured data and resource pack, packaged for Fabric 26.2.",
+	"authors": [
+		"Klei Wright"
+	],
+	"contributors": [
+		"East Monster"
+	],
+	"contact": {
+		"homepage": "https://github.com/EastMonster/matcha-flavoured-fabric",
+		"issues": "https://github.com/EastMonster/matcha-flavoured-fabric/issues"
+	},
+	"license": "CC-BY-NC-SA-4.0",
+	"icon": "assets/matcha-flavoured/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"monster.east.matchaff.MatchaFlavouredFabric"
+		]
+	},
+	"mixins": [
+		{
+			"config": "matcha.mixins.json"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

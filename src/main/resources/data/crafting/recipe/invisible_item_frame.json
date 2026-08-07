@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "item_frame",
+	"category": "misc",
+	"key": {
+		"#": "minecraft:stick",
+		"X": "minecraft:glass_pane"
+	},
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"result": {
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:item_frame",
+				"Invisible": true
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.invisible_item_frame"
+			}
+		},
+		"count": 1,
+		"id": "matcha-flavoured:invisible_item_frame"
+	}
+}

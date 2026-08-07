@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_smooth_stone",
+	"criteria": {
+		"get_blast_furnace": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:blast_furnace"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_blast_furnace.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:blast_furnace"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_blast_furnace.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_blast_furnace"
+		]
+	]
+}

@@ -1,0 +1,572 @@
+[
+	{
+		"id": "blessing_aeolus",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/wind_burst_anemos.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"matcha-flavoured:anemos": 1,
+				"minecraft:wind_burst": 3
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_aeolus"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.aeolus",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_apollo",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/piercing_impaling.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:impaling": 3,
+				"minecraft:piercing": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_apollo"
+			},
+			"minecraft:rarity": "epic",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.apollo",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_arachnae",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/bane_of_arthopods.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:bane_of_arthropods": 5
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_arachnae"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.arachnae",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_ares",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/lunge_breach.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:lunge": 2,
+				"minecraft:breach": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_ares"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.ares",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_artemis",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/power_multishot.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:power": 2,
+				"minecraft:multishot": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_artemis"
+			},
+			"minecraft:rarity": "epic",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.artemis",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_clement",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/traversal.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"matcha-flavoured:traversal": 3
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_clement"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.clement",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_cronus",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/swift_sneak_soul_speed.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:swift_sneak": 2,
+				"minecraft:soul_speed": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_cronus"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.cronus",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_daedalus",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/efficiency_unbreaking.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:efficiency": 3,
+				"minecraft:unbreaking": 3
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_daedalus"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.daedalus",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_demeter",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/frost_walker_frost_protection.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:frost_walker": 2,
+				"matcha-flavoured:freezing_protection": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_demeter"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.demeter",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_eros",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/silk_touch.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:silk_touch": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_eros"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.eros",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_glaucus",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/lure_luck_of_the_sea.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:luck_of_the_sea": 3,
+				"minecraft:lure": 3,
+				"minecraft:loyalty": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_glaucus"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.glaucus",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_god_king",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/channeling_smite.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:smite": 3,
+				"minecraft:channeling": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_god_king"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.god_king",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_hyacinthus",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/zephyr.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"matcha-flavoured:zephyr": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_hyacinthus"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.hyacinthus",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_icarus",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/feather_falling.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:feather_falling": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_icarus"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.icarus",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_lu_ban",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/mending.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:mending": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_lu_ban"
+			},
+			"minecraft:rarity": "epic",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.lu_ban",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_paris",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/infinity.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_paris"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:stored_enchantments": {
+				"minecraft:infinity": 1
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.paris",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_prometheus",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/unbreaking.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:unbreaking": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_prometheus"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.prometheus",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_talos",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/density_knockback_punch.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:density": 2,
+				"minecraft:knockback": 2,
+				"minecraft:punch": 2
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_talos"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.talos",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_warding",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/warding.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"matcha-flavoured:warding2": 1,
+				"minecraft:smite": 2
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_warding"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.man",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_will",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/reach.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"matcha-flavoured:reach": 1
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_will"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.will",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_yama",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/flame_fire_aspect_fire_protection.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:flame": 1,
+				"minecraft:fire_aspect": 1,
+				"minecraft:fire_protection": 3
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_yama"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.yama",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "blessing_yamm",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/blessings/recipe/depth_strider_riptide_aqua_affinity_respiration.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:depth_strider": 2,
+				"minecraft:riptide": 1,
+				"minecraft:aqua_affinity": 1,
+				"minecraft:respiration": 2
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.blessing_yamm"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.yamm",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "ofuda",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/minecraft/villager_trade/librarian/2/avesta_1.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.ofuda"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.mithra",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:stored_enchantments": {
+				"minecraft:protection": 3
+			},
+			"minecraft:max_stack_size": 64
+		}
+	}
+]

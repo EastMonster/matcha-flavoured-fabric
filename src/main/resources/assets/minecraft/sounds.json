@@ -1,0 +1,38 @@
+{
+	"music_disc.labyrinthine": {
+		"sounds": [
+			{
+				"name": "music/game/swamp/labyrinthine",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"music_disc.dry_hands": {
+		"sounds": [
+			{
+				"name": "music/game/dry_hands",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"custom.false_subwoofer_lullaby": {
+		"sounds": [
+			{
+				"name": "matcha-flavoured:custom/false_subwoofer_lullaby",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"custom.golden": {
+		"sounds": [
+			{
+				"name": "matcha-flavoured:custom/golden_demo",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	}
+}

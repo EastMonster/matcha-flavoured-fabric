@@ -1,0 +1,36 @@
+{
+	"parent": "main:tutorial/obtain_divine_fragment",
+	"criteria": {
+		"get_heart": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha-flavoured:heart_container"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_heart.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:heart_container"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_heart.title"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_heart"
+		]
+	]
+}

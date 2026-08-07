@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_carbon_rich_iron",
+	"criteria": {
+		"get_steel": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:resin_brick"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_steel.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:resin_brick"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_steel.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_steel"
+		]
+	]
+}

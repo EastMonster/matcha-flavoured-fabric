@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/obtain_gold",
+	"criteria": {
+		"get_smithing": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:shulker_shell"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_shakudo.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:shulker_shell"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_shakudo.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_smithing"
+		]
+	]
+}

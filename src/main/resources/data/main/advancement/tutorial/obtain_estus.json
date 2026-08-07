@@ -1,0 +1,33 @@
+{
+	"parent": "main:tutorial/root",
+	"criteria": {
+		"get_ash": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:glowstone_dust"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.main.tutorial.obtain_estus.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:glowstone_dust"
+		},
+		"title": {
+			"translate": "advancements.main.tutorial.obtain_estus.title"
+		},
+		"hidden": true
+	},
+	"requirements": [
+		[
+			"get_ash"
+		]
+	]
+}
