@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:rabbit_foot",
+		"matcha-flavoured:braised_brown_mushroom",
 		"minecraft:brown_mushroom",
 		"minecraft:glass_bottle"
 	],

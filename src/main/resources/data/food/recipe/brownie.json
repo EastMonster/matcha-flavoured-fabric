@@ -1,8 +1,8 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
-		"minecraft:mushroom_stew",
-		"minecraft:mushroom_stew",
+		"matcha-flavoured:chocolate",
+		"matcha-flavoured:chocolate",
 		"minecraft:sugar",
 		"minecraft:shulker_spawn_egg"
 	],

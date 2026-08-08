@@ -25,6 +25,7 @@ import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
+import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect;
 import net.minecraft.world.food.FoodProperties;
 
@@ -128,6 +129,8 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 				consumable.onConsume(new RemoveStatusEffectsConsumeEffect(
 						HolderSet.direct(effect.effectIds.stream().map(MatchaFlavouredFabric::mobEffect).toList())
 				));
+			} else if (effect.type.equals("clear")) {
+				consumable.onConsume(new ClearAllStatusEffectsConsumeEffect());
 			} else {
 				throw new IllegalArgumentException("Unknown consume effect: " + effect.type);
 			}

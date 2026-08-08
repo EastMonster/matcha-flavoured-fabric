@@ -2,10 +2,10 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:rabbit_foot",
+		"matcha-flavoured:braised_brown_mushroom",
 		"minecraft:cooked_beef",
 		"minecraft:shulker_spawn_egg",
-		"minecraft:beetroot_soup",
+		"matcha-flavoured:milk_bottle",
 		"minecraft:bowl"
 	],
 	"result": {

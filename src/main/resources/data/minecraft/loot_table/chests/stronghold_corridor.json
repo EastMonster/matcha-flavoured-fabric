@@ -95,7 +95,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:magma_cream"
+					"name": "matcha-flavoured:sweet_berry_mash"
 				},
 				{
 					"type": "minecraft:loot_table",

@@ -26,9 +26,7 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "minecraft:fermented_spider_eye"
-						}
+						"items": "matcha-flavoured:baked_apple"
 					}
 				]
 			}
@@ -68,9 +66,7 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "minecraft:magma_cream"
-						}
+						"items": "matcha-flavoured:sweet_berry_mash"
 					}
 				]
 			}
@@ -90,9 +86,7 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "minecraft:mushroom_stew"
-						}
+						"items": "matcha-flavoured:chocolate"
 					}
 				]
 			}
@@ -102,9 +96,7 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "minecraft:breeze_rod"
-						}
+						"items": "matcha-flavoured:baked_pumpkin"
 					}
 				]
 			}

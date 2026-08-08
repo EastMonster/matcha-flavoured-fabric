@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "item/generated",
   "textures": {
-    "layer0": "minecraft:item/braised_brown_mushroom"
+      "layer0": "item/braised_brown_mushroom"
   }
 }

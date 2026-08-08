@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:beetroot_soup",
+					"name": "matcha-flavoured:milk_bottle",
 					"functions": [
 						{
 							"function": "minecraft:set_count",

@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"key": {
-		"A": "minecraft:beetroot_soup",
+		"A": "matcha-flavoured:milk_bottle",
 		"B": "minecraft:sugar",
 		"C": "minecraft:enderman_spawn_egg",
 		"E": "#minecraft:eggs",

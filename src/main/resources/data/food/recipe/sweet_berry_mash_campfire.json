@@ -5,7 +5,7 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:sweet_berries",
 	"result": {
-		"id": "minecraft:magma_cream",
+		"id": "matcha-flavoured:sweet_berry_mash",
 		"components": {
 			"minecraft:lore": [
 				{

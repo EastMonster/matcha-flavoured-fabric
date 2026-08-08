@@ -5,7 +5,7 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:apple",
 	"result": {
-		"id": "minecraft:fermented_spider_eye",
+		"id": "matcha-flavoured:baked_apple",
 		"components": {
 			"minecraft:lore": [
 				{

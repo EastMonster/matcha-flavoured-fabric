@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:fermented_spider_eye",
+		"matcha-flavoured:baked_apple",
 		"minecraft:sugar",
 		"minecraft:glowstone_dust",
 		"minecraft:shulker_spawn_egg"

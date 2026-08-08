@@ -47,6 +47,53 @@
 		"particles": true
 	},
 	{
+		"id": "baked_apple",
+		"source": "data/food/recipe/baked_apple.json",
+		"lore": [
+		  {
+		    "text": "❤❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.regen",
+		    "with": [
+		      "0:10"
+		    ],
+		    "color": "#e85e8f",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"consumeSeconds": 1.6,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 48,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
+	},
+	{
 		"id": "baked_golden_apple",
 		"source": "data/food/recipe/baked_golden_apple.json",
 		"lore": [
@@ -107,6 +154,54 @@
 		"consumeSeconds": 1.6
 	},
 	{
+		"id": "baked_pumpkin",
+		"source": "data/food/recipe/baked_pumpkin.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.resistance",
+		    "with": [
+		      "0:10"
+		    ],
+		    "color": "blue",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"consumeSeconds": 1.6,
+		"particles": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:resistance",
+						"duration": 200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
+	},
+	{
 		"id": "bokguk",
 		"source": "data/food/recipe/bokguk.json",
 		"lore": [
@@ -153,6 +248,37 @@
 		],
 		"sound": "minecraft:entity.generic.drink",
 		"remainder": "minecraft:bowl"
+	},
+	{
+		"id": "braised_brown_mushroom",
+		"source": "data/food/recipe/braised_brown_mushroom.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"consumeSeconds": 0.8,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
 	},
 	{
 		"id": "braised_crimson_fungus",
@@ -623,6 +749,84 @@
 						"ambient": false,
 						"particles": false,
 						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "cheese",
+		"source": "data/food/recipe/cheese.json",
+		"lore": [
+		  {
+		    "text": "❤❣",
+		    "color": "red",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 36,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "chocolate",
+		"source": "data/food/recipe/chocolate.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "translate": "matcha.lore.haste",
+		    "with": [
+		      "0:30"
+		    ],
+		    "color": "yellow",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"consumeSeconds": 0.8,
+		"maxStackSize": 64,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:haste",
+						"duration": 600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
 					}
 				]
 			}
@@ -1667,6 +1871,32 @@
 		"remainder": "minecraft:glass_bottle"
 	},
 	{
+		"id": "milk_bottle",
+		"source": "data/food/recipe/milk_bottle.json",
+		"lore": [
+		  {
+		    "translate": "matcha.lore.cleanse",
+		    "color": "gray",
+		    "italic": false
+		  }
+		],
+		"nutrition": 2,
+		"saturation": 1.2,
+		"alwaysEdible": true,
+		"consumeSeconds": 1.6,
+		"animation": "drink",
+		"sound": "minecraft:entity.wandering_trader.drink_milk",
+		"particles": false,
+		"remainder": "minecraft:glass_bottle",
+		"maxStackSize": 64,
+		"effects": [
+			{
+				"type": "clear",
+				"probability": 1
+			}
+		]
+	},
+	{
 		"id": "naan",
 		"source": "data/food/recipe/naan.json",
 		"lore": {
@@ -2443,6 +2673,51 @@
 		"sound": "minecraft:item.honey_bottle.drink",
 		"particles": false,
 		"remainder": "minecraft:glass_bottle"
+	},
+	{
+		"id": "sweet_berry_mash",
+		"source": "data/food/recipe/sweet_berry_mash.json",
+		"lore": [
+		  {
+		    "text": "❤",
+		    "color": "red",
+		    "italic": false
+		  },
+		  {
+		    "text": "❤❤ (0:10)",
+		    "color": "gray",
+		    "italic": false
+		  }
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"consumeSeconds": 0.8,
+		"particles": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 24,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:health_boost",
+						"duration": 200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
 	},
 	{
 		"id": "sweet_berry_toast",

@@ -2,13 +2,13 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:beetroot_soup",
+		"matcha-flavoured:milk_bottle",
 		"minecraft:sugar",
 		"minecraft:brown_mushroom"
 	],
 	"result": {
 		"count":4,
-		"id": "minecraft:cookie",
+		"id": "matcha-flavoured:cheese",
 		"components": {
 			"minecraft:lore": [
 				{

@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "item/generated",
   "textures": {
-    "layer0": "minecraft:item/sweet_berry_mash"
+      "layer0": "item/sweet_berry_mash"
   }
 }

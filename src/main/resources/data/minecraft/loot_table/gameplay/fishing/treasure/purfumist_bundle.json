@@ -62,7 +62,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:magma_cream",
+					"name": "matcha-flavoured:sweet_berry_mash",
 					"functions": [
 						{
 							"function": "minecraft:set_count",

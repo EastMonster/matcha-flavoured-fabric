@@ -2,9 +2,9 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:magma_cream",
+		"matcha-flavoured:sweet_berry_mash",
 		"minecraft:sugar",
-		"minecraft:cookie",
+		"matcha-flavoured:cheese",
 		"minecraft:shulker_spawn_egg"
 	],
 	"result": {

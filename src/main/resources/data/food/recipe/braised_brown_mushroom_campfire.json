@@ -5,7 +5,7 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:brown_mushroom",
 	"result": {
-		"id": "minecraft:rabbit_foot",
+		"id": "matcha-flavoured:braised_brown_mushroom",
 		"components": {
 			"minecraft:lore": [
 				{

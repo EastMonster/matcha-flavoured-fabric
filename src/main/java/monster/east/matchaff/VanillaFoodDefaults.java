@@ -25,12 +25,11 @@ import java.util.Objects;
  */
 final class VanillaFoodDefaults {
 	private static final List<String> RECIPE_FILES = List.of(
-			"baked_potato", "milk_bottle", "bread", "baked_pumpkin",
+			"baked_potato", "bread",
 			"cooked_beef", "cooked_chicken", "cooked_cod", "cooked_mutton",
-			"cooked_pork", "cooked_rabbit", "cooked_salmon", "cheese",
-			"dried_kelp", "baked_apple", "golden_apple", "golden_carrot",
-			"sweet_berry_mash", "chocolate", "popped_chorus_fruit",
-			"braised_brown_mushroom"
+			"cooked_pork", "cooked_rabbit", "cooked_salmon",
+			"dried_kelp", "golden_apple", "golden_carrot",
+			"popped_chorus_fruit"
 	);
 	private static final List<String> LOOT_FILES = List.of(
 			"apple", "carrot", "glow_berries", "sweet_berries", "enchanted_golden_apple"

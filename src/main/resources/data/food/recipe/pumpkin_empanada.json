@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:breeze_rod",
+		"matcha-flavoured:baked_pumpkin",
 		"minecraft:sugar",
 		"minecraft:glowstone_dust",
 		"minecraft:shulker_spawn_egg"

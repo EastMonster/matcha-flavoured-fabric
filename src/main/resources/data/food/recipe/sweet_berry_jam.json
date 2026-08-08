@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:magma_cream",
+		"matcha-flavoured:sweet_berry_mash",
 		"minecraft:sugar",
 		"minecraft:glass_bottle"
 	],

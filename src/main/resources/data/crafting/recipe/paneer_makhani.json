@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
 	"key": {
-		"P": "minecraft:cookie",
+		"P": "matcha-flavoured:cheese",
 		"E": "minecraft:glowstone_dust",
 		"T": "minecraft:beetroot",
 		"S": "minecraft:sugar",
 		"B": "minecraft:bowl",
-		"M": "minecraft:beetroot_soup"
+		"M": "matcha-flavoured:milk_bottle"
 	},
 	"pattern": [
 		"EMS",

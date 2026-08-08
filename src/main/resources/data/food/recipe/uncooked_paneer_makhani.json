@@ -4,9 +4,9 @@
 	"ingredients": [
 		"minecraft:glowstone_dust",
 		"minecraft:sugar",
-		"minecraft:beetroot_soup",
+		"matcha-flavoured:milk_bottle",
 		"minecraft:beetroot",
-		"minecraft:cookie",
+		"matcha-flavoured:cheese",
 		"minecraft:bowl"
 	],
 	"result": {
