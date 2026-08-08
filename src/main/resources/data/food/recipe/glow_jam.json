@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:rotten_flesh",
+		"matcha-flavoured:glow_mash",
 		"minecraft:sugar",
 		"minecraft:glass_bottle"
 	],

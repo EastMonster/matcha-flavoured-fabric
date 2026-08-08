@@ -3,7 +3,7 @@
 	"category": "misc",
 	"key": {
 		"P": "minecraft:cooked_chicken",
-		"T": "minecraft:rotten_flesh",
+		"T": "matcha-flavoured:glow_mash",
 		"S": "minecraft:bone",
 		"B": "minecraft:bowl",
 		"M": "minecraft:water_bucket"
