@@ -22,17 +22,20 @@ Install Fabric Loader and Fabric API, then place the mod JAR in your `mods` fold
 
 Use a new world when possible. Existing items from the data-pack version are not automatically converted into the mod's independently registered items.
 
-## Major changes in the Fabric version
+## Improvements over the data pack
 
-- Food healing is now scheduled per meal instead of relying on the regeneration effect the data pack uses. Vanilla regeneration refreshes in place (its duration never stacks), so eating the same food twice in a row silently lost part of the heal. Each food's hidden healing-simulation segment now ticks independently, so consecutive bites heal their full intended amount. Icon-bearing lingering regeneration (e.g. baked apple's 10-second regen) stays a real effect: it shows its icon and refreshes like a vanilla potion rather than stacking.
-- Registers custom equipment, food, fish, blessings, behavior items, and music discs as independent items under the `matcha-flavoured` namespace instead of repurposing vanilla items, which makes the added items easier to distinguish and browse in inventory tools such as JEI and Jade. Item IDs and commands therefore differ from the data-pack version, and **existing data-pack stacks are not converted automatically**.
-- Places registered items across relevant vanilla creative tabs.
-- Reimplements command-driven mechanics in Java. Tested gameplay is intended to match the data pack, but very short timing windows, multiplayer target selection, and server restarts during delayed actions may behave differently.
+- Custom equipment, food, fish, blessings, behavior items, and music discs are registered as independent items under the `matcha-flavoured` namespace instead of repurposing vanilla items, which makes the added items easier to distinguish and browse in inventory tools such as JEI and Jade. Item IDs and commands therefore differ from the data-pack version, and **existing data-pack stacks are not converted automatically**. Registered items are placed across the relevant vanilla creative tabs.
+- Food healing is now scheduled per meal instead of relying on the regeneration effect the data pack uses. Vanilla regeneration refreshes in place (its duration never stacks), so eating the same food twice in a row silently lost part of the heal. Each food's hidden healing-simulation segment now ticks independently, so consecutive bites heal their full intended amount. 
+- Breaking cracks no longer appear floating in the air around leaves and glow lichen: the breaking animation now drops quads that fall outside the block's bounds. The out-of-bounds leaf extension panels are also culled inside canopies to reduce the number of rendered faces, while the canopy keeps its solid look.
+- Adds an AI-assisted Simplified Chinese translation.
+
+## Changes that may cause behavioral differences
+
+- Command-driven mechanics are reimplemented in Java. Tested gameplay is intended to match the data pack, but very short timing windows, multiplayer target selection, and server restarts during delayed actions may behave differently.
 - Anemos uses an internal 20-tick player cooldown instead of the visible Unluck effect used as a timer by the data pack. Milk and cleansing cannot reset this cooldown.
 - Gives selected vanilla food carriers Matcha components by default so creative-tab and plain `/give` stacks match their crafted or dropped counterparts. This can also apply Matcha food behavior to those vanilla IDs when another source creates an otherwise unmodified stack.
 - Soul Sight stores one pending activation per player. Eating different Soul Sight foods within the 48-tick delay makes the later activation replace the earlier one. Repeating the same food behaves like the data pack's replaced scheduled function.
 - The `endless_repairs` compatibility mechanic also clears prior-work penalties from armor and offhand slots; the data pack scans only the main inventory and hotbar. This has little practical effect while anvils are free.
-- Adds an AI-assisted Simplified Chinese translation.
 
 Bug reports are welcome, but exact one-to-one compatibility with every data-pack edge case is not promised.
 
