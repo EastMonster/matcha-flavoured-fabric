@@ -5,7 +5,7 @@
 		"minecraft:rotten_flesh",
 		"minecraft:sugar",
 		"matcha-flavoured:milk_bottle",
-		"minecraft:shulker_spawn_egg"
+		"matcha-flavoured:dough"
 	],
 	"result": {
 		"id": "matcha-flavoured:glow_berry_crumble",

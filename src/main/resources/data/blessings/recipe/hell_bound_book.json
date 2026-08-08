@@ -9,7 +9,7 @@
 	"key": {
 		"B": "minecraft:book",
 		"E": "minecraft:blaze_rod",
-		"b": "minecraft:endermite_spawn_egg"
+		"b": "matcha-flavoured:benzene"
 	},
 	"result": {
 		"components": {

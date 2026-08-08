@@ -3,7 +3,7 @@
 	"category": "food",
 	"cookingtime": 100,
 	"experience": 0.35,
-	"ingredient": "minecraft:shulker_spawn_egg",
+	"ingredient": "matcha-flavoured:dough",
 	"result": {
 		"id": "matcha-flavoured:naan",
 		"components": {

@@ -1405,5 +1405,68 @@
 			},
 			"minecraft:enchantment_glint_override": false
 		}
+	},
+	{
+		"id": "flour",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/food/recipe/flour.json",
+		"components": {}
+	},
+	{
+		"id": "flour_bag",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/food/recipe/flour_bag.json",
+		"components": {}
+	},
+	{
+		"id": "benzene",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/crafting/recipe/benzene.json",
+		"components": {}
+	},
+	{
+		"id": "dough",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/food/recipe/dough.json",
+		"components": {}
+	},
+	{
+		"id": "uncooked_curry",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/food/recipe/uncooked_curry.json",
+		"components": {}
+	},
+	{
+		"id": "uncooked_ramen",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/food/recipe/uncooked_ramen.json",
+		"components": {}
+	},
+	{
+		"id": "uncooked_paneer_makhani",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/food/recipe/uncooked_paneer_makhani.json",
+		"components": {}
+	},
+	{
+		"id": "uncooked_green_curry",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/food/recipe/uncooked_green_curry.json",
+		"components": {}
+	},
+	{
+		"id": "carbon_rich_iron",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/crafting/recipe/carbon_rich_iron.json",
+		"components": {}
 	}
 ]

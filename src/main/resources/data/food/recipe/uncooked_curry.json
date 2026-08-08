@@ -4,7 +4,7 @@
 	"ingredients": [
 		"minecraft:glowstone_dust",
 		"minecraft:sugar",
-		"minecraft:enderman_spawn_egg",
+		"matcha-flavoured:flour",
 		"minecraft:potato",
 		[
 			"minecraft:beef",
@@ -15,7 +15,7 @@
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "minecraft:strider_spawn_egg",
+		"id": "matcha-flavoured:uncooked_curry",
 		"components": {
 			"!minecraft:entity_data": {}
 		}

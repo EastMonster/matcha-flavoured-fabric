@@ -5,7 +5,7 @@
 		"minecraft:golden_apple",
 		"minecraft:sugar",
 		"minecraft:glowstone_dust",
-		"minecraft:shulker_spawn_egg"
+		"matcha-flavoured:dough"
 	],
 	"result": {
 		"id": "matcha-flavoured:golden_apple_empanada",

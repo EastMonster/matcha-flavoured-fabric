@@ -6,7 +6,7 @@
 		"minecraft:carrot",
 		"minecraft:sugar",
 		"#minecraft:eggs",
-		"minecraft:enderman_spawn_egg"
+		"matcha-flavoured:flour"
 	],
 	"result": {
 		"id": "matcha-flavoured:gimmari",

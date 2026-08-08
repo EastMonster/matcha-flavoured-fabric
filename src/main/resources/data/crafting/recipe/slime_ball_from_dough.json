@@ -3,7 +3,7 @@
   "group": "slime_ball",
   "category": "misc",
   "ingredients": [
-    "minecraft:shulker_spawn_egg",
+    "matcha-flavoured:dough",
     "minecraft:lime_dye"
   ],
   "result": {

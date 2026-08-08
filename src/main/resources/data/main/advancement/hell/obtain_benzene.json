@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "minecraft:endermite_spawn_egg"
+						"items": "matcha-flavoured:benzene"
 					}
 				]
 			}
@@ -18,7 +18,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "minecraft:endermite_spawn_egg"
+			"id": "matcha-flavoured:benzene"
 		},
 		"title": {
 			"translate": "advancements.main.hell.obtain_benzene.title"

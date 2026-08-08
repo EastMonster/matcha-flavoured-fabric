@@ -10,7 +10,7 @@
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "minecraft:zoglin_spawn_egg",
+		"id": "matcha-flavoured:uncooked_paneer_makhani",
 		"components": {
 			"!minecraft:entity_data": {}
 		}

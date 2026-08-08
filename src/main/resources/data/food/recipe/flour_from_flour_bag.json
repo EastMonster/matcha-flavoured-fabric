@@ -4,11 +4,11 @@
 	"category": "misc",
 	"ingredients": [
 		[
-			"minecraft:magma_cube_spawn_egg"
+			"matcha-flavoured:flour_bag"
 		]
 	],
 	"result": {
-		"id": "minecraft:enderman_spawn_egg",
+		"id": "matcha-flavoured:flour",
 		"components": {
 			"!minecraft:entity_data": {}
 		},

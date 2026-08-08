@@ -3,7 +3,7 @@
 	"category": "food",
 	"cookingtime": 300,
 	"experience": 0.35,
-	"ingredient": "minecraft:zombified_piglin_spawn_egg",
+	"ingredient": "matcha-flavoured:uncooked_green_curry",
 	"result": {
 		"id": "matcha-flavoured:green_curry",
 		"components": {

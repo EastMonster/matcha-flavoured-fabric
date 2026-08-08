@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:shulker_spawn_egg",
+		"matcha-flavoured:dough",
 		"matcha-flavoured:cheese",
 		[
 			"minecraft:cooked_porkchop",

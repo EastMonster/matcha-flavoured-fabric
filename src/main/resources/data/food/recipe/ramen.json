@@ -3,7 +3,7 @@
 	"category": "food",
 	"cookingtime": 300,
 	"experience": 0.35,
-	"ingredient": "minecraft:wither_skeleton_spawn_egg",
+	"ingredient": "matcha-flavoured:uncooked_ramen",
 	"result": {
 		"id": "matcha-flavoured:ramen",
 		"components": {

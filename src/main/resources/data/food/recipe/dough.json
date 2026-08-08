@@ -8,15 +8,15 @@
 			"minecraft:blue_egg",
 			"brown_egg"
 		],
-		"minecraft:enderman_spawn_egg",
-		"minecraft:enderman_spawn_egg",
-		"minecraft:enderman_spawn_egg"
+		"matcha-flavoured:flour",
+		"matcha-flavoured:flour",
+		"matcha-flavoured:flour"
 	],
 	"result": {
 		"components": {
 			"!minecraft:entity_data": {}
 		},
 		"count": 3,
-		"id": "minecraft:shulker_spawn_egg"
+		"id": "matcha-flavoured:dough"
 	}
 }

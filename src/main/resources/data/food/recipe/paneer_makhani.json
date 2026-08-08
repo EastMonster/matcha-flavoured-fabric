@@ -3,7 +3,7 @@
 	"category": "food",
 	"cookingtime": 300,
 	"experience": 0.35,
-	"ingredient": "minecraft:zoglin_spawn_egg",
+	"ingredient": "matcha-flavoured:uncooked_paneer_makhani",
 	"result": {
 		"id": "matcha-flavoured:paneer_makhani",
 		"components": {

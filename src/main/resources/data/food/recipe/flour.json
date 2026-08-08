@@ -7,7 +7,7 @@
 		"minecraft:wheat_seeds"
 	],
 	"result": {
-		"id": "minecraft:enderman_spawn_egg",
+		"id": "matcha-flavoured:flour",
 		"components": {
 			"!minecraft:entity_data": {}
 		}

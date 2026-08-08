@@ -6,9 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "minecraft:piglin_brute_spawn_egg"
-						}
+						"items": "matcha-flavoured:carbon_rich_iron"
 					}
 				]
 			}
@@ -20,7 +18,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "minecraft:piglin_brute_spawn_egg"
+			"id": "matcha-flavoured:carbon_rich_iron"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_carbon_rich_iron.title"

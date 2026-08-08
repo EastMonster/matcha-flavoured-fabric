@@ -5,7 +5,7 @@
 		"matcha-flavoured:baked_pumpkin",
 		"minecraft:sugar",
 		"minecraft:glowstone_dust",
-		"minecraft:shulker_spawn_egg"
+		"matcha-flavoured:dough"
 	],
 	"result": {
 		"id": "matcha-flavoured:pumpkin_empanada",

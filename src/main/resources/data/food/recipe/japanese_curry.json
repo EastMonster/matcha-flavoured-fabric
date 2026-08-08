@@ -3,7 +3,7 @@
 	"category": "food",
 	"cookingtime": 300,
 	"experience": 0.35,
-	"ingredient": "minecraft:strider_spawn_egg",
+	"ingredient": "matcha-flavoured:uncooked_curry",
 	"result": {
 		"id": "matcha-flavoured:japanese_curry",
 		"components": {

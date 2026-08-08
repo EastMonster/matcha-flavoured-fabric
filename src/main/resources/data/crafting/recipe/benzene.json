@@ -10,7 +10,7 @@
 		"minecraft:gunpowder"
 	],
 	"result": {
-		"id": "minecraft:endermite_spawn_egg",
+		"id": "matcha-flavoured:benzene",
 		"components": {
 			"!minecraft:entity_data": {}
 		},

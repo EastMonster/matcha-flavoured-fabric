@@ -5,7 +5,7 @@
 		"matcha-flavoured:sweet_berry_mash",
 		"minecraft:sugar",
 		"matcha-flavoured:cheese",
-		"minecraft:shulker_spawn_egg"
+		"matcha-flavoured:dough"
 	],
 	"result": {
 		"id": "matcha-flavoured:sweet_berry_danish",

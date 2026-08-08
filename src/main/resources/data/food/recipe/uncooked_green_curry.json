@@ -13,7 +13,7 @@
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "minecraft:zombified_piglin_spawn_egg",
+		"id": "matcha-flavoured:uncooked_green_curry",
 		"components": {
 			"!minecraft:entity_data": {}
 		}

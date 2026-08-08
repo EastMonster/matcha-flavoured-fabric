@@ -256,7 +256,7 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:endermite_spawn_egg",
+					"name": "matcha-flavoured:benzene",
 					"weight": 2
 				},
 				{
