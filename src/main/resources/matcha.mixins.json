@@ -12,6 +12,10 @@
 		"EnchantmentHelperMixin",
 		"FoodHealMixin"
 	],
+	"client": [
+		"LeavesBreakingMixin",
+		"LeavesCullMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}
