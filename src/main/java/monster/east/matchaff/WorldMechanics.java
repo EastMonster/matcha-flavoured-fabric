@@ -3,6 +3,7 @@ package monster.east.matchaff;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.advancements.AdvancementHolder;
@@ -13,7 +14,6 @@ import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.numbers.StyledFormat;
 import net.minecraft.network.protocol.game.ClientboundStopSoundPacket;
@@ -35,9 +35,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -50,8 +48,9 @@ import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.minecraft.world.clock.WorldClocks;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -79,14 +78,19 @@ public final class WorldMechanics {
 	private static final AttachmentType<Boolean> EERIE = AttachmentRegistry.create(id("eerie"));
 	private static final AttachmentType<Integer> EERIE_TIMER = AttachmentRegistry.create(id("eerie_timer"));
 
-	private static final Map<ResourceKey<Level>, Set<UUID>> CHECKED_SPAWNS = new HashMap<>();
 	private static final Map<UUID, Integer> LAST_BOATING_DISTANCE = new HashMap<>();
+	private static final Set<ItemEntity> DIVINE_ITEMS =
+			Collections.newSetFromMap(new IdentityHashMap<>());
 
 	private WorldMechanics() {
 	}
 
 	public static void init() {
 		ServerLifecycleEvents.SERVER_STARTED.register(WorldMechanics::onServerStarted);
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> DIVINE_ITEMS.clear());
+		ServerEntityEvents.ENTITY_LOAD.register(WorldMechanics::trackDivineItem);
+		ServerEntityEvents.ENTITY_LOAD.register(WorldMechanics::initializeMundaneHostile);
+		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> DIVINE_ITEMS.remove(entity));
 		ServerTickEvents.END_SERVER_TICK.register(WorldMechanics::tick);
 		ServerPlayerEvents.JOIN.register(WorldMechanics::welcome);
 	}
@@ -120,10 +124,7 @@ public final class WorldMechanics {
 			glassBottleReward(player);
 			endlessRepairs(player);
 		}
-		for (ServerLevel level : server.getAllLevels()) {
-			checkSpawns(level, tick);
-			divineFavour(level, tick);
-		}
+		divineFavour(tick);
 	}
 
 	private static void welcome(ServerPlayer player) {
@@ -292,21 +293,12 @@ public final class WorldMechanics {
 		revoke(player, ENDLESS_REPAIRS_ADVANCEMENT);
 	}
 
-	private static void checkSpawns(ServerLevel level, int tick) {
-		if (tick % 4 != 0) {
-			return;
-		}
-		Set<UUID> checked = CHECKED_SPAWNS.computeIfAbsent(level.dimension(), key -> new HashSet<>());
-		for (Entity entity : level.getAllEntities()) {
-			if (!(entity instanceof Mob mob) || !mob.getType().builtInRegistryHolder().is(MUNDANE_HOSTILES)) {
-				continue;
-			}
-			if (checked.add(mob.getUUID())) {
-				modifyMob(mob);
-			}
-		}
-		if (checked.size() > 2000) {
-			checked.clear();
+	private static void initializeMundaneHostile(Entity entity, ServerLevel level) {
+		if (entity instanceof Mob mob
+				&& mob.getType().builtInRegistryHolder().is(MUNDANE_HOSTILES)
+				&& !mob.entityTags().contains("SpawnChecked")) {
+			modifyMob(mob);
+			mob.addTag("SpawnChecked");
 		}
 	}
 
@@ -370,11 +362,26 @@ public final class WorldMechanics {
 		}
 	}
 
-	private static void divineFavour(ServerLevel level, int tick) {
+	private static void trackDivineItem(Entity entity, ServerLevel level) {
+		if (entity instanceof ItemEntity item && isDivineItem(item.getItem())) {
+			DIVINE_ITEMS.add(item);
+		}
+	}
+
+	private static boolean isDivineItem(ItemStack stack) {
+		return stack.is(Items.NETHER_STAR)
+				|| stack.is(Items.ENDER_EYE)
+				|| stack.is(Items.TURTLE_SCUTE)
+				|| stack.is(net.minecraft.core.registries.BuiltInRegistries.ITEM
+						.getValue(Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_container")));
+	}
+
+	private static void divineFavour(int tick) {
 		boolean everyTenTicks = tick % 10 == 0;
 		boolean everyThreeSeconds = tick % 60 == 0;
-		for (Entity entity : level.getAllEntities()) {
-			if (!(entity instanceof ItemEntity item)) {
+		DIVINE_ITEMS.removeIf(Entity::isRemoved);
+		for (ItemEntity item : DIVINE_ITEMS) {
+			if (!(item.level() instanceof ServerLevel level)) {
 				continue;
 			}
 			ItemStack stack = item.getItem();

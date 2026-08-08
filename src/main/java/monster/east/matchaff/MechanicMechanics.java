@@ -1,5 +1,7 @@
 package monster.east.matchaff;
 
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.AdvancementHolder;
@@ -43,8 +45,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 import java.util.function.Predicate;
 
@@ -78,11 +83,16 @@ public final class MechanicMechanics {
 
 	private static final List<WeatherTask> PENDING_WEATHER = new ArrayList<>();
 	private static final List<BusterTask> PENDING_BUSTER = new ArrayList<>();
+	private static final Set<ArmorStand> WARDING_STONES =
+			Collections.newSetFromMap(new IdentityHashMap<>());
 
 	private MechanicMechanics() {
 	}
 
 	public static void init() {
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> WARDING_STONES.clear());
+		ServerEntityEvents.ENTITY_LOAD.register(MechanicMechanics::trackWardingStone);
+		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> WARDING_STONES.remove(entity));
 		// The datapack's scheduled function runs before entities tick, so the
 		// glowing TNT is still alive (fuse 1) when bedrock is removed. Running
 		// this at END_SERVER_TICK left the TNT exploded and never found it.
@@ -99,9 +109,7 @@ public final class MechanicMechanics {
 				stackWaterBottles(player);
 			}
 			processWeatherTasks(server, tick);
-			for (ServerLevel level : server.getAllLevels()) {
-				tickWardingStones(level);
-			}
+			tickWardingStones();
 		});
 	}
 
@@ -272,12 +280,23 @@ public final class MechanicMechanics {
 		});
 	}
 
-	private static void tickWardingStones(ServerLevel level) {
-		for (Entity entity : level.getAllEntities()) {
-			if (!(entity instanceof ArmorStand stone) || !stone.entityTags().contains("WardingStone")) {
+	private static void trackWardingStone(Entity entity, ServerLevel level) {
+		if (entity instanceof ArmorStand stone && stone.entityTags().contains("WardingStone")) {
+			WARDING_STONES.add(stone);
+		}
+	}
+
+	private static void tickWardingStones() {
+		WARDING_STONES.removeIf(stone ->
+				stone.isRemoved() || !stone.entityTags().contains("WardingStone"));
+		for (ArmorStand stone : List.copyOf(WARDING_STONES)) {
+			if (!(stone.level() instanceof ServerLevel level)) {
 				continue;
 			}
 			BlockPos pos = stone.blockPosition();
+			double stoneX = stone.getX();
+			double stoneY = stone.getY();
+			double stoneZ = stone.getZ();
 			boolean setup = stone.entityTags().contains("WardingStoneSetup");
 
 			// Heal friendly villagers nearby.
@@ -296,9 +315,9 @@ public final class MechanicMechanics {
 			if (!setup && !anchored) {
 				level.setBlockAndUpdate(pos, Blocks.LODESTONE.defaultBlockState());
 				level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.25F, 1.0F);
-				level.sendParticles(ParticleTypes.SCULK_SOUL, pos.getX(), pos.getY() + 0.5, pos.getZ(),
+				level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY + 0.5, stoneZ,
 						10, 0.25, 0.1, 0.25, 0.05);
-				level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pos.getX(), pos.getY() + 0.5, pos.getZ(),
+				level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
 						10, 0.5, 0.1, 0.5, 0.1);
 				stone.addTag("WardingStoneSetup");
 				setup = true;
@@ -311,9 +330,9 @@ public final class MechanicMechanics {
 						item.discard();
 					}
 				}
-				level.sendParticles(ParticleTypes.LARGE_SMOKE, pos.getX(), pos.getY() + 0.25, pos.getZ(),
+				level.sendParticles(ParticleTypes.LARGE_SMOKE, stoneX, stoneY + 0.25, stoneZ,
 						20, 0.25, 0.5, 0.25, 0.01);
-				level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(),
+				level.addFreshEntity(new ItemEntity(level, stoneX, stoneY, stoneZ,
 						new ItemStack(Items.BLAZE_POWDER, 7)));
 				stone.discard();
 				continue;
@@ -327,14 +346,14 @@ public final class MechanicMechanics {
 				tnt.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
 				tnt.setFuse(0);
 				level.addFreshEntity(tnt);
-				level.sendParticles(ParticleTypes.SCULK_SOUL, pos.getX(), pos.getY(), pos.getZ(),
+				level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY, stoneZ,
 						100, 0.1, 0.1, 0.1, 0.5);
 				stone.discard();
 				continue;
 			}
 
 			// Aura: slow and burn undead.
-			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, pos.getX(), pos.getY() + 0.5, pos.getZ(),
+			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
 					1, 0.5, 0.5, 0.5, 0);
 			for (LivingEntity undead : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(26.0),
 					u -> u.getType().builtInRegistryHolder().is(net.minecraft.tags.EntityTypeTags.UNDEAD)
