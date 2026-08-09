@@ -16,6 +16,13 @@ repositories {
 
 loom {
 	splitEnvironmentSourceSets()
+
+  runs {
+		client {
+			programArgs '--width', '1920', '--height', '1200'
+		}
+	}
+
 	mods {
 		"matcha-flavoured-fabric" {
 			sourceSet sourceSets.main
