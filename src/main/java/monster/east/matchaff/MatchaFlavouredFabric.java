@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -54,15 +53,13 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		List<Item> foods = registerFoods();
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
-		equipment.forEach(entry -> CreativeModeTabEvents.modifyOutputEvent(entry.tab())
-				.register(tabOutput -> tabOutput.accept(entry.item())));
 		List<SimpleItemRegistrar.BatchItem> fishAndSimple = SimpleItemRegistrar.registerAll();
-		fishAndSimple.forEach(entry -> CreativeModeTabEvents.modifyOutputEvent(entry.tab())
-				.register(tabOutput -> tabOutput.accept(entry.item())));
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS)
-				.register(entries -> foods.forEach(entries::accept));
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
-				.register(entries -> items.forEach(entries::accept));
+		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
+		equipment.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
+		fishAndSimple.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
+		foods.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.FOOD_AND_DRINKS)));
+		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
+		CreativeOrder.register(creativeItems);
 	}
 
 	private static Item register(String name) {

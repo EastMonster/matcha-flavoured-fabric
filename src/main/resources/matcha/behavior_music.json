@@ -67,7 +67,7 @@
 	{
 		"id": "bedrock_buster",
 		"type": "spawn_egg",
-		"tab": "spawn_eggs",
+		"tab": "tools",
 		"source": "data/crafting/recipe/bedrock_buster.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
@@ -284,7 +284,7 @@
 	{
 		"id": "invisible_item_frame",
 		"type": "item_frame",
-		"tab": "tools",
+		"tab": "functional_blocks",
 		"source": "data/crafting/recipe/invisible_item_frame.json",
 		"carrier": "minecraft:item_frame",
 		"components": {
@@ -343,7 +343,7 @@
 	{
 		"id": "warding_stone",
 		"type": "spawn_egg",
-		"tab": "spawn_eggs",
+		"tab": "functional_blocks",
 		"source": "data/crafting/recipe/warding_stone.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {

@@ -1,0 +1,401 @@
+{
+	"tools": {
+		"bronze_tools": [
+			"bronze_shovel",
+			"bronze_pickaxe",
+			"bronze_axe",
+			"bronze_dolabra",
+			"bronze_hoe",
+			"bronze_mattock"
+		],
+		"electrum_tools": [
+			"electrum_shovel",
+			"electrum_pickaxe",
+			"electrum_axe",
+			"electrum_dolabra",
+			"electrum_hoe",
+			"electrum_mattock"
+		],
+		"palatinate_tools": [
+			"shakudo_shovel",
+			"shakudo_pickaxe",
+			"shakudo_axe",
+			"shakudo_dolabra",
+			"shakudo_hoe",
+			"shakudo_mattock"
+		],
+		"steel_tools": [
+			"steel_shovel",
+			"steel_pickaxe",
+			"steel_axe",
+			"steel_dolabra",
+			"steel_hoe",
+			"steel_mattock"
+		],
+		"combined_tools": [
+			"copper_dolabra",
+			"copper_mattock",
+			"iron_dolabra",
+			"iron_mattock",
+			"diamond_dolabra",
+			"diamond_mattock",
+			"adamant_dolabra",
+			"adamant_mattock"
+		],
+		"misc_tools": [
+			"snow_shovel",
+			"bloodrage_hatchet",
+			"archaeologists_brush",
+			"tinder",
+			"bedrock_buster"
+		],
+		"shears": [
+			"copper_shears",
+			"bronze_shears",
+			"steel_shears"
+		],
+		"bundles": [
+			"seed_bundle",
+			"exotic_seed_bundle",
+			"floral_bundle",
+			"mushy_bundle",
+			"lava_kit"
+		],
+		"compasses": [
+			"copper_compass",
+			"golden_compass",
+			"titanium_compass"
+		],
+		"clay_statues": [
+			"cheerful_clay_statue",
+			"mournful_clay_statue"
+		],
+		"music_discs": [
+			"music_disc_golden",
+			"music_disc_labyrinthine"
+		]
+	},
+	"combat": {
+		"sturdy_leather_armour": [
+			"sturdy_leather_helmet",
+			"sturdy_leather_chestplate",
+			"sturdy_leather_leggings",
+			"sturdy_leather_boots",
+			"gilded_leather_boots"
+		],
+		"bronze_armour": [
+			"bronze_helmet",
+			"bronze_chestplate",
+			"bronze_leggings",
+			"bronze_boots",
+			"bronze_elytra"
+		],
+		"electrum_armour": [
+			"electrum_helmet",
+			"electrum_chestplate",
+			"electrum_leggings",
+			"electrum_boots"
+		],
+		"palatinate_armour": [
+			"shakudo_helmet",
+			"shakudo_chestplate",
+			"shakudo_leggings",
+			"shakudo_boots"
+		],
+		"steel_armour": [
+			"steel_helmet",
+			"steel_chestplate",
+			"steel_leggings",
+			"steel_boots"
+		],
+		"head_accessories": [
+			"bronze_laurel",
+			"ruby_circlet",
+			"amber_earrings",
+			"opal_earrings",
+			"topaz_earrings"
+		],
+		"material_weapons": [
+			"bronze_sword",
+			"bronze_spear",
+			"electrum_sword",
+			"electrum_spear",
+			"palatinate_sword",
+			"shakudo_spear",
+			"steel_sword",
+			"steel_spear"
+		],
+		"special_weapons": [
+			"silver_sword",
+			"adamant_claymore",
+			"rusty_axe",
+			"butcher_knife",
+			"crook"
+		],
+		"ranged_weapons": [
+			"compound_bow",
+			"apotropaic_arrow",
+			"nightshade_arrow"
+		],
+		"warding_gear": [
+			"warding_sword",
+			"lesser_warding_shield",
+			"warding_shield",
+			"wooden_cross"
+		]
+	},
+	"foods": {
+		"one_star_fish": [
+			"alaska_blackfish",
+			"anchovy",
+			"bluegill",
+			"bujurqui",
+			"crappie",
+			"freshwater_pufferfish",
+			"guppy",
+			"humpback_whitefish",
+			"mediterranean_killifish",
+			"rainbow_wrasse",
+			"shad",
+			"striped_perch"
+		],
+		"two_star_fish": [
+			"black_seabass",
+			"carp",
+			"pale_fish",
+			"echo_fish",
+			"flying_fish",
+			"gurnard",
+			"herring",
+			"lamprey",
+			"mahi_mahi",
+			"piranha",
+			"spoonhead_sculpin",
+			"walleye"
+		],
+		"three_star_fish": [
+			"armoured_catfish",
+			"catfish",
+			"flounder",
+			"gar",
+			"monkfish",
+			"northern_pike",
+			"painted_moray",
+			"sturgeon",
+			"tunisian_barb",
+			"wolffish"
+		],
+		"four_star_fish": [
+			"arapaima",
+			"bass",
+			"swordfish",
+			"european_eel",
+			"muskellunge",
+			"oarfish",
+			"opah",
+			"siberian_sturgeon",
+			"skate"
+		],
+		"seafood_dishes": [
+			"cooked_pufferfish",
+			"charred_fish",
+			"bokguk",
+			"gimmari",
+			"squid_ink_pasta"
+		],
+		"simple_cooked_foods": [
+			"fried_egg",
+			"charred_meat",
+			"charred_potato",
+			"baked_apple",
+			"baked_golden_apple",
+			"baked_pumpkin",
+			"grilled_melon",
+			"grilled_tomatoes",
+			"steamed_carrots",
+			"golden_steamed_carrots",
+			"braised_brown_mushroom",
+			"braised_red_mushroom",
+			"braised_crimson_fungus",
+			"braised_warped_fungus",
+			"stuffed_mushrooms",
+			"cheese",
+			"glow_mash"
+		],
+		"preserved_foods": [
+			"pickled_carrots",
+			"golden_pickled_carrots",
+			"pickled_mushrooms",
+			"pickled_red_mushrooms",
+			"pickled_crimson_fungus",
+			"pickled_warped_fungus",
+			"pickled_potatoes",
+			"pickled_tomatoes",
+			"canned_apples",
+			"canned_golden_apples",
+			"sweet_berry_mash"
+		],
+		"main_meals": [
+			"gnocchi",
+			"green_curry",
+			"japanese_curry",
+			"paneer_makhani",
+			"chicken_noodle_soup",
+			"ramen",
+			"crimson_stroganoff",
+			"red_mushroom_stroganoff",
+			"stroganoff",
+			"warped_stroganoff"
+		],
+		"breads_and_savouries": [
+			"bruschetta",
+			"french_toast",
+			"honied_french_toast",
+			"latke",
+			"naan",
+			"pupusa"
+		],
+		"sweets": [
+			"apple_empanada",
+			"golden_apple_empanada",
+			"pumpkin_empanada",
+			"golden_pie",
+			"brownie",
+			"chocolate",
+			"chocolate_chip_cookie",
+			"carrot_cupcake",
+			"golden_carrot_cupcake",
+			"chorus_mochi",
+			"glow_berry_crumble",
+			"puerquito",
+			"sweet_berry_danish",
+			"sweet_berry_toast"
+		],
+		"drinks_and_jams": [
+			"milk_bottle",
+			"honey_ginger_tea",
+			"mead",
+			"melon_sorbet",
+			"glow_jam",
+			"pumpkin_jam",
+			"rind_jam",
+			"sweet_berry_jam"
+		]
+	},
+	"ingredients": {
+		"cooking_recipes": [
+			"chorus_mochi_recipe",
+			"gnocchi_recipe",
+			"sweet_berry_toast_recipe",
+			"warped_stroganoff_recipe"
+		],
+		"cooking_bases": [
+			"flour",
+			"flour_bag",
+			"dough",
+			"uncooked_curry",
+			"uncooked_green_curry",
+			"uncooked_paneer_makhani",
+			"uncooked_ramen"
+		],
+		"industrial_materials": [
+			"benzene",
+			"carbon_rich_iron"
+		],
+		"gems": [
+			"amber",
+			"opal",
+			"ruby",
+			"topaz"
+		],
+		"animal_materials": [
+			"fish_bones",
+			"fox_pelt",
+			"sulfur_goo",
+			"tallow"
+		],
+		"blessings": [
+			"blessing_aeolus",
+			"blessing_apollo",
+			"blessing_arachnae",
+			"blessing_ares",
+			"blessing_artemis",
+			"blessing_clement",
+			"blessing_cronus",
+			"blessing_daedalus",
+			"blessing_demeter",
+			"blessing_eros",
+			"blessing_glaucus",
+			"blessing_god_king",
+			"blessing_hyacinthus",
+			"blessing_icarus",
+			"blessing_lu_ban",
+			"blessing_paris",
+			"blessing_prometheus",
+			"blessing_talos",
+			"blessing_warding",
+			"blessing_will",
+			"blessing_yama",
+			"blessing_yamm",
+			"ofuda"
+		],
+		"flasks": [
+			"estus_flask",
+			"volatile_infested",
+			"volatile_invisibility",
+			"volatile_oozing",
+			"volatile_pitch",
+			"volatile_poison",
+			"volatile_slowness",
+			"volatile_weakness",
+			"volatile_weaving",
+			"volatile_wind_charged",
+			"volatile_wither"
+		],
+		"special_items": [
+			"heart_container",
+			"iou"
+		],
+		"books": [
+			"avesta",
+			"divine_comedy",
+			"enoch",
+			"paradise_lost",
+			"quran",
+			"solomon",
+			"tanakh"
+		]
+	},
+	"spawn_eggs": {
+		"misc_spawn_items": [
+			"application",
+			"axolotl"
+		],
+		"calves": [
+			"crate_cold_cow",
+			"crate_temperate_cow",
+			"crate_warm_cow"
+		],
+		"piglets": [
+			"crate_cold_pig",
+			"crate_temperate_pig",
+			"crate_warm_pig"
+		],
+		"lambs": [
+			"crate_sheep_black",
+			"crate_sheep_white",
+			"crate_sheep_brown"
+		],
+		"fertilised_eggs": [
+			"fertilised_egg",
+			"fertilised_brown_egg",
+			"fertilised_blue_egg"
+		]
+	},
+	"functional_blocks": {
+		"special_blocks": [
+			"invisible_item_frame",
+			"warding_stone"
+		]
+	}
+}

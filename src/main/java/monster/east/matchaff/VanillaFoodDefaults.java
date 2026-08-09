@@ -43,9 +43,14 @@ final class VanillaFoodDefaults {
 		for (String name : RECIPE_FILES) {
 			definitions.add(readRecipe(name));
 		}
+		definitions.add(readRecipeAt("/data/crafting/recipe/morsel_stew.json"));
 		for (String name : LOOT_FILES) {
 			definitions.add(readLootTable(name));
 		}
+		definitions.add(readNestedLootTable(
+				"/data/minecraft/loot_table/blocks/beetroots.json", "minecraft:beetroot"));
+		definitions.add(readNestedLootTable(
+				"/data/minecraft/loot_table/blocks/chorus_plant.json", "minecraft:chorus_fruit"));
 		definitions.add(readNestedLootTable(
 				"/data/minecraft/loot_table/blocks/melon.json", "minecraft:melon_slice"));
 
@@ -63,7 +68,11 @@ final class VanillaFoodDefaults {
 	}
 
 	private static Definition readRecipe(String name) {
-		JsonObject root = readJson("/data/food/recipe/" + name + ".json");
+		return readRecipeAt("/data/food/recipe/" + name + ".json");
+	}
+
+	private static Definition readRecipeAt(String path) {
+		JsonObject root = readJson(path);
 		JsonObject result = root.getAsJsonObject("result");
 		return new Definition(result.get("id").getAsString(), result.getAsJsonObject("components"));
 	}

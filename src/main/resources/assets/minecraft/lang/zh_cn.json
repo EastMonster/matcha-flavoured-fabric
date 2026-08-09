@@ -422,5 +422,9 @@
 	"item.kleispack.trade.bulk_dripstone": "整包流石",
 	"item.kleispack.trade.bulk_dripstone.desc": "流石 ×64",
 	"item.kleispack.bundle.lava_kit": "地热包",
-	"item.kleispack.butcher_knife": "剁刀"
+	"item.kleispack.butcher_knife": "剁刀",
+	"item.kleispack.rose_classic": "玫瑰",
+	"item.kleispack.cyan_rose_classic": "青色玫瑰",
+	"item.kleispack.dandelion_classic": "蒲公英",
+	"item.kleispack.porkchop_classic": "猪排"
 }

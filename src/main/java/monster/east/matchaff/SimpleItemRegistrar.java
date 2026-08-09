@@ -119,6 +119,7 @@ public final class SimpleItemRegistrar {
 	private static ResourceKey<CreativeModeTab> tab(String tab) {
 		return switch (tab) {
 			case "combat" -> CreativeModeTabs.COMBAT;
+			case "functional_blocks" -> CreativeModeTabs.FUNCTIONAL_BLOCKS;
 			case "tools" -> CreativeModeTabs.TOOLS_AND_UTILITIES;
 			case "ingredients" -> CreativeModeTabs.INGREDIENTS;
 			case "foods" -> CreativeModeTabs.FOOD_AND_DRINKS;

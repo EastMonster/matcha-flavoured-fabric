@@ -422,5 +422,9 @@
 	"item.kleispack.trade.bulk_dripstone": "Bulk Flowstone",
 	"item.kleispack.trade.bulk_dripstone.desc": "x64 Flowstone",
 	"item.kleispack.bundle.lava_kit": "Geothermal Bundle",
-	"item.kleispack.butcher_knife": "Cleaver"
+	"item.kleispack.butcher_knife": "Cleaver",
+	"item.kleispack.rose_classic": "Rose",
+	"item.kleispack.cyan_rose_classic": "Cyan Rose",
+	"item.kleispack.dandelion_classic": "Dandelion",
+	"item.kleispack.porkchop_classic": "Porkchop"
 }

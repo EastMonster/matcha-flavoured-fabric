@@ -13,6 +13,7 @@
 		"FoodHealMixin"
 	],
 	"client": [
+		"CreatorNamespaceMixin",
 		"LeavesBreakingMixin",
 		"LeavesCullMixin"
 	],
