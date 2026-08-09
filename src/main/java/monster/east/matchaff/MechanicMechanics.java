@@ -85,6 +85,8 @@ public final class MechanicMechanics {
 	private static final List<BusterTask> PENDING_BUSTER = new ArrayList<>();
 	private static final Set<ArmorStand> WARDING_STONES =
 			Collections.newSetFromMap(new IdentityHashMap<>());
+	private static final Set<Villager> VILLAGERS =
+			Collections.newSetFromMap(new IdentityHashMap<>());
 
 	private MechanicMechanics() {
 	}
@@ -94,9 +96,13 @@ public final class MechanicMechanics {
 			PENDING_WEATHER.clear();
 			PENDING_BUSTER.clear();
 			WARDING_STONES.clear();
+			VILLAGERS.clear();
 		});
-		ServerEntityEvents.ENTITY_LOAD.register(MechanicMechanics::trackWardingStone);
-		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> WARDING_STONES.remove(entity));
+		ServerEntityEvents.ENTITY_LOAD.register(MechanicMechanics::trackEntity);
+		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
+			WARDING_STONES.remove(entity);
+			VILLAGERS.remove(entity);
+		});
 		// The datapack's scheduled function runs before entities tick, so the
 		// glowing TNT is still alive (fuse 1) when bedrock is removed. Running
 		// this at END_SERVER_TICK left the TNT exploded and never found it.
@@ -182,8 +188,9 @@ public final class MechanicMechanics {
 			return;
 		}
 		var level = (ServerLevel) player.level();
-		var villager = level.getEntitiesOfClass(Villager.class, player.getBoundingBox().inflate(64.0))
-				.stream().min(Comparator.comparingDouble(v -> v.distanceToSqr(player)));
+		var villager = VILLAGERS.stream()
+				.filter(v -> v.level() == level)
+				.min(Comparator.comparingDouble(v -> v.distanceToSqr(player)));
 		villager.ifPresent(v -> level.sendParticles(ParticleTypes.POOF,
 				v.getX(), v.getY() + 0.5, v.getZ(), 40, 0.25, 1.0, 0.25, 0.05));
 		revoke(player, APPLICATION);
@@ -194,7 +201,8 @@ public final class MechanicMechanics {
 			return;
 		}
 		var level = (ServerLevel) player.level();
-		var ghast = level.getEntitiesOfClass(HappyGhast.class, player.getBoundingBox().inflate(80.0))
+		var ghast = level.getEntitiesOfClass(HappyGhast.class, player.getBoundingBox().inflate(80.0),
+				g -> g.distanceToSqr(player) <= 80.0 * 80.0)
 				.stream().min(Comparator.comparingDouble(g -> g.distanceToSqr(player)));
 		ghast.ifPresent(g -> {
 			var target = player.position().add(player.getLookAngle().scale(3.0));
@@ -284,9 +292,12 @@ public final class MechanicMechanics {
 		});
 	}
 
-	private static void trackWardingStone(Entity entity, ServerLevel level) {
+	private static void trackEntity(Entity entity, ServerLevel level) {
 		if (entity instanceof ArmorStand stone && stone.entityTags().contains("WardingStone")) {
 			WARDING_STONES.add(stone);
+		}
+		if (entity instanceof Villager villager) {
+			VILLAGERS.add(villager);
 		}
 	}
 
@@ -305,7 +316,8 @@ public final class MechanicMechanics {
 
 			// Heal friendly villagers nearby.
 			var friends = level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(16.0),
-					f -> f.getType().builtInRegistryHolder().is(VILLAGER_FRIENDS));
+					f -> f.getType().builtInRegistryHolder().is(VILLAGER_FRIENDS)
+							&& f.distanceToSqr(stone) <= 16.0 * 16.0);
 			boolean someoneRegenerating = friends.stream()
 					.anyMatch(f -> f.hasEffect(MobEffects.REGENERATION));
 			if (!someoneRegenerating) {

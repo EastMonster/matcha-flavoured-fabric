@@ -27,7 +27,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
@@ -332,11 +331,12 @@ public final class WorldMechanics {
 		var type = mob.getType();
 		if (type.builtInRegistryHolder().is(MUNDANE_HOSTILES)
 				|| type == EntityTypes.ZOMBIFIED_PIGLIN || type == EntityTypes.PIGLIN) {
-			for (EquipmentSlot slot : EquipmentSlot.values()) {
+			for (EquipmentSlot slot : List.of(EquipmentSlot.FEET, EquipmentSlot.LEGS,
+					EquipmentSlot.CHEST, EquipmentSlot.HEAD, EquipmentSlot.MAINHAND)) {
 				mob.setDropChance(slot, 0);
 			}
 		}
-		boolean baby = mob instanceof AgeableMob ageable && ageable.isBaby();
+		boolean baby = mob.isBaby();
 		if (type.builtInRegistryHolder().is(EntityTypeTags.SKELETONS)) {
 			setBase(mob, Attributes.MAX_HEALTH, 10);
 		}

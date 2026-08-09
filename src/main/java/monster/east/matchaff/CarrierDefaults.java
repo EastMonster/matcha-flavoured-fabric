@@ -46,7 +46,7 @@ final class CarrierDefaults {
 			case "minecraft:cod" -> properties.food(Foods.COD);
 			case "minecraft:salmon" -> properties.food(Foods.SALMON);
 			case "minecraft:pufferfish" -> properties.food(Foods.PUFFERFISH, Consumables.PUFFERFISH);
-			case "minecraft:poisonous_potato" -> properties.food(Foods.POISONOUS_POTATO, Consumables.POISONOUS_POTATO);
+			case "minecraft:poisonous_potato" -> properties.component(DataComponents.FOOD, Foods.POISONOUS_POTATO);
 			case "minecraft:rotten_flesh" -> properties.food(Foods.ROTTEN_FLESH, Consumables.ROTTEN_FLESH);
 
 			case "minecraft:wooden_sword" -> properties.sword(ToolMaterial.WOOD, 3.0F, -2.4F);

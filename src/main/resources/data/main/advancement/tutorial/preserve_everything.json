@@ -97,8 +97,11 @@
 			"translate": "advancements.main.tutorial.preserve_everything.description"
 		},
 		"icon": {
+			"components": {
+				"minecraft:item_model": "minecraft:pickle_everything"
+			},
 			"count": 1,
-			"id": "matcha-flavoured:pickle_everything"
+			"id": "minecraft:poisonous_potato"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.preserve_everything.title"

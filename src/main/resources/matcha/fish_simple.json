@@ -596,14 +596,6 @@
 		}
 	},
 	{
-		"id": "gay_fish",
-		"type": "item",
-		"tab": "ingredients",
-		"source": "data/main/advancement/tutorial/catch_everything.json",
-		"carrier": "minecraft:emerald",
-		"components": {}
-	},
-	{
 		"id": "glow_mash",
 		"type": "item",
 		"tab": "foods",
@@ -988,14 +980,6 @@
 		}
 	},
 	{
-		"id": "pickle_everything",
-		"type": "item",
-		"tab": "ingredients",
-		"source": "data/main/advancement/tutorial/preserve_everything.json",
-		"carrier": "minecraft:poisonous_potato",
-		"components": {}
-	},
-	{
 		"id": "pickled_crimson_fungus",
 		"type": "splash_potion",
 		"tab": "foods",
@@ -1111,22 +1095,6 @@
 				}
 			]
 		}
-	},
-	{
-		"id": "secret_ingredient",
-		"type": "item",
-		"tab": "ingredients",
-		"source": "data/main/advancement/tutorial/cook_secret_food.json",
-		"carrier": "minecraft:poisonous_potato",
-		"components": {}
-	},
-	{
-		"id": "secret_meal",
-		"type": "item",
-		"tab": "ingredients",
-		"source": "data/main/advancement/tutorial/cook_secret_meal.json",
-		"carrier": "minecraft:poisonous_potato",
-		"components": {}
 	},
 	{
 		"id": "seed_bundle",

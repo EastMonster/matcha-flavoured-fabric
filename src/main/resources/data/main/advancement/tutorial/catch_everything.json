@@ -391,8 +391,11 @@
 			"translate": "advancements.main.tutorial.catch_everything.description"
 		},
 		"icon": {
+			"components": {
+				"minecraft:item_model": "minecraft:gay_fish"
+			},
 			"count": 1,
-			"id": "matcha-flavoured:gay_fish"
+			"id": "minecraft:emerald"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.catch_everything.title"

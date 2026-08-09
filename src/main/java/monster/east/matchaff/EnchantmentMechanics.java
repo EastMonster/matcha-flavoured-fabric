@@ -180,7 +180,8 @@ public final class EnchantmentMechanics {
 			var level = (ServerLevel) player.level();
 			for (LivingEntity nearby : level.getEntitiesOfClass(LivingEntity.class,
 					player.getBoundingBox().inflate(3.0),
-					entity -> entity.getType().builtInRegistryHolder().is(LIVESTOCK))) {
+					entity -> entity.getType().builtInRegistryHolder().is(LIVESTOCK)
+							&& entity.distanceToSqr(player) <= 3.0 * 3.0)) {
 				nearby.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 9, true, false));
 			}
 		}
