@@ -23,10 +23,27 @@ public final class FoodHealMechanics {
 	private static final class HealTask {
 		int ticksLeft;
 		final int interval;
+		final MobEffectInstance visibleEffect;
+		boolean started;
 
-		HealTask(int duration, int interval) {
+		HealTask(MobEffectInstance segment, int duration) {
 			this.ticksLeft = duration;
-			this.interval = interval;
+			if (isHealingSimulation(segment)) {
+				this.interval = Math.max(1, 50 >> segment.getAmplifier());
+				this.visibleEffect = null;
+			} else {
+				this.interval = 0;
+				this.visibleEffect = new MobEffectInstance(segment.getEffect(), duration, segment.getAmplifier(),
+						segment.isAmbient(), segment.isVisible(), segment.showIcon());
+			}
+		}
+
+		boolean start(ServerPlayer player) {
+			if (started) {
+				return false;
+			}
+			started = true;
+			return visibleEffect != null && player.addEffect(new MobEffectInstance(visibleEffect));
 		}
 	}
 
@@ -44,11 +61,7 @@ public final class FoodHealMechanics {
 				if (effective <= 0) {
 					break;
 				}
-				if (!segment.showIcon()) {
-					// Only the hidden healing-simulation segments are scheduled;
-					// icon-bearing segments stay real effects (see mixin).
-					tasks.add(new HealTask(effective, Math.max(1, 50 >> segment.getAmplifier())));
-				}
+				tasks.add(new HealTask(segment, effective));
 				elapsed += effective;
 			}
 		}
@@ -71,9 +84,11 @@ public final class FoodHealMechanics {
 					if (task == null) {
 						return true;
 					}
+					task.start(player);
 					// Mirrors RegenerationMobEffect: heal when duration % interval == 0,
-					// then decrement; only heals below max health.
-					if (task.ticksLeft % task.interval == 0 && player.getHealth() < player.getMaxHealth()) {
+					// then decrement; real regeneration segments are applied normally.
+					if (task.visibleEffect == null && task.ticksLeft % task.interval == 0
+							&& player.getHealth() < player.getMaxHealth()) {
 						player.heal(1.0F);
 					}
 					task.ticksLeft--;
@@ -88,30 +103,29 @@ public final class FoodHealMechanics {
 
 	/**
 	 * Hooks from FoodHealMixin: schedules the hidden healing-simulation segments
-	 * and returns adjusted copies of the icon-bearing regeneration segments. The
-	 * copies have their duration reduced by the time the earlier chain segments
-	 * already consumed, exactly like vanilla's hidden-effect take-over.
+	 * and applies real regeneration segments only when their place in the vanilla
+	 * hidden-effect chain begins.
 	 */
-	public static List<MobEffectInstance> onConsumed(ServerPlayer player, List<MobEffectInstance> regens) {
+	public static boolean onConsumed(ServerPlayer player, List<MobEffectInstance> regens) {
 		List<MobEffectInstance> chain = buildChain(regens);
 		if (chain.isEmpty()) {
-			return null;
+			return false;
 		}
-		PENDING.computeIfAbsent(player.getUUID(), key -> new ArrayList<>()).add(new HealChain(chain));
-		List<MobEffectInstance> visible = new ArrayList<>();
-		int elapsed = 0;
-		for (MobEffectInstance segment : chain) {
-			int effective = segment.getDuration() - elapsed;
-			if (effective <= 0) {
-				break;
-			}
-			if (segment.showIcon()) {
-				visible.add(new MobEffectInstance(segment.getEffect(), effective, segment.getAmplifier(),
-						segment.isAmbient(), segment.isVisible(), segment.showIcon()));
-			}
-			elapsed += effective;
+		HealChain healChain = new HealChain(chain);
+		HealTask first = healChain.tasks.peek();
+		if (first == null) {
+			return false;
 		}
-		return visible.isEmpty() ? null : visible;
+		boolean applied = first.start(player);
+		PENDING.computeIfAbsent(player.getUUID(), key -> new ArrayList<>()).add(healChain);
+		return applied;
+	}
+
+	private static boolean isHealingSimulation(MobEffectInstance segment) {
+		// Matcha's direct food-heal segments are hidden Regeneration III/IV.
+		// Lower amplifiers are genuine timed effects even when their icon is hidden,
+		// as on the enchanted golden apple's Regeneration II.
+		return !segment.showIcon() && segment.getAmplifier() >= 2;
 	}
 
 	/**

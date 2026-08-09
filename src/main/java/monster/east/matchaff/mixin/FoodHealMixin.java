@@ -20,11 +20,10 @@ import java.util.List;
  * Food healing in the datapack is simulated with regeneration, but the effect
  * refreshes in place (duration never stacks), so eating the same food twice in
  * a row silently loses healing. This mixin intercepts the consume effect:
- * regeneration segments without a status icon (the healing simulation) are not
- * applied as effects, instead an independent per-food heal schedule starts
- * (see {@link FoodHealMechanics}). Icon-bearing regeneration segments (e.g.
- * baked apple's lingering 10s regeneration) stay as real effects: they show
- * their icon and refresh like vanilla potions, stacking never applies.
+ * hidden high-amplifier regeneration segments (the healing simulation) are not
+ * applied as effects, instead an independent per-food heal schedule starts.
+ * Genuine timed regeneration is applied when its place in the vanilla hidden
+ * effect chain begins (see {@link FoodHealMechanics}).
  */
 @Mixin(ApplyStatusEffectsConsumeEffect.class)
 public abstract class FoodHealMixin {
@@ -44,24 +43,15 @@ public abstract class FoodHealMixin {
 		if (regens.isEmpty()) {
 			return; // no regeneration, keep the vanilla behaviour
 		}
-		List<MobEffectInstance> visibleAdjusted = FoodHealMechanics.onConsumed(player, regens);
 		if (user.getRandom().nextFloat() >= self.probability()) {
 			cir.setReturnValue(false);
 			return;
 		}
-		boolean anyApplied = false;
+		boolean anyApplied = FoodHealMechanics.onConsumed(player, regens);
 		for (MobEffectInstance effect : self.effects()) {
-			// The healing-simulation segments are scheduled, not applied; the
-			// icon-bearing ones are applied below with their adjusted duration.
+			// Regeneration is handled as one ordered chain by FoodHealMechanics.
 			if (!effect.getEffect().is(MobEffects.REGENERATION) && user.addEffect(new MobEffectInstance(effect))) {
 				anyApplied = true;
-			}
-		}
-		if (visibleAdjusted != null) {
-			for (MobEffectInstance effect : visibleAdjusted) {
-				if (user.addEffect(new MobEffectInstance(effect))) {
-					anyApplied = true;
-				}
 			}
 		}
 		cir.setReturnValue(anyApplied);
