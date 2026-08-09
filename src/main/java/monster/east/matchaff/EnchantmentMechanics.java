@@ -32,10 +32,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Comparator;
-import java.util.UUID;
 import java.util.function.Predicate;
 
 /**
@@ -80,10 +77,6 @@ public final class EnchantmentMechanics {
 			Identifier.fromNamespaceAndPath("matcha-flavoured", "anemos_ready_tick")
 	);
 
-	/** Cooldown bookkeeping keyed by player UUID, storing the tickCount of the last trigger. */
-	private static final Map<UUID, Integer> DIVINITY_LAST = new HashMap<>();
-	private static final Map<UUID, Integer> WARDING_LAST = new HashMap<>();
-
 	private EnchantmentMechanics() {
 	}
 
@@ -118,7 +111,7 @@ public final class EnchantmentMechanics {
 		int apotropaic = countArmor(player, enchantments, WARDING_ARMOUR);
 		if (apotropaic > 0) {
 			int interval = apotropaic % 2 == 1 ? 10 : 20;
-			if (elapsed(player, WARDING_LAST, interval)) {
+			if (elapsed(player, interval)) {
 				int level = apotropaic == 1 ? 1 : apotropaic == 4 ? 3 : 2;
 				wardingAura(player, level);
 			}
@@ -128,7 +121,7 @@ public final class EnchantmentMechanics {
 		int divinity = countArmor(player, enchantments, DIVINITY) + maxLevel(mainHand, enchantments, DIVINITY);
 		if (divinity > 0) {
 			int interval = divinity == 5 ? 300 : 600;
-			if (elapsed(player, DIVINITY_LAST, interval)) {
+			if (elapsed(player, interval)) {
 				int amplifier = divinity - 1;
 				int duration = divinity == 5 ? 300 : 600;
 				player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, duration, amplifier, true, true));
@@ -363,14 +356,8 @@ public final class EnchantmentMechanics {
 		return Math.max(maxLevel(first, enchantments, ids), maxLevel(second, enchantments, ids));
 	}
 
-	private static boolean elapsed(ServerPlayer player, Map<UUID, Integer> last, int interval) {
-		Integer previous = last.get(player.getUUID());
-		int now = player.tickCount;
-		if (previous == null || now - previous >= interval) {
-			last.put(player.getUUID(), now);
-			return true;
-		}
-		return false;
+	private static boolean elapsed(ServerPlayer player, int interval) {
+		return player.level().getServer().getTickCount() % interval == 0;
 	}
 
 	private static Identifier id(String name) {

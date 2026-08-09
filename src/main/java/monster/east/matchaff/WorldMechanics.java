@@ -87,7 +87,10 @@ public final class WorldMechanics {
 
 	public static void init() {
 		ServerLifecycleEvents.SERVER_STARTED.register(WorldMechanics::onServerStarted);
-		ServerLifecycleEvents.SERVER_STOPPED.register(server -> DIVINE_ITEMS.clear());
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
+			LAST_BOATING_DISTANCE.clear();
+			DIVINE_ITEMS.clear();
+		});
 		ServerEntityEvents.ENTITY_LOAD.register(WorldMechanics::trackDivineItem);
 		ServerEntityEvents.ENTITY_LOAD.register(WorldMechanics::initializeMundaneHostile);
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> DIVINE_ITEMS.remove(entity));
@@ -216,6 +219,7 @@ public final class WorldMechanics {
 	private static void boatParticles(ServerPlayer player) {
 		boolean justBoarded = advancementDone(player, BOARDING_BOAT_ADVANCEMENT);
 		if (!(player.getVehicle() instanceof AbstractBoat boat)) {
+			LAST_BOATING_DISTANCE.remove(player.getUUID());
 			if (justBoarded) {
 				revoke(player, BOARDING_BOAT_ADVANCEMENT);
 			}

@@ -1,5 +1,7 @@
 package monster.east.matchaff;
 
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -73,6 +75,12 @@ public final class FoodHealMechanics {
 	}
 
 	public static void init() {
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> PENDING.clear());
+		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
+			if (entity instanceof ServerPlayer player) {
+				PENDING.remove(player.getUUID());
+			}
+		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				List<HealChain> chains = PENDING.get(player.getUUID());
@@ -97,6 +105,9 @@ public final class FoodHealMechanics {
 					}
 					return chain.tasks.isEmpty();
 				});
+				if (chains.isEmpty()) {
+					PENDING.remove(player.getUUID());
+				}
 			}
 		});
 	}

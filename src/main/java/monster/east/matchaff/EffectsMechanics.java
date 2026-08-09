@@ -1,6 +1,9 @@
 package monster.east.matchaff;
 
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
@@ -29,13 +32,21 @@ public final class EffectsMechanics {
 	};
 	private static final int[] SOUL_SIGHT_DURATIONS = {600, 1200, 60};
 
-	/** Player UUID -> [tick the glow triggers, duration in ticks]. */
+	/** Player UUID -> [server tick the glow triggers, duration in ticks]. */
 	private static final Map<UUID, int[]> PENDING_SOUL_SIGHT = new HashMap<>();
 
 	private EffectsMechanics() {
 	}
 
 	public static void init() {
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> PENDING_SOUL_SIGHT.clear());
+		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
+			if (entity instanceof ServerPlayer player) {
+				PENDING_SOUL_SIGHT.remove(player.getUUID());
+			}
+		});
+		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
+				PENDING_SOUL_SIGHT.remove(handler.getPlayer().getUUID()));
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				tick(player);
@@ -53,14 +64,16 @@ public final class EffectsMechanics {
 			var level = (ServerLevel) player.level();
 			level.playSound(null, player.getX(), player.getY(), player.getZ(),
 					SoundEvents.BELL_RESONATE, SoundSource.PLAYERS, 2.0F, 1.0F);
-			PENDING_SOUL_SIGHT.put(player.getUUID(), new int[] {player.tickCount + 48, SOUL_SIGHT_DURATIONS[i]});
+			PENDING_SOUL_SIGHT.put(player.getUUID(), new int[] {
+					player.level().getServer().getTickCount() + 48, SOUL_SIGHT_DURATIONS[i]
+			});
 			for (String criterion : advancement.value().criteria().keySet()) {
 				player.getAdvancements().revoke(advancement, criterion);
 			}
 		}
 
 		int[] pending = PENDING_SOUL_SIGHT.get(player.getUUID());
-		if (pending != null && player.tickCount >= pending[0]) {
+		if (pending != null && player.level().getServer().getTickCount() >= pending[0]) {
 			PENDING_SOUL_SIGHT.remove(player.getUUID());
 			applyGlow(player, pending[1]);
 		}

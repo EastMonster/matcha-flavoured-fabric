@@ -32,6 +32,7 @@ Use a new world when possible. Existing items from the data-pack version are not
 ## Changes that may cause behavioral differences
 
 - Command-driven mechanics are reimplemented in Java. Tested gameplay is intended to match the data pack, but very short timing windows, multiplayer target selection, and server restarts during delayed actions may behave differently.
+- Hidden food-healing simulations are stored only for the current server session. If a single-player world is exited or the server stops before the healing finishes, the remaining hidden healing is discarded. Normally applied status effects are still saved by vanilla.
 - Anemos uses an internal 20-tick player cooldown instead of the visible Unluck effect used as a timer by the data pack. Milk and cleansing cannot reset this cooldown.
 - Gives selected vanilla food carriers Matcha components by default so creative-tab and plain `/give` stacks match their crafted or dropped counterparts. This can also apply Matcha food behavior to those vanilla IDs when another source creates an otherwise unmodified stack.
 - Soul Sight stores one pending activation per player. Eating different Soul Sight foods within the 48-tick delay makes the later activation replace the earlier one. Repeating the same food behaves like the data pack's replaced scheduled function.

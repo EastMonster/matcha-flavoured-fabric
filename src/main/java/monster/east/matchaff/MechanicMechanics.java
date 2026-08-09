@@ -90,7 +90,11 @@ public final class MechanicMechanics {
 	}
 
 	public static void init() {
-		ServerLifecycleEvents.SERVER_STOPPED.register(server -> WARDING_STONES.clear());
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
+			PENDING_WEATHER.clear();
+			PENDING_BUSTER.clear();
+			WARDING_STONES.clear();
+		});
 		ServerEntityEvents.ENTITY_LOAD.register(MechanicMechanics::trackWardingStone);
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> WARDING_STONES.remove(entity));
 		// The datapack's scheduled function runs before entities tick, so the
