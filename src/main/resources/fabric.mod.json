@@ -20,6 +20,12 @@
 	"entrypoints": {
 		"main": [
 			"monster.east.matchaff.MatchaFlavouredFabric"
+		],
+		"client": [
+			"monster.east.matchaff.MatchaFlavouredClient"
+		],
+		"modmenu": [
+			"monster.east.matchaff.MatchaModMenu"
 		]
 	},
 	"mixins": [
@@ -32,5 +38,8 @@
 		"minecraft": "~26.2",
 		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
 	}
 }

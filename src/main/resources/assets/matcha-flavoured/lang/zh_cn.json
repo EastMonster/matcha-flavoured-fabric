@@ -514,5 +514,9 @@
 	"matcha.asylum.summon_hint": "点击地面召唤",
 	"matcha.jukebox.dry_hands": "C418 - Dry Hands",
 	"matcha.jukebox.golden": "Ciren - Golden",
-	"matcha.jukebox.labyrinthine": "Lena Raine - Labyrinthine"
+	"matcha.jukebox.labyrinthine": "Lena Raine - Labyrinthine",
+	"matcha.config.title": "Matcha Flavoured 设置",
+	"matcha.config.leaf_extensions": "树叶外延模型",
+	"matcha.config.leaf_extensions.tooltip": "显示伸出树叶方块边界的装饰面板。切换后会重新加载资源。",
+	"matcha.config.no_leaf_extensions.pack": "Matcha Flavoured：无树叶外延"
 }

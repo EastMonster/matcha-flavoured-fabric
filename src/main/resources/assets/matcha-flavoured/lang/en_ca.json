@@ -514,5 +514,9 @@
 	"matcha.asylum.summon_hint": "Click the ground to summon",
 	"matcha.jukebox.dry_hands": "C418 - Dry Hands",
 	"matcha.jukebox.golden": "Ciren - Golden",
-	"matcha.jukebox.labyrinthine": "Lena Raine - Labyrinthine"
+	"matcha.jukebox.labyrinthine": "Lena Raine - Labyrinthine",
+	"matcha.config.title": "Matcha Flavoured Settings",
+	"matcha.config.leaf_extensions": "Leaf Extensions",
+	"matcha.config.leaf_extensions.tooltip": "Show the decorative panels that extend beyond leaf blocks. Changing this reloads resources.",
+	"matcha.config.no_leaf_extensions.pack": "Matcha Flavoured: No Leaf Extensions"
 }
