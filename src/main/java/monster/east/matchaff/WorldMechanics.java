@@ -64,7 +64,6 @@ import java.util.UUID;
 public final class WorldMechanics {
 	private static final Identifier EERIE_ADVANCEMENT = id("mechanics/enter_village_plains");
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("glass_bottle_from_crafting");
-	private static final Identifier BOARDING_BOAT_ADVANCEMENT = id("particle/boarding_boat");
 	private static final Identifier ENDLESS_REPAIRS_ADVANCEMENT =
 			Identifier.fromNamespaceAndPath("endless_repairs", "inventory_changed");
 
@@ -216,28 +215,23 @@ public final class WorldMechanics {
 	}
 
 	private static void boatParticles(ServerPlayer player) {
-		boolean justBoarded = advancementDone(player, BOARDING_BOAT_ADVANCEMENT);
 		if (!(player.getVehicle() instanceof AbstractBoat boat)) {
 			LAST_BOATING_DISTANCE.remove(player.getUUID());
-			if (justBoarded) {
-				revoke(player, BOARDING_BOAT_ADVANCEMENT);
-			}
 			return;
 		}
 		var level = (ServerLevel) player.level();
 		BlockPos waterPos = BlockPos.containing(boat.getX(), boat.getY() - 0.1, boat.getZ());
 		boolean onWater = level.getBlockState(waterPos).is(Blocks.WATER);
-		if (justBoarded) {
+		int currentDistance = player.getStats().getValue(Stats.CUSTOM, Stats.BOAT_ONE_CM);
+		Integer previousDistance = LAST_BOATING_DISTANCE.put(player.getUUID(), currentDistance);
+		if (previousDistance == null) {
 			if (onWater) {
 				boatParticle(level, boat, ParticleTypes.SPLASH, 0.75, 0.5, 1.0, 5, 0.1, 0.1, 0.1, 1.0);
 				boatParticle(level, boat, ParticleTypes.SPLASH, -0.75, 0.5, 1.0, 5, 0.1, 0.1, 0.1, 1.0);
 				boatParticle(level, boat, ParticleTypes.SPLASH, 0.0, 0.5, 1.0, 5, 0.1, 0.1, 0.1, 1.0);
 			}
-			revoke(player, BOARDING_BOAT_ADVANCEMENT);
 		}
 
-		int currentDistance = player.getStats().getValue(Stats.CUSTOM, Stats.BOAT_ONE_CM);
-		Integer previousDistance = LAST_BOATING_DISTANCE.put(player.getUUID(), currentDistance);
 		if (!onWater || previousDistance == null) {
 			return;
 		}
@@ -278,7 +272,14 @@ public final class WorldMechanics {
 
 	private static void glassBottleReward(ServerPlayer player) {
 		if (advancementDone(player, GLASS_BOTTLE_ADVANCEMENT)) {
-			player.addItem(new ItemStack(Items.GLASS_BOTTLE, 1));
+			ItemStack reward = new ItemStack(Items.GLASS_BOTTLE, 1);
+			if (!player.addItem(reward)) {
+				var dropped = player.drop(reward, false);
+				if (dropped != null) {
+					dropped.setNoPickUpDelay();
+					dropped.setTarget(player.getUUID());
+				}
+			}
 			revoke(player, GLASS_BOTTLE_ADVANCEMENT);
 		}
 	}
@@ -297,16 +298,21 @@ public final class WorldMechanics {
 	}
 
 	private static void initializeMundaneHostile(Entity entity, ServerLevel level) {
-		if (entity instanceof Mob mob
-				&& mob.getType().builtInRegistryHolder().is(MUNDANE_HOSTILES)
-				&& !mob.entityTags().contains("SpawnChecked")) {
-			modifyMob(mob);
-			mob.addTag("SpawnChecked");
+		if (!(entity instanceof Mob mob)
+				|| !mob.getType().builtInRegistryHolder().is(MUNDANE_HOSTILES)
+				|| mob.entityTags().contains("SpawnChecked")) {
+			return;
 		}
+		if (mob.entityTags().contains("SpawnForbidden")) {
+			mob.discard();
+			return;
+		}
+		modifyMob(mob);
+		mob.addTag("SpawnChecked");
 	}
 
 	/**
-	 * Datapack spawn rule: natural non-undead mundane hostiles may not spawn in
+	 * Datapack spawn rule: newly loaded non-undead mundane hostiles may not remain in
 	 * open overworld areas. After the ender dragon dies (safe surface mode) any
 	 * mundane hostile at the surface or above sea level is forbidden.
 	 */

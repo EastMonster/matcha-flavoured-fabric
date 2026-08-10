@@ -4,6 +4,7 @@
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
 		"SpawnPlacementsMixin",
+		"MobSpawnMixin",
 		"PlayerCanEatMixin",
 		"AnvilMenuMixin",
 		"RecipeManagerMixin",

@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * Soul Sight: eating glow jam / glow crumble grants a delayed Glowing effect
+ * Soul Sight: eating glow jam / glow crumble / glow mash grants a delayed Glowing effect
  * to every entity within 50 blocks. Detection reuses the datapack's own
  * consume_item advancements: once granted, the effect fires and the
  * advancement is revoked so the next bite re-triggers it.
@@ -32,8 +32,8 @@ public final class EffectsMechanics {
 	};
 	private static final int[] SOUL_SIGHT_DURATIONS = {600, 1200, 60};
 
-	/** Player UUID -> [server tick the glow triggers, duration in ticks]. */
-	private static final Map<UUID, int[]> PENDING_SOUL_SIGHT = new HashMap<>();
+	/** Player UUID -> one [trigger tick, duration] task for each Soul Sight variant. */
+	private static final Map<UUID, int[][]> PENDING_SOUL_SIGHT = new HashMap<>();
 
 	private EffectsMechanics() {
 	}
@@ -64,18 +64,35 @@ public final class EffectsMechanics {
 			var level = (ServerLevel) player.level();
 			level.playSound(null, player.getX(), player.getY(), player.getZ(),
 					SoundEvents.BELL_RESONATE, SoundSource.PLAYERS, 2.0F, 1.0F);
-			PENDING_SOUL_SIGHT.put(player.getUUID(), new int[] {
+			PENDING_SOUL_SIGHT.computeIfAbsent(player.getUUID(), uuid ->
+					new int[SOUL_SIGHT_ADVANCEMENTS.length][])[i] = new int[] {
 					player.level().getServer().getTickCount() + 48, SOUL_SIGHT_DURATIONS[i]
-			});
+			};
 			for (String criterion : advancement.value().criteria().keySet()) {
 				player.getAdvancements().revoke(advancement, criterion);
 			}
 		}
 
-		int[] pending = PENDING_SOUL_SIGHT.get(player.getUUID());
-		if (pending != null && player.level().getServer().getTickCount() >= pending[0]) {
+		int[][] pending = PENDING_SOUL_SIGHT.get(player.getUUID());
+		if (pending == null) {
+			return;
+		}
+		int now = player.level().getServer().getTickCount();
+		boolean hasPending = false;
+		for (int i = 0; i < pending.length; i++) {
+			int[] task = pending[i];
+			if (task == null) {
+				continue;
+			}
+			if (now >= task[0]) {
+				pending[i] = null;
+				applyGlow(player, task[1]);
+			} else {
+				hasPending = true;
+			}
+		}
+		if (!hasPending) {
 			PENDING_SOUL_SIGHT.remove(player.getUUID());
-			applyGlow(player, pending[1]);
 		}
 	}
 

@@ -138,7 +138,14 @@ public final class MechanicMechanics {
 						MobEffects.REGENERATION, 40, 4, true, true));
 				player.addEffect(new MobEffectInstance(
 						MobEffects.RESISTANCE, 100, 0, true, true));
-				player.addItem(new ItemStack(Items.GLOWSTONE_DUST, 1));
+				ItemStack reward = new ItemStack(Items.GLOWSTONE_DUST, 1);
+				if (!player.addItem(reward)) {
+					var dropped = player.drop(reward, false);
+					if (dropped != null) {
+						dropped.setNoPickUpDelay();
+						dropped.setTarget(player.getUUID());
+					}
+				}
 				var level = (ServerLevel) player.level();
 				level.sendParticles(new DustParticleOptions(0xFFAA17, 1.0F),
 						player.getX(), player.getY() + 1.5, player.getZ(), 8, 0.25, 0.25, 0.25, 0.1);
@@ -328,8 +335,10 @@ public final class MechanicMechanics {
 			}
 
 			boolean anchored = level.getBlockState(pos).is(Blocks.LODESTONE);
-			if (!setup && !anchored) {
-				level.setBlockAndUpdate(pos, Blocks.LODESTONE.defaultBlockState());
+			if (!setup) {
+				if (!anchored) {
+					level.setBlockAndUpdate(pos, Blocks.LODESTONE.defaultBlockState());
+				}
 				level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.25F, 1.0F);
 				level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY + 0.5, stoneZ,
 						10, 0.25, 0.1, 0.25, 0.05);

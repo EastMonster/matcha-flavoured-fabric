@@ -14,10 +14,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * Cancels natural spawns of mundane hostiles in open overworld areas before
- * the mob is even created, so the datapack's "no non-undead mobs on open
- * fields" rule no longer spawns-then-kills (no flash). Player spawn eggs use
- * EntitySpawnReason.SPAWN_ITEM_USE and are unaffected.
+ * Cancels forbidden natural spawns before creation to avoid a visible flash.
+ * MobSpawnMixin marks other forbidden spawn reasons for removal after creation,
+ * preserving their normal spawn-side timing. Spawn eggs and commands are
+ * intentionally exempt for creative-mode testing.
  */
 @Mixin(SpawnPlacements.class)
 public abstract class SpawnPlacementsMixin {
