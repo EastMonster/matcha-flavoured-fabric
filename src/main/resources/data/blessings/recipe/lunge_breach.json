@@ -8,13 +8,19 @@
 	],
 	"key": {
 		"B": "minecraft:enchanted_book",
-		"F": "minecraft:iron_helmet",
 		"b": "minecraft:red_dye",
 		"a": [
 			"minecraft:iron_sword",
 			"minecraft:iron_spear"
 		],
-		"c": "minecraft:shield"
+		"F": [
+			"minecraft:iron_helmet",
+			"matcha-flavoured:steel_helmet"
+		],
+		"c": [
+			"minecraft:shield",
+			"matcha-flavoured:warding_shield"
+		]
 	},
 	"result": {
 		"components": {

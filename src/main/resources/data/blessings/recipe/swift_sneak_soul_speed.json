@@ -9,7 +9,10 @@
 	"key": {
 		"B": "minecraft:enchanted_book",
 		"F": "minecraft:echo_shard",
-		"b": "minecraft:iron_hoe",
+		"b": [
+			"minecraft:iron_hoe",
+			"matcha-flavoured:steel_hoe"
+		],
 		"a": "minecraft:sculk"
 	},
 	"result": {

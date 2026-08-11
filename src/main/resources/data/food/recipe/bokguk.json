@@ -4,7 +4,7 @@
 	"ingredients": [
 		"minecraft:dried_kelp",
 		"minecraft:carrot",
-		"minecraft:pufferfish",
+		"#matcha-flavoured:pufferfish_fish",
 		[
 			"minecraft:cooked_cod",
 			"minecraft:cooked_salmon"
@@ -56,9 +56,9 @@
 				},
 				{
 					"translate": "matcha.lore.conduit_power",
-						"with": [
-							"8:00"
-						],
+					"with": [
+						"8:00"
+					],
 					"color": "#7ec9e7",
 					"italic": false
 				}

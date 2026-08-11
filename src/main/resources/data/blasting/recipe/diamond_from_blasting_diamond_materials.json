@@ -16,7 +16,24 @@
 		"minecraft:diamond_leggings",
 		"minecraft:diamond_boots",
 		"minecraft:diamond_horse_armor",
-		"minecraft:diamond_nautilus_armor"
+		"minecraft:diamond_nautilus_armor",
+		"matcha-flavoured:adamant_claymore",
+		"matcha-flavoured:adamant_dolabra",
+		"matcha-flavoured:adamant_mattock",
+		"matcha-flavoured:diamond_dolabra",
+		"matcha-flavoured:diamond_mattock",
+		"matcha-flavoured:electrum_axe",
+		"matcha-flavoured:electrum_boots",
+		"matcha-flavoured:electrum_chestplate",
+		"matcha-flavoured:electrum_dolabra",
+		"matcha-flavoured:electrum_helmet",
+		"matcha-flavoured:electrum_hoe",
+		"matcha-flavoured:electrum_leggings",
+		"matcha-flavoured:electrum_mattock",
+		"matcha-flavoured:electrum_pickaxe",
+		"matcha-flavoured:electrum_shovel",
+		"matcha-flavoured:electrum_spear",
+		"matcha-flavoured:electrum_sword"
 	],
 	"result": {
 		"id": "minecraft:diamond"

@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "equipment",
+	"ingredients": [
+		"minecraft:azure_bluet",
+		"minecraft:sugar",
+		"minecraft:glowstone_dust",
+		"minecraft:paper"
+	],
+	"result": {
+		"id": "matcha-flavoured:amnestic"
+	}
+}

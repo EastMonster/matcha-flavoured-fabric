@@ -3,7 +3,7 @@
 	"category": "food",
 	"cookingtime": 200,
 	"experience": 0.35,
-	"ingredient": "minecraft:cod",
+	"ingredient": "#matcha-flavoured:cod_fish",
 	"result": {
 		"id": "minecraft:cooked_cod",
 		"components": {

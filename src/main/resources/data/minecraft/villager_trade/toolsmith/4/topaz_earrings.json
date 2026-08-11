@@ -4,13 +4,7 @@
 		"count": 14
 	},
 	"additional_wants": {
-		"id": "matcha-flavoured:topaz",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.topaz",
-				"color": "yellow"
-			}
-		}
+		"id": "matcha-flavoured:topaz"
 	},
 	"gives": {
 		"id": "matcha-flavoured:topaz_earrings",

@@ -1,12 +1,6 @@
 {
 	"wants": {
-		"id": "matcha-flavoured:amber",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.amber",
-				"color": "gold"
-			}
-		}
+		"id": "matcha-flavoured:amber"
 	},
 	"gives": {
 		"id": "minecraft:emerald",

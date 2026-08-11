@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -12,6 +13,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
@@ -48,8 +50,10 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		EnchantmentMechanics.init();
 		EffectsMechanics.init();
 		MechanicMechanics.init();
+		AbbeyMechanics.init();
 		WorldMechanics.init();
 		FoodHealMechanics.init();
+		registerGemNameColors();
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		List<Item> foods = registerFoods();
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
@@ -66,16 +70,16 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		Item.Properties properties = new Item.Properties();
 		switch (name) {
 			case "avesta" -> properties.rarity(Rarity.RARE);
-			case "divine_comedy" -> book(properties, Rarity.UNCOMMON,
+			case "divine_comedy" -> book(properties, "divine_comedy", Rarity.UNCOMMON,
 					Component.translatable("item.kleispack.divine_comedy.desc"));
-			case "enoch" -> book(properties, Rarity.RARE,
+			case "enoch" -> book(properties, "enoch", Rarity.RARE,
 					Component.translatable("item.kleispack.enoch.desc"));
-			case "paradise_lost" -> book(properties, Rarity.UNCOMMON,
+			case "paradise_lost" -> book(properties, "paradise_lost", Rarity.UNCOMMON,
 					Component.translatable("item.kleispack.paradise_lost.desc"));
-			case "quran" -> book(properties, Rarity.RARE, Component.literal("القرآن"));
-			case "solomon" -> book(properties, Rarity.EPIC,
+			case "quran" -> book(properties, "quran", Rarity.RARE, Component.literal("القرآن"));
+			case "solomon" -> book(properties, "solomon", Rarity.EPIC,
 					Component.translatable("item.kleispack.key_of_solomon.desc"));
-			case "tanakh" -> book(properties, Rarity.RARE,
+			case "tanakh" -> book(properties, "tanakh", Rarity.RARE,
 					Component.translatable("item.kleispack.tanakh.desc"));
 			default -> {
 			}
@@ -83,10 +87,41 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		return register(name, properties);
 	}
 
-	private static void book(Item.Properties properties, Rarity rarity, Component lore) {
-		properties.rarity(rarity).component(DataComponents.LORE, new ItemLore(List.of(
-				lore.copy().withStyle(style -> style.withColor(ChatFormatting.GRAY).withItalic(false))
-		)));
+	private static void book(Item.Properties properties, String name, Rarity rarity, Component lore) {
+		properties.rarity(rarity)
+				.component(DataComponents.ITEM_NAME, Component.translatable("item.matcha-flavoured." + name))
+				.component(DataComponents.MAX_STACK_SIZE, 64)
+				.component(DataComponents.LORE, new ItemLore(List.of(
+						lore.copy().withStyle(style -> style.withColor(ChatFormatting.GRAY).withItalic(false))
+				)));
+	}
+
+	/**
+	 * The gemstone display names are coloured (opal #ab85ad, ruby red, amber
+	 * gold, topaz yellow) in the datapack. Item.Properties-level ITEM_NAME is
+	 * overwritten by the 26.2 default-component baker, and CUSTOM_NAME forces
+	 * italics at render time, so the colour is applied through the runtime
+	 * default-component event instead (matches villager-trade wants exactly and
+	 * renders non-italic).
+	 */
+	private static void registerGemNameColors() {
+		DefaultItemComponentEvents.MODIFY.register(context -> {
+			for (String name : List.of("amber", "opal", "ruby", "topaz")) {
+				int color = switch (name) {
+					case "amber" -> 0xFFAA00;
+					case "ruby" -> 0xFF5555;
+					case "topaz" -> 0xFFFF55;
+					default -> 0xAB85AD;
+				};
+				Item item = Objects.requireNonNull(
+						BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha-flavoured", name)),
+						"Unknown gemstone: " + name
+				);
+				context.modify(item, (builder, registries, ignored) -> builder.set(
+						DataComponents.ITEM_NAME,
+						Component.translatable("item.matcha-flavoured." + name).withColor(TextColor.fromRgb(color))));
+			}
+		});
 	}
 
 	private static Item register(String name, Item.Properties properties) {

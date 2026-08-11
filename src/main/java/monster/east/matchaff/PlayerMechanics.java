@@ -148,7 +148,7 @@ public final class PlayerMechanics {
 				&& !hasFreezingProtection(player)) {
 			player.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100, 4, true, false));
 			player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100, 0, true, false));
-			player.hurt(level.damageSources().freeze(), 2.0f);
+			player.hurt(level.damageSources().freeze(), 1.0f);
 		}
 	}
 
@@ -166,6 +166,7 @@ public final class PlayerMechanics {
 	private static void manageSleep(ServerPlayer player) {
 		if (player.isSleeping() && player.getSleepTimer() > 0 && player.getSleepTimer() < 100) {
 			var level = player.level();
+			level.getServer().setWeatherParameters(6000, 0, false, false);
 			var clock = level.getServer().registryAccess()
 					.lookupOrThrow(Registries.WORLD_CLOCK)
 					.getOrThrow(WorldClocks.OVERWORLD);

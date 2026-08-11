@@ -1,0 +1,14 @@
+{
+	"gives": {
+		"id": "matcha-flavoured:heart_container",
+		"count": 1
+	},
+	"given_item_modifiers": [],
+	"max_uses": 999,
+	"reputation_discount": 0,
+	"wants": {
+		"count": 1,
+		"id": "matcha-flavoured:mournful_clay_statue"
+	},
+	"xp": 20
+}

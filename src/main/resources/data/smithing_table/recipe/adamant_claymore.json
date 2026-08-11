@@ -25,10 +25,19 @@
 					"color": "dark_green",
 					"italic": false
 				},
-				"",
 				{
-					"translate": "matcha.lore.blocking",
-					"color": "gray",
+					"translate": "desc.kleispack.set_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.divinity.set_bonus",
+					"color": "aqua",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.when_blocking",
+					"color": "dark_gray",
 					"italic": false
 				},
 				{
@@ -36,7 +45,7 @@
 						"with": [
 							"80"
 						],
-					"color": "blue",
+					"color": "gray",
 					"italic": false
 				},
 				{
@@ -44,7 +53,7 @@
 						"with": [
 							"70"
 						],
-					"color": "blue",
+					"color": "gray",
 					"italic": false
 				}
 			],

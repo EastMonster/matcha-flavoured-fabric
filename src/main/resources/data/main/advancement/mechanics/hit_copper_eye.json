@@ -1,0 +1,26 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"hit_target": {
+			"conditions": {
+				"projectile": [
+					{
+						"condition": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {}
+					}
+				],
+				"signal_strength": {
+					"min": 0,
+					"max": 15
+				}
+			},
+			"trigger": "minecraft:target_hit"
+		}
+	},
+	"requirements": [
+		[
+			"hit_target"
+		]
+	]
+}

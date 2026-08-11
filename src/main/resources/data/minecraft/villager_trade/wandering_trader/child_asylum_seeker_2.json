@@ -1,0 +1,34 @@
+{
+	"gives": {
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:villager",
+				"active_effects": [
+					{
+						"id": "minecraft:invisibility",
+						"amplifier": 0,
+						"duration": 1,
+						"show_particles": false
+					}
+				],
+				"Age": -216000,
+				"VillagerData": {}
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.application"
+			},
+			"minecraft:lore": [
+				{"translate": "matcha.asylum.age_child", "color": "dark_gray", "italic": false},
+				{"translate": "matcha.asylum.culture_none", "color": "dark_gray", "italic": false},
+				{"translate": "matcha.asylum.cause_orphaned", "color": "dark_gray", "italic": false},
+				{"translate": "matcha.asylum.summon_hint", "color": "gray", "italic": false}
+			]
+		},
+		"count": 1,
+		"id": "matcha-flavoured:application"
+	},
+	"max_uses": 1,
+	"wants": {
+		"id": "minecraft:emerald"
+	}
+}

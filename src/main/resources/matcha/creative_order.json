@@ -47,6 +47,7 @@
 			"bloodrage_hatchet",
 			"archaeologists_brush",
 			"tinder",
+			"amnestic",
 			"bedrock_buster"
 		],
 		"shears": [
@@ -100,7 +101,8 @@
 			"shakudo_helmet",
 			"shakudo_chestplate",
 			"shakudo_leggings",
-			"shakudo_boots"
+			"shakudo_boots",
+			"shakudo_elytra"
 		],
 		"steel_armour": [
 			"steel_helmet",
@@ -139,7 +141,6 @@
 		],
 		"warding_gear": [
 			"warding_sword",
-			"lesser_warding_shield",
 			"warding_shield",
 			"wooden_cross"
 		]
@@ -162,8 +163,6 @@
 		"two_star_fish": [
 			"black_seabass",
 			"carp",
-			"pale_fish",
-			"echo_fish",
 			"flying_fish",
 			"gurnard",
 			"herring",
@@ -176,6 +175,7 @@
 		"three_star_fish": [
 			"armoured_catfish",
 			"catfish",
+			"pale_fish",
 			"flounder",
 			"gar",
 			"monkfish",
@@ -189,6 +189,7 @@
 			"arapaima",
 			"bass",
 			"swordfish",
+			"echo_fish",
 			"european_eel",
 			"muskellunge",
 			"oarfish",
@@ -200,8 +201,7 @@
 			"cooked_pufferfish",
 			"charred_fish",
 			"bokguk",
-			"gimmari",
-			"squid_ink_pasta"
+			"gimmari"
 		],
 		"simple_cooked_foods": [
 			"fried_egg",
@@ -218,7 +218,6 @@
 			"braised_red_mushroom",
 			"braised_crimson_fungus",
 			"braised_warped_fungus",
-			"stuffed_mushrooms",
 			"cheese",
 			"glow_mash"
 		],
@@ -240,12 +239,19 @@
 			"green_curry",
 			"japanese_curry",
 			"paneer_makhani",
-			"chicken_noodle_soup",
 			"ramen",
+			"kontomire_stew",
+			"pad_thai",
 			"crimson_stroganoff",
 			"red_mushroom_stroganoff",
 			"stroganoff",
 			"warped_stroganoff"
+		],
+		"pizzas": [
+			"cheese_pizza",
+			"meat_pizza",
+			"mushroom_pizza",
+			"warped_pizza"
 		],
 		"breads_and_savouries": [
 			"bruschetta",
@@ -259,7 +265,6 @@
 			"apple_empanada",
 			"golden_apple_empanada",
 			"pumpkin_empanada",
-			"golden_pie",
 			"brownie",
 			"chocolate",
 			"chocolate_chip_cookie",
@@ -340,7 +345,6 @@
 			"ofuda"
 		],
 		"flasks": [
-			"estus_flask",
 			"volatile_infested",
 			"volatile_invisibility",
 			"volatile_oozing",
@@ -395,6 +399,7 @@
 	"functional_blocks": {
 		"special_blocks": [
 			"invisible_item_frame",
+			"beacon_kindling",
 			"warding_stone"
 		]
 	}

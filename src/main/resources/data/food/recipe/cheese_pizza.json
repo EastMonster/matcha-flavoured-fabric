@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "pizza",
+	"category": "misc",
+	"pattern": [
+		"CCC",
+		"TTT",
+		"DDD"
+	],
+	"key": {
+		"D": "matcha-flavoured:dough",
+		"T": "minecraft:beetroot",
+		"C": "matcha-flavoured:cheese"
+	},
+	"result": {
+		"id": "matcha-flavoured:cheese_pizza",
+		"count": 4
+	}
+}

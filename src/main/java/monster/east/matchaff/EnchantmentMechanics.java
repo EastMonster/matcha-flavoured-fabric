@@ -11,6 +11,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -29,6 +30,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 
@@ -55,6 +57,9 @@ public final class EnchantmentMechanics {
 	private static final Identifier CLEANSE_CHEST = id("cleanse_armor_chest");
 	private static final Identifier CLEANSE_LEGS = id("cleanse_armor_legs");
 	private static final Identifier CLEANSE_FEET = id("cleanse_armor_feet");
+	private static final Identifier CLEANSE_MALEFFECT = id("cleanse_armor_maleffect");
+	private static final Identifier SHAKUDO_REGEN = id("shakudo_regen");
+	private static final Identifier SHAKUDO_ELYTRA = id("shakudo_elytra");
 	private static final Identifier CONDUIT_POWER = id("conduit_power");
 	private static final Identifier FIRE_PROOF = id("fire_proof");
 	private static final Identifier HASTE = id("haste");
@@ -63,8 +68,11 @@ public final class EnchantmentMechanics {
 	private static final Identifier ANEMOS = id("anemos");
 	private static final Identifier SLAUGHTER = id("slaughter");
 
-	private static final TagKey<net.minecraft.world.entity.EntityType<?>> UNDEAD = TagKey.create(
-			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("minecraft", "undead")
+	private static final TagKey<net.minecraft.world.entity.EntityType<?>> WARDING_TARGETS = TagKey.create(
+			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("main", "warding_targets")
+	);
+	private static final TagKey<net.minecraft.world.entity.EntityType<?>> WARDING_TARGETS_SLOWED = TagKey.create(
+			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("main", "warding_targets_slowed")
 	);
 	private static final TagKey<net.minecraft.world.entity.EntityType<?>> LIVESTOCK = TagKey.create(
 			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("main", "livestock")
@@ -101,30 +109,32 @@ public final class EnchantmentMechanics {
 		ItemStack mainHand = player.getMainHandItem();
 		ItemStack offHand = player.getOffhandItem();
 
-		// Hand-held warding (damages undead every tick).
+		// Hand-held warding runs every tick, matching the enchantment tick effect.
 		int heldWarding = heldWardingLevel(player, enchantments);
 		if (heldWarding >= 0) {
 			wardingAura(player, heldWarding);
 		}
 
-		// Armour warding (apotropaic), throttled like the old stopwatches.
+		// Armour warding (apotropaic): 1-2 pieces every second, 3-4 every half second.
 		int apotropaic = countArmor(player, enchantments, WARDING_ARMOUR);
 		if (apotropaic > 0) {
-			int interval = apotropaic % 2 == 1 ? 10 : 20;
+			int interval = apotropaic <= 2 ? 20 : 10;
 			if (elapsed(player, interval)) {
 				int level = apotropaic == 1 ? 1 : apotropaic == 4 ? 3 : 2;
 				wardingAura(player, level);
 			}
+			if (apotropaic == 4 && elapsed(player, 600)) {
+				player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 1, false, false));
+			}
 		}
 
-		// Divinity absorption on a 15s/30s cycle.
+		// Divinity still counts the selected item, but 1.10 only defines rewards for scores 1-4.
 		int divinity = countArmor(player, enchantments, DIVINITY) + maxLevel(mainHand, enchantments, DIVINITY);
-		if (divinity > 0) {
-			int interval = divinity == 5 ? 300 : 600;
+		if (divinity >= 1 && divinity <= 4) {
+			int interval = divinity == 4 ? 400 : 600;
 			if (elapsed(player, interval)) {
-				int amplifier = divinity - 1;
-				int duration = divinity == 5 ? 300 : 600;
-				player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, duration, amplifier, true, true));
+				int amplifier = divinity == 4 ? 4 : divinity - 1;
+				player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, interval, amplifier, false, false));
 			}
 		}
 
@@ -152,6 +162,43 @@ public final class EnchantmentMechanics {
 		}
 		if (maxLevel(player.getItemBySlot(EquipmentSlot.FEET), enchantments, CLEANSE_FEET) > 0) {
 			player.removeEffect(MobEffects.LEVITATION);
+		}
+		if (countArmor(player, enchantments, CLEANSE_MALEFFECT) > 0) {
+			player.removeEffect(MobEffects.POISON);
+			player.removeEffect(MobEffects.WITHER);
+			player.removeEffect(MobEffects.MINING_FATIGUE);
+			player.removeEffect(MobEffects.WEAKNESS);
+			player.removeEffect(MobEffects.BLINDNESS);
+			player.removeEffect(MobEffects.DARKNESS);
+			player.removeEffect(MobEffects.INFESTED);
+			player.removeEffect(MobEffects.WEAVING);
+			player.removeEffect(MobEffects.NAUSEA);
+			player.removeEffect(MobEffects.OOZING);
+			player.removeEffect(MobEffects.SLOWNESS);
+		}
+
+		// Shakudo Elytra intentionally scores +1 as chest equipment and another +4 as Elytra.
+		int shakudoRegen = countArmor(player, enchantments, SHAKUDO_REGEN);
+		ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
+		if (maxLevel(chest, enchantments, SHAKUDO_REGEN) > 0
+				&& SHAKUDO_ELYTRA.equals(BuiltInRegistries.ITEM.getKey(chest.getItem()))) {
+			shakudoRegen += 4;
+		}
+		if (shakudoRegen >= 1 && shakudoRegen <= 8) {
+			int interval = switch (shakudoRegen) {
+				case 1 -> 600;
+				case 2 -> 520;
+				case 3 -> 440;
+				case 4 -> 360;
+				case 5 -> 400;
+				case 6 -> 320;
+				case 7 -> 240;
+				default -> 160;
+			};
+			if (elapsed(player, interval)) {
+				player.addEffect(new MobEffectInstance(
+						MobEffects.REGENERATION, 60, shakudoRegen >= 5 ? 1 : 0, false, false));
+			}
 		}
 
 		// Head-slot buffs.
@@ -225,80 +272,119 @@ public final class EnchantmentMechanics {
 	}
 
 	private static void wardingAura(ServerPlayer player, int level) {
-		int slowRadius = switch (level) {
-			case 0, 1 -> 8;
-			case 2 -> 12;
-			default -> 24;
-		};
+		var serverLevel = (ServerLevel) player.level();
+		if (level == 3) {
+			for (LivingEntity target : nearbyTargets(serverLevel, player, 24, WARDING_TARGETS,
+					entity -> !wearingCopperArmor(entity))) {
+				target.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 1, false, false));
+				if (target.getType() != EntityTypes.WITHER) {
+					wardingParticle(serverLevel, target, ParticleTypes.SOUL_FIRE_FLAME);
+				}
+			}
+			LivingEntity damaged = nearestTarget(serverLevel, player, 12, WARDING_TARGETS,
+					entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
+			if (damaged != null) {
+				damaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 2.0F);
+			}
+
+			for (LivingEntity target : nearbyTargets(serverLevel, player, 12, WARDING_TARGETS,
+					entity -> entity.getType() != EntityTypes.WITHER && wearingCopperArmor(entity))) {
+				wardingParticle(serverLevel, target, ParticleTypes.SOUL_FIRE_FLAME);
+			}
+			LivingEntity copperDamaged = nearestTarget(serverLevel, player, 8, WARDING_TARGETS,
+					entity -> entity.getType() != EntityTypes.WITHER && wearingCopperArmor(entity));
+			if (copperDamaged != null) {
+				copperDamaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 1.0F);
+			}
+			LivingEntity copperSlowed = nearestTarget(serverLevel, player, 12, WARDING_TARGETS,
+					EnchantmentMechanics::wearingCopperArmor);
+			if (copperSlowed != null) {
+				copperSlowed.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 0, false, false));
+			}
+			witherWarding(serverLevel, player, 16, 2.0F);
+			return;
+		}
+
+		int slowRadius = level == 2 ? 14 : 8;
 		int damageRadius = switch (level) {
 			case 0 -> 3;
-			case 1 -> 8;
-			case 2 -> 12;
-			default -> 24;
+			case 1 -> 6;
+			default -> 8;
 		};
-		int witherRadius = switch (level) {
-			case 0 -> 0;
-			case 1 -> 8;
-			default -> 12;
-		};
-		int particleRadius = level == 3 ? 12 : damageRadius;
-		float damage = switch (level) {
-			case 0, 1 -> 1.0F;
-			case 2 -> 3.0F;
-			default -> 19.0F;
-		};
-		float witherDamage = switch (level) {
-			case 0 -> 0;
-			case 1, 2 -> 1.0F;
-			default -> 2.0F;
-		};
-		int slowAmplifier = switch (level) {
-			case 0, 1 -> 1;
-			case 2 -> 2;
-			default -> 3;
-		};
-
-		var serverLevel = (ServerLevel) player.level();
-		LivingEntity slowed = nearestUndead(serverLevel, player, slowRadius, entity -> true);
+		int slowAmplifier = level == 1 ? 1 : 0;
+		LivingEntity slowed = nearestTarget(serverLevel, player, slowRadius, WARDING_TARGETS_SLOWED,
+				entity -> !wearingCopperArmor(entity));
 		if (slowed != null) {
-			slowed.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, slowAmplifier, true, false));
+			slowed.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, slowAmplifier, false, false));
 		}
-
-		LivingEntity damaged = nearestUndead(serverLevel, player, damageRadius,
-				entity -> entity.getType() != EntityTypes.WITHER);
+		LivingEntity damaged = nearestTarget(serverLevel, player, damageRadius, WARDING_TARGETS,
+				entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
 		if (damaged != null) {
-			damaged.hurt(serverLevel.damageSources().fellOutOfWorld(), damage);
+			damaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 1.0F);
 		}
-		LivingEntity particleTarget = nearestUndead(serverLevel, player, particleRadius,
-				entity -> entity.getType() != EntityTypes.WITHER);
+		LivingEntity particleTarget = nearestTarget(serverLevel, player, slowRadius, WARDING_TARGETS,
+				entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
 		if (particleTarget != null) {
-			serverLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
-					particleTarget.getX(), particleTarget.getY() + 1.5, particleTarget.getZ(),
-					1, 0.1, 0.3, 0.1, 0.02);
+			wardingParticle(serverLevel, particleTarget, ParticleTypes.SOUL_FIRE_FLAME);
 		}
-
-		if (witherRadius > 0) {
-			LivingEntity wither = nearestUndead(serverLevel, player, witherRadius,
-					entity -> entity.getType() == EntityTypes.WITHER);
-			if (wither != null) {
-				wither.hurt(serverLevel.damageSources().fellOutOfWorld(), witherDamage);
-				serverLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
-						wither.getX(), wither.getY() + 2.5, wither.getZ(), 1, 0.5, 0.5, 0.5, 0.02);
-			}
+		LivingEntity copperTarget = nearestTarget(serverLevel, player, slowRadius, WARDING_TARGETS,
+				entity -> entity.getType() != EntityTypes.WITHER && wearingCopperArmor(entity));
+		if (copperTarget != null) {
+			wardingParticle(serverLevel, copperTarget, ParticleTypes.ELECTRIC_SPARK);
+		}
+		if (level > 0) {
+			witherWarding(serverLevel, player, level == 1 ? 8 : 12, 1.0F);
 		}
 	}
 
-	private static LivingEntity nearestUndead(
-			ServerLevel level, LivingEntity center, double radius, Predicate<LivingEntity> predicate
+	private static LivingEntity nearestTarget(
+			ServerLevel level, LivingEntity center, double radius,
+			TagKey<net.minecraft.world.entity.EntityType<?>> tag, Predicate<LivingEntity> predicate
 	) {
 		double radiusSquared = radius * radius;
 		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), entity ->
-					entity.getType().builtInRegistryHolder().is(UNDEAD)
+					entity.getType().builtInRegistryHolder().is(tag)
 							&& predicate.test(entity)
 							&& entity.distanceToSqr(center) <= radiusSquared)
 				.stream()
 				.min(Comparator.comparingDouble(entity -> entity.distanceToSqr(center)))
 				.orElse(null);
+	}
+
+	private static java.util.List<LivingEntity> nearbyTargets(
+			ServerLevel level, LivingEntity center, double radius,
+			TagKey<net.minecraft.world.entity.EntityType<?>> tag, Predicate<LivingEntity> predicate
+	) {
+		double radiusSquared = radius * radius;
+		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), entity ->
+				entity.getType().builtInRegistryHolder().is(tag)
+						&& predicate.test(entity)
+						&& entity.distanceToSqr(center) <= radiusSquared);
+	}
+
+	private static boolean wearingCopperArmor(LivingEntity entity) {
+		return entity.getItemBySlot(EquipmentSlot.HEAD).is(Items.COPPER_HELMET)
+				|| entity.getItemBySlot(EquipmentSlot.CHEST).is(Items.COPPER_CHESTPLATE)
+				|| entity.getItemBySlot(EquipmentSlot.LEGS).is(Items.COPPER_LEGGINGS)
+				|| entity.getItemBySlot(EquipmentSlot.FEET).is(Items.COPPER_BOOTS);
+	}
+
+	private static void wardingParticle(
+			ServerLevel level, LivingEntity target, net.minecraft.core.particles.SimpleParticleType particle
+	) {
+		level.sendParticles(particle, target.getX(), target.getY() + 1.5, target.getZ(),
+				1, particle == ParticleTypes.ELECTRIC_SPARK ? 0.25 : 0.1, 0.3,
+				particle == ParticleTypes.ELECTRIC_SPARK ? 0.25 : 0.1, 0.02);
+	}
+
+	private static void witherWarding(ServerLevel level, LivingEntity center, double radius, float damage) {
+		LivingEntity wither = nearestTarget(level, center, radius, WARDING_TARGETS,
+				entity -> entity.getType() == EntityTypes.WITHER);
+		if (wither != null) {
+			wither.hurt(level.damageSources().fellOutOfWorld(), damage);
+			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
+					wither.getX(), wither.getY() + 2.5, wither.getZ(), 1, 0.5, 0.5, 0.5, 0.02);
+		}
 	}
 
 	/** Returns the warding tier (0-3) held in main/off hand, or -1 when absent. */
@@ -330,8 +416,9 @@ public final class EnchantmentMechanics {
 		var eye = serverPlayer.getEyePosition().add(serverPlayer.getLookAngle().scale(0.75));
 		charge.setPos(eye.x, eye.y, eye.z);
 		charge.setDeltaMovement(serverPlayer.getLookAngle().scale(2.5));
+		charge.setOwner(serverPlayer);
 		level.addFreshEntity(charge);
-		serverPlayer.setAttached(ANEMOS_READY_TICK, currentTick + 20);
+		serverPlayer.setAttached(ANEMOS_READY_TICK, currentTick + 10);
 	}
 
 	private static int countArmor(ServerPlayer player, Registry<Enchantment> enchantments, Identifier enchantment) {

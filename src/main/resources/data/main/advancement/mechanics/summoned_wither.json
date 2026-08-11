@@ -1,0 +1,17 @@
+{
+	"criteria": {
+		"summon_wither": {
+			"trigger": "minecraft:summoned_entity",
+			"conditions": {
+				"entity": {
+					"minecraft:entity_type": "minecraft:wither"
+				}
+			}
+		}
+	},
+	"requirements": [
+		[
+			"summon_wither"
+		]
+	]
+}

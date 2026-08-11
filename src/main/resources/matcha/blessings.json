@@ -549,7 +549,7 @@
 		"id": "ofuda",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/minecraft/villager_trade/librarian/2/avesta_1.json",
+		"source": "data/minecraft/villager_trade/librarian/2/avesta.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:item_name": {
@@ -565,8 +565,7 @@
 			],
 			"minecraft:stored_enchantments": {
 				"minecraft:protection": 3
-			},
-			"minecraft:max_stack_size": 64
+			}
 		}
 	}
 ]

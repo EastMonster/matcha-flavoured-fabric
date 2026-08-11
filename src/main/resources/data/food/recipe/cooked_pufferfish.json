@@ -1,9 +1,9 @@
 {
 	"type": "minecraft:smelting",
 	"category": "food",
-	"cookingtime": 200,
+	"cookingtime": 100,
 	"experience": 0.35,
-	"ingredient": "minecraft:pufferfish",
+	"ingredient": "#matcha-flavoured:pufferfish_fish",
 	"result": {
 		"id": "matcha-flavoured:cooked_pufferfish",
 		"components": {
@@ -15,9 +15,9 @@
 				},
 				{
 					"translate": "matcha.lore.conduit_power",
-						"with": [
-							"0:30"
-						],
+					"with": [
+						"0:30"
+					],
 					"color": "#7ec9e7",
 					"italic": false
 				}

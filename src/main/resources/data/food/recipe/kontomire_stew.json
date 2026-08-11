@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+		"minecraft:beetroot",
+		"minecraft:dandelion",
+		"minecraft:fern",
+		[
+			"minecraft:cooked_cod",
+			"minecraft:cooked_salmon"
+		],
+		"#minecraft:eggs",
+		"minecraft:bowl"
+	],
+	"result": {
+		"id": "matcha-flavoured:kontomire_stew"
+	}
+}

@@ -1,8 +1,10 @@
 package monster.east.matchaff;
 
+import monster.east.matchaff.mixin.VillagerAccessor;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
@@ -20,6 +22,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -30,16 +33,22 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
 import net.minecraft.world.entity.animal.happyghast.HappyGhast;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.scores.ScoreHolder;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,8 +56,10 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.function.Predicate;
@@ -67,9 +78,13 @@ public final class MechanicMechanics {
 	private static final Identifier APPLICATION = id("mechanics/application");
 	private static final Identifier HAPPY_GHAST_HORN = id("mechanics/happy_ghast_horn");
 	private static final Identifier KILL_DRAGON = id("end/kill_dragon");
+	private static final Identifier SUMMONED_WITHER = id("mechanics/summoned_wither");
 
 	private static final TagKey<EntityType<?>> VILLAGER_FRIENDS = TagKey.create(
 			Registries.ENTITY_TYPE, id("villager_friends")
+	);
+	private static final TagKey<EntityType<?>> WARDING_STONE_TARGETS = TagKey.create(
+			Registries.ENTITY_TYPE, id("warding_stone_targets")
 	);
 	private static final ResourceKey<Structure> TRIAL_CHAMBERS = ResourceKey.create(
 			Registries.STRUCTURE, Identifier.fromNamespaceAndPath("minecraft", "trial_chambers")
@@ -81,8 +96,22 @@ public final class MechanicMechanics {
 	private record BusterTask(int triggerTick, ResourceKey<Level> level, UUID tnt) {
 	}
 
+	private record WitherTask(int triggerTick, ResourceKey<Level> level, UUID wither) {
+	}
+
+	private record StarCleanupTask(int triggerTick, ResourceKey<Level> level, Vec3 position) {
+	}
+
+	private record BeaconTask(ResourceKey<Level> level, BlockPos pos, int startTick, UUID trader) {
+	}
+
 	private static final List<WeatherTask> PENDING_WEATHER = new ArrayList<>();
 	private static final List<BusterTask> PENDING_BUSTER = new ArrayList<>();
+	private static final List<WitherTask> PENDING_WITHERS = new ArrayList<>();
+	private static final List<StarCleanupTask> PENDING_STAR_CLEANUP = new ArrayList<>();
+	private static final Map<UUID, BeaconTask> BEACONS = new HashMap<>();
+	private static final Map<UUID, Integer> LAST_WATER_BUCKET_USE = new HashMap<>();
+	private static final Map<UUID, Integer> LAST_CAKE_SLICES = new HashMap<>();
 	private static final Set<ArmorStand> WARDING_STONES =
 			Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final Set<Villager> VILLAGERS =
@@ -92,12 +121,19 @@ public final class MechanicMechanics {
 	}
 
 	public static void init() {
+		ServerLifecycleEvents.SERVER_STOPPING.register(MechanicMechanics::cleanupBeacons);
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			PENDING_WEATHER.clear();
 			PENDING_BUSTER.clear();
+			PENDING_WITHERS.clear();
+			PENDING_STAR_CLEANUP.clear();
+			BEACONS.clear();
+			LAST_WATER_BUCKET_USE.clear();
+			LAST_CAKE_SLICES.clear();
 			WARDING_STONES.clear();
 			VILLAGERS.clear();
 		});
+		UseBlockCallback.EVENT.register(MechanicMechanics::useMechanicItem);
 		ServerEntityEvents.ENTITY_LOAD.register(MechanicMechanics::trackEntity);
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
 			WARDING_STONES.remove(entity);
@@ -116,11 +152,80 @@ public final class MechanicMechanics {
 				checkApplication(player);
 				checkHappyGhast(player);
 				checkDragonReward(server, player);
+				checkSummonedWither(player, tick);
+				checkNetherWater(player);
+				checkCake(player);
 				stackWaterBottles(player);
 			}
 			processWeatherTasks(server, tick);
+			processWitherTasks(server, tick);
+			processStarCleanup(server, tick);
+			tickBeacons(server, tick);
 			tickWardingStones();
 		});
+	}
+
+	private static InteractionResult useMechanicItem(
+			net.minecraft.world.entity.player.Player player, Level level,
+			net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit
+	) {
+		ItemStack stack = player.getItemInHand(hand);
+		boolean amnestic = isMatchaItem(stack, "amnestic");
+		boolean beacon = isMatchaItem(stack, "beacon_kindling");
+		if (!amnestic && !beacon) {
+			return InteractionResult.PASS;
+		}
+		if (!(player instanceof ServerPlayer serverPlayer)) {
+			return InteractionResult.SUCCESS;
+		}
+		BlockPos clicked = hit.getBlockPos();
+		BlockPos target = level.getBlockState(clicked).getCollisionShape(level, clicked).isEmpty()
+				? clicked : clicked.relative(hit.getDirection());
+		if (amnestic) {
+			useAmnestic(serverPlayer, (ServerLevel) level, target);
+		} else {
+			placeBeacon(serverPlayer, (ServerLevel) level, target);
+		}
+		if (!serverPlayer.isCreative()) {
+			stack.shrink(1);
+		}
+		return InteractionResult.SUCCESS_SERVER;
+	}
+
+	private static boolean isMatchaItem(ItemStack stack, String path) {
+		return net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(stack.getItem())
+				.equals(Identifier.fromNamespaceAndPath("matcha-flavoured", path));
+	}
+
+	private static void useAmnestic(ServerPlayer player, ServerLevel level, BlockPos pos) {
+		VILLAGERS.stream()
+				.filter(villager -> villager.level() == level && !villager.isRemoved())
+				.min(Comparator.comparingDouble(villager -> villager.distanceToSqr(Vec3.atCenterOf(pos))))
+				.ifPresent(villager -> {
+					villager.setVillagerData(villager.getVillagerData()
+							.withProfession(level.registryAccess(), VillagerProfession.NONE).withLevel(1));
+					villager.setVillagerXp(0);
+					((VillagerAccessor) villager).matcha$setLastRestockGameTime(0);
+				});
+	}
+
+	private static void placeBeacon(ServerPlayer player, ServerLevel level, BlockPos pos) {
+		level.setBlock(pos, Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.SIGNAL_FIRE, true), 3);
+		level.sendParticles(ParticleTypes.FLAME, pos.getX() + 0.5, pos.getY() + 0.7, pos.getZ() + 0.5,
+				30, 0.1, 0.1, 0.1, 0.07);
+		level.playSound(null, pos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
+		level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.5F, 1.0F);
+		if (BEACONS.containsKey(player.getUUID())) {
+			player.sendSystemMessage(Component.literal(
+					"You have already summoned a Wandering Trader, please wait patiently while they travel")
+					.withStyle(ChatFormatting.GRAY));
+			return;
+		}
+		BEACONS.put(player.getUUID(), new BeaconTask(level.dimension(), pos.immutable(),
+				level.getServer().getTickCount(), null));
+		level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(
+				"A Wandering Trader has spotted your beacon, they will arrive in 10 minutes")
+				.withStyle(ChatFormatting.GRAY), false);
 	}
 
 	private static void checkEstus(ServerPlayer player) {
@@ -128,6 +233,7 @@ public final class MechanicMechanics {
 			return;
 		}
 		if (!player.isCreative()) {
+			boolean easy = WorldMechanics.cachedDifficulty(player.level().getServer()).getId() <= 1;
 			for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
 				ItemStack stack = player.getInventory().getItem(slot);
 				if (!stack.is(Items.BLAZE_POWDER)) {
@@ -135,9 +241,9 @@ public final class MechanicMechanics {
 				}
 				stack.shrink(1);
 				player.addEffect(new MobEffectInstance(
-						MobEffects.REGENERATION, 40, 4, true, true));
+						MobEffects.REGENERATION, easy ? 80 : 40, 4, true, true));
 				player.addEffect(new MobEffectInstance(
-						MobEffects.RESISTANCE, 100, 0, true, true));
+						MobEffects.RESISTANCE, easy ? 200 : 100, 0, true, true));
 				ItemStack reward = new ItemStack(Items.GLOWSTONE_DUST, 1);
 				if (!player.addItem(reward)) {
 					var dropped = player.drop(reward, false);
@@ -236,7 +342,161 @@ public final class MechanicMechanics {
 		}
 		server.getPlayerList().broadcastSystemMessage(
 				Component.translatable("matcha.message.evil_banished").withStyle(ChatFormatting.GRAY), false);
+		WorldMechanics.raiseDifficultyAfterDragon(server);
 		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly("gamerule"), objective).set(1);
+	}
+
+	private static void checkSummonedWither(ServerPlayer player, int tick) {
+		if (!advancementDone(player, SUMMONED_WITHER)) {
+			return;
+		}
+		if (player.level().dimension() == Level.END) {
+			ServerLevel level = player.level();
+			level.getEntitiesOfClass(WitherBoss.class, player.getBoundingBox().inflate(64.0), Entity::isAlive)
+					.stream().min(Comparator.comparingDouble(wither -> wither.distanceToSqr(player)))
+					.ifPresent(wither -> PENDING_WITHERS.add(
+							new WitherTask(tick + 23, level.dimension(), wither.getUUID())));
+		}
+		revoke(player, SUMMONED_WITHER);
+	}
+
+	private static void processWitherTasks(MinecraftServer server, int tick) {
+		PENDING_WITHERS.removeIf(task -> {
+			if (task.triggerTick() > tick) {
+				return false;
+			}
+			ServerLevel level = server.getLevel(task.level());
+			if (level != null && level.getEntity(task.wither()) instanceof WitherBoss wither && wither.isAlive()) {
+				Vec3 position = wither.position();
+				wither.kill(level);
+				PENDING_STAR_CLEANUP.add(new StarCleanupTask(tick + 1, task.level(), position));
+			}
+			return true;
+		});
+	}
+
+	private static void processStarCleanup(MinecraftServer server, int tick) {
+		PENDING_STAR_CLEANUP.removeIf(task -> {
+			if (task.triggerTick() > tick) {
+				return false;
+			}
+			ServerLevel level = server.getLevel(task.level());
+			if (level != null) {
+				Vec3 pos = task.position();
+				AABB area = new AABB(pos.x - 8, pos.y - 8, pos.z - 8,
+						pos.x + 8, pos.y + 8, pos.z + 8);
+				for (ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, area,
+						entity -> entity.getItem().is(Items.NETHER_STAR))) {
+					item.discard();
+				}
+			}
+			return true;
+		});
+	}
+
+	private static void checkNetherWater(ServerPlayer player) {
+		int current = player.getStats().getValue(Stats.ITEM_USED.get(Items.WATER_BUCKET));
+		Integer previous = LAST_WATER_BUCKET_USE.put(player.getUUID(), current);
+		if (previous == null || current <= previous || player.level().dimension() != Level.NETHER
+				|| player.getY() < 0 || player.getY() > 127) {
+			return;
+		}
+		ServerLevel level = player.level();
+		BlockPos center = player.blockPosition();
+		for (BlockPos pos : BlockPos.betweenClosed(center.offset(-20, -20, -20), center.offset(20, 20, 20))) {
+			if (level.getBlockState(pos).is(Blocks.WATER)) {
+				level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+			}
+		}
+	}
+
+	private static void checkCake(ServerPlayer player) {
+		int current = player.getStats().getValue(Stats.CUSTOM, Stats.EAT_CAKE_SLICE);
+		Integer previous = LAST_CAKE_SLICES.put(player.getUUID(), current);
+		if (previous == null || current <= previous) {
+			return;
+		}
+		player.addEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 20, 0, false, false));
+		player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3600, 1, false, false));
+	}
+
+	private static void tickBeacons(MinecraftServer server, int tick) {
+		for (var entry : new HashMap<>(BEACONS).entrySet()) {
+			UUID owner = entry.getKey();
+			BeaconTask task = entry.getValue();
+			ServerLevel level = server.getLevel(task.level());
+			if (level == null || !level.hasChunkAt(task.pos())) {
+				BEACONS.put(owner, new BeaconTask(
+						task.level(), task.pos(), task.startTick() + 1, task.trader()));
+				continue;
+			}
+			var state = level.getBlockState(task.pos());
+			if (!state.is(Blocks.CAMPFIRE) || !state.getValue(CampfireBlock.LIT)) {
+				endBeacon(server, owner, task, true, false);
+				continue;
+			}
+			if (tick % 10 == 0) {
+				level.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER,
+						task.pos().getX() + 0.5, task.pos().getY() + 0.75, task.pos().getZ() + 0.5,
+						2, 0.2, 0.05, 0.2, 0);
+			}
+			int elapsed = tick - task.startTick();
+			if (task.trader() == null && elapsed >= 12000) {
+				var trader = EntityTypes.WANDERING_TRADER.create(level, EntitySpawnReason.COMMAND);
+				if (trader != null) {
+					trader.setPos(task.pos().getX() + 1.5, task.pos().getY(), task.pos().getZ() + 0.5);
+					trader.setInvulnerable(true);
+					trader.addTag("summoned_by_beacon");
+					level.addFreshEntity(trader);
+					BEACONS.put(owner, new BeaconTask(task.level(), task.pos(), task.startTick(), trader.getUUID()));
+					server.getPlayerList().broadcastSystemMessage(Component.literal(
+							"The Wandering Trader has arrived, they will depart in 5 minutes")
+							.withStyle(ChatFormatting.GRAY), false);
+				}
+			} else if (task.trader() != null && elapsed >= 18000) {
+				endBeacon(server, owner, task, false, true);
+			}
+		}
+	}
+
+	private static void endBeacon(
+			MinecraftServer server, UUID owner, BeaconTask task, boolean early, boolean announce
+	) {
+		ServerLevel level = server.getLevel(task.level());
+		if (level != null) {
+			if (task.trader() != null && level.getEntity(task.trader()) != null) {
+				Entity trader = level.getEntity(task.trader());
+				level.sendParticles(ParticleTypes.POOF, trader.getX(), trader.getY() + 0.5, trader.getZ(),
+						50, 0.2, 1.0, 0.2, 0);
+				trader.discard();
+			}
+			var state = level.getBlockState(task.pos());
+			if (state.is(Blocks.CAMPFIRE)) {
+				level.setBlock(task.pos(), state.setValue(CampfireBlock.LIT, false), 3);
+			}
+			if (!early) {
+				level.sendParticles(ParticleTypes.LARGE_SMOKE,
+						task.pos().getX() + 0.5, task.pos().getY() + 0.5, task.pos().getZ() + 0.5,
+						10, 0.1, 0.1, 0.1, 0.1);
+			}
+		}
+		BEACONS.remove(owner);
+		if (early) {
+			ServerPlayer player = server.getPlayerList().getPlayer(owner);
+			if (player != null) {
+				player.sendSystemMessage(Component.literal("The Wandering Trader has lost sight of your beacon...")
+						.withStyle(ChatFormatting.GRAY));
+			}
+		} else if (announce) {
+			server.getPlayerList().broadcastSystemMessage(
+					Component.literal("The Wandering Trader has left").withStyle(ChatFormatting.GRAY), false);
+		}
+	}
+
+	private static void cleanupBeacons(MinecraftServer server) {
+		for (var entry : new HashMap<>(BEACONS).entrySet()) {
+			endBeacon(server, entry.getKey(), entry.getValue(), false, false);
+		}
 	}
 
 	private static void stackWaterBottles(ServerPlayer player) {
@@ -330,7 +590,7 @@ public final class MechanicMechanics {
 			if (!someoneRegenerating) {
 				for (LivingEntity friend : friends) {
 					friend.addEffect(new MobEffectInstance(
-							MobEffects.REGENERATION, 60, 0, true, true));
+							MobEffects.REGENERATION, 60, 0, false, false));
 				}
 			}
 
@@ -358,7 +618,7 @@ public final class MechanicMechanics {
 				level.sendParticles(ParticleTypes.LARGE_SMOKE, stoneX, stoneY + 0.25, stoneZ,
 						20, 0.25, 0.5, 0.25, 0.01);
 				level.addFreshEntity(new ItemEntity(level, stoneX, stoneY, stoneZ,
-						new ItemStack(Items.BLAZE_POWDER, 7)));
+						new ItemStack(Items.BLAZE_POWDER)));
 				stone.discard();
 				continue;
 			}
@@ -377,36 +637,36 @@ public final class MechanicMechanics {
 				continue;
 			}
 
-			// Aura: slow and burn undead.
+			// Aura: slow and damage the dedicated 1.10 target set (including pillagers).
 			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
 					1, 0.5, 0.5, 0.5, 0);
-			for (LivingEntity undead : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(26.0),
-					u -> u.getType().builtInRegistryHolder().is(net.minecraft.tags.EntityTypeTags.UNDEAD)
+			for (LivingEntity target : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(26.0),
+					u -> u.getType().builtInRegistryHolder().is(WARDING_STONE_TARGETS)
 							&& u.distanceToSqr(stone) <= 26.0 * 26.0)) {
-				undead.addEffect(new MobEffectInstance(
-						MobEffects.SLOWNESS, 40, 1, true, false));
+				target.addEffect(new MobEffectInstance(
+						MobEffects.SLOWNESS, 40, 2, false, false));
 			}
 
 			if (level.getServer().getTickCount() % 10 == 0) {
-				LivingEntity generalTarget = nearestUndead(level, stone, 24.0, target -> true);
-				if (generalTarget != null && nearestUndead(level, generalTarget, 20.0,
+				LivingEntity generalTarget = nearestWardingStoneTarget(level, stone, 24.0, target -> true);
+				if (generalTarget != null && nearestWardingStoneTarget(level, generalTarget, 20.0,
 						target -> target.getType() == EntityTypes.WITHER) == null) {
 					level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
 							generalTarget.getX(), generalTarget.getY() + 2.0, generalTarget.getZ(),
 							1, 0.25, 0.25, 0.25, 0.025);
-					LivingEntity damageTarget = nearestUndead(level, generalTarget, 14.0, target -> true);
+					LivingEntity damageTarget = nearestWardingStoneTarget(level, generalTarget, 14.0, target -> true);
 					if (damageTarget != null) {
 						damageTarget.hurt(level.damageSources().fellOutOfWorld(), 7.0F);
 					}
 				}
 
-				LivingEntity witherTarget = nearestUndead(level, stone, 24.0,
+				LivingEntity witherTarget = nearestWardingStoneTarget(level, stone, 24.0,
 						target -> target.getType() == EntityTypes.WITHER);
 				if (witherTarget != null) {
 					level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
 							witherTarget.getX(), witherTarget.getY() + 2.5, witherTarget.getZ(),
 							2, 1.0, 1.0, 1.0, 0.5);
-					LivingEntity damageTarget = nearestUndead(level, witherTarget, 14.0, target -> true);
+					LivingEntity damageTarget = nearestWardingStoneTarget(level, witherTarget, 14.0, target -> true);
 					if (damageTarget != null) {
 						damageTarget.hurt(level.damageSources().fellOutOfWorld(), 2.0F);
 					}
@@ -415,12 +675,12 @@ public final class MechanicMechanics {
 		}
 	}
 
-	private static LivingEntity nearestUndead(
+	private static LivingEntity nearestWardingStoneTarget(
 			ServerLevel level, LivingEntity center, double radius, Predicate<LivingEntity> predicate
 	) {
 		double radiusSquared = radius * radius;
 		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), target ->
-					target.getType().builtInRegistryHolder().is(net.minecraft.tags.EntityTypeTags.UNDEAD)
+					target.getType().builtInRegistryHolder().is(WARDING_STONE_TARGETS)
 							&& predicate.test(target)
 							&& target.distanceToSqr(center) <= radiusSquared)
 				.stream()

@@ -21,7 +21,12 @@
 		"recipes": [
 			"crafting:slime_ball_from_dough",
 			"food:bread",
-			"food:naan"
+			"food:naan",
+			"food:cheese_pizza",
+			"food:meat_pizza",
+			"food:mushroom_pizza",
+			"food:warped_pizza",
+			"food:pad_thai"
 		]
 	}
 }

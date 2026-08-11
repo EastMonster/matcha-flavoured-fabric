@@ -1,9 +1,9 @@
 {
 	"type": "minecraft:smelting",
 	"category": "food",
-	"cookingtime": 200,
+	"cookingtime": 100,
 	"experience": 0.35,
-	"ingredient": "minecraft:salmon",
+	"ingredient": "#matcha-flavoured:salmon_fish",
 	"result": {
 		"id": "minecraft:cooked_salmon",
 		"components": {

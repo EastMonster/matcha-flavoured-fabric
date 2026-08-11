@@ -3,7 +3,7 @@
 	"key": {
 		"#": "minecraft:sculk_vein",
 		"E": "minecraft:echo_shard",
-		"b": "minecraft:bone"
+		"b": "#matcha-flavoured:bone_fish"
 	},
 	"pattern": [
 		"b b",

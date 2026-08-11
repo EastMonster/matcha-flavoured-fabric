@@ -4,13 +4,7 @@
 		"count": 8
 	},
 	"additional_wants": {
-		"id": "matcha-flavoured:amber",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.amber",
-				"color": "gold"
-			}
-		}
+		"id": "matcha-flavoured:amber"
 	},
 	"gives": {
 		"id": "matcha-flavoured:amber_earrings",

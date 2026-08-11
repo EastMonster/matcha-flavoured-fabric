@@ -1,0 +1,36 @@
+{
+	"gives": {
+		"id": "matcha-flavoured:ofuda",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.ofuda"
+			},
+			"minecraft:lore": [
+				{
+					"translate": "item.kleispack.blessing.muhammad",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:stored_enchantments": {
+				"minecraft:protection": 2
+			},
+			"minecraft:enchantments": {
+				"minecraft:protection": 2
+			},
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:enchantments"
+				]
+			}
+		}
+	},
+	"given_item_modifiers": [],
+	"max_uses": 999,
+	"reputation_discount": 0,
+	"wants": {
+		"count": 1,
+		"id": "matcha-flavoured:quran"
+	},
+	"xp": 30
+}

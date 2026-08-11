@@ -4,13 +4,7 @@
 		"count": 4
 	},
 	"additional_wants": {
-		"id": "matcha-flavoured:opal",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.opal",
-				"color": "#ab85ad"
-			}
-		}
+		"id": "matcha-flavoured:opal"
 	},
 	"gives": {
 		"id": "matcha-flavoured:opal_earrings",

@@ -12,13 +12,13 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
 					"italic": false
 				}
 			]
 		},
-		"count": 12,
+		"count": 1,
 		"id": "matcha-flavoured:echo_fish"
 	},
 	"reputation_discount": 0,

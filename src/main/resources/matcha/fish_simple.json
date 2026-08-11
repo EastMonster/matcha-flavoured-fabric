@@ -168,12 +168,12 @@
 			"minecraft:max_damage": 800,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"text": "🛡 1",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.016",
+					"text": "🏃 +0.02",
 					"color": "dark_green",
 					"italic": false
 				}
@@ -186,7 +186,7 @@
 				{
 					"type": "minecraft:movement_speed",
 					"id": "bronze_elytra",
-					"amount": 0.016,
+					"amount": 0.02,
 					"operation": "add_value",
 					"slot": "chest"
 				},
@@ -213,6 +213,68 @@
 				"items": [
 					"minecraft:honeycomb",
 					"minecraft:feather"
+				]
+			}
+		}
+	},
+	{
+		"id": "shakudo_elytra",
+		"type": "item",
+		"tab": "combat",
+		"source": "data/smithing_table/recipe/shakudo_elytra.json",
+		"carrier": "minecraft:elytra",
+		"components": {
+			"minecraft:max_damage": 800,
+			"minecraft:lore": [
+				{
+					"text": "🛡 3",
+					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.elytra_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.shakudo_elytra_regen_bonus",
+					"color": "#e85e8f",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.shakudo_elytra",
+				"color": "#c96691"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.chestplate",
+					"amount": 3,
+					"operation": "add_value",
+					"slot": "chest"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:enchantments": {
+				"matcha-flavoured:max_magic_protection": 1,
+				"matcha-flavoured:cleanse_armor_maleffect": 1,
+				"matcha-flavoured:shakudo_regen": 1
+			},
+			"minecraft:enchantment_glint_override": false,
+			"minecraft:equippable": {
+				"slot": "chest",
+				"asset_id": "minecraft:shakudo_elytra"
+			},
+			"minecraft:repairable": {
+				"items": [
+					"minecraft:honeycomb",
+					"minecraft:feather",
+					"minecraft:copper_ingot"
 				]
 			}
 		}
@@ -401,8 +463,8 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
 					"italic": false
 				}
 			]
@@ -972,8 +1034,8 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"text": "⭐⭐⭐",
+					"color": "aqua",
 					"italic": false
 				}
 			]
@@ -1005,9 +1067,9 @@
 			"minecraft:lore": [
 				{
 					"translate": "matcha.lore.weakness_ii",
-						"with": [
-							"01:00"
-						],
+					"with": [
+						"01:00"
+					],
 					"color": "#b6a09a",
 					"italic": false
 				}
@@ -1045,9 +1107,9 @@
 			"minecraft:lore": [
 				{
 					"translate": "matcha.lore.poison_ii",
-						"with": [
-							"01:00"
-						],
+					"with": [
+						"01:00"
+					],
 					"color": "#48a53b",
 					"italic": false
 				}

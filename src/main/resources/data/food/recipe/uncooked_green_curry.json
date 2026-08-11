@@ -7,8 +7,8 @@
 		"minecraft:sugar",
 		"matcha-flavoured:milk_bottle",
 		[
-			"minecraft:cod",
-			"minecraft:salmon"
+			"#matcha-flavoured:cod_fish",
+			"#matcha-flavoured:salmon_fish"
 		],
 		"minecraft:bowl"
 	],

@@ -9,14 +9,13 @@
 			"brown_egg"
 		],
 		"matcha-flavoured:flour",
-		"matcha-flavoured:flour",
 		"matcha-flavoured:flour"
 	],
 	"result": {
 		"components": {
 			"!minecraft:entity_data": {}
 		},
-		"count": 3,
+		"count": 4,
 		"id": "matcha-flavoured:dough"
 	}
 }

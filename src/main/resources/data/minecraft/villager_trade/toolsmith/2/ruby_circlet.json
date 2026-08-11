@@ -4,13 +4,7 @@
 		"count": 4
 	},
 	"additional_wants": {
-		"id": "matcha-flavoured:ruby",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.ruby",
-				"color": "red"
-			}
-		}
+		"id": "matcha-flavoured:ruby"
 	},
 	"gives": {
 		"id": "matcha-flavoured:ruby_circlet",

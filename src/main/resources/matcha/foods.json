@@ -2069,14 +2069,6 @@
 				"probability": 1.0,
 				"effects": [
 					{
-						"id": "minecraft:resistance",
-						"duration": 6000,
-						"amplifier": 0,
-						"ambient": false,
-						"particles": false,
-						"icon": true
-					},
-					{
 						"id": "minecraft:regeneration",
 						"duration": 120,
 						"amplifier": 2,
@@ -2810,5 +2802,301 @@
 		],
 		"consumeSeconds": 1.8,
 		"remainder": "bowl"
+	},
+	{
+		"id": "cheese_pizza",
+		"source": "data/food/recipe/cheese_pizza.json",
+		"lore": [
+			{
+				"text": "❤❤❤❤❣",
+				"color": "red",
+				"italic": false
+			},
+			{
+				"translate": "matcha.lore.strength",
+				"with": ["3:00"],
+				"color": "#e65f33",
+				"italic": false
+			}
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 108,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:strength",
+						"duration": 3600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "mushroom_pizza",
+		"source": "data/food/recipe/mushroom_pizza.json",
+		"lore": [
+			{
+				"text": "❤❤❤❤",
+				"color": "red",
+				"italic": false
+			},
+			{
+				"translate": "matcha.lore.strength",
+				"with": ["3:00"],
+				"color": "#e65f33",
+				"italic": false
+			}
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:strength",
+						"duration": 3600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "meat_pizza",
+		"source": "data/food/recipe/meat_pizza.json",
+		"lore": [
+			{
+				"text": "❤❤❤❤❤",
+				"color": "red",
+				"italic": false
+			},
+			{
+				"translate": "matcha.lore.strength",
+				"with": ["3:00"],
+				"color": "#e65f33",
+				"italic": false
+			}
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 120,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:strength",
+						"duration": 3600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "warped_pizza",
+		"source": "data/food/recipe/warped_pizza.json",
+		"lore": [
+			{
+				"text": "❤❤❤❤",
+				"color": "red",
+				"italic": false
+			},
+			{
+				"translate": "matcha.lore.invisibility",
+				"with": ["5:00"],
+				"color": "#92b7ce",
+				"italic": false
+			},
+			{
+				"translate": "matcha.lore.strength",
+				"with": ["3:00"],
+				"color": "#e65f33",
+				"italic": false
+			}
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 96,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:invisibility",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:strength",
+						"duration": 3600,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "kontomire_stew",
+		"source": "data/food/recipe/kontomire_stew.json",
+		"lore": [
+			{
+				"text": "❤❤❤❤❤❤",
+				"color": "red",
+				"italic": false
+			},
+			{
+				"translate": "matcha.lore.strength",
+				"with": ["5:00"],
+				"color": "#e65f33",
+				"italic": false
+			},
+			{
+				"translate": "matcha.lore.regen",
+				"with": ["1:00"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"sound": "minecraft:entity.generic.drink",
+		"remainder": "minecraft:bowl",
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:strength",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 144,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 1200,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "pad_thai",
+		"source": "data/food/recipe/pad_thai.json",
+		"lore": [
+			{
+				"text": "❤❤❤❤❤",
+				"color": "red",
+				"italic": false
+			},
+			{
+				"translate": "matcha.lore.night_vision",
+				"with": ["5:00"],
+				"color": "green",
+				"italic": false
+			}
+		],
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"sound": "minecraft:entity.generic.eat",
+		"remainder": "minecraft:bowl",
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:night_vision",
+						"duration": 6000,
+						"amplifier": 0,
+						"ambient": false,
+						"particles": false,
+						"icon": true
+					},
+					{
+						"id": "minecraft:regeneration",
+						"duration": 120,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
 	}
 ]

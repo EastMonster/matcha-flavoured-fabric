@@ -11,8 +11,14 @@
 		"B": "minecraft:enchanted_book",
 		"E": "minecraft:glowstone_dust",
 		"D": "minecraft:diamond",
-		"d": "minecraft:diamond_axe",
-		"p": "minecraft:diamond_pickaxe"
+		"d": [
+			"minecraft:diamond_axe",
+			"matcha-flavoured:electrum_axe"
+		],
+		"p": [
+			"minecraft:diamond_pickaxe",
+			"matcha-flavoured:electrum_pickaxe"
+		]
 	},
 	"result": {
 		"components": {

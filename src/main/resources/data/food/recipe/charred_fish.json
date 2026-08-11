@@ -5,9 +5,9 @@
 	"experience": 0.35,
 	"ingredient": [
 		"minecraft:tropical_fish",
-		"minecraft:pufferfish",
-		"minecraft:cod",
-		"minecraft:salmon"
+		"#matcha-flavoured:pufferfish_fish",
+		"#matcha-flavoured:cod_fish",
+		"#matcha-flavoured:salmon_fish"
 	],
 	"result": {
 		"id": "matcha-flavoured:charred_fish",

@@ -24,10 +24,19 @@
 					"color": "dark_green",
 					"italic": false
 				},
-				"",
 				{
-					"translate": "matcha.lore.blocking",
-					"color": "gray",
+					"translate": "desc.kleispack.set_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.divinity.set_bonus",
+					"color": "aqua",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.when_blocking",
+					"color": "dark_gray",
 					"italic": false
 				},
 				{
@@ -35,7 +44,7 @@
 					"with": [
 						"80"
 					],
-					"color": "blue",
+					"color": "gray",
 					"italic": false
 				},
 				{
@@ -43,7 +52,7 @@
 					"with": [
 						"70"
 					],
-					"color": "blue",
+					"color": "gray",
 					"italic": false
 				}
 			],
@@ -146,6 +155,16 @@
 					"text": "🕒 1",
 					"color": "dark_green",
 					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.set_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.divinity.set_bonus",
+					"color": "aqua",
+					"italic": false
 				}
 			],
 			"minecraft:tooltip_display": {
@@ -222,6 +241,16 @@
 				{
 					"text": "🕒 4",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.set_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.divinity.set_bonus",
+					"color": "aqua",
 					"italic": false
 				}
 			],
@@ -431,12 +460,12 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 2",
+					"text": "🛡 3",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.008",
+					"text": "🏃 +0.01",
 					"color": "dark_green",
 					"italic": false
 				}
@@ -449,14 +478,14 @@
 				{
 					"type": "minecraft:movement_speed",
 					"id": "bronze_boots",
-					"amount": 0.0085,
+					"amount": 0.01,
 					"operation": "add_value",
 					"slot": "feet"
 				},
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.boots",
-					"amount": 2,
+					"amount": 3,
 					"operation": "add_value",
 					"slot": "feet"
 				}
@@ -482,12 +511,12 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 6",
+					"text": "🛡 8",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.008",
+					"text": "🏃 +0.01",
 					"color": "dark_green",
 					"italic": false
 				}
@@ -500,14 +529,14 @@
 				{
 					"type": "minecraft:movement_speed",
 					"id": "bronze_chestplate",
-					"amount": 0.0085,
+					"amount": 0.01,
 					"operation": "add_value",
 					"slot": "chest"
 				},
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.chestplate",
-					"amount": 6,
+					"amount": 8,
 					"operation": "add_value",
 					"slot": "chest"
 				}
@@ -616,12 +645,12 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 2",
+					"text": "🛡 3",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.008",
+					"text": "🏃 +0.01",
 					"color": "dark_green",
 					"italic": false
 				}
@@ -634,14 +663,14 @@
 				{
 					"type": "minecraft:movement_speed",
 					"id": "bronze_helmet",
-					"amount": 0.0085,
+					"amount": 0.01,
 					"operation": "add_value",
 					"slot": "head"
 				},
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.helmet",
-					"amount": 2,
+					"amount": 3,
 					"operation": "add_value",
 					"slot": "head"
 				}
@@ -731,12 +760,12 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"text": "🛡 1",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.02",
+					"text": "🏃 +0.1",
 					"color": "dark_green",
 					"italic": false
 				}
@@ -749,7 +778,7 @@
 				{
 					"type": "minecraft:movement_speed",
 					"id": "bronze_helmet",
-					"amount": 0.02,
+					"amount": 0.1,
 					"operation": "add_value",
 					"slot": "head"
 				},
@@ -781,12 +810,12 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 5",
+					"text": "🛡 6",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.008",
+					"text": "🏃 +0.01",
 					"color": "dark_green",
 					"italic": false
 				}
@@ -799,14 +828,14 @@
 				{
 					"type": "minecraft:movement_speed",
 					"id": "bronze_leggings",
-					"amount": 0.0085,
+					"amount": 0.01,
 					"operation": "add_value",
 					"slot": "legs"
 				},
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.leggings",
-					"amount": 5,
+					"amount": 6,
 					"operation": "add_value",
 					"slot": "legs"
 				}
@@ -872,7 +901,7 @@
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.003",
+					"text": "🏃 +0.01",
 					"color": "dark_green",
 					"italic": false
 				}
@@ -894,8 +923,8 @@
 				},
 				{
 					"type": "minecraft:movement_speed",
-					"id": "bronze_sword",
-					"amount": 0.003,
+					"id": "bronze_mattock",
+					"amount": 0.01,
 					"operation": "add_value",
 					"slot": "mainhand"
 				}
@@ -1732,13 +1761,28 @@
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 3",
+					"text": "🛡 3",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛨ 2",
+					"text": " 3",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.set_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.warding3.set_bonus_apotropaic",
+					"color": "yellow",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.warding3.set_bonus_divinity",
+					"color": "aqua",
 					"italic": false
 				}
 			],
@@ -1750,7 +1794,7 @@
 				{
 					"type": "minecraft:armor_toughness",
 					"id": "minecraft:armor.boots",
-					"amount": 2,
+					"amount": 3,
 					"operation": "add_value",
 					"slot": "feet"
 				},
@@ -1790,13 +1834,28 @@
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 8",
+					"text": "🛡 8",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛨ 2",
+					"text": " 3",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.set_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.warding3.set_bonus_apotropaic",
+					"color": "yellow",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.warding3.set_bonus_divinity",
+					"color": "aqua",
 					"italic": false
 				}
 			],
@@ -1808,7 +1867,7 @@
 				{
 					"type": "minecraft:armor_toughness",
 					"id": "minecraft:armor.chestplate",
-					"amount": 2,
+					"amount": 3,
 					"operation": "add_value",
 					"slot": "chest"
 				},
@@ -1925,13 +1984,28 @@
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 3",
+					"text": "🛡 3",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛨ 2",
+					"text": " 3",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.set_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.warding3.set_bonus_apotropaic",
+					"color": "yellow",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.warding3.set_bonus_divinity",
+					"color": "aqua",
 					"italic": false
 				}
 			],
@@ -1943,7 +2017,7 @@
 				{
 					"type": "minecraft:armor_toughness",
 					"id": "minecraft:armor.helmet",
-					"amount": 2,
+					"amount": 3,
 					"operation": "add_value",
 					"slot": "head"
 				},
@@ -2054,13 +2128,28 @@
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 6",
+					"text": "🛡 6",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛨ 2",
+					"text": " 3",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.set_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.warding3.set_bonus_apotropaic",
+					"color": "yellow",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.warding3.set_bonus_divinity",
+					"color": "aqua",
 					"italic": false
 				}
 			],
@@ -2072,7 +2161,7 @@
 				{
 					"type": "minecraft:armor_toughness",
 					"id": "minecraft:armor.leggings",
-					"amount": 2,
+					"amount": 3,
 					"operation": "add_value",
 					"slot": "legs"
 				},
@@ -2796,13 +2885,18 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"translate": "matcha.lore.cleanse_levitation",
-					"color": "gray",
+					"text": "🛡 3",
+					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛊ 2",
-					"color": "dark_green",
+					"translate": "desc.kleispack.per_equipment_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.shakudo_regen_bonus",
+					"color": "#e85e8f",
 					"italic": false
 				}
 			],
@@ -2814,7 +2908,7 @@
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.boots",
-					"amount": 2,
+					"amount": 3,
 					"operation": "add_value",
 					"slot": "feet"
 				}
@@ -2825,7 +2919,9 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:cleanse_armor_feet": 1
+				"matcha-flavoured:cleanse_armor_feet": 1,
+				"matcha-flavoured:magic_protection": 1,
+				"matcha-flavoured:shakudo_regen": 1
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -2842,18 +2938,18 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"translate": "matcha.lore.cleanse_poison",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "matcha.lore.cleanse_wither",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"text": "⛊ 6",
+					"text": "🛡 8",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.per_equipment_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.shakudo_regen_bonus",
+					"color": "#e85e8f",
 					"italic": false
 				}
 			],
@@ -2865,7 +2961,7 @@
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.chestplate",
-					"amount": 6,
+					"amount": 8,
 					"operation": "add_value",
 					"slot": "chest"
 				}
@@ -2876,7 +2972,9 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:cleanse_armor_chest": 1
+				"matcha-flavoured:cleanse_armor_chest": 1,
+				"matcha-flavoured:magic_protection": 1,
+				"matcha-flavoured:shakudo_regen": 1
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -2966,18 +3064,18 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"translate": "matcha.lore.cleanse_blindness",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "matcha.lore.cleanse_darkness",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"text": "⛊ 2",
+					"text": "🛡 3",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.per_equipment_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.shakudo_regen_bonus",
+					"color": "#e85e8f",
 					"italic": false
 				}
 			],
@@ -2989,7 +3087,7 @@
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.helmet",
-					"amount": 2,
+					"amount": 3,
 					"operation": "add_value",
 					"slot": "head"
 				}
@@ -3000,7 +3098,9 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:cleanse_armor_head": 1
+				"matcha-flavoured:cleanse_armor_head": 1,
+				"matcha-flavoured:magic_protection": 1,
+				"matcha-flavoured:shakudo_regen": 1
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -3080,13 +3180,18 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"translate": "matcha.lore.cleanse_slowness",
-					"color": "gray",
+					"text": "🛡 6",
+					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛊ 5",
-					"color": "dark_green",
+					"translate": "desc.kleispack.per_equipment_bonus",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.kleispack.shakudo_regen_bonus",
+					"color": "#e85e8f",
 					"italic": false
 				}
 			],
@@ -3098,7 +3203,7 @@
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.leggings",
-					"amount": 5,
+					"amount": 6,
 					"operation": "add_value",
 					"slot": "legs"
 				}
@@ -3109,7 +3214,9 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:cleanse_armor_legs": 1
+				"matcha-flavoured:cleanse_armor_legs": 1,
+				"matcha-flavoured:magic_protection": 1,
+				"matcha-flavoured:shakudo_regen": 1
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -3639,12 +3746,12 @@
 					"italic": false
 				},
 				{
-					"text": "⛊ 6",
+					"text": "⛊ 7",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛨ 2",
+					"text": "⛨ 1",
 					"color": "dark_green",
 					"italic": false
 				}
@@ -3657,14 +3764,14 @@
 				{
 					"type": "minecraft:armor_toughness",
 					"id": "minecraft:armor.chestplate",
-					"amount": 2,
+					"amount": 1,
 					"operation": "add_value",
 					"slot": "chest"
 				},
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.chestplate",
-					"amount": 6,
+					"amount": 7,
 					"operation": "add_value",
 					"slot": "chest"
 				},

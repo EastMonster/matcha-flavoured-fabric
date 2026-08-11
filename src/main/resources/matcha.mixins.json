@@ -11,7 +11,9 @@
 		"ServerAdvancementManagerMixin",
 		"ExperienceMixin",
 		"EnchantmentHelperMixin",
-		"FoodHealMixin"
+		"FoodHealMixin",
+		"VillagerAccessor",
+		"WolfTamingMixin"
 	],
 	"client": [
 		"CreatorNamespaceMixin",
