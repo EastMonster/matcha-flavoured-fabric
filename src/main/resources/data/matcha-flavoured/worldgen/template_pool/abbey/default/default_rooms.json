@@ -1,0 +1,15 @@
+{
+	"name": "matcha-flavoured:abbey/default/default_rooms",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 2,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/entrances/tutorial",
+				"processors": "matcha-flavoured:abbey_tower"
+			}
+		}
+	]
+}

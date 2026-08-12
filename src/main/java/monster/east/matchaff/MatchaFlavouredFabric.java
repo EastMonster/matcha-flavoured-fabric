@@ -57,10 +57,10 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		List<Item> foods = registerFoods();
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
-		List<SimpleItemRegistrar.BatchItem> fishAndSimple = SimpleItemRegistrar.registerAll();
+		List<SimpleItemRegistrar.BatchItem> batchItems = SimpleItemRegistrar.registerAll();
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
 		equipment.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
-		fishAndSimple.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
+		batchItems.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
 		foods.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.FOOD_AND_DRINKS)));
 		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
 		CreativeOrder.register(creativeItems);

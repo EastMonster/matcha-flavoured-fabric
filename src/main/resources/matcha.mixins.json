@@ -18,7 +18,8 @@
 	"client": [
 		"CreatorNamespaceMixin",
 		"LeavesBreakingMixin",
-		"LeavesCullMixin"
+		"LeavesCullMixin",
+		"TrueDarknessMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

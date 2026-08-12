@@ -13,6 +13,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.context.UseOnContext;
 import org.slf4j.Logger;
@@ -68,6 +69,9 @@ public final class EquipmentRegistrar {
 	private static Item createItem(Item carrier, Item.Properties properties) {
 		if (carrier instanceof AxeItem || carrier instanceof HoeItem || carrier instanceof ShovelItem) {
 			return new UseOnCarrierItem(carrier, properties);
+		}
+		if (carrier instanceof ShieldItem) {
+			return new ShieldItem(properties);
 		}
 		return new Item(properties);
 	}

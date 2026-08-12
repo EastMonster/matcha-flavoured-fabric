@@ -12,6 +12,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		MatchaClientConfig.load();
 		ResourceLoader.registerBuiltinPack(
 				Identifier.parse(NO_LEAF_EXTENSIONS_PACK),
 				FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),

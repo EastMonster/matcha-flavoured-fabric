@@ -1,0 +1,33 @@
+{
+	"name": "matcha-flavoured:abbey/default/default_rooms",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/rooms/boon_checkpoint",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/rooms/boon_vault",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/rooms/boon_heart",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		}
+	]
+}

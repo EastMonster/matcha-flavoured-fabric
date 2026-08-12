@@ -420,5 +420,56 @@
 			},
 			"minecraft:max_stack_size": 1
 		}
+	},
+	{
+		"id": "fertilised_blue_egg",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/2/blue_egg.json",
+		"carrier": "minecraft:chicken_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:chicken",
+				"Age": -24000,
+				"variant": "minecraft:cold"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.fertilised_blue_egg"
+			}
+		}
+	},
+	{
+		"id": "fertilised_brown_egg",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/2/brown_egg.json",
+		"carrier": "minecraft:chicken_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:chicken",
+				"Age": -24000,
+				"variant": "minecraft:warm"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.fertilised_brown_egg"
+			}
+		}
+	},
+	{
+		"id": "fertilised_egg",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"source": "data/minecraft/villager_trade/farmer/2/white_egg.json",
+		"carrier": "minecraft:chicken_spawn_egg",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "minecraft:chicken",
+				"Age": -24000,
+				"variant": "minecraft:temperate"
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.fertilised_egg"
+			}
+		}
 	}
 ]

@@ -1,0 +1,51 @@
+{
+	"name": "matcha-flavoured:abbey/default/puzzle_rooms",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/rooms/hallway_pitfall",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/rooms/lantern_drop",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/rooms/decision_puzzle",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/rooms/bath",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/rooms/jump_puzzle",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		}
+	]
+}

@@ -1,6 +1,8 @@
 package monster.east.matchaff;
 
 import monster.east.matchaff.mixin.VillagerAccessor;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -79,6 +81,9 @@ public final class MechanicMechanics {
 	private static final Identifier HAPPY_GHAST_HORN = id("mechanics/happy_ghast_horn");
 	private static final Identifier KILL_DRAGON = id("end/kill_dragon");
 	private static final Identifier SUMMONED_WITHER = id("mechanics/summoned_wither");
+	private static final AttachmentType<Integer> WATER_BOTTLE_INVENTORY_VERSION = AttachmentRegistry.create(
+			id("water_bottle_inventory_version")
+	);
 
 	private static final TagKey<EntityType<?>> VILLAGER_FRIENDS = TagKey.create(
 			Registries.ENTITY_TYPE, id("villager_friends")
@@ -500,8 +505,14 @@ public final class MechanicMechanics {
 	}
 
 	private static void stackWaterBottles(ServerPlayer player) {
-		for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
-			ItemStack stack = player.getInventory().getItem(slot);
+		var inventory = player.getInventory();
+		int inventoryVersion = inventory.getTimesChanged();
+		if (player.getAttachedOrElse(WATER_BOTTLE_INVENTORY_VERSION, -1) == inventoryVersion) {
+			return;
+		}
+		player.setAttached(WATER_BOTTLE_INVENTORY_VERSION, inventoryVersion);
+		for (int slot = 0; slot < inventory.getContainerSize(); slot++) {
+			ItemStack stack = inventory.getItem(slot);
 			if (!stack.is(Items.POTION)) {
 				continue;
 			}

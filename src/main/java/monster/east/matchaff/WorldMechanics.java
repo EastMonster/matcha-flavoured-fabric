@@ -77,7 +77,7 @@ public final class WorldMechanics {
 	private static final String DIFFICULTY_OBJECTIVE = "difficulty_score";
 	private static final String CURRENT_DIFFICULTY = "current_world_settings_difficulty";
 	private static final String VERSION_OBJECTIVE = "matcha_version";
-	private static final int RECIPE_UNLOCK_VERSION = 111;
+	private static final int RECIPE_UNLOCK_VERSION = 112;
 	private static final Identifier EERIE_ADVANCEMENT = id("mechanics/enter_village");
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("glass_bottle_from_crafting");
 	private static final Identifier ENDLESS_REPAIRS_ADVANCEMENT =
@@ -228,8 +228,8 @@ public final class WorldMechanics {
 	}
 
 	/**
-	 * One-time per-player 1.10 recipe unlock migration (datapack decision 15.3,
-	 * option 1): on first join with the 1.10 version, revoke the hidden
+	 * One-time per-player recipe unlock migration (datapack decision 15.3,
+	 * option 1): on first join with a newer recipe version, revoke the hidden
 	 * {@code main:recipe_unlocks/*} advancement criteria so the updated reward
 	 * lists re-trigger when the player obtains the matching materials again.
 	 * Already-learned recipes are kept; the per-player scoreboard marks the
@@ -616,7 +616,7 @@ public final class WorldMechanics {
 			} else {
 				setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 15 : 10);
 				setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.35 : 0.34);
-				setBase(mob, Attributes.STEP_HEIGHT, difficulty == Difficulty.HARD ? 2 : 1);
+				setBase(mob, Attributes.STEP_HEIGHT, 1);
 				if (difficulty == Difficulty.HARD) {
 					setBase(mob, Attributes.ATTACK_DAMAGE, 5);
 				}
@@ -625,15 +625,15 @@ public final class WorldMechanics {
 		if (type == EntityTypes.HUSK && !baby) {
 			setBase(mob, Attributes.MAX_HEALTH, 40);
 			mob.setHealth(40);
-			setBase(mob, Attributes.MOVEMENT_SPEED, 0.25);
-			setBase(mob, Attributes.ATTACK_DAMAGE, difficulty == Difficulty.HARD ? 20 : 15);
+			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.25 : 0.21);
+			setBase(mob, Attributes.ATTACK_DAMAGE, difficulty == Difficulty.HARD ? 15 : 10);
 			setBase(mob, Attributes.ARMOR, difficulty == Difficulty.HARD ? 14 : 12);
 			setBase(mob, Attributes.FOLLOW_RANGE, difficulty == Difficulty.HARD ? 60 : 50);
 			setBase(mob, Attributes.KNOCKBACK_RESISTANCE, 1);
 			setBase(mob, Attributes.MOVEMENT_EFFICIENCY, 1);
 			setBase(mob, Attributes.WATER_MOVEMENT_EFFICIENCY, 1);
 			setBase(mob, Attributes.STEP_HEIGHT, 1);
-			setBase(mob, Attributes.SPAWN_REINFORCEMENTS_CHANCE, 1);
+			setBase(mob, Attributes.SPAWN_REINFORCEMENTS_CHANCE, difficulty == Difficulty.HARD ? 0.25 : 0.1);
 		} else if (type == EntityTypes.HUSK) {
 			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 5 : 4);
 		}

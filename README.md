@@ -27,6 +27,7 @@ Use a new world when possible. Existing items from the data-pack version are not
 - Most custom equipment, food, fish, blessings, behavior items, and music discs are registered as independent items under the `matcha-flavoured` namespace instead of repurposing vanilla items, which makes the added items easier to distinguish and browse in inventory tools such as JEI and Jade. Item IDs and commands therefore differ from the data-pack version, and **existing data-pack stacks are not converted automatically**. Registered items are placed across the relevant vanilla creative tabs.
 - Food healing is now scheduled per meal instead of relying on the regeneration effect the data pack uses. Vanilla regeneration refreshes in place (its duration never stacks), so eating the same food twice in a row silently lost part of the heal. Each food's hidden healing-simulation segment now ticks independently, so consecutive bites heal their full intended amount. 
 - Breaking cracks no longer appear floating in the air around leaves and glow lichen: the breaking animation now drops quads that fall outside the block's bounds. The out-of-bounds leaf extension panels are also culled inside canopies to reduce the number of rendered faces, while the canopy keeps its solid look.
+- The Mod Menu settings screen can disable Overworld True Darkness per client without changing server gameplay.
 - Adds an AI-assisted Simplified Chinese translation.
 
 ## Changes that may cause behavioral differences

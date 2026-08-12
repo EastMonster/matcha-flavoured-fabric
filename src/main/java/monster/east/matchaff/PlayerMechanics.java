@@ -1,8 +1,11 @@
 package monster.east.matchaff;
 
+import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.numbers.StyledFormat;
 import net.minecraft.core.Holder;
@@ -47,6 +50,12 @@ public final class PlayerMechanics {
 	private static final int MAX_HEARTS = 60;
 	private static final TagKey<Biome> FROZEN_BIOME = TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("minecraft", "is_frozen"));
 	private static final Identifier FREEZING_PROTECTION = Identifier.fromNamespaceAndPath("matcha-flavoured", "freezing_protection");
+	private static final Identifier HEART_CONTAINER_OBTAINED = Identifier.fromNamespaceAndPath(
+			"main", "mechanics/heart_container_obtained"
+	);
+	private static final AttachmentType<Integer> HEART_INVENTORY_VERSION = AttachmentRegistry.create(
+			Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_inventory_version")
+	);
 
 	private static final String HEARTS_OBJECTIVE = "Hearts";
 
@@ -104,13 +113,27 @@ public final class PlayerMechanics {
 		if (player.isCreative() || hearts >= MAX_HEARTS) {
 			return;
 		}
+		var inventory = player.getInventory();
+		int inventoryVersion = inventory.getTimesChanged();
+		AdvancementHolder obtained = player.level().getServer().getAdvancements().get(HEART_CONTAINER_OBTAINED);
+		boolean newlyObtained = obtained != null && player.getAdvancements().getOrStartProgress(obtained).isDone();
+		if (!newlyObtained && player.getAttachedOrElse(HEART_INVENTORY_VERSION, -1) == inventoryVersion) {
+			return;
+		}
+		player.setAttached(HEART_INVENTORY_VERSION, inventoryVersion);
 		Item heartContainer = heartContainerItem();
-		for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
-			ItemStack stack = player.getInventory().getItem(slot);
+		for (int slot = 0; slot < inventory.getContainerSize(); slot++) {
+			ItemStack stack = inventory.getItem(slot);
 			if (stack.isEmpty() || !stack.is(heartContainer)) {
 				continue;
 			}
 			stack.shrink(1);
+			inventory.setChanged();
+			if (obtained != null) {
+				for (String criterion : obtained.value().criteria().keySet()) {
+					player.getAdvancements().revoke(obtained, criterion);
+				}
+			}
 			hearts = Math.min(MAX_HEARTS, hearts + 2);
 			setHearts(player, hearts);
 			player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 10, false, false));

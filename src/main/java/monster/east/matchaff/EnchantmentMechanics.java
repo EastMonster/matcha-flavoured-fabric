@@ -35,6 +35,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.Predicate;
 
 /**
@@ -273,35 +274,43 @@ public final class EnchantmentMechanics {
 
 	private static void wardingAura(ServerPlayer player, int level) {
 		var serverLevel = (ServerLevel) player.level();
+		int queryRadius = level == 3 ? 24 : level == 2 ? 14 : 8;
+		List<LivingEntity> targets = wardingTargets(serverLevel, player, queryRadius);
 		if (level == 3) {
-			for (LivingEntity target : nearbyTargets(serverLevel, player, 24, WARDING_TARGETS,
-					entity -> !wearingCopperArmor(entity))) {
+			for (LivingEntity target : targets) {
+				if (!target.getType().builtInRegistryHolder().is(WARDING_TARGETS)
+						|| wearingCopperArmor(target)) {
+					continue;
+				}
 				target.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 1, false, false));
 				if (target.getType() != EntityTypes.WITHER) {
 					wardingParticle(serverLevel, target, ParticleTypes.SOUL_FIRE_FLAME);
 				}
 			}
-			LivingEntity damaged = nearestTarget(serverLevel, player, 12, WARDING_TARGETS,
+			LivingEntity damaged = nearestTarget(targets, player, 12, WARDING_TARGETS,
 					entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
 			if (damaged != null) {
 				damaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 2.0F);
 			}
 
-			for (LivingEntity target : nearbyTargets(serverLevel, player, 12, WARDING_TARGETS,
-					entity -> entity.getType() != EntityTypes.WITHER && wearingCopperArmor(entity))) {
-				wardingParticle(serverLevel, target, ParticleTypes.SOUL_FIRE_FLAME);
+			for (LivingEntity target : targets) {
+				if (target.distanceToSqr(player) <= 12 * 12
+						&& target.getType().builtInRegistryHolder().is(WARDING_TARGETS)
+						&& target.getType() != EntityTypes.WITHER && wearingCopperArmor(target)) {
+					wardingParticle(serverLevel, target, ParticleTypes.SOUL_FIRE_FLAME);
+				}
 			}
-			LivingEntity copperDamaged = nearestTarget(serverLevel, player, 8, WARDING_TARGETS,
+			LivingEntity copperDamaged = nearestTarget(targets, player, 8, WARDING_TARGETS,
 					entity -> entity.getType() != EntityTypes.WITHER && wearingCopperArmor(entity));
 			if (copperDamaged != null) {
 				copperDamaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 1.0F);
 			}
-			LivingEntity copperSlowed = nearestTarget(serverLevel, player, 12, WARDING_TARGETS,
+			LivingEntity copperSlowed = nearestTarget(targets, player, 12, WARDING_TARGETS,
 					EnchantmentMechanics::wearingCopperArmor);
 			if (copperSlowed != null) {
 				copperSlowed.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 0, false, false));
 			}
-			witherWarding(serverLevel, player, 16, 2.0F);
+			witherWarding(serverLevel, targets, player, 16, 2.0F);
 			return;
 		}
 
@@ -312,53 +321,49 @@ public final class EnchantmentMechanics {
 			default -> 8;
 		};
 		int slowAmplifier = level == 1 ? 1 : 0;
-		LivingEntity slowed = nearestTarget(serverLevel, player, slowRadius, WARDING_TARGETS_SLOWED,
+		LivingEntity slowed = nearestTarget(targets, player, slowRadius, WARDING_TARGETS_SLOWED,
 				entity -> !wearingCopperArmor(entity));
 		if (slowed != null) {
 			slowed.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, slowAmplifier, false, false));
 		}
-		LivingEntity damaged = nearestTarget(serverLevel, player, damageRadius, WARDING_TARGETS,
+		LivingEntity damaged = nearestTarget(targets, player, damageRadius, WARDING_TARGETS,
 				entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
 		if (damaged != null) {
 			damaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 1.0F);
 		}
-		LivingEntity particleTarget = nearestTarget(serverLevel, player, slowRadius, WARDING_TARGETS,
+		LivingEntity particleTarget = nearestTarget(targets, player, slowRadius, WARDING_TARGETS,
 				entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
 		if (particleTarget != null) {
 			wardingParticle(serverLevel, particleTarget, ParticleTypes.SOUL_FIRE_FLAME);
 		}
-		LivingEntity copperTarget = nearestTarget(serverLevel, player, slowRadius, WARDING_TARGETS,
+		LivingEntity copperTarget = nearestTarget(targets, player, slowRadius, WARDING_TARGETS,
 				entity -> entity.getType() != EntityTypes.WITHER && wearingCopperArmor(entity));
 		if (copperTarget != null) {
 			wardingParticle(serverLevel, copperTarget, ParticleTypes.ELECTRIC_SPARK);
 		}
 		if (level > 0) {
-			witherWarding(serverLevel, player, level == 1 ? 8 : 12, 1.0F);
+			witherWarding(serverLevel, targets, player, level == 1 ? 8 : 12, 1.0F);
 		}
 	}
 
 	private static LivingEntity nearestTarget(
-			ServerLevel level, LivingEntity center, double radius,
+			List<LivingEntity> targets, LivingEntity center, double radius,
 			TagKey<net.minecraft.world.entity.EntityType<?>> tag, Predicate<LivingEntity> predicate
 	) {
 		double radiusSquared = radius * radius;
-		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), entity ->
-					entity.getType().builtInRegistryHolder().is(tag)
+		return targets.stream()
+				.filter(entity -> entity.getType().builtInRegistryHolder().is(tag)
 							&& predicate.test(entity)
 							&& entity.distanceToSqr(center) <= radiusSquared)
-				.stream()
 				.min(Comparator.comparingDouble(entity -> entity.distanceToSqr(center)))
 				.orElse(null);
 	}
 
-	private static java.util.List<LivingEntity> nearbyTargets(
-			ServerLevel level, LivingEntity center, double radius,
-			TagKey<net.minecraft.world.entity.EntityType<?>> tag, Predicate<LivingEntity> predicate
-	) {
+	private static List<LivingEntity> wardingTargets(ServerLevel level, LivingEntity center, double radius) {
 		double radiusSquared = radius * radius;
 		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), entity ->
-				entity.getType().builtInRegistryHolder().is(tag)
-						&& predicate.test(entity)
+				(entity.getType().builtInRegistryHolder().is(WARDING_TARGETS)
+						|| entity.getType().builtInRegistryHolder().is(WARDING_TARGETS_SLOWED))
 						&& entity.distanceToSqr(center) <= radiusSquared);
 	}
 
@@ -377,8 +382,10 @@ public final class EnchantmentMechanics {
 				particle == ParticleTypes.ELECTRIC_SPARK ? 0.25 : 0.1, 0.02);
 	}
 
-	private static void witherWarding(ServerLevel level, LivingEntity center, double radius, float damage) {
-		LivingEntity wither = nearestTarget(level, center, radius, WARDING_TARGETS,
+	private static void witherWarding(
+			ServerLevel level, List<LivingEntity> targets, LivingEntity center, double radius, float damage
+	) {
+		LivingEntity wither = nearestTarget(targets, center, radius, WARDING_TARGETS,
 				entity -> entity.getType() == EntityTypes.WITHER);
 		if (wither != null) {
 			wither.hurt(level.damageSources().fellOutOfWorld(), damage);

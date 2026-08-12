@@ -1,0 +1,15 @@
+{
+	"name": "matcha-flavoured:abbey/default/entrances",
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 4,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "matcha-flavoured:abbey/default/entrances/entrance_0",
+				"processors": "matcha-flavoured:abbey_dungeon"
+			}
+		}
+	]
+}

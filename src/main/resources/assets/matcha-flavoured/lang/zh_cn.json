@@ -526,5 +526,8 @@
 	"item.matcha-flavoured.pad_thai": "泰式炒河粉",
 	"item.matcha-flavoured.fish.black_seabass": "Black Seabass",
 	"matcha.amnestic.forget": "让村民忘记自己的身份",
-	"matcha.amnestic.place_hint": "放在村民旁边的地面上"
+	"matcha.amnestic.place_hint": "放在村民旁边的地面上",
+	"item.matcha-flavoured.estus_flask": "原素瓶",
+	"matcha.config.true_darkness": "主世界真实黑暗",
+	"matcha.config.true_darkness.tooltip": "在主世界使用数据包的纯黑环境光。此选项只影响本机显示。"
 }

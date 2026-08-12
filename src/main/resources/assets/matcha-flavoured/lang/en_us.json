@@ -526,5 +526,8 @@
 	"item.matcha-flavoured.pad_thai": "Pad Thai",
 	"item.matcha-flavoured.fish.black_seabass": "Black Seabass",
 	"matcha.amnestic.forget": "Causes a villager to forget who they are",
-	"matcha.amnestic.place_hint": "Place on the ground next to them"
+	"matcha.amnestic.place_hint": "Place on the ground next to them",
+	"item.matcha-flavoured.estus_flask": "Estus Flask",
+	"matcha.config.true_darkness": "Overworld True Darkness",
+	"matcha.config.true_darkness.tooltip": "Use the data pack's pitch-black ambient light in the Overworld. This only changes what you see."
 }

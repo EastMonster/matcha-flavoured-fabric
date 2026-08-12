@@ -3,12 +3,7 @@
 	"category": "food",
 	"cookingtime": 100,
 	"experience": 0.35,
-	"ingredient": [
-		"minecraft:tropical_fish",
-		"#matcha-flavoured:pufferfish_fish",
-		"#matcha-flavoured:cod_fish",
-		"#matcha-flavoured:salmon_fish"
-	],
+	"ingredient": "#matcha-flavoured:charred_fish_ingredients",
 	"result": {
 		"id": "matcha-flavoured:charred_fish",
 		"components": {

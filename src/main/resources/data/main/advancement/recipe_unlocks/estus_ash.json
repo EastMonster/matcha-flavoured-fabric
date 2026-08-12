@@ -19,6 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
+			"crafting:estus_flask",
 			"crafting:wooden_cross"
 		]
 	}

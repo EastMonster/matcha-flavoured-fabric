@@ -38,8 +38,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Registers the Matcha fish + remaining simple/review batch from
- * matcha/fish_simple.json.
+ * Registers the Matcha fish and simple item definition batches.
  *
  * <p>The datapack used vanilla items as carriers (salmon, bundle, tipped
  * arrow, ...), so each migrated item keeps its original carrier's behaviour by
@@ -48,7 +47,7 @@ import java.util.Objects;
 public final class SimpleItemRegistrar {
 	private static final Logger LOGGER = LoggerFactory.getLogger("matcha");
 	private static final List<String> RESOURCES = List.of(
-			"/matcha/fish_simple.json", "/matcha/blessings.json", "/matcha/behavior_music.json", "/matcha/second_tier.json"
+			"/matcha/fish.json", "/matcha/simple_items.json", "/matcha/blessings.json", "/matcha/behavior_music.json"
 	);
 
 	private SimpleItemRegistrar() {

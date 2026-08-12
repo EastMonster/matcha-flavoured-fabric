@@ -1,0 +1,819 @@
+[
+	{
+		"id": "alaska_blackfish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/alaska_blackfish.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.alaska_blackfish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "anchovy",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/anchovy.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.anchovy"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "arapaima",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/arapaima.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.arapaima"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "armoured_catfish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/armoured_catfish.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.armoured_catfish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "bass",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/bass.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.bass"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "black_seabass",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/black_seabass.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.black_seabass"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "bluegill",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/bluegill.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.bluegill"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "bujurqui",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/bujurqui.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.bujurqui"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "carp",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/carp.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.carp"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "catfish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/catfish.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.catfish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "crappie",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/crappie.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.crappie"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "echo_fish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/echo_fish.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.echo_fish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "european_eel",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/european_eel.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.european_eel"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "flounder",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/flounder.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.flounder"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "flying_fish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/flying_fish.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.flying_fish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "freshwater_pufferfish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/freshwater_pufferfish.json",
+		"carrier": "minecraft:pufferfish",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.freshwater_pufferfish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "gar",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/gar.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.gar"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "guppy",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/guppy.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.guppy"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "gurnard",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/gurnard.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.gurnard"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "herring",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/herring.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.herring"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "humpback_whitefish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/humpback_whitefish.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.humpback_whitefish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "lamprey",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/lamprey.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.lamprey"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "mahi_mahi",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/mahi_mahi.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.mahi_mahi"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "mediterranean_killifish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/mediterranean_killifish.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.mediterranean_killifish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "monkfish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/monkfish.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.monkfish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "muskellunge",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/muskellunge.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.muskellunge"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "northern_pike",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/northern_pike.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.northern_pike"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "oarfish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/oarfish.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.oarfish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "opah",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/opah.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.opah"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "painted_moray",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/painted_moray.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.painted_moray"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "pale_fish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/pale_fish.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.pale_fish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "piranha",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/piranha.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.piranha"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "rainbow_wrasse",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/rainbow_wrasse.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.rainbow_wrasse"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "shad",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/shad.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.shad"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "siberian_sturgeon",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/siberian_sturgeon.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.siberian_sturgeon"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "skate",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/skate.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.skate"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "spoonhead_sculpin",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/spoonhead_sculpin.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.spoonhead_sculpin"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "striped_perch",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/striped_perch.json",
+		"carrier": "minecraft:cod",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.striped_perch"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "sturgeon",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/sturgeon.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.sturgeon"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "swordfish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/swordfish.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.swordfish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐⭐",
+					"color": "light_purple",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "tunisian_barb",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/tunisian_barb.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.tunisian_barb"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "walleye",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/walleye.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.walleye"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐",
+					"color": "green",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
+		"id": "wolffish",
+		"type": "item",
+		"tab": "foods",
+		"source": "data/minecraft/loot_table/gameplay/fishing/fish/wolffish.json",
+		"carrier": "minecraft:salmon",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha-flavoured.wolffish"
+			},
+			"minecraft:lore": [
+				{
+					"text": "⭐⭐⭐",
+					"color": "aqua",
+					"italic": false
+				}
+			]
+		}
+	}
+]

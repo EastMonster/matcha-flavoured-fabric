@@ -2,7 +2,7 @@
 	"given_item_modifiers": [
 		{
 			"decoration": "minecraft:red_x",
-			"destination": "minecraft:on_abbey_explorer_maps",
+			"destination": "matcha-flavoured:on_abbey_explorer_maps",
 			"function": "minecraft:exploration_map",
 			"search_radius": 100
 		},
