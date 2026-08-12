@@ -12,6 +12,8 @@
 		"ExperienceMixin",
 		"EnchantmentHelperMixin",
 		"FoodHealMixin",
+		"ShearsCompatibilityMixin",
+		"ShearsInteractionMixin",
 		"VillagerAccessor",
 		"WolfTamingMixin"
 	],

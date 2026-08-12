@@ -2,6 +2,7 @@ package monster.east.matchaff.item;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -26,6 +27,7 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.SplashPotionItem;
 import net.minecraft.world.item.TippedArrowItem;
 import net.minecraft.world.item.WritableBookItem;
+import net.minecraft.world.level.block.DispenserBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,6 +90,9 @@ public final class SimpleItemRegistrar {
 		}
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha-flavoured", definition.id));
 		Item item = Registry.register(BuiltInRegistries.ITEM, key, createItem(definition, properties.setId(key)));
+		if (item instanceof ShearsItem) {
+			DispenserBlock.registerBehavior(item, new ShearsDispenseItemBehavior());
+		}
 		return new BatchItem(item, tab(definition.tab));
 	}
 
