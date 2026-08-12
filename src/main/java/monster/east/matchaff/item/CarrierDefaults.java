@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.item;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
@@ -109,9 +109,8 @@ final class CarrierDefaults {
 					.stacksTo(1)
 					.component(DataComponents.BUNDLE_CONTENTS, BundleContents.EMPTY);
 			case "minecraft:bow" -> properties.durability(384).enchantable(1);
-			case "minecraft:brush" -> properties.durability(64);
-			case "minecraft:flint_and_steel" -> properties.durability(64);
-			case "minecraft:potion" -> properties
+			case "minecraft:brush", "minecraft:flint_and_steel" -> properties.durability(64);
+            case "minecraft:potion" -> properties
 					.stacksTo(1)
 					.component(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)
 					.component(DataComponents.CONSUMABLE, Consumables.DEFAULT_DRINK)

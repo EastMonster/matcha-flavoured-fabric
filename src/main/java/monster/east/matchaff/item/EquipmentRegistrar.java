@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.item;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

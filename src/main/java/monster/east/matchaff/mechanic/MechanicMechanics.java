@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.mechanic;
 
 import monster.east.matchaff.mixin.VillagerAccessor;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
@@ -257,7 +257,7 @@ public final class MechanicMechanics {
 						dropped.setTarget(player.getUUID());
 					}
 				}
-				var level = (ServerLevel) player.level();
+				var level = player.level();
 				level.sendParticles(new DustParticleOptions(0xFFAA17, 1.0F),
 						player.getX(), player.getY() + 1.5, player.getZ(), 8, 0.25, 0.25, 0.25, 0.1);
 				break;
@@ -289,7 +289,7 @@ public final class MechanicMechanics {
 		if (!advancementDone(player, BEDROCK_BUSTER)) {
 			return;
 		}
-		var level = (ServerLevel) player.level();
+		var level = player.level();
 		level.getEntitiesOfClass(PrimedTnt.class, player.getBoundingBox().inflate(16.0), PrimedTnt::hasGlowingTag)
 				.stream()
 				.min(Comparator.comparingDouble(tnt -> tnt.distanceToSqr(player)))
@@ -305,7 +305,7 @@ public final class MechanicMechanics {
 		if (!advancementDone(player, APPLICATION)) {
 			return;
 		}
-		var level = (ServerLevel) player.level();
+		var level = player.level();
 		var villager = VILLAGERS.stream()
 				.filter(v -> v.level() == level)
 				.min(Comparator.comparingDouble(v -> v.distanceToSqr(player)));
@@ -318,7 +318,7 @@ public final class MechanicMechanics {
 		if (!advancementDone(player, HAPPY_GHAST_HORN)) {
 			return;
 		}
-		var level = (ServerLevel) player.level();
+		var level = player.level();
 		var ghast = level.getEntitiesOfClass(HappyGhast.class, player.getBoundingBox().inflate(80.0),
 				g -> g.distanceToSqr(player) <= 80.0 * 80.0)
 				.stream().min(Comparator.comparingDouble(g -> g.distanceToSqr(player)));
@@ -430,7 +430,7 @@ public final class MechanicMechanics {
 			UUID owner = entry.getKey();
 			BeaconTask task = entry.getValue();
 			ServerLevel level = server.getLevel(task.level());
-			if (level == null || !level.hasChunkAt(task.pos())) {
+			if (level == null || !level.isLoaded(task.pos())) {
 				BEACONS.put(owner, new BeaconTask(
 						task.level(), task.pos(), task.startTick() + 1, task.trader()));
 				continue;
@@ -594,7 +594,7 @@ public final class MechanicMechanics {
 
 			// Heal friendly villagers nearby.
 			var friends = level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(16.0),
-					f -> f.getType().builtInRegistryHolder().is(VILLAGER_FRIENDS)
+					f -> f.is(VILLAGER_FRIENDS)
 							&& f.distanceToSqr(stone) <= 16.0 * 16.0);
 			boolean someoneRegenerating = friends.stream()
 					.anyMatch(f -> f.hasEffect(MobEffects.REGENERATION));
@@ -652,7 +652,7 @@ public final class MechanicMechanics {
 			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
 					1, 0.5, 0.5, 0.5, 0);
 			for (LivingEntity target : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(26.0),
-					u -> u.getType().builtInRegistryHolder().is(WARDING_STONE_TARGETS)
+					u -> u.is(WARDING_STONE_TARGETS)
 							&& u.distanceToSqr(stone) <= 26.0 * 26.0)) {
 				target.addEffect(new MobEffectInstance(
 						MobEffects.SLOWNESS, 40, 2, false, false));
@@ -667,7 +667,7 @@ public final class MechanicMechanics {
 							1, 0.25, 0.25, 0.25, 0.025);
 					LivingEntity damageTarget = nearestWardingStoneTarget(level, generalTarget, 14.0, target -> true);
 					if (damageTarget != null) {
-						damageTarget.hurt(level.damageSources().fellOutOfWorld(), 7.0F);
+						damageTarget.hurtServer(level, level.damageSources().fellOutOfWorld(), 7.0F);
 					}
 				}
 
@@ -679,7 +679,7 @@ public final class MechanicMechanics {
 							2, 1.0, 1.0, 1.0, 0.5);
 					LivingEntity damageTarget = nearestWardingStoneTarget(level, witherTarget, 14.0, target -> true);
 					if (damageTarget != null) {
-						damageTarget.hurt(level.damageSources().fellOutOfWorld(), 2.0F);
+						damageTarget.hurtServer(level, level.damageSources().fellOutOfWorld(), 2.0F);
 					}
 				}
 			}
@@ -691,7 +691,7 @@ public final class MechanicMechanics {
 	) {
 		double radiusSquared = radius * radius;
 		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), target ->
-					target.getType().builtInRegistryHolder().is(WARDING_STONE_TARGETS)
+				target.is(WARDING_STONE_TARGETS)
 							&& predicate.test(target)
 							&& target.distanceToSqr(center) <= radiusSquared)
 				.stream()

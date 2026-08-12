@@ -3,6 +3,8 @@ package monster.east.matchaff;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import monster.east.matchaff.item.*;
+import monster.east.matchaff.mechanic.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.core.Holder;
@@ -149,23 +151,22 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		if (definition.particles != null) consumable.hasConsumeParticles(definition.particles);
 
 		for (ConsumeEffectDefinition effect : definition.effects) {
-			if (effect.type.equals("apply")) {
-				List<MobEffectInstance> instances = effect.effects.stream()
-						.map(value -> new MobEffectInstance(
-								mobEffect(value.id), value.duration, value.amplifier,
-								value.ambient, value.particles, value.icon
-						))
-						.toList();
-				consumable.onConsume(new ApplyStatusEffectsConsumeEffect(instances, effect.probability));
-			} else if (effect.type.equals("remove")) {
-				consumable.onConsume(new RemoveStatusEffectsConsumeEffect(
-						HolderSet.direct(effect.effectIds.stream().map(MatchaFlavouredFabric::mobEffect).toList())
-				));
-			} else if (effect.type.equals("clear")) {
-				consumable.onConsume(new ClearAllStatusEffectsConsumeEffect());
-			} else {
-				throw new IllegalArgumentException("Unknown consume effect: " + effect.type);
-			}
+            switch (effect.type) {
+                case "apply" -> {
+                    List<MobEffectInstance> instances = effect.effects.stream()
+                            .map(value -> new MobEffectInstance(
+                                    mobEffect(value.id), value.duration, value.amplifier,
+                                    value.ambient, value.particles, value.icon
+                            ))
+                            .toList();
+                    consumable.onConsume(new ApplyStatusEffectsConsumeEffect(instances, effect.probability));
+                }
+                case "remove" -> consumable.onConsume(new RemoveStatusEffectsConsumeEffect(
+                        HolderSet.direct(effect.effectIds.stream().map(MatchaFlavouredFabric::mobEffect).toList())
+                ));
+                case "clear" -> consumable.onConsume(new ClearAllStatusEffectsConsumeEffect());
+                default -> throw new IllegalArgumentException("Unknown consume effect: " + effect.type);
+            }
 		}
 
 		Item.Properties properties = new Item.Properties().food(

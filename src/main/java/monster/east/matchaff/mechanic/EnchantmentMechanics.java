@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.mechanic;
 
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
@@ -21,7 +21,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntitySpawnReason;
@@ -144,7 +143,7 @@ public final class EnchantmentMechanics {
 			player.sendOverlayMessage(Component.translatable("matcha.message.bloodrage").withStyle(ChatFormatting.RED));
 			player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 20, 1, true, true));
 			player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 20, 0, true, true));
-			var level = (ServerLevel) player.level();
+			var level = player.level();
 			level.sendParticles(new DustParticleOptions(0xFF0000, 1.0F),
 					player.getX(), player.getY() + 1.5, player.getZ(), 1, 0.25, 0.25, 0.25, 0.1);
 		}
@@ -225,10 +224,10 @@ public final class EnchantmentMechanics {
 
 		// Slaughter: slow nearby livestock.
 		if (maxLevel(mainHand, enchantments, SLAUGHTER) > 0) {
-			var level = (ServerLevel) player.level();
+			var level = player.level();
 			for (LivingEntity nearby : level.getEntitiesOfClass(LivingEntity.class,
 					player.getBoundingBox().inflate(3.0),
-					entity -> entity.getType().builtInRegistryHolder().is(LIVESTOCK)
+					entity -> entity.is(LIVESTOCK)
 							&& entity.distanceToSqr(player) <= 3.0 * 3.0)) {
 				nearby.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, 9, true, false));
 			}
@@ -237,7 +236,7 @@ public final class EnchantmentMechanics {
 
 	private static void zephyr(ServerPlayer player) {
 		int ticks = player.getAttachedOrElse(ZEPHYR_TICKS, 0);
-		var level = (ServerLevel) player.level();
+		var level = player.level();
 		if (player.isCrouching()) {
 			// Every charging tick: jump boost 6 + slow falling 1 (0.25s) and a dust plume.
 			ticks++;
@@ -273,12 +272,12 @@ public final class EnchantmentMechanics {
 	}
 
 	private static void wardingAura(ServerPlayer player, int level) {
-		var serverLevel = (ServerLevel) player.level();
+		var serverLevel = player.level();
 		int queryRadius = level == 3 ? 24 : level == 2 ? 14 : 8;
 		List<LivingEntity> targets = wardingTargets(serverLevel, player, queryRadius);
 		if (level == 3) {
 			for (LivingEntity target : targets) {
-				if (!target.getType().builtInRegistryHolder().is(WARDING_TARGETS)
+				if (!target.is(WARDING_TARGETS)
 						|| wearingCopperArmor(target)) {
 					continue;
 				}
@@ -290,12 +289,12 @@ public final class EnchantmentMechanics {
 			LivingEntity damaged = nearestTarget(targets, player, 12, WARDING_TARGETS,
 					entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
 			if (damaged != null) {
-				damaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 2.0F);
+				damaged.hurtServer(serverLevel, serverLevel.damageSources().fellOutOfWorld(), 2.0F);
 			}
 
 			for (LivingEntity target : targets) {
 				if (target.distanceToSqr(player) <= 12 * 12
-						&& target.getType().builtInRegistryHolder().is(WARDING_TARGETS)
+						&& target.is(WARDING_TARGETS)
 						&& target.getType() != EntityTypes.WITHER && wearingCopperArmor(target)) {
 					wardingParticle(serverLevel, target, ParticleTypes.SOUL_FIRE_FLAME);
 				}
@@ -303,7 +302,7 @@ public final class EnchantmentMechanics {
 			LivingEntity copperDamaged = nearestTarget(targets, player, 8, WARDING_TARGETS,
 					entity -> entity.getType() != EntityTypes.WITHER && wearingCopperArmor(entity));
 			if (copperDamaged != null) {
-				copperDamaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 1.0F);
+				copperDamaged.hurtServer(serverLevel, serverLevel.damageSources().fellOutOfWorld(), 1.0F);
 			}
 			LivingEntity copperSlowed = nearestTarget(targets, player, 12, WARDING_TARGETS,
 					EnchantmentMechanics::wearingCopperArmor);
@@ -329,7 +328,7 @@ public final class EnchantmentMechanics {
 		LivingEntity damaged = nearestTarget(targets, player, damageRadius, WARDING_TARGETS,
 				entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
 		if (damaged != null) {
-			damaged.hurt(serverLevel.damageSources().fellOutOfWorld(), 1.0F);
+			damaged.hurtServer(serverLevel, serverLevel.damageSources().fellOutOfWorld(), 1.0F);
 		}
 		LivingEntity particleTarget = nearestTarget(targets, player, slowRadius, WARDING_TARGETS,
 				entity -> entity.getType() != EntityTypes.WITHER && !wearingCopperArmor(entity));
@@ -352,7 +351,7 @@ public final class EnchantmentMechanics {
 	) {
 		double radiusSquared = radius * radius;
 		return targets.stream()
-				.filter(entity -> entity.getType().builtInRegistryHolder().is(tag)
+				.filter(entity -> entity.is(tag)
 							&& predicate.test(entity)
 							&& entity.distanceToSqr(center) <= radiusSquared)
 				.min(Comparator.comparingDouble(entity -> entity.distanceToSqr(center)))
@@ -362,8 +361,8 @@ public final class EnchantmentMechanics {
 	private static List<LivingEntity> wardingTargets(ServerLevel level, LivingEntity center, double radius) {
 		double radiusSquared = radius * radius;
 		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), entity ->
-				(entity.getType().builtInRegistryHolder().is(WARDING_TARGETS)
-						|| entity.getType().builtInRegistryHolder().is(WARDING_TARGETS_SLOWED))
+				(entity.is(WARDING_TARGETS)
+						|| entity.is(WARDING_TARGETS_SLOWED))
 						&& entity.distanceToSqr(center) <= radiusSquared);
 	}
 
@@ -388,7 +387,7 @@ public final class EnchantmentMechanics {
 		LivingEntity wither = nearestTarget(targets, center, radius, WARDING_TARGETS,
 				entity -> entity.getType() == EntityTypes.WITHER);
 		if (wither != null) {
-			wither.hurt(level.damageSources().fellOutOfWorld(), damage);
+			wither.hurtServer(level, level.damageSources().fellOutOfWorld(), damage);
 			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
 					wither.getX(), wither.getY() + 2.5, wither.getZ(), 1, 0.5, 0.5, 0.5, 0.02);
 		}
@@ -418,7 +417,7 @@ public final class EnchantmentMechanics {
 		if (currentTick < serverPlayer.getAttachedOrElse(ANEMOS_READY_TICK, 0)) {
 			return;
 		}
-		var level = (ServerLevel) serverPlayer.level();
+		var level = serverPlayer.level();
 		var charge = EntityTypes.WIND_CHARGE.create(level, EntitySpawnReason.EVENT);
 		var eye = serverPlayer.getEyePosition().add(serverPlayer.getLookAngle().scale(0.75));
 		charge.setPos(eye.x, eye.y, eye.z);

@@ -1,6 +1,6 @@
 package monster.east.matchaff.mixin;
 
-import monster.east.matchaff.WorldMechanics;
+import monster.east.matchaff.mechanic.WorldMechanics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;

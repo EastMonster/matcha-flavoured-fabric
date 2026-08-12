@@ -7,12 +7,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(Wolf.class)
 public abstract class WolfTamingMixin {
-	private static final Identifier FISH_BONES =
+	@Unique
+    private static final Identifier FISH_BONES =
 			Identifier.fromNamespaceAndPath("matcha-flavoured", "fish_bones");
 
 	@Redirect(

@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.item;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -20,11 +20,11 @@ import java.util.Map;
 import java.util.Objects;
 
 /** Adds every Matcha item to its creative tab in the semantic order defined by creative_order.json. */
-final class CreativeOrder {
+public class CreativeOrder {
 	private CreativeOrder() {
 	}
 
-	static void register(List<Entry> entries) {
+	public static void register(List<Entry> entries) {
 		Map<String, Entry> remaining = new LinkedHashMap<>();
 		for (Entry entry : entries) {
 			String id = BuiltInRegistries.ITEM.getKey(entry.item()).getPath();
@@ -79,6 +79,6 @@ final class CreativeOrder {
 		};
 	}
 
-	record Entry(Item item, ResourceKey<CreativeModeTab> tab) {
+	public record Entry(Item item, ResourceKey<CreativeModeTab> tab) {
 	}
 }

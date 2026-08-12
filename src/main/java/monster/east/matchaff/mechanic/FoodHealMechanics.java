@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.mechanic;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -152,7 +152,7 @@ public final class FoodHealMechanics {
 				chain.add(next);
 				continue;
 			}
-			MobEffectInstance main = chain.get(0);
+			MobEffectInstance main = chain.getFirst();
 			if (next.getAmplifier() > main.getAmplifier()) {
 				if (next.getDuration() < main.getDuration()) {
 					chain.add(1, main);

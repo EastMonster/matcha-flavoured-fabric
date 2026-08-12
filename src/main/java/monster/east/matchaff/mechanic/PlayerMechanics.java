@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.mechanic;
 
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
@@ -137,7 +137,7 @@ public final class PlayerMechanics {
 			hearts = Math.min(MAX_HEARTS, hearts + 2);
 			setHearts(player, hearts);
 			player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 10, false, false));
-			((ServerLevel) player.level()).playSound(null, player.getX(), player.getY(), player.getZ(),
+			player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
 					SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.5F, 1.0F);
 			applyMaxHealth(player, hearts);
 			return;
@@ -171,7 +171,7 @@ public final class PlayerMechanics {
 				&& !hasFreezingProtection(player)) {
 			player.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100, 4, true, false));
 			player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 100, 0, true, false));
-			player.hurt(level.damageSources().freeze(), 1.0f);
+			player.hurtServer(level, level.damageSources().freeze(), 1.0f);
 		}
 	}
 

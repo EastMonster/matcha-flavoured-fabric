@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.mechanic;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -61,7 +61,7 @@ public final class EffectsMechanics {
 			if (advancement == null || !player.getAdvancements().getOrStartProgress(advancement).isDone()) {
 				continue;
 			}
-			var level = (ServerLevel) player.level();
+			var level = player.level();
 			level.playSound(null, player.getX(), player.getY(), player.getZ(),
 					SoundEvents.BELL_RESONATE, SoundSource.PLAYERS, 2.0F, 1.0F);
 			PENDING_SOUL_SIGHT.computeIfAbsent(player.getUUID(), uuid ->
@@ -97,7 +97,7 @@ public final class EffectsMechanics {
 	}
 
 	private static void applyGlow(ServerPlayer player, int duration) {
-		var level = (ServerLevel) player.level();
+		var level = player.level();
 		for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class,
 				player.getBoundingBox().inflate(50.0), target -> {
 					double distanceSquared = target.distanceToSqr(player);

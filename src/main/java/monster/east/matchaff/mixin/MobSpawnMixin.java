@@ -1,6 +1,6 @@
 package monster.east.matchaff.mixin;
 
-import monster.east.matchaff.WorldMechanics;
+import monster.east.matchaff.mechanic.WorldMechanics;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.Mob;

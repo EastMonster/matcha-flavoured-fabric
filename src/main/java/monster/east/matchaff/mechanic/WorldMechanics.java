@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.mechanic;
 
 import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
@@ -14,6 +14,7 @@ import net.minecraft.core.HolderSet;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
@@ -176,7 +177,8 @@ public final class WorldMechanics {
 		}
 		int id = server.getScoreboard()
 				.getOrCreatePlayerScore(ScoreHolder.forNameOnly(CURRENT_DIFFICULTY), objective).get();
-		return Difficulty.byId(id);
+		Difficulty[] values = Difficulty.values();
+		return values[Math.floorMod(id, values.length)];
 	}
 
 	public static void raiseDifficultyAfterDragon(MinecraftServer server) {
@@ -288,7 +290,7 @@ public final class WorldMechanics {
 		if (!player.getAttachedOrElse(EERIE, false)) {
 			return;
 		}
-		var level = (ServerLevel) player.level();
+		var level = player.level();
 		if (!inVillage(level, player.blockPosition())) {
 			player.setAttached(EERIE, false);
 			player.setAttached(EERIE_TIMER, 0);
@@ -446,7 +448,7 @@ public final class WorldMechanics {
 			LAST_BOATING_DISTANCE.remove(player.getUUID());
 			return;
 		}
-		var level = (ServerLevel) player.level();
+		var level = player.level();
 		BlockPos waterPos = BlockPos.containing(boat.getX(), boat.getY() - 0.1, boat.getZ());
 		boolean onWater = level.getBlockState(waterPos).is(Blocks.WATER);
 		int currentDistance = player.getStats().getValue(Stats.CUSTOM, Stats.BOAT_ONE_CM);
@@ -490,7 +492,7 @@ public final class WorldMechanics {
 		if (player.tickCount % 3 != 0) {
 			return;
 		}
-		var level = (ServerLevel) player.level();
+		var level = player.level();
 		if (level.getBlockState(player.blockPosition().below()).is(Blocks.NETHER_QUARTZ_ORE)) {
 			level.sendParticles(ParticleTypes.NOXIOUS_GAS,
 					player.getX(), player.getY() + 0.1, player.getZ(), 1, 0.5, 0, 0.5, 0);
@@ -526,7 +528,7 @@ public final class WorldMechanics {
 
 	private static void initializeMundaneHostile(Entity entity, ServerLevel level) {
 		if (!(entity instanceof Mob mob)
-				|| !mob.getType().builtInRegistryHolder().is(MUNDANE_HOSTILES)
+				|| !mob.is(MUNDANE_HOSTILES)
 				|| mob.entityTags().contains("SpawnChecked")) {
 			return;
 		}
@@ -544,7 +546,8 @@ public final class WorldMechanics {
 	 * mundane hostile at the surface or above sea level is forbidden.
 	 */
 	public static boolean isForbiddenSpawn(EntityType<?> type, ServerLevel level, BlockPos pos) {
-		if (level.dimension() != Level.OVERWORLD || !type.builtInRegistryHolder().is(MUNDANE_HOSTILES)) {
+		if (level.dimension() != Level.OVERWORLD
+				|| !BuiltInRegistries.ENTITY_TYPE.wrapAsHolder(type).is(MUNDANE_HOSTILES)) {
 			return false;
 		}
 		boolean sky = level.canSeeSky(pos);
@@ -554,7 +557,7 @@ public final class WorldMechanics {
 		if (type == EntityTypes.CREEPER && (sky || pos.getY() >= 63)) {
 			return true;
 		}
-		return !type.builtInRegistryHolder().is(EntityTypeTags.UNDEAD) && sky;
+		return !BuiltInRegistries.ENTITY_TYPE.wrapAsHolder(type).is(EntityTypeTags.UNDEAD) && sky;
 	}
 
 	private static boolean isSafeSurface(ServerLevel level) {
@@ -568,7 +571,7 @@ public final class WorldMechanics {
 			return;
 		}
 		var type = mob.getType();
-		if (type.builtInRegistryHolder().is(MUNDANE_HOSTILES)
+		if (mob.is(MUNDANE_HOSTILES)
 				|| type == EntityTypes.ZOMBIFIED_PIGLIN || type == EntityTypes.PIGLIN) {
 			for (EquipmentSlot slot : List.of(EquipmentSlot.FEET, EquipmentSlot.LEGS,
 					EquipmentSlot.CHEST, EquipmentSlot.HEAD, EquipmentSlot.MAINHAND)) {
@@ -576,7 +579,7 @@ public final class WorldMechanics {
 			}
 		}
 		boolean baby = mob.isBaby();
-		if (type.builtInRegistryHolder().is(EntityTypeTags.SKELETONS)) {
+		if (mob.is(EntityTypeTags.SKELETONS)) {
 			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 12 : 10);
 			if (difficulty != Difficulty.EASY) {
 				ItemStack bow = new ItemStack(Items.BOW);

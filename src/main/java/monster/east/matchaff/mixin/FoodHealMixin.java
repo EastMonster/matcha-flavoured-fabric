@@ -1,6 +1,6 @@
 package monster.east.matchaff.mixin;
 
-import monster.east.matchaff.FoodHealMechanics;
+import monster.east.matchaff.mechanic.FoodHealMechanics;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -36,7 +36,7 @@ public abstract class FoodHealMixin {
 		ApplyStatusEffectsConsumeEffect self = (ApplyStatusEffectsConsumeEffect) (Object) this;
 		List<MobEffectInstance> regens = new ArrayList<>();
 		for (MobEffectInstance effect : self.effects()) {
-			if (effect.getEffect().is(MobEffects.REGENERATION)) {
+			if (effect.getEffect() == MobEffects.REGENERATION) {
 				regens.add(effect);
 			}
 		}
@@ -50,7 +50,7 @@ public abstract class FoodHealMixin {
 		boolean anyApplied = FoodHealMechanics.onConsumed(player, regens);
 		for (MobEffectInstance effect : self.effects()) {
 			// Regeneration is handled as one ordered chain by FoodHealMechanics.
-			if (!effect.getEffect().is(MobEffects.REGENERATION) && user.addEffect(new MobEffectInstance(effect))) {
+			if (effect.getEffect() != MobEffects.REGENERATION && user.addEffect(new MobEffectInstance(effect))) {
 				anyApplied = true;
 			}
 		}

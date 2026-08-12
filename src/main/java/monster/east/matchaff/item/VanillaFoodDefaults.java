@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.item;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -23,7 +23,7 @@ import java.util.Objects;
  * Matcha recipe or loot-table result. This makes creative-tab and plain
  * {@code /give} stacks behave like the versions normally obtained in play.
  */
-final class VanillaFoodDefaults {
+public class VanillaFoodDefaults {
 	private static final List<String> RECIPE_FILES = List.of(
 			"baked_potato", "bread",
 			"cooked_beef", "cooked_chicken", "cooked_cod", "cooked_mutton",
@@ -38,7 +38,7 @@ final class VanillaFoodDefaults {
 	private VanillaFoodDefaults() {
 	}
 
-	static void init() {
+	public static void init() {
 		List<Definition> definitions = new ArrayList<>();
 		for (String name : RECIPE_FILES) {
 			definitions.add(readRecipe(name));

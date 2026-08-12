@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.mechanic;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -56,7 +56,11 @@ public final class AbbeyMechanics {
 	public static void init() {
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> COPPER_EYES.clear());
 		ServerEntityEvents.ENTITY_LOAD.register(AbbeyMechanics::trackMarker);
-		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> COPPER_EYES.remove(entity));
+		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
+			if (entity instanceof Marker marker) {
+				COPPER_EYES.remove(marker);
+			}
+		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				checkCopperEye(player);
@@ -88,12 +92,12 @@ public final class AbbeyMechanics {
 	 * matching action, and finally revokes the advancement for all players.
 	 */
 	private static void checkCopperEye(ServerPlayer player) {
-		if (!advancementDone(player, HIT_COPPER_EYE)) {
+		if (!hisHitCopperEye(player)) {
 			return;
 		}
 		List<ServerPlayer> hitters = player.level().getServer().getPlayerList().getPlayers().stream()
 				.filter(candidate -> candidate.level() == player.level()
-						&& advancementDone(candidate, HIT_COPPER_EYE))
+						&& hisHitCopperEye(candidate))
 				.toList();
 		for (Marker marker : List.copyOf(COPPER_EYES)) {
 			if (marker.isRemoved() || marker.level() != player.level()
@@ -123,7 +127,7 @@ public final class AbbeyMechanics {
 			}
 		}
 		for (ServerPlayer hitter : hitters) {
-			revoke(hitter, HIT_COPPER_EYE);
+			revokeCopperEyeHit(hitter);
 		}
 	}
 
@@ -370,13 +374,13 @@ public final class AbbeyMechanics {
 		}
 	}
 
-	private static boolean advancementDone(ServerPlayer player, Identifier advancementId) {
-		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(advancementId);
+	private static boolean hisHitCopperEye(ServerPlayer player) {
+		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(AbbeyMechanics.HIT_COPPER_EYE);
 		return advancement != null && player.getAdvancements().getOrStartProgress(advancement).isDone();
 	}
 
-	private static void revoke(ServerPlayer player, Identifier advancementId) {
-		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(advancementId);
+	private static void revokeCopperEyeHit(ServerPlayer player) {
+		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(AbbeyMechanics.HIT_COPPER_EYE);
 		if (advancement != null) {
 			for (String criterion : advancement.value().criteria().keySet()) {
 				player.getAdvancements().revoke(advancement, criterion);

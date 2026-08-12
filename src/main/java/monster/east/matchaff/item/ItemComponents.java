@@ -1,11 +1,10 @@
-package monster.east.matchaff;
+package monster.east.matchaff.item;
 
 import com.google.gson.JsonElement;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentSerialization;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.util.Unit;
@@ -34,13 +33,13 @@ import org.slf4j.LoggerFactory;
  * {@link Item.Properties#delayedComponent} so the datapack's own definitions are
  * available when default components are baked.</p>
  */
-final class ItemComponents {
+public class ItemComponents {
 	private static final Logger LOGGER = LoggerFactory.getLogger("matcha");
 
 	private ItemComponents() {
 	}
 
-	static void apply(Item.Properties properties, String id, JsonElement json) {
+	public static void apply(Item.Properties properties, String id, JsonElement json) {
 		switch (id) {
 			case "minecraft:max_damage" -> properties.stacksTo(1).durability(json.getAsInt());
 			case "minecraft:max_stack_size" -> properties.stacksTo(json.getAsInt());
