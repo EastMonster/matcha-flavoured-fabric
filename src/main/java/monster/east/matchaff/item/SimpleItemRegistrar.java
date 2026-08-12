@@ -20,6 +20,7 @@ import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.InstrumentItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemFrameItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.ShieldItem;
@@ -100,7 +101,7 @@ public final class SimpleItemRegistrar {
 		return switch (definition.type) {
 			case "item" -> new Item(properties);
 			case "arrow" -> "minecraft:tipped_arrow".equals(definition.carrier)
-					? new TippedArrowItem(properties)
+					? new MatchaTippedArrowItem(properties)
 					: new ArrowItem(properties);
 			case "bow" -> new BowItem(properties);
 			case "bundle" -> new BundleItem(properties);
@@ -118,6 +119,17 @@ public final class SimpleItemRegistrar {
 			case "shield" -> new ShieldItem(properties);
 			default -> throw new IllegalArgumentException("Unknown item type: " + definition.type);
 		};
+	}
+
+	private static final class MatchaTippedArrowItem extends TippedArrowItem {
+		private MatchaTippedArrowItem(Item.Properties properties) {
+			super(properties);
+		}
+
+		@Override
+		public ItemStack getDefaultInstance() {
+			return new ItemStack(this);
+		}
 	}
 
 	private static ResourceKey<CreativeModeTab> tab(String tab) {
