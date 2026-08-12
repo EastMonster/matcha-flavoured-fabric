@@ -23,6 +23,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.HoneycombItem;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemUseAnimation;
@@ -34,6 +36,7 @@ import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffe
 import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.block.DispenserBlock;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -137,7 +140,13 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 
 	private static Item register(String name, Item.Properties properties) {
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha-flavoured", name));
-		return Registry.register(BuiltInRegistries.ITEM, key, new Item(properties.setId(key)));
+		Item item = Registry.register(BuiltInRegistries.ITEM, key,
+				name.equals("tallow") ? new HoneycombItem(properties.setId(key)) : new Item(properties.setId(key)));
+		if (name.equals("tallow")) {
+			DispenserBlock.registerBehavior(item,
+					Objects.requireNonNull(DispenserBlock.DISPENSER_REGISTRY.get(Items.HONEYCOMB)));
+		}
+		return item;
 	}
 
 	private static List<Item> registerFoods() {

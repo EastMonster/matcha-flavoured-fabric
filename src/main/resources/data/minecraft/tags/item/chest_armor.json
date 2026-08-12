@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"matcha-flavoured:bronze_chestplate",
+		"matcha-flavoured:electrum_chestplate",
+		"matcha-flavoured:shakudo_chestplate",
+		"matcha-flavoured:steel_chestplate",
+		"matcha-flavoured:sturdy_leather_chestplate"
+	]
+}

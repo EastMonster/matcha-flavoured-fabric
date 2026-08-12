@@ -18,6 +18,7 @@
 		"ShearsCompatibilityMixin",
 		"ShearsInteractionMixin",
 		"VillagerAccessor",
+		"VillagerFoodMixin",
 		"WolfTamingMixin"
 	],
 	"client": [

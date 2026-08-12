@@ -2,6 +2,9 @@
   "values": [
     "#minecraft:swords",
     "#minecraft:spears",
-    "minecraft:shears"
+	"minecraft:shears",
+	"matcha-flavoured:bronze_shears",
+	"matcha-flavoured:copper_shears",
+	"matcha-flavoured:steel_shears"
   ]
 }

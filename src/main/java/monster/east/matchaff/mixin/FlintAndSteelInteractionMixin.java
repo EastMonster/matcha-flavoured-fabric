@@ -5,12 +5,13 @@ import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.TntBlock;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin({TntBlock.class, SulfurCube.class})
+@Mixin({TntBlock.class, SulfurCube.class, CandleCakeBlock.class})
 public abstract class FlintAndSteelInteractionMixin {
 	@Redirect(
 			method = {"useItemOn", "mobInteract"},

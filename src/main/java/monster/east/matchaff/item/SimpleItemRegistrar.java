@@ -93,7 +93,9 @@ public final class SimpleItemRegistrar {
 		}
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha-flavoured", definition.id));
 		Item item = Registry.register(BuiltInRegistries.ITEM, key, createItem(definition, properties.setId(key)));
-		if (item instanceof ShearsItem) {
+		if (item instanceof ArrowItem || item instanceof SplashPotionItem) {
+			DispenserBlock.registerProjectileBehavior(item);
+		} else if (item instanceof ShearsItem) {
 			DispenserBlock.registerBehavior(item, new ShearsDispenseItemBehavior());
 		} else if (item instanceof FlintAndSteelItem) {
 			DispenserBlock.registerBehavior(item, new FlintAndSteelDispenseItemBehavior());
