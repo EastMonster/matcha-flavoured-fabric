@@ -7,6 +7,7 @@ import monster.east.matchaff.item.*;
 import monster.east.matchaff.mechanic.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -27,10 +28,12 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.ItemLore;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.alchemy.Potions;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -60,6 +63,12 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		List<Item> foods = registerFoods();
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
 		List<SimpleItemRegistrar.BatchItem> batchItems = SimpleItemRegistrar.registerAll();
+		FabricPotionBrewingBuilder.BUILD.register(builder -> builder.registerPotionRecipe(
+				Potions.AWKWARD,
+				Ingredient.of(Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
+						Identifier.fromNamespaceAndPath("matcha-flavoured", "freshwater_pufferfish")))),
+				Potions.WATER_BREATHING
+		));
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
 		equipment.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
 		batchItems.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));

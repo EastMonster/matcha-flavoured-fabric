@@ -2,6 +2,7 @@ package monster.east.matchaff.item;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import net.minecraft.core.dispenser.FlintAndSteelDispenseItemBehavior;
 import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -21,6 +22,7 @@ import net.minecraft.world.item.InstrumentItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemFrameItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.ShieldItem;
@@ -93,6 +95,10 @@ public final class SimpleItemRegistrar {
 		Item item = Registry.register(BuiltInRegistries.ITEM, key, createItem(definition, properties.setId(key)));
 		if (item instanceof ShearsItem) {
 			DispenserBlock.registerBehavior(item, new ShearsDispenseItemBehavior());
+		} else if (item instanceof FlintAndSteelItem) {
+			DispenserBlock.registerBehavior(item, new FlintAndSteelDispenseItemBehavior());
+		} else if (item instanceof BrushItem) {
+			DispenserBlock.registerBehavior(item, Objects.requireNonNull(DispenserBlock.DISPENSER_REGISTRY.get(Items.BRUSH)));
 		}
 		return new BatchItem(item, tab(definition.tab));
 	}
