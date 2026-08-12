@@ -26,6 +26,9 @@
 		],
 		"modmenu": [
 			"monster.east.matchaff.MatchaModMenu"
+		],
+		"jei_mod_plugin": [
+			"monster.east.matchaff.client.MatchaJeiPlugin"
 		]
 	},
 	"mixins": [

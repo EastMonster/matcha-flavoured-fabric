@@ -8,6 +8,7 @@ group = project.maven_group
 
 repositories {
 	maven { url = 'https://maven.terraformersmc.com/releases/' }
+	maven { url = 'https://maven.blamejared.com/' }
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -38,6 +39,7 @@ dependencies {
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	compileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+	compileOnly "mezz.jei:jei-${project.minecraft_version}-fabric-api:${project.jei_version}"
 }
 
 processResources {
