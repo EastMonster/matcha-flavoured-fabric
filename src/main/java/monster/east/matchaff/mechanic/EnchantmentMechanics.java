@@ -128,8 +128,8 @@ public final class EnchantmentMechanics {
 			}
 		}
 
-		// Divinity still counts the selected item, but 1.10 only defines rewards for scores 1-4.
-		int divinity = countArmor(player, enchantments, DIVINITY) + maxLevel(mainHand, enchantments, DIVINITY);
+		// Treat armour plus a Divinity main-hand item as the four-piece set instead of the upstream score-5 gap.
+		int divinity = Math.min(4, countArmor(player, enchantments, DIVINITY) + maxLevel(mainHand, enchantments, DIVINITY));
 		if (divinity >= 1 && divinity <= 4) {
 			int interval = divinity == 4 ? 400 : 600;
 			if (elapsed(player, interval)) {

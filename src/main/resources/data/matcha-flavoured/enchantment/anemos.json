@@ -21,7 +21,15 @@
 		"minecraft:iron_sword",
 		"minecraft:diamond_sword",
 		"minecraft:netherite_sword",
-		"minecraft:stick"
+		"minecraft:stick",
+		"matcha-flavoured:adamant_claymore",
+		"matcha-flavoured:bronze_sword",
+		"matcha-flavoured:butcher_knife",
+		"matcha-flavoured:electrum_sword",
+		"matcha-flavoured:palatinate_sword",
+		"matcha-flavoured:silver_sword",
+		"matcha-flavoured:steel_sword",
+		"matcha-flavoured:warding_sword"
 	],
 	"weight": 1
 }

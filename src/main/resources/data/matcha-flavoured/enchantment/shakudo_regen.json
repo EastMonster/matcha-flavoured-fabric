@@ -1,10 +1,10 @@
 {
 	"primary_items": [
-		"minecraft:copper_helmet",
-		"minecraft:copper_chestplate",
-		"minecraft:copper_leggings",
-		"minecraft:copper_boots",
-		"minecraft:elytra"
+		"matcha-flavoured:shakudo_helmet",
+		"matcha-flavoured:shakudo_chestplate",
+		"matcha-flavoured:shakudo_leggings",
+		"matcha-flavoured:shakudo_boots",
+		"matcha-flavoured:shakudo_elytra"
 	],
 	"anvil_cost": 0,
 	"description": {
@@ -25,11 +25,11 @@
 		"armor"
 	],
 	"supported_items": [
-		"minecraft:copper_helmet",
-		"minecraft:copper_chestplate",
-		"minecraft:copper_leggings",
-		"minecraft:copper_boots",
-		"minecraft:elytra"
+		"matcha-flavoured:shakudo_helmet",
+		"matcha-flavoured:shakudo_chestplate",
+		"matcha-flavoured:shakudo_leggings",
+		"matcha-flavoured:shakudo_boots",
+		"matcha-flavoured:shakudo_elytra"
 	],
 	"weight": 1
 }

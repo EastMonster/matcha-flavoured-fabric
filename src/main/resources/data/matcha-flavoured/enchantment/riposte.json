@@ -93,6 +93,6 @@
 	"slots": [
 		"hand"
 	],
-	"supported_items": "minecraft:stone_sword",
+	"supported_items": "matcha-flavoured:bronze_sword",
 	"weight": 5
 }
