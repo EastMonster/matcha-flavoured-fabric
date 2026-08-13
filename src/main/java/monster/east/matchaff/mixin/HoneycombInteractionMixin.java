@@ -5,6 +5,7 @@ import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.level.block.WeatheringCopperGolemStatueBlock;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,7 +19,9 @@ public abstract class HoneycombInteractionMixin {
 		require = 0
 	)
 	private boolean matcha$acceptCustomHoneycomb(ItemStack stack, Object item) {
+		// CopperGolem checks honeycomb and shears at the same call site, so one redirect must handle both.
 		return stack.is((Item) item)
-			|| item == Items.HONEYCOMB && stack.getItem() instanceof HoneycombItem;
+			|| item == Items.HONEYCOMB && stack.getItem() instanceof HoneycombItem
+			|| item == Items.SHEARS && stack.getItem() instanceof ShearsItem;
 	}
 }

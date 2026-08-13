@@ -2,11 +2,9 @@ package monster.east.matchaff.mixin;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.cow.MushroomCow;
-import net.minecraft.world.entity.animal.golem.CopperGolem;
 import net.minecraft.world.entity.animal.golem.SnowGolem;
 import net.minecraft.world.entity.animal.sheep.Sheep;
 import net.minecraft.world.entity.decoration.LeashFenceKnotEntity;
-import net.minecraft.world.entity.monster.cubemob.SulfurCube;
 import net.minecraft.world.entity.monster.skeleton.Bogged;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -25,9 +23,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 		Sheep.class,
 		MushroomCow.class,
 		SnowGolem.class,
-		CopperGolem.class,
 		Bogged.class,
-		SulfurCube.class,
 		BeehiveBlock.class,
 		PumpkinBlock.class,
 		TripWireBlock.class
