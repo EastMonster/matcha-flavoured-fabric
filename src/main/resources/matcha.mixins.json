@@ -24,6 +24,7 @@
 		"WolfTamingMixin"
 	],
 	"client": [
+		"AirBubblesHudMixin",
 		"CreatorNamespaceMixin",
 		"LeavesBreakingMixin",
 		"LeavesCullMixin",
