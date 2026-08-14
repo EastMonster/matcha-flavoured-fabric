@@ -275,11 +275,6 @@
 								"minecraft:item_model": "minecraft:cooked_porkchop",
 								"minecraft:item_name": {
 									"translate": "item.minecraft.cooked_porkchop"
-								},
-								"minecraft:food": {
-									"nutrition": 0,
-									"saturation": 0,
-									"can_always_eat": true
 								}
 							}
 						},

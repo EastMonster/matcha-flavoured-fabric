@@ -944,8 +944,8 @@
 		    "italic": false
 		  }
 		],
-		"nutrition": 0,
-		"saturation": 0,
+		"nutrition": 5,
+		"saturation": 6,
 		"alwaysEdible": true,
 		"effects": [
 			{
