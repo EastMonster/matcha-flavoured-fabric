@@ -8,6 +8,7 @@ import monster.east.matchaff.mechanic.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
+import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -72,6 +73,13 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 						Identifier.fromNamespaceAndPath("matcha-flavoured", "freshwater_pufferfish")))),
 				Potions.WATER_BREATHING
 		));
+		Item compoundBow = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
+				Identifier.fromNamespaceAndPath("matcha-flavoured", "compound_bow")));
+		Item crook = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
+				Identifier.fromNamespaceAndPath("matcha-flavoured", "crook")));
+		FuelValueEvents.BUILD.register((builder, context) -> builder
+				.add(compoundBow, context.baseSmeltTime() * 3 / 2)
+				.add(crook, context.baseSmeltTime()));
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
 		equipment.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
 		batchItems.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
