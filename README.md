@@ -1,7 +1,9 @@
 # Matcha Flavoured Fabric
 
 > [!WARNING]
-> The core content of this unofficial Fabric port has been tested, but some edge cases may differ from the original data pack. Please back up your worlds before playing.
+> - The core content of this unofficial Fabric port has been tested, but some edge cases may differ from the original data pack. Please back up your worlds before playing.
+> - This mod does not support playing directly in worlds previously used with the data pack. Please create a new world.
+> - Multiplayer behavior has not been tested. Use this mod with caution in multiplayer.
 
 [中文说明](README_ZH.md)
 
@@ -20,7 +22,7 @@ I made this port because I am not particularly fond of using heavily modified va
 
 Install Fabric Loader and Fabric API, then place the mod JAR in your `mods` folder.
 
-Use a new world when possible. Existing items from the data-pack version are not automatically converted into the mod's independently registered items.
+Create a new world to play this mod. Existing items from the data-pack version are not automatically converted into the mod's independently registered items.
 
 ## Improvements over the data pack
 
@@ -30,14 +32,18 @@ Use a new world when possible. Existing items from the data-pack version are not
 - The Mod Menu settings screen can disable Overworld True Darkness per client without changing server gameplay.
 - Adds an AI-assisted Simplified Chinese translation.
 
+## Intentional behavior differences
+
+- Vanilla carrier items and Matcha items are separate; only Matcha recipes, loot, and trades produce the corresponding mod items.
+- Incidental carrier behavior unrelated to an item's design is not retained. For example, Cheese does not poison parrots or enter composters.
+- When the Adamant set's Divinity count reaches five, it uses the four-piece maximum bonus. The data pack defines only one through four pieces, leaving five pieces with no effect.
+- The Happy Ghast horn selects the nearest Happy Ghast within 80 blocks. The data pack selects an arbitrary matching entity.
+- Hidden food-healing simulations are stored only for the current server session. If a single-player world is exited or the server stops before the healing finishes, the remaining hidden healing is discarded. Normally applied status effects are still saved by vanilla.
+
 ## Changes that may cause behavioral differences
 
 - Command-driven mechanics are reimplemented in Java. Tested gameplay is intended to match the data pack, but very short timing windows, multiplayer target selection, and server restarts during delayed actions may behave differently.
-- Hidden food-healing simulations are stored only for the current server session. If a single-player world is exited or the server stops before the healing finishes, the remaining hidden healing is discarded. Normally applied status effects are still saved by vanilla.
-- Anemos uses an internal 20-tick player cooldown instead of the visible Unluck effect used as a timer by the data pack. Milk and cleansing cannot reset this cooldown.
 - Gives selected vanilla food carriers Matcha components by default so creative-tab and plain `/give` stacks match their crafted or dropped counterparts. This can also apply Matcha food behavior to those vanilla IDs when another source creates an otherwise unmodified stack.
-- The Happy Ghast horn selects the nearest Happy Ghast within 80 blocks. The data pack's `@e[limit=1]` selects an arbitrary matching entity; nearest-target behavior is intentional.
-- The `endless_repairs` compatibility mechanic also clears prior-work penalties from armor and offhand slots; the data pack scans only the main inventory and hotbar. This has little practical effect while anvils are free.
 
 Bug reports are welcome, but exact one-to-one compatibility with every data-pack edge case is not promised.
 
