@@ -1,0 +1,30 @@
+{
+	"parent": "main:end/elytra",
+	"criteria": {
+		"shakudo_elytra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "smithing_table:shakudo_elytra"
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "adv.kleispack.end.smith_shakudo_elytra.desc"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha-flavoured:shakudo_elytra"
+		},
+		"title": {
+			"translate": "adv.kleispack.end.smith_shakudo_elytra"
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"shakudo_elytra"
+		]
+	]
+}

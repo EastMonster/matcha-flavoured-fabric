@@ -20,7 +20,8 @@
 	"rewards": {
 		"recipes": [
 			"crafting:estus_flask",
-			"crafting:wooden_cross"
+			"crafting:wooden_cross",
+			"crafting:amnestic"
 		]
 	}
 }

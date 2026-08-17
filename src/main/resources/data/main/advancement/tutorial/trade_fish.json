@@ -1,5 +1,5 @@
 {
-	"parent": "main:tutorial/catch_fish",
+	"parent": "main:tutorial/trade_for_asylum_seeker",
 	"criteria": {
 		"traded": {
 			"trigger": "minecraft:villager_trade",

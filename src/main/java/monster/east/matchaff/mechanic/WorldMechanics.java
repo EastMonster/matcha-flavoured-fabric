@@ -32,6 +32,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -44,6 +45,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.decoration.Mannequin;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -55,6 +57,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.minecraft.world.clock.WorldClocks;
@@ -78,7 +81,7 @@ public final class WorldMechanics {
 	private static final String DIFFICULTY_OBJECTIVE = "difficulty_score";
 	private static final String CURRENT_DIFFICULTY = "current_world_settings_difficulty";
 	private static final String VERSION_OBJECTIVE = "matcha_version";
-	private static final int RECIPE_UNLOCK_VERSION = 112;
+	private static final int RECIPE_UNLOCK_VERSION = 1_01_02_000;
 	private static final Identifier EERIE_ADVANCEMENT = id("mechanics/enter_village");
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("glass_bottle_from_crafting");
 	private static final Identifier ENDLESS_REPAIRS_ADVANCEMENT =
@@ -408,10 +411,7 @@ public final class WorldMechanics {
 		});
 	}
 
-	private static InteractionResult openVillageDoor(
-			net.minecraft.world.entity.player.Player player, Level level,
-			net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit
-	) {
+	private static InteractionResult openVillageDoor(Player player, Level level, InteractionHand hand, BlockHitResult hit) {
 		BlockState state = level.getBlockState(hit.getBlockPos());
 		if (!(player instanceof ServerPlayer serverPlayer)
 				|| serverPlayer.gameMode.getGameModeForPlayer() != GameType.SURVIVAL
@@ -423,7 +423,7 @@ public final class WorldMechanics {
 						&& mannequin.distanceToSqr(player) <= 11 * 11)
 				.min(java.util.Comparator.comparingDouble(mannequin -> mannequin.distanceToSqr(player)))
 				.ifPresent(Mannequin::discard);
-		return InteractionResult.PASS;
+		return InteractionResult.PASS; // Preserve the vanilla door interaction.
 	}
 
 	private static void playAt(ServerLevel level, double x, double y, double z, net.minecraft.sounds.SoundEvent sound, float volume) {
