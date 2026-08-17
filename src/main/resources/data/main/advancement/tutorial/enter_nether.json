@@ -28,6 +28,5 @@
 		[
 			"entered_nether"
 		]
-	],
-	"sends_telemetry_event": true
+	]
 }

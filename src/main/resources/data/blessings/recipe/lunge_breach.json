@@ -13,14 +13,8 @@
 			"minecraft:iron_sword",
 			"minecraft:iron_spear"
 		],
-		"F": [
-			"minecraft:iron_helmet",
-			"matcha-flavoured:steel_helmet"
-		],
-		"c": [
-			"minecraft:shield",
-			"matcha-flavoured:warding_shield"
-		]
+		"F": "minecraft:iron_helmet",
+		"c": "minecraft:shield"
 	},
 	"result": {
 		"components": {

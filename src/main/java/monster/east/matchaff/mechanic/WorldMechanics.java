@@ -81,7 +81,7 @@ public final class WorldMechanics {
 	private static final String DIFFICULTY_OBJECTIVE = "difficulty_score";
 	private static final String CURRENT_DIFFICULTY = "current_world_settings_difficulty";
 	private static final String VERSION_OBJECTIVE = "matcha_version";
-	private static final int RECIPE_UNLOCK_VERSION = 1_01_02_000;
+	private static final int RECIPE_UNLOCK_VERSION = 1_01_02_002;
 	private static final Identifier EERIE_ADVANCEMENT = id("mechanics/enter_village");
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("glass_bottle_from_crafting");
 	private static final Identifier ENDLESS_REPAIRS_ADVANCEMENT =

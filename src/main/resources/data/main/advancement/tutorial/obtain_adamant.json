@@ -22,8 +22,7 @@
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_adamant.title"
-		},
-		"hidden": true
+		}
 	},
 	"requirements": [
 		[

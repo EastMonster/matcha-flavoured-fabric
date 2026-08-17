@@ -179,7 +179,7 @@
 		"made_mud_from_dirt_and_potion": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:mud_from_dirt_and_potion"
+				"recipe_id": "crafting:mud"
 			}
 			
 		},
@@ -400,6 +400,18 @@
 			}
 			
 		},
+		"clone_big_dripleaf": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:clone_big_dripleaf"
+			}
+		},
+		"clone_small_dripleaf": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:clone_small_dripleaf"
+			}
+		},
 		"clone_oxeye_daisy": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
@@ -590,6 +602,8 @@
 			"clone_cornflower",
 			"clone_wither_rose",
 			"clone_spore_blossom",
+			"clone_big_dripleaf",
+			"clone_small_dripleaf",
 			"clone_oxeye_daisy",
 			"clone_open_eyeblossom",
 			"clone_closed_eyeblossom",
