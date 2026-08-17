@@ -12,22 +12,6 @@
 		"H": "minecraft:gold_block"
 	},
 	"result": {
-		"components": {
-			"minecraft:stored_enchantments": {
-				"matcha-flavoured:anemos": 1,
-				"minecraft:wind_burst": 1
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_aeolus"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.aeolus",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_aeolus"
 	}

@@ -9,15 +9,6 @@
 		"# "
 	],
 	"result": {
-		"components": {
-			"minecraft:max_damage": 300,
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.copper_shears"
-			},
-			"minecraft:repairable": {
-				"items": "minecraft:copper_ingot"
-			}
-		},
 		"count": 1,
 		"id": "matcha-flavoured:copper_shears"
 	}

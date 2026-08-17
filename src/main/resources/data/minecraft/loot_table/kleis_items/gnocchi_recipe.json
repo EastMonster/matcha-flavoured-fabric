@@ -9,24 +9,7 @@
 					"type": "minecraft:item",
 					"name": "matcha-flavoured:gnocchi_recipe",
 					"weight": 1,
-					"conditions": [],
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.gnocchi_recipe"
-								},
-								"minecraft:lore": [
-									{
-										"translate": "item.matcha-flavoured.gnocchi",
-										"color": "#e1bc62",
-										"italic": false
-									}
-								]
-							}
-						}
-					]
+					"conditions": []
 				}
 			]
 		}

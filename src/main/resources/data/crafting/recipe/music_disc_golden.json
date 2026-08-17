@@ -11,9 +11,6 @@
 		"###"
 	],
 	"result": {
-		"id": "matcha-flavoured:music_disc_golden",
-		"components": {
-			"minecraft:jukebox_playable": "main:golden"
-		}
+		"id": "matcha-flavoured:music_disc_golden"
 	}
 }

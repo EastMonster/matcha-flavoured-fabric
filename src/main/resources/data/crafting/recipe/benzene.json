@@ -11,9 +11,6 @@
 	],
 	"result": {
 		"id": "matcha-flavoured:benzene",
-		"components": {
-			"!minecraft:entity_data": {}
-		},
 		"count": 1
 	}
 }

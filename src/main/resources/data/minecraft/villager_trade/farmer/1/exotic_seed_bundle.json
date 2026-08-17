@@ -5,29 +5,6 @@
 	},
 	"gives": {
 		"id": "matcha-flavoured:exotic_seed_bundle",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.exotic_seed_bundle"
-			},
-			"minecraft:bundle_contents": [
-				{
-					"id": "minecraft:melon_seeds",
-					"count": 16
-				},
-				{
-					"id": "pumpkin_seeds",
-					"count": 16
-				},
-				{
-					"id": "minecraft:sweet_berries",
-					"count": 8
-				},
-				{
-					"id": "minecraft:glow_berries",
-					"count": 8
-				}
-			]
-		},
 		"count": 1
 	},
 	"max_uses": 999,

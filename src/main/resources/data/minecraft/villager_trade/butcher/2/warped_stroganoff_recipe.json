@@ -3,19 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:warped_stroganoff_recipe",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.warped_stroganoff_recipe"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.warped_stroganoff",
-					"color": "#3cc6c8",
-					"italic": false
-				}
-			]
-		}
+		"id": "matcha-flavoured:warped_stroganoff_recipe"
 	},
 	"max_uses": 999,
 	"reputation_discount": 0,

@@ -13,21 +13,6 @@
 		"b": "minecraft:honeycomb"
 	},
 	"result": {
-		"components": {
-			"minecraft:stored_enchantments": {
-				"minecraft:feather_falling": 2
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_icarus"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.icarus",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_icarus"
 	}

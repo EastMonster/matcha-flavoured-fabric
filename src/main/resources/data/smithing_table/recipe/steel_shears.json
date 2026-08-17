@@ -3,18 +3,7 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:shears",
 	"result": {
-		"id": "matcha-flavoured:steel_shears",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_shears"
-			},
-			"minecraft:max_damage": 3000,
-			"minecraft:repairable": {
-				"items": [
-					"minecraft:iron_ingot"
-				]
-			}
-		}
+		"id": "matcha-flavoured:steel_shears"
 	},
 	"template": "minecraft:iron_ingot"
 }

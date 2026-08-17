@@ -10,9 +10,6 @@
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:uncooked_green_curry",
-		"components": {
-			"!minecraft:entity_data": {}
-		}
+		"id": "matcha-flavoured:uncooked_green_curry"
 	}
 }

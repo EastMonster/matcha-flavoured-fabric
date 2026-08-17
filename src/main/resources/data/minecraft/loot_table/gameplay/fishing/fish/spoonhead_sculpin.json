@@ -7,24 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:spoonhead_sculpin",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.spoonhead_sculpin"
-								},
-								"minecraft:lore": [
-									{
-										"text": "⭐⭐",
-										"color": "green",
-										"italic": false
-									}
-								]
-							}
-						}
-					]
+					"name": "matcha-flavoured:spoonhead_sculpin"
 				}
 			]
 		}

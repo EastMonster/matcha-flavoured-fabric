@@ -7,24 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:alaska_blackfish",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.alaska_blackfish"
-								},
-								"minecraft:lore": [
-									{
-										"text": "⭐",
-										"color": "gray",
-										"italic": false
-									}
-								]
-							}
-						}
-					]
+					"name": "matcha-flavoured:alaska_blackfish"
 				}
 			]
 		}

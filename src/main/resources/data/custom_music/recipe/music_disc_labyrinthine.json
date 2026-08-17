@@ -11,9 +11,6 @@
 		"###"
 	],
 	"result": {
-		"id": "matcha-flavoured:music_disc_labyrinthine",
-		"components": {
-			"minecraft:jukebox_playable": "main:labyrinthine"
-		}
+		"id": "matcha-flavoured:music_disc_labyrinthine"
 	}
 }

@@ -12,21 +12,6 @@
 		"A": "minecraft:spectral_arrow"
 	},
 	"result": {
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_paris"
-			},
-			"minecraft:stored_enchantments": {
-				"minecraft:infinity": 1
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.paris",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_paris"
 	}

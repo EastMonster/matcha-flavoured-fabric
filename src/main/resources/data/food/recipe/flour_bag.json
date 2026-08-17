@@ -11,9 +11,6 @@
 		"###"
 	],
 	"result": {
-		"id": "matcha-flavoured:flour_bag",
-		"components": {
-			"!minecraft:entity_data": {}
-		}
+		"id": "matcha-flavoured:flour_bag"
 	}
 }

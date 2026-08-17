@@ -9,9 +9,6 @@
 		"minecraft:coal_block"
 	],
 	"result": {
-		"components": {
-			"!minecraft:entity_data": {}
-		},
 		"count": 4,
 		"id": "matcha-flavoured:carbon_rich_iron"
 	}

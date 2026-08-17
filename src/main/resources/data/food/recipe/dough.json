@@ -12,9 +12,6 @@
 		"matcha-flavoured:flour"
 	],
 	"result": {
-		"components": {
-			"!minecraft:entity_data": {}
-		},
 		"count": 4,
 		"id": "matcha-flavoured:dough"
 	}

@@ -1,12 +1,6 @@
 {
 	"gives": {
 		"id": "matcha-flavoured:nightshade_arrow",
-		"components": {
-			"minecraft:potion_contents": {
-				"potion": "minecraft:strong_poison",
-				"custom_name": "nightshade_arrow"
-			}
-		},
 		"count": 64
 	},
 	"given_item_modifiers": [],

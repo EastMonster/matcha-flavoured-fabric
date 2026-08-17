@@ -7,24 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:gurnard",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.gurnard"
-								},
-								"minecraft:lore": [
-									{
-										"text": "⭐⭐",
-										"color": "green",
-										"italic": false
-									}
-								]
-							}
-						}
-					]
+					"name": "matcha-flavoured:gurnard"
 				}
 			]
 		}

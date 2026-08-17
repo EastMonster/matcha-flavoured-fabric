@@ -17,22 +17,6 @@
 		"c": "minecraft:shield"
 	},
 	"result": {
-		"components": {
-			"minecraft:stored_enchantments": {
-				"minecraft:lunge": 2,
-				"minecraft:breach": 2
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_ares"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.ares",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_ares"
 	}

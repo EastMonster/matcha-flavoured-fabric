@@ -7,24 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:humpback_whitefish",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.humpback_whitefish"
-								},
-								"minecraft:lore": [
-									{
-										"text": "⭐",
-										"color": "gray",
-										"italic": false
-									}
-								]
-							}
-						}
-					]
+					"name": "matcha-flavoured:humpback_whitefish"
 				}
 			]
 		}

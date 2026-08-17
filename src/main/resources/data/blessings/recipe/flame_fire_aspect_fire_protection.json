@@ -12,23 +12,6 @@
 		"E": "minecraft:gold_ingot"
 	},
 	"result": {
-		"components": {
-			"minecraft:stored_enchantments": {
-				"minecraft:flame": 1,
-				"minecraft:fire_aspect": 1,
-				"minecraft:fire_protection": 3
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_yama"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.yama",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_yama"
 	}

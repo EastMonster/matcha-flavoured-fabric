@@ -1,12 +1,6 @@
 {
 	"gives": {
 		"id": "matcha-flavoured:apotropaic_arrow",
-		"components": {
-			"minecraft:potion_contents": {
-				"potion": "minecraft:strong_healing",
-				"custom_name": "apotropaic_arrow"
-			}
-		},
 		"count": 64
 	},
 	"given_item_modifiers": [],

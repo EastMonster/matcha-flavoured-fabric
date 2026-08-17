@@ -11,24 +11,6 @@
 		"B": "minecraft:enchanted_book"
 	},
 	"result": {
-		"components": {
-			"minecraft:stored_enchantments": {
-				"minecraft:depth_strider": 2,
-				"minecraft:riptide": 1,
-				"minecraft:aqua_affinity": 1,
-				"minecraft:respiration": 2
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_yamm"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.yamm",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_yamm"
 	}

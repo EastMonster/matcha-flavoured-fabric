@@ -7,24 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:wolffish",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.wolffish"
-								},
-								"minecraft:lore": [
-									{
-										"text": "⭐⭐⭐",
-										"color": "aqua",
-										"italic": false
-									}
-								]
-							}
-						}
-					]
+					"name": "matcha-flavoured:wolffish"
 				}
 			]
 		}

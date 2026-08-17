@@ -4,37 +4,7 @@
 		"count": 1
 	},
 	"gives": {
-		"id": "matcha-flavoured:lava_kit",
-		"components": {
-			"minecraft:bundle_contents": [
-				{
-					"id": "minecraft:dripstone_block",
-					"count": 4
-				},
-				{
-					"id": "minecraft:pointed_dripstone",
-					"count": 4
-				},
-				{
-					"id": "minecraft:lava_bucket",
-					"components": {
-						"minecraft:max_stack_size": 64
-					},
-					"count": 4
-				},
-				{
-					"id": "minecraft:cauldron",
-					"count": 4
-				},
-				{
-					"id": "minecraft:glass",
-					"count": 8
-				}
-			],
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.lava_kit"
-			}
-		}
+		"id": "matcha-flavoured:lava_kit"
 	},
 	"max_uses": 999,
 	"reputation_discount": 0,

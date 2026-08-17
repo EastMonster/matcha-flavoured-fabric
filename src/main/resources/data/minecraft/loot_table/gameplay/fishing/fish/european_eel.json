@@ -7,24 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:european_eel",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.european_eel"
-								},
-								"minecraft:lore": [
-									{
-										"text": "⭐⭐⭐⭐",
-										"color": "light_purple",
-										"italic": false
-									}
-								]
-							}
-						}
-					]
+					"name": "matcha-flavoured:european_eel"
 				}
 			]
 		}

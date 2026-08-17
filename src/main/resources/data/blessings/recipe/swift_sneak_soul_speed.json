@@ -13,22 +13,6 @@
 		"a": "minecraft:sculk"
 	},
 	"result": {
-		"components": {
-			"minecraft:stored_enchantments": {
-				"minecraft:swift_sneak": 2,
-				"minecraft:soul_speed": 2
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_cronus"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.cronus",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_cronus"
 	}

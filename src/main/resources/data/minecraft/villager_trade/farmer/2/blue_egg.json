@@ -1,16 +1,6 @@
 {
 	"gives": {
 		"id": "matcha-flavoured:fertilised_blue_egg",
-		"components": {
-			"minecraft:entity_data": {
-				"id": "minecraft:chicken",
-				"Age": -24000,
-				"variant": "minecraft:cold"
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.fertilised_blue_egg"
-			}
-		},
 		"count": 1
 	},
 	"max_uses": 999,

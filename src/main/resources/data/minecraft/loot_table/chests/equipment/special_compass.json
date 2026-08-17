@@ -8,17 +8,7 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha-flavoured:titanium_compass",
-					"quality": 2,
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.titanium_compass"
-								}
-							}
-						}
-					]
+					"quality": 2
 				},
 				{
 					"type": "minecraft:item",

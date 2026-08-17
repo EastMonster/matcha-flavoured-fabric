@@ -7,9 +7,6 @@
 		"minecraft:wheat_seeds"
 	],
 	"result": {
-		"id": "matcha-flavoured:flour",
-		"components": {
-			"!minecraft:entity_data": {}
-		}
+		"id": "matcha-flavoured:flour"
 	}
 }

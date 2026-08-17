@@ -3,13 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:archaeologists_brush",
-		"components": {
-			"minecraft:unbreakable": {},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.archaeologists_brush"
-			}
-		}
+		"id": "matcha-flavoured:archaeologists_brush"
 	},
 	"max_uses": 999,
 	"reputation_discount": 0,

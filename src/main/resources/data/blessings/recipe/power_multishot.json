@@ -13,22 +13,6 @@
 		"b": "minecraft:prismarine_crystals"
 	},
 	"result": {
-		"components": {
-			"minecraft:stored_enchantments": {
-				"minecraft:power": 2,
-				"minecraft:multishot": 1
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_artemis"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.artemis",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_artemis"
 	}

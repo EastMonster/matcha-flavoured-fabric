@@ -11,18 +11,6 @@
 		"XXX"
 	],
 	"result": {
-		"id": "matcha-flavoured:bedrock_buster",
-		"components": {
-			"minecraft:entity_data": {
-				"id": "minecraft:tnt",
-				"Glowing": true,
-				"fuse": 80,
-				"explosion_power": 4
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bedrock_buster"
-			},
-			"minecraft:rarity": "rare"
-		}
+		"id": "matcha-flavoured:bedrock_buster"
 	}
 }

@@ -12,23 +12,6 @@
 		"S#S"
 	],
 	"result": {
-		"components": {
-			"minecraft:entity_data": {
-				"id": "minecraft:armor_stand",
-				"NoGravity": true,
-				"Invulnerable": true,
-				"Tags": [
-					"WardingStone"
-				],
-				"Invisible": true,
-				"Small": true,
-				"DisabledSlots": 4144959
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.warding_stone",
-				"color": "aqua"
-			}
-		},
 		"count": 1,
 		"id": "matcha-flavoured:warding_stone"
 	}

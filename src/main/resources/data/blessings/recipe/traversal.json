@@ -13,21 +13,6 @@
 		"L": "minecraft:leather_boots"
 	},
 	"result": {
-		"components": {
-			"minecraft:stored_enchantments": {
-				"matcha-flavoured:traversal": 3
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_clement"
-			},
-			"minecraft:lore": [
-				{
-					"translate": "item.kleispack.blessing.clement",
-					"color": "dark_gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 1,
 		"id": "matcha-flavoured:blessing_clement"
 	}

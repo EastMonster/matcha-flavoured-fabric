@@ -7,20 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:axolotl",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.axolotl"
-								},
-								"minecraft:entity_data": {
-									"id": "minecraft:axolotl"
-								}
-							}
-						}
-					]
+					"name": "matcha-flavoured:axolotl"
 				}
 			]
 		}

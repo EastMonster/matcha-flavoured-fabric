@@ -13,9 +13,6 @@
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:uncooked_ramen",
-		"components": {
-			"!minecraft:entity_data": {}
-		}
+		"id": "matcha-flavoured:uncooked_ramen"
 	}
 }
