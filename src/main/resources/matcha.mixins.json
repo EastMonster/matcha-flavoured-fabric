@@ -25,6 +25,7 @@
 	],
 	"client": [
 		"AirBubblesHudMixin",
+		"ClientAdvancementsAccessor",
 		"CreatorNamespaceMixin",
 		"LeavesBreakingMixin",
 		"LeavesCullMixin",
