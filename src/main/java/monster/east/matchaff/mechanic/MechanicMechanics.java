@@ -239,29 +239,34 @@ public final class MechanicMechanics {
 		}
 		if (!player.isCreative()) {
 			boolean easy = WorldMechanics.cachedDifficulty(player.level().getServer()).getId() <= 1;
-			for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
-				ItemStack stack = player.getInventory().getItem(slot);
-				if (!stack.is(Items.BLAZE_POWDER)) {
-					continue;
-				}
-				stack.shrink(1);
-				player.addEffect(new MobEffectInstance(
-						MobEffects.REGENERATION, easy ? 80 : 40, 4, true, true));
-				player.addEffect(new MobEffectInstance(
-						MobEffects.RESISTANCE, easy ? 200 : 100, 0, true, true));
-				ItemStack reward = new ItemStack(Items.GLOWSTONE_DUST, 1);
-				if (!player.addItem(reward)) {
-					var dropped = player.drop(reward, false);
-					if (dropped != null) {
-						dropped.setNoPickUpDelay();
-						dropped.setTarget(player.getUUID());
+			boolean consumed;
+			do {
+				consumed = false;
+				for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
+					ItemStack stack = player.getInventory().getItem(slot);
+					if (!stack.is(Items.BLAZE_POWDER)) {
+						continue;
 					}
+					stack.shrink(1);
+					player.addEffect(new MobEffectInstance(
+							MobEffects.REGENERATION, easy ? 80 : 40, 4, true, true));
+					player.addEffect(new MobEffectInstance(
+							MobEffects.RESISTANCE, easy ? 200 : 100, 0, true, true));
+					ItemStack reward = new ItemStack(Items.GLOWSTONE_DUST, 1);
+					if (!player.addItem(reward)) {
+						var dropped = player.drop(reward, false);
+						if (dropped != null) {
+							dropped.setNoPickUpDelay();
+							dropped.setTarget(player.getUUID());
+						}
+					}
+					var level = player.level();
+					level.sendParticles(new DustParticleOptions(0xFFAA17, 1.0F),
+							player.getX(), player.getY() + 1.5, player.getZ(), 8, 0.25, 0.25, 0.25, 0.1);
+					consumed = true;
+					break;
 				}
-				var level = player.level();
-				level.sendParticles(new DustParticleOptions(0xFFAA17, 1.0F),
-						player.getX(), player.getY() + 1.5, player.getZ(), 8, 0.25, 0.25, 0.25, 0.1);
-				break;
-			}
+			} while (consumed);
 		}
 		revoke(player, ESTUS);
 	}

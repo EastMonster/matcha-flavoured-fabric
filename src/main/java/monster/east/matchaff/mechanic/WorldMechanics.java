@@ -147,6 +147,7 @@ public final class WorldMechanics {
 		rules.set(GameRules.BLOCK_EXPLOSION_DROP_DECAY, false, server);
 		rules.set(GameRules.MOB_EXPLOSION_DROP_DECAY, false, server);
 		rules.set(GameRules.ENDER_PEARLS_VANISH_ON_DEATH, false, server);
+		rules.set(GameRules.MAX_BLOCK_MODIFICATIONS, 200000, server);
 		rules.set(GameRules.COMMAND_BLOCK_OUTPUT, false, server);
 		if (server.getScoreboard().getObjective("gamerule_safe_surface") == null) {
 			server.getScoreboard().addObjective("gamerule_safe_surface", ObjectiveCriteria.DUMMY,
@@ -664,6 +665,7 @@ public final class WorldMechanics {
 	private static boolean isDivineItem(ItemStack stack) {
 		return stack.is(Items.NETHER_STAR)
 				|| stack.is(Items.ENDER_EYE)
+				|| stack.is(Items.BLAZE_POWDER)
 				|| stack.is(Items.TURTLE_SCUTE)
 				|| stack.is(net.minecraft.core.registries.BuiltInRegistries.ITEM
 						.getValue(Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_container")));
@@ -704,6 +706,11 @@ public final class WorldMechanics {
 					item.setDeltaMovement(0, -0.1, 0);
 				} else if (!level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 0.5, item.getZ())).isAir()) {
 					item.setDeltaMovement(0, 0.025, 0);
+				}
+			} else if (stack.is(Items.BLAZE_POWDER)) {
+				if (everyTenTicks) {
+					level.sendParticles(ParticleTypes.SMOKE, item.getX(), item.getY() + 0.75, item.getZ(),
+							1, 0.05, 0.05, 0.05, 0);
 				}
 			} else if (stack.is(Items.TURTLE_SCUTE) || stack.is(net.minecraft.core.registries.BuiltInRegistries.ITEM
 					.getValue(Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_container")))) {

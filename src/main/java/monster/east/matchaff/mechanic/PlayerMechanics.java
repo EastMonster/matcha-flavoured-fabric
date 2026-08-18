@@ -122,26 +122,29 @@ public final class PlayerMechanics {
 		}
 		player.setAttached(HEART_INVENTORY_VERSION, inventoryVersion);
 		Item heartContainer = heartContainerItem();
+		boolean consumed = false;
 		for (int slot = 0; slot < inventory.getContainerSize(); slot++) {
 			ItemStack stack = inventory.getItem(slot);
 			if (stack.isEmpty() || !stack.is(heartContainer)) {
 				continue;
 			}
-			stack.shrink(1);
-			inventory.setChanged();
-			if (obtained != null) {
-				for (String criterion : obtained.value().criteria().keySet()) {
-					player.getAdvancements().revoke(obtained, criterion);
+			while (!stack.isEmpty() && hearts < MAX_HEARTS) {
+				stack.shrink(1);
+				inventory.setChanged();
+				if (obtained != null) {
+					for (String criterion : obtained.value().criteria().keySet()) {
+						player.getAdvancements().revoke(obtained, criterion);
+					}
 				}
+				hearts = Math.min(MAX_HEARTS, hearts + 2);
+				setHearts(player, hearts);
+				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 10, false, false));
+				player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
+						SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.5F, 0.0F);
+				consumed = true;
 			}
-			hearts = Math.min(MAX_HEARTS, hearts + 2);
-			setHearts(player, hearts);
-			player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 10, false, false));
-			player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-					SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.5F, 1.0F);
-			applyMaxHealth(player, hearts);
-			return;
 		}
+		if (consumed) applyMaxHealth(player, hearts);
 	}
 
 	/**
