@@ -10,6 +10,8 @@
 		"BrushInteractionMixin",
 		"CompassItemMixin",
 		"RecipeManagerMixin",
+		"RecipeCraftedMixin",
+		"ItemInstanceMixin",
 		"ServerAdvancementManagerMixin",
 		"ExperienceMixin",
 		"EnchantmentHelperMixin",

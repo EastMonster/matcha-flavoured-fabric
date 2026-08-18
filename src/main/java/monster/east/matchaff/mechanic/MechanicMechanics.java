@@ -522,8 +522,10 @@ public final class MechanicMechanics {
 				continue;
 			}
 			PotionContents contents = stack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY);
-			if (contents.is(Potions.WATER) && stack.getOrDefault(DataComponents.MAX_STACK_SIZE, 0) != 64) {
-				stack.set(DataComponents.MAX_STACK_SIZE, 64);
+			if (contents.is(Potions.WATER) && stack.getOrDefault(DataComponents.MAX_STACK_SIZE, 1) != 1) {
+				// Keep the original component identity; ItemInstanceMixin supplies the
+				// water bottle's effective max stack size.
+				stack.set(DataComponents.MAX_STACK_SIZE, 1);
 			}
 		}
 	}

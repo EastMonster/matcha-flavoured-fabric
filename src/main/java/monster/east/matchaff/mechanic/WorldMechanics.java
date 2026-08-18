@@ -500,7 +500,7 @@ public final class WorldMechanics {
 		}
 	}
 
-	private static void glassBottleReward(ServerPlayer player) {
+	public static void glassBottleReward(ServerPlayer player) {
 		if (advancementDone(player, GLASS_BOTTLE_ADVANCEMENT)) {
 			ItemStack reward = new ItemStack(Items.GLASS_BOTTLE, 1);
 			if (!player.addItem(reward)) {
