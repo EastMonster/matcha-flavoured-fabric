@@ -30,6 +30,7 @@
 		"CreatorNamespaceMixin",
 		"LeavesBreakingMixin",
 		"LeavesCullMixin",
+		"TitleScreenMixin",
 		"TrueDarknessMixin",
 		"WheatRaycastMixin"
 	],
