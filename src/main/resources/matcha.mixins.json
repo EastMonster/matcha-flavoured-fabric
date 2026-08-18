@@ -21,7 +21,8 @@
 		"ShearsInteractionMixin",
 		"VillagerAccessor",
 		"VillagerFoodMixin",
-		"WolfTamingMixin"
+		"WolfTamingMixin",
+		"WheatShapeMixin"
 	],
 	"client": [
 		"AirBubblesHudMixin",
@@ -29,7 +30,8 @@
 		"CreatorNamespaceMixin",
 		"LeavesBreakingMixin",
 		"LeavesCullMixin",
-		"TrueDarknessMixin"
+		"TrueDarknessMixin",
+		"WheatRaycastMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
