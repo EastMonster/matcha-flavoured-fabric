@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;

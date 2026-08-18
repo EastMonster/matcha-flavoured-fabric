@@ -47,10 +47,10 @@
 			"monster.east.matchaff.MatchaFlavouredFabric"
 		],
 		"client": [
-			"monster.east.matchaff.MatchaFlavouredClient"
+			"monster.east.matchaff.client.MatchaFlavouredClient"
 		],
 		"modmenu": [
-			"monster.east.matchaff.MatchaModMenu"
+			"monster.east.matchaff.client.MatchaModMenu"
 		],
 		"jei_mod_plugin": [
 			"monster.east.matchaff.client.MatchaJeiPlugin"

@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.client;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;

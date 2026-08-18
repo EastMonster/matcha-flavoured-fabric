@@ -1,6 +1,6 @@
 package monster.east.matchaff.mixin;
 
-import monster.east.matchaff.MatchaClientConfig;
+import monster.east.matchaff.client.MatchaClientConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightmapRenderStateExtractor;
 import net.minecraft.world.level.Level;

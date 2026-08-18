@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.client;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

@@ -1,4 +1,4 @@
-package monster.east.matchaff;
+package monster.east.matchaff.client;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;

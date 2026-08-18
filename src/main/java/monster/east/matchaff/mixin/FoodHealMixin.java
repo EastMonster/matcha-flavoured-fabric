@@ -34,13 +34,17 @@ public abstract class FoodHealMixin {
 			return;
 		}
 		ApplyStatusEffectsConsumeEffect self = (ApplyStatusEffectsConsumeEffect) (Object) this;
-		List<MobEffectInstance> regens = new ArrayList<>();
-		for (MobEffectInstance effect : self.effects()) {
+		List<MobEffectInstance> effects = self.effects();
+		List<MobEffectInstance> regens = null;
+		for (MobEffectInstance effect : effects) {
 			if (effect.getEffect() == MobEffects.REGENERATION) {
+				if (regens == null) {
+					regens = new ArrayList<>();
+				}
 				regens.add(effect);
 			}
 		}
-		if (regens.isEmpty()) {
+		if (regens == null) {
 			return; // no regeneration, keep the vanilla behaviour
 		}
 		if (user.getRandom().nextFloat() >= self.probability()) {
@@ -48,7 +52,7 @@ public abstract class FoodHealMixin {
 			return;
 		}
 		boolean anyApplied = FoodHealMechanics.onConsumed(player, regens);
-		for (MobEffectInstance effect : self.effects()) {
+		for (MobEffectInstance effect : effects) {
 			// Regeneration is handled as one ordered chain by FoodHealMechanics.
 			if (effect.getEffect() != MobEffects.REGENERATION && user.addEffect(new MobEffectInstance(effect))) {
 				anyApplied = true;
