@@ -47,6 +47,16 @@ import java.util.List;
 import java.util.Objects;
 
 public final class MatchaFlavouredFabric implements ModInitializer {
+	private static volatile boolean vanillaPreviewActive;
+
+	public static boolean vanillaPreviewActive() {
+		return vanillaPreviewActive;
+	}
+
+	public static void setVanillaPreviewActive(boolean active) {
+		vanillaPreviewActive = active;
+	}
+
 	private static final List<String> SIMPLE_ITEMS = List.of(
 			"amber", "opal", "ruby", "topaz",
 			"fish_bones", "fox_pelt", "sulfur_goo", "tallow",

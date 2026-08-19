@@ -1,9 +1,11 @@
 package monster.east.matchaff.mixin;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import monster.east.matchaff.client.MatchaFlavouredClient;
 import org.spongepowered.asm.mixin.Mixin;
 
 /**
@@ -13,8 +15,9 @@ import org.spongepowered.asm.mixin.Mixin;
  * and are therefore never tested here). The extension segments are marked with
  * cullfaces, and the vanilla face-culling path consults
  * {@link #skipRendering} before rendering a cullface'd face; returning true
- * for a leaf neighbor culls them. Only leaf blocks are affected; a neighboring
- * leaf block itself still renders normally.
+ * for a leaf neighbor culls them. The rule is disabled when either built-in
+ * pack replaces the extension model with a plain vanilla cube, otherwise it
+ * would also cull the leaf blocks' own faces.
  */
 @Mixin(value = LeavesBlock.class, priority = 2000)
 public abstract class LeavesCullMixin extends Block {
@@ -24,6 +27,12 @@ public abstract class LeavesCullMixin extends Block {
 
 	@Override
 	public boolean skipRendering(BlockState state, BlockState neighborState, Direction direction) {
-		return neighborState.getBlock() instanceof LeavesBlock;
+		return matcha$extensionsActive() && neighborState.getBlock() instanceof LeavesBlock;
+	}
+
+	private static boolean matcha$extensionsActive() {
+		var selected = Minecraft.getInstance().getResourcePackRepository().getSelectedIds();
+		return !selected.contains(MatchaFlavouredClient.NO_LEAF_EXTENSIONS_PACK)
+				&& !selected.contains(MatchaFlavouredClient.VANILLA_PREVIEW_PACK);
 	}
 }

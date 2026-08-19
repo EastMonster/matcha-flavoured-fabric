@@ -1,5 +1,6 @@
 package monster.east.matchaff.mixin;
 
+import monster.east.matchaff.MatchaFlavouredFabric;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
@@ -23,7 +24,8 @@ public abstract class WheatShapeMixin {
 	private void matcha$tallMatureWheat(
 			BlockState state, BlockGetter level, BlockPos pos, CollisionContext context,
 			CallbackInfoReturnable<VoxelShape> cir) {
-		if (state.is(Blocks.WHEAT) && state.getValue(CropBlock.AGE) == CropBlock.MAX_AGE) {
+		if (!MatchaFlavouredFabric.vanillaPreviewActive()
+				&& state.is(Blocks.WHEAT) && state.getValue(CropBlock.AGE) == CropBlock.MAX_AGE) {
 			cir.setReturnValue(MATCHA_TALL_WHEAT_SHAPE);
 		}
 	}

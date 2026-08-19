@@ -1,5 +1,6 @@
 package monster.east.matchaff.mixin;
 
+import monster.east.matchaff.MatchaFlavouredFabric;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.entity.Entity;
@@ -26,6 +27,9 @@ public abstract class WheatRaycastMixin {
 	@Inject(method = "raycastHitResult", at = @At("RETURN"), cancellable = true)
 	private void matcha$pickTallWheat(
 			float partialTick, Entity cameraEntity, CallbackInfoReturnable<HitResult> cir) {
+		if (MatchaFlavouredFabric.vanillaPreviewActive()) {
+			return;
+		}
 		LocalPlayer player = (LocalPlayer) (Object) this;
 		Vec3 from = cameraEntity.getEyePosition(partialTick);
 		double distance = player.blockInteractionRange();

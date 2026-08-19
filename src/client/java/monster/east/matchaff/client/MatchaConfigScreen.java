@@ -22,6 +22,11 @@ public final class MatchaConfigScreen extends Screen {
 		addRenderableWidget(new StringWidget(
 				(width - font.width(title)) / 2, 25, font.width(title), 20, title, font));
 
+		addRenderableWidget(Button.builder(vanillaPreviewLabel(), this::toggleVanillaPreview)
+				.bounds(width / 2 - 100, height / 2 - 60, 200, 20)
+				.tooltip(Tooltip.create(Component.translatable("matcha.config.vanilla_preview.tooltip")))
+				.build());
+
 		addRenderableWidget(Button.builder(leafExtensionsLabel(), this::toggleLeafExtensions)
 				.bounds(width / 2 - 100, height / 2 - 34, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.leaf_extensions.tooltip")))
@@ -38,6 +43,19 @@ public final class MatchaConfigScreen extends Screen {
 		addRenderableWidget(Button.builder(CommonComponents.GUI_DONE, button -> onClose())
 				.bounds(width / 2 - 100, height / 2 + 26, 200, 20)
 				.build());
+	}
+
+	private void toggleVanillaPreview(Button button) {
+		Minecraft client = Minecraft.getInstance();
+		PackRepository packs = client.getResourcePackRepository();
+		String packId = MatchaFlavouredClient.VANILLA_PREVIEW_PACK;
+		boolean changed = packs.getSelectedIds().contains(packId)
+				? packs.removePack(packId)
+				: packs.addPack(packId);
+		if (changed) {
+			client.options.updateResourcePacks(packs);
+			button.setMessage(vanillaPreviewLabel());
+		}
 	}
 
 	private void toggleLeafExtensions(Button button) {
@@ -57,6 +75,13 @@ public final class MatchaConfigScreen extends Screen {
 		boolean enabled = !Minecraft.getInstance().getResourcePackRepository().getSelectedIds()
 				.contains(MatchaFlavouredClient.NO_LEAF_EXTENSIONS_PACK);
 		return CommonComponents.optionStatus(Component.translatable("matcha.config.leaf_extensions"), enabled);
+	}
+
+	private static Component vanillaPreviewLabel() {
+		return CommonComponents.optionStatus(
+				Component.translatable("matcha.config.vanilla_preview"),
+				Minecraft.getInstance().getResourcePackRepository().getSelectedIds()
+						.contains(MatchaFlavouredClient.VANILLA_PREVIEW_PACK));
 	}
 
 	private static Component trueDarknessLabel() {
