@@ -2,6 +2,8 @@ package monster.east.matchaff.client;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.ingredient.ICraftingGridHelper;
 import mezz.jei.api.gui.ingredient.IRecipeSlotDrawable;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
@@ -17,9 +19,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.CriterionProgress;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.context.ContextMap;
 import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -29,12 +34,14 @@ import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.display.SlotDisplay;
+import net.minecraft.world.item.crafting.display.SlotDisplayContext;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 @JeiPlugin
 public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExtension<ShapedRecipe> {
@@ -88,7 +95,7 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
     @Override
     public boolean isHandled(RecipeHolder<ShapedRecipe> recipe) {
         Identifier id = recipe.id().identifier();
-        return id.getNamespace().equals("blessings") && !id.getPath().equals("hell_bound_book");
+        return id.getNamespace().equals("blessings");
     }
 
     @Override
@@ -96,6 +103,55 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
         return recipe.value().getIngredients().stream()
                 .map(Ingredient::optionalIngredientToDisplay)
                 .toList();
+    }
+
+    @Override
+    public void setRecipe(RecipeHolder<ShapedRecipe> recipeHolder, IRecipeLayoutBuilder builder,
+                          ICraftingGridHelper craftingGridHelper, IFocusGroup focuses) {
+        ShapedRecipe recipe = recipeHolder.value();
+        craftingGridHelper.createAndSetOutputs(builder, recipe.display().getFirst().result());
+
+        List<List<ItemStack>> visibleIngredients = recipe.getIngredients().stream()
+                .map(ingredient -> ingredient.map(MatchaJeiPlugin::visibleStacks).orElse(null))
+                .toList();
+        craftingGridHelper.createAndSetInputs(
+                builder, visibleIngredients, recipe.getWidth(), recipe.getHeight());
+
+        boolean hasEnchantedBook = recipe.getIngredients().stream()
+                .anyMatch(ingredient -> ingredient
+                        .filter(value -> value.acceptsItem(BuiltInRegistries.ITEM.wrapAsHolder(Items.ENCHANTED_BOOK)))
+                        .isPresent());
+        if (hasEnchantedBook) {
+            builder.addInvisibleIngredients(RecipeIngredientRole.INPUT).add(bindingBookDisplay());
+        }
+    }
+
+    private static List<ItemStack> visibleStacks(Ingredient ingredient) {
+        if (ingredient.acceptsItem(BuiltInRegistries.ITEM.wrapAsHolder(Items.ENCHANTED_BOOK))) {
+            Stream<ItemStack> stacks = Stream.of(new ItemStack(Items.ENCHANTED_BOOK));
+            if (jeiRuntime != null) {
+                stacks = Stream.concat(stacks, jeiRuntime.getIngredientManager().getAllItemStacks().stream()
+                        .filter(stack -> stack.getItem() == Items.ENCHANTED_BOOK)
+                        .map(ItemStack::copy));
+            }
+            var player = Minecraft.getInstance().player;
+            if (player != null) {
+                var inventory = player.getInventory();
+                for (int slot = 0; slot < inventory.getContainerSize(); slot++) {
+                    ItemStack stack = inventory.getItem(slot);
+                    if (stack.getItem() == Items.ENCHANTED_BOOK) {
+                        stacks = Stream.concat(stacks, Stream.of(stack.copy()));
+                    }
+                }
+            }
+            return stacks.toList();
+        }
+        var connection = Minecraft.getInstance().getConnection();
+        var contextBuilder = new ContextMap.Builder();
+        if (connection != null) {
+            contextBuilder.withParameter(SlotDisplayContext.REGISTRIES, connection.registryAccess());
+        }
+        return ingredient.display().resolveForStacks(contextBuilder.create(SlotDisplayContext.CONTEXT));
     }
 
     @Override
