@@ -6,6 +6,7 @@
 		"SpawnPlacementsMixin",
 		"MobSpawnMixin",
 		"PlayerCanEatMixin",
+		"BlockSoundMixin",
 		"AnvilMenuMixin",
 		"BrushInteractionMixin",
 		"CompassItemMixin",
