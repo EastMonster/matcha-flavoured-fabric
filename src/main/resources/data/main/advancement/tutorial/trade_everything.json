@@ -15,9 +15,9 @@
 		"toolsmith": { "trigger": "minecraft:villager_trade", "conditions": { "villager": { "minecraft:nbt": "{VillagerData:{profession:\"minecraft:toolsmith\"}}" } } }
 	},
 	"display": {
-		"description": { "translate": "adv.kleispack.trade_everything.desc" },
+		"description": { "translate": "advancements.main.tutorial.trade_everything.description" },
 		"icon": { "count": 1, "id": "matcha-flavoured:heart_container" },
-		"title": { "translate": "adv.kleispack.trade_everything" },
+		"title": { "translate": "advancements.main.tutorial.trade_everything.title" },
 		"hidden": false,
 		"frame": "challenge"
 	},

@@ -10,14 +10,14 @@
 	},
 	"display": {
 		"description": {
-			"translate": "adv.kleispack.craft_brush.desc"
+			"translate": "advancements.main.tutorial.craft_brush.description"
 		},
 		"icon": {
 			"count": 1,
 			"id": "minecraft:brush"
 		},
 		"title": {
-			"translate": "adv.kleispack.craft_brush"
+			"translate": "advancements.main.tutorial.craft_brush.title"
 		},
 		"frame": "task",
 		"hidden": false

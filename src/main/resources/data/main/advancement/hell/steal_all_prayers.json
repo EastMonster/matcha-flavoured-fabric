@@ -26,9 +26,9 @@
 		"zephyr": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "blessings:zephyr" } }
 	},
 	"display": {
-		"description": { "translate": "adv.kleispack.hell.steal_all_prayers.desc" },
+		"description": { "translate": "advancements.main.hell.steal_all_prayers.description" },
 		"icon": { "count": 1, "id": "matcha-flavoured:blessing_god_king" },
-		"title": { "translate": "adv.kleispack.hell.steal_all_prayers" },
+		"title": { "translate": "advancements.main.hell.steal_all_prayers.title" },
 		"hidden": false,
 		"frame": "challenge"
 	},

@@ -194,11 +194,13 @@ public final class WorldMechanics {
 		};
 		if (next != current) {
 			server.getPlayerList().broadcastSystemMessage(
-					Component.literal("Game is now set to ")
-							.append(next.getDisplayName().copy().withStyle(
-									next == Difficulty.HARD ? net.minecraft.ChatFormatting.RED : net.minecraft.ChatFormatting.GOLD))
+					Component.translatable("matcha.message.difficulty.is_now")
+							.append(Component.literal(" "))
+							.append(Component.translatable(difficultyNameKey(next)).withStyle(
+									next == Difficulty.HARD ? net.minecraft.ChatFormatting.RED : net.minecraft.ChatFormatting.GOLD,
+									ChatFormatting.BOLD))
 							.append("\n")
-							.append(Component.literal("(You can change this if you want)")
+							.append(Component.translatable("matcha.message.difficulty.disclaimer")
 									.withStyle(net.minecraft.ChatFormatting.GRAY)), false);
 			server.setDifficulty(next, true);
 		}
@@ -225,11 +227,10 @@ public final class WorldMechanics {
 	private static void welcome(ServerPlayer player) {
 		migrateRecipeUnlocks(player);
 		player.sendSystemMessage(Component.translatable("matcha.message.welcome")
+				.append(Component.translatable("matcha.message.version_number"))
 				.withStyle(style -> style.withColor(TextColor.fromRgb(0x65E082))));
-		player.sendSystemMessage(Component.translatable("matcha.message.welcome.lost")
-				.withStyle(style -> style.withColor(TextColor.fromRgb(0x8FB398)))
-				.append(Component.translatable("matcha.message.welcome.advancements")
-						.withStyle(style -> style.withBold(true).withColor(TextColor.fromRgb(0x61BB78)))));
+		player.sendSystemMessage(Component.translatable("matcha.message.welcome.desc")
+				.withStyle(style -> style.withColor(TextColor.fromRgb(0x8FB398))));
 		difficultyWelcome(player);
 	}
 
@@ -257,6 +258,8 @@ public final class WorldMechanics {
 			}
 		}
 		server.getScoreboard().getOrCreatePlayerScore(player, objective).set(RECIPE_UNLOCK_VERSION);
+		player.sendSystemMessage(Component.literal("[!]: ").withStyle(ChatFormatting.GREEN)
+				.append(Component.translatable("matcha.message.player_updated").withStyle(ChatFormatting.GRAY)));
 	}
 
 	private static void difficultyWelcome(ServerPlayer player) {
@@ -267,23 +270,32 @@ public final class WorldMechanics {
 		ChatFormatting color = difficulty == Difficulty.EASY ? ChatFormatting.GREEN
 				: difficulty == Difficulty.NORMAL ? ChatFormatting.GOLD : ChatFormatting.RED;
 		String icon = difficulty == Difficulty.EASY ? "[⛏]" : difficulty == Difficulty.NORMAL ? "[☠]" : "[☠☠☠]";
-		String description = switch (difficulty) {
-			case EASY -> ". For players who want to relax. \n";
-			case NORMAL -> ". For players who want a challenge. \n";
-			case HARD -> ". For players who want an unfair challenge. \n";
-			default -> "";
-		};
 		player.sendSystemMessage(Component.literal(icon).withStyle(color)
-				.append(Component.literal(" Your gamemode is "))
-				.append(Component.literal(switch (difficulty) {
-					case EASY -> "Easy";
-					case NORMAL -> "Normal";
-					case HARD -> "Hard";
-					default -> "";
-				}).withStyle(color, ChatFormatting.BOLD))
-				.append(Component.literal(description))
-				.append(Component.literal("(You can change this in the world settings, make sure you restart the world after)")
+				.append(Component.translatable("matcha.message.difficulty.is"))
+				.append(Component.literal(" "))
+				.append(Component.translatable(difficultyNameKey(difficulty)).withStyle(color, ChatFormatting.BOLD))
+				.append(Component.translatable(difficultyDescriptionKey(difficulty)).withStyle(color))
+				.append("\n")
+				.append(Component.translatable("matcha.message.difficulty.disclaimer")
 						.withStyle(ChatFormatting.GRAY)));
+	}
+
+	private static String difficultyNameKey(Difficulty difficulty) {
+		return switch (difficulty) {
+			case EASY -> "matcha.message.difficulty.easy";
+			case NORMAL -> "matcha.message.difficulty.normal";
+			case HARD -> "matcha.message.difficulty.hard";
+			default -> "matcha.message.difficulty.normal";
+		};
+	}
+
+	private static String difficultyDescriptionKey(Difficulty difficulty) {
+		return switch (difficulty) {
+			case EASY -> "matcha.message.difficulty.easy.desc";
+			case NORMAL -> "matcha.message.difficulty.normal.desc";
+			case HARD -> "matcha.message.difficulty.hard.desc";
+			default -> "matcha.message.difficulty.normal.desc";
+		};
 	}
 
 	private static void eerie(ServerPlayer player) {

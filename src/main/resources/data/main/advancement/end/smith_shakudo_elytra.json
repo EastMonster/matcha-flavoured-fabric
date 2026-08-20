@@ -10,14 +10,14 @@
 	},
 	"display": {
 		"description": {
-			"translate": "adv.kleispack.end.smith_shakudo_elytra.desc"
+			"translate": "advancements.main.end.smith_shakudo_elytra.description"
 		},
 		"icon": {
 			"count": 1,
 			"id": "matcha-flavoured:shakudo_elytra"
 		},
 		"title": {
-			"translate": "adv.kleispack.end.smith_shakudo_elytra"
+			"translate": "advancements.main.end.smith_shakudo_elytra.title"
 		},
 		"frame": "goal",
 		"hidden": false

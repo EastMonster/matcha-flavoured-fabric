@@ -14,14 +14,14 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.main.tutorial.obtain_avil.description"
+			"translate": "advancements.main.tutorial.obtain_anvil.description"
 		},
 		"icon": {
 			"count": 1,
 			"id": "minecraft:anvil"
 		},
 		"title": {
-			"translate": "advancements.main.tutorial.obtain_avil.title"
+			"translate": "advancements.main.tutorial.obtain_anvil.title"
 		},
 		"hidden": false
 	},

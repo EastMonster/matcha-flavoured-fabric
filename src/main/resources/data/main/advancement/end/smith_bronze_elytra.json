@@ -10,14 +10,14 @@
 	},
 	"display": {
 		"description": {
-			"translate": "adv.kleispack.end.smith_bronze_elytra.desc"
+			"translate": "advancements.main.end.smith_bronze_elytra.description"
 		},
 		"icon": {
 			"count": 1,
 			"id": "matcha-flavoured:bronze_elytra"
 		},
 		"title": {
-			"translate": "adv.kleispack.end.smith_bronze_elytra"
+			"translate": "advancements.main.end.smith_bronze_elytra.title"
 		},
 		"frame": "goal",
 		"hidden": false

@@ -16,9 +16,9 @@
 		"adamant_claymore": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "smithing_table:adamant_claymore" } }
 	},
 	"display": {
-		"description": { "translate": "adv.kleispack.obtain_adamant_tool.desc" },
+		"description": { "translate": "advancements.main.tutorial.obtain_adamant_tool.description" },
 		"icon": { "count": 1, "id": "minecraft:netherite_pickaxe" },
-		"title": { "translate": "adv.kleispack.obtain_adamant_tool" },
+		"title": { "translate": "advancements.main.tutorial.obtain_adamant_tool.title" },
 		"frame": "challenge",
 		"hidden": false
 	},
