@@ -9,19 +9,7 @@
 					"type": "minecraft:item",
 					"name": "matcha-flavoured:avesta",
 					"weight": 1,
-					"conditions": [],
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.avesta"
-								},
-								"minecraft:rarity": "rare",
-								"minecraft:max_stack_size": 64
-							}
-						}
-					]
+					"conditions": []
 				}
 			]
 		}

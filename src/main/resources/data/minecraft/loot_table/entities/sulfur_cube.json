@@ -43,14 +43,6 @@
 					],
 					"functions": [
 						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.sulfur_goo"
-								}
-							}
-						},
-						{
 							"function": "minecraft:set_count",
 							"count": {
 								"min": 1,

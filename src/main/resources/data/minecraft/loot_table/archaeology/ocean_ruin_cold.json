@@ -21,40 +21,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:rusty_axe",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:damage": 140,
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.rusty_axe"
-								},
-								"minecraft:lore": [
-									{
-										"text": "⛏ 6",
-										"color": "blue",
-										"italic": false
-									},
-									{
-										"text": "🗡 9",
-										"color": "dark_green",
-										"italic": false
-									},
-									{
-										"text": "🕒 0.9",
-										"color": "dark_green",
-										"italic": false
-									}
-								],
-								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
-								}
-							}
-						}
-					]
+					"name": "matcha-flavoured:rusty_axe"
 				},
 				{
 					"type": "minecraft:item",

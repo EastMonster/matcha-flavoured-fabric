@@ -7,18 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:ruby",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.ruby",
-									"color": "red"
-								}
-							}
-						}
-					]
+					"name": "matcha-flavoured:ruby"
 				}
 			]
 		}

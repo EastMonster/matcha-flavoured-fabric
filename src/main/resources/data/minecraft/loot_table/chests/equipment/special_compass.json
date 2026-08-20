@@ -13,31 +13,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha-flavoured:golden_compass",
-					"quality": 1,
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.golden_compass"
-								}
-							}
-						}
-					]
+					"quality": 1
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:copper_compass",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.copper_compass"
-								}
-							}
-						}
-					]
+					"name": "matcha-flavoured:copper_compass"
 				}
 			]
 		}

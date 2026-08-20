@@ -104,15 +104,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:music_disc_labyrinthine",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:jukebox_playable": "main:labyrinthine"
-							}
-						}
-					]
+					"name": "matcha-flavoured:music_disc_labyrinthine"
 				},
 				{
 					"type": "minecraft:item",

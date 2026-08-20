@@ -242,12 +242,6 @@
 					"type": "minecraft:item",
 					"functions": [
 						{
-							"function": "minecraft:set_components",
-							"components": {
-								"!minecraft:entity_data": {}
-							}
-						},
-						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 6,

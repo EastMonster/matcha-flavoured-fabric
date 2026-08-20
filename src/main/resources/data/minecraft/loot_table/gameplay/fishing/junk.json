@@ -16,17 +16,7 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha-flavoured:fish_bones",
-					"weight": 10,
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.fish_bones"
-								}
-							}
-						}
-					]
+					"weight": 10
 				},
 				{
 					"type": "minecraft:item",
@@ -167,17 +157,6 @@
 									"minecraft:dripstone_caves",
 									"minecraft:lush_caves"
 								]
-							}
-						}
-					],
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.axolotl"
-								},
-								"minecraft:max_stack_size": 1
 							}
 						}
 					]

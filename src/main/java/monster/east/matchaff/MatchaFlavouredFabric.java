@@ -72,7 +72,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		AbbeyMechanics.init();
 		WorldMechanics.init();
 		FoodHealMechanics.init();
-		registerGemNameColors();
+		registerNameColors();
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		List<Item> foods = registerFoods();
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
@@ -129,20 +129,30 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	}
 
 	/**
-	 * The gemstone display names are coloured (opal #ab85ad, ruby red, amber
-	 * gold, topaz yellow) in the datapack. Item.Properties-level ITEM_NAME is
+	 * Some display names are coloured in the datapack. Item.Properties-level ITEM_NAME is
 	 * overwritten by the 26.2 default-component baker, and CUSTOM_NAME forces
 	 * italics at render time, so the colour is applied through the runtime
-	 * default-component event instead (matches villager-trade wants exactly and
-	 * renders non-italic).
+	 * default-component event instead (renders non-italic).
 	 */
-	private static void registerGemNameColors() {
+	private static void registerNameColors() {
 		DefaultItemComponentEvents.MODIFY.register(context -> {
-			for (String name : List.of("amber", "opal", "ruby", "topaz")) {
+			for (String name : List.of(
+					"amber", "opal", "ruby", "topaz",
+					"baked_golden_apple", "braised_crimson_fungus", "braised_warped_fungus",
+					"canned_golden_apples", "chorus_mochi", "crimson_stroganoff", "gnocchi",
+					"golden_apple_empanada", "golden_carrot_cupcake", "golden_pickled_carrots",
+					"golden_steamed_carrots", "pickled_warped_fungus", "sweet_berry_toast", "warped_stroganoff"
+			)) {
 				int color = switch (name) {
 					case "amber" -> 0xFFAA00;
 					case "ruby" -> 0xFF5555;
-					case "topaz" -> 0xFFFF55;
+					case "topaz", "baked_golden_apple", "canned_golden_apples", "golden_apple_empanada",
+							"golden_carrot_cupcake", "golden_pickled_carrots", "golden_steamed_carrots" -> 0xFFFF55;
+					case "braised_crimson_fungus", "crimson_stroganoff" -> 0xC54457;
+					case "braised_warped_fungus", "pickled_warped_fungus", "warped_stroganoff" -> 0x3CC6C8;
+					case "chorus_mochi" -> 0xAE6CBC;
+					case "gnocchi" -> 0xE1BC62;
+					case "sweet_berry_toast" -> 0xE85E8F;
 					default -> 0xAB85AD;
 				};
 				Item item = Objects.requireNonNull(

@@ -22,14 +22,6 @@
 					"type": "minecraft:item",
 					"functions": [
 						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.tallow"
-								}
-							}
-						},
-						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 2,

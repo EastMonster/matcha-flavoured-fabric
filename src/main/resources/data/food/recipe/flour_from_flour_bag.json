@@ -9,9 +9,6 @@
 	],
 	"result": {
 		"id": "matcha-flavoured:flour",
-		"components": {
-			"!minecraft:entity_data": {}
-		},
 		"count": 9
 	}
 }

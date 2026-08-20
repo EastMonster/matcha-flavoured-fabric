@@ -51,7 +51,8 @@
 			},
 			"minecraft:enchantments": {
 				"matcha-flavoured:regeneration": 1
-			}
+			},
+			"minecraft:unbreakable": {}
 		}
 	},
 	{

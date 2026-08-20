@@ -8,44 +8,6 @@
 	],
 	"result": {
 		"id": "matcha-flavoured:pickled_potatoes",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.pickled_potatoes"
-			},
-			"minecraft:food": {
-				"nutrition": 0,
-				"saturation": 0,
-				"can_always_eat": true
-			},
-			"minecraft:consumable": {
-				"has_consume_particles": false,
-				"on_consume_effects": [
-					{
-						"type": "minecraft:apply_effects",
-						"effects": [
-							{
-								"id": "minecraft:regeneration",
-								"amplifier": 2,
-								"duration": 120,
-								"show_particles": false,
-								"show_icon": false
-							}
-						]
-					}
-				]
-			},
-			"minecraft:max_stack_size": 64,
-			"minecraft:lore": [
-				{
-					"text": "❤❤❤❤❤",
-					"color": "red",
-					"italic": false
-				}
-			],
-			"minecraft:use_remainder": {
-				"id": "minecraft:glass_bottle"
-			}
-		},
 		"count": 1
 	}
 }

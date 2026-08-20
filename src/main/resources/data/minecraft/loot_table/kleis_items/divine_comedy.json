@@ -7,26 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:divine_comedy",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.divine_comedy"
-								},
-								"minecraft:rarity": "uncommon",
-								"minecraft:max_stack_size": 64,
-								"minecraft:lore": [
-									{
-										"translate": "item.kleispack.divine_comedy.desc",
-										"color": "gray",
-										"italic": false
-									}
-								]
-							}
-						}
-					]
+					"name": "matcha-flavoured:divine_comedy"
 				}
 			]
 		}

@@ -5,57 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:crimson_fungus",
 	"result": {
-		"id": "matcha-flavoured:braised_crimson_fungus",
-		"components": {
-			"minecraft:lore": [
-				{
-					"text": "❤",
-					"color": "red",
-					"italic": false
-				},
-				{
-					"translate": "matcha.lore.weakness",
-						"with": [
-							"00:30"
-						],
-					"color": "#b6a09a",
-					"italic": false
-				}
-			],
-			"minecraft:consumable": {
-				"consume_seconds": 0.8,
-				"on_consume_effects": [
-					{
-						"type": "minecraft:apply_effects",
-						"effects": [
-							{
-								"id": "minecraft:regeneration",
-								"amplifier": 2,
-								"duration": 24,
-								"show_particles": false,
-								"show_icon": false
-							},
-							{
-								"id": "minecraft:weakness",
-								"amplifier": 0,
-								"duration": 600,
-								"show_particles": false,
-								"show_icon": true
-							}
-						],
-						"probability": 1
-					}
-				]
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.braised_crimson_fungus",
-				"color": "#c54457"
-			},
-			"minecraft:food": {
-				"nutrition": 0,
-				"saturation": 0,
-				"can_always_eat": true
-			}
-		}
+		"id": "matcha-flavoured:braised_crimson_fungus"
 	}
 }

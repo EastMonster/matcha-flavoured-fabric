@@ -6,18 +6,6 @@
 	"given_item_modifiers": [],
 	"max_uses": 999,
 	"wants": {
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.humpback_whitefish"
-			},
-			"minecraft:lore": [
-				{
-					"text": "⭐",
-					"color": "gray",
-					"italic": false
-				}
-			]
-		},
 		"count": 12,
 		"id": "matcha-flavoured:humpback_whitefish"
 	},
