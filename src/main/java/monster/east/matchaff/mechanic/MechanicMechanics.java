@@ -1,5 +1,7 @@
 package monster.east.matchaff.mechanic;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import monster.east.matchaff.mixin.VillagerAccessor;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
@@ -11,6 +13,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderSet;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -24,6 +27,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.datafix.DataFixTypes;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -48,6 +52,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.saveddata.SavedDataType;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -62,6 +68,7 @@ import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.function.Predicate;
@@ -110,11 +117,55 @@ public final class MechanicMechanics {
 	private record BeaconTask(ResourceKey<Level> level, BlockPos pos, int startTick, UUID trader) {
 	}
 
+	private record PersistedBeacon(
+			UUID owner, ResourceKey<Level> level, BlockPos pos, int remainingTicks, Optional<UUID> trader
+	) {
+		private static final Codec<PersistedBeacon> CODEC = RecordCodecBuilder.create(i -> i.group(
+				UUIDUtil.CODEC.fieldOf("owner").forGetter(PersistedBeacon::owner),
+				Level.RESOURCE_KEY_CODEC.fieldOf("level").forGetter(PersistedBeacon::level),
+				BlockPos.CODEC.fieldOf("pos").forGetter(PersistedBeacon::pos),
+				Codec.INT.fieldOf("remaining_ticks").forGetter(PersistedBeacon::remainingTicks),
+				UUIDUtil.CODEC.optionalFieldOf("trader").forGetter(PersistedBeacon::trader)
+			).apply(i, PersistedBeacon::new));
+	}
+
+	private static final class BeaconSavedData extends SavedData {
+		private static final Codec<BeaconSavedData> CODEC = RecordCodecBuilder.create(i -> i.group(
+				PersistedBeacon.CODEC.listOf().fieldOf("beacons").forGetter(data -> data.beacons)
+			).apply(i, BeaconSavedData::new));
+		private static final SavedDataType<BeaconSavedData> TYPE = new SavedDataType<>(
+				Identifier.fromNamespaceAndPath("matcha-flavoured", "beacons"),
+				BeaconSavedData::new, CODEC, DataFixTypes.SAVED_DATA_COMMAND_STORAGE
+		);
+
+		private List<PersistedBeacon> beacons;
+
+		private BeaconSavedData() {
+			this(List.of());
+		}
+
+		private BeaconSavedData(List<PersistedBeacon> beacons) {
+			this.beacons = new ArrayList<>(beacons);
+		}
+
+		private List<PersistedBeacon> beacons() {
+			return beacons;
+		}
+
+		private void replace(List<PersistedBeacon> beacons) {
+			if (!this.beacons.equals(beacons)) {
+				this.beacons = new ArrayList<>(beacons);
+				setDirty();
+			}
+		}
+	}
+
 	private static final List<WeatherTask> PENDING_WEATHER = new ArrayList<>();
 	private static final List<BusterTask> PENDING_BUSTER = new ArrayList<>();
 	private static final List<WitherTask> PENDING_WITHERS = new ArrayList<>();
 	private static final List<StarCleanupTask> PENDING_STAR_CLEANUP = new ArrayList<>();
 	private static final Map<UUID, BeaconTask> BEACONS = new HashMap<>();
+	private static boolean BEACON_DATA_LOADED;
 	private static final Map<UUID, Integer> LAST_WATER_BUCKET_USE = new HashMap<>();
 	private static final Map<UUID, Integer> LAST_CAKE_SLICES = new HashMap<>();
 	private static final Set<ArmorStand> WARDING_STONES =
@@ -126,13 +177,14 @@ public final class MechanicMechanics {
 	}
 
 	public static void init() {
-		ServerLifecycleEvents.SERVER_STOPPING.register(MechanicMechanics::cleanupBeacons);
+		ServerLifecycleEvents.SERVER_STOPPING.register(server -> saveBeacons(server, server.getTickCount()));
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			PENDING_WEATHER.clear();
 			PENDING_BUSTER.clear();
 			PENDING_WITHERS.clear();
 			PENDING_STAR_CLEANUP.clear();
 			BEACONS.clear();
+			BEACON_DATA_LOADED = false;
 			LAST_WATER_BUCKET_USE.clear();
 			LAST_CAKE_SLICES.clear();
 			WARDING_STONES.clear();
@@ -215,6 +267,8 @@ public final class MechanicMechanics {
 	}
 
 	private static void placeBeacon(ServerPlayer player, ServerLevel level, BlockPos pos) {
+		int tick = level.getServer().getTickCount();
+		loadBeacons(level.getServer(), tick);
 		level.setBlock(pos, Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.SIGNAL_FIRE, true), 3);
 		level.sendParticles(ParticleTypes.FLAME, pos.getX() + 0.5, pos.getY() + 0.7, pos.getZ() + 0.5,
 				30, 0.1, 0.1, 0.1, 0.07);
@@ -226,8 +280,8 @@ public final class MechanicMechanics {
 					.withStyle(ChatFormatting.GRAY));
 			return;
 		}
-		BEACONS.put(player.getUUID(), new BeaconTask(level.dimension(), pos.immutable(),
-				level.getServer().getTickCount(), null));
+		BEACONS.put(player.getUUID(), new BeaconTask(level.dimension(), pos.immutable(), tick, null));
+		saveBeacons(level.getServer(), tick);
 		level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(
 				"A Wandering Trader has spotted your beacon, they will arrive in 10 minutes")
 				.withStyle(ChatFormatting.GRAY), false);
@@ -431,6 +485,7 @@ public final class MechanicMechanics {
 	}
 
 	private static void tickBeacons(MinecraftServer server, int tick) {
+		loadBeacons(server, tick);
 		for (var entry : new HashMap<>(BEACONS).entrySet()) {
 			UUID owner = entry.getKey();
 			BeaconTask task = entry.getValue();
@@ -467,6 +522,7 @@ public final class MechanicMechanics {
 				endBeacon(server, owner, task, false, true);
 			}
 		}
+		saveBeacons(server, tick);
 	}
 
 	private static void endBeacon(
@@ -501,12 +557,40 @@ public final class MechanicMechanics {
 			server.getPlayerList().broadcastSystemMessage(
 					Component.literal("The Wandering Trader has left").withStyle(ChatFormatting.GRAY), false);
 		}
+		saveBeacons(server, server.getTickCount());
 	}
 
-	private static void cleanupBeacons(MinecraftServer server) {
-		for (var entry : new HashMap<>(BEACONS).entrySet()) {
-			endBeacon(server, entry.getKey(), entry.getValue(), false, false);
+	private static BeaconSavedData beaconData(MinecraftServer server) {
+		return server.overworld().getDataStorage().computeIfAbsent(BeaconSavedData.TYPE);
+	}
+
+	private static void loadBeacons(MinecraftServer server, int tick) {
+		if (BEACON_DATA_LOADED) {
+			return;
 		}
+		for (PersistedBeacon saved : beaconData(server).beacons()) {
+			int limit = saved.trader().isPresent() ? 18000 : 12000;
+			int remaining = Math.max(0, Math.min(limit, saved.remainingTicks()));
+			BEACONS.put(saved.owner(), new BeaconTask(
+					saved.level(), saved.pos(), tick - (limit - remaining), saved.trader().orElse(null)
+			));
+		}
+		BEACON_DATA_LOADED = true;
+	}
+
+	private static void saveBeacons(MinecraftServer server, int tick) {
+		if (!BEACON_DATA_LOADED) {
+			return;
+		}
+		List<PersistedBeacon> saved = new ArrayList<>(BEACONS.size());
+		for (var entry : BEACONS.entrySet()) {
+			BeaconTask task = entry.getValue();
+			int limit = task.trader() == null ? 12000 : 18000;
+			int elapsed = Math.max(0, tick - task.startTick());
+			saved.add(new PersistedBeacon(entry.getKey(), task.level(), task.pos(),
+					Math.max(0, limit - elapsed), Optional.ofNullable(task.trader())));
+		}
+		beaconData(server).replace(saved);
 	}
 
 	private static void stackWaterBottles(ServerPlayer player) {
