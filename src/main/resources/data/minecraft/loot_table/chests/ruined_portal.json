@@ -110,7 +110,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/food/enchanted_golden_apple",
+					"value": "minecraft:food/enchanted_golden_apple",
 					"weight": 80
 				},
 				{
