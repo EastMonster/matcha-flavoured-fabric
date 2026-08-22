@@ -59,6 +59,9 @@
 	"mixins": [
 		{
 			"config": "matcha.mixins.json"
+		},
+		{
+			"config": "matcha.jade.mixins.json"
 		}
 	],
 	"depends": {
