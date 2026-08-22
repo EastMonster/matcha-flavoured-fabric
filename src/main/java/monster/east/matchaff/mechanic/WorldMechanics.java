@@ -1,117 +1,61 @@
 package monster.east.matchaff.mechanic;
 
 import net.minecraft.ChatFormatting;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
-import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.numbers.StyledFormat;
-import net.minecraft.network.protocol.game.ClientboundStopSoundPacket;
 import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.EntityTypeTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.Marker;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.decoration.Mannequin;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.gamerules.GameRules;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.minecraft.world.clock.WorldClocks;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.IdentityHashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.UUID;
 
 /**
- * World-level mechanics that replace the last datapack functions: mob spawn
- * control, village eerie ambience, boat/sulphur particles, floating divine
- * items, the slow day cycle, glass-bottle crafting bonus, infinite anvil
- * repairs and the global gamerules.
+ * World-level mechanics for the slow day cycle, boat/sulphur particles,
+ * glass-bottle crafting bonus, infinite anvil repairs and global gamerules.
  */
 public final class WorldMechanics {
 	private static final String DIFFICULTY_OBJECTIVE = "difficulty_score";
 	private static final String CURRENT_DIFFICULTY = "current_world_settings_difficulty";
 	private static final String VERSION_OBJECTIVE = "matcha_version";
 	private static final int RECIPE_UNLOCK_VERSION = 1_01_02_002;
-	private static final Identifier EERIE_ADVANCEMENT = id("mechanics/enter_village");
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("glass_bottle_from_crafting");
 	private static final Identifier ENDLESS_REPAIRS_ADVANCEMENT =
 			Identifier.fromNamespaceAndPath("endless_repairs", "inventory_changed");
 
-	private static final TagKey<EntityType<?>> MUNDANE_HOSTILES = TagKey.create(Registries.ENTITY_TYPE, id("mundane_hostiles"));
-	private static final List<ResourceKey<Structure>> VILLAGES = List.of(
-			structure("village_plains"), structure("village_desert"), structure("village_savanna"),
-			structure("village_snowy"), structure("village_taiga")
-	);
-
-	private static final AttachmentType<Boolean> EERIE = AttachmentRegistry.create(id("eerie"));
-	private static final AttachmentType<Integer> EERIE_TIMER = AttachmentRegistry.create(id("eerie_timer"));
-
 	private static final Map<UUID, Integer> LAST_BOATING_DISTANCE = new HashMap<>();
-	private static final Set<ItemEntity> DIVINE_ITEMS =
-			Collections.newSetFromMap(new IdentityHashMap<>());
-	private static final Set<Mannequin> HAUNTED_MANNEQUINS =
-			Collections.newSetFromMap(new IdentityHashMap<>());
-	private static final Set<Marker> JUKEBOX_MARKERS =
-			Collections.newSetFromMap(new IdentityHashMap<>());
-	private static final List<HopperCleanupTask> HOPPER_CLEANUPS = new java.util.ArrayList<>();
-
-	private record HopperCleanupTask(int triggerTick, ResourceKey<Level> level, UUID marker, BlockPos pos) {
-	}
 
 	private WorldMechanics() {
 	}
 
 	public static void init() {
+		MobMechanics.init();
+		VillageMechanics.init();
+		DivineItemMechanics.init();
 		ServerLifecycleEvents.SERVER_STARTED.register(WorldMechanics::onServerStarted);
 		ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) -> {
 			if (success) {
@@ -120,20 +64,7 @@ public final class WorldMechanics {
 		});
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			LAST_BOATING_DISTANCE.clear();
-			DIVINE_ITEMS.clear();
-			HAUNTED_MANNEQUINS.clear();
-			JUKEBOX_MARKERS.clear();
-			HOPPER_CLEANUPS.clear();
 		});
-		ServerEntityEvents.ENTITY_LOAD.register(WorldMechanics::trackDivineItem);
-		ServerEntityEvents.ENTITY_LOAD.register(WorldMechanics::trackVillageEntity);
-		ServerEntityEvents.ENTITY_LOAD.register(WorldMechanics::initializeMundaneHostile);
-		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
-			DIVINE_ITEMS.remove(entity);
-			HAUNTED_MANNEQUINS.remove(entity);
-			JUKEBOX_MARKERS.remove(entity);
-		});
-		UseBlockCallback.EVENT.register(WorldMechanics::openVillageDoor);
 		ServerTickEvents.END_SERVER_TICK.register(WorldMechanics::tick);
 		ServerPlayerEvents.JOIN.register(WorldMechanics::welcome);
 	}
@@ -214,14 +145,14 @@ public final class WorldMechanics {
 			server.clockManager().addTicks(clock, 1);
 		}
 		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-			eerie(player);
+			VillageMechanics.tickPlayer(player);
 			boatParticles(player);
 			sulfurousHellstone(player);
 			glassBottleReward(player);
 			endlessRepairs(player);
 		}
-		divineFavour(tick);
-		hauntedVillage(server, tick);
+		DivineItemMechanics.tick(tick);
+		VillageMechanics.tick(server, tick);
 	}
 
 	private static void welcome(ServerPlayer player) {
@@ -298,162 +229,11 @@ public final class WorldMechanics {
 		};
 	}
 
-	private static void eerie(ServerPlayer player) {
-		if (advancementDone(player, EERIE_ADVANCEMENT)) {
-			player.setAttached(EERIE, true);
-			revoke(player, EERIE_ADVANCEMENT);
-		}
-		if (!player.getAttachedOrElse(EERIE, false)) {
-			return;
-		}
-		var level = player.level();
-		if (!inVillage(level, player.blockPosition())) {
-			player.setAttached(EERIE, false);
-			player.setAttached(EERIE_TIMER, 0);
-			return;
-		}
-		if (player.tickCount % 20 == 0) {
-			player.connection.send(new ClientboundStopSoundPacket(null, SoundSource.MUSIC));
-			int seconds = player.getAttachedOrElse(EERIE_TIMER, 0) + 1;
-			if (seconds > 150) {
-				seconds = 1;
-			}
-			player.setAttached(EERIE_TIMER, seconds);
-			var ground = level.getBlockState(player.blockPosition().below());
-			if (seconds <= 4) {
-				eerieCue(player, level, ground, seconds);
-			}
-			if (seconds == 100) {
-				eerieCue(player, level, ground, 100);
-			}
-		}
-	}
-
-	private static void eerieCue(ServerPlayer player, ServerLevel level, BlockState ground, int step) {
-		Vec3 pos = player.position();
-		if (ground.is(Blocks.COARSE_DIRT) && step <= 4) {
-			playAt(level, pos.x + step - 3, pos.y + 4, pos.z, SoundEvents.WOOD_STEP, 0.5F);
-		}
-		if (ground.is(Blocks.OAK_PLANKS)) {
-			if (step == 1 || step == 100) {
-				Vec3 right = localOffset(player, 5, 0, 0);
-				playAt(level, right.x, right.y, right.z, SoundEvents.GRASS_BREAK, 1.0F);
-			}
-			if (step == 1) {
-				playAt(level, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE.value(), 1.0F);
-			}
-		}
-		if (ground.is(Blocks.GRAVEL)) {
-			playAt(level, pos.x, pos.y, pos.z, step == 1 ? SoundEvents.GRAVEL_BREAK : SoundEvents.STONE_PLACE, 1.0F);
-		}
-		if (ground.is(Blocks.SUSPICIOUS_GRAVEL) && step == 1) {
-			Vec3 behind = localOffset(player, 0, 0, -3);
-			playAt(level, behind.x, behind.y, behind.z, SoundEvents.WOODEN_DOOR_OPEN, 1.0F);
-		}
-		if (ground.is(Blocks.GRASS_BLOCK) && step <= 4) {
-			playAt(level, pos.x, pos.y - 4, pos.z, SoundEvents.GRASS_BREAK, 0.5F);
-			if (step > 1) {
-				playAt(level, pos.x + (4 - step), pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
-			}
-		}
-	}
-
-	private static void trackVillageEntity(Entity entity, ServerLevel level) {
-		if (entity instanceof Mannequin mannequin && entity.entityTags().contains("haunted")) {
-			HAUNTED_MANNEQUINS.add(mannequin);
-		} else if (entity instanceof Marker marker && entity.entityTags().contains("jukebox")) {
-			JUKEBOX_MARKERS.add(marker);
-		}
-	}
-
-	private static void hauntedVillage(MinecraftServer server, int tick) {
-		for (Mannequin mannequin : List.copyOf(HAUNTED_MANNEQUINS)) {
-			if (mannequin.isRemoved() || !(mannequin.level() instanceof ServerLevel level)) {
-				HAUNTED_MANNEQUINS.remove(mannequin);
-				continue;
-			}
-			ServerPlayer player = server.getPlayerList().getPlayers().stream()
-					.filter(candidate -> candidate.level() == level
-							&& candidate.gameMode.getGameModeForPlayer() == GameType.SURVIVAL
-							&& candidate.getAttachedOrElse(EERIE, false))
-					.min(java.util.Comparator.comparingDouble(candidate -> candidate.distanceToSqr(mannequin)))
-					.orElse(null);
-			if (player == null) {
-				continue;
-			}
-			mannequin.lookAt(EntityAnchorArgument.Anchor.EYES, player.getEyePosition());
-			Marker marker = JUKEBOX_MARKERS.stream()
-					.filter(candidate -> candidate.level() == level && !candidate.isRemoved())
-					.min(java.util.Comparator.comparingDouble(candidate -> candidate.distanceToSqr(mannequin)))
-					.orElse(null);
-			if (!mannequin.entityTags().contains("music_played") && player.distanceToSqr(mannequin) <= 30 * 30) {
-				mannequin.addTag("music_played");
-				if (marker != null) {
-					for (BlockPos pos : BlockPos.betweenClosed(marker.blockPosition().offset(-1, 0, -1),
-							marker.blockPosition().offset(1, 0, 1))) {
-						if (level.getBlockState(pos).is(Blocks.REDSTONE_BLOCK)) {
-							level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-						}
-					}
-					HOPPER_CLEANUPS.add(new HopperCleanupTask(
-							tick + 2, level.dimension(), marker.getUUID(), marker.blockPosition().immutable()));
-				}
-			}
-			if (player.distanceToSqr(mannequin) <= 25
-					|| marker != null && player.distanceToSqr(marker) <= 4) {
-				mannequin.discard();
-			}
-		}
-		HOPPER_CLEANUPS.removeIf(task -> {
-			if (task.triggerTick() > tick) {
-				return false;
-			}
-			ServerLevel level = server.getLevel(task.level());
-			if (level != null) {
-				for (BlockPos pos : BlockPos.betweenClosed(task.pos().offset(-1, 0, -1), task.pos().offset(1, 0, 1))) {
-					if (level.getBlockState(pos).is(Blocks.HOPPER)) {
-						level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-					}
-				}
-				Entity marker = level.getEntity(task.marker());
-				if (marker != null) {
-					marker.discard();
-				}
-			}
-			return true;
-		});
-	}
-
-	private static InteractionResult openVillageDoor(Player player, Level level, InteractionHand hand, BlockHitResult hit) {
-		BlockState state = level.getBlockState(hit.getBlockPos());
-		if (!(player instanceof ServerPlayer serverPlayer)
-				|| serverPlayer.gameMode.getGameModeForPlayer() != GameType.SURVIVAL
-				|| !state.is(Blocks.OAK_DOOR) || state.getValue(BlockStateProperties.OPEN)) {
-			return InteractionResult.PASS;
-		}
-		HAUNTED_MANNEQUINS.stream()
-				.filter(mannequin -> mannequin.level() == level && !mannequin.isRemoved()
-						&& mannequin.distanceToSqr(player) <= 11 * 11)
-				.min(java.util.Comparator.comparingDouble(mannequin -> mannequin.distanceToSqr(player)))
-				.ifPresent(Mannequin::discard);
-		return InteractionResult.PASS; // Preserve the vanilla door interaction.
-	}
-
-	private static void playAt(ServerLevel level, double x, double y, double z, net.minecraft.sounds.SoundEvent sound, float volume) {
-		level.playSound(null, x, y, z, sound, SoundSource.PLAYERS, volume, 1.0F);
-	}
-
-	private static Vec3 localOffset(Entity entity, double right, double up, double forward) {
+	static Vec3 localOffset(Entity entity, double right, double up, double forward) {
 		Vec3 look = entity.getLookAngle();
 		Vec3 f = new Vec3(look.x, 0, look.z).normalize();
 		Vec3 r = new Vec3(-f.z, 0, f.x);
 		return entity.position().add(r.scale(right)).add(0, up, 0).add(f.scale(forward));
-	}
-
-	private static boolean inVillage(ServerLevel level, BlockPos pos) {
-		var lookup = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
-		var holders = VILLAGES.stream().map(lookup::getOrThrow).toList();
-		return level.structureManager().getStructureWithPieceAt(pos, HolderSet.direct(holders)).isValid();
 	}
 
 	private static void boatParticles(ServerPlayer player) {
@@ -539,206 +319,12 @@ public final class WorldMechanics {
 		revoke(player, ENDLESS_REPAIRS_ADVANCEMENT);
 	}
 
-	private static void initializeMundaneHostile(Entity entity, ServerLevel level) {
-		if (!(entity instanceof Mob mob)
-				|| !mob.is(MUNDANE_HOSTILES)
-				|| mob.entityTags().contains("SpawnChecked")) {
-			return;
-		}
-		if (mob.entityTags().contains("SpawnForbidden")) {
-			mob.discard();
-			return;
-		}
-		modifyMob(mob, cachedDifficulty(level.getServer()));
-		mob.addTag("SpawnChecked");
-	}
-
-	/**
-	 * Datapack spawn rule: newly loaded non-undead mundane hostiles may not remain in
-	 * open overworld areas. After the ender dragon dies (safe surface mode) any
-	 * mundane hostile at the surface or above sea level is forbidden.
-	 */
-	public static boolean isForbiddenSpawn(EntityType<?> type, ServerLevel level, BlockPos pos) {
-		if (level.dimension() != Level.OVERWORLD
-				|| !BuiltInRegistries.ENTITY_TYPE.wrapAsHolder(type).is(MUNDANE_HOSTILES)) {
-			return false;
-		}
-		boolean sky = level.canSeeSky(pos);
-		if (isSafeSurface(level)) {
-			return sky || (pos.getY() >= 63 && pos.getY() <= 350);
-		}
-		if (type == EntityTypes.CREEPER && (sky || pos.getY() >= 63)) {
-			return true;
-		}
-		return !BuiltInRegistries.ENTITY_TYPE.wrapAsHolder(type).is(EntityTypeTags.UNDEAD) && sky;
-	}
-
-	private static boolean isSafeSurface(ServerLevel level) {
-		var objective = level.getServer().getScoreboard().getObjective("gamerule_safe_surface");
-		return objective != null && level.getServer().getScoreboard()
-				.getOrCreatePlayerScore(ScoreHolder.forNameOnly("gamerule"), objective).get() >= 1;
-	}
-
-	private static void modifyMob(Mob mob, Difficulty difficulty) {
-		if (difficulty == Difficulty.PEACEFUL) {
-			return;
-		}
-		var type = mob.getType();
-		if (mob.is(MUNDANE_HOSTILES)
-				|| type == EntityTypes.ZOMBIFIED_PIGLIN || type == EntityTypes.PIGLIN) {
-			for (EquipmentSlot slot : List.of(EquipmentSlot.FEET, EquipmentSlot.LEGS,
-					EquipmentSlot.CHEST, EquipmentSlot.HEAD, EquipmentSlot.MAINHAND)) {
-				mob.setDropChance(slot, 0);
-			}
-		}
-		boolean baby = mob.isBaby();
-		if (mob.is(EntityTypeTags.SKELETONS)) {
-			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 12 : 10);
-			if (difficulty != Difficulty.EASY) {
-				ItemStack bow = new ItemStack(Items.BOW);
-				bow.enchant(mob.level().registryAccess().lookupOrThrow(Registries.ENCHANTMENT)
-						.getOrThrow(Enchantments.PUNCH), difficulty == Difficulty.HARD ? 2 : 1);
-				mob.setItemSlot(EquipmentSlot.MAINHAND, bow);
-			}
-		}
-		if (type == EntityTypes.CREEPER) {
-			setBase(mob, Attributes.MAX_HEALTH, switch (difficulty) {
-				case EASY -> 14;
-				case HARD -> 18;
-				default -> 16;
-			});
-		}
-		if (type == EntityTypes.CAVE_SPIDER) {
-			setBase(mob, Attributes.MAX_HEALTH, switch (difficulty) {
-				case EASY -> 2;
-				case HARD -> 6;
-				default -> 4;
-			});
-			setBase(mob, Attributes.MOVEMENT_SPEED, switch (difficulty) {
-				case EASY -> 0.35;
-				case HARD -> 0.42;
-				default -> 0.4;
-			});
-		}
-		if (type == EntityTypes.SILVERFISH) {
-			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 4 : 2);
-		}
-		if (difficulty == Difficulty.EASY) {
-			return;
-		}
-		if (type == EntityTypes.ZOMBIE) {
-			if (baby) {
-				setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 5 : 4);
-			} else {
-				setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 15 : 10);
-				setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.35 : 0.34);
-				setBase(mob, Attributes.STEP_HEIGHT, 1);
-				if (difficulty == Difficulty.HARD) {
-					setBase(mob, Attributes.ATTACK_DAMAGE, 5);
-				}
-			}
-		}
-		if (type == EntityTypes.HUSK && !baby) {
-			setBase(mob, Attributes.MAX_HEALTH, 40);
-			mob.setHealth(40);
-			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.25 : 0.21);
-			setBase(mob, Attributes.ATTACK_DAMAGE, difficulty == Difficulty.HARD ? 15 : 10);
-			setBase(mob, Attributes.ARMOR, difficulty == Difficulty.HARD ? 14 : 12);
-			setBase(mob, Attributes.FOLLOW_RANGE, difficulty == Difficulty.HARD ? 60 : 50);
-			setBase(mob, Attributes.KNOCKBACK_RESISTANCE, 1);
-			setBase(mob, Attributes.MOVEMENT_EFFICIENCY, 1);
-			setBase(mob, Attributes.WATER_MOVEMENT_EFFICIENCY, 1);
-			setBase(mob, Attributes.STEP_HEIGHT, 1);
-			setBase(mob, Attributes.SPAWN_REINFORCEMENTS_CHANCE, difficulty == Difficulty.HARD ? 0.25 : 0.1);
-		} else if (type == EntityTypes.HUSK) {
-			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 5 : 4);
-		}
-		if (type == EntityTypes.SPIDER) {
-			setBase(mob, Attributes.JUMP_STRENGTH, 0.85);
-			setBase(mob, Attributes.FALL_DAMAGE_MULTIPLIER, 0);
-			mob.addEffect(new MobEffectInstance(MobEffects.WEAVING, MobEffectInstance.INFINITE_DURATION,
-					difficulty == Difficulty.HARD ? 1 : 0, false, false));
-		}
-	}
-
-	private static void setBase(Mob mob, net.minecraft.core.Holder<net.minecraft.world.entity.ai.attributes.Attribute> attribute, double value) {
-		var instance = mob.getAttribute(attribute);
-		if (instance != null) {
-			instance.setBaseValue(value);
-		}
-	}
-
-	private static void trackDivineItem(Entity entity, ServerLevel level) {
-		if (entity instanceof ItemEntity item && isDivineItem(item.getItem())) {
-			DIVINE_ITEMS.add(item);
-		}
-	}
-
-	private static boolean isDivineItem(ItemStack stack) {
-		return stack.is(Items.NETHER_STAR)
-				|| stack.is(Items.ENDER_EYE)
-				|| stack.is(Items.BLAZE_POWDER)
-				|| stack.is(Items.TURTLE_SCUTE)
-				|| stack.is(net.minecraft.core.registries.BuiltInRegistries.ITEM
-						.getValue(Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_container")));
-	}
-
-	private static void divineFavour(int tick) {
-		boolean everyTenTicks = tick % 10 == 0;
-		boolean everyThreeSeconds = tick % 60 == 0;
-		DIVINE_ITEMS.removeIf(Entity::isRemoved);
-		for (ItemEntity item : DIVINE_ITEMS) {
-			if (!(item.level() instanceof ServerLevel level)) {
-				continue;
-			}
-			ItemStack stack = item.getItem();
-			if (stack.is(Items.NETHER_STAR)) {
-				item.setNoGravity(true);
-				item.needsSync = true;
-				if (everyTenTicks) {
-					level.sendParticles(ParticleTypes.END_ROD, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0, 0, 0, 0.05);
-					level.sendParticles(ParticleTypes.ELECTRIC_SPARK, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0.15, 0.15, 0.15, 0);
-				}
-				if (everyThreeSeconds) {
-					level.sendParticles(ColorParticleOption.create(ParticleTypes.FLASH, 1.0F, 1.0F, 1.0F),
-							item.getX(), item.getY() + 0.4, item.getZ(), 1, 0, 0, 0, 0);
-				}
-				if (level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 3, item.getZ())).isAir()) {
-					item.setDeltaMovement(0, -0.05, 0);
-				} else if (!level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 0.5, item.getZ())).isAir()) {
-					item.setDeltaMovement(0, 0.025, 0);
-				}
-			} else if (stack.is(Items.ENDER_EYE)) {
-				item.setNoGravity(true);
-				item.needsSync = true;
-				if (everyTenTicks) {
-					level.sendParticles(ParticleTypes.PORTAL, item.getX(), item.getY() + 0.3, item.getZ(), 1, 0.1, 0.1, 0.1, 0.5);
-				}
-				if (level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 3, item.getZ())).isAir()) {
-					item.setDeltaMovement(0, -0.1, 0);
-				} else if (!level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 0.5, item.getZ())).isAir()) {
-					item.setDeltaMovement(0, 0.025, 0);
-				}
-			} else if (stack.is(Items.BLAZE_POWDER)) {
-				if (everyTenTicks) {
-					level.sendParticles(ParticleTypes.SMOKE, item.getX(), item.getY() + 0.75, item.getZ(),
-							1, 0.05, 0.05, 0.05, 0);
-				}
-			} else if (stack.is(Items.TURTLE_SCUTE) || stack.is(net.minecraft.core.registries.BuiltInRegistries.ITEM
-					.getValue(Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_container")))) {
-				if (everyTenTicks) {
-					level.sendParticles(ParticleTypes.ELECTRIC_SPARK, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0.1, 0.1, 0.1, 0);
-				}
-			}
-		}
-	}
-
-	private static boolean advancementDone(ServerPlayer player, Identifier advancementId) {
+	static boolean advancementDone(ServerPlayer player, Identifier advancementId) {
 		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(advancementId);
 		return advancement != null && player.getAdvancements().getOrStartProgress(advancement).isDone();
 	}
 
-	private static void revoke(ServerPlayer player, Identifier advancementId) {
+	static void revoke(ServerPlayer player, Identifier advancementId) {
 		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(advancementId);
 		if (advancement != null) {
 			for (String criterion : advancement.value().criteria().keySet()) {
@@ -751,7 +337,4 @@ public final class WorldMechanics {
 		return Identifier.fromNamespaceAndPath("main", path);
 	}
 
-	private static ResourceKey<Structure> structure(String path) {
-		return ResourceKey.create(Registries.STRUCTURE, Identifier.fromNamespaceAndPath("minecraft", path));
-	}
 }

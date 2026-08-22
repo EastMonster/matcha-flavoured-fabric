@@ -1,6 +1,6 @@
 package monster.east.matchaff.mixin;
 
-import monster.east.matchaff.mechanic.WorldMechanics;
+import monster.east.matchaff.mechanic.MobMechanics;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.Mob;
@@ -26,7 +26,7 @@ public abstract class MobSpawnMixin {
 			return;
 		}
 		Mob mob = (Mob) (Object) this;
-		if (WorldMechanics.isForbiddenSpawn(mob.getType(), level.getLevel(), mob.blockPosition())) {
+		if (MobMechanics.isForbiddenSpawn(mob.getType(), level.getLevel(), mob.blockPosition())) {
 			mob.addTag("SpawnForbidden");
 		}
 	}

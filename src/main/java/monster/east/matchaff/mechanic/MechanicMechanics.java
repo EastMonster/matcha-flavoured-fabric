@@ -1,7 +1,5 @@
 package monster.east.matchaff.mechanic;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import monster.east.matchaff.mixin.VillagerAccessor;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
@@ -12,31 +10,19 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.TagKey;
-import net.minecraft.util.datafix.DataFixTypes;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
@@ -50,10 +36,6 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraft.world.level.saveddata.SavedData;
-import net.minecraft.world.level.saveddata.SavedDataType;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -68,15 +50,13 @@ import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
-import java.util.function.Predicate;
 
 /**
  * The remaining datapack "mechanic" behaviours: estus, clay-statue weather,
- * bedrock buster, asylum-seeker application, happy ghast horn, dragon reward,
- * the warding stone entity system and stackable water bottles.
+ * bedrock buster, asylum-seeker application, happy ghast horn, dragon reward
+ * and stackable water bottles.
  */
 public final class MechanicMechanics {
 	private static final Logger LOGGER = LoggerFactory.getLogger("matcha");
@@ -92,16 +72,6 @@ public final class MechanicMechanics {
 			id("water_bottle_inventory_version")
 	);
 
-	private static final TagKey<EntityType<?>> VILLAGER_FRIENDS = TagKey.create(
-			Registries.ENTITY_TYPE, id("villager_friends")
-	);
-	private static final TagKey<EntityType<?>> WARDING_STONE_TARGETS = TagKey.create(
-			Registries.ENTITY_TYPE, id("warding_stone_targets")
-	);
-	private static final ResourceKey<Structure> TRIAL_CHAMBERS = ResourceKey.create(
-			Registries.STRUCTURE, Identifier.fromNamespaceAndPath("minecraft", "trial_chambers")
-	);
-
 	private record WeatherTask(int triggerTick, boolean rain, UUID player, Identifier advancement) {
 	}
 
@@ -114,62 +84,12 @@ public final class MechanicMechanics {
 	private record StarCleanupTask(int triggerTick, ResourceKey<Level> level, Vec3 position) {
 	}
 
-	private record BeaconTask(ResourceKey<Level> level, BlockPos pos, int startTick, UUID trader) {
-	}
-
-	private record PersistedBeacon(
-			UUID owner, ResourceKey<Level> level, BlockPos pos, int remainingTicks, Optional<UUID> trader
-	) {
-		private static final Codec<PersistedBeacon> CODEC = RecordCodecBuilder.create(i -> i.group(
-				UUIDUtil.CODEC.fieldOf("owner").forGetter(PersistedBeacon::owner),
-				Level.RESOURCE_KEY_CODEC.fieldOf("level").forGetter(PersistedBeacon::level),
-				BlockPos.CODEC.fieldOf("pos").forGetter(PersistedBeacon::pos),
-				Codec.INT.fieldOf("remaining_ticks").forGetter(PersistedBeacon::remainingTicks),
-				UUIDUtil.CODEC.optionalFieldOf("trader").forGetter(PersistedBeacon::trader)
-			).apply(i, PersistedBeacon::new));
-	}
-
-	private static final class BeaconSavedData extends SavedData {
-		private static final Codec<BeaconSavedData> CODEC = RecordCodecBuilder.create(i -> i.group(
-				PersistedBeacon.CODEC.listOf().fieldOf("beacons").forGetter(data -> data.beacons)
-			).apply(i, BeaconSavedData::new));
-		private static final SavedDataType<BeaconSavedData> TYPE = new SavedDataType<>(
-				Identifier.fromNamespaceAndPath("matcha-flavoured", "beacons"),
-				BeaconSavedData::new, CODEC, DataFixTypes.SAVED_DATA_COMMAND_STORAGE
-		);
-
-		private List<PersistedBeacon> beacons;
-
-		private BeaconSavedData() {
-			this(List.of());
-		}
-
-		private BeaconSavedData(List<PersistedBeacon> beacons) {
-			this.beacons = new ArrayList<>(beacons);
-		}
-
-		private List<PersistedBeacon> beacons() {
-			return beacons;
-		}
-
-		private void replace(List<PersistedBeacon> beacons) {
-			if (!this.beacons.equals(beacons)) {
-				this.beacons = new ArrayList<>(beacons);
-				setDirty();
-			}
-		}
-	}
-
 	private static final List<WeatherTask> PENDING_WEATHER = new ArrayList<>();
 	private static final List<BusterTask> PENDING_BUSTER = new ArrayList<>();
 	private static final List<WitherTask> PENDING_WITHERS = new ArrayList<>();
 	private static final List<StarCleanupTask> PENDING_STAR_CLEANUP = new ArrayList<>();
-	private static final Map<UUID, BeaconTask> BEACONS = new HashMap<>();
-	private static boolean BEACON_DATA_LOADED;
 	private static final Map<UUID, Integer> LAST_WATER_BUCKET_USE = new HashMap<>();
 	private static final Map<UUID, Integer> LAST_CAKE_SLICES = new HashMap<>();
-	private static final Set<ArmorStand> WARDING_STONES =
-			Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final Set<Villager> VILLAGERS =
 			Collections.newSetFromMap(new IdentityHashMap<>());
 
@@ -177,23 +97,20 @@ public final class MechanicMechanics {
 	}
 
 	public static void init() {
-		ServerLifecycleEvents.SERVER_STOPPING.register(server -> saveBeacons(server, server.getTickCount()));
+		BeaconKindlingMechanics.init();
+		WardingStoneMechanics.init();
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			PENDING_WEATHER.clear();
 			PENDING_BUSTER.clear();
 			PENDING_WITHERS.clear();
 			PENDING_STAR_CLEANUP.clear();
-			BEACONS.clear();
-			BEACON_DATA_LOADED = false;
 			LAST_WATER_BUCKET_USE.clear();
 			LAST_CAKE_SLICES.clear();
-			WARDING_STONES.clear();
 			VILLAGERS.clear();
 		});
 		UseBlockCallback.EVENT.register(MechanicMechanics::useMechanicItem);
-		ServerEntityEvents.ENTITY_LOAD.register(MechanicMechanics::trackEntity);
+		ServerEntityEvents.ENTITY_LOAD.register(MechanicMechanics::trackVillager);
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
-			WARDING_STONES.remove(entity);
 			VILLAGERS.remove(entity);
 		});
 		// The datapack's scheduled function runs before entities tick, so the
@@ -217,8 +134,8 @@ public final class MechanicMechanics {
 			processWeatherTasks(server, tick);
 			processWitherTasks(server, tick);
 			processStarCleanup(server, tick);
-			tickBeacons(server, tick);
-			tickWardingStones();
+			BeaconKindlingMechanics.tick(server, tick);
+			WardingStoneMechanics.tick();
 		});
 	}
 
@@ -241,7 +158,7 @@ public final class MechanicMechanics {
 		if (amnestic) {
 			useAmnestic(serverPlayer, (ServerLevel) level, target);
 		} else {
-			placeBeacon(serverPlayer, (ServerLevel) level, target);
+			BeaconKindlingMechanics.place(serverPlayer, (ServerLevel) level, target);
 		}
 		if (!serverPlayer.isCreative()) {
 			stack.shrink(1);
@@ -264,27 +181,6 @@ public final class MechanicMechanics {
 					villager.setVillagerXp(0);
 					((VillagerAccessor) villager).matcha$setLastRestockGameTime(0);
 				});
-	}
-
-	private static void placeBeacon(ServerPlayer player, ServerLevel level, BlockPos pos) {
-		int tick = level.getServer().getTickCount();
-		loadBeacons(level.getServer(), tick);
-		level.setBlock(pos, Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.SIGNAL_FIRE, true), 3);
-		level.sendParticles(ParticleTypes.FLAME, pos.getX() + 0.5, pos.getY() + 0.7, pos.getZ() + 0.5,
-				30, 0.1, 0.1, 0.1, 0.07);
-		level.playSound(null, pos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
-		level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.5F, 1.0F);
-		if (BEACONS.containsKey(player.getUUID())) {
-			player.sendSystemMessage(Component.literal(
-					"You have already summoned a Wandering Trader, please wait patiently while they travel")
-					.withStyle(ChatFormatting.GRAY));
-			return;
-		}
-		BEACONS.put(player.getUUID(), new BeaconTask(level.dimension(), pos.immutable(), tick, null));
-		saveBeacons(level.getServer(), tick);
-		level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(
-				"A Wandering Trader has spotted your beacon, they will arrive in 10 minutes")
-				.withStyle(ChatFormatting.GRAY), false);
 	}
 
 	private static void checkEstus(ServerPlayer player) {
@@ -484,115 +380,6 @@ public final class MechanicMechanics {
 		player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3600, 1, false, false));
 	}
 
-	private static void tickBeacons(MinecraftServer server, int tick) {
-		loadBeacons(server, tick);
-		for (var entry : new HashMap<>(BEACONS).entrySet()) {
-			UUID owner = entry.getKey();
-			BeaconTask task = entry.getValue();
-			ServerLevel level = server.getLevel(task.level());
-			if (level == null || !level.isLoaded(task.pos())) {
-				BEACONS.put(owner, new BeaconTask(
-						task.level(), task.pos(), task.startTick() + 1, task.trader()));
-				continue;
-			}
-			var state = level.getBlockState(task.pos());
-			if (!state.is(Blocks.CAMPFIRE) || !state.getValue(CampfireBlock.LIT)) {
-				endBeacon(server, owner, task, true, false);
-				continue;
-			}
-			if (tick % 10 == 0) {
-				level.sendParticles(ParticleTypes.TRIAL_SPAWNER_DETECTED_PLAYER,
-						task.pos().getX() + 0.5, task.pos().getY() + 0.75, task.pos().getZ() + 0.5,
-						2, 0.2, 0.05, 0.2, 0);
-			}
-			int elapsed = tick - task.startTick();
-			if (task.trader() == null && elapsed >= 12000) {
-				var trader = EntityTypes.WANDERING_TRADER.create(level, EntitySpawnReason.COMMAND);
-				if (trader != null) {
-					trader.setPos(task.pos().getX() + 1.5, task.pos().getY(), task.pos().getZ() + 0.5);
-					trader.setInvulnerable(true);
-					trader.addTag("summoned_by_beacon");
-					level.addFreshEntity(trader);
-					BEACONS.put(owner, new BeaconTask(task.level(), task.pos(), task.startTick(), trader.getUUID()));
-					server.getPlayerList().broadcastSystemMessage(Component.literal(
-							"The Wandering Trader has arrived, they will depart in 5 minutes")
-							.withStyle(ChatFormatting.GRAY), false);
-				}
-			} else if (task.trader() != null && elapsed >= 18000) {
-				endBeacon(server, owner, task, false, true);
-			}
-		}
-		saveBeacons(server, tick);
-	}
-
-	private static void endBeacon(
-			MinecraftServer server, UUID owner, BeaconTask task, boolean early, boolean announce
-	) {
-		ServerLevel level = server.getLevel(task.level());
-		if (level != null) {
-			if (task.trader() != null && level.getEntity(task.trader()) != null) {
-				Entity trader = level.getEntity(task.trader());
-				level.sendParticles(ParticleTypes.POOF, trader.getX(), trader.getY() + 0.5, trader.getZ(),
-						50, 0.2, 1.0, 0.2, 0);
-				trader.discard();
-			}
-			var state = level.getBlockState(task.pos());
-			if (state.is(Blocks.CAMPFIRE)) {
-				level.setBlock(task.pos(), state.setValue(CampfireBlock.LIT, false), 3);
-			}
-			if (!early) {
-				level.sendParticles(ParticleTypes.LARGE_SMOKE,
-						task.pos().getX() + 0.5, task.pos().getY() + 0.5, task.pos().getZ() + 0.5,
-						10, 0.1, 0.1, 0.1, 0.1);
-			}
-		}
-		BEACONS.remove(owner);
-		if (early) {
-			ServerPlayer player = server.getPlayerList().getPlayer(owner);
-			if (player != null) {
-				player.sendSystemMessage(Component.literal("The Wandering Trader has lost sight of your beacon...")
-						.withStyle(ChatFormatting.GRAY));
-			}
-		} else if (announce) {
-			server.getPlayerList().broadcastSystemMessage(
-					Component.literal("The Wandering Trader has left").withStyle(ChatFormatting.GRAY), false);
-		}
-		saveBeacons(server, server.getTickCount());
-	}
-
-	private static BeaconSavedData beaconData(MinecraftServer server) {
-		return server.overworld().getDataStorage().computeIfAbsent(BeaconSavedData.TYPE);
-	}
-
-	private static void loadBeacons(MinecraftServer server, int tick) {
-		if (BEACON_DATA_LOADED) {
-			return;
-		}
-		for (PersistedBeacon saved : beaconData(server).beacons()) {
-			int limit = saved.trader().isPresent() ? 18000 : 12000;
-			int remaining = Math.max(0, Math.min(limit, saved.remainingTicks()));
-			BEACONS.put(saved.owner(), new BeaconTask(
-					saved.level(), saved.pos(), tick - (limit - remaining), saved.trader().orElse(null)
-			));
-		}
-		BEACON_DATA_LOADED = true;
-	}
-
-	private static void saveBeacons(MinecraftServer server, int tick) {
-		if (!BEACON_DATA_LOADED) {
-			return;
-		}
-		List<PersistedBeacon> saved = new ArrayList<>(BEACONS.size());
-		for (var entry : BEACONS.entrySet()) {
-			BeaconTask task = entry.getValue();
-			int limit = task.trader() == null ? 12000 : 18000;
-			int elapsed = Math.max(0, tick - task.startTick());
-			saved.add(new PersistedBeacon(entry.getKey(), task.level(), task.pos(),
-					Math.max(0, limit - elapsed), Optional.ofNullable(task.trader())));
-		}
-		beaconData(server).replace(saved);
-	}
-
 	private static void stackWaterBottles(ServerPlayer player) {
 		var inventory = player.getInventory();
 		int inventoryVersion = inventory.getTimesChanged();
@@ -661,133 +448,10 @@ public final class MechanicMechanics {
 		});
 	}
 
-	private static void trackEntity(Entity entity, ServerLevel level) {
-		if (entity instanceof ArmorStand stone && stone.entityTags().contains("WardingStone")) {
-			WARDING_STONES.add(stone);
-		}
+	private static void trackVillager(Entity entity, ServerLevel level) {
 		if (entity instanceof Villager villager) {
 			VILLAGERS.add(villager);
 		}
-	}
-
-	private static void tickWardingStones() {
-		WARDING_STONES.removeIf(stone ->
-				stone.isRemoved() || !stone.entityTags().contains("WardingStone"));
-		for (ArmorStand stone : List.copyOf(WARDING_STONES)) {
-			if (!(stone.level() instanceof ServerLevel level)) {
-				continue;
-			}
-			BlockPos pos = stone.blockPosition();
-			double stoneX = stone.getX();
-			double stoneY = stone.getY();
-			double stoneZ = stone.getZ();
-			boolean setup = stone.entityTags().contains("WardingStoneSetup");
-
-			// Heal friendly villagers nearby.
-			var friends = level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(16.0),
-					f -> f.is(VILLAGER_FRIENDS)
-							&& f.distanceToSqr(stone) <= 16.0 * 16.0);
-			boolean someoneRegenerating = friends.stream()
-					.anyMatch(f -> f.hasEffect(MobEffects.REGENERATION));
-			if (!someoneRegenerating) {
-				for (LivingEntity friend : friends) {
-					friend.addEffect(new MobEffectInstance(
-							MobEffects.REGENERATION, 60, 0, false, false));
-				}
-			}
-
-			boolean anchored = level.getBlockState(pos).is(Blocks.LODESTONE);
-			if (!setup) {
-				if (!anchored) {
-					level.setBlockAndUpdate(pos, Blocks.LODESTONE.defaultBlockState());
-				}
-				level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.25F, 1.0F);
-				level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY + 0.5, stoneZ,
-						10, 0.25, 0.1, 0.25, 0.05);
-				level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
-						10, 0.5, 0.1, 0.5, 0.1);
-				stone.addTag("WardingStoneSetup");
-				setup = true;
-			}
-
-			// Anchor destroyed: refund blaze powder and remove the stone.
-			if (setup && !level.getBlockState(pos).is(Blocks.LODESTONE)) {
-				for (ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, stone.getBoundingBox().inflate(3.0))) {
-					if (item.getItem().is(Items.LODESTONE)) {
-						item.discard();
-					}
-				}
-				level.sendParticles(ParticleTypes.LARGE_SMOKE, stoneX, stoneY + 0.25, stoneZ,
-						20, 0.25, 0.5, 0.25, 0.01);
-				level.addFreshEntity(new ItemEntity(level, stoneX, stoneY, stoneZ,
-						new ItemStack(Items.BLAZE_POWDER)));
-				stone.discard();
-				continue;
-			}
-
-			// Placed inside a trial chamber: forbidden, destroy it.
-			var structure = level.registryAccess().lookupOrThrow(Registries.STRUCTURE).getOrThrow(TRIAL_CHAMBERS);
-			if (level.structureManager().getStructureWithPieceAt(pos, HolderSet.direct(structure)).isValid()) {
-				level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-				var tnt = EntityTypes.TNT.create(level, EntitySpawnReason.EVENT);
-				tnt.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
-				tnt.setFuse(0);
-				level.addFreshEntity(tnt);
-				level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY, stoneZ,
-						100, 0.1, 0.1, 0.1, 0.5);
-				stone.discard();
-				continue;
-			}
-
-			// Aura: slow and damage the dedicated 1.10 target set (including pillagers).
-			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
-					1, 0.5, 0.5, 0.5, 0);
-			for (LivingEntity target : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(26.0),
-					u -> u.is(WARDING_STONE_TARGETS)
-							&& u.distanceToSqr(stone) <= 26.0 * 26.0)) {
-				target.addEffect(new MobEffectInstance(
-						MobEffects.SLOWNESS, 40, 2, false, false));
-			}
-
-			if (level.getServer().getTickCount() % 10 == 0) {
-				LivingEntity generalTarget = nearestWardingStoneTarget(level, stone, 24.0, target -> true);
-				if (generalTarget != null && nearestWardingStoneTarget(level, generalTarget, 20.0,
-						target -> target.getType() == EntityTypes.WITHER) == null) {
-					level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
-							generalTarget.getX(), generalTarget.getY() + 2.0, generalTarget.getZ(),
-							1, 0.25, 0.25, 0.25, 0.025);
-					LivingEntity damageTarget = nearestWardingStoneTarget(level, generalTarget, 14.0, target -> true);
-					if (damageTarget != null) {
-						damageTarget.hurtServer(level, level.damageSources().fellOutOfWorld(), 7.0F);
-					}
-				}
-
-				LivingEntity witherTarget = nearestWardingStoneTarget(level, stone, 24.0,
-						target -> target.getType() == EntityTypes.WITHER);
-				if (witherTarget != null) {
-					level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
-							witherTarget.getX(), witherTarget.getY() + 2.5, witherTarget.getZ(),
-							2, 1.0, 1.0, 1.0, 0.5);
-					LivingEntity damageTarget = nearestWardingStoneTarget(level, witherTarget, 14.0, target -> true);
-					if (damageTarget != null) {
-						damageTarget.hurtServer(level, level.damageSources().fellOutOfWorld(), 2.0F);
-					}
-				}
-			}
-		}
-	}
-
-	private static LivingEntity nearestWardingStoneTarget(
-			ServerLevel level, LivingEntity center, double radius, Predicate<LivingEntity> predicate
-	) {
-		double radiusSquared = radius * radius;
-		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), target ->
-				target.is(WARDING_STONE_TARGETS)
-							&& predicate.test(target)
-							&& target.distanceToSqr(center) <= radiusSquared)
-				.stream()
-				.min(Comparator.comparingDouble(target -> target.distanceToSqr(center)))
-				.orElse(null);
 	}
 
 	private static boolean advancementDone(ServerPlayer player, Identifier advancementId) {

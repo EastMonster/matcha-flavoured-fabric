@@ -1,6 +1,6 @@
 package monster.east.matchaff.mixin;
 
-import monster.east.matchaff.mechanic.WorldMechanics;
+import monster.east.matchaff.mechanic.MobMechanics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -29,7 +29,7 @@ public abstract class SpawnPlacementsMixin {
 			BlockPos pos,
 			RandomSource random,
 			CallbackInfoReturnable<Boolean> cir) {
-		if (spawnReason == EntitySpawnReason.NATURAL && WorldMechanics.isForbiddenSpawn(type, level.getLevel(), pos)) {
+		if (spawnReason == EntitySpawnReason.NATURAL && MobMechanics.isForbiddenSpawn(type, level.getLevel(), pos)) {
 			cir.setReturnValue(false);
 		}
 	}
