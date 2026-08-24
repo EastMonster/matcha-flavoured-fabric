@@ -52,7 +52,8 @@ final class DivineItemMechanics {
 				}
 				if (level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 3, item.getZ())).isAir()) {
 					item.setDeltaMovement(0, -0.05, 0);
-				} else if (!level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 0.5, item.getZ())).isAir()) {
+				}
+				if (!level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 1, item.getZ())).isAir()) {
 					item.setDeltaMovement(0, 0.025, 0);
 				}
 			} else if (stack.is(Items.ENDER_EYE)) {
@@ -63,7 +64,8 @@ final class DivineItemMechanics {
 				}
 				if (level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 3, item.getZ())).isAir()) {
 					item.setDeltaMovement(0, -0.1, 0);
-				} else if (!level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 0.5, item.getZ())).isAir()) {
+				}
+				if (!level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 0.5, item.getZ())).isAir()) {
 					item.setDeltaMovement(0, 0.025, 0);
 				}
 			} else if (stack.is(Items.BLAZE_POWDER)) {

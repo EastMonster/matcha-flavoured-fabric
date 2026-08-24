@@ -406,7 +406,9 @@ public final class MechanicMechanics {
 			if (task.triggerTick() > tick) {
 				return false;
 			}
-			server.setWeatherParameters(task.rain() ? 0 : 6000, task.rain() ? 6000 : 0, task.rain(), false);
+			int duration = (task.rain() ? ServerLevel.RAIN_DURATION : ServerLevel.RAIN_DELAY)
+					.sample(server.overworld().getRandom());
+			server.setWeatherParameters(task.rain() ? 0 : duration, task.rain() ? duration : 0, task.rain(), false);
 			ServerPlayer player = server.getPlayerList().getPlayer(task.player());
 			if (player != null) {
 				revoke(player, task.advancement());

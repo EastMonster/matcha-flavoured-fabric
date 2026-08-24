@@ -16,6 +16,24 @@
 		"minecraft:dried_kelp"
 	],
 	"result": {
+		"components": {
+			"minecraft:consumable": {
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "minecraft:regeneration",
+								"duration": 600,
+								"show_particles": false
+							}
+						]
+					}
+				]
+			},
+			"minecraft:max_stack_size": 16,
+			"minecraft:lore": []
+		},
 		"count": 1,
 		"id": "matcha-flavoured:ramen"
 	}

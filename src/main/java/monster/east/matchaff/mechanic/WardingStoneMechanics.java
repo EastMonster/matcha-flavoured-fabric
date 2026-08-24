@@ -120,7 +120,6 @@ final class WardingStoneMechanics {
 				level.addFreshEntity(tnt);
 				level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY, stoneZ,
 						100, 0.1, 0.1, 0.1, 0.5);
-				stone.discard();
 				continue;
 			}
 

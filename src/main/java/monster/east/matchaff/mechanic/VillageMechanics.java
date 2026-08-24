@@ -90,18 +90,23 @@ final class VillageMechanics {
 		}
 		if (player.tickCount % 20 == 0) {
 			player.connection.send(new ClientboundStopSoundPacket(null, SoundSource.MUSIC));
-			int seconds = player.getAttachedOrElse(EERIE_TIMER, 0) + 1;
-			if (seconds > 150) {
-				seconds = 1;
-			}
-			player.setAttached(EERIE_TIMER, seconds);
+		}
+		int ticks = player.getAttachedOrElse(EERIE_TIMER, 0) + 1;
+		if (ticks > 3000) {
+			ticks = 1;
+		}
+		player.setAttached(EERIE_TIMER, ticks);
+		int step = switch (ticks) {
+			case 20 -> 1;
+			case 25 -> 2;
+			case 30 -> 3;
+			case 35 -> 4;
+			case 2000 -> 100;
+			default -> 0;
+		};
+		if (step != 0) {
 			var ground = level.getBlockState(player.blockPosition().below());
-			if (seconds <= 4) {
-				eerieCue(player, level, ground, seconds);
-			}
-			if (seconds == 100) {
-				eerieCue(player, level, ground, 100);
-			}
+			eerieCue(player, level, ground, step);
 		}
 	}
 
@@ -183,7 +188,8 @@ final class VillageMechanics {
 				playAt(level, right.x, right.y, right.z, SoundEvents.GRASS_BREAK, 1.0F);
 			}
 			if (step == 1) {
-				playAt(level, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE.value(), 1.0F);
+				level.playSound(null, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE.value(),
+						SoundSource.AMBIENT, 1.0F, 1.0F);
 			}
 		}
 		if (ground.is(Blocks.GRAVEL)) {
@@ -193,10 +199,15 @@ final class VillageMechanics {
 			Vec3 behind = WorldMechanics.localOffset(player, 0, 0, -3);
 			playAt(level, behind.x, behind.y, behind.z, SoundEvents.WOODEN_DOOR_OPEN, 1.0F);
 		}
-		if (ground.is(Blocks.GRASS_BLOCK) && step <= 4) {
-			playAt(level, pos.x, pos.y - 4, pos.z, SoundEvents.GRASS_BREAK, 0.5F);
-			if (step > 1) {
-				playAt(level, pos.x + (4 - step), pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
+		if (ground.is(Blocks.GRASS_BLOCK)) {
+			if (step == 1) {
+				playAt(level, pos.x, pos.y - 4, pos.z, SoundEvents.GRASS_BREAK, 0.5F);
+			}
+			if (step >= 2 && step <= 4) {
+				playAt(level, pos.x + (5 - step), pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
+			}
+			if (step == 4) {
+				playAt(level, pos.x, pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
 			}
 		}
 	}

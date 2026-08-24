@@ -192,7 +192,7 @@ public final class PlayerMechanics {
 	private static void manageSleep(ServerPlayer player) {
 		if (player.isSleeping() && player.getSleepTimer() > 0 && player.getSleepTimer() < 100) {
 			var level = player.level();
-			level.getServer().setWeatherParameters(6000, 0, false, false);
+			level.getServer().setWeatherParameters(ServerLevel.RAIN_DELAY.sample(level.getRandom()), 0, false, false);
 			var clock = level.getServer().registryAccess()
 					.lookupOrThrow(Registries.WORLD_CLOCK)
 					.getOrThrow(WorldClocks.OVERWORLD);
