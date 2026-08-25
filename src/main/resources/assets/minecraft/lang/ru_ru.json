@@ -161,8 +161,8 @@
 	"item.minecraft.cooked_cod": "Жареная рыба",
 	"item.minecraft.cooked_rabbit": "Жареное мясо",
 	"item.minecraft.rabbit": "Сырое мясо",
-	"item.minecraft.salmon": "Лосось",
 	"item.minecraft.cod": "Треска",
+	"item.minecraft.salmon": "Лосось",
 	"filled_map.abbey_overgrown": "Карта заросшего монастыря",
 	"filled_map.papal_outpost": "Карта папского аванпоста",
 	"filled_map.desert_pyramid": "Карта пустынного храма",
@@ -175,5 +175,10 @@
 	"filled_map.monument": "Карта морского монумента",
 	"filled_map.trial_chambers": "Карта камеры испытаний",
 	"filled_map.mansion": "Карта особняка",
-	"item.minecraft.potion.effect.empty": "Бутылочка воды"
+	"item.minecraft.potion.effect.empty": "Бутылочка воды",
+	"filled_map.village_desert": "Карта заброшенной пустынной деревни",
+	"filled_map.village_plains": "Карта заброшенной равнинной деревни",
+	"filled_map.village_savanna": "Карта заброшенной саванной деревни",
+	"filled_map.village_snowy": "Карта заброшенной заснеженной деревни",
+	"filled_map.village_taiga": "Карта заброшенной таёжной деревни"
 }

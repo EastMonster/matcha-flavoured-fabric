@@ -180,5 +180,10 @@
 	"filled_map.monument": "Ocean Monument Map",
 	"filled_map.trial_chambers": "Trial Chamber Map",
 	"filled_map.mansion": "Mansion Map",
+	"filled_map.village_desert": "Abandoned Desert Village Map",
+	"filled_map.village_plains": "Abandoned Plains Village Map",
+	"filled_map.village_savanna": "Abandoned Savanna Village Map",
+	"filled_map.village_snowy": "Abandoned Snowy Village Map",
+	"filled_map.village_taiga": "Abandoned Taiga Village Map",
 	"item.minecraft.potion.effect.empty": "Water Bottle"
 }

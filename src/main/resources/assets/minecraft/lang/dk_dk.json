@@ -159,8 +159,8 @@
 	"item.minecraft.cooked_cod": "Tilberedt fisk",
 	"item.minecraft.cooked_rabbit": "Tilberedt kød",
 	"item.minecraft.rabbit": "Råt kød",
-	"item.minecraft.salmon": "Laks",
 	"item.minecraft.cod": "Torsk",
+	"item.minecraft.salmon": "Laks",
 	"filled_map.abbey_overgrown": "overgroet abbedikort",
 	"filled_map.papal_outpost": "Pavelig forpostkort",
 	"filled_map.desert_pyramid": "Ørkentempelkort",
@@ -173,5 +173,10 @@
 	"filled_map.monument": "Havmonumentkort",
 	"filled_map.trial_chambers": "Prøvelseskammerkort",
 	"filled_map.mansion": "Palækort",
-	"item.minecraft.potion.effect.empty": "Vandflaske"
+	"item.minecraft.potion.effect.empty": "Vandflaske",
+	"filled_map.village_desert": "Forladt ørkenlandsbykort",
+	"filled_map.village_plains": "Forladt landsbykort",
+	"filled_map.village_savanna": "Forladt savannelandsbykort",
+	"filled_map.village_snowy": "Forladt snelandsbykort",
+	"filled_map.village_taiga": "Forladt granskovlandsbykort"
 }

@@ -173,5 +173,10 @@
 	"filled_map.monument": "Mapa ng Bantayog sa Karagatan",
 	"filled_map.trial_chambers": "Mapa ng Silid ng Pagsubok",
 	"filled_map.mansion": "Mapa ng Himbabahay",
-	"item.minecraft.potion.effect.empty": "Bote ng Tubig"
+	"item.minecraft.potion.effect.empty": "Bote ng Tubig",
+	"filled_map.village_desert": "Mapa ng Inabandunadong Nayon sa Disyerto",
+	"filled_map.village_plains": "Mapa ng Inabandunadong Nayon sa Kapatagan",
+	"filled_map.village_savanna": "Mapa ng Inabandunadong Nayon sa Sabana",
+	"filled_map.village_snowy": "Mapa ng Inabandunadong Maniyebeng Nayon",
+	"filled_map.village_taiga": "Mapa ng Inabandunadong Nayon sa Taiga"
 }

@@ -159,8 +159,8 @@
 	"item.minecraft.cooked_cod": "Sült Hal",
 	"item.minecraft.cooked_rabbit": "Főtt Hús",
 	"item.minecraft.rabbit": "Nyers Hús",
-	"item.minecraft.salmon": "Lazac",
 	"item.minecraft.cod": "Tőkehal",
+	"item.minecraft.salmon": "Lazac",
 	"filled_map.abbey_overgrown": "Túlnőtt apátság térképe",
 	"filled_map.papal_outpost": "Pápai menedek térképe",
 	"filled_map.desert_pyramid": "Sivatagi templom térképe",
@@ -173,5 +173,10 @@
 	"filled_map.monument": "Óceán műemlékének térképe",
 	"filled_map.trial_chambers": "Küzdőtér térképe",
 	"filled_map.mansion": "Villa térképe",
-	"item.minecraft.potion.effect.empty": "Vizespalack"
+	"item.minecraft.potion.effect.empty": "Vizespalack",
+	"filled_map.village_desert": "Elhagyatott sivatagi falu térképe",
+	"filled_map.village_plains": "Elhagyatott mezei falu térképe",
+	"filled_map.village_savanna": "Elhagyatott szavannabéli falu térképe",
+	"filled_map.village_snowy": "Elhagyatott hómezei falu térképe",
+	"filled_map.village_taiga": "Elhagyatott tajgai falu térképe"
 }

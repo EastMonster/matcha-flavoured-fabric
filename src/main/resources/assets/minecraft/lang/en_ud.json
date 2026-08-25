@@ -161,8 +161,8 @@
 	"item.minecraft.cooked_cod": "ɥsᴉℲ pǝʞooƆ",
 	"item.minecraft.cooked_rabbit": "ɥsǝꞁℲ pǝʞooƆ",
 	"item.minecraft.rabbit": "ɥsǝꞁℲ ʍɐᴚ",
-	"item.minecraft.salmon": "uoɯꞁɐS",
 	"item.minecraft.cod": "poƆ",
+	"item.minecraft.salmon": "uoɯꞁɐS",
 	"filled_map.abbey_overgrown": "dɐW ʎǝqqⱯ uʍoɹᵷɹǝʌO",
 	"filled_map.papal_outpost": "dɐW ʇsodʇnO ꞁɐdɐԀ",
 	"filled_map.desert_pyramid": "dɐW ǝꞁdɯǝ⟘ ʇɹǝsǝᗡ",
@@ -175,5 +175,10 @@
 	"filled_map.monument": "dɐW ʇuǝɯnuoW uɐǝɔO",
 	"filled_map.trial_chambers": "dɐW ɹǝqɯɐɥƆ ꞁɐᴉɹ⟘",
 	"filled_map.mansion": "dɐW uoᴉsuɐW",
-	"item.minecraft.potion.effect.empty": "ǝꞁʇʇoᗺ ɹǝʇɐM"
+	"item.minecraft.potion.effect.empty": "ǝꞁʇʇoᗺ ɹǝʇɐM",
+	"filled_map.village_desert": "bɐW ǝᵷɐꞁꞁᴉɅ ʇɹǝsǝᗡ pǝuopuɐqⱯ",
+	"filled_map.village_plains": "bɐW ǝᵷɐꞁꞁᴉɅ suᴉɐꞁԀ pǝuopuɐqⱯ",
+	"filled_map.village_savanna": "bɐW ǝᵷɐꞁꞁᴉɅ ɐuuɐʌɐS pǝuopuɐqⱯ",
+	"filled_map.village_snowy": "bɐW ǝᵷɐꞁꞁᴉɅ ʎʍouS pǝuopuɐqⱯ",
+	"filled_map.village_taiga": "bɐW ǝᵷɐꞁꞁᴉɅ ɐᵷᴉɐ⟘ pǝuopuɐqⱯ"
 }

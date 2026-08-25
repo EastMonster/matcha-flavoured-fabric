@@ -158,7 +158,7 @@ public final class WorldMechanics {
 	private static void welcome(ServerPlayer player) {
 		migrateRecipeUnlocks(player);
 		player.sendSystemMessage(Component.translatable("matcha.message.welcome")
-				.append(Component.translatable("matcha.message.version_number"))
+				.append(Component.literal("1.12"))
 				.withStyle(style -> style.withColor(TextColor.fromRgb(0x65E082))));
 		player.sendSystemMessage(Component.translatable("matcha.message.welcome.desc")
 				.withStyle(style -> style.withColor(TextColor.fromRgb(0x8FB398))));
@@ -205,6 +205,7 @@ public final class WorldMechanics {
 				.append(Component.translatable("matcha.message.difficulty.is"))
 				.append(Component.literal(" "))
 				.append(Component.translatable(difficultyNameKey(difficulty)).withStyle(color, ChatFormatting.BOLD))
+				.append(Component.literal("\n"))
 				.append(Component.translatable(difficultyDescriptionKey(difficulty)).withStyle(color))
 				.append("\n")
 				.append(Component.translatable("matcha.message.difficulty.disclaimer")

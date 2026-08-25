@@ -39,8 +39,8 @@
 	"item.minecraft.disc_fragment_5.desc": "For crafting Song Shives",
 	"block.minecraft.shulker_box": "Bag",
 	"block.minecraft.white_shulker_box": "White Bag",
-	"block.minecraft.light_gray_shulker_box": "Light Gray Bag",
-	"block.minecraft.gray_shulker_box": "Gray Bag",
+	"block.minecraft.light_gray_shulker_box": "Light Grey Bag",
+	"block.minecraft.gray_shulker_box": "Grey Bag",
 	"block.minecraft.black_shulker_box": "Black Bag",
 	"block.minecraft.brown_shulker_box": "Brown Bag",
 	"block.minecraft.red_shulker_box": "Red Bag",
@@ -124,5 +124,10 @@
 	"filled_map.monument": "Sea Seeker Draft",
 	"filled_map.trial_chambers": "Fand Seeker Draft",
 	"filled_map.mansion": "Woodland Seeker Draft",
-	"item.minecraft.potion.effect.empty": "Water Flash"
+	"item.minecraft.potion.effect.empty": "Water Flash",
+	"filled_map.village_desert": "Forsaken Weasten Thorp Draft",
+	"filled_map.village_plains": "Forsaken Grasslands Thorp Draft",
+	"filled_map.village_savanna": "Forsaken Bareland Thorp Draft",
+	"filled_map.village_snowy": "Forsaken Snowy Thorp Draft",
+	"filled_map.village_taiga": "Forsaken Harttartree Thorp Draft"
 }

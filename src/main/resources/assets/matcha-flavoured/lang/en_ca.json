@@ -19,11 +19,11 @@
 	"block.kleispack.banner.bi_pride.light_gray": "Bi Pride Light Grey Wash",
 	"block.kleispack.banner.lesbian_pride.light_gray": "Lesbian Pride Light Grey Wash",
 	"block.kleispack.banner.inclusive_pride.light_gray": "Inclusive Pride Light Grey Wash",
-	"item.matcha-flavoured.armoured_catfish": "Armoured Catfish",
 	"item.matcha-flavoured.archaeologists_brush": "Archaeologist's Brush",
 	"advancements.main.tutorial.craft_brush.title": "Archaeologist in Training",
 	"advancements.main.tutorial.cook_food.title": "Powerful Flavours",
 	"advancements.main.tutorial.cook_secret_food.title": "Hidden Flavours",
 	"advancements.main.tutorial.cook_secret_meal.title": "Wait you can make that?",
+	"advancements.main.tutorial.obtain_blast_furnace.description": "Blast Furnaces burn hotter than Kilns and are able to melt more durable Metals",
 	"advancements.main.tutorial.obtain_kiln.description": "Construct a Kiln made from Mudbricks"
 }

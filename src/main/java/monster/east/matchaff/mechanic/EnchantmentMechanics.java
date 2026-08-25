@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
@@ -140,7 +139,6 @@ public final class EnchantmentMechanics {
 
 		// Bloodrage: below 5 hearts, wielded axe grants resistance and strength.
 		if (maxLevel(mainHand, enchantments, BLOODRAGE) > 0 && player.getHealth() <= 10.0F) {
-			player.sendOverlayMessage(Component.translatable("matcha.message.bloodrage").withStyle(ChatFormatting.RED));
 			player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 20, 1, true, true));
 			player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 20, 0, true, true));
 			var level = player.level();

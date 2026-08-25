@@ -158,8 +158,8 @@
 	"item.minecraft.cooked_cod": "Gebratene Fisch",
 	"item.minecraft.cooked_rabbit": "Gebratenes Fleisch",
 	"item.minecraft.rabbit": "Rohes Fleisch",
-	"item.minecraft.salmon": "Lachs",
 	"item.minecraft.cod": "Kabeljau",
+	"item.minecraft.salmon": "Lachs",
 	"filled_map.abbey_overgrown": "Karte zue Überwucherti Abtei",
 	"filled_map.papal_outpost": "Karte zue Papal-Usseposte",
 	"filled_map.desert_pyramid": "Karte zue Wüstentempel",
@@ -172,5 +172,10 @@
 	"filled_map.monument": "Karte zue Ozeanmonument",
 	"filled_map.trial_chambers": "Karte zue Trial Chamber",
 	"filled_map.mansion": "Karte zue Waldahwäse",
-	"item.minecraft.potion.effect.empty": "Wasserflasche"
+	"item.minecraft.potion.effect.empty": "Wasserflasche",
+	"filled_map.village_desert": "Karte zue Wüstedorf",
+	"filled_map.village_plains": "Karte zue Ebenedorf",
+	"filled_map.village_savanna": "Karte zue Savannedorf",
+	"filled_map.village_snowy": "Karte zue Verschneitem Dorf",
+	"filled_map.village_taiga": "Karte zue Taigadorf"
 }

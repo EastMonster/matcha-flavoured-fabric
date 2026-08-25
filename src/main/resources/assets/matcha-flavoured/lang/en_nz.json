@@ -21,6 +21,10 @@
 	"block.kleispack.banner.inclusive_pride.light_gray": "Inclusive Pride Light Grey Wash",
 	"item.matcha-flavoured.sulfur_goo": "Sulphur Goo",
 	"item.matcha-flavoured.pickled_tomatoes": "Sundried Tomatotes",
+	"item.matcha-flavoured.grilled_melon": "Grilled Watermelon",
+	"item.matcha-flavoured.rind_jam": "Watermelon Rind Jam",
+	"item.matcha-flavoured.melon_sorbet": "Watermelon Sorbet",
+	"item.matcha-flavoured.humpback_whitefish.desc": "Cold Freshwater",
 	"item.matcha-flavoured.fertilised_blue_egg": "Fertilised Blue Egg",
 	"item.matcha-flavoured.fertilised_egg": "Fertilised Egg",
 	"item.matcha-flavoured.fertilised_brown_egg": "Fertilised Brown Egg",
@@ -28,9 +32,11 @@
 	"advancements.main.tutorial.craft_brush.title": "Archaeologist in Training",
 	"advancements.main.tutorial.cook_food.title": "Powerful Flavours",
 	"advancements.main.tutorial.cook_secret_food.title": "Hidden Flavours",
-	"advancements.main.tutorial.cook_secret_meal.title": "Wait you can make that?",
 	"advancements.main.tutorial.obtain_adamant_tool.description": "Smith a piece of Admant Equipment from Diamond with Adamant Alloy",
 	"advancements.main.tutorial.obtain_blast_furnace.description": "Blast Furnaces burn hotter than Kilns and are able to melt more durable Metals",
 	"advancements.main.tutorial.obtain_kiln.description": "Construct a Kiln made from Mudbricks",
-	"advancements.main.hell.obtain_benzene.description": "Synthesise Benzene: a Chemical Reagent Forbidden by the Old Laws"
+	"advancements.main.hell.obtain_benzene.description": "Synthesise Benzene, a Chemical Reagent Forbidden by the Old Laws",
+	"advancements.main.end.smith_shakudo_elytra.description": "Smith Shakudo Elytra with Wax",
+	"matcha.message.difficulty.easy.desc": "For players who want to relax",
+	"matcha.message.difficulty.normal.desc": "For players who want a challenge"
 }

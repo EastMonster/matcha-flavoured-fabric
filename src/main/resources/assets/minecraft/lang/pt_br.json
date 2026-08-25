@@ -139,7 +139,7 @@
 	"item.minecraft.prismarine_crystals": "Prata Refinada",
 	"block.minecraft.emerald_ore": "Prata Nativa",
 	"block.minecraft.deepslate_emerald_ore": "Prata Nativa Ardosiabissal",
-	"item.minecraft.heart_of_the_sea": "Liga de Electro",
+	"item.minecraft.heart_of_the_sea": "Liga de Eletro",
 	"item.minecraft.netherite_ingot": "Liga de Adamante",
 	"item.minecraft.netherite_scrap": "Sucata de Adamante",
 	"item.minecraft.netherite_pickaxe": "Picareta de Adamante",
@@ -160,8 +160,8 @@
 	"item.minecraft.cooked_cod": "Peixe Assado",
 	"item.minecraft.cooked_rabbit": "Carne Assada",
 	"item.minecraft.rabbit": "Carne Crua",
-	"item.minecraft.salmon": "Salmão",
 	"item.minecraft.cod": "Bacalhau",
+	"item.minecraft.salmon": "Salmão",
 	"filled_map.abbey_overgrown": "Mapa do Mosteiro Abandonado",
 	"filled_map.papal_outpost": "Mapa do Palácio Sagrado",
 	"filled_map.desert_pyramid": "Mapa do Templo do Deserto",
@@ -174,5 +174,10 @@
 	"filled_map.monument": "Mapa do Monumento Oceânico",
 	"filled_map.trial_chambers": "Mapa das Câmaras do Desafio",
 	"filled_map.mansion": "Mapa da Mansão",
-	"item.minecraft.potion.effect.empty": "Frasco de Água"
+	"item.minecraft.potion.effect.empty": "Frasco de Água",
+	"filled_map.village_desert": "Mapa da Vila do Deserto Abandonada",
+	"filled_map.village_plains": "Mapa da Vila das Planícies Abandonada",
+	"filled_map.village_savanna": "Mapa da Vila da Savana Abandonada",
+	"filled_map.village_snowy": "Mapa da Vila Nevada Abandonada",
+	"filled_map.village_taiga": "Mapa da Vila da Taiga Abandonada"
 }

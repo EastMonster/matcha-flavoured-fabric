@@ -160,8 +160,8 @@
 	"item.minecraft.cooked_cod": "Pişmiş Balık",
 	"item.minecraft.cooked_rabbit": "Pişmiş Et",
 	"item.minecraft.rabbit": "Çiğ Et",
-	"item.minecraft.salmon": "Somon",
 	"item.minecraft.cod": "Morina",
+	"item.minecraft.salmon": "Somon",
 	"filled_map.abbey_overgrown": "Terk Edilmiş Manastır Haritası",
 	"filled_map.papal_outpost": "Papalık Karakolu Haritası",
 	"filled_map.desert_pyramid": "Çöl Tapınak Haritası",
@@ -174,5 +174,10 @@
 	"filled_map.monument": "Okyanus Anıt Haritası",
 	"filled_map.trial_chambers": "Mücadele Oda Haritası",
 	"filled_map.mansion": "Köşk Haritası",
-	"item.minecraft.potion.effect.empty": "Su Şişesi"
+	"item.minecraft.potion.effect.empty": "Su Şişesi",
+	"filled_map.village_desert": "Terk Edilmiş Çöl Köyü Haritası",
+	"filled_map.village_plains": "Terk Edilmiş Çayır Köyü Haritası",
+	"filled_map.village_savanna": "Terk Edilmiş Savan Köyü Haritası",
+	"filled_map.village_snowy": "Terk Edilmiş Karlı Köy Haritası",
+	"filled_map.village_taiga": "Terk Edilmiş Tayga Köyü Haritası"
 }

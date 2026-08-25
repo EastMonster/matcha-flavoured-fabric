@@ -158,5 +158,10 @@
 	"filled_map.monument": "Map of ye seven seas",
 	"filled_map.trial_chambers": "Map t' th' chamber o' trials",
 	"filled_map.mansion": "Land ship treasure map",
-	"item.minecraft.potion.effect.empty": "Bottle o' bilge"
+	"item.minecraft.potion.effect.empty": "Bottle o' bilge",
+	"filled_map.village_desert": "Map t' th' abandoned landlubbers' territory in th' desert",
+	"filled_map.village_plains": "Map t' th' abandoned landlubbers' territory in th' desert",
+	"filled_map.village_savanna": "Map t' th' abandoned landlubbers' territory in th' savanna",
+	"filled_map.village_snowy": "Map t' th' abandoned landlubbers' territory in th' snow",
+	"filled_map.village_taiga": "Map t' th' abandoned landlubbers' territory in th' boreal forest"
 }
