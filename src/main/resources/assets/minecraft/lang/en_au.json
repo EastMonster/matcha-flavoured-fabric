@@ -1,4 +1,8 @@
 {
+	"container.inventory": "",
+	"container.crafting": "",
+	"container.cartography_table": "",
+	"container.upgrade": "",
 	"item.minecraft.nether_star": "Divine Favour",
 	"block.minecraft.nether_quartz_ore": "Sulphurous Hellstone",
 	"block.minecraft.redstone_ore": "Sulphurous Quartz Deposit",
