@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -44,8 +43,6 @@ public final class WorldMechanics {
 	private static final String VERSION_OBJECTIVE = "matcha_version";
 	private static final int RECIPE_UNLOCK_VERSION = 1_01_02_002;
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("glass_bottle_from_crafting");
-	private static final Identifier ENDLESS_REPAIRS_ADVANCEMENT =
-			Identifier.fromNamespaceAndPath("endless_repairs", "inventory_changed");
 
 	private static final Map<UUID, Integer> LAST_BOATING_DISTANCE = new HashMap<>();
 
@@ -149,7 +146,6 @@ public final class WorldMechanics {
 			boatParticles(player);
 			sulfurousHellstone(player);
 			glassBottleReward(player);
-			endlessRepairs(player);
 		}
 		DivineItemMechanics.tick(tick);
 		VillageMechanics.tick(server, tick);
@@ -305,19 +301,6 @@ public final class WorldMechanics {
 			}
 			revoke(player, GLASS_BOTTLE_ADVANCEMENT);
 		}
-	}
-
-	private static void endlessRepairs(ServerPlayer player) {
-		if (!advancementDone(player, ENDLESS_REPAIRS_ADVANCEMENT)) {
-			return;
-		}
-		for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
-			ItemStack stack = player.getInventory().getItem(slot);
-			if (stack.has(DataComponents.REPAIR_COST)) {
-				stack.set(DataComponents.REPAIR_COST, 0);
-			}
-		}
-		revoke(player, ENDLESS_REPAIRS_ADVANCEMENT);
 	}
 
 	static boolean advancementDone(ServerPlayer player, Identifier advancementId) {
