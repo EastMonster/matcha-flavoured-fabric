@@ -101,15 +101,14 @@ final class BeaconKindlingMechanics {
 		level.playSound(null, pos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
 		level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.5F, 1.0F);
 		if (BEACONS.containsKey(player.getUUID())) {
-			player.sendSystemMessage(Component.literal(
-					"You have already summoned a Wandering Trader, please wait patiently while they travel")
+			player.sendSystemMessage(Component.translatable("matcha.message.wandering_trader.beacon_placed")
 					.withStyle(ChatFormatting.GRAY));
 			return;
 		}
 		BEACONS.put(player.getUUID(), new BeaconTask(level.dimension(), pos.immutable(), tick, null));
 		save(level.getServer(), tick);
-		level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(
-				"A Wandering Trader has spotted your beacon, they will arrive in 10 minutes")
+		level.getServer().getPlayerList().broadcastSystemMessage(
+				Component.translatable("matcha.message.wandering_trader.initialise")
 				.withStyle(ChatFormatting.GRAY), false);
 	}
 
@@ -143,8 +142,8 @@ final class BeaconKindlingMechanics {
 					trader.addTag("summoned_by_beacon");
 					level.addFreshEntity(trader);
 					BEACONS.put(owner, new BeaconTask(task.level(), task.pos(), task.startTick(), trader.getUUID()));
-					server.getPlayerList().broadcastSystemMessage(Component.literal(
-							"The Wandering Trader has arrived, they will depart in 5 minutes")
+					server.getPlayerList().broadcastSystemMessage(
+							Component.translatable("matcha.message.wandering_trader.summoned")
 							.withStyle(ChatFormatting.GRAY), false);
 				}
 			} else if (task.trader() != null && elapsed >= 18000) {
@@ -179,12 +178,13 @@ final class BeaconKindlingMechanics {
 		if (early) {
 			ServerPlayer player = server.getPlayerList().getPlayer(owner);
 			if (player != null) {
-				player.sendSystemMessage(Component.literal("The Wandering Trader has lost sight of your beacon...")
+				player.sendSystemMessage(Component.translatable("matcha.message.wandering_trader.kill_early")
 						.withStyle(ChatFormatting.GRAY));
 			}
 		} else if (announce) {
 			server.getPlayerList().broadcastSystemMessage(
-					Component.literal("The Wandering Trader has left").withStyle(ChatFormatting.GRAY), false);
+					Component.translatable("matcha.message.wandering_trader.kill")
+							.withStyle(ChatFormatting.GRAY), false);
 		}
 		save(server, server.getTickCount());
 	}

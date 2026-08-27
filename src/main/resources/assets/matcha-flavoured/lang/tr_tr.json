@@ -662,5 +662,14 @@
 	"matcha.message.difficulty.hard.desc": "Kendine haksızlık etmek isteyenler için.",
 	"matcha.message.difficulty.disclaimer": "(Bunu dünya ayarlarında da değiştirebilirsiniz. Değiştirdikten sonra dünyayı yeniden yüklemeyi unutmayın)",
 	"matcha.message.player_updated": "Yeni oyuncu güncellendi",
-	"matcha.message.evil_banished": "Kötülük yeryüzünden uzaklaştırıldı."
+	"matcha.message.evil_banished": "Kötülük yeryüzünden uzaklaştırıldı.",
+	"matcha.asylum.cause_political": "Göç Sebebi: Siyasal Zulüm",
+	"matcha.asylum.cause_religious": "Göç Sebebi: Dini Zulüm",
+	"matcha.asylum.cause_war": "Göç Sebebi: Savaş",
+	"matcha.asylum.cause_ethnic": "Göç Sebebi: Etnik Zulüm",
+	"matcha.asylum.cause_natural_disaster": "Göç Sebebi: Doğal Afet",
+	"matcha.asylum.cause_refused_disclose": "Göç Sebebi: Açıklamayı Reddetti",
+	"matcha.asylum.cause_dead_god": "Göç Sebebi: Ölü Tanrı",
+	"matcha.asylum.cause_famine": "Göç Sebebi: Kıtlık",
+	"matcha.asylum.cause_orphaned": "Göç Sebebi: Öksüz Oldu"
 }
