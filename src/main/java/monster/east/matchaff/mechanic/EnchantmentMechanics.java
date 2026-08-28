@@ -89,6 +89,9 @@ public final class EnchantmentMechanics {
 
 	public static void init() {
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
+			if (!server.tickRateManager().runsNormally()) {
+				return;
+			}
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				tick(player);
 			}

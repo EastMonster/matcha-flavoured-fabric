@@ -136,8 +136,11 @@ public final class WorldMechanics {
 	}
 
 	private static void tick(MinecraftServer server) {
+		if (!server.tickRateManager().runsNormally()) {
+			return;
+		}
 		int tick = server.getTickCount();
-		if (server.tickRateManager().runsNormally() && tick % 3 == 0) {
+		if (tick % 3 == 0) {
 			var clock = server.registryAccess().lookupOrThrow(Registries.WORLD_CLOCK).getOrThrow(WorldClocks.OVERWORLD);
 			server.clockManager().addTicks(clock, 1);
 		}

@@ -48,6 +48,9 @@ public final class EffectsMechanics {
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
 				PENDING_SOUL_SIGHT.remove(handler.getPlayer().getUUID()));
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
+			if (!server.tickRateManager().runsNormally()) {
+				return;
+			}
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				tick(player);
 			}

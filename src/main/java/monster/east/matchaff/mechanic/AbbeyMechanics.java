@@ -62,6 +62,9 @@ public final class AbbeyMechanics {
 			}
 		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
+			if (!server.tickRateManager().runsNormally()) {
+				return;
+			}
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				checkCopperEye(player);
 			}

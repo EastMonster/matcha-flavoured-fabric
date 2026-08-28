@@ -116,8 +116,16 @@ public final class MechanicMechanics {
 		// The datapack's scheduled function runs before entities tick, so the
 		// glowing TNT is still alive (fuse 1) when bedrock is removed. Running
 		// this at END_SERVER_TICK left the TNT exploded and never found it.
-		ServerTickEvents.START_SERVER_TICK.register(server -> processBusterTasks(server, server.getTickCount()));
+		ServerTickEvents.START_SERVER_TICK.register(server -> {
+			if (!server.tickRateManager().runsNormally()) {
+				return;
+			}
+			processBusterTasks(server, server.getTickCount());
+		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
+			if (!server.tickRateManager().runsNormally()) {
+				return;
+			}
 			int tick = server.getTickCount();
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				checkEstus(player);
