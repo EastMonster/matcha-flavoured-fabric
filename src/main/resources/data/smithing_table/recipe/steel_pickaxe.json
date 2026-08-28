@@ -37,6 +37,11 @@
 					"italic": false
 				}
 			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:iron_ingot"
