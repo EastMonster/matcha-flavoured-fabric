@@ -35,7 +35,11 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 	}
 
 	private static void refreshVanillaPreview(Minecraft client) {
-		MatchaFlavouredFabric.setVanillaPreviewActive(client.getResourcePackRepository().getSelectedIds()
-				.contains(VANILLA_PREVIEW_PACK));
+		boolean active = client.getResourcePackRepository().getSelectedIds().contains(VANILLA_PREVIEW_PACK);
+		boolean changed = active != MatchaFlavouredFabric.vanillaPreviewActive();
+		MatchaFlavouredFabric.setVanillaPreviewActive(active);
+		if (client.level != null && (active || changed)) {
+			client.level.clearTintCaches();
+		}
 	}
 }

@@ -32,6 +32,8 @@
 	"client": [
 		"AirBubblesHudMixin",
 		"ClientAdvancementsAccessor",
+		"ClientLevelMixin",
+		"SodiumLevelColorCacheMixin",
 		"CreatorNamespaceMixin",
 		"LeavesBreakingMixin",
 		"LeavesCullMixin",
