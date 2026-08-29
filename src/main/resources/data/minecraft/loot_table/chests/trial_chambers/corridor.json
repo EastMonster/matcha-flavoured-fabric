@@ -21,6 +21,12 @@
 					"type": "minecraft:item",
 					"functions": [
 						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:max_stack_size": 64
+							}
+						},
+						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 2,

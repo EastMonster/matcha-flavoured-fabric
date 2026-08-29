@@ -43,6 +43,12 @@
 				"recipe_id": "smithing_table:steel_mattock"
 			}
 		},
+		"steel_shears": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "smithing_table:steel_shears"
+			}
+		},
 		"steel_spear": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
@@ -97,6 +103,7 @@
 			"steel_sword",
 			"steel_dolabra",
 			"steel_mattock",
+			"steel_shears",
 			"steel_spear",
 			"steel_helmet",
 			"steel_chestplate",

@@ -6,7 +6,7 @@
 			"conditions": {
 				"recipe_id": "crafting:black_concrete_from_concrete_powder"
 			}
-			
+
 		},
 		"made_blue_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
@@ -175,6 +175,13 @@
 				"recipe_id": "crafting:magenta_concrete_from_concrete_powder"
 			}
 			
+		},
+		"made_pink_concrete_from_concrete_powder": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "crafting:pink_concrete_from_concrete_powder"
+			}
+
 		},
 		"made_mud_from_dirt_and_potion": {
 			"trigger": "minecraft:recipe_crafted",
@@ -566,6 +573,7 @@
 			"made_light_gray_concrete_from_concrete_powder",
 			"made_lime_concrete_from_concrete_powder",
 			"made_magenta_concrete_from_concrete_powder",
+			"made_pink_concrete_from_concrete_powder",
 			"made_orange_concrete_from_concrete_powder",
 			"made_oxidized_chiseled_copper_from_patina",
 			"made_oxidized_copper_bars_from_patina",

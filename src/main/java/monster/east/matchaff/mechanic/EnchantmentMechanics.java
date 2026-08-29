@@ -254,7 +254,7 @@ public final class EnchantmentMechanics {
 				level.playSound(null, player.getX(), player.getY(), player.getZ(),
 						SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.75F, 1.0F);
 			}
-		} else if (!player.onGround() && player.hasEffect(MobEffects.SLOW_FALLING)) {
+		} else if (ticks > 0 && !player.onGround() && player.hasEffect(MobEffects.SLOW_FALLING)) {
 			// zephyr_execute: airborne release while slow falling is still active.
 			if (ticks > 0) {
 				level.sendParticles(ParticleTypes.GUST,

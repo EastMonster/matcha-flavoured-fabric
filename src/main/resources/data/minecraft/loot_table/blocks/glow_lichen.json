@@ -10,15 +10,7 @@
 						{
 							"condition": "minecraft:match_tool",
 							"predicate": {
-								"items": [
-									"minecraft:shears",
-									"minecraft:wooden_hoe",
-									"minecraft:stone_hoe",
-									"minecraft:copper_hoe",
-									"minecraft:iron_hoe",
-									"minecraft:diamond_hoe",
-									"minecraft:netherite_hoe"
-								]
+								"items": "#main:glow_lichen_harvesters"
 							}
 						}
 					],
