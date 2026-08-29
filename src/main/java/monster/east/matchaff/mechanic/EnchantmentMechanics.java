@@ -12,7 +12,6 @@ import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -66,6 +65,10 @@ public final class EnchantmentMechanics {
 	private static final Identifier ZEPHYR = id("zephyr");
 	private static final Identifier ANEMOS = id("anemos");
 	private static final Identifier SLAUGHTER = id("slaughter");
+	private static final Identifier[] WARDING_TIERS = {WARDING0, WARDING1, WARDING2, WARDING3};
+	private static final EquipmentSlot[] ARMOR_SLOTS = {
+			EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET
+	};
 
 	private static final TagKey<net.minecraft.world.entity.EntityType<?>> WARDING_TARGETS = TagKey.create(
 			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("main", "warding_targets")
@@ -109,7 +112,6 @@ public final class EnchantmentMechanics {
 	private static void tick(ServerPlayer player) {
 		Registry<Enchantment> enchantments = player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 		ItemStack mainHand = player.getMainHandItem();
-		ItemStack offHand = player.getOffhandItem();
 
 		// Hand-held warding runs every tick, matching the enchantment tick effect.
 		int heldWarding = heldWardingLevel(player, enchantments);
@@ -132,7 +134,7 @@ public final class EnchantmentMechanics {
 
 		// Treat armour plus a Divinity main-hand item as the four-piece set instead of the upstream score-5 gap.
 		int divinity = Math.min(4, countArmor(player, enchantments, DIVINITY) + maxLevel(mainHand, enchantments, DIVINITY));
-		if (divinity >= 1 && divinity <= 4) {
+		if (divinity >= 1) {
 			int interval = divinity == 4 ? 400 : 600;
 			if (elapsed(player, interval)) {
 				int amplifier = divinity == 4 ? 4 : divinity - 1;
@@ -396,10 +398,9 @@ public final class EnchantmentMechanics {
 
 	/** Returns the warding tier (0-3) held in main/off hand, or -1 when absent. */
 	private static int heldWardingLevel(ServerPlayer player, Registry<Enchantment> enchantments) {
-		Identifier[] tiers = {WARDING0, WARDING1, WARDING2, WARDING3};
 		int found = -1;
-		for (int tier = 0; tier < tiers.length; tier++) {
-			if (maxLevel(player.getMainHandItem(), player.getOffhandItem(), enchantments, tiers[tier]) > 0) {
+		for (int tier = 0; tier < WARDING_TIERS.length; tier++) {
+			if (maxLevel(player.getMainHandItem(), player.getOffhandItem(), enchantments, WARDING_TIERS[tier]) > 0) {
 				found = tier;
 			}
 		}
@@ -430,25 +431,26 @@ public final class EnchantmentMechanics {
 
 	private static int countArmor(ServerPlayer player, Registry<Enchantment> enchantments, Identifier enchantment) {
 		int count = 0;
-		for (EquipmentSlot slot : new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}) {
+		for (EquipmentSlot slot : ARMOR_SLOTS) {
 			count += maxLevel(player.getItemBySlot(slot), enchantments, enchantment);
 		}
 		return count;
 	}
 
-	private static int maxLevel(ItemStack stack, Registry<Enchantment> enchantments, Identifier... ids) {
-		int best = 0;
-		for (Identifier id : ids) {
-			Holder.Reference<Enchantment> holder = enchantments.get(id).orElse(null);
-			if (holder != null && !stack.isEmpty()) {
-				best = Math.max(best, stack.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).getLevel(holder));
-			}
+	private static int maxLevel(ItemStack stack, Registry<Enchantment> enchantments, Identifier id) {
+		if (stack.isEmpty()) {
+			return 0;
 		}
-		return best;
+		ItemEnchantments itemEnchantments = stack.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
+		if (itemEnchantments.isEmpty()) {
+			return 0;
+		}
+		Holder.Reference<Enchantment> holder = enchantments.get(id).orElse(null);
+		return holder == null ? 0 : itemEnchantments.getLevel(holder);
 	}
 
-	private static int maxLevel(ItemStack first, ItemStack second, Registry<Enchantment> enchantments, Identifier... ids) {
-		return Math.max(maxLevel(first, enchantments, ids), maxLevel(second, enchantments, ids));
+	private static int maxLevel(ItemStack first, ItemStack second, Registry<Enchantment> enchantments, Identifier id) {
+		return Math.max(maxLevel(first, enchantments, id), maxLevel(second, enchantments, id));
 	}
 
 	private static boolean elapsed(ServerPlayer player, int interval) {

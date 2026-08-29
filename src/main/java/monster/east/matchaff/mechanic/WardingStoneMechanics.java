@@ -23,7 +23,6 @@ import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import java.util.Collections;
@@ -43,6 +42,7 @@ final class WardingStoneMechanics {
 	private static final ResourceKey<Structure> TRIAL_CHAMBERS = ResourceKey.create(
 			Registries.STRUCTURE, Identifier.fromNamespaceAndPath("minecraft", "trial_chambers")
 	);
+	private static HolderSet<Structure> trialChambers;
 	private static final Set<ArmorStand> WARDING_STONES =
 			Collections.newSetFromMap(new IdentityHashMap<>());
 
@@ -50,7 +50,15 @@ final class WardingStoneMechanics {
 	}
 
 	static void init() {
-		ServerLifecycleEvents.SERVER_STOPPED.register(server -> WARDING_STONES.clear());
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
+			WARDING_STONES.clear();
+			trialChambers = null;
+		});
+		ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) -> {
+			if (success) {
+				trialChambers = null;
+			}
+		});
 		ServerEntityEvents.ENTITY_LOAD.register(WardingStoneMechanics::trackEntity);
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> WARDING_STONES.remove(entity));
 	}
@@ -92,11 +100,10 @@ final class WardingStoneMechanics {
 				level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
 						10, 0.5, 0.1, 0.5, 0.1);
 				stone.addTag("WardingStoneSetup");
-				setup = true;
 			}
 
 			// Anchor destroyed: refund blaze powder and remove the stone.
-			if (setup && !level.getBlockState(pos).is(Blocks.LODESTONE)) {
+			if (!level.getBlockState(pos).is(Blocks.LODESTONE)) {
 				for (ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, stone.getBoundingBox().inflate(3.0))) {
 					if (item.getItem().is(Items.LODESTONE)) {
 						item.discard();
@@ -110,17 +117,20 @@ final class WardingStoneMechanics {
 				continue;
 			}
 
-			// Placed inside a trial chamber: forbidden, destroy it.
-			var structure = level.registryAccess().lookupOrThrow(Registries.STRUCTURE).getOrThrow(TRIAL_CHAMBERS);
-			if (level.structureManager().getStructureWithPieceAt(pos, HolderSet.direct(structure)).isValid()) {
-				level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-				var tnt = EntityTypes.TNT.create(level, EntitySpawnReason.EVENT);
-				tnt.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
-				tnt.setFuse(0);
-				level.addFreshEntity(tnt);
-				level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY, stoneZ,
-						100, 0.1, 0.1, 0.1, 0.5);
-				continue;
+			// Placed inside a trial chamber: forbidden, destroy it. The structure cannot
+			// change around a normally placed stone, so test each stone once.
+			if (!stone.entityTags().contains("WardingStoneTrialChecked")) {
+				if (level.structureManager().getStructureWithPieceAt(pos, trialChambers(level)).isValid()) {
+					level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+					var tnt = EntityTypes.TNT.create(level, EntitySpawnReason.EVENT);
+					tnt.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+					tnt.setFuse(0);
+					level.addFreshEntity(tnt);
+					level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY, stoneZ,
+							100, 0.1, 0.1, 0.1, 0.5);
+					continue;
+				}
+				stone.addTag("WardingStoneTrialChecked");
 			}
 
 			// Aura: slow and damage the dedicated 1.10 target set (including pillagers).
@@ -178,6 +188,14 @@ final class WardingStoneMechanics {
 				.stream()
 				.min(Comparator.comparingDouble(target -> target.distanceToSqr(center)))
 				.orElse(null);
+	}
+
+	private static HolderSet<Structure> trialChambers(ServerLevel level) {
+		if (trialChambers == null) {
+			var structure = level.registryAccess().lookupOrThrow(Registries.STRUCTURE).getOrThrow(TRIAL_CHAMBERS);
+			trialChambers = HolderSet.direct(structure);
+		}
+		return trialChambers;
 	}
 
 	private static Identifier id(String path) {

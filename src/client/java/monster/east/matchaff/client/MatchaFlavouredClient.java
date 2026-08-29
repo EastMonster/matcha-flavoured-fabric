@@ -1,10 +1,12 @@
 package monster.east.matchaff.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.InvalidateRenderStateCallback;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import monster.east.matchaff.MatchaFlavouredFabric;
@@ -16,9 +18,8 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		MatchaClientConfig.load();
-		ClientTickEvents.END_CLIENT_TICK.register(client ->
-				MatchaFlavouredFabric.setVanillaPreviewActive(client.getResourcePackRepository().getSelectedIds()
-						.contains(VANILLA_PREVIEW_PACK)));
+		ClientLifecycleEvents.CLIENT_STARTED.register(MatchaFlavouredClient::refreshVanillaPreview);
+		InvalidateRenderStateCallback.EVENT.register(() -> refreshVanillaPreview(Minecraft.getInstance()));
 		ResourceLoader.registerBuiltinPack(
 				Identifier.parse(NO_LEAF_EXTENSIONS_PACK),
 				FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
@@ -31,5 +32,10 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 				Component.translatable("matcha.config.vanilla_preview.pack"),
 				PackActivationType.NORMAL
 		);
+	}
+
+	private static void refreshVanillaPreview(Minecraft client) {
+		MatchaFlavouredFabric.setVanillaPreviewActive(client.getResourcePackRepository().getSelectedIds()
+				.contains(VANILLA_PREVIEW_PACK));
 	}
 }

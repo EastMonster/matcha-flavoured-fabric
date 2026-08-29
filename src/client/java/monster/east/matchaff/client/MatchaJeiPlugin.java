@@ -73,6 +73,7 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 	private static List<RecipeHolder<SmeltingRecipe>> smeltingRecipes = List.of();
 	private static List<RecipeHolder<CampfireCookingRecipe>> campfireRecipes = List.of();
 	private static long lastUnlockedMask = -1L;
+	private static int secretRecipeRefreshCooldown;
 
     @Override
     public Identifier getPluginUid() {
@@ -196,7 +197,12 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 			return;
 		}
 		var connection = client.getConnection();
-		if (connection != lastConnection || (connection != null && craftingRecipes.isEmpty())) {
+		boolean reloadRecipes = connection != lastConnection || (connection != null && craftingRecipes.isEmpty());
+		if (!reloadRecipes && secretRecipeRefreshCooldown-- > 0) {
+			return;
+		}
+		secretRecipeRefreshCooldown = 9;
+		if (reloadRecipes) {
 			lastConnection = connection;
 			craftingRecipes = lookup(RecipeTypes.CRAFTING);
 			smeltingRecipes = lookup(RecipeTypes.SMELTING);
@@ -219,6 +225,7 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 		smeltingRecipes = List.of();
 		campfireRecipes = List.of();
 		lastUnlockedMask = -1L;
+		secretRecipeRefreshCooldown = 0;
 	}
 
 	private static <R extends Recipe<?>> List<RecipeHolder<R>> lookup(IRecipeType<RecipeHolder<R>> type) {

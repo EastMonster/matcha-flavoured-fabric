@@ -46,6 +46,7 @@ final class VillageMechanics {
 			structure("village_plains"), structure("village_desert"), structure("village_savanna"),
 			structure("village_snowy"), structure("village_taiga")
 	);
+	private static HolderSet<Structure> villageHolders;
 	private static final AttachmentType<Boolean> EERIE = AttachmentRegistry.create(id("eerie"));
 	private static final AttachmentType<Integer> EERIE_TIMER = AttachmentRegistry.create(id("eerie_timer"));
 	private static final Set<Mannequin> HAUNTED_MANNEQUINS =
@@ -65,6 +66,12 @@ final class VillageMechanics {
 			HAUNTED_MANNEQUINS.clear();
 			JUKEBOX_MARKERS.clear();
 			HOPPER_CLEANUPS.clear();
+			villageHolders = null;
+		});
+		ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) -> {
+			if (success) {
+				villageHolders = null;
+			}
 		});
 		ServerEntityEvents.ENTITY_LOAD.register(VillageMechanics::trackVillageEntity);
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
@@ -232,9 +239,11 @@ final class VillageMechanics {
 	}
 
 	private static boolean inVillage(ServerLevel level, BlockPos pos) {
-		var lookup = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
-		var holders = VILLAGES.stream().map(lookup::getOrThrow).toList();
-		return level.structureManager().getStructureWithPieceAt(pos, HolderSet.direct(holders)).isValid();
+		if (villageHolders == null) {
+			var lookup = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
+			villageHolders = HolderSet.direct(VILLAGES.stream().map(lookup::getOrThrow).toList());
+		}
+		return level.structureManager().getStructureWithPieceAt(pos, villageHolders).isValid();
 	}
 
 	private static ResourceKey<Structure> structure(String path) {
