@@ -3,7 +3,7 @@
 	"addition": "minecraft:glistering_melon_slice",
 	"base": "minecraft:iron_sword",
 	"result": {
-		"id": "matcha-flavoured:silver_sword",
+		"id": "matcha:silver_sword",
 		"components": {
 			"minecraft:max_damage": 800,
 			"minecraft:lore": [
@@ -19,7 +19,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.silver_sword"
+				"translate": "item.matcha.silver_sword"
 			},
 			"minecraft:attribute_modifiers": [
 				{
@@ -44,7 +44,7 @@
 			},
 			"minecraft:enchantments": {
 				"minecraft:smite": 2,
-				"matcha-flavoured:warding0": 1
+				"matcha:warding0": 1
 			},
 			"minecraft:enchantment_glint_override": true
 		}

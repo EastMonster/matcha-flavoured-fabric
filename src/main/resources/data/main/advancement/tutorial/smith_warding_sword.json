@@ -17,7 +17,7 @@
 				"minecraft:enchantment_glint_override": true
 			},
 			"count": 1,
-			"id": "matcha-flavoured:warding_sword"
+			"id": "matcha:warding_sword"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.smith_warding_sword.title"

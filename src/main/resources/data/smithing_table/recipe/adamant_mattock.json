@@ -3,7 +3,7 @@
 	"addition": "minecraft:netherite_ingot",
 	"base": "minecraft:diamond_hoe",
 	"result": {
-		"id": "matcha-flavoured:adamant_mattock",
+		"id": "matcha:adamant_mattock",
 		"components": {
 			"minecraft:max_damage": 5000,
 			"minecraft:tool": {
@@ -23,7 +23,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:divinity": 1,
+				"matcha:divinity": 1,
 				"minecraft:unbreaking": 2
 			},
 			"minecraft:lore": [
@@ -66,7 +66,7 @@
 				]
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.adamant_mattock",
+				"translate": "item.matcha.adamant_mattock",
 				"color": "gold"
 			}
 		}

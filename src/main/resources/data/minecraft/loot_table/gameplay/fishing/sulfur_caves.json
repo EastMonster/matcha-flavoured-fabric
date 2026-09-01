@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:fish_bones",
+					"name": "matcha:fish_bones",
 					"weight": 10
 				},
 				{

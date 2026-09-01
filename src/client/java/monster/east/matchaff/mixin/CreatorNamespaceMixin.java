@@ -95,7 +95,7 @@ public abstract class CreatorNamespaceMixin implements FabricItem {
 	@Override
 	public String getCreatorNamespace(ItemStack stack) {
 		Identifier id = BuiltInRegistries.ITEM.getKey((Item) (Object) this);
-		if (id.getNamespace().equals("matcha-flavoured")) {
+		if (id.getNamespace().equals("matcha")) {
 			return "matcha-flavoured";
 		}
 		if (id.getNamespace().equals("minecraft") && MATCHA$VANILLA_ITEMS.contains(id.getPath())) {

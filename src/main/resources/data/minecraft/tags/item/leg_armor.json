@@ -1,10 +1,10 @@
 {
 	"replace": false,
 	"values": [
-		"matcha-flavoured:bronze_leggings",
-		"matcha-flavoured:electrum_leggings",
-		"matcha-flavoured:shakudo_leggings",
-		"matcha-flavoured:steel_leggings",
-		"matcha-flavoured:sturdy_leather_leggings"
+		"matcha:bronze_leggings",
+		"matcha:electrum_leggings",
+		"matcha:shakudo_leggings",
+		"matcha:steel_leggings",
+		"matcha:sturdy_leather_leggings"
 	]
 }

@@ -3,10 +3,10 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_axe",
 	"result": {
-		"id": "matcha-flavoured:steel_dolabra",
+		"id": "matcha:steel_dolabra",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_dolabra"
+				"translate": "item.matcha.steel_dolabra"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {

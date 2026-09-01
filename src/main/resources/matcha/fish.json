@@ -7,7 +7,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.alaska_blackfish"
+				"translate": "item.matcha.alaska_blackfish"
 			},
 			"minecraft:lore": [
 				{
@@ -26,7 +26,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.anchovy"
+				"translate": "item.matcha.anchovy"
 			},
 			"minecraft:lore": [
 				{
@@ -45,7 +45,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.arapaima"
+				"translate": "item.matcha.arapaima"
 			},
 			"minecraft:lore": [
 				{
@@ -64,7 +64,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.armoured_catfish"
+				"translate": "item.matcha.armoured_catfish"
 			},
 			"minecraft:lore": [
 				{
@@ -83,7 +83,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bass"
+				"translate": "item.matcha.bass"
 			},
 			"minecraft:lore": [
 				{
@@ -102,7 +102,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.black_seabass"
+				"translate": "item.matcha.black_seabass"
 			},
 			"minecraft:lore": [
 				{
@@ -121,7 +121,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bluegill"
+				"translate": "item.matcha.bluegill"
 			},
 			"minecraft:lore": [
 				{
@@ -140,7 +140,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bujurqui"
+				"translate": "item.matcha.bujurqui"
 			},
 			"minecraft:lore": [
 				{
@@ -159,7 +159,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.carp"
+				"translate": "item.matcha.carp"
 			},
 			"minecraft:lore": [
 				{
@@ -178,7 +178,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.catfish"
+				"translate": "item.matcha.catfish"
 			},
 			"minecraft:lore": [
 				{
@@ -197,7 +197,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.crappie"
+				"translate": "item.matcha.crappie"
 			},
 			"minecraft:lore": [
 				{
@@ -216,7 +216,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.echo_fish"
+				"translate": "item.matcha.echo_fish"
 			},
 			"minecraft:lore": [
 				{
@@ -235,7 +235,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.european_eel"
+				"translate": "item.matcha.european_eel"
 			},
 			"minecraft:lore": [
 				{
@@ -254,7 +254,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.flounder"
+				"translate": "item.matcha.flounder"
 			},
 			"minecraft:lore": [
 				{
@@ -273,7 +273,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.flying_fish"
+				"translate": "item.matcha.flying_fish"
 			},
 			"minecraft:lore": [
 				{
@@ -292,7 +292,7 @@
 		"carrier": "minecraft:pufferfish",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.freshwater_pufferfish"
+				"translate": "item.matcha.freshwater_pufferfish"
 			},
 			"minecraft:lore": [
 				{
@@ -311,7 +311,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.gar"
+				"translate": "item.matcha.gar"
 			},
 			"minecraft:lore": [
 				{
@@ -330,7 +330,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.guppy"
+				"translate": "item.matcha.guppy"
 			},
 			"minecraft:lore": [
 				{
@@ -349,7 +349,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.gurnard"
+				"translate": "item.matcha.gurnard"
 			},
 			"minecraft:lore": [
 				{
@@ -368,7 +368,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.herring"
+				"translate": "item.matcha.herring"
 			},
 			"minecraft:lore": [
 				{
@@ -387,7 +387,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.humpback_whitefish"
+				"translate": "item.matcha.humpback_whitefish"
 			},
 			"minecraft:lore": [
 				{
@@ -406,7 +406,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.lamprey"
+				"translate": "item.matcha.lamprey"
 			},
 			"minecraft:lore": [
 				{
@@ -425,7 +425,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.mahi_mahi"
+				"translate": "item.matcha.mahi_mahi"
 			},
 			"minecraft:lore": [
 				{
@@ -444,7 +444,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.mediterranean_killifish"
+				"translate": "item.matcha.mediterranean_killifish"
 			},
 			"minecraft:lore": [
 				{
@@ -463,7 +463,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.monkfish"
+				"translate": "item.matcha.monkfish"
 			},
 			"minecraft:lore": [
 				{
@@ -482,7 +482,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.muskellunge"
+				"translate": "item.matcha.muskellunge"
 			},
 			"minecraft:lore": [
 				{
@@ -501,7 +501,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.northern_pike"
+				"translate": "item.matcha.northern_pike"
 			},
 			"minecraft:lore": [
 				{
@@ -520,7 +520,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.oarfish"
+				"translate": "item.matcha.oarfish"
 			},
 			"minecraft:lore": [
 				{
@@ -539,7 +539,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.opah"
+				"translate": "item.matcha.opah"
 			},
 			"minecraft:lore": [
 				{
@@ -558,7 +558,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.painted_moray"
+				"translate": "item.matcha.painted_moray"
 			},
 			"minecraft:lore": [
 				{
@@ -577,7 +577,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.pale_fish"
+				"translate": "item.matcha.pale_fish"
 			},
 			"minecraft:lore": [
 				{
@@ -596,7 +596,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.piranha"
+				"translate": "item.matcha.piranha"
 			},
 			"minecraft:lore": [
 				{
@@ -615,7 +615,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.rainbow_wrasse"
+				"translate": "item.matcha.rainbow_wrasse"
 			},
 			"minecraft:lore": [
 				{
@@ -634,7 +634,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shad"
+				"translate": "item.matcha.shad"
 			},
 			"minecraft:lore": [
 				{
@@ -653,7 +653,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.siberian_sturgeon"
+				"translate": "item.matcha.siberian_sturgeon"
 			},
 			"minecraft:lore": [
 				{
@@ -672,7 +672,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.skate"
+				"translate": "item.matcha.skate"
 			},
 			"minecraft:lore": [
 				{
@@ -691,7 +691,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.spoonhead_sculpin"
+				"translate": "item.matcha.spoonhead_sculpin"
 			},
 			"minecraft:lore": [
 				{
@@ -710,7 +710,7 @@
 		"carrier": "minecraft:cod",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.striped_perch"
+				"translate": "item.matcha.striped_perch"
 			},
 			"minecraft:lore": [
 				{
@@ -729,7 +729,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.sturgeon"
+				"translate": "item.matcha.sturgeon"
 			},
 			"minecraft:lore": [
 				{
@@ -748,7 +748,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.swordfish"
+				"translate": "item.matcha.swordfish"
 			},
 			"minecraft:lore": [
 				{
@@ -767,7 +767,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.tunisian_barb"
+				"translate": "item.matcha.tunisian_barb"
 			},
 			"minecraft:lore": [
 				{
@@ -786,7 +786,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.walleye"
+				"translate": "item.matcha.walleye"
 			},
 			"minecraft:lore": [
 				{
@@ -805,7 +805,7 @@
 		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.wolffish"
+				"translate": "item.matcha.wolffish"
 			},
 			"minecraft:lore": [
 				{

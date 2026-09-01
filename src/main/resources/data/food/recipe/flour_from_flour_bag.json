@@ -4,11 +4,11 @@
 	"category": "misc",
 	"ingredients": [
 		[
-			"matcha-flavoured:flour_bag"
+			"matcha:flour_bag"
 		]
 	],
 	"result": {
-		"id": "matcha-flavoured:flour",
+		"id": "matcha:flour",
 		"count": 9
 	}
 }

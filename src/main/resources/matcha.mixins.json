@@ -3,6 +3,9 @@
 	"package": "monster.east.matchaff.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
+		"DataFixTypesMixin",
+		"PlayerDataStorageMixin",
+		"SimpleRegionStorageMixin",
 		"SpawnPlacementsMixin",
 		"MobSpawnMixin",
 		"PlayerCanEatMixin",

@@ -1,8 +1,8 @@
 {
 	"replace": false,
 	"values": [
-		"matcha-flavoured:copper_compass",
-		"matcha-flavoured:golden_compass",
-		"matcha-flavoured:titanium_compass"
+		"matcha:copper_compass",
+		"matcha:golden_compass",
+		"matcha:titanium_compass"
 	]
 }

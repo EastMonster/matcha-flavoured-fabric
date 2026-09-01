@@ -3,11 +3,11 @@
 	"addition": "minecraft:phantom_membrane",
 	"base": "minecraft:copper_sword",
 	"result": {
-		"id": "matcha-flavoured:bronze_sword",
+		"id": "matcha:bronze_sword",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_sword",
+				"translate": "item.matcha.bronze_sword",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [
@@ -113,7 +113,7 @@
 				"disabled_sound": "minecraft:item.shield.break"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:riposte": 1
+				"matcha:riposte": 1
 			},
 			"minecraft:repairable": {
 				"items": [

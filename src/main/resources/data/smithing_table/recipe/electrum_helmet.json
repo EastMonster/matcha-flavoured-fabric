@@ -3,7 +3,7 @@
 	"addition": "minecraft:heart_of_the_sea",
 	"base": "minecraft:diamond_helmet",
 	"result": {
-		"id": "matcha-flavoured:electrum_helmet",
+		"id": "matcha:electrum_helmet",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
@@ -34,7 +34,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.electrum_helmet",
+				"translate": "item.matcha.electrum_helmet",
 				"color": "yellow"
 			},
 			"minecraft:attribute_modifiers": [
@@ -59,7 +59,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:warding_armour": 1
+				"matcha:warding_armour": 1
 			},
 			"minecraft:equippable": {
 				"slot": "head",

@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class WolfTamingMixin {
 	@Unique
     private static final Identifier FISH_BONES =
-			Identifier.fromNamespaceAndPath("matcha-flavoured", "fish_bones");
+			Identifier.fromNamespaceAndPath("matcha", "fish_bones");
 
 	@Redirect(
 			method = {"mobInteract", "playerHoldingInteresting"},

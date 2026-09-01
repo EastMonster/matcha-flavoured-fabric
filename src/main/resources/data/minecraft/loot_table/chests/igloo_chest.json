@@ -30,7 +30,7 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "matcha-flavoured:tallow",
+					"name": "matcha:tallow",
 					"weight": 15
 				},
 				{

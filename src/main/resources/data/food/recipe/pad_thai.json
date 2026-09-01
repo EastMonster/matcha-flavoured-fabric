@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:dough",
+		"matcha:dough",
 		[
 			"minecraft:cooked_cod",
 			"minecraft:cooked_salmon"
@@ -13,6 +13,6 @@
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:pad_thai"
+		"id": "matcha:pad_thai"
 	}
 }

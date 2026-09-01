@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"#matcha-flavoured:cod_fish",
-		"#matcha-flavoured:salmon_fish"
+		"#matcha:cod_fish",
+		"#matcha:salmon_fish"
 	]
 }

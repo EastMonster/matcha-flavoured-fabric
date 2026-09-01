@@ -8,12 +8,12 @@
 		"DDD"
 	],
 	"key": {
-		"D": "matcha-flavoured:dough",
+		"D": "matcha:dough",
 		"T": "minecraft:beetroot",
-		"C": "matcha-flavoured:cheese"
+		"C": "matcha:cheese"
 	},
 	"result": {
-		"id": "matcha-flavoured:cheese_pizza",
+		"id": "matcha:cheese_pizza",
 		"count": 4
 	}
 }

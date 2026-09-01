@@ -4,7 +4,7 @@
 	"category": "misc",
 	"key": {
 		"E": "minecraft:glowstone_dust",
-		"B": "matcha-flavoured:benzene",
+		"B": "matcha:benzene",
 		"P": "minecraft:ender_pearl"
 	},
 	"pattern": [

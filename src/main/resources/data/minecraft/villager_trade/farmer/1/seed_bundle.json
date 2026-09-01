@@ -1,6 +1,6 @@
 {
 	"gives": {
-		"id": "matcha-flavoured:seed_bundle",
+		"id": "matcha:seed_bundle",
 		"count": 1
 	},
 	"max_uses": 999,

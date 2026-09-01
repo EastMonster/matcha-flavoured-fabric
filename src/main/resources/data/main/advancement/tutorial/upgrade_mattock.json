@@ -56,7 +56,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:shakudo_dolabra"
+			"id": "matcha:shakudo_dolabra"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.upgrade_mattock.title"

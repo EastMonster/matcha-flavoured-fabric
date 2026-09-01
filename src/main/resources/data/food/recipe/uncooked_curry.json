@@ -4,7 +4,7 @@
 	"ingredients": [
 		"minecraft:glowstone_dust",
 		"minecraft:sugar",
-		"matcha-flavoured:flour",
+		"matcha:flour",
 		"minecraft:potato",
 		[
 			"minecraft:beef",
@@ -15,6 +15,6 @@
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:uncooked_curry"
+		"id": "matcha:uncooked_curry"
 	}
 }

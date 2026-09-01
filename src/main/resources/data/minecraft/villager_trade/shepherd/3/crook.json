@@ -1,6 +1,6 @@
 {
 	"gives": {
-		"id": "matcha-flavoured:crook"
+		"id": "matcha:crook"
 	},
 	"given_item_modifiers": [],
 	"max_uses": 999,

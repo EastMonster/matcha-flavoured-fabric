@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:baked_pumpkin",
+		"matcha:baked_pumpkin",
 		"minecraft:sugar",
 		"minecraft:glowstone_dust",
-		"matcha-flavoured:dough"
+		"matcha:dough"
 	],
 	"result": {
-		"id": "matcha-flavoured:pumpkin_empanada"
+		"id": "matcha:pumpkin_empanada"
 	}
 }

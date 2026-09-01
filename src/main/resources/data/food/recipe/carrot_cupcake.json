@@ -6,10 +6,10 @@
 		"minecraft:sugar",
 		"glowstone_dust",
 		"minecraft:cocoa_beans",
-		"matcha-flavoured:dough"
+		"matcha:dough"
 	],
 	"result": {
-		"id": "matcha-flavoured:carrot_cupcake",
+		"id": "matcha:carrot_cupcake",
 		"count": 1
 	}
 }

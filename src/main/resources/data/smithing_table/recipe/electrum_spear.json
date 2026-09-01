@@ -3,11 +3,11 @@
 	"addition": "minecraft:heart_of_the_sea",
 	"base": "minecraft:diamond_spear",
 	"result": {
-		"id": "matcha-flavoured:electrum_spear",
+		"id": "matcha:electrum_spear",
 		"components": {
 			"minecraft:max_damage": 3000,
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.electrum_spear",
+				"translate": "item.matcha.electrum_spear",
 				"color": "yellow"
 			},
 			"minecraft:attribute_modifiers": [
@@ -39,7 +39,7 @@
 			"minecraft:enchantments": {
 				"minecraft:smite": 2,
 				"minecraft:looting": 2,
-				"matcha-flavoured:warding2": 1
+				"matcha:warding2": 1
 			},
 			"minecraft:repairable": {
 				"items": [

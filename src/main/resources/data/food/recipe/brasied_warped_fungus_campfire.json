@@ -5,6 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:warped_fungus",
 	"result": {
-		"id": "matcha-flavoured:braised_warped_fungus"
+		"id": "matcha:braised_warped_fungus"
 	}
 }

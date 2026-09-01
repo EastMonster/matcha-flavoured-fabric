@@ -80,13 +80,13 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		FabricPotionBrewingBuilder.BUILD.register(builder -> builder.registerPotionRecipe(
 				Potions.AWKWARD,
 				Ingredient.of(Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
-						Identifier.fromNamespaceAndPath("matcha-flavoured", "freshwater_pufferfish")))),
+						Identifier.fromNamespaceAndPath("matcha", "freshwater_pufferfish")))),
 				Potions.WATER_BREATHING
 		));
 		Item compoundBow = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
-				Identifier.fromNamespaceAndPath("matcha-flavoured", "compound_bow")));
+				Identifier.fromNamespaceAndPath("matcha", "compound_bow")));
 		Item crook = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
-				Identifier.fromNamespaceAndPath("matcha-flavoured", "crook")));
+				Identifier.fromNamespaceAndPath("matcha", "crook")));
 		FuelValueEvents.BUILD.register((builder, context) -> builder
 				.add(compoundBow, context.baseSmeltTime() * 3 / 2)
 				.add(crook, context.baseSmeltTime()));
@@ -119,7 +119,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 
 	private static void book(Item.Properties properties, String name, Rarity rarity, Component lore) {
 		properties.rarity(rarity)
-				.component(DataComponents.ITEM_NAME, Component.translatable("item.matcha-flavoured." + name))
+				.component(DataComponents.ITEM_NAME, Component.translatable("item.matcha." + name))
 				.component(DataComponents.MAX_STACK_SIZE, 64)
 				.component(DataComponents.LORE, new ItemLore(List.of(
 						lore.copy().withStyle(style -> style.withColor(ChatFormatting.GRAY).withItalic(false))
@@ -154,18 +154,18 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 					default -> 0xAB85AD;
 				};
 				Item item = Objects.requireNonNull(
-						BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha-flavoured", name)),
+						BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", name)),
 						"Unknown gemstone: " + name
 				);
 				context.modify(item, (builder, registries, ignored) -> builder.set(
 						DataComponents.ITEM_NAME,
-						Component.translatable("item.matcha-flavoured." + name).withColor(TextColor.fromRgb(color))));
+						Component.translatable("item.matcha." + name).withColor(TextColor.fromRgb(color))));
 			}
 		});
 	}
 
 	private static Item register(String name, Item.Properties properties) {
-		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha-flavoured", name));
+		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha", name));
 		Item item = Registry.register(BuiltInRegistries.ITEM, key,
 				name.equals("tallow") ? new HoneycombItem(properties.setId(key)) : new Item(properties.setId(key)));
 		if (name.equals("tallow")) {

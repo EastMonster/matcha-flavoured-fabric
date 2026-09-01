@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:benzene"
+						"items": "matcha:benzene"
 					}
 				]
 			}
@@ -18,7 +18,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:benzene"
+			"id": "matcha:benzene"
 		},
 		"title": {
 			"translate": "advancements.main.hell.obtain_benzene.title"

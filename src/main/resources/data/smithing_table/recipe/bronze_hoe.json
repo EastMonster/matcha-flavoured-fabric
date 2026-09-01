@@ -3,7 +3,7 @@
 	"addition": "minecraft:phantom_membrane",
 	"base": "minecraft:copper_hoe",
 	"result": {
-		"id": "matcha-flavoured:bronze_hoe",
+		"id": "matcha:bronze_hoe",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -40,7 +40,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_hoe",
+				"translate": "item.matcha.bronze_hoe",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

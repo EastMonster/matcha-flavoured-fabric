@@ -3,7 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:bloodrage_hatchet"
+		"id": "matcha:bloodrage_hatchet"
 	},
 	"max_uses": 999,
 	"reputation_discount": 0,

@@ -5,7 +5,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:carbon_rich_iron"
+						"items": "matcha:carbon_rich_iron"
 					}
 				]
 			},

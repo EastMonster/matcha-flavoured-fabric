@@ -1,9 +1,9 @@
 {
 	"replace": false,
 	"values": [
-		"#matcha-flavoured:cod_fish",
-		"#matcha-flavoured:salmon_fish",
-		"#matcha-flavoured:pufferfish_fish",
-		"matcha-flavoured:cooked_pufferfish"
+		"#matcha:cod_fish",
+		"#matcha:salmon_fish",
+		"#matcha:pufferfish_fish",
+		"matcha:cooked_pufferfish"
 	]
 }

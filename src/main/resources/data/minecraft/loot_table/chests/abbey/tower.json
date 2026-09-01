@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:compound_bow",
+					"name": "matcha:compound_bow",
 					"functions": [
 						{
 							"function": "minecraft:set_damage",
@@ -19,9 +19,9 @@
 						{
 							"function": "minecraft:set_components",
 							"components": {
-								"minecraft:item_model": "matcha-flavoured:compound_bow",
+								"minecraft:item_model": "matcha:compound_bow",
 								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.compound_bow"
+									"translate": "item.matcha.compound_bow"
 								},
 								"minecraft:max_damage": 500,
 								"minecraft:enchantments": {
@@ -75,7 +75,7 @@
 									]
 								},
 								"minecraft:enchantments": {
-									"matcha-flavoured:anemos": 1
+									"matcha:anemos": 1
 								}
 							}
 						}

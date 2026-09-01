@@ -1,17 +1,17 @@
 {
 	"replace": false,
 	"values": [
-		"matcha-flavoured:adamant_dolabra",
-		"matcha-flavoured:bronze_dolabra",
-		"matcha-flavoured:bronze_pickaxe",
-		"matcha-flavoured:copper_dolabra",
-		"matcha-flavoured:diamond_dolabra",
-		"matcha-flavoured:electrum_dolabra",
-		"matcha-flavoured:electrum_pickaxe",
-		"matcha-flavoured:iron_dolabra",
-		"matcha-flavoured:shakudo_dolabra",
-		"matcha-flavoured:shakudo_pickaxe",
-		"matcha-flavoured:steel_dolabra",
-		"matcha-flavoured:steel_pickaxe"
+		"matcha:adamant_dolabra",
+		"matcha:bronze_dolabra",
+		"matcha:bronze_pickaxe",
+		"matcha:copper_dolabra",
+		"matcha:diamond_dolabra",
+		"matcha:electrum_dolabra",
+		"matcha:electrum_pickaxe",
+		"matcha:iron_dolabra",
+		"matcha:shakudo_dolabra",
+		"matcha:shakudo_pickaxe",
+		"matcha:steel_dolabra",
+		"matcha:steel_pickaxe"
 	]
 }

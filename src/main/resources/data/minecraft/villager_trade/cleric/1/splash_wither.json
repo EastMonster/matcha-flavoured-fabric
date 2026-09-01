@@ -4,7 +4,7 @@
 		"count": 1
 	},
 	"gives": {
-		"id": "matcha-flavoured:volatile_wither",
+		"id": "matcha:volatile_wither",
 		"count": 16
 	},
 	"max_uses": 999,

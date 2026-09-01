@@ -5,6 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:golden_apple",
 	"result": {
-		"id": "matcha-flavoured:baked_golden_apple"
+		"id": "matcha:baked_golden_apple"
 	}
 }

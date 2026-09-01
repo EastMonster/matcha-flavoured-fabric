@@ -19,7 +19,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:carp"
+			"id": "matcha:carp"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.trade_fish.title"

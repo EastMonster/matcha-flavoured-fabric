@@ -29,10 +29,10 @@
 				"pattern": "minecraft:silence"
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.gilded_leather_boots"
+				"translate": "item.matcha.gilded_leather_boots"
 			}
 		},
 		"count": 1,
-		"id": "matcha-flavoured:gilded_leather_boots"
+		"id": "matcha:gilded_leather_boots"
 	}
 }

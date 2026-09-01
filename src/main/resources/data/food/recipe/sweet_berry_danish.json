@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:sweet_berry_mash",
+		"matcha:sweet_berry_mash",
 		"minecraft:sugar",
-		"matcha-flavoured:cheese",
-		"matcha-flavoured:dough"
+		"matcha:cheese",
+		"matcha:dough"
 	],
 	"result": {
-		"id": "matcha-flavoured:sweet_berry_danish"
+		"id": "matcha:sweet_berry_danish"
 	}
 }

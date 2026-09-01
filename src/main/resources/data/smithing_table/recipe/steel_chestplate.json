@@ -3,7 +3,7 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_chestplate",
 	"result": {
-		"id": "matcha-flavoured:steel_chestplate",
+		"id": "matcha:steel_chestplate",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
@@ -24,7 +24,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_chestplate",
+				"translate": "item.matcha.steel_chestplate",
 				"color": "white"
 			},
 			"minecraft:attribute_modifiers": [

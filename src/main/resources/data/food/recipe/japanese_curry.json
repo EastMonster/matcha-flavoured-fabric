@@ -3,8 +3,8 @@
 	"category": "food",
 	"cookingtime": 300,
 	"experience": 0.35,
-	"ingredient": "matcha-flavoured:uncooked_curry",
+	"ingredient": "matcha:uncooked_curry",
 	"result": {
-		"id": "matcha-flavoured:japanese_curry"
+		"id": "matcha:japanese_curry"
 	}
 }

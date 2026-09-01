@@ -1,0 +1,57 @@
+{
+	"anvil_cost": 0,
+	"description": {
+		"translate": "enchantment.kleispack.warding2",
+		"color": "yellow"
+	},
+	"max_cost": {
+		"base": 15,
+		"per_level_above_first": 0
+	},
+	"max_level": 1,
+	"min_cost": {
+		"base": 1,
+		"per_level_above_first": 0
+	},
+	"slots": [
+		"mainhand",
+		"offhand"
+	],
+	"supported_items": [
+		"minecraft:wooden_sword",
+		"minecraft:stone_sword",
+		"minecraft:iron_sword",
+		"minecraft:diamond_sword",
+		"minecraft:netherite_sword",
+		"minecraft:popped_chorus_fruit",
+		"minecraft:shield",
+		"minecraft:wooden_axe",
+		"minecraft:stone_axe",
+		"minecraft:iron_axe",
+		"minecraft:diamond_axe",
+		"minecraft:netherite_axe",
+		"matcha:adamant_claymore",
+		"matcha:adamant_dolabra",
+		"matcha:bloodrage_hatchet",
+		"matcha:bronze_axe",
+		"matcha:bronze_dolabra",
+		"matcha:bronze_sword",
+		"matcha:butcher_knife",
+		"matcha:diamond_dolabra",
+		"matcha:electrum_axe",
+		"matcha:electrum_dolabra",
+		"matcha:electrum_sword",
+		"matcha:iron_dolabra",
+		"matcha:palatinate_sword",
+		"matcha:rusty_axe",
+		"matcha:shakudo_axe",
+		"matcha:shakudo_dolabra",
+		"matcha:silver_sword",
+		"matcha:steel_axe",
+		"matcha:steel_dolabra",
+		"matcha:steel_sword",
+		"matcha:warding_shield",
+		"matcha:warding_sword"
+	],
+	"weight": 1
+}

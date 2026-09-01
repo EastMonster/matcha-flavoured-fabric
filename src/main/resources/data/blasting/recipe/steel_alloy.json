@@ -3,7 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 0.7,
-  "ingredient": "matcha-flavoured:carbon_rich_iron",
+  "ingredient": "matcha:carbon_rich_iron",
   "result": {
     "id": "minecraft:resin_brick"
   }

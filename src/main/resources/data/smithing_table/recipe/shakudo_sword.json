@@ -3,11 +3,11 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_sword",
 	"result": {
-		"id": "matcha-flavoured:palatinate_sword",
+		"id": "matcha:palatinate_sword",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.palatinate_sword",
+				"translate": "item.matcha.palatinate_sword",
 				"color": "#c96691"
 			},
 			"minecraft:attribute_modifiers": [
@@ -28,7 +28,7 @@
 			],
 			"minecraft:enchantments": {
 				"minecraft:sweeping_edge": 1,
-				"matcha-flavoured:sanguine": 1
+				"matcha:sanguine": 1
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:lore": [

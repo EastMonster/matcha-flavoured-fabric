@@ -5,9 +5,9 @@
 		"minecraft:golden_apple",
 		"minecraft:sugar",
 		"minecraft:glowstone_dust",
-		"matcha-flavoured:dough"
+		"matcha:dough"
 	],
 	"result": {
-		"id": "matcha-flavoured:golden_apple_empanada"
+		"id": "matcha:golden_apple_empanada"
 	}
 }

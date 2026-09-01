@@ -91,7 +91,7 @@ public final class SimpleItemRegistrar {
 		for (Map.Entry<String, JsonElement> entry : definition.components.entrySet()) {
 			ItemComponents.apply(properties, entry.getKey(), entry.getValue());
 		}
-		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha-flavoured", definition.id));
+		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha", definition.id));
 		Item item = Registry.register(BuiltInRegistries.ITEM, key, createItem(definition, properties.setId(key)));
 		if (item instanceof ArrowItem || item instanceof SplashPotionItem) {
 			DispenserBlock.registerProjectileBehavior(item);

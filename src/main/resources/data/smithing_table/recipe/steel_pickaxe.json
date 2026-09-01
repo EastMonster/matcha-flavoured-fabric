@@ -3,10 +3,10 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_pickaxe",
 	"result": {
-		"id": "matcha-flavoured:steel_pickaxe",
+		"id": "matcha:steel_pickaxe",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_pickaxe"
+				"translate": "item.matcha.steel_pickaxe"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {

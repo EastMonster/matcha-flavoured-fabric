@@ -3,7 +3,7 @@
 		"eat_glow_crumble": {
 			"conditions": {
 				"item": {
-					"items": "matcha-flavoured:glow_berry_crumble"
+					"items": "matcha:glow_berry_crumble"
 				}
 			},
 			"trigger": "minecraft:consume_item"

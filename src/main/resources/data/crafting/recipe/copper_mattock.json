@@ -13,7 +13,7 @@
 	"result": {
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.copper_mattock"
+				"translate": "item.matcha.copper_mattock"
 			},
 			"minecraft:tool": {
 				"rules": [
@@ -56,6 +56,6 @@
 			"minecraft:max_damage": 350
 		},
 		"count": 1,
-		"id": "matcha-flavoured:copper_mattock"
+		"id": "matcha:copper_mattock"
 	}
 }

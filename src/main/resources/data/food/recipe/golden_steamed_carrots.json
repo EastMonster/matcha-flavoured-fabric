@@ -5,6 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:golden_carrot",
 	"result": {
-		"id": "matcha-flavoured:golden_steamed_carrots"
+		"id": "matcha:golden_steamed_carrots"
 	}
 }

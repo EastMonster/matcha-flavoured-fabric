@@ -3,7 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:sweet_berry_toast_recipe"
+		"id": "matcha:sweet_berry_toast_recipe"
 	},
 	"max_uses": 999,
 	"reputation_discount": 0,

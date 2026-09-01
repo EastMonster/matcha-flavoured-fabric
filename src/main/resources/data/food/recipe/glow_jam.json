@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:glow_mash",
+		"matcha:glow_mash",
 		"minecraft:sugar",
 		"minecraft:glass_bottle"
 	],
 	"result": {
-		"id": "matcha-flavoured:glow_jam",
+		"id": "matcha:glow_jam",
 		"count": 1
 	}
 }

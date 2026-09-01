@@ -3,8 +3,8 @@
 	"category": "food",
 	"cookingtime": 100,
 	"experience": 0.35,
-	"ingredient": "#matcha-flavoured:pufferfish_fish",
+	"ingredient": "#matcha:pufferfish_fish",
 	"result": {
-		"id": "matcha-flavoured:cooked_pufferfish"
+		"id": "matcha:cooked_pufferfish"
 	}
 }

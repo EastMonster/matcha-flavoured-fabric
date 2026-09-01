@@ -6,11 +6,11 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:cheerful_clay_statue"
+					"name": "matcha:cheerful_clay_statue"
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:mournful_clay_statue"
+					"name": "matcha:mournful_clay_statue"
 				}
 			],
 			"rolls": 1

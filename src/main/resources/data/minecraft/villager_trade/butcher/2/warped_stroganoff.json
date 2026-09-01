@@ -3,7 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:warped_stroganoff",
+		"id": "matcha:warped_stroganoff",
 		"components": {
 			"minecraft:consumable": {
 				"consume_seconds": 1.8,

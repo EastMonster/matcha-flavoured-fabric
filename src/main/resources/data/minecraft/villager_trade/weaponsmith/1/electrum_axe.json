@@ -1,6 +1,6 @@
 {
   "wants": {
-    "id": "matcha-flavoured:electrum_axe",
+    "id": "matcha:electrum_axe",
     "count": 1
   },
   "gives": {

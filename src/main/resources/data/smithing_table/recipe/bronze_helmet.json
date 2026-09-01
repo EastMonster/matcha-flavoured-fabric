@@ -3,7 +3,7 @@
 	"addition": "minecraft:phantom_membrane",
 	"base": "minecraft:copper_helmet",
 	"result": {
-		"id": "matcha-flavoured:bronze_helmet",
+		"id": "matcha:bronze_helmet",
 		"components": {
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
@@ -19,7 +19,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_helmet",
+				"translate": "item.matcha.bronze_helmet",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

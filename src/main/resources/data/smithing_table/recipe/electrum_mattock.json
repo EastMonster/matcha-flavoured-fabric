@@ -3,7 +3,7 @@
 	"addition": "minecraft:heart_of_the_sea",
 	"base": "minecraft:diamond_hoe",
 	"result": {
-		"id": "matcha-flavoured:electrum_mattock",
+		"id": "matcha:electrum_mattock",
 		"components": {
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {
@@ -40,7 +40,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.electrum_mattock",
+				"translate": "item.matcha.electrum_mattock",
 				"color": "yellow"
 			},
 			"minecraft:attribute_modifiers": [
@@ -66,7 +66,7 @@
 			},
 			"minecraft:enchantments": {
 				"minecraft:fortune": 2,
-				"matcha-flavoured:warding1": 1
+				"matcha:warding1": 1
 			},
 			"minecraft:repairable": {
 				"items": [

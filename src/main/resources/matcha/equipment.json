@@ -28,7 +28,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.amber_earrings",
+				"translate": "item.matcha.amber_earrings",
 				"color": "#e58904"
 			},
 			"minecraft:attribute_modifiers": [
@@ -50,7 +50,7 @@
 				"asset_id": "minecraft:amber_earrings"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:regeneration": 1
+				"matcha:regeneration": 1
 			},
 			"minecraft:unbreakable": {}
 		}
@@ -87,7 +87,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bloodrage_hatchet",
+				"translate": "item.matcha.bloodrage_hatchet",
 				"color": "white"
 			},
 			"minecraft:tooltip_display": {
@@ -113,7 +113,7 @@
 				}
 			],
 			"minecraft:enchantments": {
-				"matcha-flavoured:bloodrage": 1
+				"matcha:bloodrage": 1
 			},
 			"minecraft:enchantment_glint_override": false
 		}
@@ -167,7 +167,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_laurel",
+				"translate": "item.matcha.bronze_laurel",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [
@@ -249,7 +249,7 @@
 		"carrier": "minecraft:wooden_sword",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.crook"
+				"translate": "item.matcha.crook"
 			},
 			"minecraft:max_damage": 300,
 			"minecraft:repairable": {
@@ -428,7 +428,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.opal_earrings",
+				"translate": "item.matcha.opal_earrings",
 				"color": "#ab85ad"
 			},
 			"minecraft:attribute_modifiers": [
@@ -450,7 +450,7 @@
 				"asset_id": "minecraft:opal_earrings"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:conduit_power": 1
+				"matcha:conduit_power": 1
 			},
 			"minecraft:unbreakable": {}
 		}
@@ -474,7 +474,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.ruby_circlet",
+				"translate": "item.matcha.ruby_circlet",
 				"color": "#e63d5f"
 			},
 			"minecraft:attribute_modifiers": [
@@ -496,7 +496,7 @@
 				"asset_id": "minecraft:ruby_circlet"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:fire_proof": 1
+				"matcha:fire_proof": 1
 			},
 			"minecraft:unbreakable": {}
 		}
@@ -508,7 +508,7 @@
 		"components": {
 			"minecraft:damage": 140,
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.rusty_axe"
+				"translate": "item.matcha.rusty_axe"
 			},
 			"minecraft:lore": [
 				{
@@ -693,7 +693,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.topaz_earrings",
+				"translate": "item.matcha.topaz_earrings",
 				"color": "yellow"
 			},
 			"minecraft:attribute_modifiers": [
@@ -715,7 +715,7 @@
 				"asset_id": "minecraft:topaz_earrings"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:haste": 1
+				"matcha:haste": 1
 			},
 			"minecraft:unbreakable": {}
 		}

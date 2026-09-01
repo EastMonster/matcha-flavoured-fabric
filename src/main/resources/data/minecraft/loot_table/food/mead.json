@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:mead",
+					"name": "matcha:mead",
 					"functions": [
 						{
 							"function": "minecraft:set_count",

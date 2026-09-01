@@ -5,6 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:brown_mushroom",
 	"result": {
-		"id": "matcha-flavoured:braised_brown_mushroom"
+		"id": "matcha:braised_brown_mushroom"
 	}
 }

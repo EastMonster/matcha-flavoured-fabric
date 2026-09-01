@@ -4,10 +4,10 @@
 		"count": 14
 	},
 	"additional_wants": {
-		"id": "matcha-flavoured:topaz"
+		"id": "matcha:topaz"
 	},
 	"gives": {
-		"id": "matcha-flavoured:topaz_earrings",
+		"id": "matcha:topaz_earrings",
 		"count": 1
 	},
 	"max_uses": 999,

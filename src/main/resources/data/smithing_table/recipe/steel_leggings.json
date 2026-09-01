@@ -3,7 +3,7 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_leggings",
 	"result": {
-		"id": "matcha-flavoured:steel_leggings",
+		"id": "matcha:steel_leggings",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
@@ -24,7 +24,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_leggings",
+				"translate": "item.matcha.steel_leggings",
 				"color": "white"
 			},
 			"minecraft:attribute_modifiers": [

@@ -2,14 +2,14 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:braised_brown_mushroom",
+		"matcha:braised_brown_mushroom",
 		"minecraft:cooked_beef",
-		"matcha-flavoured:dough",
-		"matcha-flavoured:milk_bottle",
+		"matcha:dough",
+		"matcha:milk_bottle",
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:stroganoff",
+		"id": "matcha:stroganoff",
 		"count": 1
 	}
 }

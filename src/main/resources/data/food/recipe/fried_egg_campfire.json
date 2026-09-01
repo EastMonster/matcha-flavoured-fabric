@@ -5,6 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "#minecraft:eggs",
 	"result": {
-		"id": "matcha-flavoured:fried_egg"
+		"id": "matcha:fried_egg"
 	}
 }

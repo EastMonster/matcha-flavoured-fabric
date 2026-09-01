@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:amber"
+						"items": "matcha:amber"
 					}
 				]
 			}
@@ -18,7 +18,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:amber"
+			"id": "matcha:amber"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_amber.title"

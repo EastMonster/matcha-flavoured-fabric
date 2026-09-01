@@ -7,7 +7,7 @@
 					{
 						"condition": "minecraft:match_tool",
 						"predicate": {
-							"items": "matcha-flavoured:bedrock_buster"
+							"items": "matcha:bedrock_buster"
 						}
 					}
 				]

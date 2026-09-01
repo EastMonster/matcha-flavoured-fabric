@@ -3,7 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:chorus_mochi",
+		"id": "matcha:chorus_mochi",
 		"components": {
 			"minecraft:consumable": {
 				"consume_seconds": 0.8,

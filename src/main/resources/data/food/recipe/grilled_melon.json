@@ -5,6 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:melon_slice",
 	"result": {
-		"id": "matcha-flavoured:grilled_melon"
+		"id": "matcha:grilled_melon"
 	}
 }

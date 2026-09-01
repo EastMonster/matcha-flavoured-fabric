@@ -3,7 +3,7 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_axe",
 	"result": {
-		"id": "matcha-flavoured:shakudo_axe",
+		"id": "matcha:shakudo_axe",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -18,7 +18,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_axe",
+				"translate": "item.matcha.shakudo_axe",
 				"color": "#c96691"
 			},
 			"minecraft:enchantments": {

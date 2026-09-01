@@ -8,7 +8,7 @@
 		"DDD"
 	],
 	"key": {
-		"D": "matcha-flavoured:dough",
+		"D": "matcha:dough",
 		"T": "minecraft:beetroot",
 		"M": [
 			"minecraft:cooked_rabbit",
@@ -17,10 +17,10 @@
 			"minecraft:cooked_porkchop",
 			"minecraft:cooked_mutton"
 		],
-		"C": "matcha-flavoured:cheese"
+		"C": "matcha:cheese"
 	},
 	"result": {
-		"id": "matcha-flavoured:meat_pizza",
+		"id": "matcha:meat_pizza",
 		"count": 4
 	}
 }

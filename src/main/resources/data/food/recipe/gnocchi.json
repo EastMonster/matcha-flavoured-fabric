@@ -3,13 +3,13 @@
 	"category": "misc",
 	"ingredients": [
 		"minecraft:baked_potato",
-		"matcha-flavoured:cheese",
+		"matcha:cheese",
 		"#minecraft:eggs",
-		"matcha-flavoured:flour",
+		"matcha:flour",
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:gnocchi",
+		"id": "matcha:gnocchi",
 		"count": 1
 	}
 }

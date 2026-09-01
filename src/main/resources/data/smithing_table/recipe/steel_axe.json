@@ -3,10 +3,10 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_axe",
 	"result": {
-		"id": "matcha-flavoured:steel_axe",
+		"id": "matcha:steel_axe",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_axe"
+				"translate": "item.matcha.steel_axe"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {

@@ -3,10 +3,10 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_sword",
 	"result": {
-		"id": "matcha-flavoured:steel_sword",
+		"id": "matcha:steel_sword",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_sword"
+				"translate": "item.matcha.steel_sword"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:attribute_modifiers": [

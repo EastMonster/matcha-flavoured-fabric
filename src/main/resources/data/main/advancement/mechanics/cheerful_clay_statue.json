@@ -5,7 +5,7 @@
 			"trigger": "minecraft:using_item",
 			"conditions": {
 				"item": {
-					"items": "matcha-flavoured:cheerful_clay_statue"
+					"items": "matcha:cheerful_clay_statue"
 				}
 			}
 		}

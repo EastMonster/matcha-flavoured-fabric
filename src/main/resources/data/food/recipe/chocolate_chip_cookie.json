@@ -1,11 +1,11 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
-		"matcha-flavoured:chocolate",
+		"matcha:chocolate",
 		"minecraft:sugar",
-		"matcha-flavoured:dough"
+		"matcha:dough"
 	],
 	"result": {
-		"id": "matcha-flavoured:chocolate_chip_cookie"
+		"id": "matcha:chocolate_chip_cookie"
 	}
 }

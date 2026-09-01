@@ -17,8 +17,8 @@ import java.util.Set;
 public abstract class PowderSnowBootsMixin {
 	@Unique
 	private static final Set<Identifier> MATCHA_LEATHER_BOOTS = Set.of(
-			Identifier.fromNamespaceAndPath("matcha-flavoured", "sturdy_leather_boots"),
-			Identifier.fromNamespaceAndPath("matcha-flavoured", "gilded_leather_boots")
+			Identifier.fromNamespaceAndPath("matcha", "sturdy_leather_boots"),
+			Identifier.fromNamespaceAndPath("matcha", "gilded_leather_boots")
 	);
 
 	@Redirect(

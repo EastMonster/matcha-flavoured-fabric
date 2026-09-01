@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"matcha-flavoured:music_disc_golden",
-		"matcha-flavoured:music_disc_labyrinthine"
+		"matcha:music_disc_golden",
+		"matcha:music_disc_labyrinthine"
 	]
 }

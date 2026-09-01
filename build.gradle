@@ -55,6 +55,10 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 25
 }
 
+tasks.named('test') {
+	failOnNoDiscoveredTests = false
+}
+
 java {
 	toolchain.languageVersion = JavaLanguageVersion.of(25)
 

@@ -68,7 +68,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:fox_pelt",
+					"name": "matcha:fox_pelt",
 					"functions": [
 						{
 							"function": "minecraft:set_name",

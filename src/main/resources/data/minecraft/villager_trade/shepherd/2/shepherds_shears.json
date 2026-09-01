@@ -1,6 +1,6 @@
 {
 	"gives": {
-		"id": "matcha-flavoured:bronze_shears"
+		"id": "matcha:bronze_shears"
 	},
 	"given_item_modifiers": [],
 	"max_uses": 999,

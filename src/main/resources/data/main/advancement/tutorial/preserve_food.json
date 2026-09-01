@@ -98,7 +98,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:sweet_berry_jam"
+			"id": "matcha:sweet_berry_jam"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.preserve_food.title"

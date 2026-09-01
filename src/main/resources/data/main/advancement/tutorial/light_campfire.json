@@ -18,7 +18,7 @@
 						"predicate": {
 							"items": [
 								"minecraft:flint_and_steel",
-								"matcha-flavoured:tinder"
+								"matcha:tinder"
 							]
 						}
 					}

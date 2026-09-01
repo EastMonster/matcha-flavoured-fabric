@@ -48,18 +48,18 @@
 			"minecraft:enchantments": {
 				"minecraft:projectile_protection": 2,
 				"minecraft:feather_falling": 3,
-				"matcha-flavoured:traversal": 1
+				"matcha:traversal": 1
 			},
 			"minecraft:equippable": {
 				"slot": "feet",
 				"asset_id": "minecraft:sturdy_leather"
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.sturdy_leather_boots",
+				"translate": "item.matcha.sturdy_leather_boots",
 				"color": "white"
 			}
 		},
 		"count": 1,
-		"id": "matcha-flavoured:sturdy_leather_boots"
+		"id": "matcha:sturdy_leather_boots"
 	}
 }

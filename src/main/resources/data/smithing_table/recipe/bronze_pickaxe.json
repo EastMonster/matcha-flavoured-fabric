@@ -3,7 +3,7 @@
 	"addition": "minecraft:phantom_membrane",
 	"base": "minecraft:copper_pickaxe",
 	"result": {
-		"id": "matcha-flavoured:bronze_pickaxe",
+		"id": "matcha:bronze_pickaxe",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -40,7 +40,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_pickaxe",
+				"translate": "item.matcha.bronze_pickaxe",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

@@ -3,7 +3,7 @@
 	"category": "misc",
 	"ingredients": [
 		"minecraft:bowl",
-		"matcha-flavoured:glow_mash",
+		"matcha:glow_mash",
 		[
 			"minecraft:egg",
 			"minecraft:blue_egg",
@@ -35,6 +35,6 @@
 			"minecraft:lore": []
 		},
 		"count": 1,
-		"id": "matcha-flavoured:ramen"
+		"id": "matcha:ramen"
 	}
 }

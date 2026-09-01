@@ -1,6 +1,6 @@
 {
 	"wants": {
-		"id": "matcha-flavoured:opal"
+		"id": "matcha:opal"
 	},
 	"gives": {
 		"id": "minecraft:emerald",

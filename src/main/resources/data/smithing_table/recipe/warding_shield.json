@@ -3,7 +3,7 @@
 	"addition": "minecraft:glistering_melon_slice",
 	"base": "minecraft:shield",
 	"result": {
-		"id": "matcha-flavoured:warding_shield",
+		"id": "matcha:warding_shield",
 		"components": {
 			"minecraft:banner_patterns": [
 				{
@@ -37,10 +37,10 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:warding1": 1
+				"matcha:warding1": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.warding_shield"
+				"translate": "item.matcha.warding_shield"
 			}
 		}
 	},

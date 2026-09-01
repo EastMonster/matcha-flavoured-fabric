@@ -4,6 +4,6 @@
 	"base": "minecraft:elytra",
 	"template": "minecraft:honeycomb",
 	"result": {
-		"id": "matcha-flavoured:shakudo_elytra"
+		"id": "matcha:shakudo_elytra"
 	}
 }

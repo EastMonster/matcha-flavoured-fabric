@@ -7,7 +7,7 @@
 	"max_uses": 999,
 	"wants": {
 		"count": 8,
-		"id": "matcha-flavoured:spoonhead_sculpin"
+		"id": "matcha:spoonhead_sculpin"
 	},
 	"reputation_discount": 0,
 	"xp": 24

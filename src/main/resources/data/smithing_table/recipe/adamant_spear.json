@@ -46,7 +46,7 @@
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:enchantments": {
-				"matcha-flavoured:divinity": 1,
+				"matcha:divinity": 1,
 				"minecraft:unbreaking": 2
 			}
 		}

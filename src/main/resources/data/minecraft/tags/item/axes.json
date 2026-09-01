@@ -1,19 +1,19 @@
 {
 	"replace": false,
 	"values": [
-		"matcha-flavoured:adamant_dolabra",
-		"matcha-flavoured:bloodrage_hatchet",
-		"matcha-flavoured:bronze_axe",
-		"matcha-flavoured:bronze_dolabra",
-		"matcha-flavoured:copper_dolabra",
-		"matcha-flavoured:diamond_dolabra",
-		"matcha-flavoured:electrum_axe",
-		"matcha-flavoured:electrum_dolabra",
-		"matcha-flavoured:iron_dolabra",
-		"matcha-flavoured:rusty_axe",
-		"matcha-flavoured:shakudo_axe",
-		"matcha-flavoured:shakudo_dolabra",
-		"matcha-flavoured:steel_axe",
-		"matcha-flavoured:steel_dolabra"
+		"matcha:adamant_dolabra",
+		"matcha:bloodrage_hatchet",
+		"matcha:bronze_axe",
+		"matcha:bronze_dolabra",
+		"matcha:copper_dolabra",
+		"matcha:diamond_dolabra",
+		"matcha:electrum_axe",
+		"matcha:electrum_dolabra",
+		"matcha:iron_dolabra",
+		"matcha:rusty_axe",
+		"matcha:shakudo_axe",
+		"matcha:shakudo_dolabra",
+		"matcha:steel_axe",
+		"matcha:steel_dolabra"
 	]
 }

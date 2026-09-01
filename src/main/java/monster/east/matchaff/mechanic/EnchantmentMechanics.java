@@ -458,6 +458,6 @@ public final class EnchantmentMechanics {
 	}
 
 	private static Identifier id(String name) {
-		return Identifier.fromNamespaceAndPath("matcha-flavoured", name);
+		return Identifier.fromNamespaceAndPath("matcha", name);
 	}
 }

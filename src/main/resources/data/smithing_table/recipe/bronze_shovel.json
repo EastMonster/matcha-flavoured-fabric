@@ -3,7 +3,7 @@
 	"addition": "minecraft:phantom_membrane",
 	"base": "minecraft:copper_shovel",
 	"result": {
-		"id": "matcha-flavoured:bronze_shovel",
+		"id": "matcha:bronze_shovel",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -40,7 +40,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_shovel",
+				"translate": "item.matcha.bronze_shovel",
 				"color": "#ac7b5c"
 			},
 			"minecraft:tooltip_display": {

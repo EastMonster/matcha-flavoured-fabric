@@ -16,7 +16,7 @@
 	},
 	"display": {
 		"description": { "translate": "advancements.main.tutorial.trade_everything.description" },
-		"icon": { "count": 1, "id": "matcha-flavoured:heart_container" },
+		"icon": { "count": 1, "id": "matcha:crystal_heart" },
 		"title": { "translate": "advancements.main.tutorial.trade_everything.title" },
 		"hidden": false,
 		"frame": "challenge"

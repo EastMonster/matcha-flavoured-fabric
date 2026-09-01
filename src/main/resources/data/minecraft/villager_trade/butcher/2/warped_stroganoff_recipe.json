@@ -3,7 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:warped_stroganoff_recipe"
+		"id": "matcha:warped_stroganoff_recipe"
 	},
 	"max_uses": 999,
 	"reputation_discount": 0,

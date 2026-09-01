@@ -5,6 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:potato",
 	"result": {
-		"id": "matcha-flavoured:charred_potato"
+		"id": "matcha:charred_potato"
 	}
 }

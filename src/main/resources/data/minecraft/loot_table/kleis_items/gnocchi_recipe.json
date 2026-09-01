@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:gnocchi_recipe",
+					"name": "matcha:gnocchi_recipe",
 					"weight": 1,
 					"conditions": []
 				}

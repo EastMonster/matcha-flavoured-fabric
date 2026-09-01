@@ -21,7 +21,7 @@
 		"components": {
 			"minecraft:unbreakable": {},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.archaeologists_brush"
+				"translate": "item.matcha.archaeologists_brush"
 			}
 		}
 	},
@@ -46,7 +46,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_elytra",
+				"translate": "item.matcha.bronze_elytra",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [
@@ -110,7 +110,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_elytra",
+				"translate": "item.matcha.shakudo_elytra",
 				"color": "#c96691"
 			},
 			"minecraft:attribute_modifiers": [
@@ -128,9 +128,9 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:max_magic_protection": 1,
-				"matcha-flavoured:cleanse_armor_maleffect": 1,
-				"matcha-flavoured:shakudo_regen": 1
+				"matcha:max_magic_protection": 1,
+				"matcha:cleanse_armor_maleffect": 1,
+				"matcha:shakudo_regen": 1
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -154,7 +154,7 @@
 		"carrier": "minecraft:shears",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_shears"
+				"translate": "item.matcha.bronze_shears"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:repairable": {
@@ -177,7 +177,7 @@
 		"carrier": "minecraft:paper",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.chorus_mochi_recipe"
+				"translate": "item.matcha.chorus_mochi_recipe"
 			},
 			"minecraft:lore": [
 				{
@@ -208,7 +208,7 @@
 				]
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.compound_bow",
+				"translate": "item.matcha.compound_bow",
 				"color": "white"
 			},
 			"minecraft:max_damage": 600
@@ -222,7 +222,7 @@
 		"carrier": "minecraft:compass",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.copper_compass"
+				"translate": "item.matcha.copper_compass"
 			}
 		}
 	},
@@ -235,7 +235,7 @@
 		"components": {
 			"minecraft:max_damage": 300,
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.copper_shears"
+				"translate": "item.matcha.copper_shears"
 			},
 			"minecraft:repairable": {
 				"items": "minecraft:copper_ingot"
@@ -250,7 +250,7 @@
 		"carrier": "minecraft:bundle",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.exotic_seed_bundle"
+				"translate": "item.matcha.exotic_seed_bundle"
 			},
 			"minecraft:bundle_contents": [
 				{
@@ -280,7 +280,7 @@
 		"carrier": "minecraft:bundle",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.floral_bundle"
+				"translate": "item.matcha.floral_bundle"
 			},
 			"minecraft:bundle_contents": [
 				{
@@ -390,11 +390,11 @@
 		"carrier": "minecraft:paper",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.gnocchi_recipe"
+				"translate": "item.matcha.gnocchi_recipe"
 			},
 			"minecraft:lore": [
 				{
-					"translate": "item.matcha-flavoured.gnocchi",
+					"translate": "item.matcha.gnocchi",
 					"color": "#e1bc62",
 					"italic": false
 				}
@@ -409,7 +409,7 @@
 		"carrier": "minecraft:compass",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.golden_compass"
+				"translate": "item.matcha.golden_compass"
 			}
 		}
 	},
@@ -421,7 +421,7 @@
 		"carrier": "minecraft:bundle",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.mushy_bundle"
+				"translate": "item.matcha.mushy_bundle"
 			},
 			"minecraft:bundle_contents": [
 				{
@@ -486,7 +486,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.pickled_crimson_fungus",
+				"translate": "item.matcha.pickled_crimson_fungus",
 				"color": "#c54457",
 				"italic": false
 			}
@@ -526,7 +526,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.pickled_red_mushrooms",
+				"translate": "item.matcha.pickled_red_mushrooms",
 				"italic": false
 			}
 		}
@@ -539,7 +539,7 @@
 		"carrier": "minecraft:bundle",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.seed_bundle"
+				"translate": "item.matcha.seed_bundle"
 			},
 			"minecraft:bundle_contents": [
 				{
@@ -569,7 +569,7 @@
 		"carrier": "minecraft:shears",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_shears"
+				"translate": "item.matcha.steel_shears"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:repairable": {
@@ -587,7 +587,7 @@
 		"carrier": "minecraft:paper",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.sweet_berry_toast_recipe"
+				"translate": "item.matcha.sweet_berry_toast_recipe"
 			},
 			"minecraft:lore": [
 				{
@@ -607,7 +607,7 @@
 		"components": {
 			"minecraft:max_damage": 1,
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.tinder"
+				"translate": "item.matcha.tinder"
 			}
 		}
 	},
@@ -619,7 +619,7 @@
 		"carrier": "minecraft:compass",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.titanium_compass"
+				"translate": "item.matcha.titanium_compass"
 			}
 		}
 	},
@@ -631,7 +631,7 @@
 		"carrier": "minecraft:paper",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.warped_stroganoff_recipe"
+				"translate": "item.matcha.warped_stroganoff_recipe"
 			},
 			"minecraft:lore": [
 				{
@@ -650,11 +650,11 @@
 		"carrier": "minecraft:poisonous_potato",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.wooden_cross",
+				"translate": "item.matcha.wooden_cross",
 				"color": "white"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:warding0": 1
+				"matcha:warding0": 1
 			},
 			"minecraft:enchantment_glint_override": false
 		}
@@ -766,7 +766,7 @@
 				"has_consume_particles": false
 			},
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.estus_flask",
+				"translate": "item.matcha.estus_flask",
 				"color": "gold",
 				"italic": false
 			},
@@ -811,7 +811,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_infested",
+				"translate": "item.matcha.volatile_infested",
 				"italic": false
 			}
 		}
@@ -849,7 +849,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_invisibility",
+				"translate": "item.matcha.volatile_invisibility",
 				"italic": false
 			}
 		}
@@ -887,7 +887,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_oozing",
+				"translate": "item.matcha.volatile_oozing",
 				"italic": false
 			}
 		}
@@ -938,7 +938,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_pitch",
+				"translate": "item.matcha.volatile_pitch",
 				"italic": false
 			}
 		}
@@ -976,7 +976,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_poison",
+				"translate": "item.matcha.volatile_poison",
 				"italic": false
 			}
 		}
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_slowness",
+				"translate": "item.matcha.volatile_slowness",
 				"italic": false
 			}
 		}
@@ -1053,7 +1053,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_weakness",
+				"translate": "item.matcha.volatile_weakness",
 				"italic": false
 			}
 		}
@@ -1091,7 +1091,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_weaving",
+				"translate": "item.matcha.volatile_weaving",
 				"italic": false
 			}
 		}
@@ -1129,7 +1129,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_wind_charged",
+				"translate": "item.matcha.volatile_wind_charged",
 				"italic": false
 			}
 		}
@@ -1167,7 +1167,7 @@
 				}
 			],
 			"minecraft:custom_name": {
-				"translate": "item.matcha-flavoured.volatile_wither",
+				"translate": "item.matcha.volatile_wither",
 				"italic": false
 			}
 		}
@@ -1205,7 +1205,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.lava_kit"
+				"translate": "item.matcha.lava_kit"
 			}
 		}
 	},
@@ -1224,7 +1224,7 @@
 				]
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.iou"
+				"translate": "item.matcha.iou"
 			}
 		}
 	}

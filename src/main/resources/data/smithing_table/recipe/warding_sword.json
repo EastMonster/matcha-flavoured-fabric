@@ -3,7 +3,7 @@
 	"addition": "minecraft:glistering_melon_slice",
 	"base": "minecraft:iron_sword",
 	"result": {
-		"id": "matcha-flavoured:warding_sword",
+		"id": "matcha:warding_sword",
 		"components": {
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
@@ -19,7 +19,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.warding_sword"
+				"translate": "item.matcha.warding_sword"
 			},
 			"minecraft:attribute_modifiers": [
 				{
@@ -43,7 +43,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:warding0": 1
+				"matcha:warding0": 1
 			},
 			"minecraft:enchantment_glint_override": true
 		}

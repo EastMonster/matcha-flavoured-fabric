@@ -15,7 +15,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:fish_bones",
+					"name": "matcha:fish_bones",
 					"weight": 10
 				},
 				{
@@ -147,7 +147,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:axolotl",
+					"name": "matcha:axolotl",
 					"weight": 10,
 					"conditions": [
 						{
