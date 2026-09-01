@@ -1,6 +1,6 @@
 {
 	"gives": {
-		"id": "matcha:heart_container",
+		"id": "matcha:crystal_heart",
 		"count": 1
 	},
 	"given_item_modifiers": [],

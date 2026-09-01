@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha:heart_container"
+						"items": "matcha:crystal_heart"
 					}
 				]
 			}
@@ -18,7 +18,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha:heart_container"
+			"id": "matcha:crystal_heart"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_heart.title"

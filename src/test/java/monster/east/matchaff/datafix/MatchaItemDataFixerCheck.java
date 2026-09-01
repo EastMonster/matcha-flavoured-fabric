@@ -18,6 +18,12 @@ public final class MatchaItemDataFixerCheck {
 		vanillaStack.putString("id", "minecraft:apple");
 		assert "minecraft:apple".equals(MatchaItemDataFixer.update(vanillaStack).getStringOr("id", ""));
 
+		CompoundTag renamedStack = new CompoundTag();
+		renamedStack.putString("id", "matcha-flavoured:heart_container");
+		assert "matcha:crystal_heart".equals(MatchaItemDataFixer.update(renamedStack).getStringOr("id", ""));
+		renamedStack.putString("id", "matcha-flavoured:application");
+		assert "matcha:asylum_seeker".equals(MatchaItemDataFixer.update(renamedStack).getStringOr("id", ""));
+
 		CompoundTag nonItem = new CompoundTag();
 		nonItem.putString("id", "matcha-flavoured:abbey_overgrown");
 		assert "matcha-flavoured:abbey_overgrown".equals(MatchaItemDataFixer.update(nonItem).getStringOr("id", ""));

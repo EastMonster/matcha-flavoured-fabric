@@ -1,6 +1,6 @@
 {
 	"gives": {
-		"id": "matcha:heart_container"
+		"id": "matcha:crystal_heart"
 	},
 	"given_item_modifiers": [],
 	"max_uses": 999,

@@ -358,7 +358,7 @@
 			"volatile_wither"
 		],
 		"special_items": [
-			"heart_container",
+		"crystal_heart",
 			"iou"
 		],
 		"books": [
@@ -373,7 +373,7 @@
 	},
 	"spawn_eggs": {
 		"misc_spawn_items": [
-			"application",
+		"asylum_seeker",
 			"axolotl"
 		],
 		"calves": [

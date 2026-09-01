@@ -151,12 +151,12 @@ public final class PlayerMechanics {
 	}
 
 	/**
-	 * Looked up lazily: the item registry only has matcha:heart_container after
+	 * Looked up lazily: the item registry only has matcha:crystal_heart after
 	 * the registrar ran, so a static field would resolve to air and match every
 	 * empty inventory slot.
 	 */
 	private static Item heartContainerItem() {
-		return BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", "heart_container"));
+		return BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", "crystal_heart"));
 	}
 
 	private static void manageExperience(ServerPlayer player) {

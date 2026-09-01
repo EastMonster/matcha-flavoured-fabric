@@ -34,6 +34,10 @@ public final class MatchaItemDataFixer {
 	private static final String OLD_NAMESPACE = "matcha-flavoured:";
 	private static final String NEW_NAMESPACE = "matcha:";
 	private static final Set<String> ENCHANTMENT_COMPONENTS = Set.of("minecraft:enchantments", "minecraft:stored_enchantments");
+	private static final Map<String, String> RENAMED_ITEM_PATHS = Map.of(
+			"heart_container", "crystal_heart",
+			"application", "asylum_seeker"
+	);
 	private static final Set<String> ITEM_PATHS = itemPaths();
 	private static final DataFixer FIXER = createFixer();
 
@@ -94,8 +98,9 @@ public final class MatchaItemDataFixer {
 				String id = compound.getStringOr("id", "");
 				if (id.startsWith(OLD_NAMESPACE)) {
 					String path = id.substring(OLD_NAMESPACE.length());
-					if (ITEM_PATHS.contains(path)) {
-						compound.putString("id", NEW_NAMESPACE + path);
+					String newPath = RENAMED_ITEM_PATHS.getOrDefault(path, path);
+					if (ITEM_PATHS.contains(newPath)) {
+						compound.putString("id", NEW_NAMESPACE + newPath);
 					}
 				}
 			}
