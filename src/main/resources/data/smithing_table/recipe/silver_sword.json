@@ -44,7 +44,7 @@
 			},
 			"minecraft:enchantments": {
 				"minecraft:smite": 2,
-				"matcha-flavoured:warding0": 1
+				"matcha:warding0": 1
 			},
 			"minecraft:enchantment_glint_override": true
 		}

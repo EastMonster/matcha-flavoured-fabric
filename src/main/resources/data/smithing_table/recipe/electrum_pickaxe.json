@@ -61,7 +61,7 @@
 			},
 			"minecraft:enchantments": {
 				"minecraft:fortune": 3,
-				"matcha-flavoured:warding1": 1
+				"matcha:warding1": 1
 			},
 			"minecraft:repairable": {
 				"items": [

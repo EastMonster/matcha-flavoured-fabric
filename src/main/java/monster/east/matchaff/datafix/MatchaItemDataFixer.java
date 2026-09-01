@@ -33,6 +33,7 @@ public final class MatchaItemDataFixer {
 	private static final DSL.TypeReference ROOT = () -> "matcha:item_data";
 	private static final String OLD_NAMESPACE = "matcha-flavoured:";
 	private static final String NEW_NAMESPACE = "matcha:";
+	private static final Set<String> ENCHANTMENT_COMPONENTS = Set.of("minecraft:enchantments", "minecraft:stored_enchantments");
 	private static final Set<String> ITEM_PATHS = itemPaths();
 	private static final DataFixer FIXER = createFixer();
 
@@ -101,7 +102,11 @@ public final class MatchaItemDataFixer {
 			for (String key : List.copyOf(compound.keySet())) {
 				Tag child = compound.get(key);
 				if (child != null) {
-					compound.put(key, migrate(child, customData || key.equals("minecraft:custom_data")));
+					Tag migrated = migrate(child, customData || key.equals("minecraft:custom_data"));
+					if (!customData && ENCHANTMENT_COMPONENTS.contains(key) && migrated instanceof CompoundTag enchantments) {
+						migrateEnchantmentIds(enchantments);
+					}
+					compound.put(key, migrated);
 				}
 			}
 			return compound;
@@ -112,6 +117,15 @@ public final class MatchaItemDataFixer {
 			}
 		}
 		return tag;
+	}
+
+	private static void migrateEnchantmentIds(CompoundTag enchantments) {
+		for (String id : List.copyOf(enchantments.keySet())) {
+			if (id.startsWith(OLD_NAMESPACE)) {
+				Tag level = enchantments.remove(id);
+				enchantments.put(NEW_NAMESPACE + id.substring(OLD_NAMESPACE.length()), level);
+			}
+		}
 	}
 
 	private static Set<String> itemPaths() {

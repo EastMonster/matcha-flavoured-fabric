@@ -15,7 +15,7 @@
 	"result": {
 		"components": {
 			"minecraft:enchantments": {
-				"matcha-flavoured:warding1": 1
+				"matcha:warding1": 1
 			}
 		},
 		"count": 1,

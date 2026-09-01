@@ -59,7 +59,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:warding_armour": 1
+				"matcha:warding_armour": 1
 			},
 			"minecraft:equippable": {
 				"slot": "feet",

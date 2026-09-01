@@ -11,7 +11,7 @@
 				"color": "gold"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:divinity": 1,
+				"matcha:divinity": 1,
 				"minecraft:unbreaking": 2
 			},
 			"minecraft:lore": [

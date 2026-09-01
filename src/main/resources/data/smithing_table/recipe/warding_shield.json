@@ -37,7 +37,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:warding1": 1
+				"matcha:warding1": 1
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.warding_shield"

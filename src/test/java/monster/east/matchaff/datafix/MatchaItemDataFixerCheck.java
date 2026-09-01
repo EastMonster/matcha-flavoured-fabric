@@ -28,10 +28,18 @@ public final class MatchaItemDataFixerCheck {
 		stackWithCustomData.putString("id", "matcha-flavoured:amber");
 		CompoundTag components = new CompoundTag();
 		components.put("minecraft:custom_data", customData);
+		CompoundTag enchantments = new CompoundTag();
+		enchantments.putInt("matcha-flavoured:warding1", 1);
+		components.put("minecraft:enchantments", enchantments);
+		CompoundTag storedEnchantments = new CompoundTag();
+		storedEnchantments.putInt("matcha-flavoured:anemos", 1);
+		components.put("minecraft:stored_enchantments", storedEnchantments);
 		stackWithCustomData.put("components", components);
 		CompoundTag fixed = MatchaItemDataFixer.update(stackWithCustomData);
 		assert "matcha:amber".equals(fixed.getStringOr("id", ""));
 		assert "matcha-flavoured:external_value".equals(customData.getStringOr("id", ""));
+		assert enchantments.contains("matcha:warding1") && !enchantments.contains("matcha-flavoured:warding1");
+		assert storedEnchantments.contains("matcha:anemos") && !storedEnchantments.contains("matcha-flavoured:anemos");
 
 		CompoundTag oneTime = new CompoundTag();
 		oneTime.putString("id", "matcha-flavoured:amber");

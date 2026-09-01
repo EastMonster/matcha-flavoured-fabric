@@ -49,7 +49,7 @@ import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 public final class PlayerMechanics {
 	private static final int MAX_HEARTS = 60;
 	private static final TagKey<Biome> FROZEN_BIOME = TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("minecraft", "is_frozen"));
-	private static final Identifier FREEZING_PROTECTION = Identifier.fromNamespaceAndPath("matcha-flavoured", "freezing_protection");
+	private static final Identifier FREEZING_PROTECTION = Identifier.fromNamespaceAndPath("matcha", "freezing_protection");
 	private static final Identifier HEART_CONTAINER_OBTAINED = Identifier.fromNamespaceAndPath(
 			"main", "mechanics/heart_container_obtained"
 	);

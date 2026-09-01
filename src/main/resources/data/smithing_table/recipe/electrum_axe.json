@@ -63,7 +63,7 @@
 				"minecraft:fortune": 2,
 				"minecraft:looting": 2,
 				"minecraft:smite": 2,
-				"matcha-flavoured:warding2": 1
+				"matcha:warding2": 1
 			},
 			"minecraft:repairable": {
 				"items": [

@@ -128,9 +128,9 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:max_magic_protection": 1,
-				"matcha-flavoured:cleanse_armor_maleffect": 1,
-				"matcha-flavoured:shakudo_regen": 1
+				"matcha:max_magic_protection": 1,
+				"matcha:cleanse_armor_maleffect": 1,
+				"matcha:shakudo_regen": 1
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -654,7 +654,7 @@
 				"color": "white"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:warding0": 1
+				"matcha:warding0": 1
 			},
 			"minecraft:enchantment_glint_override": false
 		}

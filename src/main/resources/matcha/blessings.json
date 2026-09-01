@@ -7,7 +7,7 @@
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
-				"matcha-flavoured:anemos": 1,
+				"matcha:anemos": 1,
 				"minecraft:wind_burst": 1
 			},
 			"minecraft:item_name": {
@@ -131,7 +131,7 @@
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
-				"matcha-flavoured:traversal": 3
+				"matcha:traversal": 3
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.blessing_clement"
@@ -206,7 +206,7 @@
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:frost_walker": 2,
-				"matcha-flavoured:freezing_protection": 2
+				"matcha:freezing_protection": 2
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.blessing_demeter"
@@ -305,7 +305,7 @@
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
-				"matcha-flavoured:zephyr": 1
+				"matcha:zephyr": 1
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.blessing_hyacinthus"
@@ -451,7 +451,7 @@
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
-				"matcha-flavoured:warding1": 1,
+				"matcha:warding1": 1,
 				"minecraft:smite": 2
 			},
 			"minecraft:rarity": "rare",
@@ -476,7 +476,7 @@
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
-				"matcha-flavoured:reach": 1
+				"matcha:reach": 1
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.blessing_will"

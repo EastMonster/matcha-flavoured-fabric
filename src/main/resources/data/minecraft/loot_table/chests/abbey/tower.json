@@ -75,7 +75,7 @@
 									]
 								},
 								"minecraft:enchantments": {
-									"matcha-flavoured:anemos": 1
+									"matcha:anemos": 1
 								}
 							}
 						}

@@ -14,12 +14,12 @@
 			],
 			"minecraft:stored_enchantments": {
 				"minecraft:loyalty": 3,
-				"matcha-flavoured:traversal": 3,
+				"matcha:traversal": 3,
 				"minecraft:power": 2
 			},
 			"minecraft:enchantments": {
 				"minecraft:loyalty": 3,
-				"matcha-flavoured:traversal": 3,
+				"matcha:traversal": 3,
 				"minecraft:power": 2
 			},
 			"minecraft:tooltip_display": {

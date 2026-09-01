@@ -49,7 +49,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:sanguine": 1
+				"matcha:sanguine": 1
 			},
 			"minecraft:enchantment_glint_override": false
 		}

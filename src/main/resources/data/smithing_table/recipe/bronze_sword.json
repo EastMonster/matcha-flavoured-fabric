@@ -113,7 +113,7 @@
 				"disabled_sound": "minecraft:item.shield.break"
 			},
 			"minecraft:enchantments": {
-				"matcha-flavoured:riposte": 1
+				"matcha:riposte": 1
 			},
 			"minecraft:repairable": {
 				"items": [
