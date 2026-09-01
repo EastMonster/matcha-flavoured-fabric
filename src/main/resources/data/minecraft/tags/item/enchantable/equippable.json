@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"matcha-flavoured:bronze_elytra",
-		"matcha-flavoured:shakudo_elytra"
+		"matcha:bronze_elytra",
+		"matcha:shakudo_elytra"
 	]
 }

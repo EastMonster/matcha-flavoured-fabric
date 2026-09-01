@@ -5,10 +5,10 @@
 		"minecraft:sugar_cane",
 		"minecraft:sugar",
 		"minecraft:glowstone_dust",
-		"matcha-flavoured:dough"
+		"matcha:dough"
 	],
 	"result": {
-		"id": "matcha-flavoured:puerquito",
+		"id": "matcha:puerquito",
 		"count": 2
 	}
 }

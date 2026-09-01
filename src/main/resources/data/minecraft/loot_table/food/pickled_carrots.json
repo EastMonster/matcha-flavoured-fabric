@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:pickled_carrots",
+					"name": "matcha:pickled_carrots",
 					"functions": [
 						{
 							"function": "minecraft:set_count",

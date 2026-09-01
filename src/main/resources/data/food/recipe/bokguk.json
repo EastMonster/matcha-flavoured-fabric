@@ -9,11 +9,11 @@
 			"minecraft:cooked_cod",
 			"minecraft:cooked_salmon"
 		],
-		"matcha-flavoured:braised_brown_mushroom",
+		"matcha:braised_brown_mushroom",
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:bokguk",
+		"id": "matcha:bokguk",
 		"count": 1
 	}
 }

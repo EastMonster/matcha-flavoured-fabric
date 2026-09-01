@@ -3,11 +3,11 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_spear",
 	"result": {
-		"id": "matcha-flavoured:shakudo_spear",
+		"id": "matcha:shakudo_spear",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_spear",
+				"translate": "item.matcha.shakudo_spear",
 				"color": "#c96691"
 			},
 			"minecraft:attribute_modifiers": [

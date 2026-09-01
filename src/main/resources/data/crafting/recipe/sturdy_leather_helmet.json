@@ -53,11 +53,11 @@
 				"asset_id": "minecraft:sturdy_leather"
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.sturdy_leather_helmet",
+				"translate": "item.matcha.sturdy_leather_helmet",
 				"color": "white"
 			}
 		},
 		"count": 1,
-		"id": "matcha-flavoured:sturdy_leather_helmet"
+		"id": "matcha:sturdy_leather_helmet"
 	}
 }

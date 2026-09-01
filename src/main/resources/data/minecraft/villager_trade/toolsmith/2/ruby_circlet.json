@@ -4,10 +4,10 @@
 		"count": 4
 	},
 	"additional_wants": {
-		"id": "matcha-flavoured:ruby"
+		"id": "matcha:ruby"
 	},
 	"gives": {
-		"id": "matcha-flavoured:ruby_circlet",
+		"id": "matcha:ruby_circlet",
 		"count": 1
 	},
 	"max_uses": 999,

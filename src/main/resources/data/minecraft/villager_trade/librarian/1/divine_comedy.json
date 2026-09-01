@@ -1,13 +1,13 @@
 {
 	"gives": {
-		"id": "matcha-flavoured:heart_container"
+		"id": "matcha:heart_container"
 	},
 	"given_item_modifiers": [],
 	"max_uses": 999,
 	"reputation_discount": 0,
 	"wants": {
 		"count": 1,
-		"id": "matcha-flavoured:divine_comedy"
+		"id": "matcha:divine_comedy"
 	},
 	"xp": 20
 }

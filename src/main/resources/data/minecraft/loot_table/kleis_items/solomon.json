@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:solomon",
+					"name": "matcha:solomon",
 					"weight": 1
 				}
 			]

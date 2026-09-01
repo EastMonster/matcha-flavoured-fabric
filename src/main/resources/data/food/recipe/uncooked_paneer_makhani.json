@@ -4,12 +4,12 @@
 	"ingredients": [
 		"minecraft:glowstone_dust",
 		"minecraft:sugar",
-		"matcha-flavoured:milk_bottle",
+		"matcha:milk_bottle",
 		"minecraft:beetroot",
-		"matcha-flavoured:cheese",
+		"matcha:cheese",
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:uncooked_paneer_makhani"
+		"id": "matcha:uncooked_paneer_makhani"
 	}
 }

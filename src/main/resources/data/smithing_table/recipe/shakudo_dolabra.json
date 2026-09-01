@@ -3,7 +3,7 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_axe",
 	"result": {
-		"id": "matcha-flavoured:shakudo_dolabra",
+		"id": "matcha:shakudo_dolabra",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -23,7 +23,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_dolabra",
+				"translate": "item.matcha.shakudo_dolabra",
 				"color": "#c96691"
 			},
 			"minecraft:enchantments": {

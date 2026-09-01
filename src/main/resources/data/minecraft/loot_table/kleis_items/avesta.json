@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:avesta",
+					"name": "matcha:avesta",
 					"weight": 1,
 					"conditions": []
 				}

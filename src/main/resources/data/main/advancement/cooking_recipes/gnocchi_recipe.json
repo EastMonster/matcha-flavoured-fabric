@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:gnocchi_recipe"
+						"items": "matcha:gnocchi_recipe"
 					}
 				]
 			}

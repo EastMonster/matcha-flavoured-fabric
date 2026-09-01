@@ -1,9 +1,9 @@
 {
 	"gives": {
-		"id": "matcha-flavoured:ofuda",
+		"id": "matcha:ofuda",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.ofuda"
+				"translate": "item.matcha.ofuda"
 			},
 			"minecraft:lore": [
 				{
@@ -34,7 +34,7 @@
 	"reputation_discount": 0,
 	"wants": {
 		"count": 1,
-		"id": "matcha-flavoured:tanakh"
+		"id": "matcha:tanakh"
 	},
 	"xp": 30
 }

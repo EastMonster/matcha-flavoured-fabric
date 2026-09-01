@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:sweet_berry_toast_recipe"
+						"items": "matcha:sweet_berry_toast_recipe"
 					}
 				]
 			}

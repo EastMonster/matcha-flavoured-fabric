@@ -1,9 +1,9 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"key": {
-		"A": "matcha-flavoured:milk_bottle",
+		"A": "matcha:milk_bottle",
 		"B": "minecraft:sugar",
-		"C": "matcha-flavoured:flour",
+		"C": "matcha:flour",
 		"E": "#minecraft:eggs",
 		"s": "minecraft:sweet_berries"
 	},

@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:baked_pumpkin",
+		"matcha:baked_pumpkin",
 		"minecraft:sugar",
 		"minecraft:glass_bottle"
 	],
 	"result": {
-		"id": "matcha-flavoured:pumpkin_jam",
+		"id": "matcha:pumpkin_jam",
 		"count": 1
 	}
 }

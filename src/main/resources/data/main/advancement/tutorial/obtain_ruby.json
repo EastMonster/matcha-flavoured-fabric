@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:ruby"
+						"items": "matcha:ruby"
 					}
 				]
 			}
@@ -18,7 +18,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:ruby"
+			"id": "matcha:ruby"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_ruby.title"

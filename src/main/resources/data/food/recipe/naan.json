@@ -3,8 +3,8 @@
 	"category": "food",
 	"cookingtime": 100,
 	"experience": 0.35,
-	"ingredient": "matcha-flavoured:dough",
+	"ingredient": "matcha:dough",
 	"result": {
-		"id": "matcha-flavoured:naan"
+		"id": "matcha:naan"
 	}
 }

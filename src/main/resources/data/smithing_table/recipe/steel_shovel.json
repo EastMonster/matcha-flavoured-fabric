@@ -3,10 +3,10 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_shovel",
 	"result": {
-		"id": "matcha-flavoured:steel_shovel",
+		"id": "matcha:steel_shovel",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_shovel"
+				"translate": "item.matcha.steel_shovel"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {

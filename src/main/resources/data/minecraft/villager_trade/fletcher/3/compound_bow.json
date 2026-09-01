@@ -1,6 +1,6 @@
 {
 	"gives": {
-		"id": "matcha-flavoured:compound_bow"
+		"id": "matcha:compound_bow"
 	},
 	"given_item_modifiers": [],
 	"max_uses": 999,

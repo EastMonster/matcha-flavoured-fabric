@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:chorus_mochi_recipe"
+						"items": "matcha:chorus_mochi_recipe"
 					}
 				]
 			}

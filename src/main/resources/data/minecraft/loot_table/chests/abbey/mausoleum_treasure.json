@@ -187,9 +187,9 @@
 							"function": "minecraft:set_components",
 							"components": {
 								"!minecraft:consumable": {},
-								"minecraft:item_model": "matcha-flavoured:wooden_cross",
+								"minecraft:item_model": "matcha:wooden_cross",
 								"minecraft:item_name": {
-									"translate": "item.matcha-flavoured.wooden_cross",
+									"translate": "item.matcha.wooden_cross",
 									"color": "white"
 								},
 								"minecraft:enchantments": {
@@ -199,7 +199,7 @@
 							}
 						}
 					],
-					"name": "matcha-flavoured:wooden_cross",
+					"name": "matcha:wooden_cross",
 					"weight": 10
 				},
 				{

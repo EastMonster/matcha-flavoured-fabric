@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:braised_brown_mushroom",
+		"matcha:braised_brown_mushroom",
 		"minecraft:brown_mushroom",
 		"minecraft:glass_bottle"
 	],
 	"result": {
-		"id": "matcha-flavoured:pickled_mushrooms",
+		"id": "matcha:pickled_mushrooms",
 		"count": 1
 	}
 }

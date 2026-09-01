@@ -5,7 +5,7 @@
 		"minecraft:brown_mushroom",
 		"minecraft:dried_kelp",
 		"#minecraft:eggs",
-		"matcha-flavoured:dough",
+		"matcha:dough",
 		[
 			"minecraft:porkchop",
 			"minecraft:chicken"
@@ -13,6 +13,6 @@
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:uncooked_ramen"
+		"id": "matcha:uncooked_ramen"
 	}
 }

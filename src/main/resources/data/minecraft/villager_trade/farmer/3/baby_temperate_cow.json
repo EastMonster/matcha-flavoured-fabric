@@ -1,6 +1,6 @@
 {
 	"gives": {
-		"id": "matcha-flavoured:crate_temperate_cow",
+		"id": "matcha:crate_temperate_cow",
 		"count": 1
 	},
 	"max_uses": 999,

@@ -36,7 +36,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:wooden_cross"
+			"id": "matcha:wooden_cross"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.kill_villager.title"

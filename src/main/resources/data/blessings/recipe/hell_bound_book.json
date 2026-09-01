@@ -9,7 +9,7 @@
 	"key": {
 		"B": "minecraft:book",
 		"E": "minecraft:blaze_rod",
-		"b": "matcha-flavoured:benzene"
+		"b": "matcha:benzene"
 	},
 	"result": {
 		"components": {

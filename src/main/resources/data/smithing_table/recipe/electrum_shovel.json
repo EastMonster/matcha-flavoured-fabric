@@ -3,7 +3,7 @@
 	"addition": "minecraft:heart_of_the_sea",
 	"base": "minecraft:diamond_shovel",
 	"result": {
-		"id": "matcha-flavoured:electrum_shovel",
+		"id": "matcha:electrum_shovel",
 		"components": {
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {
@@ -35,7 +35,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.electrum_shovel",
+				"translate": "item.matcha.electrum_shovel",
 				"color": "yellow"
 			},
 			"minecraft:attribute_modifiers": [

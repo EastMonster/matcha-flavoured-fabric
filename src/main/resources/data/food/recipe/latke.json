@@ -5,10 +5,10 @@
 		"minecraft:baked_potato",
 		"#minecraft:eggs",
 		"minecraft:bread",
-		"matcha-flavoured:milk_bottle"
+		"matcha:milk_bottle"
 	],
 	"result": {
-		"id": "matcha-flavoured:latke",
+		"id": "matcha:latke",
 		"count": 1
 	}
 }

@@ -5,6 +5,6 @@
 	"experience": 0.35,
 	"ingredient": "minecraft:pumpkin",
 	"result": {
-		"id": "matcha-flavoured:baked_pumpkin"
+		"id": "matcha:baked_pumpkin"
 	}
 }

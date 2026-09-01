@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:grilled_melon"
+						"items": "matcha:grilled_melon"
 					}
 				]
 			}
@@ -16,7 +16,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:steamed_carrots"
+						"items": "matcha:steamed_carrots"
 					}
 				]
 			}
@@ -26,7 +26,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:baked_apple"
+						"items": "matcha:baked_apple"
 					}
 				]
 			}
@@ -36,7 +36,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:grilled_tomatoes"
+						"items": "matcha:grilled_tomatoes"
 					}
 				]
 			}
@@ -46,7 +46,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:glow_mash"
+						"items": "matcha:glow_mash"
 					}
 				]
 			}
@@ -66,7 +66,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:sweet_berry_mash"
+						"items": "matcha:sweet_berry_mash"
 					}
 				]
 			}
@@ -76,7 +76,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:honey_ginger_tea"
+						"items": "matcha:honey_ginger_tea"
 					}
 				]
 			}
@@ -86,7 +86,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:chocolate"
+						"items": "matcha:chocolate"
 					}
 				]
 			}
@@ -96,7 +96,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:baked_pumpkin"
+						"items": "matcha:baked_pumpkin"
 					}
 				]
 			}
@@ -106,7 +106,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:braised_red_mushroom"
+						"items": "matcha:braised_red_mushroom"
 					}
 				]
 			}
@@ -118,7 +118,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:grilled_melon"
+			"id": "matcha:grilled_melon"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.cook_food.title"

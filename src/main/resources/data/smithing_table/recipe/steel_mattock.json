@@ -3,10 +3,10 @@
 	"addition": "resin_brick",
 	"base": "minecraft:iron_hoe",
 	"result": {
-		"id": "matcha-flavoured:steel_mattock",
+		"id": "matcha:steel_mattock",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_mattock"
+				"translate": "item.matcha.steel_mattock"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {

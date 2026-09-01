@@ -4,12 +4,12 @@
 	"ingredients": [
 		"minecraft:crimson_fungus",
 		"minecraft:cooked_beef",
-		"matcha-flavoured:dough",
-		"matcha-flavoured:milk_bottle",
+		"matcha:dough",
+		"matcha:milk_bottle",
 		"minecraft:bowl"
 	],
 	"result": {
-		"id": "matcha-flavoured:crimson_stroganoff",
+		"id": "matcha:crimson_stroganoff",
 		"count": 1
 	}
 }

@@ -4,7 +4,7 @@
 		"count": 1
 	},
 	"gives": {
-		"id": "matcha-flavoured:volatile_oozing",
+		"id": "matcha:volatile_oozing",
 		"count": 16
 	},
 	"max_uses": 999,

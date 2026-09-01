@@ -156,7 +156,7 @@ public final class PlayerMechanics {
 	 * empty inventory slot.
 	 */
 	private static Item heartContainerItem() {
-		return BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_container"));
+		return BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", "heart_container"));
 	}
 
 	private static void manageExperience(ServerPlayer player) {

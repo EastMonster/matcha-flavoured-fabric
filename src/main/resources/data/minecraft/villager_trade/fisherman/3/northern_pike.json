@@ -7,7 +7,7 @@
 	"max_uses": 999,
 	"wants": {
 		"count": 4,
-		"id": "matcha-flavoured:northern_pike"
+		"id": "matcha:northern_pike"
 	},
 	"reputation_discount": 0,
 	"xp": 75

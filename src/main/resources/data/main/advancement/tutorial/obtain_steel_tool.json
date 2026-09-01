@@ -80,7 +80,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:steel_shovel"
+			"id": "matcha:steel_shovel"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_steel_tool.title"

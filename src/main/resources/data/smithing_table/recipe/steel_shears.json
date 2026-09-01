@@ -3,7 +3,7 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:shears",
 	"result": {
-		"id": "matcha-flavoured:steel_shears"
+		"id": "matcha:steel_shears"
 	},
 	"template": "minecraft:iron_ingot"
 }

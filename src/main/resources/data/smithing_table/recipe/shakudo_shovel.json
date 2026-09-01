@@ -3,7 +3,7 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_shovel",
 	"result": {
-		"id": "matcha-flavoured:shakudo_shovel",
+		"id": "matcha:shakudo_shovel",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -18,7 +18,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_shovel",
+				"translate": "item.matcha.shakudo_shovel",
 				"color": "#c96691"
 			},
 			"minecraft:enchantments": {

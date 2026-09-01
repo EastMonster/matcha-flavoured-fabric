@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
 	"key": {
-		"P": "matcha-flavoured:cheese",
+		"P": "matcha:cheese",
 		"E": "minecraft:glowstone_dust",
 		"T": "minecraft:beetroot",
 		"S": "minecraft:sugar",
 		"B": "minecraft:bowl",
-		"M": "matcha-flavoured:milk_bottle"
+		"M": "matcha:milk_bottle"
 	},
 	"pattern": [
 		"EMS",
@@ -61,6 +61,6 @@
 			]
 		},
 		"count": 1,
-		"id": "matcha-flavoured:paneer_makhani"
+		"id": "matcha:paneer_makhani"
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"gives": {
-		"id": "matcha-flavoured:crate_cold_pig",
+		"id": "matcha:crate_cold_pig",
 		"count": 1
 	},
 	"max_uses": 999,

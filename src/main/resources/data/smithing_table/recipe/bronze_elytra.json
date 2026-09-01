@@ -3,7 +3,7 @@
 	"addition": "minecraft:phantom_membrane",
 	"base": "minecraft:elytra",
 	"result": {
-		"id": "matcha-flavoured:bronze_elytra"
+		"id": "matcha:bronze_elytra"
 	},
 	"template": "minecraft:honeycomb"
 }

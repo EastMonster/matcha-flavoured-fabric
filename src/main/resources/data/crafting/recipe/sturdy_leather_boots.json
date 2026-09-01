@@ -55,11 +55,11 @@
 				"asset_id": "minecraft:sturdy_leather"
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.sturdy_leather_boots",
+				"translate": "item.matcha.sturdy_leather_boots",
 				"color": "white"
 			}
 		},
 		"count": 1,
-		"id": "matcha-flavoured:sturdy_leather_boots"
+		"id": "matcha:sturdy_leather_boots"
 	}
 }

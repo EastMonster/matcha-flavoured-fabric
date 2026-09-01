@@ -3,7 +3,7 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_hoe",
 	"result": {
-		"id": "matcha-flavoured:shakudo_mattock",
+		"id": "matcha:shakudo_mattock",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -40,7 +40,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_mattock",
+				"translate": "item.matcha.shakudo_mattock",
 				"color": "#c96691"
 			},
 			"minecraft:enchantments": {

@@ -14,7 +14,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:warding_stone"
+			"id": "matcha:warding_stone"
 		},
 		"title": {
 			"translate": "advancements.main.hell.obtain_warding_stone.title"

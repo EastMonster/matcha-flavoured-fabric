@@ -1,7 +1,7 @@
 {
     "values": [
 		"minecraft:poisonous_potato",
-		"matcha-flavoured:heart_container",
-		"matcha-flavoured:wooden_cross"
+		"matcha:heart_container",
+		"matcha:wooden_cross"
     ]
 }

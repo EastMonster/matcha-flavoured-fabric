@@ -176,7 +176,7 @@ public final class MechanicMechanics {
 
 	private static boolean isMatchaItem(ItemStack stack, String path) {
 		return net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(stack.getItem())
-				.equals(Identifier.fromNamespaceAndPath("matcha-flavoured", path));
+				.equals(Identifier.fromNamespaceAndPath("matcha", path));
 	}
 
 	private static void useAmnestic(ServerPlayer player, ServerLevel level, BlockPos pos) {

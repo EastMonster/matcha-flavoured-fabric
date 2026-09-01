@@ -11,7 +11,7 @@
 				"minecraft:wind_burst": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_aeolus"
+				"translate": "item.matcha.blessing_aeolus"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -36,7 +36,7 @@
 				"minecraft:piercing": 2
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_apollo"
+				"translate": "item.matcha.blessing_apollo"
 			},
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
@@ -60,7 +60,7 @@
 				"minecraft:bane_of_arthropods": 5
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_arachnae"
+				"translate": "item.matcha.blessing_arachnae"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -85,7 +85,7 @@
 				"minecraft:breach": 2
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_ares"
+				"translate": "item.matcha.blessing_ares"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -110,7 +110,7 @@
 				"minecraft:multishot": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_artemis"
+				"translate": "item.matcha.blessing_artemis"
 			},
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
@@ -134,7 +134,7 @@
 				"matcha-flavoured:traversal": 3
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_clement"
+				"translate": "item.matcha.blessing_clement"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -159,7 +159,7 @@
 				"minecraft:soul_speed": 2
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_cronus"
+				"translate": "item.matcha.blessing_cronus"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -184,7 +184,7 @@
 				"minecraft:unbreaking": 3
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_daedalus"
+				"translate": "item.matcha.blessing_daedalus"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -209,7 +209,7 @@
 				"matcha-flavoured:freezing_protection": 2
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_demeter"
+				"translate": "item.matcha.blessing_demeter"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -233,7 +233,7 @@
 				"minecraft:silk_touch": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_eros"
+				"translate": "item.matcha.blessing_eros"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -259,7 +259,7 @@
 				"minecraft:loyalty": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_glaucus"
+				"translate": "item.matcha.blessing_glaucus"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -284,7 +284,7 @@
 				"minecraft:channeling": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_god_king"
+				"translate": "item.matcha.blessing_god_king"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -308,7 +308,7 @@
 				"matcha-flavoured:zephyr": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_hyacinthus"
+				"translate": "item.matcha.blessing_hyacinthus"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -332,7 +332,7 @@
 				"minecraft:feather_falling": 2
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_icarus"
+				"translate": "item.matcha.blessing_icarus"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -356,7 +356,7 @@
 				"minecraft:mending": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_lu_ban"
+				"translate": "item.matcha.blessing_lu_ban"
 			},
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
@@ -377,7 +377,7 @@
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_paris"
+				"translate": "item.matcha.blessing_paris"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:stored_enchantments": {
@@ -404,7 +404,7 @@
 				"minecraft:unbreaking": 2
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_prometheus"
+				"translate": "item.matcha.blessing_prometheus"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -431,7 +431,7 @@
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_talos"
+				"translate": "item.matcha.blessing_talos"
 			},
 			"minecraft:lore": [
 				{
@@ -456,7 +456,7 @@
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_warding"
+				"translate": "item.matcha.blessing_warding"
 			},
 			"minecraft:lore": [
 				{
@@ -479,7 +479,7 @@
 				"matcha-flavoured:reach": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_will"
+				"translate": "item.matcha.blessing_will"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -505,7 +505,7 @@
 				"minecraft:fire_protection": 3
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_yama"
+				"translate": "item.matcha.blessing_yama"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -532,7 +532,7 @@
 				"minecraft:respiration": 2
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.blessing_yamm"
+				"translate": "item.matcha.blessing_yamm"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
@@ -553,7 +553,7 @@
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.ofuda"
+				"translate": "item.matcha.ofuda"
 			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [

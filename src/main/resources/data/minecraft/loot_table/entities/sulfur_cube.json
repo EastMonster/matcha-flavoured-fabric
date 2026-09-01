@@ -35,7 +35,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:sulfur_goo",
+					"name": "matcha:sulfur_goo",
 					"conditions": [
 						{
 							"condition": "minecraft:killed_by_player"

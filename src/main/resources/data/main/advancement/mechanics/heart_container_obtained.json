@@ -5,7 +5,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:heart_container"
+						"items": "matcha:heart_container"
 					}
 				]
 			},

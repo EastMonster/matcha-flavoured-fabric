@@ -29,7 +29,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.diamond_dolabra"
+				"translate": "item.matcha.diamond_dolabra"
 			},
 			"minecraft:max_damage": 2500,
 			"minecraft:lore": [
@@ -72,6 +72,6 @@
 			]
 		},
 		"count": 1,
-		"id": "matcha-flavoured:diamond_dolabra"
+		"id": "matcha:diamond_dolabra"
 	}
 }

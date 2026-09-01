@@ -7,7 +7,7 @@
 	"max_uses": 999,
 	"wants": {
 		"count": 4,
-		"id": "matcha-flavoured:armoured_catfish"
+		"id": "matcha:armoured_catfish"
 	},
 	"reputation_discount": 0,
 	"xp": 75

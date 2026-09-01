@@ -3,7 +3,7 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_leggings",
 	"result": {
-		"id": "matcha-flavoured:shakudo_leggings",
+		"id": "matcha:shakudo_leggings",
 		"components": {
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
@@ -24,7 +24,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_leggings",
+				"translate": "item.matcha.shakudo_leggings",
 				"color": "#c96691"
 			},
 			"minecraft:attribute_modifiers": [

@@ -3,7 +3,7 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_chestplate",
 	"result": {
-		"id": "matcha-flavoured:shakudo_chestplate",
+		"id": "matcha:shakudo_chestplate",
 		"components": {
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
@@ -24,7 +24,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_chestplate",
+				"translate": "item.matcha.shakudo_chestplate",
 				"color": "#c96691"
 			},
 			"minecraft:attribute_modifiers": [

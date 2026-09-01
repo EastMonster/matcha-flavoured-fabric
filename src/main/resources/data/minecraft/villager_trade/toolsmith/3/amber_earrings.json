@@ -4,10 +4,10 @@
 		"count": 8
 	},
 	"additional_wants": {
-		"id": "matcha-flavoured:amber"
+		"id": "matcha:amber"
 	},
 	"gives": {
-		"id": "matcha-flavoured:amber_earrings",
+		"id": "matcha:amber_earrings",
 		"count": 1
 	},
 	"max_uses": 999,

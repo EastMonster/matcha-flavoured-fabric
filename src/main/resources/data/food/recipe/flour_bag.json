@@ -3,7 +3,7 @@
 	"group": "flour_bag",
 	"category": "misc",
 	"key": {
-		"#": "matcha-flavoured:flour"
+		"#": "matcha:flour"
 	},
 	"pattern": [
 		"###",
@@ -11,6 +11,6 @@
 		"###"
 	],
 	"result": {
-		"id": "matcha-flavoured:flour_bag"
+		"id": "matcha:flour_bag"
 	}
 }

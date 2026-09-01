@@ -3,10 +3,10 @@
 	"category": "misc",
 	"ingredients": [
 		"minecraft:beetroot",
-		"matcha-flavoured:cheese",
+		"matcha:cheese",
 		"bread"
 	],
 	"result": {
-		"id": "matcha-flavoured:bruschetta"
+		"id": "matcha:bruschetta"
 	}
 }

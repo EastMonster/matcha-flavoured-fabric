@@ -3,10 +3,10 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_sword",
 	"result": {
-		"id": "matcha-flavoured:butcher_knife",
+		"id": "matcha:butcher_knife",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.butcher_knife"
+				"translate": "item.matcha.butcher_knife"
 			},
 			"minecraft:max_damage": 1500,
 			"minecraft:attribute_modifiers": [

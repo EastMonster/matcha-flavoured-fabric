@@ -3,7 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:butcher_knife",
+		"id": "matcha:butcher_knife",
 		"components": {
 			"minecraft:item_name": {
 				"translate": "item.kleispack.butcher_knife"

@@ -3,7 +3,7 @@
   "group": "slime_ball",
   "category": "misc",
   "ingredients": [
-    "matcha-flavoured:dough",
+    "matcha:dough",
     "minecraft:lime_dye"
   ],
   "result": {

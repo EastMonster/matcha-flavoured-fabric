@@ -3,7 +3,7 @@
 	"addition": "minecraft:heart_of_the_sea",
 	"base": "minecraft:diamond_boots",
 	"result": {
-		"id": "matcha-flavoured:electrum_boots",
+		"id": "matcha:electrum_boots",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
@@ -34,7 +34,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.electrum_boots",
+				"translate": "item.matcha.electrum_boots",
 				"color": "yellow"
 			},
 			"minecraft:attribute_modifiers": [

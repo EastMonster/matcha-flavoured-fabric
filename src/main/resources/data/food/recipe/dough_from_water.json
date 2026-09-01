@@ -4,10 +4,10 @@
 	"category": "misc",
 	"ingredients": [
 		"minecraft:potion",
-		"matcha-flavoured:flour"
+		"matcha:flour"
 	],
 	"result": {
 		"count": 1,
-		"id": "matcha-flavoured:dough"
+		"id": "matcha:dough"
 	}
 }

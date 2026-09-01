@@ -50,7 +50,7 @@
 							"function": "minecraft:enchanted_count_increase"
 						}
 					],
-					"name": "matcha-flavoured:sweet_berry_mash"
+					"name": "matcha:sweet_berry_mash"
 				},
 				{
 					"type": "minecraft:item",

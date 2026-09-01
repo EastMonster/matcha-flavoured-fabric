@@ -7,17 +7,17 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:titanium_compass",
+					"name": "matcha:titanium_compass",
 					"quality": 2
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:golden_compass",
+					"name": "matcha:golden_compass",
 					"quality": 1
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:copper_compass"
+					"name": "matcha:copper_compass"
 				}
 			]
 		}

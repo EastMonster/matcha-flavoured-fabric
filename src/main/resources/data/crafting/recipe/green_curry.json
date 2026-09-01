@@ -10,7 +10,7 @@
 		"T": "minecraft:green_dye",
 		"S": "minecraft:sugar",
 		"B": "minecraft:bowl",
-		"M": "matcha-flavoured:milk_bottle"
+		"M": "matcha:milk_bottle"
 	},
 	"pattern": [
 		"EMS",
@@ -69,6 +69,6 @@
 			]
 		},
 		"count": 1,
-		"id": "matcha-flavoured:green_curry"
+		"id": "matcha:green_curry"
 	}
 }

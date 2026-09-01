@@ -3,8 +3,8 @@
 	"category": "food",
 	"cookingtime": 300,
 	"experience": 0.35,
-	"ingredient": "matcha-flavoured:uncooked_ramen",
+	"ingredient": "matcha:uncooked_ramen",
 	"result": {
-		"id": "matcha-flavoured:ramen"
+		"id": "matcha:ramen"
 	}
 }

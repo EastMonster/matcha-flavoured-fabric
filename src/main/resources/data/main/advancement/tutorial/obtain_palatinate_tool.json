@@ -80,7 +80,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "matcha-flavoured:shakudo_axe"
+			"id": "matcha:shakudo_axe"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_palatinate_tool.title"

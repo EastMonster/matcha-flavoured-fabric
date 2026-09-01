@@ -3,7 +3,7 @@
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:copper_hoe",
 	"result": {
-		"id": "matcha-flavoured:shakudo_hoe",
+		"id": "matcha:shakudo_hoe",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -18,7 +18,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.shakudo_hoe",
+				"translate": "item.matcha.shakudo_hoe",
 				"color": "#c96691"
 			},
 			"minecraft:enchantments": {

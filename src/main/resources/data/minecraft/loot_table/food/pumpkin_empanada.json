@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:pumpkin_empanada",
+					"name": "matcha:pumpkin_empanada",
 					"functions": [
 						{
 							"function": "minecraft:set_count",

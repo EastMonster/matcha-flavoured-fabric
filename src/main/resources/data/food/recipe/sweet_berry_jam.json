@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:sweet_berry_mash",
+		"matcha:sweet_berry_mash",
 		"minecraft:sugar",
 		"minecraft:glass_bottle"
 	],
 	"result": {
-		"id": "matcha-flavoured:sweet_berry_jam",
+		"id": "matcha:sweet_berry_jam",
 		"count": 1
 	}
 }

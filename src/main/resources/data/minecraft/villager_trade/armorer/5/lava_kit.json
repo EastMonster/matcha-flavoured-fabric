@@ -4,7 +4,7 @@
 		"count": 1
 	},
 	"gives": {
-		"id": "matcha-flavoured:lava_kit"
+		"id": "matcha:lava_kit"
 	},
 	"max_uses": 999,
 	"reputation_discount": 0,

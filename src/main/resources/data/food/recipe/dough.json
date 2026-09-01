@@ -8,11 +8,11 @@
 			"minecraft:blue_egg",
 			"brown_egg"
 		],
-		"matcha-flavoured:flour",
-		"matcha-flavoured:flour"
+		"matcha:flour",
+		"matcha:flour"
 	],
 	"result": {
 		"count": 4,
-		"id": "matcha-flavoured:dough"
+		"id": "matcha:dough"
 	}
 }

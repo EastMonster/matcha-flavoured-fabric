@@ -16,7 +16,7 @@ import java.util.Map;
 @Mixin(Villager.class)
 public abstract class VillagerFoodMixin {
 	@Unique
-	private static final Identifier NAAN = Identifier.fromNamespaceAndPath("matcha-flavoured", "naan");
+	private static final Identifier NAAN = Identifier.fromNamespaceAndPath("matcha", "naan");
 
 	@Redirect(
 			method = "eatUntilFull",

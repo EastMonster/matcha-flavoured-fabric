@@ -117,7 +117,7 @@
 				}
 			},
 			"count": 1,
-			"id": "matcha-flavoured:blessing_prometheus"
+			"id": "matcha:blessing_prometheus"
 		},
 		"title": {
 			"translate": "advancements.main.hell.craft_blessing.title"

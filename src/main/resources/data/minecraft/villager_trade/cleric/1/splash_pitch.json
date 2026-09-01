@@ -4,7 +4,7 @@
 		"count": 1
 	},
 	"gives": {
-		"id": "matcha-flavoured:volatile_pitch",
+		"id": "matcha:volatile_pitch",
 		"count": 16
 	},
 	"max_uses": 999,

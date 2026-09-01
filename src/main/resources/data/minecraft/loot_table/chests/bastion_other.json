@@ -250,7 +250,7 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "matcha-flavoured:benzene",
+					"name": "matcha:benzene",
 					"weight": 2
 				},
 				{

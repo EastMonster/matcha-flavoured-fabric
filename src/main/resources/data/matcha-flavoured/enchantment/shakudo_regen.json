@@ -1,10 +1,10 @@
 {
 	"primary_items": [
-		"matcha-flavoured:shakudo_helmet",
-		"matcha-flavoured:shakudo_chestplate",
-		"matcha-flavoured:shakudo_leggings",
-		"matcha-flavoured:shakudo_boots",
-		"matcha-flavoured:shakudo_elytra"
+		"matcha:shakudo_helmet",
+		"matcha:shakudo_chestplate",
+		"matcha:shakudo_leggings",
+		"matcha:shakudo_boots",
+		"matcha:shakudo_elytra"
 	],
 	"anvil_cost": 0,
 	"description": {
@@ -25,11 +25,11 @@
 		"armor"
 	],
 	"supported_items": [
-		"matcha-flavoured:shakudo_helmet",
-		"matcha-flavoured:shakudo_chestplate",
-		"matcha-flavoured:shakudo_leggings",
-		"matcha-flavoured:shakudo_boots",
-		"matcha-flavoured:shakudo_elytra"
+		"matcha:shakudo_helmet",
+		"matcha:shakudo_chestplate",
+		"matcha:shakudo_leggings",
+		"matcha:shakudo_boots",
+		"matcha:shakudo_elytra"
 	],
 	"weight": 1
 }

@@ -10,9 +10,9 @@
 		"minecraft:netherite_leggings",
 		"minecraft:netherite_boots",
 		"minecraft:netherite_sword",
-		"matcha-flavoured:adamant_claymore",
-		"matcha-flavoured:adamant_dolabra",
-		"matcha-flavoured:adamant_mattock"
+		"matcha:adamant_claymore",
+		"matcha:adamant_dolabra",
+		"matcha:adamant_mattock"
 	],
 	"anvil_cost": 0,
 	"description": {
@@ -43,9 +43,9 @@
 		"minecraft:netherite_leggings",
 		"minecraft:netherite_boots",
 		"minecraft:netherite_sword",
-		"matcha-flavoured:adamant_claymore",
-		"matcha-flavoured:adamant_dolabra",
-		"matcha-flavoured:adamant_mattock"
+		"matcha:adamant_claymore",
+		"matcha:adamant_dolabra",
+		"matcha:adamant_mattock"
 	],
 	"weight": 1
 }

@@ -2,12 +2,12 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:baked_apple",
+		"matcha:baked_apple",
 		"minecraft:sugar",
 		"minecraft:glass_bottle"
 	],
 	"result": {
-		"id": "matcha-flavoured:canned_apples",
+		"id": "matcha:canned_apples",
 		"count": 1
 	}
 }

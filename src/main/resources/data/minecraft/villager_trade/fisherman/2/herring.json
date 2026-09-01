@@ -7,7 +7,7 @@
 	"max_uses": 999,
 	"wants": {
 		"count": 8,
-		"id": "matcha-flavoured:herring"
+		"id": "matcha:herring"
 	},
 	"reputation_discount": 0,
 	"xp": 24

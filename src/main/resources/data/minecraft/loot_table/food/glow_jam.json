@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha-flavoured:glow_jam",
+					"name": "matcha:glow_jam",
 					"functions": [
 						{
 							"function": "minecraft:set_count",

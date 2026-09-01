@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha-flavoured:warped_stroganoff_recipe"
+						"items": "matcha:warped_stroganoff_recipe"
 					}
 				]
 			}

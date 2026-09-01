@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.application"
+				"translate": "item.matcha.application"
 			},
 			"minecraft:lore": [
 				{
@@ -42,7 +42,7 @@
 			]
 		},
 		"count": 1,
-		"id": "matcha-flavoured:application"
+		"id": "matcha:application"
 	},
 	"max_uses": 1,
 	"wants": {

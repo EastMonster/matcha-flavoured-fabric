@@ -3,10 +3,10 @@
 	"addition": "minecraft:resin_brick",
 	"base": "minecraft:iron_hoe",
 	"result": {
-		"id": "matcha-flavoured:steel_hoe",
+		"id": "matcha:steel_hoe",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.steel_hoe"
+				"translate": "item.matcha.steel_hoe"
 			},
 			"minecraft:tooltip_display": {
 				"hidden_components": [

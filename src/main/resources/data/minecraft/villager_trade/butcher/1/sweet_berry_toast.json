@@ -3,7 +3,7 @@
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"id": "matcha-flavoured:sweet_berry_toast",
+		"id": "matcha:sweet_berry_toast",
 		"components": {
 			"minecraft:consumable": {
 				"consume_seconds": 1.8,

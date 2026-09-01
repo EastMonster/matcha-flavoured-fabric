@@ -70,7 +70,7 @@ public final class EquipmentRegistrar {
 			ItemComponents.apply(properties, entry.getKey(), entry.getValue());
 		}
 		Component name = ItemComponents.decode(ComponentSerialization.CODEC, components.get("minecraft:item_name"));
-		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha-flavoured", definition.id));
+		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha", definition.id));
 		Item item = Registry.register(BuiltInRegistries.ITEM, key, createItem(carrier, properties.setId(key), name));
 		return new EquipmentItem(item, tab(components));
 	}

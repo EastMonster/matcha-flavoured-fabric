@@ -1,12 +1,12 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
-		"matcha-flavoured:chocolate",
-		"matcha-flavoured:chocolate",
+		"matcha:chocolate",
+		"matcha:chocolate",
 		"minecraft:sugar",
-		"matcha-flavoured:dough"
+		"matcha:dough"
 	],
 	"result": {
-		"id": "matcha-flavoured:brownie"
+		"id": "matcha:brownie"
 	}
 }

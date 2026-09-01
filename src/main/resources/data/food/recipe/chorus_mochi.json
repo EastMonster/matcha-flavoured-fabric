@@ -5,11 +5,11 @@
 		"minecraft:popped_chorus_fruit",
 		"minecraft:snowball",
 		"minecraft:sugar",
-		"matcha-flavoured:milk_bottle",
-		"matcha-flavoured:dough"
+		"matcha:milk_bottle",
+		"matcha:dough"
 	],
 	"result": {
-		"id": "matcha-flavoured:chorus_mochi",
+		"id": "matcha:chorus_mochi",
 		"count": 4
 	}
 }

@@ -3,7 +3,7 @@
 	"addition": "minecraft:phantom_membrane",
 	"base": "minecraft:copper_chestplate",
 	"result": {
-		"id": "matcha-flavoured:bronze_chestplate",
+		"id": "matcha:bronze_chestplate",
 		"components": {
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
@@ -19,7 +19,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha-flavoured.bronze_chestplate",
+				"translate": "item.matcha.bronze_chestplate",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

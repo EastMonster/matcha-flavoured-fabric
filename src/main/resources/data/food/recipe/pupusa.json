@@ -2,15 +2,15 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha-flavoured:dough",
-		"matcha-flavoured:cheese",
+		"matcha:dough",
+		"matcha:cheese",
 		[
 			"minecraft:cooked_porkchop",
 			"minecraft:cooked_chicken"
 		]
 	],
 	"result": {
-		"id": "matcha-flavoured:pupusa",
+		"id": "matcha:pupusa",
 		"count": 4
 	}
 }

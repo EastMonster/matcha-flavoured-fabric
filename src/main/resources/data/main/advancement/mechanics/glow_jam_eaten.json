@@ -3,7 +3,7 @@
 		"eat_glow_jam": {
 			"conditions": {
 				"item": {
-					"items": "matcha-flavoured:glow_jam"
+					"items": "matcha:glow_jam"
 				}
 			},
 			"trigger": "minecraft:consume_item"
