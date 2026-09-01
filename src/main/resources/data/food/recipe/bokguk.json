@@ -4,7 +4,7 @@
 	"ingredients": [
 		"minecraft:dried_kelp",
 		"minecraft:carrot",
-		"#matcha-flavoured:pufferfish_fish",
+		"#matcha:pufferfish_fish",
 		[
 			"minecraft:cooked_cod",
 			"minecraft:cooked_salmon"

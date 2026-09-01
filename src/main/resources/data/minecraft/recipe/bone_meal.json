@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "group": "bonemeal",
   "ingredients": [
-    "#matcha-flavoured:bone_fish"
+    "#matcha:bone_fish"
   ],
   "result": {
     "count": 3,
