@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:lime_wool",
-			"crafting:lime_carpet"
+			"matcha:crafting/lime_wool",
+			"matcha:crafting/lime_carpet"
 		]
 	}
 }

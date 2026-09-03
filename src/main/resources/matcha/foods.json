@@ -1,7 +1,7 @@
 [
 	{
 		"id": "apple_empanada",
-		"source": "data/food/recipe/apple_empanada.json",
+		"source": "data/matcha/recipe/food/crafting/apple_empanada.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -48,7 +48,7 @@
 	},
 	{
 		"id": "baked_apple",
-		"source": "data/food/recipe/baked_apple.json",
+		"source": "data/matcha/recipe/food/oven/baked_apple.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -95,7 +95,7 @@
 	},
 	{
 		"id": "baked_golden_apple",
-		"source": "data/food/recipe/baked_golden_apple.json",
+		"source": "data/matcha/recipe/food/oven/baked_golden_apple.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -155,7 +155,7 @@
 	},
 	{
 		"id": "baked_pumpkin",
-		"source": "data/food/recipe/baked_pumpkin.json",
+		"source": "data/matcha/recipe/food/oven/baked_pumpkin.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -203,7 +203,7 @@
 	},
 	{
 		"id": "bokguk",
-		"source": "data/food/recipe/bokguk.json",
+		"source": "data/matcha/recipe/food/crafting/bokguk.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤❤",
@@ -251,7 +251,7 @@
 	},
 	{
 		"id": "braised_brown_mushroom",
-		"source": "data/food/recipe/braised_brown_mushroom.json",
+		"source": "data/matcha/recipe/food/oven/braised_brown_mushroom.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -282,7 +282,7 @@
 	},
 	{
 		"id": "braised_crimson_fungus",
-		"source": "data/food/recipe/braised_crimson_fungus.json",
+		"source": "data/matcha/recipe/food/oven/braised_crimson_fungus.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -329,7 +329,7 @@
 	},
 	{
 		"id": "braised_red_mushroom",
-		"source": "data/food/recipe/braised_red_mushroom.json",
+		"source": "data/matcha/recipe/food/oven/braised_red_mushroom.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -376,7 +376,7 @@
 	},
 	{
 		"id": "braised_warped_fungus",
-		"source": "data/food/recipe/brasied_warped_fungus.json",
+		"source": "data/matcha/recipe/food/oven/brasied_warped_fungus.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -423,7 +423,7 @@
 	},
 	{
 		"id": "brownie",
-		"source": "data/food/recipe/brownie.json",
+		"source": "data/matcha/recipe/food/crafting/brownie.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤",
@@ -470,7 +470,7 @@
 	},
 	{
 		"id": "bruschetta",
-		"source": "data/food/recipe/bruschetta.json",
+		"source": "data/matcha/recipe/food/crafting/bruschetta.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -517,7 +517,7 @@
 	},
 	{
 		"id": "canned_apples",
-		"source": "data/food/recipe/canned_apples.json",
+		"source": "data/matcha/recipe/food/crafting/canned_apples.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤",
@@ -565,7 +565,7 @@
 	},
 	{
 		"id": "canned_golden_apples",
-		"source": "data/food/recipe/canned_golden_apples.json",
+		"source": "data/matcha/recipe/food/crafting/canned_golden_apples.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -626,7 +626,7 @@
 	},
 	{
 		"id": "carrot_cupcake",
-		"source": "data/food/recipe/carrot_cupcake.json",
+		"source": "data/matcha/recipe/food/crafting/carrot_cupcake.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -672,7 +672,7 @@
 	},
 	{
 		"id": "charred_fish",
-		"source": "data/food/recipe/charred_fish.json",
+		"source": "data/matcha/recipe/food/kiln/charred_fish.json",
 		"lore": {
 		  "text": "❤",
 		  "color": "red",
@@ -700,7 +700,7 @@
 	},
 	{
 		"id": "charred_meat",
-		"source": "data/food/recipe/charred_meat.json",
+		"source": "data/matcha/recipe/food/kiln/charred_meat.json",
 		"lore": {
 		  "text": "❤",
 		  "color": "red",
@@ -728,7 +728,7 @@
 	},
 	{
 		"id": "charred_potato",
-		"source": "data/food/recipe/charred_potato.json",
+		"source": "data/matcha/recipe/food/kiln/charred_potato.json",
 		"lore": {
 		  "text": "❣",
 		  "color": "red",
@@ -756,7 +756,7 @@
 	},
 	{
 		"id": "cheese",
-		"source": "data/food/recipe/cheese.json",
+		"source": "data/matcha/recipe/food/crafting/cheese.json",
 		"lore": [
 		  {
 		    "text": "❤❣",
@@ -786,7 +786,7 @@
 	},
 	{
 		"id": "chocolate",
-		"source": "data/food/recipe/chocolate.json",
+		"source": "data/matcha/recipe/food/oven/chocolate.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -834,7 +834,7 @@
 	},
 	{
 		"id": "chocolate_chip_cookie",
-		"source": "data/food/recipe/chocolate_chip_cookie.json",
+		"source": "data/matcha/recipe/food/crafting/chocolate_chip_cookie.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -881,7 +881,7 @@
 	},
 	{
 		"id": "chorus_mochi",
-		"source": "data/food/recipe/chorus_mochi.json",
+		"source": "data/matcha/recipe/food/crafting/chorus_mochi.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -928,7 +928,7 @@
 	},
 	{
 		"id": "cooked_pufferfish",
-		"source": "data/food/recipe/cooked_pufferfish.json",
+		"source": "data/matcha/recipe/food/oven/cooked_pufferfish.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -974,7 +974,7 @@
 	},
 	{
 		"id": "crimson_stroganoff",
-		"source": "data/food/recipe/crimson_stroganoff.json",
+		"source": "data/matcha/recipe/food/crafting/crimson_stroganoff.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤❤",
@@ -1022,7 +1022,7 @@
 	},
 	{
 		"id": "french_toast",
-		"source": "data/food/recipe/french_toast.json",
+		"source": "data/matcha/recipe/food/crafting/french_toast.json",
 		"lore": {
 		  "text": "❤❤❤❤❤",
 		  "color": "red",
@@ -1051,7 +1051,7 @@
 	},
 	{
 		"id": "fried_egg",
-		"source": "data/food/recipe/fried_egg.json",
+		"source": "data/matcha/recipe/food/oven/fried_egg.json",
 		"lore": {
 		  "text": "❤",
 		  "color": "red",
@@ -1080,7 +1080,7 @@
 	},
 	{
 		"id": "gimmari",
-		"source": "data/food/recipe/gimmari.json",
+		"source": "data/matcha/recipe/food/crafting/gimmari.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤",
@@ -1127,7 +1127,7 @@
 	},
 	{
 		"id": "glow_berry_crumble",
-		"source": "data/food/recipe/glow_berry_crumble.json",
+		"source": "data/matcha/recipe/food/crafting/glow_berry_crumble.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -1166,7 +1166,7 @@
 	},
 	{
 		"id": "glow_jam",
-		"source": "data/food/recipe/glow_jam.json",
+		"source": "data/matcha/recipe/food/crafting/glow_jam.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -1208,7 +1208,7 @@
 	},
 	{
 		"id": "gnocchi",
-		"source": "data/food/recipe/gnocchi.json",
+		"source": "data/matcha/recipe/food/crafting/gnocchi.json",
 		"lore": {
 		  "text": "❤❤❤❤❤❤❤❤",
 		  "color": "red",
@@ -1237,7 +1237,7 @@
 	},
 	{
 		"id": "golden_apple_empanada",
-		"source": "data/food/recipe/golden_apple_empanada.json",
+		"source": "data/matcha/recipe/food/crafting/golden_apple_empanada.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -1297,7 +1297,7 @@
 	},
 	{
 		"id": "golden_carrot_cupcake",
-		"source": "data/food/recipe/golden_carrot_cupcake.json",
+		"source": "data/matcha/recipe/food/crafting/golden_carrot_cupcake.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -1343,7 +1343,7 @@
 	},
 	{
 		"id": "golden_pickled_carrots",
-		"source": "data/food/recipe/golden_pickled_carrots.json",
+		"source": "data/matcha/recipe/food/crafting/golden_pickled_carrots.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -1391,7 +1391,7 @@
 	},
 	{
 		"id": "golden_steamed_carrots",
-		"source": "data/food/recipe/golden_steamed_carrots.json",
+		"source": "data/matcha/recipe/food/oven/golden_steamed_carrots.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -1439,7 +1439,7 @@
 	},
 	{
 		"id": "green_curry",
-		"source": "data/food/recipe/green_curry.json",
+		"source": "data/matcha/recipe/food/oven/green_curry.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤❤❤❤❤❤",
@@ -1486,7 +1486,7 @@
 	},
 	{
 		"id": "grilled_melon",
-		"source": "data/food/recipe/grilled_melon.json",
+		"source": "data/matcha/recipe/food/oven/grilled_melon.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -1533,7 +1533,7 @@
 	},
 	{
 		"id": "grilled_tomatoes",
-		"source": "data/food/recipe/grilled_tomatoes.json",
+		"source": "data/matcha/recipe/food/oven/grilled_tomatoes.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -1580,7 +1580,7 @@
 	},
 	{
 		"id": "honey_ginger_tea",
-		"source": "data/food/recipe/honey_ginger_tea.json",
+		"source": "data/matcha/recipe/food/oven/honey_ginger_tea.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -1650,7 +1650,7 @@
 	},
 	{
 		"id": "honied_french_toast",
-		"source": "data/food/recipe/honied_french_toast.json",
+		"source": "data/matcha/recipe/food/crafting/honied_french_toast.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤",
@@ -1694,7 +1694,7 @@
 	},
 	{
 		"id": "japanese_curry",
-		"source": "data/food/recipe/japanese_curry.json",
+		"source": "data/matcha/recipe/food/oven/japanese_curry.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤❤❤❤❤❤",
@@ -1744,7 +1744,7 @@
 	},
 	{
 		"id": "latke",
-		"source": "data/food/recipe/latke.json",
+		"source": "data/matcha/recipe/food/crafting/latke.json",
 		"lore": {
 		  "text": "❤❤❤❤❤❤❤❤",
 		  "color": "red",
@@ -1774,7 +1774,7 @@
 	},
 	{
 		"id": "mead",
-		"source": "data/food/recipe/mead.json",
+		"source": "data/matcha/recipe/food/crafting/mead.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤",
@@ -1822,7 +1822,7 @@
 	},
 	{
 		"id": "melon_sorbet",
-		"source": "data/food/recipe/melon_sorbet.json",
+		"source": "data/matcha/recipe/food/crafting/melon_sorbet.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -1872,7 +1872,7 @@
 	},
 	{
 		"id": "milk_bottle",
-		"source": "data/food/recipe/milk_bottle.json",
+		"source": "data/matcha/recipe/food/crafting/milk_bottle.json",
 		"lore": [
 		  {
 		    "translate": "matcha.lore.cleanse",
@@ -1898,7 +1898,7 @@
 	},
 	{
 		"id": "naan",
-		"source": "data/food/recipe/naan.json",
+		"source": "data/matcha/recipe/food/kiln/naan.json",
 		"lore": {
 		  "text": "❤",
 		  "color": "red",
@@ -1926,7 +1926,7 @@
 	},
 	{
 		"id": "paneer_makhani",
-		"source": "data/food/recipe/paneer_makhani.json",
+		"source": "data/matcha/recipe/food/oven/paneer_makhani.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤❤❤❤❤❤",
@@ -1976,7 +1976,7 @@
 	},
 	{
 		"id": "pickled_carrots",
-		"source": "data/food/recipe/pickled_carrots.json",
+		"source": "data/matcha/recipe/food/crafting/pickled_carrots.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -2024,7 +2024,7 @@
 	},
 	{
 		"id": "pickled_mushrooms",
-		"source": "data/food/recipe/pickled_mushrooms.json",
+		"source": "data/matcha/recipe/food/crafting/pickled_mushrooms.json",
 		"lore": {
 		  "text": "❤❤❤",
 		  "color": "red",
@@ -2054,7 +2054,7 @@
 	},
 	{
 		"id": "pickled_potatoes",
-		"source": "data/food/recipe/pickled_potatoes.json",
+		"source": "data/matcha/recipe/food/crafting/pickled_potatoes.json",
 		"lore": {
 		  "text": "❤❤❤❤❤",
 		  "color": "red",
@@ -2084,7 +2084,7 @@
 	},
 	{
 		"id": "pickled_tomatoes",
-		"source": "data/food/recipe/pickled_tomatoes.json",
+		"source": "data/matcha/recipe/food/crafting/pickled_tomatoes.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤",
@@ -2132,7 +2132,7 @@
 	},
 	{
 		"id": "pickled_warped_fungus",
-		"source": "data/food/recipe/pickled_warped_fungus.json",
+		"source": "data/matcha/recipe/food/crafting/pickled_warped_fungus.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -2180,7 +2180,7 @@
 	},
 	{
 		"id": "puerquito",
-		"source": "data/food/recipe/puerquito.json",
+		"source": "data/matcha/recipe/food/crafting/puerquito.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -2227,7 +2227,7 @@
 	},
 	{
 		"id": "pumpkin_empanada",
-		"source": "data/food/recipe/pumpkin_empanada.json",
+		"source": "data/matcha/recipe/food/crafting/pumpkin_empanada.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -2274,7 +2274,7 @@
 	},
 	{
 		"id": "pumpkin_jam",
-		"source": "data/food/recipe/pumpkin_jam.json",
+		"source": "data/matcha/recipe/food/crafting/pumpkin_jam.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -2324,7 +2324,7 @@
 	},
 	{
 		"id": "pupusa",
-		"source": "data/food/recipe/pupusa.json",
+		"source": "data/matcha/recipe/food/crafting/pupusa.json",
 		"lore": {
 		  "text": "❤❣",
 		  "color": "red",
@@ -2353,7 +2353,7 @@
 	},
 	{
 		"id": "ramen",
-		"source": "data/food/recipe/ramen.json",
+		"source": "data/matcha/recipe/food/oven/ramen.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤❤❤❤❤❤",
@@ -2403,7 +2403,7 @@
 	},
 	{
 		"id": "red_mushroom_stroganoff",
-		"source": "data/food/recipe/red_mushroom_stroganoff.json",
+		"source": "data/matcha/recipe/food/crafting/red_mushroom_stroganoff.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤❤",
@@ -2451,7 +2451,7 @@
 	},
 	{
 		"id": "rind_jam",
-		"source": "data/food/recipe/rind_jam.json",
+		"source": "data/matcha/recipe/food/crafting/rind_jam.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -2499,7 +2499,7 @@
 	},
 	{
 		"id": "steamed_carrots",
-		"source": "data/food/recipe/steamed_carrots.json",
+		"source": "data/matcha/recipe/food/oven/steamed_carrots.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -2547,7 +2547,7 @@
 	},
 	{
 		"id": "stroganoff",
-		"source": "data/food/recipe/stroganoff.json",
+		"source": "data/matcha/recipe/food/crafting/stroganoff.json",
 		"lore": {
 		  "text": "❤❤❤❤❤❤❤❤",
 		  "color": "red",
@@ -2577,7 +2577,7 @@
 	},
 	{
 		"id": "sweet_berry_danish",
-		"source": "data/food/recipe/sweet_berry_danish.json",
+		"source": "data/matcha/recipe/food/crafting/sweet_berry_danish.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤",
@@ -2621,7 +2621,7 @@
 	},
 	{
 		"id": "sweet_berry_jam",
-		"source": "data/food/recipe/sweet_berry_jam.json",
+		"source": "data/matcha/recipe/food/crafting/sweet_berry_jam.json",
 		"lore": [
 		  {
 		    "text": "❤❤",
@@ -2668,7 +2668,7 @@
 	},
 	{
 		"id": "sweet_berry_mash",
-		"source": "data/food/recipe/sweet_berry_mash.json",
+		"source": "data/matcha/recipe/food/oven/sweet_berry_mash.json",
 		"lore": [
 		  {
 		    "text": "❤",
@@ -2713,7 +2713,7 @@
 	},
 	{
 		"id": "sweet_berry_toast",
-		"source": "data/food/recipe/sweet_berry_toast.json",
+		"source": "data/matcha/recipe/food/crafting/sweet_berry_toast.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤",
@@ -2757,7 +2757,7 @@
 	},
 	{
 		"id": "warped_stroganoff",
-		"source": "data/food/recipe/warped_stroganoff.json",
+		"source": "data/matcha/recipe/food/crafting/warped_stroganoff.json",
 		"lore": [
 		  {
 		    "text": "❤❤❤❤❤❤",
@@ -2805,7 +2805,7 @@
 	},
 	{
 		"id": "cheese_pizza",
-		"source": "data/food/recipe/cheese_pizza.json",
+		"source": "data/matcha/recipe/food/crafting/cheese_pizza.json",
 		"lore": [
 			{
 				"text": "❤❤❤❤❣",
@@ -2849,7 +2849,7 @@
 	},
 	{
 		"id": "mushroom_pizza",
-		"source": "data/food/recipe/mushroom_pizza.json",
+		"source": "data/matcha/recipe/food/crafting/mushroom_pizza.json",
 		"lore": [
 			{
 				"text": "❤❤❤❤",
@@ -2893,7 +2893,7 @@
 	},
 	{
 		"id": "meat_pizza",
-		"source": "data/food/recipe/meat_pizza.json",
+		"source": "data/matcha/recipe/food/crafting/meat_pizza.json",
 		"lore": [
 			{
 				"text": "❤❤❤❤❤",
@@ -2937,7 +2937,7 @@
 	},
 	{
 		"id": "warped_pizza",
-		"source": "data/food/recipe/warped_pizza.json",
+		"source": "data/matcha/recipe/food/crafting/warped_pizza.json",
 		"lore": [
 			{
 				"text": "❤❤❤❤",
@@ -2995,7 +2995,7 @@
 	},
 	{
 		"id": "kontomire_stew",
-		"source": "data/food/recipe/kontomire_stew.json",
+		"source": "data/matcha/recipe/food/crafting/kontomire_stew.json",
 		"lore": [
 			{
 				"text": "❤❤❤❤❤❤",
@@ -3055,7 +3055,7 @@
 	},
 	{
 		"id": "pad_thai",
-		"source": "data/food/recipe/pad_thai.json",
+		"source": "data/matcha/recipe/food/crafting/pad_thai.json",
 		"lore": [
 			{
 				"text": "❤❤❤❤❤",

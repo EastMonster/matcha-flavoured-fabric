@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:music_disc_golden"
+			"matcha:crafting/music_disc_golden"
 		]
 	}
 }

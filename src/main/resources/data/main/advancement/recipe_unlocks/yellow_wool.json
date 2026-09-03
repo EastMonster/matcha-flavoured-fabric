@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:yellow_wool",
-			"crafting:yellow_carpet"
+			"matcha:crafting/yellow_wool",
+			"matcha:crafting/yellow_carpet"
 		]
 	}
 }

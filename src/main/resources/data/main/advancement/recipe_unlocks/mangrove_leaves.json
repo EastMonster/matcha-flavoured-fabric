@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:mangrove_propagule_from_mangrove_leaves"
+			"matcha:crafting/mangrove_propagule_from_mangrove_leaves"
 		]
 	}
 }

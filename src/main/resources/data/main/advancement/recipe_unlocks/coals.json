@@ -22,9 +22,9 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:torch",
-			"crafting:coal_alternate",
-			"crafting:black_dye"
+			"matcha:crafting/torch",
+			"matcha:crafting/coal_alternate",
+			"matcha:crafting/black_dye"
 		]
 	}
 }

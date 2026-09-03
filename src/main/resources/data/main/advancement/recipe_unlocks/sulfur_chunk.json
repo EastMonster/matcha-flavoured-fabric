@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:fire_charge"
+				"recipe": "matcha:crafting/fire_charge"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,10 +26,10 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:fire_charge",
-			"crafting:green_dye_from_patina",
-			"crafting:sulfur_from_sulfur_chunk",
-			"crafting:potent_sulfur"
+			"matcha:crafting/fire_charge",
+			"matcha:crafting/green_dye_from_patina",
+			"matcha:crafting/sulfur_from_sulfur_chunk",
+			"matcha:crafting/potent_sulfur"
 		]
 	}
 }

@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "food:grilled_melon"
+				"recipe": "matcha:food/oven/grilled_melon"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,9 +26,9 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:grilled_melon",
-			"food:melon_sorbet",
-			"food:rind_jam"
+			"matcha:food/oven/grilled_melon",
+			"matcha:food/crafting/melon_sorbet",
+			"matcha:food/crafting/rind_jam"
 		]
 	}
 }

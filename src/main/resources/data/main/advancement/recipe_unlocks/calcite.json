@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:prismarine",
-			"crafting:white_dye_from_calcite"
+			"matcha:crafting/prismarine",
+			"matcha:crafting/white_dye_from_calcite"
 		]
 	}
 }

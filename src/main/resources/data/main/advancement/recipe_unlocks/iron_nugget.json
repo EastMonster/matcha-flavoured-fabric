@@ -19,9 +19,9 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:red_sand_from_sand_and_iron",
-			"crafting:lantern",
-			"crafting:iron_chain"
+			"matcha:crafting/red_sand_from_sand_and_iron",
+			"matcha:crafting/lantern",
+			"matcha:crafting/iron_chain"
 		]
 	}
 }

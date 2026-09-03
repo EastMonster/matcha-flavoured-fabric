@@ -4,73 +4,73 @@
 		"shakudo_axe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_axe"
+				"recipe_id": "matcha:smithing/shakudo_axe"
 			}
 		},
 		"shakudo_pickaxe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_pickaxe"
+				"recipe_id": "matcha:smithing/shakudo_pickaxe"
 			}
 		},
 		"shakudo_shovel": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_shovel"
+				"recipe_id": "matcha:smithing/shakudo_shovel"
 			}
 		},
 		"shakudo_hoe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_hoe"
+				"recipe_id": "matcha:smithing/shakudo_hoe"
 			}
 		},
 		"shakudo_sword": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_sword"
+				"recipe_id": "matcha:smithing/shakudo_sword"
 			}
 		},
 		"shakudo_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_dolabra"
+				"recipe_id": "matcha:smithing/shakudo_dolabra"
 			}
 		},
 		"shakudo_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_mattock"
+				"recipe_id": "matcha:smithing/shakudo_mattock"
 			}
 		},
 		"shakudo_spear": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_spear"
+				"recipe_id": "matcha:smithing/shakudo_spear"
 			}
 		},
 		"shakudo_helmet": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_helmet"
+				"recipe_id": "matcha:smithing/shakudo_helmet"
 			}
 		},
 		"shakudo_chestplate": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_chestplate"
+				"recipe_id": "matcha:smithing/shakudo_chestplate"
 			}
 		},
 		"shakudo_leggings": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_leggings"
+				"recipe_id": "matcha:smithing/shakudo_leggings"
 			}
 		},
 		"shakudo_boots": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_boots"
+				"recipe_id": "matcha:smithing/shakudo_boots"
 			}
 		}
 	},

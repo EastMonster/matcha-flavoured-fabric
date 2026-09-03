@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:baked_pumpkin"
+			"matcha:food/oven/baked_pumpkin"
 		]
 	}
 }

@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:golden_carrot",
-			"food:golden_apple"
+			"matcha:food/crafting/golden_carrot",
+			"matcha:food/crafting/golden_apple"
 		]
 	}
 }

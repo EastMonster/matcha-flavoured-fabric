@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:clock"
+			"matcha:crafting/clock"
 		]
 	}
 }

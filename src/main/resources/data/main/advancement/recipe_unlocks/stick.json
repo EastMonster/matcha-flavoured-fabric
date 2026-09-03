@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:tinder"
+			"matcha:crafting/tinder"
 		]
 	}
 }

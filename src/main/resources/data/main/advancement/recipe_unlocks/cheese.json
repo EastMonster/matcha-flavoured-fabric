@@ -19,10 +19,10 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:pupusa",
-			"food:cheese_pizza",
-			"food:meat_pizza",
-			"food:mushroom_pizza"
+			"matcha:food/crafting/pupusa",
+			"matcha:food/crafting/cheese_pizza",
+			"matcha:food/crafting/meat_pizza",
+			"matcha:food/crafting/mushroom_pizza"
 		]
 	}
 }

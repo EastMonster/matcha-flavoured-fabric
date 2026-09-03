@@ -19,13 +19,13 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:rabbit_hide_from_leather",
-			"crafting:sturdy_leather_boots",
-			"crafting:sturdy_leather_chestplate",
-			"crafting:sturdy_leather_pants",
-			"crafting:sturdy_leather_helmet",
-			"crafting:sack",
-			"crafting:leather_from_leather_materials"
+			"matcha:crafting/rabbit_hide_from_leather",
+			"matcha:crafting/sturdy_leather_boots",
+			"matcha:crafting/sturdy_leather_chestplate",
+			"matcha:crafting/sturdy_leather_pants",
+			"matcha:crafting/sturdy_leather_helmet",
+			"matcha:crafting/sack",
+			"matcha:crafting/leather_from_leather_materials"
 		]
 	}
 }

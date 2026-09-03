@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:brick_from_terracottas"
+			"matcha:crafting/brick_from_terracottas"
 		]
 	}
 }

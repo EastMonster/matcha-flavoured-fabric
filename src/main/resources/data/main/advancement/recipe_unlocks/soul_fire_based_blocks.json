@@ -19,9 +19,9 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:soul_campfire",
-			"crafting:soul_torch",
-			"crafting:soul_lantern"
+			"matcha:crafting/soul_campfire",
+			"matcha:crafting/soul_torch",
+			"matcha:crafting/soul_lantern"
 		]
 	}
 }

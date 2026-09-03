@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:sulfur_chunk_from_potent_sulfur"
+			"matcha:crafting/sulfur_chunk_from_potent_sulfur"
 		]
 	}
 }

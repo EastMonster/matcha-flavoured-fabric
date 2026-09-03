@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:cyan_dye_from_warped_fungus"
+			"matcha:crafting/cyan_dye_from_warped_fungus"
 		]
 	}
 }

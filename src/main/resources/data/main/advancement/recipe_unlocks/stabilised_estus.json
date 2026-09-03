@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:ender_eye",
-			"blessings:hell_bound_book"
+			"matcha:crafting/ender_eye",
+			"matcha:blessing/hell_bound_book"
 		]
 	}
 }

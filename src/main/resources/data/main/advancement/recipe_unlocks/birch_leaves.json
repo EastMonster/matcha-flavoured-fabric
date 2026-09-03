@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:birch_sapling_from_birch_leaves"
+			"matcha:crafting/birch_sapling_from_birch_leaves"
 		]
 	}
 }

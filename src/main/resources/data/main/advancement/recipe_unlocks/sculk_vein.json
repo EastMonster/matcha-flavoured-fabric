@@ -19,9 +19,9 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:sculk_sensor",
-			"crafting:sculk_shrieker",
-			"crafting:sculk"
+			"matcha:crafting/sculk_sensor",
+			"matcha:crafting/sculk_shrieker",
+			"matcha:crafting/sculk"
 		]
 	}
 }

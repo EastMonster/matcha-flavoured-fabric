@@ -21,8 +21,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:pumpkin_jam",
-			"food:pumpkin_empanada"
+			"matcha:food/crafting/pumpkin_jam",
+			"matcha:food/crafting/pumpkin_empanada"
 		]
 	}
 }

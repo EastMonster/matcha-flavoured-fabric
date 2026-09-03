@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:milk_bottle",
-			"food:cheese"
+			"matcha:food/crafting/milk_bottle",
+			"matcha:food/crafting/cheese"
 		]
 	}
 }

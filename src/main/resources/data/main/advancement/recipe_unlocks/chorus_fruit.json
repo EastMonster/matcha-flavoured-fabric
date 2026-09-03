@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:popped_chorus_fruit"
+			"matcha:food/crafting/popped_chorus_fruit"
 		]
 	}
 }

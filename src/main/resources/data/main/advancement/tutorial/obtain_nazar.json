@@ -4,7 +4,7 @@
 		"get_nazar": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:nazar"
+				"recipe_id": "matcha:crafting/nazar"
 			}
 		}
 	},

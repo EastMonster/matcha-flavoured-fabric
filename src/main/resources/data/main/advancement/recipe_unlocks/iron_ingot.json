@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:iron_pickaxe"
+				"recipe": "matcha:crafting/iron_pickaxe"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,33 +26,33 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:rail_from_iron",
-			"crafting:minecart_from_iron",
-			"crafting:iron_trapdoor_from_iron",
-			"crafting:iron_pickaxe",
-			"crafting:iron_hoe",
-			"crafting:iron_axe",
-			"crafting:iron_shovel",
-			"crafting:iron_sword",
-			"crafting:iron_spear",
-			"crafting:iron_helmet",
-			"crafting:iron_chestplate",
-			"crafting:iron_leggings",
-			"crafting:iron_boots",
-			"crafting:iron_mattock",
-			"crafting:iron_door_from_iron",
-			"crafting:iron_chain",
-			"crafting:iron_bars",
-			"crafting:iron_dolabra",
-			"crafting:iron_shears",
-			"crafting:carbon_rich_iron",
-			"crafting:anvil",
-			"crafting:hopper_from_iron",
-			"crafting:detector_rail_from_iron",
-			"crafting:cauldron_from_iron",
-			"crafting:bucket_from_iron",
-			"crafting:activator_rail_from_iron",
-			"crafting:chemistry_stand"
+			"matcha:crafting/rail_from_iron",
+			"matcha:crafting/minecart_from_iron",
+			"matcha:crafting/iron_trapdoor_from_iron",
+			"matcha:crafting/iron_pickaxe",
+			"matcha:crafting/iron_hoe",
+			"matcha:crafting/iron_axe",
+			"matcha:crafting/iron_shovel",
+			"matcha:crafting/iron_sword",
+			"matcha:crafting/iron_spear",
+			"matcha:crafting/iron_helmet",
+			"matcha:crafting/iron_chestplate",
+			"matcha:crafting/iron_leggings",
+			"matcha:crafting/iron_boots",
+			"matcha:crafting/iron_mattock",
+			"matcha:crafting/iron_door_from_iron",
+			"matcha:crafting/iron_chain",
+			"matcha:crafting/iron_bars",
+			"matcha:crafting/iron_dolabra",
+			"matcha:crafting/iron_shears",
+			"matcha:crafting/carbon_rich_iron",
+			"matcha:crafting/anvil",
+			"matcha:crafting/hopper_from_iron",
+			"matcha:crafting/detector_rail_from_iron",
+			"matcha:crafting/cauldron_from_iron",
+			"matcha:crafting/bucket_from_iron",
+			"matcha:crafting/activator_rail_from_iron",
+			"matcha:crafting/chemistry_stand"
 		]
 	}
 }

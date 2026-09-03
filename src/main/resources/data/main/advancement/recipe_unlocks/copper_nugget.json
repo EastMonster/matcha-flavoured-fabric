@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:copper_lantern"
+				"recipe": "matcha:crafting/copper_lantern"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,8 +26,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:copper_lantern",
-			"crafting:copper_chain"
+			"matcha:crafting/copper_lantern",
+			"matcha:crafting/copper_chain"
 		]
 	}
 }

@@ -21,8 +21,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:canned_apples",
-			"food:apple_empanada"
+			"matcha:food/crafting/canned_apples",
+			"matcha:food/crafting/apple_empanada"
 		]
 	}
 }

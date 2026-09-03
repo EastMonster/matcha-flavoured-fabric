@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:jukebox"
+			"matcha:crafting/jukebox"
 		]
 	}
 }

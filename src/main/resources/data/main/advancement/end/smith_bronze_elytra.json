@@ -4,7 +4,7 @@
 		"bronze_elytra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:bronze_elytra"
+				"recipe_id": "matcha:smithing/bronze_elytra"
 			}
 		}
 	},

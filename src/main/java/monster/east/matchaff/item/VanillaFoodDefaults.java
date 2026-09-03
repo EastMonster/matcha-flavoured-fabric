@@ -68,7 +68,11 @@ public class VanillaFoodDefaults {
 	}
 
 	private static Definition readRecipe(String name) {
-		return readRecipeAt("/data/food/recipe/" + name + ".json");
+		String category = switch (name) {
+			case "dried_kelp", "golden_apple", "golden_carrot", "popped_chorus_fruit" -> "crafting";
+			default -> "oven";
+		};
+		return readRecipeAt("/data/matcha/recipe/food/" + category + "/" + name + ".json");
 	}
 
 	private static Definition readRecipeAt(String path) {

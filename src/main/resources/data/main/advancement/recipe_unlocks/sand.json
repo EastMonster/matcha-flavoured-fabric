@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:sandstone",
-			"blasting:quartz_from_blasting_sand"
+			"matcha:crafting/sandstone",
+			"matcha:blast/quartz"
 		]
 	}
 }

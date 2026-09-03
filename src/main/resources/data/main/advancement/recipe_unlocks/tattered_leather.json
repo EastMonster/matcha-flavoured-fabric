@@ -19,12 +19,12 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:leather_boots",
-			"crafting:leather_chestplate",
-			"crafting:leather_pants",
-			"crafting:leather_helmet",
-			"crafting:bundle",
-			"crafting:item_frame"
+			"matcha:crafting/leather_boots",
+			"matcha:crafting/leather_chestplate",
+			"matcha:crafting/leather_pants",
+			"matcha:crafting/leather_helmet",
+			"matcha:crafting/bundle",
+			"matcha:crafting/item_frame"
 		]
 	}
 }

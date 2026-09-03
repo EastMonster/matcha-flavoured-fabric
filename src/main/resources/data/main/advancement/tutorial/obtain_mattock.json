@@ -4,37 +4,37 @@
 		"copper_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:copper_dolabra"
+				"recipe_id": "matcha:crafting/copper_dolabra"
 			}
 		},
 		"copper_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:copper_mattock"
+				"recipe_id": "matcha:crafting/copper_mattock"
 			}
 		},
 		"iron_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:iron_dolabra"
+				"recipe_id": "matcha:crafting/iron_dolabra"
 			}
 		},
 		"iron_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:iron_mattock"
+				"recipe_id": "matcha:crafting/iron_mattock"
 			}
 		},
 		"diamond_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:diamond_dolabra"
+				"recipe_id": "matcha:crafting/diamond_dolabra"
 			}
 		},
 		"diamond_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:diamond_mattock"
+				"recipe_id": "matcha:crafting/diamond_mattock"
 			}
 		}
 	},

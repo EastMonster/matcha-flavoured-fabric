@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:cyan_wool",
-			"crafting:cyan_carpet"
+			"matcha:crafting/cyan_wool",
+			"matcha:crafting/cyan_carpet"
 		]
 	}
 }

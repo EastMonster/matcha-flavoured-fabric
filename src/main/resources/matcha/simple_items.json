@@ -29,7 +29,7 @@
 		"id": "bronze_elytra",
 		"type": "item",
 		"tab": "combat",
-		"source": "data/smithing_table/recipe/bronze_elytra.json",
+		"source": "data/matcha/recipe/smithing/bronze_elytra.json",
 		"carrier": "minecraft:elytra",
 		"components": {
 			"minecraft:max_damage": 800,
@@ -88,7 +88,7 @@
 		"id": "shakudo_elytra",
 		"type": "item",
 		"tab": "combat",
-		"source": "data/smithing_table/recipe/shakudo_elytra.json",
+		"source": "data/matcha/recipe/smithing/shakudo_elytra.json",
 		"carrier": "minecraft:elytra",
 		"components": {
 			"minecraft:max_damage": 800,
@@ -218,7 +218,7 @@
 		"id": "copper_compass",
 		"type": "compass",
 		"tab": "tools",
-		"source": "data/crafting/recipe/copper_compass.json",
+		"source": "data/matcha/recipe/crafting/copper_compass.json",
 		"carrier": "minecraft:compass",
 		"components": {
 			"minecraft:item_name": {
@@ -230,7 +230,7 @@
 		"id": "copper_shears",
 		"type": "shears",
 		"tab": "tools",
-		"source": "data/crafting/recipe/copper_shears.json",
+		"source": "data/matcha/recipe/crafting/copper_shears.json",
 		"carrier": "minecraft:shears",
 		"components": {
 			"minecraft:max_damage": 300,
@@ -405,7 +405,7 @@
 		"id": "golden_compass",
 		"type": "compass",
 		"tab": "tools",
-		"source": "data/crafting/recipe/golden_compass.json",
+		"source": "data/matcha/recipe/crafting/golden_compass.json",
 		"carrier": "minecraft:compass",
 		"components": {
 			"minecraft:item_name": {
@@ -456,7 +456,7 @@
 		"id": "pickled_crimson_fungus",
 		"type": "splash_potion",
 		"tab": "foods",
-		"source": "data/food/recipe/pickled_crimson_fungus.json",
+		"source": "data/matcha/recipe/food/crafting/pickled_crimson_fungus.json",
 		"carrier": "minecraft:splash_potion",
 		"components": {
 			"minecraft:max_stack_size": 64,
@@ -496,7 +496,7 @@
 		"id": "pickled_red_mushrooms",
 		"type": "splash_potion",
 		"tab": "foods",
-		"source": "data/food/recipe/pickled_red_mushrooms.json",
+		"source": "data/matcha/recipe/food/crafting/pickled_red_mushrooms.json",
 		"carrier": "minecraft:splash_potion",
 		"components": {
 			"minecraft:max_stack_size": 64,
@@ -565,7 +565,7 @@
 		"id": "steel_shears",
 		"type": "shears",
 		"tab": "tools",
-		"source": "data/smithing_table/recipe/steel_shears.json",
+		"source": "data/matcha/recipe/smithing/steel_shears.json",
 		"carrier": "minecraft:shears",
 		"components": {
 			"minecraft:item_name": {
@@ -602,7 +602,7 @@
 		"id": "tinder",
 		"type": "flint_and_steel",
 		"tab": "tools",
-		"source": "data/crafting/recipe/tinder.json",
+		"source": "data/matcha/recipe/crafting/tinder.json",
 		"carrier": "minecraft:flint_and_steel",
 		"components": {
 			"minecraft:max_damage": 1,
@@ -646,7 +646,7 @@
 		"id": "wooden_cross",
 		"type": "item",
 		"tab": "combat",
-		"source": "data/crafting/recipe/wooden_cross.json",
+		"source": "data/matcha/recipe/crafting/wooden_cross.json",
 		"carrier": "minecraft:poisonous_potato",
 		"components": {
 			"minecraft:item_name": {
@@ -663,70 +663,70 @@
 		"id": "flour",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/food/recipe/flour.json",
+		"source": "data/matcha/recipe/food/crafting/flour.json",
 		"components": {}
 	},
 	{
 		"id": "flour_bag",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/food/recipe/flour_bag.json",
+		"source": "data/matcha/recipe/food/crafting/flour_bag.json",
 		"components": {}
 	},
 	{
 		"id": "benzene",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/crafting/recipe/benzene.json",
+		"source": "data/matcha/recipe/crafting/benzene.json",
 		"components": {}
 	},
 	{
 		"id": "dough",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/food/recipe/dough.json",
+		"source": "data/matcha/recipe/food/crafting/dough.json",
 		"components": {}
 	},
 	{
 		"id": "uncooked_curry",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/food/recipe/uncooked_curry.json",
+		"source": "data/matcha/recipe/food/crafting/uncooked_curry.json",
 		"components": {}
 	},
 	{
 		"id": "uncooked_ramen",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/food/recipe/uncooked_ramen.json",
+		"source": "data/matcha/recipe/food/crafting/uncooked_ramen.json",
 		"components": {}
 	},
 	{
 		"id": "uncooked_paneer_makhani",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/food/recipe/uncooked_paneer_makhani.json",
+		"source": "data/matcha/recipe/food/crafting/uncooked_paneer_makhani.json",
 		"components": {}
 	},
 	{
 		"id": "uncooked_green_curry",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/food/recipe/uncooked_green_curry.json",
+		"source": "data/matcha/recipe/food/crafting/uncooked_green_curry.json",
 		"components": {}
 	},
 	{
 		"id": "carbon_rich_iron",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/crafting/recipe/carbon_rich_iron.json",
+		"source": "data/matcha/recipe/crafting/carbon_rich_iron.json",
 		"components": {}
 	},
 	{
 		"id": "estus_flask",
 		"type": "potion",
 		"tab": "foods",
-		"source": "data/crafting/recipe/estus_flask.json",
+		"source": "data/matcha/recipe/crafting/estus_flask.json",
 		"carrier": "minecraft:potion",
 		"components": {
 			"minecraft:potion_contents": {

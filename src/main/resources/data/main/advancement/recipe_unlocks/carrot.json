@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "food:steamed_carrots"
+				"recipe": "matcha:food/oven/steamed_carrots"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,10 +26,10 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:steamed_carrots",
-			"food:pad_thai",
-			"food:pickled_carrots",
-			"food:carrot_cupcake"
+			"matcha:food/oven/steamed_carrots",
+			"matcha:food/crafting/pad_thai",
+			"matcha:food/crafting/pickled_carrots",
+			"matcha:food/crafting/carrot_cupcake"
 		]
 	}
 }

@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:divine_favour"
+				"recipe": "matcha:crafting/divine_favour"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,10 +26,10 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:divine_favour",
-			"crafting:ender_eye",
-			"crafting:bedrock_buster",
-			"crafting:crystal_heart"
+			"matcha:crafting/divine_favour",
+			"matcha:crafting/ender_eye",
+			"matcha:crafting/bedrock_buster",
+			"matcha:crafting/crystal_heart"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:packed_mud_from_wheat"
+			"matcha:crafting/packed_mud_from_wheat"
 		]
 	}
 }

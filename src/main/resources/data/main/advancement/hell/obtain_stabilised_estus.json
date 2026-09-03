@@ -4,7 +4,7 @@
 		"get_stabilised_estus": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "crafting:stabilised_estus"
+				"recipe_id": "matcha:crafting/stabilised_estus"
 			}
 		}
 	},

@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:golden_pickaxe"
+				"recipe": "matcha:crafting/golden_pickaxe"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,19 +26,19 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:golden_pickaxe",
-			"crafting:golden_axe",
-			"crafting:golden_shovel",
-			"crafting:golden_hoe",
-			"crafting:golden_sword",
-			"crafting:golden_spear",
-			"crafting:golden_helmet",
-			"crafting:golden_chestplate",
-			"crafting:golden_leggings",
-			"crafting:golden_boots",
-			"crafting:golden_compass",
-			"crafting:shakudo_alloy",
-			"crafting:powered_rail_from_gold"
+			"matcha:crafting/golden_pickaxe",
+			"matcha:crafting/golden_axe",
+			"matcha:crafting/golden_shovel",
+			"matcha:crafting/golden_hoe",
+			"matcha:crafting/golden_sword",
+			"matcha:crafting/golden_spear",
+			"matcha:crafting/golden_helmet",
+			"matcha:crafting/golden_chestplate",
+			"matcha:crafting/golden_leggings",
+			"matcha:crafting/golden_boots",
+			"matcha:crafting/golden_compass",
+			"matcha:crafting/shakudo_alloy",
+			"matcha:crafting/powered_rail_from_gold"
 		]
 	}
 }

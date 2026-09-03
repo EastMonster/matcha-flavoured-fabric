@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:chorus_mochi"
+			"matcha:food/crafting/chorus_mochi"
 		]
 	}
 }

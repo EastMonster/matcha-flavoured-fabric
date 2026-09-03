@@ -1,17 +1,17 @@
 [
 	{
 		"id": "adamant_claymore",
-		"source": "data/smithing_table/recipe/adamant_claymore.json",
+		"source": "data/matcha/recipe/smithing/adamant_claymore.json",
 		"carrier": "minecraft:netherite_sword"
 	},
 	{
 		"id": "adamant_dolabra",
-		"source": "data/smithing_table/recipe/adamant_dolabra.json",
+		"source": "data/matcha/recipe/smithing/adamant_dolabra.json",
 		"carrier": "minecraft:netherite_axe"
 	},
 	{
 		"id": "adamant_mattock",
-		"source": "data/smithing_table/recipe/adamant_mattock.json",
+		"source": "data/matcha/recipe/smithing/adamant_mattock.json",
 		"carrier": "minecraft:netherite_hoe"
 	},
 	{
@@ -120,32 +120,32 @@
 	},
 	{
 		"id": "bronze_axe",
-		"source": "data/smithing_table/recipe/bronze_axe.json",
+		"source": "data/matcha/recipe/smithing/bronze_axe.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "bronze_boots",
-		"source": "data/smithing_table/recipe/bronze_boots.json",
+		"source": "data/matcha/recipe/smithing/bronze_boots.json",
 		"carrier": "minecraft:copper_boots"
 	},
 	{
 		"id": "bronze_chestplate",
-		"source": "data/smithing_table/recipe/bronze_chestplate.json",
+		"source": "data/matcha/recipe/smithing/bronze_chestplate.json",
 		"carrier": "minecraft:copper_chestplate"
 	},
 	{
 		"id": "bronze_dolabra",
-		"source": "data/smithing_table/recipe/bronze_dolabra.json",
+		"source": "data/matcha/recipe/smithing/bronze_dolabra.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "bronze_helmet",
-		"source": "data/smithing_table/recipe/bronze_helmet.json",
+		"source": "data/matcha/recipe/smithing/bronze_helmet.json",
 		"carrier": "minecraft:copper_helmet"
 	},
 	{
 		"id": "bronze_hoe",
-		"source": "data/smithing_table/recipe/bronze_hoe.json",
+		"source": "data/matcha/recipe/smithing/bronze_hoe.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
@@ -200,32 +200,32 @@
 	},
 	{
 		"id": "bronze_leggings",
-		"source": "data/smithing_table/recipe/bronze_leggings.json",
+		"source": "data/matcha/recipe/smithing/bronze_leggings.json",
 		"carrier": "minecraft:copper_leggings"
 	},
 	{
 		"id": "bronze_mattock",
-		"source": "data/smithing_table/recipe/bronze_mattock.json",
+		"source": "data/matcha/recipe/smithing/bronze_mattock.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
 		"id": "bronze_pickaxe",
-		"source": "data/smithing_table/recipe/bronze_pickaxe.json",
+		"source": "data/matcha/recipe/smithing/bronze_pickaxe.json",
 		"carrier": "minecraft:stone_pickaxe"
 	},
 	{
 		"id": "bronze_shovel",
-		"source": "data/smithing_table/recipe/bronze_shovel.json",
+		"source": "data/matcha/recipe/smithing/bronze_shovel.json",
 		"carrier": "minecraft:stone_shovel"
 	},
 	{
 		"id": "bronze_spear",
-		"source": "data/smithing_table/recipe/bronze_spear.json",
+		"source": "data/matcha/recipe/smithing/bronze_spear.json",
 		"carrier": "minecraft:stone_spear"
 	},
 	{
 		"id": "bronze_sword",
-		"source": "data/smithing_table/recipe/bronze_sword.json",
+		"source": "data/matcha/recipe/smithing/bronze_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},
 	{
@@ -235,12 +235,12 @@
 	},
 	{
 		"id": "copper_dolabra",
-		"source": "data/crafting/recipe/copper_dolabra.json",
+		"source": "data/matcha/recipe/crafting/copper_dolabra.json",
 		"carrier": "minecraft:copper_axe"
 	},
 	{
 		"id": "copper_mattock",
-		"source": "data/crafting/recipe/copper_mattock.json",
+		"source": "data/matcha/recipe/crafting/copper_mattock.json",
 		"carrier": "minecraft:copper_hoe"
 	},
 	{
@@ -336,82 +336,82 @@
 	},
 	{
 		"id": "diamond_dolabra",
-		"source": "data/crafting/recipe/diamond_dolabra.json",
+		"source": "data/matcha/recipe/crafting/diamond_dolabra.json",
 		"carrier": "minecraft:diamond_axe"
 	},
 	{
 		"id": "diamond_mattock",
-		"source": "data/crafting/recipe/diamond_mattock.json",
+		"source": "data/matcha/recipe/crafting/diamond_mattock.json",
 		"carrier": "minecraft:diamond_hoe"
 	},
 	{
 		"id": "electrum_axe",
-		"source": "data/smithing_table/recipe/electrum_axe.json",
+		"source": "data/matcha/recipe/smithing/electrum_axe.json",
 		"carrier": "minecraft:diamond_axe"
 	},
 	{
 		"id": "electrum_boots",
-		"source": "data/smithing_table/recipe/electrum_boots.json",
+		"source": "data/matcha/recipe/smithing/electrum_boots.json",
 		"carrier": "minecraft:diamond_boots"
 	},
 	{
 		"id": "electrum_chestplate",
-		"source": "data/smithing_table/recipe/electrum_chestplate.json",
+		"source": "data/matcha/recipe/smithing/electrum_chestplate.json",
 		"carrier": "minecraft:diamond_chestplate"
 	},
 	{
 		"id": "electrum_dolabra",
-		"source": "data/smithing_table/recipe/electrum_dolabra.json",
+		"source": "data/matcha/recipe/smithing/electrum_dolabra.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "electrum_helmet",
-		"source": "data/smithing_table/recipe/electrum_helmet.json",
+		"source": "data/matcha/recipe/smithing/electrum_helmet.json",
 		"carrier": "minecraft:diamond_helmet"
 	},
 	{
 		"id": "electrum_hoe",
-		"source": "data/smithing_table/recipe/electrum_hoe.json",
+		"source": "data/matcha/recipe/smithing/electrum_hoe.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
 		"id": "electrum_leggings",
-		"source": "data/smithing_table/recipe/electrum_leggings.json",
+		"source": "data/matcha/recipe/smithing/electrum_leggings.json",
 		"carrier": "minecraft:diamond_leggings"
 	},
 	{
 		"id": "electrum_mattock",
-		"source": "data/smithing_table/recipe/electrum_mattock.json",
+		"source": "data/matcha/recipe/smithing/electrum_mattock.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
 		"id": "electrum_pickaxe",
-		"source": "data/smithing_table/recipe/electrum_pickaxe.json",
+		"source": "data/matcha/recipe/smithing/electrum_pickaxe.json",
 		"carrier": "minecraft:stone_pickaxe"
 	},
 	{
 		"id": "electrum_shovel",
-		"source": "data/smithing_table/recipe/electrum_shovel.json",
+		"source": "data/matcha/recipe/smithing/electrum_shovel.json",
 		"carrier": "minecraft:stone_shovel"
 	},
 	{
 		"id": "electrum_spear",
-		"source": "data/smithing_table/recipe/electrum_spear.json",
+		"source": "data/matcha/recipe/smithing/electrum_spear.json",
 		"carrier": "minecraft:stone_spear"
 	},
 	{
 		"id": "electrum_sword",
-		"source": "data/smithing_table/recipe/electrum_sword.json",
+		"source": "data/matcha/recipe/smithing/electrum_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},
 	{
 		"id": "iron_dolabra",
-		"source": "data/crafting/recipe/iron_dolabra.json",
+		"source": "data/matcha/recipe/crafting/iron_dolabra.json",
 		"carrier": "minecraft:iron_axe"
 	},
 	{
 		"id": "iron_mattock",
-		"source": "data/crafting/recipe/iron_mattock.json",
+		"source": "data/matcha/recipe/crafting/iron_mattock.json",
 		"carrier": "minecraft:iron_hoe"
 	},
 	{
@@ -457,7 +457,7 @@
 	},
 	{
 		"id": "palatinate_sword",
-		"source": "data/smithing_table/recipe/shakudo_sword.json",
+		"source": "data/matcha/recipe/smithing/shakudo_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},
 	{
@@ -536,147 +536,147 @@
 	},
 	{
 		"id": "shakudo_axe",
-		"source": "data/smithing_table/recipe/shakudo_axe.json",
+		"source": "data/matcha/recipe/smithing/shakudo_axe.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "shakudo_boots",
-		"source": "data/smithing_table/recipe/shakudo_boots.json",
+		"source": "data/matcha/recipe/smithing/shakudo_boots.json",
 		"carrier": "minecraft:copper_boots"
 	},
 	{
 		"id": "shakudo_chestplate",
-		"source": "data/smithing_table/recipe/shakudo_chestplate.json",
+		"source": "data/matcha/recipe/smithing/shakudo_chestplate.json",
 		"carrier": "minecraft:copper_chestplate"
 	},
 	{
 		"id": "shakudo_dolabra",
-		"source": "data/smithing_table/recipe/shakudo_dolabra.json",
+		"source": "data/matcha/recipe/smithing/shakudo_dolabra.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "shakudo_helmet",
-		"source": "data/smithing_table/recipe/shakudo_helmet.json",
+		"source": "data/matcha/recipe/smithing/shakudo_helmet.json",
 		"carrier": "minecraft:copper_helmet"
 	},
 	{
 		"id": "shakudo_hoe",
-		"source": "data/smithing_table/recipe/shakudo_hoe.json",
+		"source": "data/matcha/recipe/smithing/shakudo_hoe.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
 		"id": "shakudo_leggings",
-		"source": "data/smithing_table/recipe/shakudo_leggings.json",
+		"source": "data/matcha/recipe/smithing/shakudo_leggings.json",
 		"carrier": "minecraft:copper_leggings"
 	},
 	{
 		"id": "shakudo_mattock",
-		"source": "data/smithing_table/recipe/shakudo_mattock.json",
+		"source": "data/matcha/recipe/smithing/shakudo_mattock.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
 		"id": "shakudo_pickaxe",
-		"source": "data/smithing_table/recipe/shakudo_pickaxe.json",
+		"source": "data/matcha/recipe/smithing/shakudo_pickaxe.json",
 		"carrier": "minecraft:stone_pickaxe"
 	},
 	{
 		"id": "shakudo_shovel",
-		"source": "data/smithing_table/recipe/shakudo_shovel.json",
+		"source": "data/matcha/recipe/smithing/shakudo_shovel.json",
 		"carrier": "minecraft:stone_shovel"
 	},
 	{
 		"id": "shakudo_spear",
-		"source": "data/smithing_table/recipe/shakudo_spear.json",
+		"source": "data/matcha/recipe/smithing/shakudo_spear.json",
 		"carrier": "minecraft:stone_spear"
 	},
 	{
 		"id": "silver_sword",
-		"source": "data/smithing_table/recipe/silver_sword.json",
+		"source": "data/matcha/recipe/smithing/silver_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},
 	{
 		"id": "snow_shovel",
-		"source": "data/crafting/recipe/snow_shovel.json",
+		"source": "data/matcha/recipe/crafting/snow_shovel.json",
 		"carrier": "minecraft:iron_shovel"
 	},
 	{
 		"id": "steel_axe",
-		"source": "data/smithing_table/recipe/steel_axe.json",
+		"source": "data/matcha/recipe/smithing/steel_axe.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "steel_boots",
-		"source": "data/smithing_table/recipe/steel_boots.json",
+		"source": "data/matcha/recipe/smithing/steel_boots.json",
 		"carrier": "minecraft:iron_boots"
 	},
 	{
 		"id": "steel_chestplate",
-		"source": "data/smithing_table/recipe/steel_chestplate.json",
+		"source": "data/matcha/recipe/smithing/steel_chestplate.json",
 		"carrier": "minecraft:iron_chestplate"
 	},
 	{
 		"id": "steel_dolabra",
-		"source": "data/smithing_table/recipe/steel_dolabra.json",
+		"source": "data/matcha/recipe/smithing/steel_dolabra.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "steel_helmet",
-		"source": "data/smithing_table/recipe/steel_helmet.json",
+		"source": "data/matcha/recipe/smithing/steel_helmet.json",
 		"carrier": "minecraft:iron_helmet"
 	},
 	{
 		"id": "steel_hoe",
-		"source": "data/smithing_table/recipe/steel_hoe.json",
+		"source": "data/matcha/recipe/smithing/steel_hoe.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
 		"id": "steel_leggings",
-		"source": "data/smithing_table/recipe/steel_leggings.json",
+		"source": "data/matcha/recipe/smithing/steel_leggings.json",
 		"carrier": "minecraft:iron_leggings"
 	},
 	{
 		"id": "steel_mattock",
-		"source": "data/smithing_table/recipe/steel_mattock.json",
+		"source": "data/matcha/recipe/smithing/steel_mattock.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
 		"id": "steel_pickaxe",
-		"source": "data/smithing_table/recipe/steel_pickaxe.json",
+		"source": "data/matcha/recipe/smithing/steel_pickaxe.json",
 		"carrier": "minecraft:stone_pickaxe"
 	},
 	{
 		"id": "steel_shovel",
-		"source": "data/smithing_table/recipe/steel_shovel.json",
+		"source": "data/matcha/recipe/smithing/steel_shovel.json",
 		"carrier": "minecraft:stone_shovel"
 	},
 	{
 		"id": "steel_spear",
-		"source": "data/smithing_table/recipe/steel_spear.json",
+		"source": "data/matcha/recipe/smithing/steel_spear.json",
 		"carrier": "minecraft:stone_spear"
 	},
 	{
 		"id": "steel_sword",
-		"source": "data/smithing_table/recipe/steel_sword.json",
+		"source": "data/matcha/recipe/smithing/steel_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},
 	{
 		"id": "sturdy_leather_boots",
-		"source": "data/crafting/recipe/sturdy_leather_boots.json",
+		"source": "data/matcha/recipe/crafting/sturdy_leather_boots.json",
 		"carrier": "minecraft:leather_boots"
 	},
 	{
 		"id": "sturdy_leather_chestplate",
-		"source": "data/crafting/recipe/sturdy_leather_chestplate.json",
+		"source": "data/matcha/recipe/crafting/sturdy_leather_chestplate.json",
 		"carrier": "minecraft:leather_chestplate"
 	},
 	{
 		"id": "sturdy_leather_helmet",
-		"source": "data/crafting/recipe/sturdy_leather_helmet.json",
+		"source": "data/matcha/recipe/crafting/sturdy_leather_helmet.json",
 		"carrier": "minecraft:leather_helmet"
 	},
 	{
 		"id": "sturdy_leather_leggings",
-		"source": "data/crafting/recipe/sturdy_leather_pants.json",
+		"source": "data/matcha/recipe/crafting/sturdy_leather_pants.json",
 		"carrier": "minecraft:leather_leggings"
 	},
 	{
@@ -722,7 +722,7 @@
 	},
 	{
 		"id": "warding_sword",
-		"source": "data/smithing_table/recipe/warding_sword.json",
+		"source": "data/matcha/recipe/smithing/warding_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},
 	{
@@ -732,7 +732,7 @@
 	},
 	{
 		"id": "warding_shield",
-		"source": "data/smithing_table/recipe/warding_shield.json",
+		"source": "data/matcha/recipe/smithing/warding_shield.json",
 		"carrier": "minecraft:shield"
 	}
 ]

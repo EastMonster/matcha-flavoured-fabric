@@ -4,7 +4,7 @@
 		"craft_primary_material": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:warding_sword"
+				"recipe_id": "matcha:smithing/warding_sword"
 			}
 		}
 	},

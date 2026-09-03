@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:jungle_sapling_from_jungle_leaves"
+			"matcha:crafting/jungle_sapling_from_jungle_leaves"
 		]
 	}
 }

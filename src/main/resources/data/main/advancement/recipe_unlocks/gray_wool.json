@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:gray_wool",
-			"crafting:gray_carpet"
+			"matcha:crafting/gray_wool",
+			"matcha:crafting/gray_carpet"
 		]
 	}
 }

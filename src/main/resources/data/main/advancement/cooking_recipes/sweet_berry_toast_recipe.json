@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:sweet_berry_toast"
+			"matcha:food/crafting/sweet_berry_toast"
 		]
 	}
 }

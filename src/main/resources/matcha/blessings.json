@@ -3,7 +3,7 @@
 		"id": "blessing_aeolus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/wind_burst_anemos.json",
+		"source": "data/matcha/recipe/blessing/wind_burst_anemos.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -28,7 +28,7 @@
 		"id": "blessing_apollo",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/piercing_impaling.json",
+		"source": "data/matcha/recipe/blessing/piercing_impaling.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -53,7 +53,7 @@
 		"id": "blessing_arachnae",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/bane_of_arthopods.json",
+		"source": "data/matcha/recipe/blessing/bane_of_arthopods.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -77,7 +77,7 @@
 		"id": "blessing_ares",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/lunge_breach.json",
+		"source": "data/matcha/recipe/blessing/lunge_breach.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -102,7 +102,7 @@
 		"id": "blessing_artemis",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/power_multishot.json",
+		"source": "data/matcha/recipe/blessing/power_multishot.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -127,7 +127,7 @@
 		"id": "blessing_clement",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/traversal.json",
+		"source": "data/matcha/recipe/blessing/traversal.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -151,7 +151,7 @@
 		"id": "blessing_cronus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/swift_sneak_soul_speed.json",
+		"source": "data/matcha/recipe/blessing/swift_sneak_soul_speed.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -176,7 +176,7 @@
 		"id": "blessing_daedalus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/efficiency_unbreaking.json",
+		"source": "data/matcha/recipe/blessing/efficiency_unbreaking.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -201,7 +201,7 @@
 		"id": "blessing_demeter",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/frost_walker_frost_protection.json",
+		"source": "data/matcha/recipe/blessing/frost_walker_frost_protection.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -226,7 +226,7 @@
 		"id": "blessing_eros",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/silk_touch.json",
+		"source": "data/matcha/recipe/blessing/silk_touch.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -250,7 +250,7 @@
 		"id": "blessing_glaucus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/lure_luck_of_the_sea.json",
+		"source": "data/matcha/recipe/blessing/lure_luck_of_the_sea.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -276,7 +276,7 @@
 		"id": "blessing_god_king",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/channeling_smite.json",
+		"source": "data/matcha/recipe/blessing/channeling_smite.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -301,7 +301,7 @@
 		"id": "blessing_hyacinthus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/zephyr.json",
+		"source": "data/matcha/recipe/blessing/zephyr.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -325,7 +325,7 @@
 		"id": "blessing_icarus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/feather_falling.json",
+		"source": "data/matcha/recipe/blessing/feather_falling.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -349,7 +349,7 @@
 		"id": "blessing_lu_ban",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/mending.json",
+		"source": "data/matcha/recipe/blessing/mending.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -373,7 +373,7 @@
 		"id": "blessing_paris",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/infinity.json",
+		"source": "data/matcha/recipe/blessing/infinity.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:item_name": {
@@ -397,7 +397,7 @@
 		"id": "blessing_prometheus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/unbreaking.json",
+		"source": "data/matcha/recipe/blessing/unbreaking.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -421,7 +421,7 @@
 		"id": "blessing_talos",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/density_knockback_punch.json",
+		"source": "data/matcha/recipe/blessing/density_knockback_punch.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -447,7 +447,7 @@
 		"id": "blessing_warding",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/warding.json",
+		"source": "data/matcha/recipe/blessing/warding.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -472,7 +472,7 @@
 		"id": "blessing_will",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/reach.json",
+		"source": "data/matcha/recipe/blessing/reach.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -496,7 +496,7 @@
 		"id": "blessing_yama",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/flame_fire_aspect_fire_protection.json",
+		"source": "data/matcha/recipe/blessing/flame_fire_aspect_fire_protection.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -522,7 +522,7 @@
 		"id": "blessing_yamm",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/blessings/recipe/depth_strider_riptide_aqua_affinity_respiration.json",
+		"source": "data/matcha/recipe/blessing/depth_strider_riptide_aqua_affinity_respiration.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {

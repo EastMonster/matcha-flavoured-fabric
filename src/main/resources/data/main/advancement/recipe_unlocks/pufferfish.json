@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:bokguk"
+			"matcha:food/crafting/bokguk"
 		]
 	}
 }

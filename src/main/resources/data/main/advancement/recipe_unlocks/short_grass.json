@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:tall_grass"
+			"matcha:crafting/tall_grass"
 		]
 	}
 }

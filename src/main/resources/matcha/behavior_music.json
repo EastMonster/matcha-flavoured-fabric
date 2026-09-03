@@ -68,7 +68,7 @@
 		"id": "bedrock_buster",
 		"type": "spawn_egg",
 		"tab": "tools",
-		"source": "data/crafting/recipe/bedrock_buster.json",
+		"source": "data/matcha/recipe/crafting/bedrock_buster.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -271,7 +271,7 @@
 		"id": "crystal_heart",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/crafting/recipe/crystal_heart.json",
+		"source": "data/matcha/recipe/crafting/crystal_heart.json",
 		"carrier": "minecraft:poisonous_potato",
 		"components": {
 			"minecraft:item_name": {
@@ -285,7 +285,7 @@
 		"id": "invisible_item_frame",
 		"type": "item_frame",
 		"tab": "functional_blocks",
-		"source": "data/crafting/recipe/invisible_item_frame.json",
+		"source": "data/matcha/recipe/crafting/invisible_item_frame.json",
 		"carrier": "minecraft:item_frame",
 		"components": {
 			"minecraft:entity_data": {
@@ -322,7 +322,7 @@
 		"id": "music_disc_golden",
 		"type": "music_disc",
 		"tab": "tools",
-		"source": "data/crafting/recipe/music_disc_golden.json",
+		"source": "data/matcha/recipe/crafting/music_disc_golden.json",
 		"carrier": "minecraft:music_disc_11",
 		"components": {
 			"minecraft:item_name": { "text": "Golden Disc" },
@@ -346,7 +346,7 @@
 		"id": "amnestic",
 		"type": "spawn_egg",
 		"tab": "tools",
-		"source": "data/crafting/recipe/amnestic.json",
+		"source": "data/matcha/recipe/crafting/amnestic.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
 			"minecraft:custom_name": {
@@ -382,7 +382,7 @@
 		"id": "beacon_kindling",
 		"type": "spawn_egg",
 		"tab": "functional_blocks",
-		"source": "data/crafting/recipe/beacon_kindling.json",
+		"source": "data/matcha/recipe/crafting/beacon_kindling.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -402,7 +402,7 @@
 		"id": "warding_stone",
 		"type": "spawn_egg",
 		"tab": "functional_blocks",
-		"source": "data/crafting/recipe/warding_stone.json",
+		"source": "data/matcha/recipe/crafting/warding_stone.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {

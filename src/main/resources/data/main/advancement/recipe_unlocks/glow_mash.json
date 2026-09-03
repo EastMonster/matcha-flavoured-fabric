@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:glow_berry_crumble",
-			"food:glow_jam"
+			"matcha:food/crafting/glow_berry_crumble",
+			"matcha:food/crafting/glow_jam"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:french_toast"
+			"matcha:food/crafting/french_toast"
 		]
 	}
 }

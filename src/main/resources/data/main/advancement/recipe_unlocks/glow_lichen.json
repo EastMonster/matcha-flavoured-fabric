@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:phosphor"
+			"matcha:crafting/phosphor"
 		]
 	}
 }

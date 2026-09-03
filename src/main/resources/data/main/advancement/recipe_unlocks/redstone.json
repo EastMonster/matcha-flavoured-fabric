@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:copper_compass",
-			"crafting:golden_compass"
+			"matcha:crafting/copper_compass",
+			"matcha:crafting/golden_compass"
 		]
 	}
 }

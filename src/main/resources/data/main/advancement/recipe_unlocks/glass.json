@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:glass_bottle",
-			"crafting:spyglass"
+			"matcha:crafting/glass_bottle",
+			"matcha:crafting/spyglass"
 		]
 	}
 }

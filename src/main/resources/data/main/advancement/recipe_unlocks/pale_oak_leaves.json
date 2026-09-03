@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:pale_oak_sapling_from_pale_oak_leaves"
+			"matcha:crafting/pale_oak_sapling_from_pale_oak_leaves"
 		]
 	}
 }

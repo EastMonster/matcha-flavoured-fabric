@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:ominous_trial_key"
+			"matcha:crafting/ominous_trial_key"
 		]
 	}
 }

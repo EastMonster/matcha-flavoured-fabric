@@ -41,7 +41,7 @@ public final class WorldMechanics {
 	private static final String DIFFICULTY_OBJECTIVE = "difficulty_score";
 	private static final String CURRENT_DIFFICULTY = "current_world_settings_difficulty";
 	private static final String VERSION_OBJECTIVE = "matcha_version";
-	private static final int RECIPE_UNLOCK_VERSION = 1_01_02_003;
+	private static final int RECIPE_UNLOCK_VERSION = 1_01_02_004;
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("glass_bottle_from_crafting");
 
 	private static final Map<UUID, Integer> LAST_BOATING_DISTANCE = new HashMap<>();
@@ -169,8 +169,9 @@ public final class WorldMechanics {
 	 * option 1): on first join with a newer recipe version, revoke the hidden
 	 * {@code main:recipe_unlocks/*} advancement criteria so the updated reward
 	 * lists re-trigger when the player obtains the matching materials again.
-	 * Already-learned recipes are kept; the per-player scoreboard marks the
-	 * migration as done.
+	 * Recipe-book IDs themselves are intentionally not migrated; vanilla drops
+	 * old IDs that no longer exist, and item acquisition can unlock them again.
+	 * The per-player scoreboard only marks the advancement refresh as done.
 	 */
 	private static void migrateRecipeUnlocks(ServerPlayer player) {
 		var server = player.level().getServer();

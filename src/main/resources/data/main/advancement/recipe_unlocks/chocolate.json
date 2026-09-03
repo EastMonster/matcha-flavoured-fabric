@@ -21,8 +21,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:brownie",
-			"food:chocolate_chip_cookie"
+			"matcha:food/crafting/brownie",
+			"matcha:food/crafting/chocolate_chip_cookie"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:gnocchi"
+			"matcha:food/crafting/gnocchi"
 		]
 	}
 }

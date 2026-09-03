@@ -4,7 +4,7 @@
 		"shakudo_elytra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "smithing_table:shakudo_elytra"
+				"recipe_id": "matcha:smithing/shakudo_elytra"
 			}
 		}
 	},

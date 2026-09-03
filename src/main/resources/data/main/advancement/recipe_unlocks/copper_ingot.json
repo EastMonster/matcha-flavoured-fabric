@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:copper_wire"
+				"recipe": "matcha:crafting/copper_wire"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,23 +26,23 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:copper_wire",
-			"crafting:copper_helmet",
-			"crafting:copper_chestplate",
-			"crafting:copper_leggings",
-			"crafting:copper_boots",
-			"crafting:copper_pickaxe",
-			"crafting:copper_axe",
-			"crafting:copper_shovel",
-			"crafting:copper_hoe",
-			"crafting:copper_sword",
-			"crafting:copper_mattock",
-			"crafting:copper_dolabra",
-			"crafting:copper_shears",
-			"crafting:copper_spear",
-			"crafting:copper_compass",
-			"crafting:powered_rail_from_copper",
-			"crafting:bell"
+			"matcha:crafting/copper_wire",
+			"matcha:crafting/copper_helmet",
+			"matcha:crafting/copper_chestplate",
+			"matcha:crafting/copper_leggings",
+			"matcha:crafting/copper_boots",
+			"matcha:crafting/copper_pickaxe",
+			"matcha:crafting/copper_axe",
+			"matcha:crafting/copper_shovel",
+			"matcha:crafting/copper_hoe",
+			"matcha:crafting/copper_sword",
+			"matcha:crafting/copper_mattock",
+			"matcha:crafting/copper_dolabra",
+			"matcha:crafting/copper_shears",
+			"matcha:crafting/copper_spear",
+			"matcha:crafting/copper_compass",
+			"matcha:crafting/powered_rail_from_copper",
+			"matcha:crafting/bell"
 		]
 	}
 }

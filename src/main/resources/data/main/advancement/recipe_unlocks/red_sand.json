@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:red_sandstone"
+			"matcha:crafting/red_sandstone"
 		]
 	}
 }

@@ -30,11 +30,11 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:phosphor_rod",
-			"crafting:verdant_froglight",
-			"crafting:pearlescent_froglight",
-			"crafting:ochre_froglight",
-			"crafting:phosphor"
+			"matcha:crafting/phosphor_rod",
+			"matcha:crafting/verdant_froglight",
+			"matcha:crafting/pearlescent_froglight",
+			"matcha:crafting/ochre_froglight",
+			"matcha:crafting/phosphor"
 		]
 	}
 }

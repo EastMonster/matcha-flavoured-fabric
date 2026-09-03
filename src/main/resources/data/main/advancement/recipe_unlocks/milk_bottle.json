@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:cheese"
+			"matcha:food/crafting/cheese"
 		]
 	}
 }

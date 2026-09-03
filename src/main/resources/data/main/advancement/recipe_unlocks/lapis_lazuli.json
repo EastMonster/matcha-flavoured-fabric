@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:nazar",
-			"crafting:blue_dye"
+			"matcha:crafting/nazar",
+			"matcha:crafting/blue_dye"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:beacon_kindling"
+			"matcha:crafting/beacon_kindling"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"blasting:steel_alloy"
+			"matcha:blast/steel_alloy"
 		]
 	}
 }

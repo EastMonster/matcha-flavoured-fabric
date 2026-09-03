@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "food:sweet_berry_mash"
+				"recipe": "matcha:food/oven/sweet_berry_mash"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,7 +26,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:sweet_berry_mash"
+			"matcha:food/oven/sweet_berry_mash"
 		]
 	}
 }

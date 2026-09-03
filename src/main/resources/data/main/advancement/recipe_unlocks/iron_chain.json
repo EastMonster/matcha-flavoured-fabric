@@ -19,10 +19,10 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:chainmail_boots",
-			"crafting:chainmail_chestplate",
-			"crafting:chainmail_helmet",
-			"crafting:chainmail_leggings"
+			"matcha:crafting/chainmail_boots",
+			"matcha:crafting/chainmail_chestplate",
+			"matcha:crafting/chainmail_helmet",
+			"matcha:crafting/chainmail_leggings"
 		]
 	}
 }

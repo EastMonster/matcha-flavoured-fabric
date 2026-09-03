@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:quartz_from_quartz_blocks"
+			"matcha:crafting/quartz_from_quartz_blocks"
 		]
 	}
 }

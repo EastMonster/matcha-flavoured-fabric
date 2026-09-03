@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:tomato_seeds_from_tomato"
+				"recipe": "matcha:crafting/tomato_seeds_from_tomato"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,12 +26,12 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:tomato_seeds_from_tomato",
-			"crafting:red_dye_from_tomato",
-			"food:grilled_tomatoes",
-			"food:kontomire_stew",
-			"food:pickled_tomatoes",
-			"food:bruschetta"
+			"matcha:crafting/tomato_seeds_from_tomato",
+			"matcha:crafting/red_dye_from_tomato",
+			"matcha:food/oven/grilled_tomatoes",
+			"matcha:food/crafting/kontomire_stew",
+			"matcha:food/crafting/pickled_tomatoes",
+			"matcha:food/crafting/bruschetta"
 		]
 	}
 }

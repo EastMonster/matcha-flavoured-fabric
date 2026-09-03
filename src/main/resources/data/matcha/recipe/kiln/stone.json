@@ -2,7 +2,7 @@
 	"type": "minecraft:smoking",
 	"group": "stone",
 	"category": "blocks",
-	"ingredient": "minecraft:cobblestone",
+	"ingredient": ["minecraft:cobblestone", "minecraft:stone_bricks"],
 	"result": {
 		"id": "minecraft:stone"
 	},

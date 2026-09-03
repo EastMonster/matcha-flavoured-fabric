@@ -41,13 +41,13 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:torch_from_short_dry_grass",
-			"crafting:tall_dry_grass_from_short_dry_grass",
-			"crafting:short_dry_grass_from_tall_dry_grass",
-			"crafting:packed_mud_from_dirt",
-			"crafting:hay_block",
-			"crafting:tall_dry_grass_from_wheat",
-            "crafting:wheat_from_hay_block"
+			"matcha:crafting/torch_from_short_dry_grass",
+			"matcha:crafting/tall_dry_grass_from_short_dry_grass",
+			"matcha:crafting/short_dry_grass_from_tall_dry_grass",
+			"matcha:crafting/packed_mud_from_dirt",
+			"matcha:crafting/hay_block",
+			"matcha:crafting/tall_dry_grass_from_wheat",
+            "matcha:crafting/wheat_from_hay_block"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:mace"
+			"matcha:crafting/mace"
 		]
 	}
 }

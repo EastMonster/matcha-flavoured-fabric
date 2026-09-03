@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:flour"
+			"matcha:food/crafting/flour"
 		]
 	}
 }

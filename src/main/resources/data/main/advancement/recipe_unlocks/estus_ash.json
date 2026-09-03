@@ -19,9 +19,9 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:estus_flask",
-			"crafting:wooden_cross",
-			"crafting:amnestic"
+			"matcha:crafting/estus_flask",
+			"matcha:crafting/wooden_cross",
+			"matcha:crafting/amnestic"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:flowering_azalea_sapling_from_flowering_azalea_leaves"
+			"matcha:crafting/flowering_azalea_sapling_from_flowering_azalea_leaves"
 		]
 	}
 }

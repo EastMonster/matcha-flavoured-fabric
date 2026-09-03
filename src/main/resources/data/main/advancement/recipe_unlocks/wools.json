@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:string_from_wool"
+			"matcha:crafting/string_from_wool"
 		]
 	}
 }

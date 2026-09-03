@@ -16,7 +16,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:adamant"
+				"recipe": "matcha:crafting/adamant"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -29,7 +29,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:adamant",
+			"matcha:crafting/adamant",
 			"minecraft:netherite_scrap"
 		]
 	}

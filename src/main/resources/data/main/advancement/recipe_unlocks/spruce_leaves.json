@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:spruce_sapling_from_spruce_leaves"
+			"matcha:crafting/spruce_sapling_from_spruce_leaves"
 		]
 	}
 }

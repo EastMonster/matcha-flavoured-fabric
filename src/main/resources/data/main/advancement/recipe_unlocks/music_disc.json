@@ -19,8 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:disc_fragment_from_disc",
-			"crafting:disc_fragment_from_tears"
+			"matcha:crafting/disc_fragment_from_disc",
+			"matcha:crafting/disc_fragment_from_tears"
 		]
 	}
 }

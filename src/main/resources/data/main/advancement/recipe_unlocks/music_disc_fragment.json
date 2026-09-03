@@ -19,18 +19,18 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:music_disc_11",
-			"crafting:music_disc_13",
-			"crafting:music_disc_blocks",
-			"crafting:music_disc_far",
-			"crafting:music_disc_cat",
-			"crafting:music_disc_chirp",
-			"crafting:music_disc_mall",
-			"crafting:music_disc_mellohi",
-			"crafting:music_disc_stal",
-			"crafting:music_disc_strad",
-			"crafting:music_disc_wait",
-			"crafting:music_disc_ward"
+			"matcha:crafting/music_disc_11",
+			"matcha:crafting/music_disc_13",
+			"matcha:crafting/music_disc_blocks",
+			"matcha:crafting/music_disc_far",
+			"matcha:crafting/music_disc_cat",
+			"matcha:crafting/music_disc_chirp",
+			"matcha:crafting/music_disc_mall",
+			"matcha:crafting/music_disc_mellohi",
+			"matcha:crafting/music_disc_stal",
+			"matcha:crafting/music_disc_strad",
+			"matcha:crafting/music_disc_wait",
+			"matcha:crafting/music_disc_ward"
 		]
 	}
 }

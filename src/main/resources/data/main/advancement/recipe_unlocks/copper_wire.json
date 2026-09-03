@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:copper_ingot_from_copper_wire"
+				"recipe": "matcha:crafting/copper_ingot_from_copper_wire"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,26 +26,26 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:redstone_torch",
+			"matcha:crafting/redstone_torch",
 			"minecraft:repeater",
 			"minecraft:comparator",
-			"crafting:copper_ingot_from_copper_wire",
-			"crafting:redstone_block",
-			"crafting:copper_bulb",
-			"crafting:waxed_copper_bulb",
-			"crafting:weathered_copper_bulb",
-			"crafting:waxed_weathered_copper_bulb",
-			"crafting:exposed_copper_bulb",
-			"crafting:waxed_exposed_copper_bulb",
-			"crafting:oxidized_copper_bulb",
-			"crafting:waxed_oxidized_copper_bulb",
+			"matcha:crafting/copper_ingot_from_copper_wire",
+			"matcha:crafting/redstone_block",
+			"matcha:crafting/copper_bulb",
+			"matcha:crafting/waxed_copper_bulb",
+			"matcha:crafting/weathered_copper_bulb",
+			"matcha:crafting/waxed_weathered_copper_bulb",
+			"matcha:crafting/exposed_copper_bulb",
+			"matcha:crafting/waxed_exposed_copper_bulb",
+			"matcha:crafting/oxidized_copper_bulb",
+			"matcha:crafting/waxed_oxidized_copper_bulb",
 			"minecraft:piston",
 			"minecraft:dropper",
 			"minecraft:dispenser",
 			"minecraft:crafter",
 			"minecraft:observer",
-			"crafting:target",
-			"crafting:copper_compass"
+			"matcha:crafting/target",
+			"matcha:crafting/copper_compass"
 		]
 	}
 }

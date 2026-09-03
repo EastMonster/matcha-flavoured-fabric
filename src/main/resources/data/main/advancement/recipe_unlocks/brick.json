@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:bricks"
+				"recipe": "matcha:crafting/bricks"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,9 +26,9 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:bowl",
-			"crafting:oven",
-			"crafting:bricks"
+			"matcha:crafting/bowl",
+			"matcha:crafting/oven",
+			"matcha:crafting/bricks"
 		]
 	}
 }

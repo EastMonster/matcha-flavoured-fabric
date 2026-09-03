@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:baked_apple"
+			"matcha:food/oven/baked_apple"
 		]
 	}
 }

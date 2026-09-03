@@ -19,10 +19,10 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:music_disc_5",
-			"crafting:sculk_sensor",
-			"crafting:sculk_shrieker",
-			"crafting:sculk"
+			"matcha:crafting/music_disc_5",
+			"matcha:crafting/sculk_sensor",
+			"matcha:crafting/sculk_shrieker",
+			"matcha:crafting/sculk"
 		]
 	}
 }

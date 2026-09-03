@@ -21,8 +21,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:sweet_berry_jam",
-			"food:sweet_berry_danish"
+			"matcha:food/crafting/sweet_berry_jam",
+			"matcha:food/crafting/sweet_berry_danish"
 		]
 	}
 }

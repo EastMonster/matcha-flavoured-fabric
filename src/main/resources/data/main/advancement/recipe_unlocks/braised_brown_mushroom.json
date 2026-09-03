@@ -21,8 +21,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:pickled_mushrooms",
-			"food:stroganoff"
+			"matcha:food/crafting/pickled_mushrooms",
+			"matcha:food/crafting/stroganoff"
 		]
 	}
 }

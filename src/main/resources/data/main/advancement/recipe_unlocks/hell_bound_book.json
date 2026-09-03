@@ -4,7 +4,7 @@
 		"made_hell_bound_book": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "blessings:hell_bound_book"
+				"recipe_id": "matcha:blessing/hell_bound_book"
 			}
 		}
 	},
@@ -15,28 +15,28 @@
 	],
 	"rewards": {
 		"recipes": [
-			"blessings:bane_of_arthopods",
-			"blessings:channeling_smite",
-			"blessings:density_knockback_punch",
-			"blessings:depth_strider_riptide_aqua_affinity_respiration",
-			"blessings:efficiency_unbreaking",
-			"blessings:feather_falling",
-			"blessings:flame_fire_aspect_fire_protection",
-			"blessings:frost_walker_frost_protection",
-			"blessings:infinity",
-			"blessings:lunge_breach",
-			"blessings:lure_luck_of_the_sea",
-			"blessings:mending",
-			"blessings:piercing_impaling",
-			"blessings:power_multishot",
-			"blessings:reach",
-			"blessings:silk_touch",
-			"blessings:swift_sneak_soul_speed",
-			"blessings:traversal",
-			"blessings:unbreaking",
-			"blessings:warding",
-			"blessings:wind_burst_anemos",
-			"blessings:zephyr"
+			"matcha:blessing/bane_of_arthopods",
+			"matcha:blessing/channeling_smite",
+			"matcha:blessing/density_knockback_punch",
+			"matcha:blessing/depth_strider_riptide_aqua_affinity_respiration",
+			"matcha:blessing/efficiency_unbreaking",
+			"matcha:blessing/feather_falling",
+			"matcha:blessing/flame_fire_aspect_fire_protection",
+			"matcha:blessing/frost_walker_frost_protection",
+			"matcha:blessing/infinity",
+			"matcha:blessing/lunge_breach",
+			"matcha:blessing/lure_luck_of_the_sea",
+			"matcha:blessing/mending",
+			"matcha:blessing/piercing_impaling",
+			"matcha:blessing/power_multishot",
+			"matcha:blessing/reach",
+			"matcha:blessing/silk_touch",
+			"matcha:blessing/swift_sneak_soul_speed",
+			"matcha:blessing/traversal",
+			"matcha:blessing/unbreaking",
+			"matcha:blessing/warding",
+			"matcha:blessing/wind_burst_anemos",
+			"matcha:blessing/zephyr"
 		]
 	}
 }

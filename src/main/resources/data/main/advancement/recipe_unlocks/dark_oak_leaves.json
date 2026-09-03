@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:dark_oak_sapling_from_dark_oak_leaves"
+			"matcha:crafting/dark_oak_sapling_from_dark_oak_leaves"
 		]
 	}
 }

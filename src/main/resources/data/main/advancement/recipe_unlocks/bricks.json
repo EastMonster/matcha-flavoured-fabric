@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:brick_from_bricks"
+			"matcha:crafting/brick_from_bricks"
 		]
 	}
 }

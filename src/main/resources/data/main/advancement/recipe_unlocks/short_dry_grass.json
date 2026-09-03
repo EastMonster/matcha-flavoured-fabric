@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:torch_from_short_dry_grass"
+			"matcha:crafting/torch_from_short_dry_grass"
 		]
 	}
 }

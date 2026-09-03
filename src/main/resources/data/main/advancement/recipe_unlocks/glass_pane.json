@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:invisible_item_frame"
+			"matcha:crafting/invisible_item_frame"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:globe_banner_pattern"
+			"matcha:crafting/globe_banner_pattern"
 		]
 	}
 }

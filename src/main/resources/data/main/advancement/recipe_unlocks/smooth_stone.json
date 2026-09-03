@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:blast_furnace"
+			"matcha:crafting/blast_furnace"
 		]
 	}
 }

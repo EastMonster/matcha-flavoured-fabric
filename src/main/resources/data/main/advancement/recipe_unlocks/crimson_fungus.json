@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:red_dye_from_crimson_fungus"
+			"matcha:crafting/red_dye_from_crimson_fungus"
 		]
 	}
 }

@@ -4,7 +4,7 @@
 		"get_food": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "food:green_curry"
+				"recipe_id": "matcha:food/oven/green_curry"
 			}
 		}
 	},

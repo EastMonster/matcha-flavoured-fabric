@@ -19,15 +19,15 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:slime_ball_from_dough",
-			"food:bread",
-			"food:naan",
-			"food:cheese_pizza",
-			"food:meat_pizza",
-			"food:mushroom_pizza",
-			"food:warped_pizza",
-			"food:pad_thai",
-			"food:puerquito"
+			"matcha:crafting/slime_ball_from_dough",
+			"matcha:food/oven/bread",
+			"matcha:food/kiln/naan",
+			"matcha:food/crafting/cheese_pizza",
+			"matcha:food/crafting/meat_pizza",
+			"matcha:food/crafting/mushroom_pizza",
+			"matcha:food/crafting/warped_pizza",
+			"matcha:food/crafting/pad_thai",
+			"matcha:food/crafting/puerquito"
 		]
 	}
 }

@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:cherry_sapling_from_cherry_leaves"
+			"matcha:crafting/cherry_sapling_from_cherry_leaves"
 		]
 	}
 }

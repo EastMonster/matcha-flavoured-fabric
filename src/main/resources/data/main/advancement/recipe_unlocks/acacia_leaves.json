@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:acacia_sapling_from_acacia_leaves"
+			"matcha:crafting/acacia_sapling_from_acacia_leaves"
 		]
 	}
 }

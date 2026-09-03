@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:conduit"
+			"matcha:crafting/conduit"
 		]
 	}
 }

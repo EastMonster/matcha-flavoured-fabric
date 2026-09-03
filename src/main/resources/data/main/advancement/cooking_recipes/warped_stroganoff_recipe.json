@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:warped_stroganoff"
+			"matcha:food/crafting/warped_stroganoff"
 		]
 	}
 }

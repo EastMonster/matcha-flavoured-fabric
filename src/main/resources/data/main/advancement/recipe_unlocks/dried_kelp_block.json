@@ -19,7 +19,7 @@
 	],
 	"rewards": {
 		"recipes": [
-			"food:dried_kelp_from_dried_kelp_block"
+			"matcha:food/crafting/dried_kelp_from_dried_kelp_block"
 		]
 	}
 }

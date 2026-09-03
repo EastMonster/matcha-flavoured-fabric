@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:fire_starter"
+				"recipe": "matcha:crafting/fire_starter"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,8 +26,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:fire_starter",
-			"crafting:gravel"
+			"matcha:crafting/fire_starter",
+			"matcha:crafting/gravel"
 		]
 	}
 }

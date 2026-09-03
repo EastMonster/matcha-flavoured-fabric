@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "crafting:bronze_alloy"
+				"recipe": "matcha:crafting/bronze_alloy"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}
@@ -26,8 +26,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"crafting:bronze_alloy",
-			"crafting:electrum_alloy"
+			"matcha:crafting/bronze_alloy",
+			"matcha:crafting/electrum_alloy"
 		]
 	}
 }
