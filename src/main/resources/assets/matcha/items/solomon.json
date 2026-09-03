@@ -1,1 +1,6 @@
-{"model":{"type":"minecraft:model","model":"minecraft:item/solomon"}}
+{
+	"model": {
+		"type": "minecraft:model",
+		"model": "matcha:item/solomon"
+	}
+}

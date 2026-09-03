@@ -1,1 +1,6 @@
-{"model":{"type":"minecraft:model","model":"minecraft:item/divine_comedy"}}
+{
+	"model": {
+		"type": "minecraft:model",
+		"model": "matcha:item/divine_comedy"
+	}
+}

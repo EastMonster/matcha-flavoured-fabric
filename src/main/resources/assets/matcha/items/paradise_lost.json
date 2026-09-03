@@ -1,1 +1,6 @@
-{"model":{"type":"minecraft:model","model":"minecraft:item/paradise_lost"}}
+{
+	"model": {
+		"type": "minecraft:model",
+		"model": "matcha:item/paradise_lost"
+	}
+}

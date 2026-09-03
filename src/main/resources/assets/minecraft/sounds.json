@@ -16,23 +16,5 @@
 				"stream": true
 			}
 		]
-	},
-	"custom.false_subwoofer_lullaby": {
-		"sounds": [
-			{
-        "name": "matcha:custom/false_subwoofer_lullaby",
-				"volume": 1,
-				"stream": true
-			}
-		]
-	},
-	"custom.golden": {
-		"sounds": [
-			{
-        "name": "matcha:custom/golden_demo",
-				"volume": 1,
-				"stream": true
-			}
-		]
 	}
 }

@@ -1,1 +1,6 @@
-{"model":{"type":"minecraft:model","model":"minecraft:item/avesta"}}
+{
+	"model": {
+		"type": "minecraft:model",
+		"model": "matcha:item/avesta"
+	}
+}

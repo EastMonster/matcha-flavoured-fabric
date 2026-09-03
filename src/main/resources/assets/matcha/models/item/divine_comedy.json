@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:item/quran"
+    "layer0": "matcha:item/divine_comedy"
   }
 }

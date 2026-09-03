@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:item/enoch"
+    "layer0": "matcha:item/paradise_lost"
   }
 }
