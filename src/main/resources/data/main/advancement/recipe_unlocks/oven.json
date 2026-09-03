@@ -1,0 +1,1 @@
+{"parent":"minecraft:recipes/root","criteria":{"has_primary_material":{"conditions":{"items":[{"items":"minecraft:furnace"}]},"trigger":"minecraft:inventory_changed"}},"requirements":[["has_primary_material"]],"rewards":{"recipes":["matcha:oven/dead_bush","matcha:oven/dirt_from_smelting_grass_block","matcha:oven/short_dry_grass","matcha:oven/tall_dry_grass"]}}

@@ -1,0 +1,10 @@
+{
+	"type": "minecraft:blasting",
+	"category": "blocks",
+	"experience": 0.1,
+	"ingredient": "minecraft:deepslate_tiles",
+	"result": {
+		"id": "minecraft:cracked_deepslate_tiles"
+	},
+	"cookingtime": 100
+}

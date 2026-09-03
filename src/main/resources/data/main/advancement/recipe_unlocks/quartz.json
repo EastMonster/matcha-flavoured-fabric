@@ -19,7 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"matcha:crafting/clock"
+			"matcha:crafting/clock",
+			"matcha:kiln/glass_from_smoking_quartz"
 		]
 	}
 }

@@ -20,7 +20,8 @@
 	"rewards": {
 		"recipes": [
 			"matcha:crafting/sandstone",
-			"matcha:blast/quartz"
+			"matcha:blast/quartz",
+			"matcha:kiln/glass_from_smoking_sand"
 		]
 	}
 }

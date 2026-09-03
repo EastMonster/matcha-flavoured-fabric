@@ -19,7 +19,23 @@
 	],
 	"rewards": {
 		"recipes": [
-			"matcha:crafting/string_from_wool"
+			"matcha:crafting/string_from_wool",
+			"matcha:crafting/white_banner",
+			"matcha:crafting/light_grey_banner",
+			"matcha:crafting/gray_banner",
+			"matcha:crafting/black_banner",
+			"matcha:crafting/pink_banner",
+			"matcha:crafting/red_banner",
+			"matcha:crafting/orange_banner",
+			"matcha:crafting/yellow_banner",
+			"matcha:crafting/lime_banner",
+			"matcha:crafting/green_banner",
+			"matcha:crafting/light_blue_banner",
+			"matcha:crafting/blue_banner",
+			"matcha:crafting/purple_banner",
+			"matcha:crafting/magenta_banner",
+			"matcha:crafting/cyan_banner",
+			"matcha:crafting/brown_banner"
 		]
 	}
 }

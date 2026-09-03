@@ -38,7 +38,9 @@
 			"matcha:crafting/golden_boots",
 			"matcha:crafting/golden_compass",
 			"matcha:crafting/shakudo_alloy",
-			"matcha:crafting/powered_rail_from_gold"
+			"matcha:crafting/powered_rail_from_gold",
+			"matcha:blast/gold_block_from_blasting_raw_gold_block",
+			"matcha:blast/gold_ingot_from_blasting_gold_materials"
 		]
 	}
 }

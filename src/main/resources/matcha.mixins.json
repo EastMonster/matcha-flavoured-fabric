@@ -27,6 +27,7 @@
 		"PowderSnowBootsMixin",
 		"ShearsCompatibilityMixin",
 		"ShearsInteractionMixin",
+		"SpawnEggInteractionMixin",
 		"VillagerAccessor",
 		"VillagerFoodMixin",
 		"WolfTamingMixin",

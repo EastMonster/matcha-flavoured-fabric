@@ -20,7 +20,8 @@
 	"rewards": {
 		"recipes": [
 			"matcha:crafting/stabilised_estus",
-			"matcha:crafting/conduit"
+			"matcha:crafting/conduit",
+			"matcha:crafting/ender_chest"
 		]
 	}
 }

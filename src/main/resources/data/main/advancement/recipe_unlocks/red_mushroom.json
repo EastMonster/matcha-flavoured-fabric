@@ -19,7 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"matcha:food/oven/braised_red_mushroom"
+			"matcha:food/oven/braised_red_mushroom",
+			"matcha:crafting/red_mushroom_from_red_mushroom_block"
 		]
 	}
 }

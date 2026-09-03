@@ -30,7 +30,8 @@
 			"matcha:crafting/diamond_boots",
 			"matcha:crafting/diamond_mattock",
 			"matcha:crafting/diamond_dolabra",
-			"matcha:crafting/diamond_spear"
+			"matcha:crafting/diamond_spear",
+			"matcha:blast/diamond_from_blasting_diamond_materials"
 		]
 	}
 }

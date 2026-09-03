@@ -1,0 +1,1 @@
+{"parent":"minecraft:recipes/root","criteria":{"has_primary_material":{"conditions":{"items":[{"items":"minecraft:snow_block"}]},"trigger":"minecraft:inventory_changed"}},"requirements":[["has_primary_material"]],"rewards":{"recipes":["matcha:crafting/snow_block_from_ice","matcha:crafting/ice_from_snow_block"]}}

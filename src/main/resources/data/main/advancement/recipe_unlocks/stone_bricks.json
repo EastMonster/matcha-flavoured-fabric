@@ -1,0 +1,1 @@
+{"parent":"minecraft:recipes/root","criteria":{"has_primary_material":{"conditions":{"items":[{"items":"minecraft:stone_bricks"}]},"trigger":"minecraft:inventory_changed"}},"requirements":[["has_primary_material"]],"rewards":{"recipes":["matcha:blast/cracked_stone_bricks","matcha:oven/stone_bricks_from_mossy_stone_bricks"]}}

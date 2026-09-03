@@ -2,7 +2,10 @@
   "type": "minecraft:blasting",
   "group": "stone",
   "category": "misc",
-  "ingredient": "minecraft:smooth_stone",
+	"ingredient": [
+		"minecraft:smooth_stone",
+		"minecraft:cracked_stone_bricks"
+	],
   "result": {
     "id": "minecraft:stone"
   },

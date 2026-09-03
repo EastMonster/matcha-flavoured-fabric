@@ -29,7 +29,8 @@
 			"matcha:crafting/fire_charge",
 			"matcha:crafting/green_dye_from_patina",
 			"matcha:crafting/sulfur_from_sulfur_chunk",
-			"matcha:crafting/potent_sulfur"
+			"matcha:crafting/potent_sulfur",
+			"matcha:crafting/tnt"
 		]
 	}
 }

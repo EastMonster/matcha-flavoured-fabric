@@ -70,7 +70,7 @@
 												},
 												{
 													"id": "minecraft:absorption",
-													"amplifier": 0,
+									"amplifier": 3,
 													"duration": 2400,
 													"show_particles": false
 												},

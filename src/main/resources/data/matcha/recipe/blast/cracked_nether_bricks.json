@@ -1,0 +1,10 @@
+{
+	"type": "minecraft:blasting",
+	"category": "blocks",
+	"experience": 0.1,
+	"ingredient": "minecraft:nether_bricks",
+	"result": {
+		"id": "minecraft:cracked_nether_bricks"
+	},
+	"cookingtime": 100
+}

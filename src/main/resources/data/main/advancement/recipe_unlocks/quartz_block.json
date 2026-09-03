@@ -19,7 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"matcha:crafting/quartz_from_quartz_blocks"
+			"matcha:crafting/quartz_from_quartz_blocks",
+			"matcha:kiln/smooth_quartz_from_smoking_quartz_block"
 		]
 	}
 }

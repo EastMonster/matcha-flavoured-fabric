@@ -20,7 +20,10 @@
 	"rewards": {
 		"recipes": [
 			"matcha:crafting/tinted_glass",
-			"matcha:crafting/spyglass"
+			"matcha:crafting/spyglass",
+			"matcha:kiln/tinted_glass_from_smoking_amethyst",
+			"matcha:crafting/crying_obsidian",
+			"matcha:crafting/amethyst_shard_from_amethyst_block"
 		]
 	}
 }

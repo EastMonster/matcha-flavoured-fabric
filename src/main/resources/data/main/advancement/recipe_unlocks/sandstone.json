@@ -19,7 +19,9 @@
 	],
 	"rewards": {
 		"recipes": [
-			"matcha:crafting/sand_from_sandstone"
+			"matcha:crafting/sand_from_sandstone",
+			"matcha:kiln/smooth_sandstone",
+			"matcha:blast/sandstone_from_blasting_smooth_sandstone"
 		]
 	}
 }

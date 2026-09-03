@@ -19,7 +19,24 @@
 	],
 	"rewards": {
 		"recipes": [
-			"matcha:crafting/brick_from_terracottas"
+			"matcha:crafting/brick_from_terracottas",
+			"matcha:kiln/terracotta",
+			"matcha:kiln/black_glazed_terracotta",
+			"matcha:kiln/gray_glazed_terracotta",
+			"matcha:kiln/light_gray_glazed_terracotta",
+			"matcha:kiln/white_glazed_terracotta",
+			"matcha:kiln/pink_glazed_terracotta",
+			"matcha:kiln/brown_glazed_terracotta",
+			"matcha:kiln/red_glazed_terracotta",
+			"matcha:kiln/orange_glazed_terracotta",
+			"matcha:kiln/yellow_glazed_terracotta",
+			"matcha:kiln/lime_glazed_terracotta",
+			"matcha:kiln/green_glazed_terracotta",
+			"matcha:kiln/cyan_glazed_terracotta",
+			"matcha:kiln/blue_glazed_terracotta",
+			"matcha:kiln/light_blue_glazed_terracotta",
+			"matcha:kiln/magenta_glazed_terracotta",
+			"matcha:kiln/purple_glazed_terracotta"
 		]
 	}
 }

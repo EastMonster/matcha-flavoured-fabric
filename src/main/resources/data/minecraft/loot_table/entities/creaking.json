@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:entity",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "resin_clump",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 16,
+								"max": 32
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"random_sequence": "minecraft:entities/creaking"
+}

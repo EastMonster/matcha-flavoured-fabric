@@ -266,7 +266,7 @@ public final class EnchantmentMechanics {
 				player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 12, true, false));
 			}
 			level.playSound(null, player.getX(), player.getY(), player.getZ(),
-					SoundEvents.WIND_CHARGE_BURST.value(), SoundSource.HOSTILE, 2.0F, 1.0F);
+					SoundEvents.WIND_CHARGE_BURST.value(), SoundSource.HOSTILE, 0.5F, 1.0F);
 			player.setAttached(ZEPHYR_TICKS, 0);
 		} else if (!player.onGround()) {
 			// zephyr_failure: airborne release without slow falling, charge is lost.

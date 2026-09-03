@@ -28,7 +28,8 @@
 		"recipes": [
 			"matcha:food/oven/honey_ginger_tea",
 			"matcha:food/crafting/mead",
-			"matcha:food/crafting/honied_french_toast"
+			"matcha:food/crafting/honied_french_toast",
+			"matcha:food/crafting/sugar_from_honey_bottle"
 		]
 	}
 }

@@ -30,7 +30,8 @@
 			"matcha:crafting/music_disc_stal",
 			"matcha:crafting/music_disc_strad",
 			"matcha:crafting/music_disc_wait",
-			"matcha:crafting/music_disc_ward"
+			"matcha:crafting/music_disc_ward",
+			"matcha:crafting/music_disc_golden"
 		]
 	}
 }

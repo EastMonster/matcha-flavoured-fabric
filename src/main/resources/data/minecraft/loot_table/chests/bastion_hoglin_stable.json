@@ -79,15 +79,10 @@
 					"weight": 7
 				},
 				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"count": 1,
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:golden_apple",
-					"weight": 10
+					"type": "minecraft:loot_table",
+					"value": "minecraft:food/golden_apple",
+					"weight": 10,
+					"quality": 1
 				},
 				{
 					"type": "minecraft:loot_table",

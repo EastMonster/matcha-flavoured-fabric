@@ -1,0 +1,1 @@
+{"parent":"minecraft:recipes/root","criteria":{"has_primary_material":{"conditions":{"items":[{"items":"minecraft:ice"}]},"trigger":"minecraft:inventory_changed"}},"requirements":[["has_primary_material"]],"rewards":{"recipes":["matcha:crafting/ice_from_packed_ice"]}}

@@ -43,7 +43,6 @@ public class VanillaFoodDefaults {
 		for (String name : RECIPE_FILES) {
 			definitions.add(readRecipe(name));
 		}
-		definitions.add(readRecipeAt("/data/crafting/recipe/morsel_stew.json"));
 		for (String name : LOOT_FILES) {
 			definitions.add(readLootTable(name));
 		}
