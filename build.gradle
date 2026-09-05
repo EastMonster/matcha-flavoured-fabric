@@ -21,6 +21,7 @@ loom {
 
   runs {
 		client {
+			programArgs '--username', 'East_Monster'
 			programArgs '--width', '1920', '--height', '1200'
 		}
 	}
