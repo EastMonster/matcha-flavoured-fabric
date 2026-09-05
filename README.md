@@ -32,15 +32,6 @@ Create a new world to play this mod. Existing items from the data-pack version a
 - Food healing is now scheduled per meal instead of relying on the regeneration effect the data pack uses. Vanilla regeneration refreshes in place (its duration never stacks), so eating the same food twice in a row silently lost part of the heal. Each food's hidden healing-simulation segment now ticks independently, so consecutive bites heal their full intended amount. 
 - Breaking cracks no longer appear floating in the air around leaves and glow lichen: the breaking animation now drops quads that fall outside the block's bounds. The out-of-bounds leaf extension panels are also culled inside canopies to reduce the number of rendered faces, while the canopy keeps its solid look.
 - The Mod Menu settings screen can disable Overworld True Darkness per client without changing server gameplay.
-- Adds an AI-assisted Simplified Chinese translation.
-
-## Intentional behavior differences
-
-- Vanilla carrier items and Matcha items are separate; only Matcha recipes, loot, and trades produce the corresponding mod items.
-- Incidental carrier behavior unrelated to an item's design is not retained. For example, Cheese does not poison parrots or enter composters.
-- When the Adamant set's Divinity count reaches five, it uses the four-piece maximum bonus. The data pack defines only one through four pieces, leaving five pieces with no effect.
-- The Happy Ghast horn selects the nearest Happy Ghast within 80 blocks. The data pack selects an arbitrary matching entity.
-- Hidden food-healing simulations are stored only for the current server session. If a single-player world is exited or the server stops before the healing finishes, the remaining hidden healing is discarded. Normally applied status effects are still saved by vanilla.
 
 ## Changes that may cause behavioral differences
 
