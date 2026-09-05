@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:baked_potato",
+    [
+      "minecraft:cooked_salmon",
+      "minecraft:cooked_cod"
+    ],
+    "matcha:flour",
+    "matcha:oil"
+  ],
+  "result": {
+    "id": "matcha:fish_and_chips",
+    "count": 1
+  }
+}

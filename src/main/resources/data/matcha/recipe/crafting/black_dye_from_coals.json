@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"group": "black_dye",
+	"pattern": [
+		"CC"
+	],
+	"key": {
+		"C": [
+			"minecraft:charcoal",
+			"minecraft:coal"
+		]
+	},
+	"result": {
+		"count": 4,
+		"id": "minecraft:black_dye"
+	}
+}

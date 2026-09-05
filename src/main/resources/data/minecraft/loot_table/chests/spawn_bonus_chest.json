@@ -1,0 +1,167 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/wood/tool",
+					"weight": 3
+				}
+			],
+			"rolls": 3
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/apple",
+					"functions": [],
+					"weight": 5
+				}
+			],
+			"rolls": 5
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 12,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:stick",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 12,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:oak_planks",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:oak_log",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:spruce_log",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:birch_log",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:jungle_log",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:acacia_log",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:dark_oak_log",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:mangrove_log",
+					"weight": 3
+				}
+			],
+			"rolls": 4
+		}
+	],
+	"random_sequence": "minecraft:chests/spawn_bonus_chest"
+}

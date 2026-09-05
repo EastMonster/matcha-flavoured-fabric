@@ -39,9 +39,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.tutorial.obtain_mattock.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.tutorial.obtain_mattock.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "matcha:copper_dolabra"
@@ -61,5 +68,10 @@
 			"copper_dolabra",
 			"copper_mattock"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_1"
+		]
+	}
 }

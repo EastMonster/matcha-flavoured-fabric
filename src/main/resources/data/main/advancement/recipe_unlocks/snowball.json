@@ -19,7 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"matcha:crafting/snow_shovel"
+			"matcha:crafting/snow_shovel",
+			"matcha:food/crafting/ice_cream"
 		]
 	}
 }

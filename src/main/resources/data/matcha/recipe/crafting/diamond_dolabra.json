@@ -15,6 +15,11 @@
 			"minecraft:tool": {
 				"rules": [
 					{
+						"blocks": "#main:obsidian_based",
+						"speed": 35,
+						"correct_for_drops": true
+					},
+					{
 						"blocks": "#minecraft:mineable/axe",
 						"speed": 8,
 						"correct_for_drops": true

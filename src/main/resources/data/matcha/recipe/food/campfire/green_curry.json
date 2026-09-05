@@ -1,0 +1,10 @@
+{
+	"type": "minecraft:campfire_cooking",
+	"category": "food",
+	"cookingtime": 300,
+	"experience": 0.35,
+	"ingredient": "matcha:uncooked_green_curry",
+	"result": {
+		"id": "matcha:green_curry"
+	}
+}

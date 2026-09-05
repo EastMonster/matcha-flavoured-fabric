@@ -128,17 +128,18 @@ public final class EnchantmentMechanics {
 				wardingAura(player, level);
 			}
 			if (apotropaic == 4 && elapsed(player, 600)) {
-				player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 1, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 620, 0, false, false));
 			}
 		}
 
 		// Treat armour plus a Divinity main-hand item as the four-piece set instead of the upstream score-5 gap.
 		int divinity = Math.min(4, countArmor(player, enchantments, DIVINITY) + maxLevel(mainHand, enchantments, DIVINITY));
 		if (divinity >= 1) {
-			int interval = divinity == 4 ? 400 : 600;
-			if (elapsed(player, interval)) {
-				int amplifier = divinity == 4 ? 4 : divinity - 1;
-				player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, interval, amplifier, false, false));
+			if (elapsed(player, 10)) {
+				player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 20, divinity - 1, false, false));
+			}
+			if (divinity == 4 && elapsed(player, 600)) {
+				player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 620, 0, false, false));
 			}
 		}
 

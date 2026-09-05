@@ -13,9 +13,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.tutorial.obtain_amber.description"
-		},
+		"description": [
+			{
+				"text": "❤ ",
+				"color": "aqua"
+			},
+			{
+				"translate": "advancements.main.tutorial.obtain_amber.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "matcha:amber"
@@ -28,5 +35,10 @@
 		[
 			"get_item"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/crystal_heart_1"
+		]
+	}
 }

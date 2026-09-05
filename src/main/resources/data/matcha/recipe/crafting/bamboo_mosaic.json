@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bamboo_mosaic",
+    "category": "building",
+	"key": {
+		"#": "minecraft:bamboo_planks"
+	},
+	"pattern": [
+		"##",
+		"##"
+	],
+	"result": {
+		"id": "minecraft:bamboo_mosaic",
+		"count": 4
+	}
+}

@@ -34,18 +34,28 @@
 			],
 			"minecraft:lore": [
 				{
-					"text": "💥 1",
+					"text": "\uD83D\uDCA5 1",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🗡 4",
+					"text": "\uD83D\uDDE1 4",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 0.9",
+					"text": "\uD83D\uDD52 0.9",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.iron_ingot",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -59,9 +69,7 @@
 					"minecraft:iron_ingot"
 				]
 			},
-			"minecraft:enchantments": {},
 			"minecraft:enchantment_glint_override": false
 		}
-	},
-	"template": "minecraft:iron_ingot"
+	}
 }

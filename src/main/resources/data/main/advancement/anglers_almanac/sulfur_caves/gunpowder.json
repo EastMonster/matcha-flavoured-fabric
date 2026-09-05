@@ -1,0 +1,52 @@
+{
+  "parent": "main:anglers_almanac/sulfur_caves/fish_bones",
+  "display": {
+    "icon": {
+      "id": "gunpowder"
+    },
+    "title": {
+      "translate": "item.minecraft.gunpowder"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.sulfur_chunk.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "9.1%"
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "main:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "minecraft:gunpowder"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}

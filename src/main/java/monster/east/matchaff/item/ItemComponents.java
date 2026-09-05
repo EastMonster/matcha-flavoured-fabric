@@ -6,6 +6,7 @@ import com.mojang.serialization.JsonOps;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.ComponentSerialization;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.util.Unit;
 import net.minecraft.world.item.Item;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.item.component.UseRemainder;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.item.equipment.Equippable;
@@ -45,6 +47,7 @@ public class ItemComponents {
 			case "minecraft:max_stack_size" -> properties.stacksTo(json.getAsInt());
 			case "minecraft:item_name" ->
 					properties.component(DataComponents.ITEM_NAME, decode(ComponentSerialization.CODEC, json));
+			case "minecraft:item_model" -> properties.component(DataComponents.ITEM_MODEL, decode(Identifier.CODEC, json));
 			case "minecraft:custom_name" ->
 					properties.component(DataComponents.CUSTOM_NAME, decode(ComponentSerialization.CODEC, json));
 			case "minecraft:lore" -> properties.component(DataComponents.LORE, decode(ItemLore.CODEC, json));
@@ -81,6 +84,8 @@ public class ItemComponents {
 					properties.delayedComponent(DataComponents.JUKEBOX_PLAYABLE, provider -> decode(DataComponents.JUKEBOX_PLAYABLE.codec(), provider, json));
 			case "minecraft:consumable" ->
 					properties.delayedComponent(DataComponents.CONSUMABLE, provider -> decode(DataComponents.CONSUMABLE.codec(), provider, json));
+			case "minecraft:use_remainder" ->
+					properties.delayedComponent(DataComponents.USE_REMAINDER, provider -> decode(UseRemainder.CODEC, provider, json));
 			case "minecraft:food" ->
 					properties.component(DataComponents.FOOD, decode(FoodProperties.DIRECT_CODEC, json));
 			case "minecraft:writable_book_content" ->

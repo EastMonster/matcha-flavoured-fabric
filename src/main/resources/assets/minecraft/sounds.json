@@ -1,4 +1,13 @@
 {
+	"music.overworld.forest": {
+		"sounds": [
+			{
+				"name": "music/game/abbey",
+				"stream": true,
+				"volume": 0.4
+			}
+		]
+	},
 	"music_disc.labyrinthine": {
 		"sounds": [
 			{

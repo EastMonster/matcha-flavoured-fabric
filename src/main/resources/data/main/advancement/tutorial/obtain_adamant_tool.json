@@ -16,7 +16,16 @@
 		"adamant_claymore": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_claymore" } }
 	},
 	"display": {
-		"description": { "translate": "advancements.main.tutorial.obtain_adamant_tool.description" },
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.tutorial.obtain_adamant_tool.description",
+				"color": "gray"
+			}
+		],
 		"icon": { "count": 1, "id": "minecraft:netherite_pickaxe" },
 		"title": { "translate": "advancements.main.tutorial.obtain_adamant_tool.title" },
 		"frame": "challenge",
@@ -38,5 +47,10 @@
 			"adamant_boots",
 			"adamant_claymore"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_4"
+		]
+	}
 }

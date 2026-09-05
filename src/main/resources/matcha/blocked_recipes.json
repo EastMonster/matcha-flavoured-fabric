@@ -348,5 +348,6 @@
 	"terracotta",
 	"brick",
 	"smooth_quartz",
-	"ender_chest"
+	"ender_chest",
+	"repair_item"
 ]

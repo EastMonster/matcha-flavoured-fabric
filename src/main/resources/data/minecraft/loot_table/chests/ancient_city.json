@@ -307,7 +307,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/crystal_heart",
+					"value": "matcha:treasure/crystal_heart",
 					"weight": 2,
 					"quality": 1
 				},

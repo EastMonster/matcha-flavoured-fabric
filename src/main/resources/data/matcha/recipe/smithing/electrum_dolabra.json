@@ -9,6 +9,11 @@
 			"minecraft:tool": {
 				"rules": [
 					{
+						"blocks": "#main:obsidian_based",
+						"speed": 55,
+						"correct_for_drops": true
+					},
+					{
 						"blocks": "#minecraft:mineable/pickaxe",
 						"speed": 10,
 						"correct_for_drops": true
@@ -36,6 +41,16 @@
 				{
 					"text": "🕒 1.2",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.diamond_block",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -71,8 +86,7 @@
 			},
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:diamond",
-					"minecraft:gold_ingot"
+					"minecraft:diamond_block"
 				]
 			}
 		}

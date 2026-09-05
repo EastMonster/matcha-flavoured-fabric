@@ -5,13 +5,13 @@
 	"result": {
 		"id": "matcha:adamant_claymore",
 		"components": {
-			"minecraft:max_damage": 5000,
+			"minecraft:max_damage": 3000,
 			"minecraft:item_name": {
 				"translate": "item.matcha.adamant_claymore",
 				"color": "gold"
 			},
 			"minecraft:enchantments": {
-				"matcha:divinity": 1,
+				"minecraft:sharpness": 1,
 				"minecraft:unbreaking": 2
 			},
 			"minecraft:lore": [
@@ -21,39 +21,44 @@
 					"italic": false
 				},
 				{
-					"text": "🕒 0.5",
+					"text": "🕒 1.0",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.set_bonus",
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "enchantment.kleispack.divinity.set_bonus",
-					"color": "aqua",
-					"italic": false
-				},
-				{
 					"translate": "desc.kleispack.when_blocking",
-					"color": "dark_gray",
+					"color": "gray",
 					"italic": false
 				},
 				{
 					"translate": "matcha.lore.melee_blocking",
-						"with": [
-							"80"
-						],
-					"color": "gray",
+					"with": [
+						"80"
+					],
+					"color": "dark_gray",
 					"italic": false
 				},
 				{
 					"translate": "matcha.lore.projectile_blocking",
-						"with": [
-							"70"
-						],
+					"with": [
+						"70"
+					],
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
 					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.diamond_block",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.netherite_scrap",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -93,7 +98,6 @@
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:diamond_block",
-					"minecraft:gold_block",
 					"minecraft:netherite_scrap"
 				]
 			},
@@ -108,7 +112,7 @@
 				{
 					"type": "minecraft:attack_speed",
 					"id": "attack_speed",
-					"amount": -3.5,
+            "amount": -3.0,
 					"operation": "add_value",
 					"slot": "mainhand"
 				}

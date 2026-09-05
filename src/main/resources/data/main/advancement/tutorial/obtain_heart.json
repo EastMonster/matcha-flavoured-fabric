@@ -13,9 +13,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.tutorial.obtain_heart.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.tutorial.obtain_heart.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "matcha:crystal_heart"
@@ -32,5 +39,10 @@
 		[
 			"get_heart"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_3"
+		]
+	}
 }

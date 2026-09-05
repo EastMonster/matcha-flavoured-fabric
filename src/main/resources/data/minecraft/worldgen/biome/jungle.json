@@ -63,7 +63,8 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+          "matcha-flavoured:ore_emerald_deep"
     ],
     [],
     [
@@ -142,6 +143,18 @@
         "maxCount": 2,
         "minCount": 1,
         "weight": 1
+      },
+      {
+        "type": "minecraft:cat",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 35
+      },
+      {
+        "type": "minecraft:ocelot",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 2
       }
     ],
     "misc": [],
@@ -160,9 +173,9 @@
 			},
 			{
 				"type": "minecraft:husk",
-				"maxCount": 4,
+				"maxCount": 2,
 				"minCount": 1,
-				"weight": 50
+				"weight": 75
 			},
       {
         "type": "minecraft:zombie_villager",
@@ -199,12 +212,6 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 5
-      },
-      {
-        "type": "minecraft:ocelot",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 2
       }
     ],
     "underground_water_creature": [

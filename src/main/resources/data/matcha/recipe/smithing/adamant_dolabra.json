@@ -9,6 +9,11 @@
 			"minecraft:tool": {
 				"rules": [
 					{
+						"blocks": "#main:obsidian_based",
+						"speed": 55,
+						"correct_for_drops": true
+					},
+					{
 						"blocks": "#minecraft:mineable/pickaxe",
 						"speed": 13,
 						"correct_for_drops": true
@@ -23,7 +28,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:enchantments": {
-				"matcha:divinity": 1,
+				"minecraft:efficiency": 1,
 				"minecraft:unbreaking": 2
 			},
 			"minecraft:lore": [
@@ -43,13 +48,18 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.set_bonus",
+					"translate": "desc.kleispack.repaired_with",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "enchantment.kleispack.divinity.set_bonus",
-					"color": "aqua",
+					"translate": "block.minecraft.diamond_block",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.netherite_scrap",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -58,10 +68,13 @@
 					"minecraft:attribute_modifiers"
 				]
 			},
+			"minecraft:attribute_modifiers": [
+				{"type": "minecraft:attack_damage", "id": "attack_damage", "amount": 9, "operation": "add_value", "slot": "mainhand"},
+				{"type": "minecraft:attack_speed", "id": "attack_speed", "amount": -3.0, "operation": "add_value", "slot": "mainhand"}
+			],
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:diamond_block",
-					"minecraft:gold_block",
 					"minecraft:netherite_scrap"
 				]
 			},

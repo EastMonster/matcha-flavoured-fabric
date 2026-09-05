@@ -17,5 +17,6 @@ public abstract class RecipeCraftedMixin {
 	@Inject(method = "triggerRecipeCrafted", at = @At("TAIL"))
 	private void matcha$giveCraftingRewards(RecipeHolder<?> recipe, List<ItemStack> ingredients, CallbackInfo ci) {
 		WorldMechanics.glassBottleReward((ServerPlayer) (Object) this);
+		WorldMechanics.twoGlassBottleReward((ServerPlayer) (Object) this);
 	}
 }

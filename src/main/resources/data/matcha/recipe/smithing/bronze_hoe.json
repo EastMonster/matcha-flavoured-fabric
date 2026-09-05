@@ -10,7 +10,7 @@
 				"rules": [
 					{
 						"blocks": "#minecraft:mineable/hoe",
-						"speed": 15,
+						"speed": 20,
 						"correct_for_drops": true
 					}
 				],
@@ -19,23 +19,33 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 15",
+					"text": "\u26CF 20",
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 1",
+					"text": "\uD83D\uDDE1 1",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 4",
+					"text": "\uD83D\uDD52 4",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.005",
+					"text": "\uD83C\uDFC3 \u002B0.005",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -59,10 +69,9 @@
 			},
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:copper_ingot"
+					"minecraft:copper_block"
 				]
 			}
 		}
-	},
-	"template": "minecraft:copper_ingot"
+	}
 }

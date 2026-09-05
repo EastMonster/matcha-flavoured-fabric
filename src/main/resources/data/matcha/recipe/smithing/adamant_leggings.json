@@ -5,7 +5,7 @@
 	"result": {
 		"id": "minecraft:netherite_leggings",
 		"components": {
-			"minecraft:max_damage": 1500,
+			"minecraft:max_damage": 1000,
 			"minecraft:enchantments": {
 				"matcha:divinity": 1,
 				"minecraft:unbreaking": 2,
@@ -36,6 +36,21 @@
 					"translate": "enchantment.kleispack.divinity.set_bonus",
 					"color": "aqua",
 					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.diamond_block",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.netherite_scrap",
+					"color": "dark_gray",
+					"italic": false
 				}
 			],
 			"minecraft:tooltip_display": {
@@ -54,6 +69,5 @@
 				"color": "gold"
 			}
 		}
-	},
-	"template": "minecraft:diamond"
+	}
 }

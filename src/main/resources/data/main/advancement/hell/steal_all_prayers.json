@@ -23,10 +23,20 @@
 		"unbreaking": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:blessing/unbreaking" } },
 		"warding": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:blessing/warding" } },
 		"wind_burst_anemos": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:blessing/wind_burst_anemos" } },
-		"zephyr": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:blessing/zephyr" } }
+		"zephyr": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:blessing/zephyr" } },
+		"looting_fortune": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:blessing/looting_fortune" } }
 	},
 	"display": {
-		"description": { "translate": "advancements.main.hell.steal_all_prayers.description" },
+		"description": [
+			{
+				"text": "10  ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.hell.steal_all_prayers.description",
+				"color": "gray"
+			}
+		],
 		"icon": { "count": 1, "id": "matcha:blessing_god_king" },
 		"title": { "translate": "advancements.main.hell.steal_all_prayers.title" },
 		"hidden": false,
@@ -55,6 +65,12 @@
 		[ "unbreaking" ],
 		[ "warding" ],
 		[ "wind_burst_anemos" ],
-		[ "zephyr" ]
-	]
+		[ "zephyr" ],
+		[ "looting_fortune" ]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_10"
+		]
+	}
 }

@@ -1,0 +1,13 @@
+{
+  "wants": {
+    "id": "minecraft:heart_of_the_sea",
+    "count": 1
+  },
+  "gives": {
+    "id": "minecraft:prismarine_crystals",
+    "count": 2
+  },
+  "max_uses": 999,
+  "reputation_discount": 0,
+  "xp": 10
+}

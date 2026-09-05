@@ -8,7 +8,7 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"text": "🛡 3",
+					"text": "\uD83D\uDEE1 3",
 					"color": "dark_green",
 					"italic": false
 				},
@@ -20,6 +20,16 @@
 				{
 					"translate": "enchantment.kleispack.shakudo_regen_bonus",
 					"color": "#e85e8f",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -41,17 +51,21 @@
 					"minecraft:attribute_modifiers"
 				]
 			},
-			"minecraft:enchantments": {
-				"matcha:cleanse_armor_feet": 1,
-				"matcha:magic_protection": 1,
-				"matcha:shakudo_regen": 1
-			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
 				"slot": "feet",
 				"asset_id": "minecraft:shakudo"
+			},
+			"minecraft:repairable": {
+				"items": [
+					"minecraft:copper_block"
+				]
+			},
+			"minecraft:enchantments": {
+				"matcha:cleanse_armor_feet": 1,
+				"matcha:magic_protection": 1,
+				"matcha:shakudo_regen": 1
 			}
 		}
-	},
-	"template": "minecraft:copper_ingot"
+	}
 }

@@ -22,32 +22,36 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 8",
+					"text": "\u26CF 8",
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 4.5",
+					"text": "\uD83D\uDDE1 4.5",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1",
+					"text": "\uD83D\uDD52 1",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.iron_ingot",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
-			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
-			},
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:iron_ingot"
 				]
 			}
 		}
-	},
-	"template": "minecraft:iron_ingot"
+	}
 }

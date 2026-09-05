@@ -22,13 +22,18 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.set_bonus",
+					"translate": "desc.kleispack.repaired_with",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "enchantment.kleispack.divinity.set_bonus",
-					"color": "aqua",
+					"translate": "block.minecraft.diamond_block",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.netherite_scrap",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -40,16 +45,14 @@
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:diamond_block",
-					"minecraft:gold_block",
 					"minecraft:netherite_scrap"
 				]
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:enchantments": {
-				"matcha:divinity": 1,
+				"minecraft:sharpness": 1,
 				"minecraft:unbreaking": 2
 			}
 		}
-	},
-	"template": "minecraft:diamond"
+	}
 }

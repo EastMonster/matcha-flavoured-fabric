@@ -1,0 +1,64 @@
+{
+  "parent": "main:anglers_almanac/root",
+  "display": {
+    "icon": {
+      "id": "ice",
+      "components": {
+        "minecraft:item_model": "matcha:freshwater_cold"
+      }
+    },
+    "title": {
+      "translate": "adv.kleispack.anglers_almanac.category.freshwater.cold"
+    },
+    "description": [
+      {
+        "translate": "biome.minecraft.jagged_peaks"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.frozen_peaks"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.grove"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.snowy_slopes"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.snowy_taiga"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.frozen_river"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.snowy_plains"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.ice_spikes"
+      }
+    ],
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "root": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "main:anglers_almanac/root": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

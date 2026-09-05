@@ -105,6 +105,7 @@ public final class SimpleItemRegistrar {
 		return new BatchItem(item, tab(definition.tab));
 	}
 
+
 	private static Item createItem(BatchDefinition definition, Item.Properties properties) {
 		return switch (definition.type) {
 			case "item" -> new Item(properties);

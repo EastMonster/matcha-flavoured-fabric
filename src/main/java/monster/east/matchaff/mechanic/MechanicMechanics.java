@@ -310,7 +310,6 @@ public final class MechanicMechanics {
 		}
 		server.getPlayerList().broadcastSystemMessage(
 				Component.translatable("matcha.message.evil_banished").withStyle(ChatFormatting.GRAY), false);
-		WorldMechanics.raiseDifficultyAfterDragon(server);
 		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly("gamerule"), objective).set(1);
 	}
 

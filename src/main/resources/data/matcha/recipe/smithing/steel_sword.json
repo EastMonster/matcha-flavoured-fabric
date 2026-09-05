@@ -27,76 +27,35 @@
 				{
 					"type": "minecraft:attack_speed",
 					"id": "attack_speed",
-					"amount": -3.1,
+					"amount": -2.6,
 					"operation": "add_value",
 					"slot": "mainhand"
 				}
 			],
-			"minecraft:blocks_attacks": {
-				"block_delay_seconds": 0,
-				"disable_cooldown_scale": 1,
-				"damage_reductions": [
-					{
-						"type": [
-							"minecraft:mob_attack",
-							"minecraft:player_attack"
-						],
-						"base": 0,
-						"factor": 0.5
-					},
-					{
-						"type": [
-							"minecraft:mob_projectile",
-							"minecraft:arrow"
-						],
-						"base": 0,
-						"factor": 0.25
-					}
-				],
-				"item_damage": {
-					"threshold": 1,
-					"base": 0,
-					"factor": 0.25
-				},
-				"block_sound": "minecraft:entity.zombie.attack_iron_door",
-				"disabled_sound": "minecraft:item.shield.break"
-			},
 			"minecraft:lore": [
 				{
-					"text": "💥 1",
+					"text": "\uD83D\uDCA5 1",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🗡 6",
+					"text": "\uD83D\uDDE1 6",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 0.9",
+					"text": "\uD83D\uDD52 1.4",
 					"color": "dark_green",
 					"italic": false
 				},
-				"",
 				{
-					"translate": "matcha.lore.blocking_colon",
+					"translate": "desc.kleispack.repaired_with",
 					"color": "gray",
 					"italic": false
 				},
 				{
-					"translate": "matcha.lore.melee_blocking",
-						"with": [
-							"50"
-						],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "matcha.lore.projectile_blocking",
-						"with": [
-							"25"
-						],
-					"color": "blue",
+					"translate": "item.minecraft.iron_ingot",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -112,6 +71,5 @@
 				]
 			}
 		}
-	},
-	"template": "minecraft:iron_ingot"
+	}
 }

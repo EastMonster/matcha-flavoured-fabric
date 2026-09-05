@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:snowball",
+    "minecraft:beetroot_soup",
+    "minecraft:sugar",
+    "minecraft:blue_orchid",
+    "minecraft:bread"
+  ],
+  "result": {
+    "id": "matcha:ice_cream",
+    "count": 1
+  }
+}

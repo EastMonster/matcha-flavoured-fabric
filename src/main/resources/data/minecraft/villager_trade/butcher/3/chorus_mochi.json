@@ -16,7 +16,7 @@
 								"amplifier": 29,
 								"duration": 20,
 								"show_particles": false,
-								"show_icon": false
+								"show_icon": true
 							},
 							{
 								"id": "minecraft:regeneration",

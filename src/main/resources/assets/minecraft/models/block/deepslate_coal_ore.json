@@ -1,8 +1,8 @@
 {
     "parent": "block/orientable_dirt",
     "textures": {
-        "top": "block/deepslate_top",
-        "bottom": "block/deepslate_top",
+        "top": "block/deepslate_coal_ore",
+        "bottom": "block/deepslate_coal_ore",
         "side":"block/deepslate_coal_ore_side"
     }
 }

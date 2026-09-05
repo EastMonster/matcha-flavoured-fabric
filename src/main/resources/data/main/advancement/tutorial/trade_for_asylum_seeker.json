@@ -12,9 +12,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.tutorial.trade_for_asylum_seeker.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.tutorial.trade_for_asylum_seeker.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "matcha:asylum_seeker"
@@ -28,5 +35,10 @@
 		[
 			"traded"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_1"
+		]
+	}
 }

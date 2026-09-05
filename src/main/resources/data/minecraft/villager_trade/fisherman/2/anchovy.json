@@ -1,0 +1,15 @@
+{
+	"gives": {
+		"id": "minecraft:emerald",
+		"count": 1
+	},
+	"given_item_modifiers": [],
+	"max_uses": 999,
+	"wants": {
+		"count": 12,
+		"id": "matcha:anchovy"
+	},
+	"reputation_discount": 0,
+	"xp": 60
+}
+

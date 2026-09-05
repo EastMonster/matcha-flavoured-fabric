@@ -6,7 +6,8 @@
 		"minecraft:carrot",
 		"minecraft:sugar",
 		"#minecraft:eggs",
-		"matcha:flour"
+		"matcha:flour",
+		"matcha:oil"
 	],
 	"result": {
 		"id": "matcha:gimmari",

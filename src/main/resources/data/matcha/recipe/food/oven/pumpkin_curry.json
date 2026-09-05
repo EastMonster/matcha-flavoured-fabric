@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 300,
+  "experience": 0.35,
+  "ingredient": "matcha:uncooked_pumpkin_curry",
+  "result": {
+    "id": "matcha:pumpkin_curry",
+    "count": 1
+  }
+}

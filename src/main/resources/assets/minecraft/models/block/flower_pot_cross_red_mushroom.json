@@ -152,7 +152,7 @@
 		{
 			"from": [8, 4, 1],
 			"to": [8, 16, 15],
-			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8], "rescale" : "true"},
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8], "rescale" : true},
 			"color": 4,
 			"faces": {
 				"east": {"uv": [0, 0, 16, 16], "texture": "#plant"},
@@ -162,7 +162,7 @@
 		{
 			"from": [8, 4, 2],
 			"to": [8, 16, 14],
-			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 8], "rescale" : "true"},
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 8], "rescale" : true},
 			"color": 4,
 			"faces": {
 				"east": {"uv": [0, 0, 16, 16], "texture": "#plant"},

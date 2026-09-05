@@ -45,7 +45,8 @@
 			"minecraft:crafter",
 			"minecraft:observer",
 			"matcha:crafting/target",
-			"matcha:crafting/copper_compass"
+			"matcha:crafting/copper_compass",
+			"matcha:crafting/trapped_chest"
 		]
 	}
 }

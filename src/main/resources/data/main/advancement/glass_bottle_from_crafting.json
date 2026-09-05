@@ -544,7 +544,16 @@
 				"recipe_id": "matcha:blessing/hell_bound_book"
 			}
 			
-		}
+		},
+		"stego_chicken_nugget": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/stego_chicken_nugget"}},
+		"tricero_chicken_nugget": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/tricero_chicken_nugget"}},
+		"brachio_chicken_nugget": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/brachio_chicken_nugget"}},
+		"ptero_chicken_nugget": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/ptero_chicken_nugget"}},
+		"lumpia": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/lumpia"}},
+		"bunuelo": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/bunuelo"}},
+		"fish_and_chips": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/fish_and_chips"}},
+		"oatmeal": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/oatmeal"}},
+		"ice_cream": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "matcha:food/crafting/ice_cream"}}
 	},
 	"requirements": [
 		[
@@ -625,7 +634,9 @@
 			"clone_white_tulip",
 			"made_dough_from_water",
 			"made_cake",
-			"made_hell_bound_book"
+			"made_hell_bound_book",
+			"stego_chicken_nugget", "tricero_chicken_nugget", "brachio_chicken_nugget", "ptero_chicken_nugget",
+			"lumpia", "bunuelo", "fish_and_chips", "oatmeal", "ice_cream"
 		]
 	],
 	"rewards": {

@@ -76,7 +76,7 @@ public final class EquipmentRegistrar {
 	}
 
 	private static Map<String, JsonElement> components(EquipmentDefinition definition) {
-		if (!definition.source.contains("/recipe/")) {
+		if (definition.source == null || !definition.source.contains("/recipe/")) {
 			return definition.components;
 		}
 		try (var stream = EquipmentRegistrar.class.getResourceAsStream("/" + definition.source)) {

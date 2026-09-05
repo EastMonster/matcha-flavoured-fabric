@@ -131,6 +131,7 @@
 	"block.minecraft.deepslate_iron_ore": "Hematit Dwfnlech",
 	"item.minecraft.shears": "Gwellau Haearn",
 	"item.minecraft.resin_brick": "Aloi Dur",
+	"item.kleispack.steel_claymore": "Cleddyf Hir Dur",
 	"item.minecraft.prismarine_shard": "Arian Crai",
 	"item.minecraft.prismarine_crystals": "Bwliwn Arian",
 	"item.minecraft.heart_of_the_sea": "Aloi Electrwm",
@@ -154,5 +155,12 @@
 	"item.minecraft.rabbit": "Cnawd Amrwd",
 	"item.minecraft.cod": "Penfras",
 	"item.minecraft.salmon": "Eog",
-	"item.minecraft.potion.effect.empty": "Potel o Ddŵr"
+	"item.kleispack.blessing": "Bendith",
+	"item.minecraft.potion.effect.empty": "Potel o Ddŵr",
+	"item.kleispack.oatmeal": "Uwd",
+	"item.kleispack.fish_and_chips": "Pysgodyn a Sglodion",
+	"item.kleispack.ice_cream": "Hufen Iâ",
+	"item.kleispack.pumpkin_curry": "Cyrri Pwmpen",
+	"adv.kleispack.cook_pumpkin_curry": "Nawr mae'r parti'n bwmpen!",
+	"adv.kleispack.cook_pumpkin_curry.desc": "Coginio Cyrri Pwmpen"
 }

@@ -27,7 +27,10 @@
 	"rewards": {
 		"recipes": [
 			"matcha:crafting/fire_starter",
-			"matcha:crafting/gravel"
+			"matcha:crafting/gravel",
+			"matcha:crafting/cobblestone",
+			"matcha:crafting/cobbled_deepslate",
+			"matcha:crafting/arrow"
 		]
 	}
 }

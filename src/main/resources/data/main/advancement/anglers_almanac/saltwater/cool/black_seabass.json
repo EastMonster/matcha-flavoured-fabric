@@ -1,0 +1,58 @@
+{
+  "parent": "main:anglers_almanac/saltwater/cool/salmon",
+  "display": {
+    "icon": {
+      "id": "matcha:black_seabass",
+      "components": {}
+    },
+    "title": {
+      "translate": "item.matcha.black_seabass"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.black_seabass.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.fishing.rarity.2",
+        "italic": false
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "19%"
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "main:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "matcha:black_seabass"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}

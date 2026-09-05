@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "cobbled_deepslate",
+	"key": {
+		"#": "minecraft:flint",
+		"X": "minecraft:clay_ball"
+	},
+	"pattern": [
+		"#X",
+		"X#"
+	],
+	"result": {
+		"id": "minecraft:cobbled_deepslate"
+	},
+	"show_notification": true
+}

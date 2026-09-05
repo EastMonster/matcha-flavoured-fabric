@@ -13,9 +13,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.hell.obtain_benzene.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.hell.obtain_benzene.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "matcha:benzene"
@@ -29,5 +36,10 @@
 		[
 			"get_benzene"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_1"
+		]
+	}
 }

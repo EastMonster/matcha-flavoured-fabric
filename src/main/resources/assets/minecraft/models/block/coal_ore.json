@@ -2,7 +2,7 @@
     "parent": "block/orientable_dirt",
     "textures": {
         "top": "block/coal_ore",
-        "bottom": "block/coal_ore",
+        "bottom": "block/chiseled_bookshelf_top",
         "side":"block/coal_ore_side"
     }
 }

@@ -9,8 +9,13 @@
 			"minecraft:tool": {
 				"rules": [
 					{
+						"blocks": "minecraft:obsidian",
+						"speed": 3,
+						"correct_for_drops": false
+					},
+					{
 						"blocks": "#minecraft:mineable/pickaxe",
-						"speed": 15,
+						"speed": 20,
 						"correct_for_drops": true
 					}
 				],
@@ -19,23 +24,33 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 15",
+					"text": "\u26CF 20",
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 4.5",
+					"text": "\uD83D\uDDE1 4.5",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.2",
+					"text": "\uD83D\uDD52 1.2",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.005",
+					"text": "\uD83C\uDFC3 \u002B0.005",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -73,10 +88,9 @@
 			},
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:copper_ingot"
+					"minecraft:copper_block"
 				]
 			}
 		}
-	},
-	"template": "minecraft:copper_ingot"
+	}
 }

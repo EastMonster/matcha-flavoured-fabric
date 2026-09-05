@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chicken_nugget",
+  "category": "misc",
+  "pattern": [
+    "Po ",
+    "f  ",
+    "   "
+  ],
+  "key": {
+    "P": [
+      "matcha:seitan",
+      "minecraft:cooked_chicken"
+    ],
+    "o": "matcha:oil",
+    "f": "matcha:flour"
+  },
+  "result": {
+    "id": "matcha:brachio_chicken_nugget",
+    "count": 4
+  }
+}

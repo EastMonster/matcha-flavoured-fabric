@@ -57,7 +57,6 @@
 			"minecraft:ore_magma",
 			"minecraft:spring_closed",
 			"minecraft:ore_soul_sand",
-			"minecraft:ore_gravel_nether",
 			"minecraft:ore_blackstone",
 			"minecraft:ore_gold_nether",
 			"minecraft:ore_quartz_nether",
@@ -66,7 +65,8 @@
 		],
 		[],
 		[
-			"minecraft:spring_lava"
+			"minecraft:spring_lava",
+		      "matcha:nether_wart"
 		]
 	],
 	"has_precipitation": false,

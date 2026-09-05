@@ -42,7 +42,10 @@ final class WardingStoneMechanics {
 	private static final ResourceKey<Structure> TRIAL_CHAMBERS = ResourceKey.create(
 			Registries.STRUCTURE, Identifier.fromNamespaceAndPath("minecraft", "trial_chambers")
 	);
-	private static HolderSet<Structure> trialChambers;
+	private static final ResourceKey<Structure> ABBEY = ResourceKey.create(
+			Registries.STRUCTURE, Identifier.fromNamespaceAndPath("matcha-flavoured", "abbey_overgrown")
+	);
+	private static HolderSet<Structure> forbiddenStructures;
 	private static final Set<ArmorStand> WARDING_STONES =
 			Collections.newSetFromMap(new IdentityHashMap<>());
 
@@ -52,11 +55,11 @@ final class WardingStoneMechanics {
 	static void init() {
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			WARDING_STONES.clear();
-			trialChambers = null;
+			forbiddenStructures = null;
 		});
 		ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) -> {
 			if (success) {
-				trialChambers = null;
+				forbiddenStructures = null;
 			}
 		});
 		ServerEntityEvents.ENTITY_LOAD.register(WardingStoneMechanics::trackEntity);
@@ -117,10 +120,10 @@ final class WardingStoneMechanics {
 				continue;
 			}
 
-			// Placed inside a trial chamber: forbidden, destroy it. The structure cannot
+			// Placed inside a forbidden structure: destroy it. The structure cannot
 			// change around a normally placed stone, so test each stone once.
-			if (!stone.entityTags().contains("WardingStoneTrialChecked")) {
-				if (level.structureManager().getStructureWithPieceAt(pos, trialChambers(level)).isValid()) {
+			if (!stone.entityTags().contains("WardingStoneForbiddenChecked")) {
+				if (level.structureManager().getStructureWithPieceAt(pos, forbiddenStructures(level)).isValid()) {
 					level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
 					var tnt = EntityTypes.TNT.create(level, EntitySpawnReason.EVENT);
 					tnt.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
@@ -130,7 +133,7 @@ final class WardingStoneMechanics {
 							100, 0.1, 0.1, 0.1, 0.5);
 					continue;
 				}
-				stone.addTag("WardingStoneTrialChecked");
+				stone.addTag("WardingStoneForbiddenChecked");
 			}
 
 			// Aura: slow and damage the dedicated 1.10 target set (including pillagers).
@@ -190,12 +193,13 @@ final class WardingStoneMechanics {
 				.orElse(null);
 	}
 
-	private static HolderSet<Structure> trialChambers(ServerLevel level) {
-		if (trialChambers == null) {
-			var structure = level.registryAccess().lookupOrThrow(Registries.STRUCTURE).getOrThrow(TRIAL_CHAMBERS);
-			trialChambers = HolderSet.direct(structure);
+	private static HolderSet<Structure> forbiddenStructures(ServerLevel level) {
+		if (forbiddenStructures == null) {
+			var structures = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
+			forbiddenStructures = HolderSet.direct(
+					structures.getOrThrow(TRIAL_CHAMBERS), structures.getOrThrow(ABBEY));
 		}
-		return trialChambers;
+		return forbiddenStructures;
 	}
 
 	private static Identifier id(String path) {

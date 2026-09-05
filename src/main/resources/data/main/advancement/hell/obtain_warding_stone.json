@@ -9,9 +9,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.hell.obtain_warding_stone.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.hell.obtain_warding_stone.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "matcha:warding_stone"
@@ -28,5 +35,10 @@
 		[
 			"get_nazar"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_2"
+		]
+	}
 }

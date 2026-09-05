@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:smoking",
+	"group": "deepslate",
+	"category": "blocks",
+	"ingredient": "minecraft:cobbled_deepslate",
+	"result": {
+		"id": "minecraft:deepslate"
+	},
+	"experience": 0.1,
+	"cookingtime": 100
+}

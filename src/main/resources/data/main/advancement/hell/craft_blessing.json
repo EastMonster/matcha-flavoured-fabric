@@ -96,12 +96,25 @@
 			"conditions": {
 				"recipe_id": "matcha:blessing/zephyr"
 			}
+		},
+		"looting_fortune": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:blessing/looting_fortune"
+			}
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.hell.craft_blessing.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.hell.craft_blessing.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"components": {
 				"minecraft:stored_enchantments": {
@@ -142,7 +155,13 @@
 			"unbreaking",
 			"warding",
 			"wind_burst_anemos",
-			"zephyr"
+			"zephyr",
+			"looting_fortune"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_2"
+		]
+	}
 }

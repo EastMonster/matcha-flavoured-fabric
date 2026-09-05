@@ -178,8 +178,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private static List<Item> registerFoods() {
 		try (var stream = MatchaFlavouredFabric.class.getResourceAsStream("/matcha/foods.json")) {
 			FoodDefinition[] definitions = new Gson().fromJson(
-					new InputStreamReader(Objects.requireNonNull(stream), StandardCharsets.UTF_8),
-					FoodDefinition[].class
+					new InputStreamReader(Objects.requireNonNull(stream), StandardCharsets.UTF_8), FoodDefinition[].class
 			);
 			return Arrays.stream(definitions).map(MatchaFlavouredFabric::registerFood).toList();
 		} catch (Exception exception) {
@@ -188,6 +187,11 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	}
 
 	private static Item registerFood(FoodDefinition definition) {
+		if (definition.components != null) {
+			Item.Properties properties = new Item.Properties();
+			definition.components.entrySet().forEach(entry -> ItemComponents.apply(properties, entry.getKey(), entry.getValue()));
+			return register(definition.id, properties);
+		}
 		Consumable.Builder consumable = Consumable.builder();
 		if (definition.consumeSeconds != null) consumable.consumeSeconds(definition.consumeSeconds);
 		if (definition.animation != null) consumable.animation(ItemUseAnimation.valueOf(definition.animation.toUpperCase()));
@@ -246,7 +250,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private record FoodDefinition(
 			String id, int nutrition, float saturation, boolean alwaysEdible,
 			Float consumeSeconds, String animation, String sound, Boolean particles,
-			String remainder, Integer maxStackSize, JsonElement lore, List<ConsumeEffectDefinition> effects
+		String remainder, Integer maxStackSize, JsonElement lore, List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components
 	) {}
 
 	private record ConsumeEffectDefinition(

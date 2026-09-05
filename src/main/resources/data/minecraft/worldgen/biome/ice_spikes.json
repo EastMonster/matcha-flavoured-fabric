@@ -72,7 +72,8 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+          "matcha-flavoured:ore_emerald_deep"
     ],
     [],
     [
@@ -136,9 +137,9 @@
 			},
 			{
 				"type": "minecraft:husk",
-				"maxCount": 4,
+				"maxCount": 2,
 				"minCount": 1,
-				"weight": 50
+				"weight": 75
 			},
       {
         "type": "minecraft:zombie_villager",

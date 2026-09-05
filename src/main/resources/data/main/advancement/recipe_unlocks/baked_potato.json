@@ -20,7 +20,8 @@
 	"rewards": {
 		"recipes": [
 			"matcha:food/crafting/pickled_potatoes",
-			"matcha:food/crafting/latke"
+			"matcha:food/crafting/latke",
+			"matcha:food/crafting/fish_and_chips"
 		]
 	}
 }

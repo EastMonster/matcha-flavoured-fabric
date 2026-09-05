@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      "minecraft:cooked_porkchop",
+      "matcha:seitan"
+    ],
+    "matcha:dough",
+    "matcha:oil",
+    "minecraft:dried_kelp",
+    "minecraft:carrot"
+  ],
+  "result": {
+    "id": "matcha:lumpia",
+    "count": 2
+  }
+}

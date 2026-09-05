@@ -370,6 +370,31 @@
 		}
 	},
 	{
+		"id": "blessing_midas",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/blessing/looting_fortune.json",
+		"carrier": "minecraft:enchanted_book",
+		"components": {
+			"minecraft:stored_enchantments": {
+				"minecraft:fortune": 1,
+				"minecraft:looting": 3
+			},
+			"minecraft:item_name": {
+				"translate": "item.matcha.blessing_midas"
+			},
+			"minecraft:rarity": "rare",
+			"minecraft:lore": [
+				{
+					"translate": "item.matcha.blessing.midas",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
 		"id": "blessing_paris",
 		"type": "item",
 		"tab": "ingredients",

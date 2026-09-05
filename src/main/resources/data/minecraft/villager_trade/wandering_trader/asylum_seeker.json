@@ -1,0 +1,711 @@
+{
+	"gives": {
+		"components": {
+						"minecraft:item_name": {
+                "translate": "item.matcha.asylum_seeker"
+            },
+			"minecraft:lore": [
+				{
+					"translate": "matcha.asylum.summon_hint",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		},
+		"count": 1,
+		"id": "matcha:asylum_seeker"
+	},
+    "given_item_modifiers": [
+		{
+            "function": "set_count",
+            "count": {
+				"type": "uniform",
+				"min": 1,
+				"max": 9
+			}
+        },
+		{
+			"function": "filtered",
+			"item_filter": {
+				"count": 1
+			},
+			"on_pass": {
+				"function": "set_lore",
+				"lore": [
+					{
+						"translate": "matcha.asylum.cause_political",
+						"color": "dark_gray",
+						"italic": false
+					}
+				],
+				"mode": "insert",
+				"offset": 0
+			},
+			"on_fail": {
+				"function": "filtered",
+				"item_filter": {
+					"count": 2
+				},
+				"on_pass": {
+					"function": "set_lore",
+					"lore": [
+						{
+							"translate": "matcha.asylum.cause_religious",
+							"color": "dark_gray",
+							"italic": false
+						}
+					],
+					"mode": "insert",
+					"offset": 0
+				},
+				"on_fail": {
+					"function": "filtered",
+					"item_filter": {
+						"count": 3
+					},
+					"on_pass": {
+						"function": "set_lore",
+						"lore": [
+							{
+								"translate": "matcha.asylum.cause_ethnic",
+								"color": "dark_gray",
+								"italic": false
+							}
+						],
+						"mode": "insert",
+						"offset": 0
+					},
+					"on_fail": {
+						"function": "filtered",
+						"item_filter": {
+							"count": 4
+						},
+						"on_pass": {
+							"function": "set_lore",
+							"lore": [
+								{
+									"translate": "matcha.asylum.cause_war",
+									"color": "dark_gray",
+									"italic": false
+								}
+							],
+							"mode": "insert",
+							"offset": 0
+						},
+						"on_fail": {
+							"function": "filtered",
+							"item_filter": {
+								"count": 5
+							},
+							"on_pass": {
+								"function": "set_lore",
+								"lore": [
+									{
+										"translate": "matcha.asylum.cause_natural_disaster",
+										"color": "dark_gray",
+										"italic": false
+									}
+								],
+								"mode": "insert",
+								"offset": 0
+							},
+							"on_fail": {
+								"function": "filtered",
+								"item_filter": {
+									"count": 6
+								},
+								"on_pass": {
+									"function": "set_lore",
+									"lore": [
+										{
+											"translate": "matcha.asylum.cause_famine",
+											"color": "dark_gray",
+											"italic": false
+										}
+									],
+									"mode": "insert",
+									"offset": 0
+								},
+								"on_fail": {
+									"function": "filtered",
+									"item_filter": {
+										"count": 7
+									},
+									"on_pass": {
+										"function": "set_lore",
+										"lore": [
+											{
+												"translate": "matcha.asylum.cause_refused_disclose",
+												"color": "dark_gray",
+												"italic": false
+											}
+										],
+										"mode": "insert",
+										"offset": 0
+									},
+									"on_fail": {
+										"function": "filtered",
+										"item_filter": {
+											"count": 8
+										},
+										"on_pass": {
+											"function": "set_lore",
+											"lore": [
+												{
+													"translate": "matcha.asylum.cause_dead_god",
+													"color": "dark_gray",
+													"italic": false
+												}
+											],
+											"mode": "insert",
+											"offset": 0
+										},
+										"on_fail": {
+											"function": "set_lore",
+											"lore": [
+												{
+													"translate": "matcha.asylum.cause_orphaned",
+													"color": "dark_gray",
+													"italic": false
+												}
+											],
+											"mode": "insert",
+											"offset": 0
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+        {
+            "function": "set_count",
+            "count": {
+				"type": "uniform",
+				"min": 1,
+				"max": 9
+			}
+        },
+		{
+			"function": "filtered",
+			"item_filter": {
+				"count": {
+					"min": 1,
+					"max": 7
+				}
+			},
+			"on_pass": [
+				{
+					"function": "set_count",
+					"count": {
+						"type": "uniform",
+						"min": 1,
+						"max": 6
+					}
+				},
+				{
+					"function": "filtered",
+					"item_filter": {
+						"count": 1
+					},
+					"on_pass": [
+						{
+							"function": "set_components",
+							"components": {
+								"minecraft:entity_data": {
+									"id": "minecraft:villager",
+									"active_effects": [
+										{
+											"id": "minecraft:invisibility",
+											"amplifier": 0,
+											"duration": 1,
+											"show_particles": false
+										}
+									],
+									"VillagerData": {}
+								}
+							}
+						},
+						{
+							"function": "set_lore",
+							"lore": [
+								{
+									"translate": "matcha.asylum.culture_none",
+									"color": "dark_gray",
+									"italic": false
+								}
+							],
+							"mode": "insert",
+							"offset": 0
+						}
+					],
+					"on_fail": {
+						"function": "filtered",
+						"item_filter": {
+							"count": 2
+						},
+						"on_pass": [
+							{
+								"function": "set_components",
+								"components": {
+									"minecraft:entity_data": {
+										"id": "minecraft:villager",
+										"active_effects": [
+											{
+												"id": "minecraft:invisibility",
+												"amplifier": 0,
+												"duration": 1,
+												"show_particles": false
+											}
+										],
+										"VillagerData": {
+											"type": "minecraft:desert"
+										}
+									}
+								}
+							},
+							{
+								"function": "set_lore",
+								"lore": [
+									{
+										"translate": "matcha.asylum.culture_desert",
+										"color": "dark_gray",
+										"italic": false
+									}
+								],
+								"mode": "insert",
+								"offset": 0
+							}
+						],
+						"on_fail": {
+							"function": "filtered",
+							"item_filter": {
+								"count": 3
+							},
+							"on_pass": [
+								{
+									"function": "set_components",
+									"components": {
+										"minecraft:entity_data": {
+											"id": "minecraft:villager",
+											"active_effects": [
+												{
+													"id": "minecraft:invisibility",
+													"amplifier": 0,
+													"duration": 1,
+													"show_particles": false
+												}
+											],
+											"VillagerData": {
+												"type": "minecraft:swamp"
+											}
+										}
+									}
+								},
+								{
+									"function": "set_lore",
+									"lore": [
+										{
+											"translate": "matcha.asylum.culture_swamp",
+											"color": "dark_gray",
+											"italic": false
+										}
+									],
+									"mode": "insert",
+									"offset": 0
+								}
+							],
+							"on_fail": {
+								"function": "filtered",
+								"item_filter": {
+									"count": 4
+								},
+								"on_pass": [
+									{
+										"function": "set_components",
+										"components": {
+											"minecraft:entity_data": {
+												"id": "minecraft:villager",
+												"active_effects": [
+													{
+														"id": "minecraft:invisibility",
+														"amplifier": 0,
+														"duration": 1,
+														"show_particles": false
+													}
+												],
+												"VillagerData": {
+													"type": "minecraft:plains"
+												}
+											}
+										}
+									},
+									{
+										"function": "set_lore",
+										"lore": [
+											{
+												"translate": "matcha.asylum.culture_plains",
+												"color": "dark_gray",
+												"italic": false
+											}
+										],
+										"mode": "insert",
+										"offset": 0
+									}
+								],
+								"on_fail": {
+									"function": "filtered",
+									"item_filter": {
+										"count": 5
+									},
+									"on_pass": [
+										{
+											"function": "set_components",
+											"components": {
+												"minecraft:entity_data": {
+													"id": "minecraft:villager",
+													"active_effects": [
+														{
+															"id": "minecraft:invisibility",
+															"amplifier": 0,
+															"duration": 1,
+															"show_particles": false
+														}
+													],
+													"VillagerData": {
+														"type": "minecraft:taiga"
+													}
+												}
+											}
+										},
+										{
+											"function": "set_lore",
+											"lore": [
+												{
+													"translate": "matcha.asylum.culture_taiga",
+													"color": "dark_gray",
+													"italic": false
+												}
+											],
+											"mode": "insert",
+											"offset": 0
+										}
+									],
+									"on_fail": [
+										{
+											"function": "set_components",
+											"components": {
+												"minecraft:entity_data": {
+													"id": "minecraft:villager",
+													"active_effects": [
+														{
+															"id": "minecraft:invisibility",
+															"amplifier": 0,
+															"duration": 1,
+															"show_particles": false
+														}
+													],
+													"VillagerData": {
+														"type": "minecraft:jungle"
+													}
+												}
+											}
+										},
+										{
+											"function": "set_lore",
+											"lore": [
+												{
+													"translate": "matcha.asylum.culture_jungle",
+													"color": "dark_gray",
+													"italic": false
+												}
+											],
+											"mode": "insert",
+											"offset": 0
+										}
+									]
+								}
+							}
+						}
+					}
+				},
+				{
+					"function": "set_lore",
+					"lore": [
+						{
+							"translate": "matcha.asylum.age_adult",
+							"color": "dark_gray",
+							"italic": false
+						}
+					],
+					"mode": "insert",
+					"offset": 0
+				}
+			],
+			"on_fail": [
+				{
+					"function": "set_count",
+					"count": {
+						"type": "uniform",
+						"min": 1,
+						"max": 6
+					}
+				},
+				{
+					"function": "filtered",
+					"item_filter": {
+						"count": 1
+					},
+					"on_pass": [
+						{
+							"function": "set_components",
+							"components": {
+								"minecraft:entity_data": {
+									"id": "minecraft:villager",
+									"active_effects": [
+										{
+											"id": "minecraft:invisibility",
+											"amplifier": 0,
+											"duration": 1,
+											"show_particles": false
+										}
+									],
+									"Age": -216000,
+									"VillagerData": {}
+								}
+							}
+						},
+						{
+							"function": "set_lore",
+							"lore": [
+								{
+									"translate": "matcha.asylum.culture_none",
+									"color": "dark_gray",
+									"italic": false
+								}
+							],
+							"mode": "insert",
+							"offset": 0
+						}
+					],
+					"on_fail": {
+						"function": "filtered",
+						"item_filter": {
+							"count": 2
+						},
+						"on_pass": [
+							{
+								"function": "set_components",
+								"components": {
+									"minecraft:entity_data": {
+										"id": "minecraft:villager",
+										"active_effects": [
+											{
+												"id": "minecraft:invisibility",
+												"amplifier": 0,
+												"duration": 1,
+												"show_particles": false
+											}
+										],
+										"Age": -216000,
+										"VillagerData": {
+											"type": "minecraft:desert"
+										}
+									}
+								}
+							},
+							{
+								"function": "set_lore",
+								"lore": [
+									{
+										"translate": "matcha.asylum.culture_desert",
+										"color": "dark_gray",
+										"italic": false
+									}
+								],
+								"mode": "insert",
+								"offset": 0
+							}
+						],
+						"on_fail": {
+							"function": "filtered",
+							"item_filter": {
+								"count": 3
+							},
+							"on_pass": [
+								{
+									"function": "set_components",
+									"components": {
+										"minecraft:entity_data": {
+											"id": "minecraft:villager",
+											"active_effects": [
+												{
+													"id": "minecraft:invisibility",
+													"amplifier": 0,
+													"duration": 1,
+													"show_particles": false
+												}
+											],
+											"Age": -216000,
+											"VillagerData": {
+												"type": "minecraft:swamp"
+											}
+										}
+									}
+								},
+								{
+									"function": "set_lore",
+									"lore": [
+										{
+											"translate": "matcha.asylum.culture_swamp",
+											"color": "dark_gray",
+											"italic": false
+										}
+									],
+									"mode": "insert",
+									"offset": 0
+								}
+							],
+							"on_fail": {
+								"function": "filtered",
+								"item_filter": {
+									"count": 4
+								},
+								"on_pass": [
+									{
+										"function": "set_components",
+										"components": {
+											"minecraft:entity_data": {
+												"id": "minecraft:villager",
+												"active_effects": [
+													{
+														"id": "minecraft:invisibility",
+														"amplifier": 0,
+														"duration": 1,
+														"show_particles": false
+													}
+												],
+												"Age": -216000,
+												"VillagerData": {
+													"type": "minecraft:plains"
+												}
+											}
+										}
+									},
+									{
+										"function": "set_lore",
+										"lore": [
+											{
+												"translate": "matcha.asylum.culture_plains",
+												"color": "dark_gray",
+												"italic": false
+											}
+										],
+										"mode": "insert",
+										"offset": 0
+									}
+								],
+								"on_fail": {
+									"function": "filtered",
+									"item_filter": {
+										"count": 5
+									},
+									"on_pass": [
+										{
+											"function": "set_components",
+											"components": {
+												"minecraft:entity_data": {
+													"id": "minecraft:villager",
+													"active_effects": [
+														{
+															"id": "minecraft:invisibility",
+															"amplifier": 0,
+															"duration": 1,
+															"show_particles": false
+														}
+													],
+													"Age": -216000,
+													"VillagerData": {
+														"type": "minecraft:taiga"
+													}
+												}
+											}
+										},
+										{
+											"function": "set_lore",
+											"lore": [
+												{
+													"translate": "matcha.asylum.culture_taiga",
+													"color": "dark_gray",
+													"italic": false
+												}
+											],
+											"mode": "insert",
+											"offset": 0
+										}
+									],
+									"on_fail": [
+										{
+											"function": "set_components",
+											"components": {
+												"minecraft:entity_data": {
+													"id": "minecraft:villager",
+													"active_effects": [
+														{
+															"id": "minecraft:invisibility",
+															"amplifier": 0,
+															"duration": 1,
+															"show_particles": false
+														}
+													],
+													"Age": -216000,
+													"VillagerData": {
+														"type": "minecraft:jungle"
+													}
+												}
+											}
+										},
+										{
+											"function": "set_lore",
+											"lore": [
+												{
+													"translate": "matcha.asylum.culture_jungle",
+													"color": "dark_gray",
+													"italic": false
+												}
+											],
+											"mode": "insert",
+											"offset": 0
+										}
+									]
+								}
+							}
+						}
+					}
+				},
+				{
+					"function": "set_lore",
+					"lore": [
+						{
+							"translate": "matcha.asylum.age_child",
+							"color": "dark_gray",
+							"italic": false
+						}
+					],
+					"mode": "insert",
+					"offset": 0
+				}
+			]
+		},
+		{
+			"function": "set_count",
+			"count": 1
+		}
+    ],
+	"max_uses": 1,
+	"wants": {
+		"id": "minecraft:emerald"
+	}
+}

@@ -15,7 +15,16 @@
 		"toolsmith": { "trigger": "minecraft:villager_trade", "conditions": { "villager": { "minecraft:nbt": "{VillagerData:{profession:\"minecraft:toolsmith\"}}" } } }
 	},
 	"display": {
-		"description": { "translate": "advancements.main.tutorial.trade_everything.description" },
+		"description": [
+			{
+				"text": "5  ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.tutorial.trade_everything.description",
+				"color": "gray"
+			}
+		],
 		"icon": { "count": 1, "id": "matcha:crystal_heart" },
 		"title": { "translate": "advancements.main.tutorial.trade_everything.title" },
 		"hidden": false,
@@ -34,5 +43,10 @@
 		[ "mason" ],
 		[ "shepherd" ],
 		[ "toolsmith" ]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_5"
+		]
+	}
 }

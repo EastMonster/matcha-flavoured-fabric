@@ -11,8 +11,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -30,8 +29,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -49,8 +47,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -68,8 +65,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -87,8 +83,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -106,8 +101,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -125,8 +119,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -144,8 +137,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -163,8 +155,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -182,8 +173,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -201,8 +191,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -220,8 +209,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -239,8 +227,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -258,8 +245,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -277,8 +263,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -296,8 +281,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -315,8 +299,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -334,8 +317,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -353,8 +335,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -372,8 +353,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -391,8 +371,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -410,8 +389,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -429,8 +407,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -448,8 +425,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -467,8 +443,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -486,8 +461,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -505,8 +479,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -524,8 +497,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -543,8 +515,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -562,8 +533,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -581,8 +551,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -600,8 +569,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -619,8 +587,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -638,8 +605,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -657,8 +623,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -676,8 +641,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -695,8 +659,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -714,8 +677,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐",
-					"color": "gray",
+					"translate": "adv.kleispack.fishing.rarity.1",
 					"italic": false
 				}
 			]
@@ -733,8 +695,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -752,8 +713,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐⭐",
-					"color": "light_purple",
+					"translate": "adv.kleispack.fishing.rarity.4",
 					"italic": false
 				}
 			]
@@ -771,8 +731,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]
@@ -790,8 +749,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐",
-					"color": "green",
+					"translate": "adv.kleispack.fishing.rarity.2",
 					"italic": false
 				}
 			]
@@ -809,8 +767,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⭐⭐⭐",
-					"color": "aqua",
+					"translate": "adv.kleispack.fishing.rarity.3",
 					"italic": false
 				}
 			]

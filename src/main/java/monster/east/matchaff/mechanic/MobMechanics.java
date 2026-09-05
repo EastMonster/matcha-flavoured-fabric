@@ -14,9 +14,12 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.animal.camel.CamelHusk;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.zombie.Husk;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -37,6 +40,16 @@ public final class MobMechanics {
 	}
 
 	private static void initializeMundaneHostile(Entity entity, ServerLevel level) {
+		if (level.dimension() == Level.OVERWORLD && entity instanceof Husk husk
+				&& husk.getVehicle() instanceof CamelHusk) {
+			var replacement = EntityTypes.HUSK.create(level, EntitySpawnReason.COMMAND);
+			if (replacement != null) {
+				replacement.setPos(husk.getX(), husk.getY(), husk.getZ());
+				level.addFreshEntity(replacement);
+			}
+			husk.discard();
+			return;
+		}
 		if (!(entity instanceof Mob mob)
 				|| !mob.is(MUNDANE_HOSTILES)
 				|| mob.entityTags().contains("SpawnChecked")) {
@@ -62,7 +75,8 @@ public final class MobMechanics {
 		}
 		boolean sky = level.canSeeSky(pos);
 		if (isSafeSurface(level)) {
-			return sky || (pos.getY() >= 63 && pos.getY() <= 350);
+			int minY = type == EntityTypes.DROWNED ? 43 : 63;
+			return sky || (pos.getY() >= minY && pos.getY() <= 350);
 		}
 		if (type == EntityTypes.CREEPER && (sky || pos.getY() >= 63)) {
 			return true;
@@ -121,6 +135,9 @@ public final class MobMechanics {
 			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 4 : 2);
 		}
 		if (difficulty == Difficulty.EASY) {
+			if (baby && mob.is(EntityTypeTags.ZOMBIES)) {
+				setBase(mob, Attributes.MAX_HEALTH, 4);
+			}
 			return;
 		}
 		if (type == EntityTypes.ZOMBIE) {
@@ -136,17 +153,17 @@ public final class MobMechanics {
 			}
 		}
 		if (type == EntityTypes.HUSK && !baby) {
-			setBase(mob, Attributes.MAX_HEALTH, 40);
-			mob.setHealth(40);
-			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.25 : 0.21);
+			int health = difficulty == Difficulty.HARD ? 40 : 30;
+			setBase(mob, Attributes.MAX_HEALTH, health);
+			mob.setHealth(health);
+			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.28 : 0.25);
 			setBase(mob, Attributes.ATTACK_DAMAGE, difficulty == Difficulty.HARD ? 15 : 10);
 			setBase(mob, Attributes.ARMOR, difficulty == Difficulty.HARD ? 14 : 12);
 			setBase(mob, Attributes.FOLLOW_RANGE, difficulty == Difficulty.HARD ? 60 : 50);
-			setBase(mob, Attributes.KNOCKBACK_RESISTANCE, 1);
+			setBase(mob, Attributes.KNOCKBACK_RESISTANCE, difficulty == Difficulty.HARD ? 1 : 0.9);
 			setBase(mob, Attributes.MOVEMENT_EFFICIENCY, 1);
 			setBase(mob, Attributes.WATER_MOVEMENT_EFFICIENCY, 1);
 			setBase(mob, Attributes.STEP_HEIGHT, 1);
-			setBase(mob, Attributes.SPAWN_REINFORCEMENTS_CHANCE, difficulty == Difficulty.HARD ? 0.25 : 0.1);
 		} else if (type == EntityTypes.HUSK) {
 			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 5 : 4);
 		}

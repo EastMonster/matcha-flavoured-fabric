@@ -28,13 +28,23 @@
 			],
 			"minecraft:lore": [
 				{
-					"text": "🗡 3",
+					"text": "\uD83D\uDDE1 3",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.18",
+					"text": "\uD83D\uDD52 1.18",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -45,14 +55,13 @@
 			},
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:copper_ingot"
+					"minecraft:copper_block"
 				]
 			},
+			"minecraft:enchantment_glint_override": false,
 			"minecraft:enchantments": {
 				"matcha:sanguine": 1
-			},
-			"minecraft:enchantment_glint_override": false
+			}
 		}
-	},
-	"template": "minecraft:copper_ingot"
+	}
 }

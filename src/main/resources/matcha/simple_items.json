@@ -43,6 +43,21 @@
 					"text": "🏃 +0.02",
 					"color": "dark_green",
 					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.honeycomb_block",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
+					"italic": false
 				}
 			],
 			"minecraft:item_name": {
@@ -78,8 +93,8 @@
 			},
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:honeycomb",
-					"minecraft:feather"
+					"minecraft:honeycomb_block",
+					"minecraft:copper_block"
 				]
 			}
 		}
@@ -94,7 +109,7 @@
 			"minecraft:max_damage": 800,
 			"minecraft:lore": [
 				{
-					"text": "🛡 3",
+				"text": "🛡 1",
 					"color": "dark_green",
 					"italic": false
 				},
@@ -107,6 +122,21 @@
 					"translate": "enchantment.kleispack.shakudo_elytra_regen_bonus",
 					"color": "#e85e8f",
 					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.honeycomb_block",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
+					"italic": false
 				}
 			],
 			"minecraft:item_name": {
@@ -117,7 +147,7 @@
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.chestplate",
-					"amount": 3,
+				"amount": 1,
 					"operation": "add_value",
 					"slot": "chest"
 				}
@@ -139,9 +169,8 @@
 			},
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:honeycomb",
-					"minecraft:feather",
-					"minecraft:copper_ingot"
+				"minecraft:honeycomb_block",
+				"minecraft:copper_block"
 				]
 			}
 		}
@@ -461,6 +490,7 @@
 		"components": {
 			"minecraft:max_stack_size": 64,
 			"minecraft:potion_contents": {
+				"custom_color": 12928087,
 				"custom_effects": [
 					{
 						"id": "minecraft:weakness",
@@ -476,6 +506,11 @@
 				]
 			},
 			"minecraft:lore": [
+				{
+					"translate": "matcha.lore.throwable",
+					"color": "gray",
+					"italic": false
+				},
 				{
 					"translate": "matcha.lore.weakness_ii",
 					"with": [
@@ -501,6 +536,7 @@
 		"components": {
 			"minecraft:max_stack_size": 64,
 			"minecraft:potion_contents": {
+				"custom_color": 4760891,
 				"custom_effects": [
 					{
 						"id": "minecraft:poison",
@@ -516,6 +552,11 @@
 				]
 			},
 			"minecraft:lore": [
+				{
+					"translate": "matcha.lore.throwable",
+					"color": "gray",
+					"italic": false
+				},
 				{
 					"translate": "matcha.lore.poison_ii",
 					"with": [
@@ -820,7 +861,6 @@
 		"id": "volatile_invisibility",
 		"type": "splash_potion",
 		"tab": "ingredients",
-		"source": "data/minecraft/villager_trade/cleric/1/splash_invisibility.json",
 		"carrier": "minecraft:splash_potion",
 		"components": {
 			"minecraft:max_stack_size": 64,
@@ -947,7 +987,6 @@
 		"id": "volatile_poison",
 		"type": "splash_potion",
 		"tab": "ingredients",
-		"source": "data/minecraft/villager_trade/cleric/1/splash_poison.json",
 		"carrier": "minecraft:splash_potion",
 		"components": {
 			"minecraft:max_stack_size": 64,
@@ -1024,7 +1063,6 @@
 		"id": "volatile_weakness",
 		"type": "splash_potion",
 		"tab": "ingredients",
-		"source": "data/minecraft/villager_trade/cleric/1/splash_weakness.json",
 		"carrier": "minecraft:splash_potion",
 		"components": {
 			"minecraft:max_stack_size": 64,
@@ -1213,7 +1251,6 @@
 		"id": "iou",
 		"type": "book",
 		"tab": "ingredients",
-		"source": "data/minecraft/villager_trade/weaponsmith/1/iou.json",
 		"carrier": "minecraft:writable_book",
 		"components": {
 			"minecraft:writable_book_content": {
@@ -1226,6 +1263,83 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.iou"
 			}
+		}
+	},
+	{
+		"id": "oil",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/food/crafting/oil.json",
+		"components": {}
+	},
+	{
+		"id": "molasses",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/food/campfire/molasses.json",
+		"components": {}
+	},
+	{
+		"id": "seitan",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/food/crafting/seitan.json",
+		"components": {}
+	},
+	{
+		"id": "uncooked_pumpkin_curry",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/food/crafting/uncooked_pumpkin_curry.json",
+		"components": {}
+	},
+	{
+		"id": "bubbling_mead",
+		"type": "splash_potion",
+		"tab": "foods",
+		"carrier": "minecraft:splash_potion",
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:potion_contents": {
+				"custom_color": 15978319,
+				"custom_effects": [{
+					"id": "minecraft:speed",
+					"amplifier": 1,
+					"duration": 6000,
+					"show_icon": true
+				}]
+			},
+			"minecraft:tooltip_display": {"hidden_components": ["minecraft:potion_contents"]},
+			"minecraft:lore": [
+				{"translate": "matcha.lore.throwable", "color": "gray", "italic": false},
+				{"text": "🏃 +40% (5:00)", "color": "#37cafb", "italic": false}
+			],
+			"minecraft:custom_name": {"translate": "item.matcha.bubbling_mead", "italic": false}
+		}
+	},
+	{
+		"id": "pickled_warped_fungus",
+		"type": "splash_potion",
+		"tab": "foods",
+		"source": "data/matcha/recipe/food/crafting/pickled_warped_fungus.json",
+		"carrier": "minecraft:splash_potion",
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:potion_contents": {
+				"custom_color": 9615310,
+				"custom_effects": [{
+					"id": "minecraft:invisibility",
+					"duration": 6000,
+					"show_particles": false,
+					"show_icon": true
+				}]
+			},
+			"minecraft:tooltip_display": {"hidden_components": ["minecraft:potion_contents"]},
+			"minecraft:lore": [
+				{"translate": "matcha.lore.throwable", "color": "gray", "italic": false},
+				{"translate": "matcha.lore.invisibility", "with": ["5:00"], "color": "#92b7ce", "italic": false}
+			],
+			"minecraft:custom_name": {"translate": "item.matcha.pickled_warped_fungus", "color": "#3cc6c8", "italic": false}
 		}
 	}
 ]

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "oil",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    [
+      "minecraft:sunflower",
+      "minecraft:cocoa_beans"
+    ],
+    [
+      "minecraft:sunflower",
+      "minecraft:cocoa_beans"
+    ],
+    [
+      "minecraft:sunflower",
+      "minecraft:cocoa_beans"
+    ]
+  ],
+  "result": {
+    "id": "matcha:oil",
+    "count": 1
+  }
+}

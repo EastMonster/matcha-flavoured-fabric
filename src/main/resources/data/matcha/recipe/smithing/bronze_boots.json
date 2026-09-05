@@ -8,13 +8,23 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"text": "🛡 3",
+					"text": "\uD83D\uDEE1 3",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.01",
+					"text": "\uD83C\uDFC3 \u002B0.01",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -43,13 +53,16 @@
 					"minecraft:attribute_modifiers"
 				]
 			},
-			"minecraft:enchantments": {},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
 				"slot": "feet",
 				"asset_id": "minecraft:bronze"
+			},
+			"minecraft:repairable": {
+				"items": [
+					"minecraft:copper_block"
+				]
 			}
 		}
-	},
-	"template": "minecraft:copper_ingot"
+	}
 }

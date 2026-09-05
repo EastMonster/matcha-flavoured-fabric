@@ -36,22 +36,13 @@
 				},
 				{
 					"type": "minecraft:item",
+					"name": "minecraft:glowstone_dust",
 					"functions": [
 						{
-							"damage": {
-								"type": "minecraft:uniform",
-								"max": 0.9,
-								"min": 0
-							},
-							"function": "minecraft:set_damage"
+							"count": 5,
+							"function": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:fishing_rod",
-					"weight": 2
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:bowl",
 					"weight": 10
 				},
 				{
@@ -71,7 +62,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:tripwire_hook",
+					"name": "minecraft:nautilus_shell",
 					"weight": 10
 				},
 				{

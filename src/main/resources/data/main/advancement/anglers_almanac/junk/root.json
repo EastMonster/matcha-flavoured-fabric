@@ -1,0 +1,29 @@
+{
+  "parent": "main:anglers_almanac/root",
+  "display": {
+    "icon": {
+      "id": "leather_boots"
+    },
+    "title": {
+      "translate": "adv.kleispack.anglers_almanac.category.junk"
+    },
+    "description": "",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "root": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "main:anglers_almanac/root": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

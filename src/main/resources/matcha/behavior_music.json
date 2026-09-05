@@ -3,7 +3,6 @@
 		"id": "asylum_seeker",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/wandering_trader/adult_asylum_seeker_1.json",
 		"carrier": "minecraft:villager_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -339,6 +338,42 @@
 		"components": {
 			"minecraft:item_name": { "text": "Labyrinthine Disc" },
 			"minecraft:jukebox_playable": "main:labyrinthine",
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "music_disc_crete",
+		"type": "music_disc",
+		"tab": "tools",
+		"source": "data/matcha/recipe/crafting/music_disc_crete.json",
+		"carrier": "minecraft:music_disc_11",
+		"components": {
+			"minecraft:item_name": { "translate": "item.matcha.music_disc_crete" },
+			"minecraft:jukebox_playable": "matcha:crete",
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "music_disc_elegy_of_the_abbey",
+		"type": "music_disc",
+		"tab": "tools",
+		"source": "data/matcha/recipe/crafting/music_disc_elegy_of_the_abbey.json",
+		"carrier": "minecraft:music_disc_11",
+		"components": {
+			"minecraft:item_name": { "translate": "item.matcha.music_disc_elegy_of_the_abbey" },
+			"minecraft:jukebox_playable": "matcha:elegy_of_the_abbey",
+			"minecraft:max_stack_size": 1
+		}
+	},
+	{
+		"id": "music_disc_malachite",
+		"type": "music_disc",
+		"tab": "tools",
+		"source": "data/matcha/recipe/crafting/music_disc_malachite.json",
+		"carrier": "minecraft:music_disc_11",
+		"components": {
+			"minecraft:item_name": { "translate": "item.matcha.music_disc_malachite" },
+			"minecraft:jukebox_playable": "matcha:malachite",
 			"minecraft:max_stack_size": 1
 		}
 	},

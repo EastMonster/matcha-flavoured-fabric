@@ -1,0 +1,13 @@
+{
+  "wants": {
+    "id": "minecraft:lapis_block",
+    "count": 24
+  },
+  "gives": {
+    "id": "minecraft:emerald",
+    "count": 1
+  },
+  "max_uses": 999,
+  "reputation_discount": 0,
+  "xp": 10
+}

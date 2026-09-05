@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:honey_bottle",
+    "minecraft:brown_mushroom",
+    "minecraft:sugar",
+    "minecraft:sugar",
+    [
+      "minecraft:sweet_berries",
+      "minecraft:apple",
+      "minecraft:glow_berries"
+    ]
+  ],
+  "result": {
+    "id": "matcha:bubbling_mead",
+    "count": 1
+  }
+}

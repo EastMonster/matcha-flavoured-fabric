@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "ominous_bottle",
+	"category": "misc",
+	"ingredients": [
+		"matcha:benzene",
+		"minecraft:echo_shard",
+		"minecraft:sculk_vein",
+		"minecraft:sculk_vein"
+	],
+	"result": {
+		"count": 1,
+		"id": "minecraft:ominous_bottle"
+	}
+}

@@ -73,7 +73,10 @@
 		],
 		"music_discs": [
 			"music_disc_golden",
-			"music_disc_labyrinthine"
+			"music_disc_labyrinthine",
+			"music_disc_crete",
+			"music_disc_elegy_of_the_abbey",
+			"music_disc_malachite"
 		]
 	},
 	"combat": {
@@ -125,6 +128,7 @@
 			"palatinate_sword",
 			"shakudo_spear",
 			"steel_sword",
+			"steel_claymore",
 			"steel_spear"
 		],
 		"special_weapons": [
@@ -286,6 +290,20 @@
 			"pumpkin_jam",
 			"rind_jam",
 			"sweet_berry_jam"
+		],
+		"alpha_foods": [
+			"brachio_chicken_nugget",
+			"ptero_chicken_nugget",
+			"stego_chicken_nugget",
+			"tricero_chicken_nugget",
+			"bunuelo",
+			"fish_and_chips",
+			"ice_cream",
+			"lumpia",
+			"oatmeal",
+			"nopales",
+			"pumpkin_curry",
+			"bubbling_mead"
 		]
 	},
 	"ingredients": {
@@ -303,6 +321,12 @@
 			"uncooked_green_curry",
 			"uncooked_paneer_makhani",
 			"uncooked_ramen"
+		],
+		"alpha_cooking_bases": [
+			"molasses",
+			"oil",
+			"seitan",
+			"uncooked_pumpkin_curry"
 		],
 		"industrial_materials": [
 			"benzene",
@@ -336,6 +360,7 @@
 			"blessing_hyacinthus",
 			"blessing_icarus",
 			"blessing_lu_ban",
+			"blessing_midas",
 			"blessing_paris",
 			"blessing_prometheus",
 			"blessing_talos",

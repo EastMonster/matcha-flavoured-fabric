@@ -1,14 +1,14 @@
 {
   "values": [
-    "minecraft:fisherman/3/armoured_catfish",
-    "minecraft:fisherman/3/catfish",
-    "minecraft:fisherman/3/flounder",
-    "minecraft:fisherman/3/gar",
-    "minecraft:fisherman/3/monkfish",
-    "minecraft:fisherman/3/northern_pike",
-    "minecraft:fisherman/3/painted_moray",
-    "minecraft:fisherman/3/sturgeon",
-    "minecraft:fisherman/3/tunisian_barb",
-    "minecraft:fisherman/3/wolffish"
+    "minecraft:fisherman/3/black_seabass",
+    "minecraft:fisherman/3/carp",
+    "minecraft:fisherman/3/flying_fish",
+    "minecraft:fisherman/3/gurnard",
+    "minecraft:fisherman/3/herring",
+    "minecraft:fisherman/3/lamprey",
+    "minecraft:fisherman/3/mahi_mahi",
+    "minecraft:fisherman/3/piranha",
+    "minecraft:fisherman/3/spoonhead_sculpin",
+    "minecraft:fisherman/3/walleye"
   ]
 }

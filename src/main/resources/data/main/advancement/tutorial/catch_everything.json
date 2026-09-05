@@ -387,9 +387,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.tutorial.catch_everything.description"
-		},
+		"description": [
+			{
+				"text": "10  ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.tutorial.catch_everything.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"components": {
 				"minecraft:item_model": "minecraft:gay_fish"
@@ -545,5 +552,10 @@
 		[
 			"pale_fish"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_10"
+		]
+	}
 }

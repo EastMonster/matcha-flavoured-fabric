@@ -23,9 +23,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.tutorial.obtain_silver.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.tutorial.obtain_silver.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "minecraft:prismarine_crystals"
@@ -41,5 +48,10 @@
 			"get_silver",
 			"get_silver_ore"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_1"
+		]
+	}
 }

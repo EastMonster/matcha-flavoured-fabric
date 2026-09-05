@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "seitan",
+  "category": "misc",
+  "ingredients": [
+    "matcha:dough",
+    "minecraft:potion",
+    [
+      "minecraft:carrot",
+      "minecraft:potato",
+      "minecraft:dried_kelp"
+    ]
+  ],
+  "result": {
+    "id": "matcha:seitan",
+    "count": 1
+  }
+}

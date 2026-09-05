@@ -31,7 +31,9 @@
 			"matcha:crafting/music_disc_strad",
 			"matcha:crafting/music_disc_wait",
 			"matcha:crafting/music_disc_ward",
-			"matcha:crafting/music_disc_golden"
+			"matcha:crafting/music_disc_golden",
+			"matcha:crafting/music_disc_malachite",
+			"matcha:crafting/music_disc_crete"
 		]
 	}
 }

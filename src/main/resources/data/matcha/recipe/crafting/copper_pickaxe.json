@@ -28,6 +28,11 @@
 						"correct_for_drops": false
 					},
 					{
+						"blocks": "minecraft:obsidian",
+						"speed": 3,
+						"correct_for_drops": false
+					},
+					{
 						"blocks": "#minecraft:mineable/pickaxe",
 						"speed": 6,
 						"correct_for_drops": true

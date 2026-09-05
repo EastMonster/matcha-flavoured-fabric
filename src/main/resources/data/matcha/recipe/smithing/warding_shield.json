@@ -36,8 +36,31 @@
 					"minecraft:banner_patterns"
 				]
 			},
+			"minecraft:lore": [
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.glistering_melon_slice",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.lapis_block",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
 			"minecraft:enchantments": {
 				"matcha:warding1": 1
+			},
+			"minecraft:repairable": {
+				"items": [
+					"minecraft:glistering_melon_slice",
+					"minecraft:lapis_block"
+				]
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.warding_shield"

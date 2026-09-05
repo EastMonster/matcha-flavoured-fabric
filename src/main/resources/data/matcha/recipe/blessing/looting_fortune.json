@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"ESE",
+		"IBI",
+		"EIE"
+	],
+	"key": {
+		"S": "minecraft:ominous_bottle",
+		"B": "minecraft:enchanted_book",
+		"I": "minecraft:gold_block",
+		"E": "minecraft:glowstone_dust"
+	},
+	"result": {
+		"count": 1,
+		"id": "matcha:blessing_midas"
+	}
+}

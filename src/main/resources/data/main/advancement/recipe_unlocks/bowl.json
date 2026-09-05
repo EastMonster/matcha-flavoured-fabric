@@ -23,7 +23,9 @@
 			"matcha:food/crafting/uncooked_green_curry",
 			"matcha:food/crafting/uncooked_paneer_makhani",
 			"matcha:food/crafting/uncooked_curry",
-			"matcha:food/crafting/kontomire_stew"
+			"matcha:food/crafting/kontomire_stew",
+			"matcha:food/crafting/uncooked_pumpkin_curry",
+			"matcha:food/crafting/oatmeal"
 		]
 	}
 }

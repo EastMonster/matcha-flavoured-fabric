@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:campfire_cooking",
+	"category": "food",
+	"cookingtime": 100,
+	"experience": 0.35,
+	"ingredient": "minecraft:cactus",
+	"result": {
+		"id": "matcha:nopales",
+		"count": 1
+	}
+}

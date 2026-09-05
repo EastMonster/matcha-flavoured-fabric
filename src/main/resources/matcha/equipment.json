@@ -230,8 +230,71 @@
 	},
 	{
 		"id": "butcher_knife",
-		"source": "data/smithing_table/recipe/butcher_knife.json",
-		"carrier": "minecraft:stone_sword"
+		"carrier": "minecraft:stone_sword",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha.butcher_knife"
+			},
+			"minecraft:max_damage": 1500,
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:attack_damage",
+					"id": "attack_damage",
+					"amount": 5,
+					"operation": "add_value",
+					"slot": "mainhand"
+				},
+				{
+					"type": "minecraft:entity_interaction_range",
+					"id": "interaction_range",
+					"amount": -1,
+					"operation": "add_value"
+				}
+			],
+			"minecraft:lore": [
+				{
+					"text": "🧍↔🧍 -1",
+					"color": "red",
+					"italic": false
+				},
+				{
+					"text": "🗡 6",
+					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"text": "🕒 1.6",
+					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.iron_ingot",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hide_tooltip": false,
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:repairable": {
+				"items": [
+					"minecraft:iron_ingot"
+				]
+			},
+			"minecraft:enchantments": {
+				"matcha:slaughter": 1,
+				"minecraft:looting": 2
+			},
+			"minecraft:enchantment_glint_override": false
+		}
 	},
 	{
 		"id": "copper_dolabra",
@@ -613,6 +676,11 @@
 		"id": "steel_chestplate",
 		"source": "data/matcha/recipe/smithing/steel_chestplate.json",
 		"carrier": "minecraft:iron_chestplate"
+	},
+	{
+		"id": "steel_claymore",
+		"source": "data/matcha/recipe/smithing/steel_claymore.json",
+		"carrier": "minecraft:stone_sword"
 	},
 	{
 		"id": "steel_dolabra",

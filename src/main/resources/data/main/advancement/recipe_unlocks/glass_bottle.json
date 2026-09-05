@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {"has_primary_material": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": "minecraft:glass_bottle"}]}}},
+	"requirements": [["has_primary_material"]],
+	"rewards": {"recipes": ["matcha:food/crafting/oil"]}
+}

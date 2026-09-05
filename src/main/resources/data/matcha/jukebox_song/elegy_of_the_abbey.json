@@ -1,0 +1,8 @@
+{
+	"comparator_output": 1,
+	"description": "DeBlezyBestie - Elegy of The Abbey",
+	"length_in_seconds": 180,
+	"sound_event": {
+		"sound_id": "matcha:custom.elegy_of_the_abbey"
+	}
+}

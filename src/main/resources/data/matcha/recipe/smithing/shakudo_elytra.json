@@ -2,7 +2,6 @@
 	"type": "minecraft:smithing_transform",
 	"addition": "minecraft:shulker_shell",
 	"base": "minecraft:elytra",
-	"template": "minecraft:honeycomb",
 	"result": {
 		"id": "matcha:shakudo_elytra"
 	}

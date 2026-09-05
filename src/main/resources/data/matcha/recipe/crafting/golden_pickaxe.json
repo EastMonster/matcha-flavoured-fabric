@@ -42,6 +42,11 @@
 			"minecraft:tool": {
 				"rules": [
 					{
+						"blocks": "minecraft:obsidian",
+						"speed": 3,
+						"correct_for_drops": false
+					},
+					{
 						"blocks": "#minecraft:mineable/pickaxe",
 						"speed": 12,
 						"correct_for_drops": true

@@ -9,6 +9,11 @@
 			"minecraft:tool": {
 				"rules": [
 					{
+						"blocks": "minecraft:obsidian",
+						"speed": 3,
+						"correct_for_drops": false
+					},
+					{
 						"blocks": "#minecraft:mineable/pickaxe",
 						"speed": 9,
 						"correct_for_drops": true
@@ -21,23 +26,30 @@
 				"translate": "item.matcha.shakudo_pickaxe",
 				"color": "#c96691"
 			},
-			"minecraft:enchantments": {
-				"minecraft:silk_touch": 1
-			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 9",
+					"text": "\u26CF 9",
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 4",
+					"text": "\uD83D\uDDE1 4",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.2",
+					"text": "\uD83D\uDD52 1.2",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -58,10 +70,12 @@
 			],
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:copper_ingot"
+					"minecraft:copper_block"
 				]
+			},
+			"minecraft:enchantments": {
+				"minecraft:silk_touch": 1
 			}
 		}
-	},
-	"template": "minecraft:copper_ingot"
+	}
 }

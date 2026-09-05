@@ -45,8 +45,13 @@
 			"minecraft:enchantments": {
 				"matcha:warding0": 1
 			},
-			"minecraft:enchantment_glint_override": true
+			"minecraft:enchantment_glint_override": true,
+			"minecraft:repairable": {
+				"items": [
+					"minecraft:glistering_melon_slice",
+					"minecraft:lapis_block"
+				]
+			}
 		}
-	},
-	"template": "minecraft:iron_ingot"
+	}
 }

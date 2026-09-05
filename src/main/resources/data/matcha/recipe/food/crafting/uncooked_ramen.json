@@ -6,9 +6,11 @@
 		"minecraft:dried_kelp",
 		"#minecraft:eggs",
 		"matcha:dough",
+		"matcha:oil",
 		[
 			"minecraft:porkchop",
-			"minecraft:chicken"
+			"minecraft:chicken",
+			"matcha:seitan"
 		],
 		"minecraft:bowl"
 	],

@@ -4,6 +4,7 @@
 	"ingredients": [
 		"matcha:dough",
 		"matcha:cheese",
+		"matcha:oil",
 		[
 			"minecraft:cooked_porkchop",
 			"minecraft:cooked_chicken"

@@ -6,9 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "breeze_rod"
-						}
+						"items": "matcha:baked_pumpkin"
 					}
 				]
 			}

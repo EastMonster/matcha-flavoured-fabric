@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.ChatFormatting;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.particles.ParticleTypes;
@@ -32,6 +33,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 final class BeaconKindlingMechanics {
+	private static final Identifier LIGHT_BEACON =
+			Identifier.fromNamespaceAndPath("main", "tutorial/light_beacon");
+
 	private record BeaconTask(ResourceKey<Level> level, BlockPos pos, int startTick, UUID trader) {
 	}
 
@@ -95,6 +99,10 @@ final class BeaconKindlingMechanics {
 	static void place(ServerPlayer player, ServerLevel level, BlockPos pos) {
 		int tick = level.getServer().getTickCount();
 		load(level.getServer(), tick);
+		AdvancementHolder advancement = level.getServer().getAdvancements().get(LIGHT_BEACON);
+		if (advancement != null) {
+			player.getAdvancements().award(advancement, "placed_beacon");
+		}
 		level.setBlock(pos, Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.SIGNAL_FIRE, true), 3);
 		level.sendParticles(ParticleTypes.FLAME, pos.getX() + 0.5, pos.getY() + 0.7, pos.getZ() + 0.5,
 				30, 0.1, 0.1, 0.1, 0.07);

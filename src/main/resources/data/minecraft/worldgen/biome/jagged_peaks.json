@@ -77,7 +77,9 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
-      "minecraft:ore_emerald"
+      "minecraft:ore_emerald",
+          "matcha-flavoured:ore_emerald_deep_mountain",
+          "matcha-flavoured:ore_emerald_deep"
     ],
     [
       "minecraft:ore_infested"
@@ -130,9 +132,9 @@
 			},
 			{
 				"type": "minecraft:husk",
-				"maxCount": 4,
+				"maxCount": 2,
 				"minCount": 1,
-				"weight": 50
+				"weight": 75
 			},
       {
         "type": "minecraft:zombie_villager",

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glowstone_dust",
+    "minecraft:sugar",
+    "matcha:baked_pumpkin",
+    "matcha:oil",
+    "minecraft:sunflower",
+    "minecraft:beetroot_soup",
+    "minecraft:carrot",
+    "minecraft:bamboo",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "matcha:uncooked_pumpkin_curry",
+    "count": 1
+  }
+}

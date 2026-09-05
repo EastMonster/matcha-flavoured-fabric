@@ -2,6 +2,25 @@
 	"type": "minecraft:chest",
 	"pools": [
 		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:nautilus_shell",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 0,
+								"max": 2
+							}
+						}
+					]
+				}
+			]
+		},
+		{
 			"bonus_rolls": 0,
 			"entries": [
 				{
@@ -207,11 +226,11 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/paradise_lost"
+					"value": "matcha:treasure/paradise_lost"
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/divine_comedy"
+					"value": "matcha:treasure/divine_comedy"
 				}
 			]
 		}

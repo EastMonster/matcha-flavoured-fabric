@@ -13,8 +13,8 @@
 							"type": "minecraft:attribute",
 							"amount": {
 								"type": "minecraft:linear",
-								"base": 0.0105,
-								"per_level_above_first": 0.0105
+								"base": 0.0155,
+								"per_level_above_first": 0.0155
 							},
 							"attribute": "minecraft:movement_speed",
 							"id": "main:enchantment.traversal",
@@ -63,13 +63,7 @@
 													"predicate": {
 														"movement_affected_by": {
 															"block": {
-																"blocks": [
-																	"minecraft:coarse_dirt",
-																	"minecraft:mud_bricks",
-																	"minecraft:packed_mud",
-																	"minecraft:gravel",
-																	"minecraft:dirt_path"
-																]
+																"blocks": "#main:is_path"
 															}
 														}
 													}
@@ -103,13 +97,7 @@
 												},
 												"movement_affected_by": {
 													"block": {
-														"blocks": [
-															"minecraft:coarse_dirt",
-															"minecraft:mud_bricks",
-															"minecraft:packed_mud",
-															"minecraft:gravel",
-															"minecraft:dirt_path"
-														]
+														"blocks": "#main:is_path"
 													}
 												}
 											}
@@ -145,13 +133,7 @@
 								},
 								"movement_affected_by": {
 									"block": {
-										"blocks": [
-											"minecraft:coarse_dirt",
-											"minecraft:mud_bricks",
-											"minecraft:packed_mud",
-											"minecraft:gravel",
-											"minecraft:dirt_path"
-										]
+										"blocks": "#main:is_path"
 									}
 								}
 							}
@@ -198,13 +180,7 @@
 						},
 						"movement_affected_by": {
 							"block": {
-								"blocks": [
-									"minecraft:coarse_dirt",
-									"minecraft:mud_bricks",
-									"minecraft:packed_mud",
-									"minecraft:gravel",
-									"minecraft:dirt_path"
-								]
+								"blocks": "#main:is_path"
 							}
 						},
 						"periodic_tick": 5

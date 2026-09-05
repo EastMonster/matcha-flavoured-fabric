@@ -27,26 +27,31 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 7",
+					"text": "\u26CF 7",
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 6",
+					"text": "\uD83D\uDDE1 6",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 0.9",
+					"text": "\uD83D\uDD52 0.9",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.iron_ingot",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
-			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
-			},
 			"minecraft:attribute_modifiers": [
 				{
 					"type": "minecraft:attack_damage",

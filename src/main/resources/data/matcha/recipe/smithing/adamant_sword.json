@@ -5,13 +5,13 @@
 	"result": {
 		"id": "minecraft:netherite_sword",
 		"components": {
-			"minecraft:max_damage": 5000,
+			"minecraft:max_damage": 3000,
 			"minecraft:item_name": {
 				"translate": "item.minecraft.netherite_sword",
 				"color": "gold"
 			},
 			"minecraft:enchantments": {
-				"matcha:divinity": 1,
+				"minecraft:sharpness": 1,
 				"minecraft:unbreaking": 2
 			},
 			"minecraft:lore": [
@@ -26,13 +26,18 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.set_bonus",
+					"translate": "desc.kleispack.repaired_with",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "enchantment.kleispack.divinity.set_bonus",
-					"color": "aqua",
+					"translate": "block.minecraft.diamond_block",
+					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.netherite_scrap",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -41,14 +46,16 @@
 					"minecraft:attribute_modifiers"
 				]
 			},
+			"minecraft:attribute_modifiers": [
+				{"type": "minecraft:attack_damage", "id": "attack_damage", "amount": 7, "operation": "add_value", "slot": "mainhand"},
+				{"type": "minecraft:attack_speed", "id": "attack_speed", "amount": -2.4, "operation": "add_value", "slot": "mainhand"}
+			],
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:diamond_block",
-					"minecraft:gold_block",
 					"minecraft:netherite_scrap"
 				]
 			}
 		}
-	},
-	"template": "minecraft:diamond"
+	}
 }

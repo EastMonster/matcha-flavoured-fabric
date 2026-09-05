@@ -1,5 +1,6 @@
 package monster.east.matchaff.mechanic;
 
+import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
@@ -14,11 +15,13 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
@@ -31,16 +34,22 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.clock.WorldClocks;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
+import net.minecraft.world.scores.Objective;
+import net.minecraft.world.scores.Scoreboard;
+
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 
 /**
  * Matcha player mechanics, replacing the datapack's scoreboard/function tick
  * loop:
  *   * hunger bar is meaningless: food >= 10 drains (hunger 256), food <= 6 is
  *     force-saturated so sprinting always works; natural regen stays off
- *   * crystal hearts: auto-consumed from the inventory up to 30 hearts; dying
- *     costs one heart while above 10. Stored in the per-world "Hearts"
- *     scoreboard (like the datapack) so a new world starts at 10 hearts.
+ *   * crystal hearts: auto-consumed from the inventory up to 30 hearts.
+ *     Death costs two points and can push a player below 10 hearts; the
+ *     world-wide minimum starts at 20 and drops by 2 each time the first
+ *     player reaches an "age" milestone. Easy keeps the 20-point floor.
  *   * sleeping fast-forwards 12 hours instead of skipping the night
  *   * icy water in frozen biomes applies blindness, slowness and freeze damage
  *     (freezing_protection III on the chest blocks it)
@@ -48,11 +57,23 @@ import net.minecraft.world.scores.criteria.ObjectiveCriteria;
  */
 public final class PlayerMechanics {
 	private static final int MAX_HEARTS = 60;
+	private static final int ABSOLUTE_MINIMUM_HEARTS = 6;
 	private static final TagKey<Biome> FROZEN_BIOME = TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("minecraft", "is_frozen"));
 	private static final Identifier FREEZING_PROTECTION = Identifier.fromNamespaceAndPath("matcha", "freezing_protection");
 	private static final Identifier HEART_CONTAINER_OBTAINED = Identifier.fromNamespaceAndPath(
 			"main", "mechanics/heart_container_obtained"
 	);
+	private static final String CURRENT_MINIMUM = "current_minimum_hearts";
+	private static final String[] AGE_HOLDERS = {
+			"copper_age", "iron_age", "diamond_age", "nether_age",
+			"electrum_age", "netherite_age", "end_age"
+	};
+	private static final String[] AGE_ADVANCEMENTS = {
+			"main:tutorial/obtain_copper", "main:tutorial/obtain_iron_ingot",
+			"main:tutorial/obtain_diamond", "main:tutorial/enter_nether",
+			"main:tutorial/obtain_electrum", "main:tutorial/obtain_adamant",
+			"main:tutorial/find_stronghold"
+	};
 	private static final AttachmentType<Integer> HEART_INVENTORY_VERSION = AttachmentRegistry.create(
 			Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_inventory_version")
 	);
@@ -64,10 +85,18 @@ public final class PlayerMechanics {
 
 	public static void init() {
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
-			if (server.getScoreboard().getObjective(HEARTS_OBJECTIVE) == null) {
-				server.getScoreboard().addObjective(HEARTS_OBJECTIVE, ObjectiveCriteria.DUMMY,
+			var scoreboard = server.getScoreboard();
+			if (scoreboard.getObjective(HEARTS_OBJECTIVE) == null) {
+				scoreboard.addObjective(HEARTS_OBJECTIVE, ObjectiveCriteria.DUMMY,
 						Component.literal("Hearts"), ObjectiveCriteria.RenderType.INTEGER, true,
 						StyledFormat.NO_STYLE);
+			}
+			var objective = scoreboard.getObjective(HEARTS_OBJECTIVE);
+			if (objective != null) {
+				ensureWorldScore(scoreboard, objective, CURRENT_MINIMUM, 20);
+				for (String age : AGE_HOLDERS) {
+					ensureWorldScore(scoreboard, objective, age, 0);
+				}
 			}
 		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
@@ -78,14 +107,17 @@ public final class PlayerMechanics {
 				tick(player);
 			}
 		});
+		ServerPlayerEvents.JOIN.register(player -> ensureWorldScore(
+				player.level().getServer().getScoreboard(),
+				player.level().getServer().getScoreboard().getObjective(HEARTS_OBJECTIVE),
+				player.getScoreboardName(), 20));
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
 			if (entity instanceof ServerPlayer player) {
 				int hearts = getHearts(player);
-				if (hearts > 20) {
-					hearts = Math.max(20, hearts - 2);
-					setHearts(player, hearts);
-					applyMaxHealth(player, hearts);
-				}
+				int minimum = minimumHearts(player);
+				hearts = Math.max(minimum, hearts - 2);
+				setHearts(player, hearts);
+				applyMaxHealth(player, hearts);
 			}
 		});
 	}
@@ -96,6 +128,52 @@ public final class PlayerMechanics {
 		manageExperience(player);
 		manageFreezingWater(player);
 		manageSleep(player);
+		manageAgeMilestones(player);
+	}
+
+	/** World progress lowers the heart floor once, per age, when not on Easy. */
+	private static void manageAgeMilestones(ServerPlayer player) {
+		if (player.tickCount % 20 != 0
+				|| WorldMechanics.cachedDifficulty(player.level().getServer()) == Difficulty.EASY
+				|| WorldMechanics.cachedDifficulty(player.level().getServer()) == Difficulty.PEACEFUL) {
+			return;
+		}
+		var server = player.level().getServer();
+		var objective = server.getScoreboard().getObjective(HEARTS_OBJECTIVE);
+		if (objective == null) {
+			return;
+		}
+		for (int i = 0; i < AGE_ADVANCEMENTS.length; i++) {
+			if (worldScore(server.getScoreboard(), objective, AGE_HOLDERS[i]) != 0) {
+				continue;
+			}
+			if (!WorldMechanics.advancementDone(player, Identifier.parse(AGE_ADVANCEMENTS[i]))) {
+				continue;
+			}
+			int floor = worldScore(server.getScoreboard(), objective, CURRENT_MINIMUM);
+			if (floor <= ABSOLUTE_MINIMUM_HEARTS) {
+				forceWorldScore(server.getScoreboard(), objective, AGE_HOLDERS[i], 1);
+				break;
+			}
+			floor -= 2;
+			forceWorldScore(server.getScoreboard(), objective, CURRENT_MINIMUM, floor);
+			forceWorldScore(server.getScoreboard(), objective, AGE_HOLDERS[i], 1);
+			announceMinimum(server, floor);
+			if (floor == 10 && WorldMechanics.cachedDifficulty(server) != Difficulty.HARD) {
+				WorldMechanics.raiseDifficulty(server);
+			}
+			break;
+		}
+	}
+
+	private static void announceMinimum(MinecraftServer server, int floor) {
+		int index = (20 - floor) / 2;
+		server.getPlayerList().broadcastSystemMessage(
+				Component.translatable("log.kleispack.god_grows_angry_" + index)
+						.withStyle(style -> style.withColor(ChatFormatting.RED)), false);
+		server.getPlayerList().broadcastSystemMessage(
+				Component.translatable("log.kleispack.minimum_heart_decreased", floor / 2)
+						.withStyle(ChatFormatting.GRAY), false);
 	}
 
 	private static void manageHunger(Player player) {
@@ -142,12 +220,16 @@ public final class PlayerMechanics {
 				hearts = Math.min(MAX_HEARTS, hearts + 2);
 				setHearts(player, hearts);
 				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 10, false, false));
-				player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-						SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.5F, 0.0F);
 				consumed = true;
 			}
 		}
-		if (consumed) applyMaxHealth(player, hearts);
+		if (consumed) {
+			applyMaxHealth(player, hearts);
+			// One sound per pickup batch instead of one per heart container,
+			// matching the upstream Hashiru optimisation.
+			player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
+					SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.5F, 0.0F);
+		}
 	}
 
 	/**
@@ -203,6 +285,19 @@ public final class PlayerMechanics {
 		}
 	}
 
+	private static int minimumHearts(ServerPlayer player) {
+		Difficulty difficulty = WorldMechanics.cachedDifficulty(player.level().getServer());
+		if (difficulty == Difficulty.EASY || difficulty == Difficulty.PEACEFUL) {
+			return 20;
+		}
+		var objective = player.level().getServer().getScoreboard().getObjective(HEARTS_OBJECTIVE);
+		if (objective == null) {
+			return 20;
+		}
+		return Math.clamp(worldScore(player.level().getServer().getScoreboard(), objective, CURRENT_MINIMUM),
+				ABSOLUTE_MINIMUM_HEARTS, MAX_HEARTS);
+	}
+
 	private static void applyMaxHealth(Player player, int hearts) {
 		AttributeInstance attribute = player.getAttribute(Attributes.MAX_HEALTH);
 		if (attribute != null && (int) attribute.getBaseValue() != hearts) {
@@ -218,14 +313,33 @@ public final class PlayerMechanics {
 			return 20;
 		}
 		int hearts = scoreboard.getOrCreatePlayerScore(player, objective).get();
-		return Math.clamp(hearts, 20, MAX_HEARTS);
+		// A zero score marks a brand-new player who has not died yet.
+		return hearts <= 0 ? 20 : Math.clamp(hearts, ABSOLUTE_MINIMUM_HEARTS, MAX_HEARTS);
 	}
 
 	private static void setHearts(ServerPlayer player, int hearts) {
 		var scoreboard = player.level().getServer().getScoreboard();
 		var objective = scoreboard.getObjective(HEARTS_OBJECTIVE);
 		if (objective != null) {
-			scoreboard.getOrCreatePlayerScore(player, objective).set(Math.clamp(hearts, 20, MAX_HEARTS));
+			scoreboard.getOrCreatePlayerScore(player, objective).set(
+					Math.clamp(hearts, ABSOLUTE_MINIMUM_HEARTS, MAX_HEARTS));
+		}
+	}
+
+	private static int worldScore(Scoreboard scoreboard, Objective objective, String holder) {
+		var info = scoreboard.getPlayerScoreInfo(ScoreHolder.forNameOnly(holder), objective);
+		return info == null ? 0 : info.value();
+	}
+
+	private static void ensureWorldScore(Scoreboard scoreboard, Objective objective, String holder, int value) {
+		if (objective != null && scoreboard.getPlayerScoreInfo(ScoreHolder.forNameOnly(holder), objective) == null) {
+			scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(holder), objective).set(value);
+		}
+	}
+
+	private static void forceWorldScore(Scoreboard scoreboard, Objective objective, String holder, int value) {
+		if (objective != null) {
+			scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(holder), objective).set(value);
 		}
 	}
 }

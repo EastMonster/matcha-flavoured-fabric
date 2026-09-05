@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:advancement_reward",
+	"pools": [
+		{
+			"rolls": 1,
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "matcha:crystal_heart",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 1
+						}
+					]
+				}
+			]
+		}
+	],
+	"random_sequence": "main:advancement/reward"
+}

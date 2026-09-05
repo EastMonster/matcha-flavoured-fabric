@@ -19,9 +19,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.tutorial.find_stronghold.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "red"
+			},
+			{
+				"translate": "advancements.main.tutorial.find_stronghold.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "minecraft:ender_eye"

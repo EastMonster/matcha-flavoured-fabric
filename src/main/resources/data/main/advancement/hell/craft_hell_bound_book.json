@@ -9,9 +9,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.hell.craft_hell_bound_book.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.hell.craft_hell_bound_book.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "minecraft:enchanted_book"
@@ -26,5 +33,10 @@
 		[
 			"hell_bound_book"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_1"
+		]
+	}
 }

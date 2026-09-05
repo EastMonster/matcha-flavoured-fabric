@@ -13,9 +13,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.end.elytra.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.end.elytra.description",
+				"color": "gray"
+			}
+		],
 		"frame": "goal",
 		"icon": {
 			"count": 1,
@@ -29,5 +36,10 @@
 		[
 			"elytra"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_2"
+		]
+	}
 }

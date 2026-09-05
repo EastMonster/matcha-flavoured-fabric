@@ -28,7 +28,8 @@
 		"recipes": [
 			"matcha:food/oven/grilled_melon",
 			"matcha:food/crafting/melon_sorbet",
-			"matcha:food/crafting/rind_jam"
+			"matcha:food/crafting/rind_jam",
+			"matcha:food/crafting/melon_slice"
 		]
 	}
 }

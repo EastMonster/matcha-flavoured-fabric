@@ -32,6 +32,16 @@
 					"text": "🕒 1.2",
 					"color": "dark_green",
 					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.diamond_block",
+					"color": "dark_gray",
+					"italic": false
 				}
 			],
 			"minecraft:item_name": {
@@ -67,11 +77,9 @@
 			},
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:diamond",
-					"minecraft:gold_ingot"
+					"minecraft:diamond_block"
 				]
 			}
 		}
-	},
-	"template": "minecraft:diamond"
+	}
 }

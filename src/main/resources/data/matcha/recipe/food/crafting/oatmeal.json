@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:honey_bottle",
+    "minecraft:beetroot_soup",
+    "minecraft:glowstone_dust",
+    "minecraft:apple",
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "matcha:oatmeal",
+    "count": 1
+  }
+}

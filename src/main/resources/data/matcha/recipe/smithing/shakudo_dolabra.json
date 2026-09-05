@@ -26,23 +26,30 @@
 				"translate": "item.matcha.shakudo_dolabra",
 				"color": "#c96691"
 			},
-			"minecraft:enchantments": {
-				"minecraft:silk_touch": 1
-			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 7",
+					"text": "\u26CF 7",
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 7",
+					"text": "\uD83D\uDDE1 7",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1",
+					"text": "\uD83D\uDD52 1",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "block.minecraft.copper_block",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -68,8 +75,11 @@
 			},
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:copper_ingot"
+					"minecraft:copper_block"
 				]
+			},
+			"minecraft:enchantments": {
+				"minecraft:silk_touch": 1
 			}
 		}
 	},

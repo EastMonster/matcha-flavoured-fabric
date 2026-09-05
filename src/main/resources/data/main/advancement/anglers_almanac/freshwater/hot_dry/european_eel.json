@@ -1,0 +1,58 @@
+{
+  "parent": "main:anglers_almanac/freshwater/hot_dry/tunisian_barb",
+  "display": {
+    "icon": {
+      "id": "matcha:european_eel",
+      "components": {}
+    },
+    "title": {
+      "translate": "item.matcha.european_eel"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.european_eel.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.fishing.rarity.4",
+        "italic": false
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "2.4%"
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "main:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "matcha:european_eel"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}

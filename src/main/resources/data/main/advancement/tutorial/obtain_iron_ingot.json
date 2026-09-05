@@ -13,9 +13,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.tutorial.obtain_iron_ingot.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "red"
+			},
+			{
+				"translate": "advancements.main.tutorial.obtain_iron_ingot.description",
+				"color": "gray"
+			}
+		],
 		"icon": {
 			"count": 1,
 			"id": "minecraft:iron_ingot"

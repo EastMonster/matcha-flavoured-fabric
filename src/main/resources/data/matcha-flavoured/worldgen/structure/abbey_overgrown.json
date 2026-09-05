@@ -9,7 +9,7 @@
 			"bounding_box": "piece",
 			"spawns": [
 				{
-					"weight": 0,
+					"weight": 8,
 					"type": "minecraft:allay",
 					"minCount": 1,
 					"maxCount": 3
@@ -21,7 +21,7 @@
 		"absolute": -10
 	},
 	"start_pool": "matcha-flavoured:abbey/overgrown/tower",
-	"step": "surface_structures",
+	"step": "top_layer_modification",
 	"terrain_adaptation": "beard_thin",
 	"use_expansion_hack": false,
 	"liquid_settings": "ignore_waterlogging"

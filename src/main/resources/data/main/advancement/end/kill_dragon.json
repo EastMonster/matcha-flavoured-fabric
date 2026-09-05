@@ -17,9 +17,16 @@
 		}
 	},
 	"display": {
-		"description": {
-			"translate": "advancements.main.end.kill_dragon.description"
-		},
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.main.end.kill_dragon.description",
+				"color": "gray"
+			}
+		],
 		"frame": "challenge",
 		"icon": {
 			"count": 1,
@@ -33,5 +40,10 @@
 		[
 			"killed_dragon"
 		]
-	]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_3"
+		]
+	}
 }

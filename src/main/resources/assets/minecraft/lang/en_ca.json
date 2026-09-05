@@ -1,4 +1,8 @@
 {
+	"item.minecraft.wheat": "Straw",
+	"block.minecraft.wheat": "Straw",
+	"item.minecraft.beetroot": "Tomatoes",
+	"block.minecraft.beetroots": "Tomatoes",
 	"container.inventory": "",
 	"container.crafting": "",
 	"container.cartography_table": "",
@@ -7,7 +11,10 @@
 	"item.minecraft.nether_star": "Divine Favour",
 	"block.minecraft.light_gray_shulker_box": "Light Grey Sack",
 	"block.minecraft.gray_shulker_box": "Grey Sack",
+	"item.minecraft.nether_wart": "Hellspore",
+	"block.minecraft.nether_wart": "Hellspore",
 	"item.minecraft.netherite_horse_armor": "Adamant Horse Armour",
 	"item.minecraft.netherite_nautilus_armor": "Adamant Nautilus Armour",
-	"block.minecraft.chiseled_nether_bricks": "Chiselled Hellbricks"
+	"block.minecraft.chiseled_nether_bricks": "Chiselled Hellbricks",
+	"item.kleispack.blessing": "Blessing"
 }

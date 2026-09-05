@@ -1,0 +1,39 @@
+{
+	"criteria": {
+		"has_almanac": {
+			"conditions": {
+				"items": [
+					{
+						"components": {
+							"minecraft:item_model": "minecraft:anglers_almanac"
+						}
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [
+		[
+			"has_almanac"
+		]
+	],
+  "display": {
+    "background": "minecraft:block/barrel_bottom",
+    "description": {
+      "translate": "adv.kleispack.anglers_almanac.desc"
+    },
+    "icon": {
+      "id": "minecraft:fishing_rod",
+      "components": {
+        "minecraft:item_model": "minecraft:anglers_almanac"
+      }
+    },
+    "title": {
+      "translate": "adv.kleispack.anglers_almanac"
+    },
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  }
+}

@@ -1,4 +1,103 @@
 {
+	"fishing.1_star": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/1_star",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.2_star": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/2_star",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.3_star": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/3_star",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.4_star": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/4_star",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.axolotl": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/axolotl",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.enchanted_book": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/enchanted_book",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.fish_bones": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/fish_bones",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.frog": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/frog",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.junk": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/junk",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.nautilus_shell": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/nautilus_shell",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"fishing.treasure": {
+		"sounds": [
+			{
+				"name": "matcha:custom/fishing/treasure",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
 	"custom.false_subwoofer_lullaby": {
 		"sounds": [
 			{
@@ -12,6 +111,33 @@
 		"sounds": [
 			{
 				"name": "matcha:custom/golden_demo",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+  	"custom.crete": {
+  		"sounds": [
+  			{
+  				"name": "matcha:custom/crete",
+  				"volume": 1,
+  				"stream": true
+  			}
+  		]
+  	},
+  	"custom.elegy_of_the_abbey": {
+		"sounds": [
+			{
+				"name": "matcha:custom/elegy_of_the_abbey",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"custom.malachite": {
+		"sounds": [
+			{
+				"name": "matcha:custom/malachite",
 				"volume": 1,
 				"stream": true
 			}

@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"key": {
+		"#": "minecraft:disc_fragment_5",
+		"X": "minecraft:target"
+	},
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"result": {
+		"id": "matcha:music_disc_elegy_of_the_abbey"
+	}
+}

@@ -1,0 +1,44 @@
+{
+  "parent": "main:anglers_almanac/root",
+  "display": {
+    "icon": {
+      "id": "tube_coral",
+      "components": {
+        "minecraft:item_model": "matcha:saltwater_temperate"
+      }
+    },
+    "title": {
+      "translate": "adv.kleispack.anglers_almanac.category.saltwater.temperate"
+    },
+    "description": [
+      {
+        "translate": "biome.minecraft.ocean"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.deep_ocean"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.beach"
+      }
+    ],
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "root": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "main:anglers_almanac/root": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

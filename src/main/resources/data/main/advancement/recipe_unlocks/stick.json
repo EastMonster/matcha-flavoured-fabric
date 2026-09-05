@@ -19,7 +19,8 @@
 	],
 	"rewards": {
 		"recipes": [
-			"matcha:crafting/tinder"
+			"matcha:crafting/tinder",
+			"matcha:crafting/ladder"
 		]
 	}
 }

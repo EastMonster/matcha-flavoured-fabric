@@ -1,4 +1,8 @@
 {
+	"item.minecraft.wheat": "Straw",
+	"block.minecraft.wheat": "Straw",
+	"item.minecraft.beetroot": "Tomatoes",
+	"block.minecraft.beetroots": "Tomatoes",
 	"container.inventory": "",
 	"container.crafting": "",
 	"container.cartography_table": "",
@@ -11,6 +15,9 @@
 	"item.minecraft.blaze_rod": "Stabilised Estus",
 	"block.minecraft.light_gray_shulker_box": "Light Grey Sack",
 	"block.minecraft.gray_shulker_box": "Grey Sack",
+	"item.minecraft.nether_wart": "Hellspore",
+	"block.minecraft.nether_wart": "Hellspore",
 	"block.minecraft.glowstone": "Crystallised Estus",
-	"entity.minecraft.villager.leatherworker": "Forester"
+	"entity.minecraft.villager.leatherworker": "Forester",
+	"item.kleispack.blessing": "Blessing"
 }

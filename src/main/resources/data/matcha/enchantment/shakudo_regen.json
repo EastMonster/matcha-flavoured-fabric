@@ -1,4 +1,5 @@
 {
+	"exclusive_set": "#main:exclusive_set/intrinsic_armor",
 	"primary_items": [
 		"matcha:shakudo_helmet",
 		"matcha:shakudo_chestplate",

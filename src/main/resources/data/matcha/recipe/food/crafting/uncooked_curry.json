@@ -5,11 +5,13 @@
 		"minecraft:glowstone_dust",
 		"minecraft:sugar",
 		"matcha:flour",
+		"matcha:oil",
 		"minecraft:potato",
 		[
 			"minecraft:beef",
 			"minecraft:mutton",
-			"minecraft:rabbit"
+			"minecraft:rabbit",
+			"matcha:seitan"
 		],
 		"minecraft:carrot",
 		"minecraft:bowl"

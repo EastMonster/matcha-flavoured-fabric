@@ -8,18 +8,28 @@
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
 				{
-					"text": "💥🚫 +1",
+					"text": "\uD83D\uDCA5\uD83D\uDEAB \u002B1",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛊ 5",
+					"text": "\u26CA 5",
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛨ 1",
+					"text": "\u26E8 1",
 					"color": "dark_green",
+					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.iron_ingot",
+					"color": "dark_gray",
 					"italic": false
 				}
 			],
@@ -55,15 +65,19 @@
 					"minecraft:attribute_modifiers"
 				]
 			},
-			"minecraft:enchantments": {
-				"minecraft:blast_protection": 3
-			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
 				"slot": "legs",
 				"asset_id": "minecraft:steel"
+			},
+			"minecraft:repairable": {
+				"items": [
+					"minecraft:iron_ingot"
+				]
+			},
+			"minecraft:enchantments": {
+				"minecraft:blast_protection": 3
 			}
 		}
-	},
-	"template": "minecraft:iron_ingot"
+	}
 }
