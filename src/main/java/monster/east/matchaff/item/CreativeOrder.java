@@ -14,10 +14,12 @@ import net.minecraft.world.item.Item;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /** Adds every Matcha item to its creative tab in the semantic order defined by creative_order.json. */
 public class CreativeOrder {
@@ -25,14 +27,15 @@ public class CreativeOrder {
 	}
 
 	public static void register(List<Entry> entries) {
-		Map<String, Entry> remaining = new LinkedHashMap<>();
+		Map<String, Entry> byId = new LinkedHashMap<>();
 		for (Entry entry : entries) {
 			String id = BuiltInRegistries.ITEM.getKey(entry.item()).getPath();
-			if (remaining.put(id, entry) != null) {
+			if (byId.put(id, entry) != null) {
 				throw new IllegalStateException("Duplicate creative item: " + id);
 			}
 		}
 
+		Map<String, List<ResourceKey<CreativeModeTab>>> placedIn = new LinkedHashMap<>();
 		JsonObject root = readOrder();
 		for (Map.Entry<String, JsonElement> tabEntry : root.entrySet()) {
 			ResourceKey<CreativeModeTab> tab = tab(tabEntry.getKey());
@@ -41,20 +44,28 @@ public class CreativeOrder {
 				JsonArray group = groupEntry.getValue().getAsJsonArray();
 				for (JsonElement idElement : group) {
 					String id = idElement.getAsString();
-					Entry entry = remaining.remove(id);
+					Entry entry = byId.get(id);
 					if (entry == null) {
-						throw new IllegalStateException("Unknown or duplicate creative order item: " + id);
+						throw new IllegalStateException("Unknown creative order item: " + id);
 					}
-					if (!entry.tab().equals(tab)) {
-						throw new IllegalStateException("Creative tab mismatch for " + id + ": " + tabEntry.getKey());
-					}
+					placedIn.computeIfAbsent(id, k -> new ArrayList<>()).add(tab);
 					ordered.add(entry.item());
 				}
 			}
 			CreativeModeTabEvents.modifyOutputEvent(tab).register(output -> ordered.forEach(output::accept));
 		}
-		if (!remaining.isEmpty()) {
-			throw new IllegalStateException("Items missing from creative_order.json: " + remaining.keySet());
+		Set<String> missing = new HashSet<>();
+		for (Entry entry : entries) {
+			String id = BuiltInRegistries.ITEM.getKey(entry.item()).getPath();
+			List<ResourceKey<CreativeModeTab>> tabs = placedIn.get(id);
+			if (tabs == null) {
+				missing.add(id);
+			} else if (!tabs.contains(entry.tab())) {
+				throw new IllegalStateException("Creative item " + id + " not in its primary tab: " + entry.tab());
+			}
+		}
+		if (!missing.isEmpty()) {
+			throw new IllegalStateException("Items missing from creative_order.json: " + missing);
 		}
 	}
 

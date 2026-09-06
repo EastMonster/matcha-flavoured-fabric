@@ -22,7 +22,7 @@
 		"icon": {
 			"components": {},
 			"count": 1,
-			"id": "minecraft:glistering_melon_slice"
+			"id": "matcha:nazar"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_nazar.title"

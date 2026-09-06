@@ -5,7 +5,7 @@
   "key": {
     "#": "minecraft:stone_pressure_plate",
     "R": "minecraft:redstone",
-    "X": "minecraft:resin_brick"
+    "X": "matcha:steel"
   },
   "pattern": [
     "X X",

@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:stonecutting",
-	"ingredient": "minecraft:resin_brick",
+	"ingredient": "matcha:steel",
 	"result": {
 		"count": 1,
 		"id": "minecraft:iron_door"

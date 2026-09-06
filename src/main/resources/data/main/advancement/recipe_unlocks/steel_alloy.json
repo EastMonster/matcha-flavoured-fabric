@@ -5,7 +5,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "minecraft:resin_brick"
+						"items": "matcha:steel"
 					}
 				]
 			},

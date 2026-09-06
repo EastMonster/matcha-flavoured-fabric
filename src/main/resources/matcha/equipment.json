@@ -658,6 +658,11 @@
 		"carrier": "minecraft:stone_sword"
 	},
 	{
+		"id": "nazar",
+		"source": "data/matcha/recipe/crafting/nazar.json",
+		"carrier": "minecraft:glistering_melon_slice"
+	},
+	{
 		"id": "snow_shovel",
 		"source": "data/matcha/recipe/crafting/snow_shovel.json",
 		"carrier": "minecraft:iron_shovel"

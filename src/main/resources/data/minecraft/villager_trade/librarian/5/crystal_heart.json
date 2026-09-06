@@ -3,7 +3,7 @@
 		"id": "minecraft:echo_shard"
 	},
 	"gives": {
-		"id": "minecraft:turtle_scute",
+		"id": "matcha:divine_fragment",
 		"components": {
 			"minecraft:enchantment_glint_override": true,
 			"minecraft:rarity": "rare"

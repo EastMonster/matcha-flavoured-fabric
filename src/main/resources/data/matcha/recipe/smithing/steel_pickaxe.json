@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:resin_brick",
+	"addition": "matcha:steel",
 	"base": "minecraft:iron_pickaxe",
 	"result": {
 		"id": "matcha:steel_pickaxe",

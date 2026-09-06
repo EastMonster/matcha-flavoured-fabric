@@ -54,7 +54,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:phantom_membrane"
+					"name": "matcha:hepatizon"
 				},
 				{
 					"type": "minecraft:loot_table",

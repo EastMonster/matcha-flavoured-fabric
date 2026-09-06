@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "minecraft:resin_brick"
+						"items": "matcha:steel"
 					}
 				]
 			}
@@ -18,7 +18,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "minecraft:resin_brick"
+			"id": "matcha:steel"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_steel.title"

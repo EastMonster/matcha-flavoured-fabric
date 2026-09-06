@@ -9,7 +9,7 @@
       "minecraft:cobbled_deepslate",
       "minecraft:blackstone"
     ],
-    "S": "minecraft:resin_brick"
+    "S": "matcha:steel"
   },
   "pattern": [
     "#S#",

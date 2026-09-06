@@ -80,6 +80,39 @@
 		]
 	},
 	"combat": {
+		"swords": [
+			"bronze_sword",
+			"electrum_sword",
+			"palatinate_sword",
+			"steel_sword",
+			"silver_sword"
+		],
+		"greatswords": [
+			"steel_claymore",
+			"adamant_claymore"
+		],
+		"spears": [
+			"bronze_spear",
+			"electrum_spear",
+			"shakudo_spear",
+			"steel_spear"
+		],
+		"axes": [
+			"bronze_axe",
+			"electrum_axe",
+			"shakudo_axe",
+			"steel_axe",
+			"rusty_axe"
+		],
+		"finesse_weapons": [
+			"butcher_knife",
+			"crook"
+		],
+		"ranged_weapons": [
+			"compound_bow",
+			"apotropaic_arrow",
+			"nightshade_arrow"
+		],
 		"sturdy_leather_armour": [
 			"sturdy_leather_helmet",
 			"sturdy_leather_chestplate",
@@ -120,30 +153,8 @@
 			"opal_earrings",
 			"topaz_earrings"
 		],
-		"material_weapons": [
-			"bronze_sword",
-			"bronze_spear",
-			"electrum_sword",
-			"electrum_spear",
-			"palatinate_sword",
-			"shakudo_spear",
-			"steel_sword",
-			"steel_claymore",
-			"steel_spear"
-		],
-		"special_weapons": [
-			"silver_sword",
-			"adamant_claymore",
-			"rusty_axe",
-			"butcher_knife",
-			"crook"
-		],
-		"ranged_weapons": [
-			"compound_bow",
-			"apotropaic_arrow",
-			"nightshade_arrow"
-		],
 		"warding_gear": [
+			"nazar",
 			"warding_sword",
 			"warding_shield",
 			"wooden_cross"
@@ -330,13 +341,18 @@
 		],
 		"industrial_materials": [
 			"benzene",
-			"carbon_rich_iron"
+			"carbon_rich_iron",
+			"steel",
+			"shakudo",
+			"hepatizon",
+			"electrum"
 		],
 		"gems": [
 			"amber",
 			"opal",
 			"ruby",
-			"topaz"
+			"topaz",
+			"divine_fragment"
 		],
 		"animal_materials": [
 			"fish_bones",

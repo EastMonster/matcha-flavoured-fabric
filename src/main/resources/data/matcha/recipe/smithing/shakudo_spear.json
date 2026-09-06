@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:shulker_shell",
+	"addition": "matcha:shakudo",
 	"base": "minecraft:copper_spear",
 	"result": {
 		"id": "matcha:shakudo_spear",

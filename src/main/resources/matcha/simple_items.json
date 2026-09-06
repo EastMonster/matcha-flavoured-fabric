@@ -722,6 +722,44 @@
 		"components": {}
 	},
 	{
+		"id": "steel",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/blast/steel_alloy.json",
+		"components": {}
+	},
+	{
+		"id": "shakudo",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/crafting/shakudo_alloy.json",
+		"components": {}
+	},
+	{
+		"id": "hepatizon",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/crafting/bronze_alloy.json",
+		"components": {}
+	},
+	{
+		"id": "electrum",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/crafting/electrum_alloy.json",
+		"components": {}
+	},
+	{
+		"id": "divine_fragment",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/crafting/divine_fragment.json",
+		"components": {
+			"minecraft:enchantment_glint_override": true,
+			"minecraft:rarity": "rare"
+		}
+	},
+	{
 		"id": "dough",
 		"type": "item",
 		"tab": "ingredients",

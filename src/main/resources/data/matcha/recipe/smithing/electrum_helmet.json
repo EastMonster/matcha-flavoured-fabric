@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:heart_of_the_sea",
+	"addition": "matcha:electrum",
 	"base": "minecraft:diamond_helmet",
 	"result": {
 		"id": "matcha:electrum_helmet",

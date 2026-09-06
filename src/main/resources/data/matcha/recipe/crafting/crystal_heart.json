@@ -3,7 +3,7 @@
 	"category": "misc",
 	"key": {
 		"d": "minecraft:diamond",
-		"s": "minecraft:turtle_scute"
+		"s": "matcha:divine_fragment"
 	},
 	"pattern": [
 		"ddd",

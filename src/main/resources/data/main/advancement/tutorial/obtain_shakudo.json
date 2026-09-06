@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "minecraft:shulker_shell"
+						"items": "matcha:shakudo"
 					}
 				]
 			}
@@ -18,7 +18,7 @@
 		},
 		"icon": {
 			"count": 1,
-			"id": "minecraft:shulker_shell"
+			"id": "matcha:shakudo"
 		},
 		"title": {
 			"translate": "advancements.main.tutorial.obtain_shakudo.title"

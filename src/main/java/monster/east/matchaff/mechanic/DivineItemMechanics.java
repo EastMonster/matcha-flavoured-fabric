@@ -73,7 +73,9 @@ final class DivineItemMechanics {
 					level.sendParticles(ParticleTypes.SMOKE, item.getX(), item.getY() + 0.75, item.getZ(),
 							1, 0.05, 0.05, 0.05, 0);
 				}
-			} else if (stack.is(Items.TURTLE_SCUTE) || stack.is(BuiltInRegistries.ITEM
+			} else if (stack.is(BuiltInRegistries.ITEM
+					.getValue(Identifier.fromNamespaceAndPath("matcha", "divine_fragment")))
+					|| stack.is(BuiltInRegistries.ITEM
 					.getValue(Identifier.fromNamespaceAndPath("matcha", "crystal_heart")))) {
 				if (everyTenTicks) {
 					level.sendParticles(ParticleTypes.ELECTRIC_SPARK, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0.1, 0.1, 0.1, 0);
@@ -92,7 +94,8 @@ final class DivineItemMechanics {
 		return stack.is(Items.NETHER_STAR)
 				|| stack.is(Items.ENDER_EYE)
 				|| stack.is(Items.BLAZE_POWDER)
-				|| stack.is(Items.TURTLE_SCUTE)
+				|| stack.is(BuiltInRegistries.ITEM
+				.getValue(Identifier.fromNamespaceAndPath("matcha", "divine_fragment")))
 				|| stack.is(BuiltInRegistries.ITEM
 						.getValue(Identifier.fromNamespaceAndPath("matcha", "crystal_heart")));
 	}
