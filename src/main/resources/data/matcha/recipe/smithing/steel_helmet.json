@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:resin_brick",
+	"addition": "matcha:steel",
 	"base": "minecraft:iron_helmet",
 	"result": {
 		"id": "matcha:steel_helmet",

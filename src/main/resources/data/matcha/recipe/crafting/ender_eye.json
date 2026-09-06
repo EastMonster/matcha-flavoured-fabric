@@ -3,7 +3,7 @@
 	"category": "misc",
 	"ingredients": [
 		"minecraft:blaze_rod",
-		"minecraft:turtle_scute"
+		"matcha:divine_fragment"
 	],
 	"result": {
 		"count": 16,

@@ -6,7 +6,7 @@
     "minecraft:gold_ingot",
     "minecraft:gold_ingot",
     "minecraft:gold_ingot",
-    "minecraft:turtle_scute",
+    "matcha:divine_fragment",
     "minecraft:prismarine_crystals",
     "minecraft:prismarine_crystals",
     "minecraft:prismarine_crystals",
@@ -14,6 +14,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:heart_of_the_sea"
+    "id": "matcha:electrum"
   }
 }

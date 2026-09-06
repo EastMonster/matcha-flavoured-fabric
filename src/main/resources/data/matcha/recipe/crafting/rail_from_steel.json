@@ -4,7 +4,7 @@
   "category": "redstone",
   "key": {
     "#": "minecraft:stick",
-    "X": "minecraft:resin_brick"
+    "X": "matcha:steel"
   },
   "pattern": [
     "X X",

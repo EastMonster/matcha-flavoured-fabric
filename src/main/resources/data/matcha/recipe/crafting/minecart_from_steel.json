@@ -3,7 +3,7 @@
   "group": "minecart",
   "category": "misc",
   "key": {
-    "#": "minecraft:resin_brick"
+    "#": "matcha:steel"
   },
   "pattern": [
     "# #",

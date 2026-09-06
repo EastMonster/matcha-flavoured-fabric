@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:shulker_shell",
+	"addition": "matcha:shakudo",
 	"base": "minecraft:elytra",
 	"result": {
 		"id": "matcha:shakudo_elytra"

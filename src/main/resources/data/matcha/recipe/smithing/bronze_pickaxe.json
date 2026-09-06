@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:phantom_membrane",
+	"addition": "matcha:hepatizon",
 	"base": "minecraft:copper_pickaxe",
 	"result": {
 		"id": "matcha:bronze_pickaxe",

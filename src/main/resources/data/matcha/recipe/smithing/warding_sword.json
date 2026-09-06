@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:glistering_melon_slice",
+	"addition": "matcha:nazar",
 	"base": "minecraft:iron_sword",
 	"result": {
 		"id": "matcha:warding_sword",
@@ -48,7 +48,7 @@
 			"minecraft:enchantment_glint_override": true,
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:glistering_melon_slice",
+					"matcha:nazar",
 					"minecraft:lapis_block"
 				]
 			}

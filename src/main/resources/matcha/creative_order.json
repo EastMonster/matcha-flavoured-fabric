@@ -144,6 +144,7 @@
 			"nightshade_arrow"
 		],
 		"warding_gear": [
+			"nazar",
 			"warding_sword",
 			"warding_shield",
 			"wooden_cross"
@@ -330,13 +331,18 @@
 		],
 		"industrial_materials": [
 			"benzene",
-			"carbon_rich_iron"
+			"carbon_rich_iron",
+			"steel",
+			"shakudo",
+			"hepatizon",
+			"electrum"
 		],
 		"gems": [
 			"amber",
 			"opal",
 			"ruby",
-			"topaz"
+			"topaz",
+			"divine_fragment"
 		],
 		"animal_materials": [
 			"fish_bones",

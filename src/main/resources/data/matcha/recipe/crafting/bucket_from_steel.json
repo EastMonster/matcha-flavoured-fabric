@@ -3,7 +3,7 @@
   "group": "bucket",
   "category": "equipment",
   "key": {
-    "#": "minecraft:resin_brick"
+    "#": "matcha:steel"
   },
   "pattern": [
     "# #",

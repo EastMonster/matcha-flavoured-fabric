@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shaped",
 	"category": "redstone",
 	"key": {
-		"#": "minecraft:turtle_scute",
+		"#": "matcha:divine_fragment",
 		"X": "minecraft:tnt"
 	},
 	"pattern": [

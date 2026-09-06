@@ -7,7 +7,7 @@
       "minecraft:chest",
       "minecraft:barrel"
     ],
-    "I": "minecraft:resin_brick"
+    "I": "matcha:steel"
   },
   "pattern": [
     "I I",

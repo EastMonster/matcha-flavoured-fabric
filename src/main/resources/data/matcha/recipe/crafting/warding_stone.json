@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shaped",
 	"category": "equipment",
 	"key": {
-		"#": "minecraft:glistering_melon_slice",
+		"#": "matcha:nazar",
 		"S": "minecraft:chiseled_stone_bricks",
 		"E": "minecraft:blaze_rod"
 	},

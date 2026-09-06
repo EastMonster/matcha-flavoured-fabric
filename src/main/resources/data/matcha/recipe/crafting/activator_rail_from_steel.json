@@ -10,7 +10,7 @@
   "key": {
     "#": "minecraft:redstone_torch",
     "S": "minecraft:stick",
-    "X": "minecraft:resin_brick"
+    "X": "matcha:steel"
   },
   "result": {
     "id": "minecraft:activator_rail",

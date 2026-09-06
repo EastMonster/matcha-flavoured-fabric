@@ -8,7 +8,7 @@
     "components": {
       "minecraft:bundle_contents": [
         {
-          "id": "minecraft:shulker_shell",
+          "id": "matcha:shakudo",
           "count": 1
         },
         {

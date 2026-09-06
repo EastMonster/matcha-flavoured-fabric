@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:turtle_scute",
+					"name": "matcha:divine_fragment",
 					"functions": [
 						{
 							"function": "minecraft:set_components",

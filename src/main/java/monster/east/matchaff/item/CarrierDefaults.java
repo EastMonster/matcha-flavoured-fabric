@@ -100,8 +100,7 @@ final class CarrierDefaults {
 									.setAsset(EquipmentAssets.ELYTRA)
 									.setDamageOnHurt(false)
 									.build()
-					)
-					.repairable(Items.PHANTOM_MEMBRANE);
+					);
 			case "minecraft:shears" -> properties
 					.durability(238)
 					.component(DataComponents.TOOL, ShearsItem.createToolProperties());
@@ -147,6 +146,7 @@ final class CarrierDefaults {
 			// in the migrated definitions.
 			case "minecraft:paper",
 					"minecraft:compass",
+					"minecraft:glistering_melon_slice",
 					"minecraft:item_frame",
 					"minecraft:villager_spawn_egg",
 					"minecraft:chicken_spawn_egg",

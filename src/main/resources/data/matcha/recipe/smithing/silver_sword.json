@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "minecraft:glistering_melon_slice",
+	"addition": "matcha:nazar",
 	"base": "minecraft:iron_sword",
 	"result": {
 		"id": "matcha:silver_sword",
@@ -23,7 +23,7 @@
 					"italic": false
 				},
 				{
-					"translate": "item.minecraft.glistering_melon_slice",
+					"translate": "item.matcha.nazar",
 					"color": "dark_gray",
 					"italic": false
 				},
@@ -64,7 +64,7 @@
 			"minecraft:enchantment_glint_override": true,
 			"minecraft:repairable": {
 				"items": [
-					"minecraft:glistering_melon_slice",
+					"matcha:nazar",
 					"minecraft:lapis_block"
 				]
 			}

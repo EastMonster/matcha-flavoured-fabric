@@ -8,7 +8,7 @@
     "components": {
       "minecraft:bundle_contents": [
         {
-          "id": "minecraft:phantom_membrane",
+          "id": "matcha:hepatizon",
           "count": 1
         },
         {
