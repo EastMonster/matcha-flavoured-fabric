@@ -79,13 +79,6 @@
 								}
 							}
 						}
-					],
-					"functions": [
-						{
-							"function": "minecraft:set_name",
-							"target": "item_name",
-							"name": "Fox Pelt"
-						}
 					]
 				},
 				{

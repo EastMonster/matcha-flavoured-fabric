@@ -4,32 +4,6 @@
 	},
 	"gives": {
 		"id": "matcha:warped_stroganoff",
-		"components": {
-			"minecraft:consumable": {
-				"consume_seconds": 1.8,
-				"on_consume_effects": [
-					{
-						"type": "minecraft:apply_effects",
-						"effects": [
-							{
-								"id": "minecraft:invisibility",
-								"amplifier": 0,
-								"duration": 12000,
-								"show_particles": false,
-								"show_icon": true
-							},
-							{
-								"id": "minecraft:regeneration",
-								"amplifier": 2,
-								"duration": 144,
-								"show_particles": false,
-								"show_icon": false
-							}
-						]
-					}
-				]
-			}
-		},
 		"count": 4
 	},
 	"max_uses": 999,

@@ -50,30 +50,6 @@
 							"function": "minecraft:enchanted_count_increase"
 						}
 					],
-					"name": "matcha:sweet_berry_mash"
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 2,
-								"min": 0
-							},
-							"function": "minecraft:set_count"
-						},
-						{
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 1,
-								"min": 0
-							},
-							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
-						}
-					],
 					"name": "minecraft:spider_eye"
 				},
 				{
@@ -99,30 +75,6 @@
 						}
 					],
 					"name": "minecraft:glass_bottle"
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 2,
-								"min": 0
-							},
-							"function": "minecraft:set_count"
-						},
-						{
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 1,
-								"min": 0
-							},
-							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
-						}
-					],
-					"name": "minecraft:gunpowder"
 				},
 				{
 					"type": "minecraft:item",
