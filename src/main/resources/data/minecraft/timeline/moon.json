@@ -47,50 +47,32 @@
 					"value": "full_moon"
 				},
 				{
-					"ticks": 12000,
+					"ticks": 24000,
 					"value": "waning_gibbous"
 				},
 				{
-					"ticks": 36000,
-					"value": "first_quarter"
-				},
-				{
-					"ticks": 60000,
-					"value": "waning_crescent"
-				},
-				{
-					"ticks": 84000,
-					"value": "new_moon"
-				},
-				{
-					"ticks": 108000,
-					"value": "waxing_crescent"
-				},
-				{
-					"ticks": 132000,
+					"ticks": 48000,
 					"value": "third_quarter"
 				},
 				{
-					"ticks": 156000,
+					"ticks": 72000,
+					"value": "waning_crescent"
+				},
+				{
+					"ticks": 96000,
+					"value": "new_moon"
+				},
+				{
+					"ticks": 120000,
+					"value": "waxing_crescent"
+				},
+				{
+					"ticks": 144000,
+					"value": "first_quarter"
+				},
+				{
+					"ticks": 168000,
 					"value": "waxing_gibbous"
-				},
-				{
-					"ticks": 180000,
-					"value": "full_moon"
-				}
-			]
-		},
-		"minecraft:visual/moon_angle": {
-			"ease": "linear",
-			"modifier": "override",
-			"keyframes": [
-				{
-					"ticks": 0,
-					"value": 90
-				},
-				{
-					"ticks": 192000,
-					"value": 2610
 				}
 			]
 		}
