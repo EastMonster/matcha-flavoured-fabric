@@ -20,6 +20,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -34,12 +35,14 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.clock.WorldClocks;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.Scoreboard;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import java.util.List;
 
 /**
  * Matcha player mechanics, replacing the datapack's scoreboard/function tick
@@ -104,7 +107,7 @@ public final class PlayerMechanics {
 				return;
 			}
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-				tick(player);
+				tick(player, server);
 			}
 		});
 		ServerPlayerEvents.JOIN.register(player -> ensureWorldScore(
@@ -122,12 +125,12 @@ public final class PlayerMechanics {
 		});
 	}
 
-	private static void tick(ServerPlayer player) {
+	private static void tick(ServerPlayer player, MinecraftServer server) {
 		manageHunger(player);
 		manageHearts(player);
 		manageExperience(player);
 		manageFreezingWater(player);
-		manageSleep(player);
+		manageSleep(server);
 		manageAgeMilestones(player);
 	}
 
@@ -274,14 +277,32 @@ public final class PlayerMechanics {
 				&& chest.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).getLevel(holder) >= 3;
 	}
 
-	private static void manageSleep(ServerPlayer player) {
-		if (player.isSleeping() && player.getSleepTimer() > 0 && player.getSleepTimer() < 100) {
-			var level = player.level();
-			level.getServer().setWeatherParameters(ServerLevel.RAIN_DELAY.sample(level.getRandom()), 0, false, false);
-			var clock = level.getServer().registryAccess()
+	// sleeping fast-forwards 12 hours instead of skipping the night
+	private static void manageSleep(MinecraftServer server) {
+		// check if everyone sleeps
+		List<ServerPlayer> players = server.getPlayerList().getPlayers();
+		int sleepingPlayers = 0;
+		for (ServerPlayer player : players) {
+			if (player.getSleepTimer() >= 100) {
+				sleepingPlayers++;
+			}
+		}
+		if (sleepingPlayers >= players.size()) {
+			// set day time/count
+			var clock = server.registryAccess()
 					.lookupOrThrow(Registries.WORLD_CLOCK)
 					.getOrThrow(WorldClocks.OVERWORLD);
-			level.getServer().clockManager().addTicks(clock, 120);
+			server.clockManager().addTicks(clock, 12000);
+			// set weather
+			if (server.getGameRules().get(GameRules.ADVANCE_WEATHER))
+				server.setWeatherParameters(ServerLevel.RAIN_DELAY.sample(server.overworld().getRandom()), 0, false, false);
+			// wake up players
+			for (ServerPlayer player : players) {
+				if (player.isSleeping()) {
+					player.resetStat(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)); // reset phantom timer
+					player.stopSleepInBed(true, true);
+				}
+			}
 		}
 	}
 
