@@ -1,12 +1,12 @@
 {
 	"tools": {
-		"bronze_tools": [
-			"bronze_shovel",
-			"bronze_pickaxe",
-			"bronze_axe",
-			"bronze_dolabra",
-			"bronze_hoe",
-			"bronze_mattock"
+		"hepatizon_tools": [
+			"hepatizon_shovel",
+			"hepatizon_pickaxe",
+			"hepatizon_axe",
+			"hepatizon_dolabra",
+			"hepatizon_hoe",
+			"hepatizon_mattock"
 		],
 		"electrum_tools": [
 			"electrum_shovel",
@@ -16,7 +16,7 @@
 			"electrum_hoe",
 			"electrum_mattock"
 		],
-		"palatinate_tools": [
+		"shakudo_tools": [
 			"shakudo_shovel",
 			"shakudo_pickaxe",
 			"shakudo_axe",
@@ -52,7 +52,7 @@
 		],
 		"shears": [
 			"copper_shears",
-			"bronze_shears",
+			"shepherds_shears",
 			"steel_shears"
 		],
 		"bundles": [
@@ -81,9 +81,9 @@
 	},
 	"combat": {
 		"swords": [
-			"bronze_sword",
+			"hepatizon_sword",
 			"electrum_sword",
-			"palatinate_sword",
+			"shakudo_sword",
 			"steel_sword",
 			"silver_sword"
 		],
@@ -92,13 +92,13 @@
 			"adamant_claymore"
 		],
 		"spears": [
-			"bronze_spear",
+			"hepatizon_spear",
 			"electrum_spear",
 			"shakudo_spear",
 			"steel_spear"
 		],
 		"axes": [
-			"bronze_axe",
+			"hepatizon_axe",
 			"electrum_axe",
 			"shakudo_axe",
 			"steel_axe",
@@ -120,11 +120,11 @@
 			"sturdy_leather_boots",
 			"gilded_leather_boots"
 		],
-		"bronze_armour": [
-			"bronze_helmet",
-			"bronze_chestplate",
-			"bronze_leggings",
-			"bronze_boots",
+		"hepatizon_armour": [
+			"hepatizon_helmet",
+			"hepatizon_chestplate",
+			"hepatizon_leggings",
+			"hepatizon_boots",
 			"bronze_elytra"
 		],
 		"electrum_armour": [
@@ -133,7 +133,7 @@
 			"electrum_leggings",
 			"electrum_boots"
 		],
-		"palatinate_armour": [
+		"shakudo_armour": [
 			"shakudo_helmet",
 			"shakudo_chestplate",
 			"shakudo_leggings",
@@ -147,7 +147,7 @@
 			"steel_boots"
 		],
 		"head_accessories": [
-			"bronze_laurel",
+			"hepatizon_laurel",
 			"ruby_circlet",
 			"amber_earrings",
 			"opal_earrings",

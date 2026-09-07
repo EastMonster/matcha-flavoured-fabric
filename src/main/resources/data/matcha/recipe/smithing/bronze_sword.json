@@ -3,11 +3,11 @@
 	"addition": "matcha:hepatizon",
 	"base": "minecraft:copper_sword",
 	"result": {
-		"id": "matcha:bronze_sword",
+		"id": "matcha:hepatizon_sword",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_sword",
+				"translate": "item.matcha.hepatizon_sword",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

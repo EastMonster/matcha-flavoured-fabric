@@ -3,7 +3,7 @@
 	"addition": "matcha:hepatizon",
 	"base": "minecraft:copper_pickaxe",
 	"result": {
-		"id": "matcha:bronze_pickaxe",
+		"id": "matcha:hepatizon_pickaxe",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -55,7 +55,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_pickaxe",
+				"translate": "item.matcha.hepatizon_pickaxe",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

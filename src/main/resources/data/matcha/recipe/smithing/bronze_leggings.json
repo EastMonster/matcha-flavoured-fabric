@@ -3,7 +3,7 @@
 	"addition": "matcha:hepatizon",
 	"base": "minecraft:copper_leggings",
 	"result": {
-		"id": "matcha:bronze_leggings",
+		"id": "matcha:hepatizon_leggings",
 		"components": {
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
@@ -29,7 +29,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_leggings",
+				"translate": "item.matcha.hepatizon_leggings",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

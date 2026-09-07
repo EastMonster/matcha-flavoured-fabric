@@ -3,7 +3,7 @@
 	"addition": "matcha:hepatizon",
 	"base": "minecraft:copper_boots",
 	"result": {
-		"id": "matcha:bronze_boots",
+		"id": "matcha:hepatizon_boots",
 		"components": {
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
@@ -29,7 +29,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_boots",
+				"translate": "item.matcha.hepatizon_boots",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

@@ -3,7 +3,7 @@
 	"addition": "matcha:hepatizon",
 	"base": "minecraft:copper_axe",
 	"result": {
-		"id": "matcha:bronze_axe",
+		"id": "matcha:hepatizon_axe",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -18,7 +18,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_axe",
+				"translate": "item.matcha.hepatizon_axe",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

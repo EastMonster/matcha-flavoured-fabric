@@ -3,7 +3,7 @@
 	"addition": "matcha:hepatizon",
 	"base": "minecraft:copper_hoe",
 	"result": {
-		"id": "matcha:bronze_mattock",
+		"id": "matcha:hepatizon_mattock",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
@@ -23,7 +23,7 @@
 				"damage_per_block": 1
 			},
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_mattock",
+				"translate": "item.matcha.hepatizon_mattock",
 				"color": "#ac7b5c"
 			},
 			"minecraft:tooltip_display": {

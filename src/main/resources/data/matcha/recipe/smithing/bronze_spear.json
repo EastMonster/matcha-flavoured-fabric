@@ -3,11 +3,11 @@
 	"addition": "matcha:hepatizon",
 	"base": "minecraft:copper_spear",
 	"result": {
-		"id": "matcha:bronze_spear",
+		"id": "matcha:hepatizon_spear",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_spear",
+				"translate": "item.matcha.hepatizon_spear",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

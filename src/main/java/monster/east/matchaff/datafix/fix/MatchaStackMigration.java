@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/** Shared ItemStack migration walker used by {@link ItemNamespaceFix} and {@link NazarItemFix}. */
+/** Shared ItemStack migration walker used by the Matcha item data fixes. */
 final class MatchaStackMigration {
 	private static final String OLD_NAMESPACE = "matcha-flavoured:";
 	private static final String NEW_NAMESPACE = "matcha:";
@@ -33,6 +33,24 @@ final class MatchaStackMigration {
 	private static final String ELECTRUM_PATH = "electrum";
 	private static final String DIVINE_FRAGMENT_CARRIER = "minecraft:turtle_scute";
 	private static final String DIVINE_FRAGMENT_PATH = "divine_fragment";
+	private static final Map<String, String> ITEM_RENAME_PATHS = Map.ofEntries(
+			Map.entry("bronze_axe", "hepatizon_axe"),
+			Map.entry("bronze_boots", "hepatizon_boots"),
+			Map.entry("bronze_chestplate", "hepatizon_chestplate"),
+			Map.entry("bronze_dolabra", "hepatizon_dolabra"),
+			Map.entry("bronze_helmet", "hepatizon_helmet"),
+			Map.entry("bronze_hoe", "hepatizon_hoe"),
+			Map.entry("bronze_laurel", "hepatizon_laurel"),
+			Map.entry("bronze_leggings", "hepatizon_leggings"),
+			Map.entry("bronze_mattock", "hepatizon_mattock"),
+			Map.entry("bronze_pickaxe", "hepatizon_pickaxe"),
+			Map.entry("bronze_shovel", "hepatizon_shovel"),
+			Map.entry("bronze_spear", "hepatizon_spear"),
+			Map.entry("bronze_sword", "hepatizon_sword"),
+			Map.entry("bronze_shears", "shepherds_shears"),
+			Map.entry("palatinate_sword", "shakudo_sword")
+	);
+	private static final Set<String> LEGACY_ITEM_PATHS = Set.copyOf(ITEM_RENAME_PATHS.keySet());
 	private static final Map<String, String> RENAMED_ITEM_PATHS = Map.of(
 			"heart_container", "crystal_heart",
 			"application", "asylum_seeker"
@@ -48,6 +66,52 @@ final class MatchaStackMigration {
 		}
 		// ponytail: raw NBT reaches every vanilla ItemStack location; the creative-order allowlist prevents non-item registry IDs from changing.
 		return new Dynamic<>(NbtOps.INSTANCE, migrate(tag, false));
+	}
+
+	static Dynamic<?> migrateItemRenames(Dynamic<?> data) {
+		if (!(data.getValue() instanceof Tag tag)) {
+			return data;
+		}
+		return new Dynamic<>(NbtOps.INSTANCE, migrateItemRenames(tag, false));
+	}
+
+	private static Tag migrateItemRenames(Tag tag, boolean customData) {
+		if (tag instanceof CompoundTag compound) {
+			if (!customData) {
+				String id = compound.getStringOr("id", "");
+				String path = id.startsWith(NEW_NAMESPACE) ? id.substring(NEW_NAMESPACE.length()) : null;
+				String newPath = path == null ? null : ITEM_RENAME_PATHS.get(path);
+				if (newPath != null) {
+					compound.putString("id", NEW_NAMESPACE + newPath);
+				}
+			}
+			for (String key : List.copyOf(compound.keySet())) {
+				Tag child = compound.get(key);
+				if (child != null) {
+					Tag migrated = migrateItemRenames(child, customData || key.equals("minecraft:custom_data"));
+					if (!customData && key.equals("minecraft:item_name") && migrated instanceof CompoundTag itemName) {
+						String translate = itemName.getStringOr("translate", "");
+						String newTranslate = renamedItemName(translate);
+						if (newTranslate != null) itemName.putString("translate", newTranslate);
+					}
+					compound.put(key, migrated);
+				}
+			}
+			return compound;
+		}
+		if (tag instanceof ListTag list) {
+			for (int index = 0; index < list.size(); index++) {
+				list.set(index, migrateItemRenames(list.get(index), customData));
+			}
+		}
+		return tag;
+	}
+
+	private static String renamedItemName(String translate) {
+		String prefix = "item.matcha.";
+		if (!translate.startsWith(prefix)) return null;
+		String newPath = ITEM_RENAME_PATHS.get(translate.substring(prefix.length()));
+		return newPath == null ? null : prefix + newPath;
 	}
 
 	private static Tag migrate(Tag tag, boolean customData) {
@@ -121,6 +185,7 @@ final class MatchaStackMigration {
 				 var reader = new InputStreamReader(Objects.requireNonNull(stream), StandardCharsets.UTF_8)) {
 			Set<String> paths = new HashSet<>();
 			collectPaths(JsonParser.parseReader(reader), paths);
+			paths.addAll(LEGACY_ITEM_PATHS);
 			return Set.copyOf(paths);
 		} catch (Exception exception) {
 			throw new IllegalStateException("Could not read Matcha item migration paths", exception);

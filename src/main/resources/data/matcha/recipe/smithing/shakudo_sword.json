@@ -3,11 +3,11 @@
 	"addition": "matcha:shakudo",
 	"base": "minecraft:copper_sword",
 	"result": {
-		"id": "matcha:palatinate_sword",
+		"id": "matcha:shakudo_sword",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:item_name": {
-				"translate": "item.matcha.palatinate_sword",
+				"translate": "item.matcha.shakudo_sword",
 				"color": "#c96691"
 			},
 			"minecraft:attribute_modifiers": [

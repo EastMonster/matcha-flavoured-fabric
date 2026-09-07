@@ -119,37 +119,37 @@
 		}
 	},
 	{
-		"id": "bronze_axe",
+		"id": "hepatizon_axe",
 		"source": "data/matcha/recipe/smithing/bronze_axe.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
-		"id": "bronze_boots",
+		"id": "hepatizon_boots",
 		"source": "data/matcha/recipe/smithing/bronze_boots.json",
 		"carrier": "minecraft:copper_boots"
 	},
 	{
-		"id": "bronze_chestplate",
+		"id": "hepatizon_chestplate",
 		"source": "data/matcha/recipe/smithing/bronze_chestplate.json",
 		"carrier": "minecraft:copper_chestplate"
 	},
 	{
-		"id": "bronze_dolabra",
+		"id": "hepatizon_dolabra",
 		"source": "data/matcha/recipe/smithing/bronze_dolabra.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
-		"id": "bronze_helmet",
+		"id": "hepatizon_helmet",
 		"source": "data/matcha/recipe/smithing/bronze_helmet.json",
 		"carrier": "minecraft:copper_helmet"
 	},
 	{
-		"id": "bronze_hoe",
+		"id": "hepatizon_hoe",
 		"source": "data/matcha/recipe/smithing/bronze_hoe.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
-		"id": "bronze_laurel",
+		"id": "hepatizon_laurel",
 		"source": "data/minecraft/villager_trade/toolsmith/4/bronze_laurel.json",
 		"carrier": "minecraft:copper_helmet",
 		"components": {
@@ -167,7 +167,7 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_laurel",
+				"translate": "item.matcha.hepatizon_laurel",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [
@@ -199,32 +199,32 @@
 		}
 	},
 	{
-		"id": "bronze_leggings",
+		"id": "hepatizon_leggings",
 		"source": "data/matcha/recipe/smithing/bronze_leggings.json",
 		"carrier": "minecraft:copper_leggings"
 	},
 	{
-		"id": "bronze_mattock",
+		"id": "hepatizon_mattock",
 		"source": "data/matcha/recipe/smithing/bronze_mattock.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
-		"id": "bronze_pickaxe",
+		"id": "hepatizon_pickaxe",
 		"source": "data/matcha/recipe/smithing/bronze_pickaxe.json",
 		"carrier": "minecraft:stone_pickaxe"
 	},
 	{
-		"id": "bronze_shovel",
+		"id": "hepatizon_shovel",
 		"source": "data/matcha/recipe/smithing/bronze_shovel.json",
 		"carrier": "minecraft:stone_shovel"
 	},
 	{
-		"id": "bronze_spear",
+		"id": "hepatizon_spear",
 		"source": "data/matcha/recipe/smithing/bronze_spear.json",
 		"carrier": "minecraft:stone_spear"
 	},
 	{
-		"id": "bronze_sword",
+		"id": "hepatizon_sword",
 		"source": "data/matcha/recipe/smithing/bronze_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},
@@ -519,7 +519,7 @@
 		}
 	},
 	{
-		"id": "palatinate_sword",
+		"id": "shakudo_sword",
 		"source": "data/matcha/recipe/smithing/shakudo_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},

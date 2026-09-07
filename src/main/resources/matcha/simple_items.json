@@ -176,14 +176,14 @@
 		}
 	},
 	{
-		"id": "bronze_shears",
+		"id": "shepherds_shears",
 		"type": "shears",
 		"tab": "tools",
 		"source": "data/minecraft/villager_trade/shepherd/2/shepherds_shears.json",
 		"carrier": "minecraft:shears",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_shears"
+				"translate": "item.matcha.shepherds_shears"
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:repairable": {
