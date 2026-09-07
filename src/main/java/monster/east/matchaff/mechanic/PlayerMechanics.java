@@ -20,7 +20,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -33,8 +32,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.clock.WorldClocks;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
@@ -42,7 +43,6 @@ import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.Scoreboard;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
-import java.util.List;
 
 /**
  * Matcha player mechanics, replacing the datapack's scoreboard/function tick
@@ -106,8 +106,9 @@ public final class PlayerMechanics {
 			if (!server.tickRateManager().runsNormally()) {
 				return;
 			}
+			manageSleep(server);
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-				tick(player, server);
+				tick(player);
 			}
 		});
 		ServerPlayerEvents.JOIN.register(player -> ensureWorldScore(
@@ -125,12 +126,11 @@ public final class PlayerMechanics {
 		});
 	}
 
-	private static void tick(ServerPlayer player, MinecraftServer server) {
+	private static void tick(ServerPlayer player) {
 		manageHunger(player);
 		manageHearts(player);
 		manageExperience(player);
 		manageFreezingWater(player);
-		manageSleep(server);
 		manageAgeMilestones(player);
 	}
 
@@ -277,33 +277,39 @@ public final class PlayerMechanics {
 				&& chest.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).getLevel(holder) >= 3;
 	}
 
-	// sleeping fast-forwards 12 hours instead of skipping the night
+	// sleeping fast-forwards ~12 hours with a single +120/tick once enough
+	// overworld (non-spectator) players are sleeping; the threshold respects
+	// the players_sleeping_percentage gamerule like vanilla. Other-dimension
+	// players don't count.
 	private static void manageSleep(MinecraftServer server) {
-		// check if everyone sleeps
-		List<ServerPlayer> players = server.getPlayerList().getPlayers();
-		int sleepingPlayers = 0;
-		for (ServerPlayer player : players) {
-			if (player.getSleepTimer() >= 100) {
-				sleepingPlayers++;
+		int active = 0;
+		int sleeping = 0;
+		boolean anyInWindow = false;
+		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+			if (player.level().dimension() != Level.OVERWORLD
+					|| player.gameMode.getGameModeForPlayer() == GameType.SPECTATOR) {
+				continue;
 			}
-		}
-		if (sleepingPlayers >= players.size()) {
-			// set day time/count
-			var clock = server.registryAccess()
-					.lookupOrThrow(Registries.WORLD_CLOCK)
-					.getOrThrow(WorldClocks.OVERWORLD);
-			server.clockManager().addTicks(clock, 12000);
-			// set weather
-			if (server.getGameRules().get(GameRules.ADVANCE_WEATHER))
-				server.setWeatherParameters(ServerLevel.RAIN_DELAY.sample(server.overworld().getRandom()), 0, false, false);
-			// wake up players
-			for (ServerPlayer player : players) {
-				if (player.isSleeping()) {
-					player.resetStat(Stats.CUSTOM.get(Stats.TIME_SINCE_REST)); // reset phantom timer
-					player.stopSleepInBed(true, true);
+			active++;
+			if (player.isSleeping()) {
+				sleeping++;
+				if (player.getSleepTimer() > 0 && player.getSleepTimer() < 100) {
+					anyInWindow = true;
 				}
 			}
 		}
+		int percentage = server.getGameRules().get(GameRules.PLAYERS_SLEEPING_PERCENTAGE);
+		int needed = Math.max(1, (int) Math.ceil(active * percentage / 100.0));
+		if (sleeping < needed || !anyInWindow) {
+			return;
+		}
+		if (server.getGameRules().get(GameRules.ADVANCE_WEATHER)) {
+			server.setWeatherParameters(ServerLevel.RAIN_DELAY.sample(server.overworld().getRandom()), 0, false, false);
+		}
+		var clock = server.registryAccess()
+				.lookupOrThrow(Registries.WORLD_CLOCK)
+				.getOrThrow(WorldClocks.OVERWORLD);
+		server.clockManager().addTicks(clock, 120);
 	}
 
 	private static int minimumHearts(ServerPlayer player) {
