@@ -4,12 +4,18 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mojang.serialization.JsonOps;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.RegistryOps;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -69,6 +75,15 @@ public class CreativeOrder {
 		}
 	}
 
+	public static void registerVanillaOverrides() {
+		Map<ResourceKey<CreativeModeTab>, List<VanillaOverride>> byTab = new LinkedHashMap<>();
+		for (VanillaOverride override : readVanillaOverrides()) {
+			byTab.computeIfAbsent(override.tab(), ignored -> new ArrayList<>()).add(override);
+		}
+		byTab.forEach((tab, overrides) -> CreativeModeTabEvents.modifyOutputEvent(tab)
+				.register(output -> replaceVanillaStacks(output, overrides)));
+	}
+
 	private static JsonObject readOrder() {
 		try (var stream = CreativeOrder.class.getResourceAsStream("/matcha/creative_order.json");
 			 var reader = new InputStreamReader(Objects.requireNonNull(stream), StandardCharsets.UTF_8)) {
@@ -76,6 +91,58 @@ public class CreativeOrder {
 		} catch (Exception exception) {
 			throw new IllegalStateException("Could not load Matcha creative order", exception);
 		}
+	}
+
+	private static List<VanillaOverride> readVanillaOverrides() {
+		try (var stream = CreativeOrder.class.getResourceAsStream("/matcha/creative_vanilla_overrides.json");
+			 var reader = new InputStreamReader(Objects.requireNonNull(stream), StandardCharsets.UTF_8)) {
+			JsonArray entries = JsonParser.parseReader(reader).getAsJsonArray();
+			List<VanillaOverride> overrides = new ArrayList<>();
+			for (JsonElement element : entries) {
+				JsonObject entry = element.getAsJsonObject();
+				Identifier id = Identifier.parse(entry.get("id").getAsString());
+				Item item = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(id), "Unknown creative item: " + id);
+				String source = entry.get("source").getAsString();
+				JsonObject recipe = readResourceObject(source);
+				JsonObject result = recipe.getAsJsonObject("result");
+				if (!id.toString().equals(result.get("id").getAsString())) {
+					throw new IllegalStateException("Creative override item does not match recipe result: " + source);
+				}
+				overrides.add(new VanillaOverride(item, tab(entry.get("tab").getAsString()), result));
+			}
+			return overrides;
+		} catch (Exception exception) {
+			throw new IllegalStateException("Could not load vanilla creative overrides", exception);
+		}
+	}
+
+	private static JsonObject readResourceObject(String resource) {
+		try (var stream = CreativeOrder.class.getResourceAsStream("/" + resource);
+			 var reader = new InputStreamReader(Objects.requireNonNull(stream), StandardCharsets.UTF_8)) {
+			return JsonParser.parseReader(reader).getAsJsonObject();
+		} catch (Exception exception) {
+			throw new IllegalStateException("Could not load resource " + resource, exception);
+		}
+	}
+
+	private static void replaceVanillaStacks(FabricCreativeModeTabOutput output, List<VanillaOverride> overrides) {
+		Map<Item, ItemStack> replacements = new LinkedHashMap<>();
+		HolderLookup.Provider holders = output.getContext().holders();
+		for (VanillaOverride override : overrides) {
+			ItemStack stack = ItemStack.CODEC.parse(RegistryOps.create(JsonOps.INSTANCE, holders), override.result())
+				.resultOrPartial(error -> { throw new IllegalStateException("Could not decode creative override: " + error); })
+				.orElseThrow();
+			replacements.put(override.item(), stack);
+		}
+		replaceStacks(output.getDisplayStacks(), replacements);
+		replaceStacks(output.getSearchTabStacks(), replacements);
+	}
+
+	private static void replaceStacks(List<ItemStack> stacks, Map<Item, ItemStack> replacements) {
+		stacks.replaceAll(stack -> {
+			ItemStack replacement = replacements.get(stack.getItem());
+			return replacement == null ? stack : replacement.copy();
+		});
 	}
 
 	private static ResourceKey<CreativeModeTab> tab(String tab) {
@@ -91,5 +158,8 @@ public class CreativeOrder {
 	}
 
 	public record Entry(Item item, ResourceKey<CreativeModeTab> tab) {
+	}
+
+	private record VanillaOverride(Item item, ResourceKey<CreativeModeTab> tab, JsonObject result) {
 	}
 }

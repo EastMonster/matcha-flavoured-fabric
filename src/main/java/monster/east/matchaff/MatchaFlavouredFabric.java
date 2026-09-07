@@ -96,6 +96,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		foods.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.FOOD_AND_DRINKS)));
 		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
 		CreativeOrder.register(creativeItems);
+		CreativeOrder.registerVanillaOverrides();
 	}
 
 	private static Item register(String name) {
