@@ -21,6 +21,16 @@
 					"text": "⬇⛊ 1",
 					"color": "dark_green",
 					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.rabbit_hide",
+					"color": "dark_gray",
+					"italic": false
 				}
 			],
 			"minecraft:tooltip_display": {
@@ -33,7 +43,7 @@
 				{
 					"type": "minecraft:safe_fall_distance",
 					"id": "leather_helmet",
-					"amount": 1,
+					"amount": 2,
 					"operation": "add_value",
 					"slot": "head"
 				},
@@ -55,6 +65,9 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.sturdy_leather_helmet",
 				"color": "white"
+			},
+			"minecraft:repairable": {
+				"items": "minecraft:rabbit_hide"
 			}
 		},
 		"count": 1,

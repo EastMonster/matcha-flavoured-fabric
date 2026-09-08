@@ -209,7 +209,9 @@ public final class EnchantmentMechanics {
 		// Head-slot buffs.
 		ItemStack head = player.getItemBySlot(EquipmentSlot.HEAD);
 		if (maxLevel(head, enchantments, CONDUIT_POWER) > 0) {
-			player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 20, 0, true, false));
+			if (player.isInWater()) {
+				player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 20, 0, true, false));
+			}
 			player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 20, 0, true, false));
 		}
 		if (maxLevel(head, enchantments, FIRE_PROOF) > 0) {

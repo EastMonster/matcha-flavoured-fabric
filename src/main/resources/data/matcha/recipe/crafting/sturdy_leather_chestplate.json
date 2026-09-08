@@ -22,6 +22,16 @@
 					"text": "⬇⛊ 1",
 					"color": "dark_green",
 					"italic": false
+				},
+				{
+					"translate": "desc.kleispack.repaired_with",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "item.minecraft.rabbit_hide",
+					"color": "dark_gray",
+					"italic": false
 				}
 			],
 			"minecraft:tooltip_display": {
@@ -34,7 +44,7 @@
 				{
 					"type": "minecraft:safe_fall_distance",
 					"id": "leather_chestplate",
-					"amount": 1,
+					"amount": 2,
 					"operation": "add_value",
 					"slot": "chest"
 				},
@@ -56,6 +66,9 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.sturdy_leather_chestplate",
 				"color": "white"
+			},
+			"minecraft:repairable": {
+				"items": "minecraft:rabbit_hide"
 			}
 		},
 		"count": 1,
