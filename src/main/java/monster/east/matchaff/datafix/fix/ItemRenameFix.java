@@ -13,6 +13,6 @@ public class ItemRenameFix extends DataFix {
 	@Override
 	protected TypeRewriteRule makeRule() {
 		Type<?> root = getInputSchema().getType(References.ROOT);
-		return writeFixAndRead("Matcha item rename migration", root, root, MatchaStackMigration::migrateItemRenames);
+		return writeFixAndRead("Matcha item and banner pattern migration", root, root, MatchaStackMigration::migrateV3);
 	}
 }

@@ -9,7 +9,7 @@
 			"minecraft:tool": {
 				"rules": [
 					{
-						"blocks": "#main:obsidian_based",
+						"blocks": "#matcha:obsidian_based",
 						"speed": 55,
 						"correct_for_drops": true
 					},

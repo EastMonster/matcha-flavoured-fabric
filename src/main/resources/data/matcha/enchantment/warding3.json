@@ -1,5 +1,5 @@
 {
-	"exclusive_set": "#main:exclusive_set/intrinsic_weapon",
+	"exclusive_set": "#matcha:exclusive_set/intrinsic_weapon",
 	"anvil_cost": 0,
 	"description": {
 		"translate": "enchantment.kleispack.warding3",

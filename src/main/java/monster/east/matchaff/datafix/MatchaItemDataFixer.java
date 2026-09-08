@@ -14,7 +14,7 @@ import monster.east.matchaff.datafix.schema.V3;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 
-/** Migrates Matcha ItemStacks before their component codecs resolve the item ID. */
+/** Migrates Matcha ItemStacks and banner patterns before their codecs resolve registry IDs. */
 public final class MatchaItemDataFixer {
 	public static final String DATA_VERSION_KEY = "matcha_data_version";
 	private static final int CURRENT_DATA_VERSION = 3;

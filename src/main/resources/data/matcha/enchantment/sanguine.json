@@ -1,5 +1,5 @@
 {
-	"exclusive_set": "#main:exclusive_set/intrinsic_weapon",
+	"exclusive_set": "#matcha:exclusive_set/intrinsic_weapon",
 	"primary_items": [
 		"minecraft:stone_sword",
 		"minecraft:stone_spear"
@@ -18,7 +18,7 @@
 						"condition": "minecraft:entity_properties",
 						"entity": "this",
 						"predicate": {
-							"minecraft:entity_type": "#main:life_steal_exceptions"
+							"minecraft:entity_type": "#matcha:life_steal_exceptions"
 						}
 					}
 				},

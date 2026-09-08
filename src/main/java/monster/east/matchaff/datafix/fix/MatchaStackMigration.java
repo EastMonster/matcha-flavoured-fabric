@@ -20,7 +20,13 @@ import java.util.Set;
 final class MatchaStackMigration {
 	private static final String OLD_NAMESPACE = "matcha-flavoured:";
 	private static final String NEW_NAMESPACE = "matcha:";
+	private static final String OLD_BANNER_PATTERN_NAMESPACE = "main:";
+	private static final String NEW_BANNER_PATTERN_NAMESPACE = "matcha:";
 	private static final Set<String> ENCHANTMENT_COMPONENTS = Set.of("minecraft:enchantments", "minecraft:stored_enchantments");
+	private static final Set<String> BANNER_PATTERN_PATHS = Set.of(
+			"ace_pride", "actup", "bi_pride", "classic_pride", "common_pride",
+			"inclusive_pride", "lesbian_pride", "nb_pride", "new_pride", "trans_pride"
+	);
 	private static final String NAZAR_CARRIER = "minecraft:glistering_melon_slice";
 	private static final String NAZAR_PATH = "nazar";
 	private static final String STEEL_CARRIER = "minecraft:resin_brick";
@@ -75,6 +81,17 @@ final class MatchaStackMigration {
 		return new Dynamic<>(NbtOps.INSTANCE, migrateItemRenames(tag, false));
 	}
 
+	static Dynamic<?> migrateV3(Dynamic<?> data) {
+		return migrateBannerPatternIds(migrateItemRenames(data));
+	}
+
+	static Dynamic<?> migrateBannerPatternIds(Dynamic<?> data) {
+		if (!(data.getValue() instanceof Tag tag)) {
+			return data;
+		}
+		return new Dynamic<>(NbtOps.INSTANCE, migrateBannerPatternIds(tag, false));
+	}
+
 	private static Tag migrateItemRenames(Tag tag, boolean customData) {
 		if (tag instanceof CompoundTag compound) {
 			if (!customData) {
@@ -102,6 +119,31 @@ final class MatchaStackMigration {
 		if (tag instanceof ListTag list) {
 			for (int index = 0; index < list.size(); index++) {
 				list.set(index, migrateItemRenames(list.get(index), customData));
+			}
+		}
+		return tag;
+	}
+
+	private static Tag migrateBannerPatternIds(Tag tag, boolean customData) {
+		if (tag instanceof CompoundTag compound) {
+			if (!customData) {
+				String id = compound.getStringOr("pattern", "");
+				if (id.startsWith(OLD_BANNER_PATTERN_NAMESPACE)
+						&& BANNER_PATTERN_PATHS.contains(id.substring(OLD_BANNER_PATTERN_NAMESPACE.length()))) {
+					compound.putString("pattern", NEW_BANNER_PATTERN_NAMESPACE + id.substring(OLD_BANNER_PATTERN_NAMESPACE.length()));
+				}
+			}
+			for (String key : List.copyOf(compound.keySet())) {
+				Tag child = compound.get(key);
+				if (child != null) {
+					compound.put(key, migrateBannerPatternIds(child, customData || key.equals("minecraft:custom_data")));
+				}
+			}
+			return compound;
+		}
+		if (tag instanceof ListTag list) {
+			for (int index = 0; index < list.size(); index++) {
+				list.set(index, migrateBannerPatternIds(list.get(index), customData));
 			}
 		}
 		return tag;

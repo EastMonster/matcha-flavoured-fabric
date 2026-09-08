@@ -1,5 +1,5 @@
 {
-	"exclusive_set": "#main:exclusive_set/intrinsic_armor_and_weapon",
+	"exclusive_set": "#matcha:exclusive_set/intrinsic_armor_and_weapon",
 	"primary_items": [
 		"minecraft:netherite_pickaxe",
 		"minecraft:netherite_axe",

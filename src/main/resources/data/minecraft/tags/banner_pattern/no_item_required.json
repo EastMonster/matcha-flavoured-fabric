@@ -1,14 +1,14 @@
 {
   "values": [
-    "main:classic_pride",
-    "main:common_pride",
-    "main:new_pride",
-    "main:trans_pride",
-    "main:ace_pride",
-    "main:bi_pride",
-    "main:inclusive_pride",
-    "main:lesbian_pride",
-    "main:nb_pride",
-    "main:actup"
+    "matcha:classic_pride",
+    "matcha:common_pride",
+    "matcha:new_pride",
+    "matcha:trans_pride",
+    "matcha:ace_pride",
+    "matcha:bi_pride",
+    "matcha:inclusive_pride",
+    "matcha:lesbian_pride",
+    "matcha:nb_pride",
+    "matcha:actup"
   ]
 }

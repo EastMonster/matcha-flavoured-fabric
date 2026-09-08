@@ -22,6 +22,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -70,14 +71,14 @@ public final class EnchantmentMechanics {
 			EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET
 	};
 
-	private static final TagKey<net.minecraft.world.entity.EntityType<?>> WARDING_TARGETS = TagKey.create(
-			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("main", "warding_targets")
+	private static final TagKey<EntityType<?>> WARDING_TARGETS = TagKey.create(
+			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("matcha", "warding_targets")
 	);
-	private static final TagKey<net.minecraft.world.entity.EntityType<?>> WARDING_TARGETS_SLOWED = TagKey.create(
-			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("main", "warding_targets_slowed")
+	private static final TagKey<EntityType<?>> WARDING_TARGETS_SLOWED = TagKey.create(
+			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("matcha", "warding_targets_slowed")
 	);
-	private static final TagKey<net.minecraft.world.entity.EntityType<?>> LIVESTOCK = TagKey.create(
-			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("main", "livestock")
+	private static final TagKey<EntityType<?>> LIVESTOCK = TagKey.create(
+			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("matcha", "livestock")
 	);
 
 	private static final AttachmentType<Integer> ZEPHYR_TICKS = AttachmentRegistry.create(
@@ -350,8 +351,8 @@ public final class EnchantmentMechanics {
 	}
 
 	private static LivingEntity nearestTarget(
-			List<LivingEntity> targets, LivingEntity center, double radius,
-			TagKey<net.minecraft.world.entity.EntityType<?>> tag, Predicate<LivingEntity> predicate
+            List<LivingEntity> targets, LivingEntity center, double radius,
+            TagKey<EntityType<?>> tag, Predicate<LivingEntity> predicate
 	) {
 		double radiusSquared = radius * radius;
 		return targets.stream()

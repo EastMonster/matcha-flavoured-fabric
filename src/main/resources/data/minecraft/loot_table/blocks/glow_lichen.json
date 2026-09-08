@@ -10,7 +10,7 @@
 						{
 							"condition": "minecraft:match_tool",
 							"predicate": {
-								"items": "#main:glow_lichen_harvesters"
+								"items": "#matcha:glow_lichen_harvesters"
 							}
 						}
 					],

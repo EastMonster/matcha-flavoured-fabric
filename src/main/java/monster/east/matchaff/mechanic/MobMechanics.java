@@ -183,6 +183,6 @@ public final class MobMechanics {
 	}
 
 	private static Identifier id(String path) {
-		return Identifier.fromNamespaceAndPath("main", path);
+		return Identifier.fromNamespaceAndPath("matcha", path);
 	}
 }
