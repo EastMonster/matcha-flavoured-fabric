@@ -799,11 +799,6 @@
 		"carrier": "minecraft:stone_sword"
 	},
 	{
-		"id": "gilded_leather_boots",
-		"source": "data/smithing_table/recipe/gilded_leather_boots.json",
-		"carrier": "minecraft:leather_boots"
-	},
-	{
 		"id": "warding_shield",
 		"source": "data/matcha/recipe/smithing/warding_shield.json",
 		"carrier": "minecraft:shield"
