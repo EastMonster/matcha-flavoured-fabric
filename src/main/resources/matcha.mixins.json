@@ -5,6 +5,7 @@
 	"mixins": [
 		"DataFixTypesMixin",
 		"PlayerDataStorageMixin",
+		"PlayerAdvancementsMixin",
 		"SimpleRegionStorageMixin",
 		"SpawnPlacementsMixin",
 		"MobSpawnMixin",

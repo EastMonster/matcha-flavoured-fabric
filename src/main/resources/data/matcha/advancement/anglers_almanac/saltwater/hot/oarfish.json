@@ -1,0 +1,58 @@
+{
+  "parent": "matcha:anglers_almanac/saltwater/hot/painted_moray",
+  "display": {
+    "icon": {
+      "id": "matcha:oarfish",
+      "components": {}
+    },
+    "title": {
+      "translate": "item.matcha.oarfish"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.oarfish.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.fishing.rarity.4",
+        "italic": false
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "2.4%"
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "matcha:oarfish"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}

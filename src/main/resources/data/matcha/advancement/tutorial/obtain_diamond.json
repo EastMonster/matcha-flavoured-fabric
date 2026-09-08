@@ -1,0 +1,40 @@
+{
+	"parent": "matcha:tutorial/obtain_blast_furnace",
+	"criteria": {
+		"get_diamond": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:diamond"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "red"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_diamond.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "minecraft:diamond"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_diamond.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_diamond"
+		]
+	]
+}

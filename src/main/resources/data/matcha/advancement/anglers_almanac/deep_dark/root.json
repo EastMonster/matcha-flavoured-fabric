@@ -1,0 +1,29 @@
+{
+  "parent": "matcha:anglers_almanac/root",
+  "display": {
+    "icon": {
+      "id": "sculk"
+    },
+    "title": {
+      "translate": "biome.minecraft.deep_dark"
+    },
+    "description": "",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "root": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

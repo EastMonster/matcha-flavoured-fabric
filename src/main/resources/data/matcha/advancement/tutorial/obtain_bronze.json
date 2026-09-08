@@ -1,0 +1,33 @@
+{
+	"parent": "matcha:tutorial/obtain_silver",
+	"criteria": {
+		"get_smithing": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:hepatizon"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.matcha.tutorial.obtain_bronze.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha:hepatizon"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_bronze.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_smithing"
+		]
+	]
+}

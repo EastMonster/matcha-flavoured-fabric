@@ -1,0 +1,119 @@
+{
+	"parent": "matcha:tutorial/obtain_smithing_table",
+	"criteria": {
+		"shakudo_axe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_axe"
+			}
+		},
+		"shakudo_pickaxe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_pickaxe"
+			}
+		},
+		"shakudo_shovel": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_shovel"
+			}
+		},
+		"shakudo_hoe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_hoe"
+			}
+		},
+		"shakudo_sword": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_sword"
+			}
+		},
+		"shakudo_dolabra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_dolabra"
+			}
+		},
+		"shakudo_mattock": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_mattock"
+			}
+		},
+		"shakudo_spear": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_spear"
+			}
+		},
+		"shakudo_helmet": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_helmet"
+			}
+		},
+		"shakudo_chestplate": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_chestplate"
+			}
+		},
+		"shakudo_leggings": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_leggings"
+			}
+		},
+		"shakudo_boots": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_boots"
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_palatinate_tool.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:shakudo_axe"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_palatinate_tool.title"
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"shakudo_axe",
+			"shakudo_pickaxe",
+			"shakudo_shovel",
+			"shakudo_hoe",
+			"shakudo_sword",
+			"shakudo_dolabra",
+			"shakudo_spear",
+			"shakudo_helmet",
+			"shakudo_chestplate",
+			"shakudo_leggings",
+			"shakudo_boots",
+			"shakudo_mattock"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_1"
+		]
+	}
+}

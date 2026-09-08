@@ -1,0 +1,39 @@
+{
+	"parent": "matcha:tutorial/obtain_diamond",
+	"criteria": {
+		"entered_nether": {
+			"conditions": {
+				"to": "minecraft:the_nether"
+			},
+			"trigger": "minecraft:changed_dimension"
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "red"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.enter_nether.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"components": {
+				"minecraft:enchantment_glint_override": true
+			},
+			"count": 1,
+			"id": "minecraft:blaze_rod"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.enter_nether.title"
+		},
+		"frame": "goal"
+	},
+	"requirements": [
+		[
+			"entered_nether"
+		]
+	]
+}

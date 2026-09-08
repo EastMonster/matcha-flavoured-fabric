@@ -26,9 +26,9 @@ import java.util.UUID;
  */
 public final class EffectsMechanics {
 	private static final Identifier[] SOUL_SIGHT_ADVANCEMENTS = {
-			Identifier.fromNamespaceAndPath("main", "mechanics/glow_jam_eaten"),       // 30s
-			Identifier.fromNamespaceAndPath("main", "mechanics/glow_crumble_eaten"),   // 60s
-			Identifier.fromNamespaceAndPath("main", "mechanics/glow_mash_eaten"),      // 3s
+			Identifier.fromNamespaceAndPath("matcha", "mechanics/glow_jam_eaten"),       // 30s
+			Identifier.fromNamespaceAndPath("matcha", "mechanics/glow_crumble_eaten"),   // 60s
+			Identifier.fromNamespaceAndPath("matcha", "mechanics/glow_mash_eaten"),      // 3s
 	};
 	private static final int[] SOUL_SIGHT_DURATIONS = {600, 1200, 60};
 

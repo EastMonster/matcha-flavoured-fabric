@@ -1,0 +1,44 @@
+{
+	"parent": "matcha:tutorial/obtain_amber",
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:topaz"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": "❤❤ ",
+				"color": "aqua"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_topaz.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:topaz"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_topaz.title"
+		}
+	},
+	"requirements": [
+		[
+			"get_item"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/crystal_heart_2"
+		]
+	}
+}

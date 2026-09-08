@@ -1,0 +1,33 @@
+{
+	"parent": "matcha:tutorial/obtain_steel",
+	"criteria": {
+		"get_smithing": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:anvil"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.matcha.tutorial.obtain_anvil.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "minecraft:anvil"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_anvil.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_smithing"
+		]
+	]
+}

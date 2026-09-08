@@ -1,0 +1,58 @@
+{
+  "parent": "matcha:anglers_almanac/saltwater/hot/mahi_mahi",
+  "display": {
+    "icon": {
+      "id": "matcha:painted_moray",
+      "components": {}
+    },
+    "title": {
+      "translate": "item.matcha.painted_moray"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.painted_moray.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.fishing.rarity.3",
+        "italic": false
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "7.1%"
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "matcha:painted_moray"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}

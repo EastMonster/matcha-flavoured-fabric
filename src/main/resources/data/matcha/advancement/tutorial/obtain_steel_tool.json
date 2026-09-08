@@ -1,0 +1,126 @@
+{
+	"parent": "matcha:tutorial/obtain_smithing_table",
+	"criteria": {
+		"steel_axe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_axe"
+			}
+		},
+		"steel_pickaxe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_pickaxe"
+			}
+		},
+		"steel_shovel": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_shovel"
+			}
+		},
+		"steel_hoe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_hoe"
+			}
+		},
+		"steel_sword": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_sword"
+			}
+		},
+		"steel_dolabra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_dolabra"
+			}
+		},
+		"steel_mattock": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_mattock"
+			}
+		},
+		"steel_shears": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_shears"
+			}
+		},
+		"steel_spear": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_spear"
+			}
+		},
+		"steel_chestplate": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_chestplate"
+			}
+		},
+		"steel_leggings": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_leggings"
+			}
+		},
+		"steel_helmet": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_helmet"
+			}
+		},
+		"steel_boots": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/steel_boots"
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_steel_tool.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:steel_shovel"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_steel_tool.title"
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"steel_axe",
+			"steel_pickaxe",
+			"steel_shovel",
+			"steel_hoe",
+			"steel_sword",
+			"steel_dolabra",
+			"steel_mattock",
+			"steel_shears",
+			"steel_spear",
+			"steel_helmet",
+			"steel_chestplate",
+			"steel_leggings",
+			"steel_boots"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_1"
+		]
+	}
+}

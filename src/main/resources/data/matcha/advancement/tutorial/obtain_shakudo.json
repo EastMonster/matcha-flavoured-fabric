@@ -1,0 +1,33 @@
+{
+	"parent": "matcha:tutorial/obtain_gold",
+	"criteria": {
+		"get_smithing": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:shakudo"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.matcha.tutorial.obtain_shakudo.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha:shakudo"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_shakudo.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_smithing"
+		]
+	]
+}

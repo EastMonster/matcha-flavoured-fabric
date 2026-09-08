@@ -1,0 +1,45 @@
+{
+	"parent": "matcha:end/kill_dragon",
+	"criteria": {
+		"elytra": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:elytra"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.end.elytra.description",
+				"color": "gray"
+			}
+		],
+		"frame": "goal",
+		"icon": {
+			"count": 1,
+			"id": "minecraft:elytra"
+		},
+		"title": {
+			"translate": "advancements.matcha.end.elytra.title"
+		}
+	},
+	"requirements": [
+		[
+			"elytra"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_2"
+		]
+	}
+}

@@ -1,0 +1,44 @@
+{
+  "parent": "matcha:anglers_almanac/root",
+  "display": {
+    "icon": {
+      "id": "mangrove_propagule",
+      "components": {
+        "minecraft:item_model": "matcha:freshwater_hot_wet"
+      }
+    },
+    "title": {
+      "translate": "adv.kleispack.anglers_almanac.category.freshwater.hot_wet"
+    },
+    "description": [
+      {
+        "translate": "biome.minecraft.jungle"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.sparse_jungle"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.bamboo_jungle"
+      }
+    ],
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "root": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

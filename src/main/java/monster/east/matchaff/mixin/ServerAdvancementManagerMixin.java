@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 /**
  * Removes the vanilla advancement trees (story/adventure/end/husbandry/nether)
  * that the datapack blocks via pack.mcmeta, so only the datapack's own
- * (main:*) advancement tree remains visible.
+ * (matcha:*) advancement tree remains visible.
  */
 @Mixin(ServerAdvancementManager.class)
 public abstract class ServerAdvancementManagerMixin {

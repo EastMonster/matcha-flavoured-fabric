@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** Fished-item sounds, equivalent to the datapack's main:fishing_sounds advancements. */
+/** Fished-item sounds, equivalent to the datapack's matcha:fishing_sounds advancements. */
 @Mixin(FishingRodHookedTrigger.class)
 public abstract class FishingRodHookedTriggerMixin {
 	@Inject(

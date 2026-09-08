@@ -1,0 +1,171 @@
+{
+	"parent": "matcha:tutorial/preserve_food",
+	"criteria": {
+		"preserve_tomatoes": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/pickled_tomatoes"
+			}
+		},
+		"golden_pickled_carrots": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/golden_pickled_carrots"
+			}
+		},
+		"pickled_carrots": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/pickled_carrots"
+			}
+		},
+		"canned_golden_apples": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/canned_golden_apples"
+			}
+		},
+		"canned_apples": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/canned_apples"
+			}
+		},
+		"glow_jam": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/glow_jam"
+			}
+		},
+		"rind_jam": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/rind_jam"
+			}
+		},
+		"pickled_potatoes": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/pickled_potatoes"
+			}
+		},
+		"sweet_berry_jam": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/sweet_berry_jam"
+			}
+		},
+		"mead": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/mead"
+			}
+		},
+		"pumpkin_jam": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/pumpkin_jam"
+			}
+		},
+		"pickled_mushrooms": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/pickled_mushrooms"
+			}
+		},
+		"pickled_red_mushrooms": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/pickled_red_mushrooms"
+			}
+		},
+		"pickled_warped_fungus": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/pickled_warped_fungus"
+			}
+		},
+		"pickled_crimson_fungus": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:food/crafting/pickled_crimson_fungus"
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.preserve_everything.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"components": {
+				"minecraft:item_model": "minecraft:pickle_everything"
+			},
+			"count": 1,
+			"id": "minecraft:poisonous_potato"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.preserve_everything.title"
+		},
+		"frame": "challenge",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"canned_apples"
+		],
+		[
+			"canned_golden_apples"
+		],
+		[
+			"glow_jam"
+		],
+		[
+			"golden_pickled_carrots"
+		],
+		[
+			"mead"
+		],
+		[
+			"pickled_carrots"
+		],
+		[
+			"pickled_potatoes"
+		],
+		[
+			"preserve_tomatoes"
+		],
+		[
+			"pumpkin_jam"
+		],
+		[
+			"rind_jam"
+		],
+		[
+			"sweet_berry_jam"
+		],
+		[
+			"pickled_mushrooms"
+		],
+		[
+			"pickled_red_mushrooms"
+		],
+		[
+			"pickled_warped_fungus"
+		],
+		[
+			"pickled_crimson_fungus"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_4"
+		]
+	}
+}

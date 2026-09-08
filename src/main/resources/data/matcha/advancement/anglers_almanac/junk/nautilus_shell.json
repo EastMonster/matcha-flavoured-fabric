@@ -1,0 +1,52 @@
+{
+  "parent": "matcha:anglers_almanac/junk/tadpole",
+  "display": {
+    "icon": {
+      "id": "nautilus_shell"
+    },
+    "title": {
+      "translate": "item.minecraft.nautilus_shell"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.nautilus_shell.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "9%"
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "minecraft:nautilus_shell"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}

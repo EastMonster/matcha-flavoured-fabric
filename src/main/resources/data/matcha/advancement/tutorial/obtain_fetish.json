@@ -1,0 +1,56 @@
+{
+	"parent": "matcha:tutorial/craft_brush",
+	"criteria": {
+		"cheerful_clay_statue": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:cheerful_clay_statue"
+					}
+				]
+			}
+		},
+		"mournful_clay_statue": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:mournful_clay_statue"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_fetish.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:cheerful_clay_statue"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_fetish.title"
+		},
+		"frame": "goal"
+	},
+	"requirements": [
+		[
+			"cheerful_clay_statue",
+			"mournful_clay_statue"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_3"
+		]
+	}
+}

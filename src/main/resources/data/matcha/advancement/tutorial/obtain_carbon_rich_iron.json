@@ -1,0 +1,33 @@
+{
+	"parent": "matcha:tutorial/obtain_iron_ingot",
+	"criteria": {
+		"has_primary_material": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:carbon_rich_iron"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.matcha.tutorial.obtain_carbon_rich_iron.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha:carbon_rich_iron"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_carbon_rich_iron.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"has_primary_material"
+		]
+	]
+}

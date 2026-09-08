@@ -1,0 +1,42 @@
+{
+	"parent": "matcha:end/elytra",
+	"criteria": {
+		"shakudo_elytra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/shakudo_elytra"
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.end.smith_shakudo_elytra.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:shakudo_elytra"
+		},
+		"title": {
+			"translate": "advancements.matcha.end.smith_shakudo_elytra.title"
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"shakudo_elytra"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_4"
+		]
+	}
+}

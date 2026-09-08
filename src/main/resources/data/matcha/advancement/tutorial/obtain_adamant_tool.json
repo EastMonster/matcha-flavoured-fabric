@@ -1,0 +1,56 @@
+{
+	"parent": "matcha:tutorial/obtain_smithing_table",
+	"criteria": {
+		"adamant_axe": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_axe" } },
+		"adamant_pickaxe": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_pickaxe" } },
+		"adamant_shovel": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_shovel" } },
+		"adamant_hoe": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_hoe" } },
+		"adamant_sword": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_sword" } },
+		"adamant_dolabra": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_dolabra" } },
+		"adamant_mattock": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_mattock" } },
+		"adamant_spear": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_spear" } },
+		"adamant_helmet": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_helmet" } },
+		"adamant_chestplate": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_chestplate" } },
+		"adamant_leggings": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_leggings" } },
+		"adamant_boots": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_boots" } },
+		"adamant_claymore": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipe_id": "matcha:smithing/adamant_claymore" } }
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_adamant_tool.description",
+				"color": "gray"
+			}
+		],
+		"icon": { "count": 1, "id": "minecraft:netherite_pickaxe" },
+		"title": { "translate": "advancements.matcha.tutorial.obtain_adamant_tool.title" },
+		"frame": "challenge",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"adamant_axe",
+			"adamant_pickaxe",
+			"adamant_shovel",
+			"adamant_hoe",
+			"adamant_sword",
+			"adamant_dolabra",
+			"adamant_mattock",
+			"adamant_spear",
+			"adamant_helmet",
+			"adamant_chestplate",
+			"adamant_leggings",
+			"adamant_boots",
+			"adamant_claymore"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_4"
+		]
+	}
+}

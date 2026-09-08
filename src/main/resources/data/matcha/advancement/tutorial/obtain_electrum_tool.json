@@ -1,0 +1,119 @@
+{
+	"parent": "matcha:tutorial/obtain_smithing_table",
+	"criteria": {
+		"electrum_axe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_axe"
+			}
+		},
+		"electrum_pickaxe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_pickaxe"
+			}
+		},
+		"electrum_shovel": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_shovel"
+			}
+		},
+		"electrum_hoe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_hoe"
+			}
+		},
+		"electrum_sword": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_sword"
+			}
+		},
+		"electrum_dolabra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_dolabra"
+			}
+		},
+		"electrum_mattock": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_mattock"
+			}
+		},
+		"electrum_spear": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_spear"
+			}
+		},
+		"electrum_helmet": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_helmet"
+			}
+		},
+		"electrum_chestplate": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_chestplate"
+			}
+		},
+		"electrum_leggings": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_leggings"
+			}
+		},
+		"electrum_boots": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/electrum_boots"
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_electrum_tool.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:electrum_sword"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_electrum_tool.title"
+		},
+		"frame": "challenge",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"electrum_axe",
+			"electrum_pickaxe",
+			"electrum_shovel",
+			"electrum_hoe",
+			"electrum_sword",
+			"electrum_dolabra",
+			"electrum_mattock",
+			"electrum_spear",
+			"electrum_helmet",
+			"electrum_chestplate",
+			"electrum_leggings",
+			"electrum_boots"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_4"
+		]
+	}
+}

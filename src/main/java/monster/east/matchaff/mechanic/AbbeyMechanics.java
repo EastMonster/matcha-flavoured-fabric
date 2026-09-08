@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * The Abbey "Copper Eye" puzzle, ported from the 27 {@code main:abbey/*}
+ * The Abbey "Copper Eye" puzzle, ported from the 27 {@code matcha:abbey/*}
  * functions. Markers with the copper-eye tags are tracked through entity
  * load/unload events (no global entity scans); every tick they either set up
  * their target/lantern/grate blocks, or die once the supporting block is
@@ -45,7 +45,7 @@ import java.util.Set;
  */
 public final class AbbeyMechanics {
 	private static final Identifier HIT_COPPER_EYE =
-			Identifier.fromNamespaceAndPath("main", "mechanics/hit_copper_eye");
+			Identifier.fromNamespaceAndPath("matcha", "mechanics/hit_copper_eye");
 
 	private static final Set<Marker> COPPER_EYES =
 			Collections.newSetFromMap(new IdentityHashMap<>());
@@ -89,7 +89,7 @@ public final class AbbeyMechanics {
 	}
 
 	/**
-	 * Datapack {@code main:abbey/copper_eye_check}: fired by the hidden
+	 * Datapack {@code matcha:abbey/copper_eye_check}: fired by the hidden
 	 * {@code hit_copper_eye} advancement (any {@code target_hit}), then checks
 	 * every set-up marker whose target block is powered (or missing) and runs the
 	 * matching action, and finally revokes the advancement for all players.
@@ -135,7 +135,7 @@ public final class AbbeyMechanics {
 	}
 
 	/**
-	 * Datapack {@code main:abbey/ticking}: markers without setup place their
+	 * Datapack {@code matcha:abbey/ticking}: markers without setup place their
 	 * target/lantern/grate blocks and tag themselves; set-up markers die when
 	 * their target (and, for lanterns and retracting grates, the supporting
 	 * blocks) disappears.

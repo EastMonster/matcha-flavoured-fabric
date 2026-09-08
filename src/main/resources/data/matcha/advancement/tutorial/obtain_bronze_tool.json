@@ -1,0 +1,119 @@
+{
+	"parent": "matcha:tutorial/obtain_smithing_table",
+	"criteria": {
+		"bronze_axe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_axe"
+			}
+		},
+		"bronze_pickaxe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_pickaxe"
+			}
+		},
+		"bronze_shovel": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_shovel"
+			}
+		},
+		"bronze_hoe": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_hoe"
+			}
+		},
+		"bronze_sword": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_sword"
+			}
+		},
+		"bronze_dolabra": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_dolabra"
+			}
+		},
+		"bronze_mattock": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_mattock"
+			}
+		},
+		"bronze_helmet": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_helmet"
+			}
+		},
+		"bronze_chestplate": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_chestplate"
+			}
+		},
+		"bronze_leggings": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_leggings"
+			}
+		},
+		"bronze_boots": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_boots"
+			}
+		},
+		"bronze_spear": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:smithing/bronze_spear"
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_bronze_tool.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:hepatizon_pickaxe"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_bronze_tool.title"
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"bronze_axe",
+			"bronze_pickaxe",
+			"bronze_shovel",
+			"bronze_hoe",
+			"bronze_sword",
+			"bronze_dolabra",
+			"bronze_mattock",
+			"bronze_helmet",
+			"bronze_chestplate",
+			"bronze_leggings",
+			"bronze_boots",
+			"bronze_spear"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_1"
+		]
+	}
+}

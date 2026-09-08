@@ -199,7 +199,7 @@ public final class WorldMechanics {
 	/**
 	 * One-time per-player recipe unlock migration (datapack decision 15.3,
 	 * option 1): on first join with a newer recipe version, revoke the hidden
-	 * {@code main:recipe_unlocks/*} advancement criteria so the updated reward
+	 * {@code matcha:recipe_unlocks/*} advancement criteria so the updated reward
 	 * lists re-trigger when the player obtains the matching materials again.
 	 * Recipe-book IDs themselves are intentionally not migrated; vanilla drops
 	 * old IDs that no longer exist, and item acquisition can unlock them again.
@@ -217,7 +217,7 @@ public final class WorldMechanics {
 		if (playerVersion < RECIPE_UNLOCK_VERSION) {
 			for (AdvancementHolder advancement : server.getAdvancements().getAllAdvancements()) {
 				Identifier id = advancement.id();
-				if (id.getNamespace().equals("main") && id.getPath().startsWith("recipe_unlocks/")) {
+				if (id.getNamespace().equals("matcha") && id.getPath().startsWith("recipe_unlocks/")) {
 					revoke(player, id);
 				}
 			}
@@ -228,7 +228,7 @@ public final class WorldMechanics {
 		if (rewardVersion < REWARD_UPSTREAM_VERSION) {
 			for (AdvancementHolder advancement : server.getAdvancements().getAllAdvancements()) {
 				Identifier id = advancement.id();
-				if (id.getNamespace().equals("main") && isRewardAdvancementToRevoke(id)) {
+				if (id.getNamespace().equals("matcha") && isRewardAdvancementToRevoke(id)) {
 					revoke(player, id);
 				}
 			}
@@ -243,7 +243,7 @@ public final class WorldMechanics {
 	}
 
 	private static boolean isRewardAdvancementToRevoke(Identifier id) {
-		// Mirror the upstream `main:setup/revoke_all_recipe_unlock_advancements`
+		// Mirror the upstream `matcha:setup/revoke_all_recipe_unlock_advancements`
 		// whitelist exactly. The function revokes trade_everything even though
 		// its comment only spares `catch_everything` ("fish everything") and
 		// `steal_all_prayers`, so keep it revoked to match upstream behaviour.
@@ -450,7 +450,7 @@ public final class WorldMechanics {
 	}
 
 	private static Identifier id(String path) {
-		return Identifier.fromNamespaceAndPath("main", path);
+		return Identifier.fromNamespaceAndPath("matcha", path);
 	}
 
 }

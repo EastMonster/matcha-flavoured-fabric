@@ -1,0 +1,33 @@
+{
+	"parent": "matcha:tutorial/obtain_carbon_rich_iron",
+	"criteria": {
+		"get_steel": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:steel"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.matcha.tutorial.obtain_steel.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha:steel"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_steel.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_steel"
+		]
+	]
+}

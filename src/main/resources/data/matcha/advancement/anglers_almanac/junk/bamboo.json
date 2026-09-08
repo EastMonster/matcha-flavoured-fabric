@@ -1,0 +1,71 @@
+{
+  "parent": "matcha:anglers_almanac/junk/root",
+  "display": {
+    "icon": {
+      "id": "bamboo"
+    },
+    "title": {
+      "translate": "block.minecraft.bamboo"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.bamboo.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "9%"
+        ],
+        "color": "gray",
+        "italic": false
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.only_in",
+        "extra": [
+          {
+            "translate": "biome.minecraft.jungle"
+          },
+          ", ",
+          {
+            "translate": "biome.minecraft.sparse_jungle"
+          },
+          ", ",
+          {
+            "translate": "biome.minecraft.bamboo_jungle"
+          }
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "bamboo"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "parent": "matcha:anglers_almanac/root",
+  "display": {
+    "icon": {
+      "id": "blue_ice",
+      "components": {
+        "minecraft:item_model": "matcha:saltwater_cold"
+      }
+    },
+    "title": {
+      "translate": "adv.kleispack.anglers_almanac.category.saltwater.cold"
+    },
+    "description": [
+      {
+        "translate": "biome.minecraft.frozen_ocean"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.deep_frozen_ocean"
+      }
+    ],
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "root": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+	"parent": "matcha:hell/obtain_stabilised_estus",
+	"criteria": {
+		"get_nazar": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:crafting/warding_stone"
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.hell.obtain_warding_stone.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:warding_stone"
+		},
+		"title": {
+			"translate": "advancements.matcha.hell.obtain_warding_stone.title"
+		},
+		"frame": "goal",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_nazar"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_2"
+		]
+	}
+}

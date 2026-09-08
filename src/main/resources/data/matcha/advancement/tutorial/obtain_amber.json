@@ -1,0 +1,44 @@
+{
+	"parent": "matcha:tutorial/obtain_ruby",
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:amber"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": "❤ ",
+				"color": "aqua"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_amber.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:amber"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_amber.title"
+		}
+	},
+	"requirements": [
+		[
+			"get_item"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/crystal_heart_1"
+		]
+	}
+}

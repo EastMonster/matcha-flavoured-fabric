@@ -64,7 +64,7 @@ public final class PlayerMechanics {
 	private static final TagKey<Biome> FROZEN_BIOME = TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("minecraft", "is_frozen"));
 	private static final Identifier FREEZING_PROTECTION = Identifier.fromNamespaceAndPath("matcha", "freezing_protection");
 	private static final Identifier HEART_CONTAINER_OBTAINED = Identifier.fromNamespaceAndPath(
-			"main", "mechanics/heart_container_obtained"
+			"matcha", "mechanics/heart_container_obtained"
 	);
 	private static final String CURRENT_MINIMUM = "current_minimum_hearts";
 	private static final String[] AGE_HOLDERS = {
@@ -72,10 +72,10 @@ public final class PlayerMechanics {
 			"electrum_age", "netherite_age", "end_age"
 	};
 	private static final String[] AGE_ADVANCEMENTS = {
-			"main:tutorial/obtain_copper", "main:tutorial/obtain_iron_ingot",
-			"main:tutorial/obtain_diamond", "main:tutorial/enter_nether",
-			"main:tutorial/obtain_electrum", "main:tutorial/obtain_adamant",
-			"main:tutorial/find_stronghold"
+			"matcha:tutorial/obtain_copper", "matcha:tutorial/obtain_iron_ingot",
+			"matcha:tutorial/obtain_diamond", "matcha:tutorial/enter_nether",
+			"matcha:tutorial/obtain_electrum", "matcha:tutorial/obtain_adamant",
+			"matcha:tutorial/find_stronghold"
 	};
 	private static final AttachmentType<Integer> HEART_INVENTORY_VERSION = AttachmentRegistry.create(
 			Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_inventory_version")

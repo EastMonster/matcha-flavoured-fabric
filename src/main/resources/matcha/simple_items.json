@@ -367,7 +367,7 @@
 		"id": "glow_mash",
 		"type": "item",
 		"tab": "foods",
-		"source": "data/main/advancement/mechanics/glow_mash_eaten.json",
+		"source": "data/matcha/advancement/mechanics/glow_mash_eaten.json",
 		"carrier": "minecraft:rotten_flesh",
 		"components": {
 			"minecraft:lore": [

@@ -1,0 +1,58 @@
+{
+  "parent": "matcha:anglers_almanac/freshwater/cold/alaska_blackfish",
+  "display": {
+    "icon": {
+      "id": "matcha:humpback_whitefish",
+      "components": {}
+    },
+    "title": {
+      "translate": "item.matcha.humpback_whitefish"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.humpback_whitefish.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.fishing.rarity.1",
+        "italic": false
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "35.7%"
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "matcha:humpback_whitefish"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}

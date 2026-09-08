@@ -1,0 +1,143 @@
+{
+	"parent": "matcha:tutorial/light_campfire",
+	"criteria": {
+		"cook_melon": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:grilled_melon"
+					}
+				]
+			}
+		},
+		"cook_carrot": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:steamed_carrots"
+					}
+				]
+			}
+		},
+		"cook_apple": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:baked_apple"
+					}
+				]
+			}
+		},
+		"cook_tomatoes": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:grilled_tomatoes"
+					}
+				]
+			}
+		},
+		"cook_glow_berries": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:glow_mash"
+					}
+				]
+			}
+		},
+		"cook_kelp": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:dried_kelp"
+					}
+				]
+			}
+		},
+		"cook_sweet_berries": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:sweet_berry_mash"
+					}
+				]
+			}
+		},
+		"cook_honey": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:honey_ginger_tea"
+					}
+				]
+			}
+		},
+		"cook_cocoa": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:chocolate"
+					}
+				]
+			}
+		},
+		"cook_pumpkin": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:baked_pumpkin"
+					}
+				]
+			}
+		},
+		"cook_red_mushroom": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:braised_red_mushroom"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.matcha.tutorial.cook_food.description"
+		},
+		"icon": {
+			"count": 1,
+			"id": "matcha:grilled_melon"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.cook_food.title"
+		},
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"cook_melon",
+			"cook_carrot",
+			"cook_apple",
+			"cook_tomatoes",
+			"cook_glow_berries",
+			"cook_kelp",
+			"cook_sweet_berries",
+			"cook_honey",
+			"cook_cocoa",
+			"cook_pumpkin",
+			"cook_red_mushroom"
+		]
+	]
+}

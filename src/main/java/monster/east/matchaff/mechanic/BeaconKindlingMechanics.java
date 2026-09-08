@@ -34,7 +34,7 @@ import java.util.UUID;
 
 final class BeaconKindlingMechanics {
 	private static final Identifier LIGHT_BEACON =
-			Identifier.fromNamespaceAndPath("main", "tutorial/light_beacon");
+			Identifier.fromNamespaceAndPath("matcha", "tutorial/light_beacon");
 
 	private record BeaconTask(ResourceKey<Level> level, BlockPos pos, int startTick, UUID trader) {
 	}

@@ -1,0 +1,48 @@
+{
+	"parent": "matcha:tutorial/obtain_divine_fragment",
+	"criteria": {
+		"get_heart": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:crystal_heart"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_heart.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:crystal_heart"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_heart.title"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"get_heart"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/obol_3"
+		]
+	}
+}

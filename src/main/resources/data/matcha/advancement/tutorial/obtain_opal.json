@@ -1,0 +1,44 @@
+{
+	"parent": "matcha:tutorial/obtain_estus",
+	"criteria": {
+		"get_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:opal"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": "❤ ",
+				"color": "aqua"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.obtain_opal.description",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "matcha:opal"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.obtain_opal.title"
+		}
+	},
+	"requirements": [
+		[
+			"get_item"
+		]
+	],
+	"rewards": {
+		"loot": [
+				"matcha:advancement/crystal_heart_1"
+		]
+	}
+}

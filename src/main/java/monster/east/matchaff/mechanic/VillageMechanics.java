@@ -251,6 +251,6 @@ final class VillageMechanics {
 	}
 
 	private static Identifier id(String path) {
-		return Identifier.fromNamespaceAndPath("main", path);
+		return Identifier.fromNamespaceAndPath("matcha", path);
 	}
 }

@@ -1,0 +1,72 @@
+{
+  "parent": "matcha:anglers_almanac/root",
+  "display": {
+    "icon": {
+      "id": "dirt",
+      "components": {
+        "minecraft:item_model": "matcha:freshwater_cool"
+      }
+    },
+    "title": {
+      "translate": "adv.kleispack.anglers_almanac.category.freshwater.cool"
+    },
+    "description": [
+      {
+        "translate": "biome.minecraft.taiga"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.birch_forest"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.old_growth_birch_forest"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.meadow"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.stony_shore"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.old_growth_pine_taiga"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.windswept_hills"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.windswept_forest"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.windswept_gravelly_hills"
+      },
+      "\n",
+      {
+        "translate": "biome.minecraft.stony_peaks"
+      }
+    ],
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "root": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

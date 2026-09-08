@@ -1,0 +1,52 @@
+{
+  "parent": "matcha:anglers_almanac/treasure/root",
+  "display": {
+    "icon": {
+      "id": "emerald"
+    },
+    "title": {
+      "translate": "item.minecraft.emerald"
+    },
+    "description": [
+      {
+        "translate": "adv.kleispack.anglers_almanac.emerald.desc",
+        "color": "dark_aqua",
+        "italic": true
+      },
+      "\n",
+      {
+        "translate": "adv.kleispack.anglers_almanac.chance",
+        "with": [
+          "39.3%"
+        ],
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "advancements": {
+              "matcha:anglers_almanac/root": true
+            }
+          }
+        },
+        "item": {
+          "items": "minecraft:emerald"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch"
+    ]
+  ]
+}
