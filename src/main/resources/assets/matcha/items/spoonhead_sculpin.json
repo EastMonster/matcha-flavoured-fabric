@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/spoonhead_sculpin"
+		"model": "matcha:item/spoonhead_sculpin"
 	}
 }

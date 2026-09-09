@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/blessing_icarus"
+		"model": "matcha:item/blessing_icarus"
 	}
 }

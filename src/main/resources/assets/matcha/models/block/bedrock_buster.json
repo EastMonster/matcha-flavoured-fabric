@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "matcha:block/bedrock_buster_bottom",
+    "side": "matcha:block/bedrock_buster_side",
+    "top": "matcha:block/bedrock_buster_top"
+  }
+}

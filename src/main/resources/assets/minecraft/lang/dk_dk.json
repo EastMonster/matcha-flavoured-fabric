@@ -160,7 +160,9 @@
 	"item.minecraft.rabbit": "Råt kød",
 	"item.minecraft.cod": "Torsk",
 	"item.minecraft.salmon": "Laks",
-	"item.kleispack.blessing": "Velsignelse",
+	"item.kleispack.cyan_rose_classic": "Cyan rose",
+	"item.kleispack.dandelion_classic": "Mælkebøtte",
+	"item.kleispack.porkchop_classic": "Svinekotelet",
 	"filled_map.abbey_overgrown": "overgroet abbedikort",
 	"filled_map.papal_outpost": "Pavelig forpostkort",
 	"filled_map.desert_pyramid": "Ørkentempelkort",
@@ -178,12 +180,5 @@
 	"filled_map.village_plains": "Forladt landsbykort",
 	"filled_map.village_savanna": "Forladt savannelandsbykort",
 	"filled_map.village_snowy": "Forladt snelandsbykort",
-	"filled_map.village_taiga": "Forladt granskovlandsbykort",
-	"item.kleispack.stego_chicken_nugget": "Tagøgle kyllingenugget",
-	"item.kleispack.ptero_chicken_nugget": "Flyveøgle kyllingenugget",
-	"item.kleispack.tricero_chicken_nugget": "Triceratops kyllingenugget",
-	"item.kleispack.nopales": "Nopal",
-	"adv.kleispack.adventure.root": "Med sange",
-	"adv.kleispack.adventure.trade_with_cartographer": "Glemte rygter",
-	"adv.kleispack.adventure.trade_with_cartographer.desc": "Køb et kort fra en arkeolog"
+	"filled_map.village_taiga": "Forladt granskovlandsbykort"
 }

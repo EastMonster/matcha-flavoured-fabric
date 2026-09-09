@@ -14,7 +14,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_carbon_rich_iron.description"
+			"translate": "advancements.matcha.tutorial.obtain_carbon_rich_iron.desc"
 		},
 		"icon": {
 			"count": 1,

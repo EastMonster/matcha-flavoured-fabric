@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/apotropaic_arrow"
+		"model": "matcha:item/apotropaic_arrow"
 	}
 }

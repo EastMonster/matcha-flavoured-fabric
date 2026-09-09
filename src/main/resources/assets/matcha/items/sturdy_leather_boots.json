@@ -148,7 +148,7 @@
     ],
     "fallback": {
       "type": "minecraft:model",
-      "model": "minecraft:item/sturdy_leather_boots",
+      "model": "matcha:item/sturdy_leather_boots",
       "tints": [
         {
           "type": "minecraft:dye",

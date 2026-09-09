@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/crate_sheep_brown"
+		"model": "matcha:item/crate_sheep_brown"
 	}
 }

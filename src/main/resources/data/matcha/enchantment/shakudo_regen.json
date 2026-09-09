@@ -9,7 +9,7 @@
 	],
 	"anvil_cost": 0,
 	"description": {
-		"translate": "enchantment.kleispack.shakudo_regen",
+		"translate": "enchantment.matcha.shakudo_regen",
 		"color": "#e85e8f"
 	},
 	"max_cost": {

@@ -5,7 +5,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minecraft:item/oarfish"
+          "model": "matcha:item/oarfish"
         },
         "when": [
           "gui",
@@ -17,7 +17,7 @@
     ],
     "fallback": {
       "type": "minecraft:model",
-      "model": "minecraft:item/oarfish_in_hand"
+      "model": "matcha:item/oarfish_in_hand"
     },
     "property": "minecraft:display_context"
   },

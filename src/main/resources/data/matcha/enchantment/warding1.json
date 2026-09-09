@@ -2,7 +2,7 @@
 	"exclusive_set": "#matcha:exclusive_set/intrinsic_weapon",
 	"anvil_cost": 0,
 	"description": {
-		"translate": "enchantment.kleispack.warding1",
+		"translate": "enchantment.matcha.warding1",
 		"color": "yellow"
 	},
 	"max_cost": {

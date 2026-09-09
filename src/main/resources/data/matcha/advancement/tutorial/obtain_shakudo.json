@@ -14,7 +14,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_shakudo.description"
+			"translate": "advancements.matcha.tutorial.obtain_shakudo.desc"
 		},
 		"icon": {
 			"count": 1,

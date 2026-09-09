@@ -35,7 +35,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/avesta"
+					"value": "matcha:kleis_items/avesta"
 				}
 			],
 			"rolls": 1

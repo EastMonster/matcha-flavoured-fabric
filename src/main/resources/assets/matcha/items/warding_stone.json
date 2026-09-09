@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:block/warding_stone"
+		"model": "matcha:block/warding_stone"
 	}
 }

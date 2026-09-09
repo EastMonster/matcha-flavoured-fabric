@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/diamond_dolabra"
+		"model": "matcha:item/diamond_dolabra"
 	}
 }

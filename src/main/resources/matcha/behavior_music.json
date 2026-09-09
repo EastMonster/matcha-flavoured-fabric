@@ -24,42 +24,26 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "matcha.asylum.age_adult",
+					"translate": "item.matcha.asylum_seeker.adult",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "matcha.asylum.culture_desert",
+					"translate": "item.matcha.asylum_seeker.culture.desert",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "matcha.asylum.cause_political",
+					"translate": "item.matcha.asylum_seeker.cause.1",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "matcha.asylum.summon_hint",
+					"translate": "item.matcha.asylum_seeker.desc",
 					"color": "gray",
 					"italic": false
 				}
 			],
-			"minecraft:max_stack_size": 1
-		}
-	},
-	{
-		"id": "axolotl",
-		"type": "spawn_egg",
-		"tab": "spawn_eggs",
-		"source": "data/minecraft/loot_table/gameplay/fishing/fish/axolotl.json",
-		"carrier": "minecraft:chicken_spawn_egg",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha.axolotl"
-			},
-			"minecraft:entity_data": {
-				"id": "minecraft:axolotl"
-			},
 			"minecraft:max_stack_size": 1
 		}
 	},
@@ -98,7 +82,7 @@
 				"range": 16,
 				"use_duration": 30,
 				"description": {
-					"translate": "item.kleispack.cheerful_clay_statue.desc"
+					"translate": "item.matcha.cheerful_clay_statue.desc"
 				}
 			},
 			"minecraft:max_stack_size": 1
@@ -108,7 +92,7 @@
 		"id": "crate_cold_cow",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/3/baby_cold_cow.json",
+		"source": "data/matcha/villager_trade/farmer/3/baby_cold_cow.json",
 		"carrier": "minecraft:cow_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -126,7 +110,7 @@
 		"id": "crate_cold_pig",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/3/baby_cold_pig.json",
+		"source": "data/matcha/villager_trade/farmer/3/baby_cold_pig.json",
 		"carrier": "minecraft:pig_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -144,7 +128,7 @@
 		"id": "crate_sheep_black",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/shepherd/2/baby_cold_sheep.json",
+		"source": "data/matcha/villager_trade/shepherd/2/baby_cold_sheep.json",
 		"carrier": "minecraft:sheep_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -162,7 +146,7 @@
 		"id": "crate_sheep_brown",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/shepherd/2/baby_warm_sheep.json",
+		"source": "data/matcha/villager_trade/shepherd/2/baby_warm_sheep.json",
 		"carrier": "minecraft:sheep_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -180,7 +164,7 @@
 		"id": "crate_sheep_white",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/shepherd/2/baby_temperate_sheep.json",
+		"source": "data/matcha/villager_trade/shepherd/2/baby_temperate_sheep.json",
 		"carrier": "minecraft:sheep_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -198,7 +182,7 @@
 		"id": "crate_temperate_cow",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/3/baby_temperate_cow.json",
+		"source": "data/matcha/villager_trade/farmer/3/baby_temperate_cow.json",
 		"carrier": "minecraft:cow_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -216,7 +200,7 @@
 		"id": "crate_temperate_pig",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/3/baby_temperate_pig.json",
+		"source": "data/matcha/villager_trade/farmer/3/baby_temperate_pig.json",
 		"carrier": "minecraft:pig_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -234,7 +218,7 @@
 		"id": "crate_warm_cow",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/3/baby_warm_cow.json",
+		"source": "data/matcha/villager_trade/farmer/3/baby_warm_cow.json",
 		"carrier": "minecraft:cow_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -252,7 +236,7 @@
 		"id": "crate_warm_pig",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/3/baby_warm_pig.json",
+		"source": "data/matcha/villager_trade/farmer/3/baby_warm_pig.json",
 		"carrier": "minecraft:pig_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -311,7 +295,7 @@
 				"range": 16,
 				"use_duration": 30,
 				"description": {
-					"translate": "item.kleispack.mournful_clay_statue.desc"
+					"translate": "item.matcha.mournful_clay_statue.desc"
 				}
 			},
 			"minecraft:max_stack_size": 1
@@ -391,12 +375,12 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "matcha.amnestic.forget",
+					"translate": "item.matcha.amnestic.desc",
 					"color": "gray",
 					"italic": false
 				},
 				{
-					"translate": "matcha.amnestic.place_hint",
+					"translate": "item.matcha.amnestic.instructions",
 					"color": "gray",
 					"italic": false
 				}
@@ -462,7 +446,7 @@
 		"id": "fertilised_blue_egg",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/2/blue_egg.json",
+		"source": "data/matcha/villager_trade/farmer/2/blue_egg.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -479,7 +463,7 @@
 		"id": "fertilised_brown_egg",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/2/brown_egg.json",
+		"source": "data/matcha/villager_trade/farmer/2/brown_egg.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {
@@ -496,7 +480,7 @@
 		"id": "fertilised_egg",
 		"type": "spawn_egg",
 		"tab": "spawn_eggs",
-		"source": "data/minecraft/villager_trade/farmer/2/white_egg.json",
+		"source": "data/matcha/villager_trade/farmer/2/white_egg.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
 			"minecraft:entity_data": {

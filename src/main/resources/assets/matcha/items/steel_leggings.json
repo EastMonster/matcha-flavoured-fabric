@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/steel_leggings"
+		"model": "matcha:item/steel_leggings"
 	}
 }

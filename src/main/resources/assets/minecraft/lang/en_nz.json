@@ -22,16 +22,5 @@
 	"item.minecraft.netherite_nautilus_armor": "Adamant Nautilus Armour",
 	"block.minecraft.chiseled_nether_bricks": "Chiselled Hellbricks",
 	"block.minecraft.glowstone": "Crystallised Estus",
-	"entity.minecraft.villager.leatherworker": "Forester",
-	"item.kleispack.blessing": "Blessing",
-	"item.kleispack.stego_chicken_nugget": "Stego Chicken Nugget",
-	"item.kleispack.ptero_chicken_nugget": "Ptero Chicken Nugget",
-	"item.kleispack.tricero_chicken_nugget": "Tricero Chicken Nugget",
-	"item.kleispack.nopales": "Nopales",
-	"item.kleispack.lumpia": "Lumpia",
-	"item.kleispack.oatmeal": "Oatmeal",
-	"item.kleispack.fish_and_chips": "Fish and Chips",
-	"item.kleispack.ice_cream": "Ice Cream",
-	"item.kleispack.bunuelo": "Buñuelo",
-	"item.kleispack.pumpkin_curry": "Pumpkin Curry"
+	"entity.minecraft.villager.leatherworker": "Forester"
 }

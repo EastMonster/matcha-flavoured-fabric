@@ -10,13 +10,13 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.fish_bones.desc",
+        "translate": "advancements.matcha.anglers_almanac.fish_bones.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "90.9%"
         ],

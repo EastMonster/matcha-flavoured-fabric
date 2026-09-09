@@ -28,17 +28,17 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.set_bonus",
+					"translate": "tooltip.matcha.set_bonus",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "enchantment.kleispack.divinity.set_bonus",
+					"translate": "enchantment.matcha.divinity.set_bonus",
 					"color": "aqua",
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.repaired_with",
+					"translate": "tooltip.matcha.repaired_with",
 					"color": "gray",
 					"italic": false
 				},

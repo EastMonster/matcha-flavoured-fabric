@@ -1,5 +1,5 @@
 {
   "amount": 4.0,
   "random_sequence": "minecraft:trade_set/mason/level_3",
-  "trades": "#minecraft:mason/custom_level_3"
+  "trades": "#matcha:mason/custom_level_3"
 }

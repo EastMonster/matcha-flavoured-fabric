@@ -18,22 +18,22 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.set_bonus",
+					"translate": "tooltip.matcha.set_bonus",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "enchantment.kleispack.warding3.set_bonus_apotropaic",
+					"translate": "enchantment.matcha.warding3.set_bonus_apotropaic",
 					"color": "yellow",
 					"italic": false
 				},
 				{
-					"translate": "enchantment.kleispack.warding3.set_bonus_divinity",
+					"translate": "enchantment.matcha.warding3.set_bonus_divinity",
 					"color": "aqua",
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.repaired_with",
+					"translate": "tooltip.matcha.repaired_with",
 					"color": "gray",
 					"italic": false
 				},
@@ -73,7 +73,7 @@
 			},
 			"minecraft:equippable": {
 				"slot": "chest",
-				"asset_id": "minecraft:electrum"
+				"asset_id": "matcha:electrum"
 			},
 			"minecraft:repairable": {
 				"items": [

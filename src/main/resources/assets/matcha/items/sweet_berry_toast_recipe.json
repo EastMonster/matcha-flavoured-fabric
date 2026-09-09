@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/sweet_berry_toast_recipe"
+		"model": "matcha:item/sweet_berry_toast_recipe"
 	}
 }

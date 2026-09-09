@@ -14,7 +14,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_bowl.description"
+			"translate": "advancements.matcha.tutorial.obtain_bowl.desc"
 		},
 		"icon": {
 			"count": 1,

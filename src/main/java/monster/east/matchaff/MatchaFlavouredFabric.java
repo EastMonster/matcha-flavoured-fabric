@@ -102,15 +102,15 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private static Item register(String name) {
 		Item.Properties properties = new Item.Properties();
 		switch (name) {
-			case "avesta" -> properties.rarity(Rarity.RARE);
-			case "divine_comedy" -> book(properties, "divine_comedy", Rarity.UNCOMMON,
-					Component.translatable("item.kleispack.divine_comedy.desc"));
+		case "avesta" -> properties.rarity(Rarity.RARE);
+		case "divine_comedy" -> book(properties, "divine_comedy", Rarity.UNCOMMON,
+					Component.translatable("item.matcha.divine_comedy.desc"));
 			case "enoch" -> book(properties, "enoch", Rarity.RARE, Component.literal("ספר חנוך"));
-			case "paradise_lost" -> book(properties, "paradise_lost", Rarity.UNCOMMON,
-					Component.translatable("item.kleispack.paradise_lost.desc"));
+		case "paradise_lost" -> book(properties, "paradise_lost", Rarity.UNCOMMON,
+					Component.translatable("item.matcha.paradise_lost.desc"));
 			case "quran" -> book(properties, "quran", Rarity.RARE, Component.literal("القرآن"));
-			case "solomon" -> book(properties, "solomon", Rarity.EPIC,
-					Component.translatable("item.kleispack.key_of_solomon.desc"));
+		case "solomon" -> book(properties, "solomon", Rarity.EPIC,
+					Component.translatable("item.matcha.solomon.desc"));
 			case "tanakh" -> book(properties, "tanakh", Rarity.RARE, Component.literal("התנך"));
 			default -> {
 			}

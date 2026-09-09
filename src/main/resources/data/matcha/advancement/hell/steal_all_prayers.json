@@ -33,7 +33,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "advancements.matcha.hell.steal_all_prayers.description",
+				"translate": "advancements.matcha.hell.steal_all_prayers.desc",
 				"color": "gray"
 			}
 		],

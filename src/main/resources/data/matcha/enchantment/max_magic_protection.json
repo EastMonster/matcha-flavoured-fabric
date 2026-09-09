@@ -1,7 +1,7 @@
 {
 	"anvil_cost": 0,
 	"description": {
-		"translate": "enchantment.kleispack.max_magic_protection",
+		"translate": "enchantment.matcha.max_magic_protection",
 		"color": "#c96691"
 	},
 	"effects": {

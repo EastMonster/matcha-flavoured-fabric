@@ -9,13 +9,13 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.bamboo.desc",
+        "translate": "advancements.matcha.anglers_almanac.bamboo.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "9%"
         ],
@@ -24,7 +24,7 @@
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.only_in",
+        "translate": "advancements.matcha.anglers_almanac.only_in",
         "extra": [
           {
             "translate": "biome.minecraft.jungle"

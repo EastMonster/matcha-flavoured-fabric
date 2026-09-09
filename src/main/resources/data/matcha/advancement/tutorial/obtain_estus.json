@@ -14,7 +14,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_estus.description"
+			"translate": "advancements.matcha.tutorial.obtain_estus.desc"
 		},
 		"icon": {
 			"count": 1,

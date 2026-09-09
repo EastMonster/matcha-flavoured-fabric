@@ -2,21 +2,23 @@
   "parent": "matcha:anglers_almanac/junk/tadpole",
   "display": {
     "icon": {
-      "id": "matcha:axolotl",
-      "components": {}
+      "id": "minecraft:axolotl_spawn_egg",
+      "components": {
+        "minecraft:item_model": "matcha:axolotl"
+      }
     },
     "title": {
       "translate": "item.matcha.axolotl"
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.axolotl.desc",
+        "translate": "advancements.matcha.anglers_almanac.axolotl.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "9%"
         ],
@@ -25,7 +27,7 @@
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.only_in",
+        "translate": "advancements.matcha.anglers_almanac.only_in",
         "extra": [
           {
             "translate": "biome.minecraft.lush_caves"
@@ -55,7 +57,7 @@
           }
         },
         "item": {
-          "items": "matcha:axolotl"
+          "items": "minecraft:axolotl_spawn_egg"
         }
       }
     }

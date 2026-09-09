@@ -9,13 +9,13 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.pale_hanging_moss.desc",
+        "translate": "advancements.matcha.anglers_almanac.pale_hanging_moss.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "71.4%"
         ],

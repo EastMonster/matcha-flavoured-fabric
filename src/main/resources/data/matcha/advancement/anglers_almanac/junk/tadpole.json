@@ -5,17 +5,17 @@
       "id": "tadpole_spawn_egg"
     },
     "title": {
-      "translate": "item.kleispack.tadpole"
+      "translate": "item.matcha.tadpole"
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.tadpole.desc",
+        "translate": "advancements.matcha.anglers_almanac.tadpole.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "9%"
         ],
@@ -24,7 +24,7 @@
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.only_in",
+        "translate": "advancements.matcha.anglers_almanac.only_in",
         "extra": [
           {
             "translate": "biome.minecraft.swamp"

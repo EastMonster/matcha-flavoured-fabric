@@ -14,7 +14,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_anvil.description"
+			"translate": "advancements.matcha.tutorial.obtain_anvil.desc"
 		},
 		"icon": {
 			"count": 1,

@@ -16,7 +16,7 @@
 	},
 	{
 		"id": "amber_earrings",
-		"source": "data/minecraft/villager_trade/toolsmith/3/amber_earrings.json",
+		"source": "data/matcha/villager_trade/toolsmith/3/amber_earrings.json",
 		"carrier": "minecraft:copper_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
@@ -47,7 +47,7 @@
 			},
 			"minecraft:equippable": {
 				"slot": "head",
-				"asset_id": "minecraft:amber_earrings"
+				"asset_id": "matcha:amber_earrings"
 			},
 			"minecraft:enchantments": {
 				"matcha:regeneration": 1
@@ -57,7 +57,7 @@
 	},
 	{
 		"id": "bloodrage_hatchet",
-		"source": "data/minecraft/villager_trade/leatherworker/4/hatchet.json",
+		"source": "data/matcha/villager_trade/leatherworker/4/hatchet.json",
 		"carrier": "minecraft:iron_axe",
 		"components": {
 			"minecraft:attribute_modifiers": [
@@ -150,7 +150,7 @@
 	},
 	{
 		"id": "hepatizon_laurel",
-		"source": "data/minecraft/villager_trade/toolsmith/4/bronze_laurel.json",
+		"source": "data/matcha/villager_trade/toolsmith/4/hepatizon_laurel.json",
 		"carrier": "minecraft:copper_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
@@ -193,7 +193,7 @@
 			},
 			"minecraft:equippable": {
 				"slot": "head",
-				"asset_id": "minecraft:bronze_laurel"
+				"asset_id": "matcha:hepatizon_laurel"
 			},
 			"minecraft:unbreakable": {}
 		}
@@ -268,7 +268,7 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.repaired_with",
+					"translate": "tooltip.matcha.repaired_with",
 					"color": "gray",
 					"italic": false
 				},
@@ -308,7 +308,7 @@
 	},
 	{
 		"id": "crook",
-		"source": "data/minecraft/villager_trade/shepherd/3/crook.json",
+		"source": "data/matcha/villager_trade/shepherd/3/crook.json",
 		"carrier": "minecraft:wooden_sword",
 		"components": {
 			"minecraft:item_name": {
@@ -479,7 +479,7 @@
 	},
 	{
 		"id": "opal_earrings",
-		"source": "data/minecraft/villager_trade/toolsmith/1/opal_earrings.json",
+		"source": "data/matcha/villager_trade/toolsmith/1/opal_earrings.json",
 		"carrier": "minecraft:iron_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
@@ -510,7 +510,7 @@
 			},
 			"minecraft:equippable": {
 				"slot": "head",
-				"asset_id": "minecraft:opal_earrings"
+				"asset_id": "matcha:opal_earrings"
 			},
 			"minecraft:enchantments": {
 				"matcha:conduit_power": 1
@@ -525,7 +525,7 @@
 	},
 	{
 		"id": "ruby_circlet",
-		"source": "data/minecraft/villager_trade/toolsmith/2/ruby_circlet.json",
+		"source": "data/matcha/villager_trade/toolsmith/2/ruby_circlet.json",
 		"carrier": "minecraft:leather_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
@@ -556,7 +556,7 @@
 			},
 			"minecraft:equippable": {
 				"slot": "head",
-				"asset_id": "minecraft:ruby_circlet"
+				"asset_id": "matcha:ruby_circlet"
 			},
 			"minecraft:enchantments": {
 				"matcha:fire_proof": 1
@@ -754,7 +754,7 @@
 	},
 	{
 		"id": "topaz_earrings",
-		"source": "data/minecraft/villager_trade/toolsmith/4/topaz_earrings.json",
+		"source": "data/matcha/villager_trade/toolsmith/4/topaz_earrings.json",
 		"carrier": "minecraft:copper_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
@@ -785,7 +785,7 @@
 			},
 			"minecraft:equippable": {
 				"slot": "head",
-				"asset_id": "minecraft:topaz_earrings"
+				"asset_id": "matcha:topaz_earrings"
 			},
 			"minecraft:enchantments": {
 				"matcha:haste": 1

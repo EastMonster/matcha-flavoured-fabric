@@ -19,7 +19,7 @@
 				"color": "red"
 			},
 			{
-				"translate": "advancements.matcha.tutorial.obtain_adamant.description",
+				"translate": "advancements.matcha.tutorial.obtain_adamant.desc",
 				"color": "gray"
 			}
 		],

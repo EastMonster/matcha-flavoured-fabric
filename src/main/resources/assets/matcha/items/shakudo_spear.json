@@ -5,7 +5,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minecraft:item/shakudo_spear"
+          "model": "matcha:item/shakudo_spear"
         },
         "when": [
           "gui",
@@ -17,7 +17,7 @@
     ],
     "fallback": {
       "type": "minecraft:model",
-      "model": "minecraft:item/shakudo_spear_in_hand"
+      "model": "matcha:item/shakudo_spear_in_hand"
     },
     "property": "minecraft:display_context"
   },

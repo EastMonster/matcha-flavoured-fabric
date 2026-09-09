@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/bass"
+		"model": "matcha:item/bass"
 	}
 }

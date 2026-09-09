@@ -109,14 +109,14 @@ final class BeaconKindlingMechanics {
 		level.playSound(null, pos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
 		level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.5F, 1.0F);
 		if (BEACONS.containsKey(player.getUUID())) {
-			player.sendSystemMessage(Component.translatable("matcha.message.wandering_trader.beacon_placed")
+			player.sendSystemMessage(Component.translatable("message.matcha.wandering_trader.beacon_placed")
 					.withStyle(ChatFormatting.GRAY));
 			return;
 		}
 		BEACONS.put(player.getUUID(), new BeaconTask(level.dimension(), pos.immutable(), tick, null));
 		save(level.getServer(), tick);
 		level.getServer().getPlayerList().broadcastSystemMessage(
-				Component.translatable("matcha.message.wandering_trader.initialise")
+				Component.translatable("message.matcha.wandering_trader.initialise")
 				.withStyle(ChatFormatting.GRAY), false);
 	}
 
@@ -151,7 +151,7 @@ final class BeaconKindlingMechanics {
 					level.addFreshEntity(trader);
 					BEACONS.put(owner, new BeaconTask(task.level(), task.pos(), task.startTick(), trader.getUUID()));
 					server.getPlayerList().broadcastSystemMessage(
-							Component.translatable("matcha.message.wandering_trader.summoned")
+							Component.translatable("message.matcha.wandering_trader.summoned")
 							.withStyle(ChatFormatting.GRAY), false);
 				}
 			} else if (task.trader() != null && elapsed >= 18000) {
@@ -186,12 +186,12 @@ final class BeaconKindlingMechanics {
 		if (early) {
 			ServerPlayer player = server.getPlayerList().getPlayer(owner);
 			if (player != null) {
-				player.sendSystemMessage(Component.translatable("matcha.message.wandering_trader.kill_early")
+				player.sendSystemMessage(Component.translatable("message.matcha.wandering_trader.kill_early")
 						.withStyle(ChatFormatting.GRAY));
 			}
 		} else if (announce) {
 			server.getPlayerList().broadcastSystemMessage(
-					Component.translatable("matcha.message.wandering_trader.kill")
+					Component.translatable("message.matcha.wandering_trader.kill")
 							.withStyle(ChatFormatting.GRAY), false);
 		}
 		save(server, server.getTickCount());

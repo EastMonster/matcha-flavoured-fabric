@@ -309,7 +309,7 @@ public final class MechanicMechanics {
 			end.addFreshEntity(reward);
 		}
 		server.getPlayerList().broadcastSystemMessage(
-				Component.translatable("matcha.message.evil_banished").withStyle(ChatFormatting.GRAY), false);
+				Component.translatable("message.matcha.evil_banished").withStyle(ChatFormatting.GRAY), false);
 		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly("gamerule"), objective).set(1);
 	}
 

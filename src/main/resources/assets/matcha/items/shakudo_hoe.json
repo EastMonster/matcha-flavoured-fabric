@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/shakudo_hoe"
+		"model": "matcha:item/shakudo_hoe"
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/kontomire_stew"
+		"model": "matcha:item/kontomire_stew"
 	}
 }

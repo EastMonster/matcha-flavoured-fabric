@@ -14,7 +14,7 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"translate": "adv.kleispack.fishing.rarity.1",
+										"translate": "lore.matcha.fish_rarity.1",
 										"italic": false
 									}
 								]

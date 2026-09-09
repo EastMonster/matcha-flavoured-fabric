@@ -14,7 +14,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_kiln.description"
+			"translate": "advancements.matcha.tutorial.obtain_kiln.desc"
 		},
 		"icon": {
 			"count": 1,

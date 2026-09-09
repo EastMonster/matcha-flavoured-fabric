@@ -10,7 +10,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.craft_brush.description"
+			"translate": "advancements.matcha.tutorial.craft_brush.desc"
 		},
 		"icon": {
 			"count": 1,

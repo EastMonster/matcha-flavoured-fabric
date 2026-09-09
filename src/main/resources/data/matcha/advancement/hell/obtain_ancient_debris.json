@@ -24,7 +24,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.hell.obtain_ancient_debris.description"
+			"translate": "advancements.matcha.hell.obtain_ancient_debris.desc"
 		},
 		"icon": {
 			"count": 1,

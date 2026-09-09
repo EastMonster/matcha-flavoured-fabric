@@ -18,6 +18,5 @@
 	"item.minecraft.nether_wart": "Hellspore",
 	"block.minecraft.nether_wart": "Hellspore",
 	"block.minecraft.glowstone": "Crystallised Estus",
-	"entity.minecraft.villager.leatherworker": "Forester",
-	"item.kleispack.blessing": "Blessing"
+	"entity.minecraft.villager.leatherworker": "Forester"
 }

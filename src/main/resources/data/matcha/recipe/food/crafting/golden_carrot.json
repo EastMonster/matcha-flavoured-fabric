@@ -19,7 +19,7 @@
 					"italic": false
 				},
 				{
-					"translate": "matcha.lore.night_vision",
+					"translate": "effect.matcha.night_vision",
 						"with": [
 							"0:30"
 						],

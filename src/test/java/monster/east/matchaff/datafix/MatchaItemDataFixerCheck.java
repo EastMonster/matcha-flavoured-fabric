@@ -1,6 +1,7 @@
 package monster.east.matchaff.datafix;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 
 import java.util.Map;
 
@@ -25,6 +26,23 @@ public final class MatchaItemDataFixerCheck {
 		assert "matcha:crystal_heart".equals(MatchaItemDataFixer.update(renamedStack).getStringOr("id", ""));
 		renamedStack.putString("id", "matcha-flavoured:application");
 		assert "matcha:asylum_seeker".equals(MatchaItemDataFixer.update(renamedStack).getStringOr("id", ""));
+
+		CompoundTag oldAxolotl = new CompoundTag();
+		oldAxolotl.putString("id", "matcha:axolotl");
+		CompoundTag oldAxolotlComponents = new CompoundTag();
+		oldAxolotlComponents.putInt("minecraft:max_stack_size", 1);
+		oldAxolotl.put("components", oldAxolotlComponents);
+		CompoundTag fixedAxolotl = MatchaItemDataFixer.update(oldAxolotl);
+		assert "minecraft:axolotl_spawn_egg".equals(fixedAxolotl.getStringOr("id", ""));
+		CompoundTag fixedAxolotlComponents = fixedAxolotl.getCompound("components");
+		assert "item.matcha.axolotl".equals(fixedAxolotlComponents.getCompound("minecraft:item_name").getStringOr("translate", ""));
+		assert "matcha:axolotl".equals(fixedAxolotlComponents.getStringOr("minecraft:item_model", ""));
+		assert "minecraft:axolotl".equals(fixedAxolotlComponents.getCompound("minecraft:entity_data").getStringOr("id", ""));
+		assert fixedAxolotlComponents.getIntOr("minecraft:max_stack_size", 0) == 1;
+
+		CompoundTag oldNamespaceAxolotl = new CompoundTag();
+		oldNamespaceAxolotl.putString("id", "matcha-flavoured:axolotl");
+		assert "minecraft:axolotl_spawn_egg".equals(MatchaItemDataFixer.update(oldNamespaceAxolotl).getStringOr("id", ""));
 
 		CompoundTag nazarCarrier = new CompoundTag();
 		nazarCarrier.putString("id", "minecraft:glistering_melon_slice");
@@ -106,6 +124,77 @@ public final class MatchaItemDataFixerCheck {
 		CompoundTag oldNamespaceEquipment = new CompoundTag();
 		oldNamespaceEquipment.putString("id", "matcha-flavoured:bronze_sword");
 		assert "matcha:hepatizon_sword".equals(MatchaItemDataFixer.update(oldNamespaceEquipment).getStringOr("id", ""));
+
+		CompoundTag translatedStack = new CompoundTag();
+		translatedStack.putString("id", "matcha:blessing_aeolus");
+		CompoundTag translatedComponents = new CompoundTag();
+		CompoundTag translatedItemName = new CompoundTag();
+		translatedItemName.putString("translate", "item.kleispack.blessing");
+		translatedComponents.put("minecraft:item_name", translatedItemName);
+		ListTag translatedLore = new ListTag();
+		CompoundTag blessingLore = new CompoundTag();
+		blessingLore.putString("translate", "item.kleispack.blessing.aeolus");
+		translatedLore.add(blessingLore);
+		for (String key : new String[] {
+				"adv.kleispack.fishing.rarity.4",
+				"adv.kleispack.anglers_almanac",
+				"adv.kleispack.anglers_almanac.desc",
+				"desc.kleispack.repaired_with",
+				"desc.kleispack.cleanses_maleffect",
+				"item.kleispack.frog",
+				"item.kleispack.tadpole",
+				"matcha.lore.regen",
+				"matcha.lore.blocking_colon",
+				"matcha.lore.melee_blocking",
+				"matcha.lore.projectile_blocking",
+				"matcha.lore.throwable",
+				"matcha.lore.warping",
+				"matcha.asylum.cause_political",
+				"matcha.amnestic.place_hint",
+				"matcha.lore.full",
+				"matcha.lore.gills"
+		}) {
+			CompoundTag legacyLore = new CompoundTag();
+			legacyLore.putString("translate", key);
+			translatedLore.add(legacyLore);
+		}
+		translatedComponents.put("minecraft:lore", translatedLore);
+		CompoundTag translatedEnchantment = new CompoundTag();
+		translatedEnchantment.putString("translate", "enchantment.kleispack.warding1");
+		translatedComponents.put("minecraft:custom_name", translatedEnchantment);
+		translatedStack.put("components", translatedComponents);
+		CompoundTag fixedTranslations = MatchaItemDataFixer.update(translatedStack);
+		CompoundTag fixedTranslationComponents = fixedTranslations.getCompound("components");
+		assert "item.matcha.blessing_aeolus".equals(fixedTranslationComponents.getCompound("minecraft:item_name").getStringOr("translate", ""));
+		assert "item.matcha.blessing.aeolus".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(0).getStringOr("translate", ""));
+		assert "lore.matcha.fish_rarity.4".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(1).getStringOr("translate", ""));
+		assert "advancements.matcha.anglers_almanac.title".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(2).getStringOr("translate", ""));
+		assert "advancements.matcha.anglers_almanac.desc".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(3).getStringOr("translate", ""));
+		assert "tooltip.matcha.repaired_with".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(4).getStringOr("translate", ""));
+		assert "effect.matcha.cleanse_maleffect".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(5).getStringOr("translate", ""));
+		assert "item.matcha.frog".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(6).getStringOr("translate", ""));
+		assert "item.matcha.tadpole".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(7).getStringOr("translate", ""));
+		assert "effect.matcha.regen".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(8).getStringOr("translate", ""));
+		assert "desc.matcha.blocking_colon".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(9).getStringOr("translate", ""));
+		assert "desc.matcha.melee_blocking".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(10).getStringOr("translate", ""));
+		assert "desc.matcha.projectile_blocking".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(11).getStringOr("translate", ""));
+		assert "desc.matcha.throwable".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(12).getStringOr("translate", ""));
+		assert "effect.matcha.warping".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(13).getStringOr("translate", ""));
+		assert "item.matcha.asylum_seeker.cause.1".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(14).getStringOr("translate", ""));
+		assert "item.matcha.amnestic.place_hint".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(15).getStringOr("translate", ""));
+		assert "desc.matcha.full".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(16).getStringOr("translate", ""));
+		assert "effect.matcha.water_breathing".equals(fixedTranslationComponents.getList("minecraft:lore", 10).getCompound(17).getStringOr("translate", ""));
+		assert "enchantment.matcha.warding1".equals(fixedTranslationComponents.getCompound("minecraft:custom_name").getStringOr("translate", ""));
+
+		CompoundTag customTranslationData = new CompoundTag();
+		customTranslationData.putString("translate", "item.kleispack.blessing.aeolus");
+		CompoundTag customTranslationStack = new CompoundTag();
+		customTranslationStack.putString("id", "matcha:blessing_aeolus");
+		CompoundTag customTranslationComponents = new CompoundTag();
+		customTranslationComponents.put("minecraft:custom_data", customTranslationData);
+		customTranslationStack.put("components", customTranslationComponents);
+		CompoundTag fixedCustomTranslation = MatchaItemDataFixer.update(customTranslationStack);
+		assert "item.kleispack.blessing.aeolus".equals(fixedCustomTranslation.getCompound("components").getCompound("minecraft:custom_data").getStringOr("translate", ""));
 
 		CompoundTag elytra = new CompoundTag();
 		elytra.putString("id", "matcha:bronze_elytra");

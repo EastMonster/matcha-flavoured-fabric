@@ -16,7 +16,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.aeolus",
+					"translate": "item.matcha.blessing.aeolus",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -41,7 +41,7 @@
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.apollo",
+					"translate": "item.matcha.blessing.apollo",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -65,7 +65,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.arachnae",
+					"translate": "item.matcha.blessing.arachnae",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -90,7 +90,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.ares",
+					"translate": "item.matcha.blessing.ares",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -115,7 +115,7 @@
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.artemis",
+					"translate": "item.matcha.blessing.artemis",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -139,7 +139,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.clement",
+					"translate": "item.matcha.blessing.clement",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -164,7 +164,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.cronus",
+					"translate": "item.matcha.blessing.cronus",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -189,7 +189,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.daedalus",
+					"translate": "item.matcha.blessing.daedalus",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -214,7 +214,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.demeter",
+					"translate": "item.matcha.blessing.demeter",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -238,7 +238,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.eros",
+					"translate": "item.matcha.blessing.eros",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -264,7 +264,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.glaucus",
+					"translate": "item.matcha.blessing.glaucus",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -289,7 +289,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.god_king",
+					"translate": "item.matcha.blessing.god_king",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -313,7 +313,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.hyacinthus",
+					"translate": "item.matcha.blessing.hyacinthus",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -337,7 +337,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.icarus",
+					"translate": "item.matcha.blessing.icarus",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -361,7 +361,7 @@
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.lu_ban",
+					"translate": "item.matcha.blessing.lu_ban",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -410,7 +410,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.paris",
+					"translate": "item.matcha.blessing.paris",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -434,7 +434,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.prometheus",
+					"translate": "item.matcha.blessing.prometheus",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -460,7 +460,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.talos",
+					"translate": "item.matcha.blessing.talos",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -485,7 +485,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.man",
+					"translate": "item.matcha.blessing.man",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -509,7 +509,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.will",
+					"translate": "item.matcha.blessing.will",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -535,7 +535,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.yama",
+					"translate": "item.matcha.blessing.yama",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -562,7 +562,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.yamm",
+					"translate": "item.matcha.blessing.yamm",
 					"color": "dark_gray",
 					"italic": false
 				}
@@ -574,7 +574,7 @@
 		"id": "ofuda",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/minecraft/villager_trade/librarian/2/avesta.json",
+		"source": "data/matcha/villager_trade/librarian/2/avesta.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:item_name": {
@@ -583,7 +583,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
-					"translate": "item.kleispack.blessing.ahura_mazda",
+					"translate": "item.matcha.blessing.ahura_mazda",
 					"color": "dark_gray",
 					"italic": false
 				}

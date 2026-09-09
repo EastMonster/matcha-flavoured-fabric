@@ -5,7 +5,7 @@
       "id": "leather_boots"
     },
     "title": {
-      "translate": "adv.kleispack.anglers_almanac.category.junk"
+      "translate": "advancements.matcha.anglers_almanac.category.junk.title"
     },
     "description": "",
     "show_toast": false,

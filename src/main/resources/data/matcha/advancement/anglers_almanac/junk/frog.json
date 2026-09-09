@@ -5,17 +5,17 @@
       "id": "frog_spawn_egg"
     },
     "title": {
-      "translate": "item.kleispack.frog"
+      "translate": "item.matcha.frog"
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.frog.desc",
+        "translate": "advancements.matcha.anglers_almanac.frog.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "4.5%"
         ],
@@ -24,7 +24,7 @@
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.only_in",
+        "translate": "advancements.matcha.anglers_almanac.only_in",
         "extra": [
           {
             "text": ": "

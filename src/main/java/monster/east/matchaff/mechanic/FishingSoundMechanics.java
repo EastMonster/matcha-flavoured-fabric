@@ -73,7 +73,7 @@ public final class FishingSoundMechanics {
 			item("matcha", "swordfish"));
 
 	private static final Map<Item, String> SPECIAL = Map.of(
-			item("matcha", "axolotl"), "fishing.axolotl",
+			item("minecraft", "axolotl_spawn_egg"), "fishing.axolotl",
 			item("matcha", "fish_bones"), "fishing.fish_bones",
 			item("minecraft", "enchanted_book"), "fishing.enchanted_book",
 			item("minecraft", "frog_spawn_egg"), "fishing.frog",

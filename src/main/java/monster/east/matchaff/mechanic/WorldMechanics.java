@@ -154,12 +154,12 @@ public final class WorldMechanics {
 			return;
 		}
 		server.getPlayerList().broadcastSystemMessage(
-				Component.translatable("matcha.message.difficulty.is_now")
+				Component.translatable("message.matcha.difficulty.is_now")
 						.append(Component.literal(" "))
 						.append(Component.translatable(difficultyNameKey(Difficulty.HARD)).withStyle(
 								ChatFormatting.RED, ChatFormatting.BOLD))
 						.append("\n")
-						.append(Component.translatable("matcha.message.difficulty.disclaimer")
+						.append(Component.translatable("message.matcha.difficulty.disclaimer")
 								.withStyle(ChatFormatting.GRAY)), false);
 		server.setDifficulty(Difficulty.HARD, true);
 		cacheDifficulty(server);
@@ -188,10 +188,10 @@ public final class WorldMechanics {
 
 	private static void welcome(ServerPlayer player) {
 		migrateRecipeUnlocks(player);
-		player.sendSystemMessage(Component.translatable("matcha.message.welcome")
+		player.sendSystemMessage(Component.translatable("message.matcha.welcome")
 				.append(Component.literal(VERSION_LABEL))
 				.withStyle(style -> style.withColor(TextColor.fromRgb(0x65E082))));
-		player.sendSystemMessage(Component.translatable("matcha.message.welcome.desc")
+		player.sendSystemMessage(Component.translatable("message.matcha.welcome.desc")
 				.withStyle(style -> style.withColor(TextColor.fromRgb(0x8FB398))));
 		difficultyWelcome(player);
 	}
@@ -239,7 +239,7 @@ public final class WorldMechanics {
 			return;
 		}
 		player.sendSystemMessage(Component.literal("[!]: ").withStyle(ChatFormatting.GREEN)
-				.append(Component.translatable("matcha.message.player_updated").withStyle(ChatFormatting.GRAY)));
+				.append(Component.translatable("message.matcha.player_updated").withStyle(ChatFormatting.GRAY)));
 	}
 
 	private static boolean isRewardAdvancementToRevoke(Identifier id) {
@@ -308,20 +308,20 @@ public final class WorldMechanics {
 		String icon = difficulty == Difficulty.EASY ? "[⛏]" : difficulty == Difficulty.NORMAL ? "[☠]" : "[☠☠☠]";
 		player.sendSystemMessage(Component.literal(icon).withStyle(color)
 				.append(Component.literal(" "))
-				.append(Component.translatable("matcha.message.difficulty.is").withStyle(ChatFormatting.GRAY))
+				.append(Component.translatable("message.matcha.difficulty.is").withStyle(ChatFormatting.GRAY))
 				.append(Component.literal(" "))
 				.append(Component.translatable(difficultyNameKey(difficulty)).withStyle(color, ChatFormatting.BOLD))
 				.append(Component.literal("\n"))
-				.append(Component.translatable("matcha.message.difficulty.disclaimer")
+				.append(Component.translatable("message.matcha.difficulty.disclaimer")
 						.withStyle(ChatFormatting.DARK_GRAY)));
 	}
 
 	private static String difficultyNameKey(Difficulty difficulty) {
 		return switch (difficulty) {
-			case EASY -> "matcha.message.difficulty.easy";
-			case NORMAL -> "matcha.message.difficulty.normal";
-			case HARD -> "matcha.message.difficulty.hard";
-			default -> "matcha.message.difficulty.normal";
+			case EASY -> "message.matcha.difficulty.easy";
+			case NORMAL -> "message.matcha.difficulty.normal";
+			case HARD -> "message.matcha.difficulty.hard";
+			default -> "message.matcha.difficulty.normal";
 		};
 	}
 
@@ -423,7 +423,7 @@ public final class WorldMechanics {
 			replacement.set(DataComponents.REPAIRABLE, new Repairable(HolderSet.direct(
 					Items.HONEYCOMB.builtInRegistryHolder(), Items.FEATHER.builtInRegistryHolder())));
 			replacement.set(DataComponents.LORE, new ItemLore(java.util.List.of(
-					Component.translatable("desc.kleispack.repaired_with")
+					Component.translatable("tooltip.matcha.repaired_with")
 							.withStyle(style -> style.withColor(ChatFormatting.GRAY).withItalic(false)),
 					Component.translatable("item.minecraft.honeycomb")
 							.withStyle(style -> style.withColor(ChatFormatting.DARK_GRAY).withItalic(false)),

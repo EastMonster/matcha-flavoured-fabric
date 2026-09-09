@@ -22,7 +22,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "adv.kleispack.light_beacon.desc",
+				"translate": "advancements.matcha.light_beacon.desc",
 				"color": "gray"
 			}
 		],
@@ -31,7 +31,7 @@
 			"id": "matcha:beacon_kindling"
 		},
 		"title": {
-			"translate": "adv.kleispack.light_beacon"
+			"translate": "advancements.matcha.light_beacon.title"
 		},
 		"hidden": false
 	},

@@ -17,7 +17,7 @@
 	],
 	"anvil_cost": 0,
 	"description": {
-		"translate": "enchantment.kleispack.divinity",
+		"translate": "enchantment.matcha.divinity",
 		"color": "gray"
 	},
 	"max_cost": {

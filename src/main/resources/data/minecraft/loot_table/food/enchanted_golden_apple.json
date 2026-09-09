@@ -24,7 +24,7 @@
 										"italic": false
 									},
 									{
-										"translate": "matcha.lore.regen_ii",
+										"translate": "effect.matcha.regen_ii",
 											"with": [
 												"0:30"
 											],
@@ -32,7 +32,7 @@
 										"italic": false
 									},
 									{
-										"translate": "matcha.lore.fire_resistance",
+										"translate": "effect.matcha.fire_resistance",
 											"with": [
 												"5:00"
 											],
@@ -40,7 +40,7 @@
 										"italic": false
 									},
 									{
-										"translate": "matcha.lore.resistance",
+										"translate": "effect.matcha.resistance",
 											"with": [
 												"5:00"
 											],

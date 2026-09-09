@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/amnestic_wrapped"
+		"model": "matcha:item/amnestic_wrapped"
 	}
 }

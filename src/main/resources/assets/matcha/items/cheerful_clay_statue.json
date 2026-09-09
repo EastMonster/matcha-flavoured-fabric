@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/cheerful_clay_statue"
+		"model": "matcha:item/cheerful_clay_statue"
 	}
 }

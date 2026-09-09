@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/electrum_pickaxe"
+		"model": "matcha:item/electrum_pickaxe"
 	}
 }

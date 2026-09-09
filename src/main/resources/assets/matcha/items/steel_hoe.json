@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/steel_hoe"
+		"model": "matcha:item/steel_hoe"
 	}
 }

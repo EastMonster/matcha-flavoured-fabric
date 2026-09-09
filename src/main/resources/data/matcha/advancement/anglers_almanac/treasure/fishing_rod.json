@@ -12,13 +12,13 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.enchanted_fishing_rod.desc",
+        "translate": "advancements.matcha.anglers_almanac.enchanted_fishing_rod.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "23%"
         ],

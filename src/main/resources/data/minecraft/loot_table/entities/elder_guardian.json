@@ -22,7 +22,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/divine_fragment_poly"
+					"value": "matcha:kleis_items/divine_fragment_poly"
 				}
 			],
 			"rolls": 1
@@ -47,7 +47,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/opal"
+					"value": "matcha:kleis_items/opal"
 				}
 			],
 			"conditions": [

@@ -48,7 +48,7 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.repaired_with",
+					"translate": "tooltip.matcha.repaired_with",
 					"color": "dark_gray",
 					"italic": false
 				},

@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/electrum_chestplate"
+		"model": "matcha:item/electrum_chestplate"
 	}
 }

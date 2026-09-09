@@ -25,7 +25,7 @@
 				"color": "red"
 			},
 			{
-				"translate": "advancements.matcha.tutorial.find_stronghold.description",
+				"translate": "advancements.matcha.tutorial.find_stronghold.desc",
 				"color": "gray"
 			}
 		],

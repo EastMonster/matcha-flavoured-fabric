@@ -9,18 +9,18 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.cod.desc",
+        "translate": "advancements.matcha.anglers_almanac.cod.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.fishing.rarity.1",
+        "translate": "lore.matcha.fish_rarity.1",
         "italic": false
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "35.7%"
         ],

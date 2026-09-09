@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/shakudo_helmet"
+		"model": "matcha:item/shakudo_helmet"
 	}
 }

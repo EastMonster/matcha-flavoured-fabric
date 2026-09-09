@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/pad_thai"
+		"model": "matcha:item/pad_thai"
 	}
 }

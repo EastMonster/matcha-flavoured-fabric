@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/bronze_boots"
+		"model": "matcha:item/hepatizon_boots"
 	}
 }

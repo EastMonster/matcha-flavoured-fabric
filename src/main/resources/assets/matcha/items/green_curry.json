@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/green_curry"
+		"model": "matcha:item/green_curry"
 	}
 }

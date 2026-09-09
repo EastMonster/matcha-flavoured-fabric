@@ -298,7 +298,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/enoch",
+					"value": "matcha:kleis_items/enoch",
 					"weight": 1
 				},
 				{

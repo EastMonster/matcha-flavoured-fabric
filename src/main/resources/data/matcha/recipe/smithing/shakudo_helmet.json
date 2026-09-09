@@ -13,17 +13,17 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.per_equipment_bonus",
+					"translate": "tooltip.matcha.per_equipment_bonus",
 					"color": "dark_gray",
 					"italic": false
 				},
 				{
-					"translate": "enchantment.kleispack.shakudo_regen_bonus",
+					"translate": "enchantment.matcha.shakudo_regen_bonus",
 					"color": "#e85e8f",
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.repaired_with",
+					"translate": "tooltip.matcha.repaired_with",
 					"color": "gray",
 					"italic": false
 				},
@@ -54,7 +54,7 @@
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
 				"slot": "head",
-				"asset_id": "minecraft:shakudo"
+				"asset_id": "matcha:shakudo"
 			},
 			"minecraft:repairable": {
 				"items": [

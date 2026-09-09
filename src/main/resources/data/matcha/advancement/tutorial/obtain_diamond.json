@@ -19,7 +19,7 @@
 				"color": "red"
 			},
 			{
-				"translate": "advancements.matcha.tutorial.obtain_diamond.description",
+				"translate": "advancements.matcha.tutorial.obtain_diamond.desc",
 				"color": "gray"
 			}
 		],

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/bedrock_buster"
+      "model": "matcha:block/bedrock_buster"
     }
   }
 }

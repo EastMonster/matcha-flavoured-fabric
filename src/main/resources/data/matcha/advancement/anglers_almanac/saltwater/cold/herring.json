@@ -10,18 +10,18 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.herring.desc",
+        "translate": "advancements.matcha.anglers_almanac.herring.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.fishing.rarity.2",
+        "translate": "lore.matcha.fish_rarity.2",
         "italic": false
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "19%"
         ],

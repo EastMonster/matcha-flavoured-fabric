@@ -1,0 +1,19 @@
+{
+	"layers": {
+		"humanoid": [
+			{
+				"texture": "matcha:shakudo"
+			}
+		],
+		"humanoid_leggings": [
+			{
+				"texture": "matcha:shakudo"
+			}
+		],
+		"horse_body": [
+			{
+				"texture": "matcha:shakudo"
+			}
+		]
+	}
+}

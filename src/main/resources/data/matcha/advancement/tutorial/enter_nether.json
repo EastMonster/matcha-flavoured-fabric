@@ -15,7 +15,7 @@
 				"color": "red"
 			},
 			{
-				"translate": "advancements.matcha.tutorial.enter_nether.description",
+				"translate": "advancements.matcha.tutorial.enter_nether.desc",
 				"color": "gray"
 			}
 		],

@@ -5,7 +5,7 @@
 				"items": [
 					{
 						"components": {
-							"minecraft:item_model": "minecraft:anglers_almanac"
+							"minecraft:item_model": "matcha:anglers_almanac"
 						}
 					}
 				]
@@ -21,16 +21,16 @@
   "display": {
     "background": "minecraft:block/barrel_bottom",
     "description": {
-      "translate": "adv.kleispack.anglers_almanac.desc"
+      "translate": "advancements.matcha.anglers_almanac.desc"
     },
     "icon": {
       "id": "minecraft:fishing_rod",
       "components": {
-        "minecraft:item_model": "minecraft:anglers_almanac"
+				"minecraft:item_model": "matcha:anglers_almanac"
       }
     },
     "title": {
-      "translate": "adv.kleispack.anglers_almanac"
+      "translate": "advancements.matcha.anglers_almanac.title"
     },
     "show_toast": true,
     "announce_to_chat": false,

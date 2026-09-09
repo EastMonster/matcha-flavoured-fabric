@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/cheese_pizza"
+		"model": "matcha:item/cheese_pizza"
 	}
 }

@@ -32,7 +32,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.kill_villager.description"
+			"translate": "advancements.matcha.tutorial.kill_villager.desc"
 		},
 		"icon": {
 			"count": 1,

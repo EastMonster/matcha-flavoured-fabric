@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/silver_sword"
+		"model": "matcha:item/silver_sword"
 	}
 }

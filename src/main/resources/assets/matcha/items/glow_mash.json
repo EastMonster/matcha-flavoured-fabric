@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/glow_mash"
+		"model": "matcha:item/glow_mash"
 	}
 }

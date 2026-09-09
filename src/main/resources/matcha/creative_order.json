@@ -413,8 +413,7 @@
 	},
 	"spawn_eggs": {
 		"misc_spawn_items": [
-		"asylum_seeker",
-			"axolotl"
+			"asylum_seeker"
 		],
 		"calves": [
 			"crate_cold_cow",

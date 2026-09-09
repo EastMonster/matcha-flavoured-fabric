@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/gnocchi_recipe"
+		"model": "matcha:item/gnocchi_recipe"
 	}
 }

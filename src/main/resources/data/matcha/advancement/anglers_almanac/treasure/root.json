@@ -5,7 +5,7 @@
       "id": "diamond"
     },
     "title": {
-      "translate": "adv.kleispack.anglers_almanac.category.treasure"
+      "translate": "advancements.matcha.anglers_almanac.category.treasure.title"
     },
     "description": "",
     "show_toast": false,

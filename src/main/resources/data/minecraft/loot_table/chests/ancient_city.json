@@ -301,7 +301,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/topaz",
+					"value": "matcha:kleis_items/topaz",
 					"weight": 5,
 					"quality": 1
 				},
@@ -313,7 +313,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/divine_fragment_poly",
+					"value": "matcha:kleis_items/divine_fragment_poly",
 					"weight": 2,
 					"quality": 2
 				}

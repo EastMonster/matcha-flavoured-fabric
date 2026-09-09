@@ -10,18 +10,18 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.siberian_sturgeon.desc",
+        "translate": "advancements.matcha.anglers_almanac.siberian_sturgeon.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.fishing.rarity.4",
+        "translate": "lore.matcha.fish_rarity.4",
         "italic": false
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "2.4%"
         ],

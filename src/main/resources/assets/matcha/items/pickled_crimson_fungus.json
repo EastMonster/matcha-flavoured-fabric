@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/pickled_crimson_fungus"
+		"model": "matcha:item/pickled_crimson_fungus"
 	}
 }

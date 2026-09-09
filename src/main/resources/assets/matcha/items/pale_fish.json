@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/pale_fish"
+		"model": "matcha:item/pale_fish"
 	}
 }

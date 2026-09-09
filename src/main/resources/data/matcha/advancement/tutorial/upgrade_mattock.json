@@ -57,7 +57,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "advancements.matcha.tutorial.upgrade_mattock.description",
+				"translate": "advancements.matcha.tutorial.upgrade_mattock.desc",
 				"color": "gray"
 			}
 		],

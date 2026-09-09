@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/invisible_item_frame"
+		"model": "matcha:item/invisible_item_frame"
 	}
 }

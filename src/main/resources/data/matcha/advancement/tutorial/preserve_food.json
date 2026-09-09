@@ -94,7 +94,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.preserve_food.description"
+			"translate": "advancements.matcha.tutorial.preserve_food.desc"
 		},
 		"icon": {
 			"count": 1,

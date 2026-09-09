@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/ruby"
+					"value": "matcha:kleis_items/ruby"
 				}
 			]
 		},

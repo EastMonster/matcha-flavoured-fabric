@@ -1,0 +1,9 @@
+{
+  "values": [
+    "matcha:armorer/1/comparator",
+    "matcha:armorer/1/composter",
+    "matcha:armorer/1/noteblock",
+    "matcha:armorer/1/redstone_block",
+    "matcha:armorer/1/repeater"
+  ]
+}

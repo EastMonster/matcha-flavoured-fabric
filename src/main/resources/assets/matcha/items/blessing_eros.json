@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/blessing_eros"
+		"model": "matcha:item/blessing_eros"
 	}
 }

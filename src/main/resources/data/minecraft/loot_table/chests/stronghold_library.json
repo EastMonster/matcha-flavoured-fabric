@@ -78,7 +78,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/solomon",
+					"value": "matcha:kleis_items/solomon",
 					"weight": 1
 				}
 			]

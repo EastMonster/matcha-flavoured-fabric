@@ -14,7 +14,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_smooth_stone.description"
+			"translate": "advancements.matcha.tutorial.obtain_smooth_stone.desc"
 		},
 		"icon": {
 			"count": 1,

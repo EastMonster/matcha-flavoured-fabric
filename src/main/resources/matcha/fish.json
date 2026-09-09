@@ -11,7 +11,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -29,7 +29,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -47,7 +47,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -65,7 +65,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -83,7 +83,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -101,7 +101,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -119,7 +119,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -137,7 +137,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -155,7 +155,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -173,7 +173,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -191,7 +191,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -209,7 +209,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -227,7 +227,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -245,7 +245,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -263,7 +263,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -281,7 +281,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -299,7 +299,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -317,7 +317,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -335,7 +335,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -353,7 +353,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -371,7 +371,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -389,7 +389,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -407,7 +407,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -425,7 +425,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -443,7 +443,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -461,7 +461,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -479,7 +479,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -497,7 +497,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -515,7 +515,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -533,7 +533,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -551,7 +551,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -569,7 +569,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -587,7 +587,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -605,7 +605,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -623,7 +623,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -641,7 +641,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -659,7 +659,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -677,7 +677,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.1",
+					"translate": "lore.matcha.fish_rarity.1",
 					"italic": false
 				}
 			]
@@ -695,7 +695,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -713,7 +713,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.4",
+					"translate": "lore.matcha.fish_rarity.4",
 					"italic": false
 				}
 			]
@@ -731,7 +731,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]
@@ -749,7 +749,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.2",
+					"translate": "lore.matcha.fish_rarity.2",
 					"italic": false
 				}
 			]
@@ -767,7 +767,7 @@
 			},
 			"minecraft:lore": [
 				{
-					"translate": "adv.kleispack.fishing.rarity.3",
+					"translate": "lore.matcha.fish_rarity.3",
 					"italic": false
 				}
 			]

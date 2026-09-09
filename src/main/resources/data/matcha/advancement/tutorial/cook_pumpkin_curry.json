@@ -15,7 +15,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "adv.kleispack.cook_pumpkin_curry.desc",
+				"translate": "advancements.matcha.cook_pumpkin_curry.desc",
 				"color": "gray"
 			}
 		],
@@ -24,7 +24,7 @@
 			"id": "matcha:pumpkin_curry"
 		},
 		"title": {
-			"translate": "adv.kleispack.cook_pumpkin_curry"
+			"translate": "advancements.matcha.cook_pumpkin_curry.title"
 		},
 		"hidden": false
 	},

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "matcha:item/ptero_chicken_nugget"
+  }
+}

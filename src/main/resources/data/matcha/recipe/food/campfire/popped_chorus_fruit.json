@@ -14,7 +14,7 @@
 					"italic": false
 				},
 				{
-					"translate": "matcha.lore.levitation_iii",
+					"translate": "effect.matcha.levitation_iii",
 						"with": [
 							"0:03"
 						],

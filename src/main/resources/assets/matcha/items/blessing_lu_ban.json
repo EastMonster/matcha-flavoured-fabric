@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/blessing_lu_ban"
+		"model": "matcha:item/blessing_lu_ban"
 	}
 }

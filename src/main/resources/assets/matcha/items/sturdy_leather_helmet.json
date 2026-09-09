@@ -148,7 +148,7 @@
     ],
     "fallback": {
       "type": "minecraft:model",
-      "model": "minecraft:item/sturdy_leather_helmet",
+      "model": "matcha:item/sturdy_leather_helmet",
       "tints": [
         {
           "type": "minecraft:dye",

@@ -3,11 +3,11 @@
     "type": "minecraft:condition",
     "on_false": {
       "type": "minecraft:model",
-      "model": "minecraft:item/shakudo_elytra"
+      "model": "matcha:item/shakudo_elytra"
     },
     "on_true": {
       "type": "minecraft:model",
-      "model": "minecraft:item/shakudo_elytra_broken"
+      "model": "matcha:item/shakudo_elytra_broken"
     },
     "property": "minecraft:broken"
   }

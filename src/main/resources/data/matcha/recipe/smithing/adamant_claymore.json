@@ -26,12 +26,12 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.when_blocking",
+					"translate": "tooltip.matcha.when_blocking",
 					"color": "gray",
 					"italic": false
 				},
 				{
-					"translate": "matcha.lore.melee_blocking",
+					"translate": "desc.matcha.melee_blocking",
 					"with": [
 						"80"
 					],
@@ -39,7 +39,7 @@
 					"italic": false
 				},
 				{
-					"translate": "matcha.lore.projectile_blocking",
+					"translate": "desc.matcha.projectile_blocking",
 					"with": [
 						"70"
 					],
@@ -47,7 +47,7 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.repaired_with",
+					"translate": "tooltip.matcha.repaired_with",
 					"color": "gray",
 					"italic": false
 				},

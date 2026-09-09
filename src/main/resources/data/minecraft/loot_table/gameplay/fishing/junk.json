@@ -102,7 +102,7 @@
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:item_name": {
-									"translate": "item.kleispack.frog"
+									"translate": "item.matcha.frog"
 								},
 								"minecraft:max_stack_size": 1
 							}
@@ -129,7 +129,7 @@
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:item_name": {
-									"translate": "item.kleispack.tadpole"
+									"translate": "item.matcha.tadpole"
 								},
 								"minecraft:max_stack_size": 8
 							}
@@ -138,7 +138,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha:axolotl",
+					"name": "minecraft:axolotl_spawn_egg",
 					"weight": 10,
 					"conditions": [
 						{
@@ -148,6 +148,18 @@
 									"minecraft:dripstone_caves",
 									"minecraft:lush_caves"
 								]
+							}
+						}
+					],
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_name": {
+									"translate": "item.matcha.axolotl"
+								},
+								"minecraft:max_stack_size": 1,
+								"minecraft:item_model": "matcha:axolotl"
 							}
 						}
 					]

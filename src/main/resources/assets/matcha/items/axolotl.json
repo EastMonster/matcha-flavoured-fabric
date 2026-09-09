@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/axolotl"
+		"model": "matcha:item/axolotl"
 	}
 }

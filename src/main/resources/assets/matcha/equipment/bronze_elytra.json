@@ -1,0 +1,10 @@
+{
+  "layers": {
+    "wings": [
+      {
+        "texture": "matcha:bronze_elytra",
+        "use_player_texture": false
+      }
+    ]
+  }
+}

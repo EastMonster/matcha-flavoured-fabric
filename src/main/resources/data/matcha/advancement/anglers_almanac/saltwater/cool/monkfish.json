@@ -10,18 +10,18 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.monkfish.desc",
+        "translate": "advancements.matcha.anglers_almanac.monkfish.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.fishing.rarity.3",
+        "translate": "lore.matcha.fish_rarity.3",
         "italic": false
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "7.1%"
         ],

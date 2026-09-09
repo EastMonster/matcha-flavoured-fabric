@@ -7,7 +7,21 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha:axolotl"
+					"name": "minecraft:axolotl_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_name": {
+									"translate": "item.matcha.axolotl"
+								},
+								"minecraft:item_model": "matcha:axolotl",
+								"minecraft:entity_data": {
+									"id": "minecraft:axolotl"
+								}
+							}
+						}
+					]
 				}
 			]
 		}

@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/butcher_knife"
+		"model": "matcha:item/butcher_knife"
 	}
 }

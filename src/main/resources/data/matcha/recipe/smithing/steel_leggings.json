@@ -23,7 +23,7 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.repaired_with",
+					"translate": "tooltip.matcha.repaired_with",
 					"color": "gray",
 					"italic": false
 				},
@@ -68,7 +68,7 @@
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
 				"slot": "legs",
-				"asset_id": "minecraft:steel"
+				"asset_id": "matcha:steel"
 			},
 			"minecraft:repairable": {
 				"items": [

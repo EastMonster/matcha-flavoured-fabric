@@ -99,7 +99,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:kleis_items/divine_fragment",
+					"value": "matcha:kleis_items/divine_fragment",
 					"weight": 1
 				},
 				{

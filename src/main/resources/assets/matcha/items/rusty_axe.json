@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/rusty_axe"
+		"model": "matcha:item/rusty_axe"
 	}
 }

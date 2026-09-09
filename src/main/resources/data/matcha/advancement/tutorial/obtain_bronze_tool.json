@@ -81,7 +81,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "advancements.matcha.tutorial.obtain_bronze_tool.description",
+				"translate": "advancements.matcha.tutorial.obtain_bronze_tool.desc",
 				"color": "gray"
 			}
 		],

@@ -1,7 +1,7 @@
 {
 	"anvil_cost": 0,
 	"description": {
-		"translate": "enchantment.kleispack.cleanses_feet"
+		"translate": "enchantment.matcha.cleanses_feet"
 	},
 	"max_cost": {
 		"base": 15,

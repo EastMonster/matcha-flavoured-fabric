@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/application"
+		"model": "matcha:item/application"
 	}
 }

@@ -24,7 +24,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_dry_grass.description"
+			"translate": "advancements.matcha.tutorial.obtain_dry_grass.desc"
 		},
 		"icon": {
 			"count": 1,

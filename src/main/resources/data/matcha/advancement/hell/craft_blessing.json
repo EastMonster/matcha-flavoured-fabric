@@ -111,7 +111,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "advancements.matcha.hell.craft_blessing.description",
+				"translate": "advancements.matcha.hell.craft_blessing.desc",
 				"color": "gray"
 			}
 		],

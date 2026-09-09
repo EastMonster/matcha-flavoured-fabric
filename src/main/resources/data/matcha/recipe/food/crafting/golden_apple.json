@@ -24,7 +24,7 @@
 					"italic": false
 				},
 				{
-					"translate": "matcha.lore.regen",
+					"translate": "effect.matcha.regen",
 						"with": [
 							"0:30"
 						],

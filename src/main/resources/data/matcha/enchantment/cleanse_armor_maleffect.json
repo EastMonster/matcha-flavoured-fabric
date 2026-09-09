@@ -1,7 +1,7 @@
 {
 	"anvil_cost": 0,
 	"description": {
-		"translate": "desc.kleispack.cleanses_maleffect"
+		"translate": "effect.matcha.cleanse_maleffect"
 	},
 	"max_cost": {
 		"base": 15,

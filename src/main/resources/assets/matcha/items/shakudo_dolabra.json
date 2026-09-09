@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/shakudo_dolabra"
+		"model": "matcha:item/shakudo_dolabra"
 	}
 }	

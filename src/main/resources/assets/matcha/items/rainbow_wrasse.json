@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/rainbow_wrasse"
+		"model": "matcha:item/rainbow_wrasse"
 	}
 }

@@ -14,7 +14,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.obtain_oven.description"
+			"translate": "advancements.matcha.tutorial.obtain_oven.desc"
 		},
 		"icon": {
 			"count": 1,

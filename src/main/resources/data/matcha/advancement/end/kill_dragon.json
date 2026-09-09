@@ -23,7 +23,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "advancements.matcha.end.kill_dragon.description",
+				"translate": "advancements.matcha.end.kill_dragon.desc",
 				"color": "gray"
 			}
 		],

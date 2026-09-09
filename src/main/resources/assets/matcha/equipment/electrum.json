@@ -1,0 +1,19 @@
+{
+	"layers": {
+		"humanoid": [
+			{
+				"texture": "matcha:electrum"
+			}
+		],
+		"humanoid_leggings": [
+			{
+				"texture": "matcha:electrum"
+			}
+		],
+		"horse_body": [
+			{
+				"texture": "matcha:electrum"
+			}
+		]
+	}
+}

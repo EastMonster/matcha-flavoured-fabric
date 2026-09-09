@@ -1,0 +1,19 @@
+{
+	"layers": {
+		"humanoid": [
+			{
+				"texture": "matcha:bronze"
+			}
+		],
+		"humanoid_leggings": [
+			{
+				"texture": "matcha:bronze"
+			}
+		],
+		"horse_body": [
+			{
+				"texture": "matcha:bronze"
+			}
+		]
+	}
+}

@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/warped_stroganoff_recipe"
+		"model": "matcha:item/warped_stroganoff_recipe"
 	}
 }

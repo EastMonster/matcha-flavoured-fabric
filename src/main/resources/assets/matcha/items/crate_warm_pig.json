@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/crate_warm_pig"
+		"model": "matcha:item/crate_warm_pig"
 	}
 }

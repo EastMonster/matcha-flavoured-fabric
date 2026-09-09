@@ -7,21 +7,21 @@
           "type": "minecraft:condition",
           "on_false": {
             "type": "minecraft:model",
-            "model": "minecraft:item/exotic_seed_bundle"
+            "model": "matcha:item/exotic_seed_bundle"
           },
           "on_true": {
             "type": "minecraft:composite",
             "models": [
               {
                 "type": "minecraft:model",
-                "model": "minecraft:item/seed_bundle_open_back"
+                "model": "matcha:item/seed_bundle_open_back"
               },
               {
                 "type": "minecraft:bundle/selected_item"
               },
               {
                 "type": "minecraft:model",
-                "model": "minecraft:item/exotic_seed_bundle_open_front"
+                "model": "matcha:item/exotic_seed_bundle_open_front"
               }
             ]
           },
@@ -32,7 +32,7 @@
     ],
     "fallback": {
       "type": "minecraft:model",
-      "model": "minecraft:item/exotic_seed_bundle"
+      "model": "matcha:item/exotic_seed_bundle"
     },
     "property": "minecraft:display_context"
   }

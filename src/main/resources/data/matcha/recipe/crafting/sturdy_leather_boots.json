@@ -23,7 +23,7 @@
 					"italic": false
 				},
 				{
-					"translate": "desc.kleispack.repaired_with",
+					"translate": "tooltip.matcha.repaired_with",
 					"color": "gray",
 					"italic": false
 				},
@@ -62,7 +62,7 @@
 			},
 			"minecraft:equippable": {
 				"slot": "feet",
-				"asset_id": "minecraft:sturdy_leather"
+				"asset_id": "matcha:sturdy_leather"
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.sturdy_leather_boots",

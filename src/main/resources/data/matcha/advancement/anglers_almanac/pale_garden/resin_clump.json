@@ -9,13 +9,13 @@
     },
     "description": [
       {
-        "translate": "adv.kleispack.anglers_almanac.resin_clump.desc",
+        "translate": "advancements.matcha.anglers_almanac.resin_clump.desc",
         "color": "dark_aqua",
         "italic": true
       },
       "\n",
       {
-        "translate": "adv.kleispack.anglers_almanac.chance",
+        "translate": "advancements.matcha.anglers_almanac.chance",
         "with": [
           "3.6%"
         ],

@@ -28,7 +28,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.tutorial.light_campfire.description"
+			"translate": "advancements.matcha.tutorial.light_campfire.desc"
 		},
 		"icon": {
 			"count": 1,

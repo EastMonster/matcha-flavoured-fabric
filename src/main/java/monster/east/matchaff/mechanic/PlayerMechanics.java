@@ -172,10 +172,10 @@ public final class PlayerMechanics {
 	private static void announceMinimum(MinecraftServer server, int floor) {
 		int index = (20 - floor) / 2;
 		server.getPlayerList().broadcastSystemMessage(
-				Component.translatable("log.kleispack.god_grows_angry_" + index)
+				Component.translatable("message.matcha.heart.minimum.warning." + index)
 						.withStyle(style -> style.withColor(ChatFormatting.RED)), false);
 		server.getPlayerList().broadcastSystemMessage(
-				Component.translatable("log.kleispack.minimum_heart_decreased", floor / 2)
+				Component.translatable("message.matcha.heart.minimum.decreased", floor / 2)
 						.withStyle(ChatFormatting.GRAY), false);
 	}
 

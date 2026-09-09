@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/flying_fish"
+		"model": "matcha:item/flying_fish"
 	}
 }

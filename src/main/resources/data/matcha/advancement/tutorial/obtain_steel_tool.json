@@ -87,7 +87,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "advancements.matcha.tutorial.obtain_steel_tool.description",
+				"translate": "advancements.matcha.tutorial.obtain_steel_tool.desc",
 				"color": "gray"
 			}
 		],

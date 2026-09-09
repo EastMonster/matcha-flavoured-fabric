@@ -20,7 +20,7 @@
 				"color": "#ac7b5c"
 			},
 			{
-				"translate": "advancements.matcha.tutorial.trade_fish.description",
+				"translate": "advancements.matcha.tutorial.trade_fish.desc",
 				"color": "gray"
 			}
 		],

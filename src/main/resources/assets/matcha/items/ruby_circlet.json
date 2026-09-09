@@ -1,6 +1,6 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "minecraft:item/ruby_circlet"
+		"model": "matcha:item/ruby_circlet"
 	}
 }
