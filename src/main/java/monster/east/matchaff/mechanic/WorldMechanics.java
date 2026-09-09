@@ -109,7 +109,7 @@ public final class WorldMechanics {
 		}
 		var objective = scoreboard.getObjective(GAMERULES_OBJECTIVE);
 		var applied = scoreboard.getPlayerScoreInfo(ScoreHolder.forNameOnly(GAMERULES_HOLDER), objective);
-		if (applied != null && applied.value() == RECIPE_UNLOCK_VERSION) {
+		if (applied != null) {
 			return;
 		}
 		var rules = server.getGameRules();
@@ -122,7 +122,7 @@ public final class WorldMechanics {
 		rules.set(GameRules.ENDER_PEARLS_VANISH_ON_DEATH, false, server);
 		rules.set(GameRules.MAX_BLOCK_MODIFICATIONS, 200000, server);
 		rules.set(GameRules.COMMAND_BLOCK_OUTPUT, false, server);
-		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(GAMERULES_HOLDER), objective).set(RECIPE_UNLOCK_VERSION);
+		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(GAMERULES_HOLDER), objective).set(1);
 	}
 
 	private static void cacheDifficulty(MinecraftServer server) {
