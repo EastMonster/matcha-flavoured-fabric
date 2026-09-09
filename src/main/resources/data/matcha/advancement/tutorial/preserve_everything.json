@@ -105,7 +105,7 @@
 		],
 		"icon": {
 			"components": {
-				"minecraft:item_model": "minecraft:pickle_everything"
+				"minecraft:item_model": "matcha:pickle_everything"
 			},
 			"count": 1,
 			"id": "minecraft:poisonous_potato"

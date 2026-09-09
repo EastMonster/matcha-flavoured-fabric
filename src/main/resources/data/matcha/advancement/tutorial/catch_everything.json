@@ -399,7 +399,7 @@
 		],
 		"icon": {
 			"components": {
-				"minecraft:item_model": "minecraft:gay_fish"
+				"minecraft:item_model": "matcha:gay_fish"
 			},
 			"count": 1,
 			"id": "minecraft:emerald"
