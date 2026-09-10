@@ -279,6 +279,44 @@ public final class MatchaItemDataFixerCheck {
 		assert shieldEnchantments.contains("matcha:warding_1");
 		assert !shieldEnchantments.contains("matcha:warding_2");
 
+		CompoundTag adamantHelmet = namedAdamantStack("minecraft:netherite_helmet");
+		CompoundTag adamantHelmetEnchantments = adamantHelmet.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		adamantHelmetEnchantments.putInt("matcha:divinity", 1);
+		MatchaItemDataFixer.updateIfNeeded(adamantHelmet);
+		assert adamantHelmetEnchantments.contains("matcha:adamant_armour");
+		assert !adamantHelmetEnchantments.contains("matcha:divinity");
+
+		CompoundTag adamantAxe = namedAdamantStack("minecraft:netherite_axe");
+		CompoundTag adamantAxeEnchantments = adamantAxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		MatchaItemDataFixer.updateIfNeeded(adamantAxe);
+		assert adamantAxeEnchantments.contains("matcha:adamant_tool");
+		assert adamantAxeEnchantments.contains("matcha:adamant_weapon");
+
+		CompoundTag adamantPickaxe = namedAdamantStack("minecraft:netherite_pickaxe");
+		CompoundTag adamantPickaxeEnchantments = adamantPickaxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		MatchaItemDataFixer.updateIfNeeded(adamantPickaxe);
+		assert adamantPickaxeEnchantments.contains("matcha:adamant_tool");
+
+		CompoundTag adamantSword = namedAdamantStack("minecraft:netherite_sword");
+		CompoundTag adamantSwordEnchantments = adamantSword.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		MatchaItemDataFixer.updateIfNeeded(adamantSword);
+		assert adamantSwordEnchantments.contains("matcha:adamant_weapon");
+
+		CompoundTag ordinaryEnchantedItem = stackWithEnchantments("minecraft:diamond_pickaxe", "minecraft:unbreaking");
+		ordinaryEnchantedItem.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		MatchaItemDataFixer.updateIfNeeded(ordinaryEnchantedItem);
+		assert "minecraft:diamond_pickaxe".equals(ordinaryEnchantedItem.getStringOr("id", ""));
+
+		CompoundTag bareAdamantClaymore = new CompoundTag();
+		bareAdamantClaymore.putString("id", "matcha:adamant_claymore");
+		CompoundTag fixedBareAdamantClaymore = MatchaItemDataFixer.updateIfNeeded(bareAdamantClaymore);
+		assert fixedBareAdamantClaymore.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow().contains("matcha:adamant_weapon");
+
 		CompoundTag dolabra = stackWithEnchantments("matcha:adamant_dolabra", "matcha:divinity");
 		dolabra.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
 		CompoundTag dolabraComponents = dolabra.getCompound("components").orElseThrow();
@@ -308,6 +346,15 @@ public final class MatchaItemDataFixerCheck {
 		enchantments.putInt(enchantment, 1);
 		components.put("minecraft:enchantments", enchantments);
 		stack.put("components", components);
+		return stack;
+	}
+
+	private static CompoundTag namedAdamantStack(String id) {
+		CompoundTag stack = stackWithEnchantments(id, "minecraft:unbreaking");
+		stack.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		CompoundTag itemName = new CompoundTag();
+		itemName.putString("translate", "item." + id.replace(':', '.'));
+		stack.getCompound("components").orElseThrow().put("minecraft:item_name", itemName);
 		return stack;
 	}
 }

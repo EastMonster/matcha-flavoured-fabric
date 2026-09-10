@@ -50,6 +50,7 @@
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:enchantments": {
+				"matcha:adamant_weapon": 1,
 				"minecraft:sharpness": 1,
 				"minecraft:unbreaking": 2
 			}

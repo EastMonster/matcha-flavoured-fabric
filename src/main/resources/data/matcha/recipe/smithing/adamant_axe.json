@@ -18,6 +18,8 @@
 				"damage_per_block": 1
 			},
 			"minecraft:enchantments": {
+				"matcha:adamant_tool": 1,
+				"matcha:adamant_weapon": 1,
 				"minecraft:efficiency": 2,
 				"minecraft:unbreaking": 2
 			},
