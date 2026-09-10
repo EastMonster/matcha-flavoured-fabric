@@ -6,6 +6,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
@@ -20,7 +21,7 @@ final class EnchantmentUtil {
 	private EnchantmentUtil() {
 	}
 
-	static int countArmor(ServerPlayer player, Registry<Enchantment> enchantments, Identifier enchantment) {
+	static int countArmor(LivingEntity player, Registry<Enchantment> enchantments, Identifier enchantment) {
 		int count = 0;
 		for (EquipmentSlot slot : ARMOR_SLOTS) {
 			count += maxLevel(player.getItemBySlot(slot), enchantments, enchantment);

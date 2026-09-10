@@ -7,7 +7,7 @@
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:enchantments": {
-				"matcha:divinity": 1,
+				"matcha:adamant_armour": 1,
 				"minecraft:unbreaking": 2,
 				"minecraft:protection": 1
 			},
