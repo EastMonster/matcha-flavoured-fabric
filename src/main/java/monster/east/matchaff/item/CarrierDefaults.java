@@ -66,11 +66,16 @@ final class CarrierDefaults {
 			case "minecraft:netherite_hoe" -> properties.hoe(ToolMaterial.NETHERITE, -4.0F, 0.0F).fireResistant();
 
 			case "minecraft:stone_pickaxe" -> properties.pickaxe(ToolMaterial.STONE, 1.0F, -2.8F);
+			case "minecraft:netherite_pickaxe" -> properties.pickaxe(ToolMaterial.NETHERITE, 1.0F, -2.8F).fireResistant();
 			case "minecraft:stone_shovel" -> properties.shovel(ToolMaterial.STONE, 1.5F, -3.0F);
 			case "minecraft:iron_shovel" -> properties.shovel(ToolMaterial.IRON, 1.5F, -3.0F);
+			case "minecraft:netherite_shovel" -> properties.shovel(ToolMaterial.NETHERITE, 1.5F, -3.0F).fireResistant();
 			case "minecraft:stone_spear" -> properties.spear(
 					ToolMaterial.STONE, 0.75F, 0.82F, 0.7F, 4.5F, 13.0F, 9.0F, 5.1F, 13.75F, 4.6F
 			);
+			case "minecraft:netherite_spear" -> properties.spear(
+					ToolMaterial.NETHERITE, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F
+			).fireResistant();
 
 			case "minecraft:leather_helmet" -> armor(properties, ArmorMaterials.LEATHER, ArmorType.HELMET);
 			case "minecraft:leather_chestplate" -> armor(properties, ArmorMaterials.LEATHER, ArmorType.CHESTPLATE);
@@ -88,6 +93,10 @@ final class CarrierDefaults {
 			case "minecraft:diamond_chestplate" -> armor(properties, ArmorMaterials.DIAMOND, ArmorType.CHESTPLATE);
 			case "minecraft:diamond_leggings" -> armor(properties, ArmorMaterials.DIAMOND, ArmorType.LEGGINGS);
 			case "minecraft:diamond_boots" -> armor(properties, ArmorMaterials.DIAMOND, ArmorType.BOOTS);
+			case "minecraft:netherite_helmet" -> armor(properties, ArmorMaterials.NETHERITE, ArmorType.HELMET).fireResistant();
+			case "minecraft:netherite_chestplate" -> armor(properties, ArmorMaterials.NETHERITE, ArmorType.CHESTPLATE).fireResistant();
+			case "minecraft:netherite_leggings" -> armor(properties, ArmorMaterials.NETHERITE, ArmorType.LEGGINGS).fireResistant();
+			case "minecraft:netherite_boots" -> armor(properties, ArmorMaterials.NETHERITE, ArmorType.BOOTS).fireResistant();
 
 			case "minecraft:elytra" -> properties
 					.durability(432)
@@ -158,8 +167,8 @@ final class CarrierDefaults {
 		}
 	}
 
-	private static void armor(Item.Properties properties, net.minecraft.world.item.equipment.ArmorMaterial material, ArmorType type) {
-		properties.humanoidArmor(material, type);
+	private static Item.Properties armor(Item.Properties properties, net.minecraft.world.item.equipment.ArmorMaterial material, ArmorType type) {
+		return properties.humanoidArmor(material, type);
 	}
 
 	private static void shield(Item.Properties properties) {
