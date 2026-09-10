@@ -7,7 +7,7 @@
 		"minecraft:attributes": [
 			{
 				"attribute": "minecraft:block_interaction_range",
-				"id": "main:enchantments/reach",
+				"id": "matcha:enchantments/reach",
 				"amount": {
 					"type": "minecraft:linear",
 					"base": 2,

@@ -17,7 +17,7 @@
 								"per_level_above_first": 0.0155
 							},
 							"attribute": "minecraft:movement_speed",
-							"id": "main:enchantment.traversal",
+							"id": "matcha:enchantment.traversal",
 							"operation": "add_value"
 						}
 					]

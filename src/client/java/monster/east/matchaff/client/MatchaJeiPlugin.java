@@ -13,11 +13,11 @@ import mezz.jei.api.registration.IVanillaCategoryExtensionRegistration;
 import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.runtime.IJeiRuntime;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import monster.east.matchaff.mixin.ClientAdvancementsAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.CriterionProgress;
+import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -47,28 +47,29 @@ import java.util.stream.Stream;
 public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExtension<ShapedRecipe> {
     private static final Identifier UID = Identifier.fromNamespaceAndPath("matcha-flavoured", "jei");
 	private static final List<SecretRecipe> SECRET_RECIPES = List.of(
-			new SecretRecipe("matcha:food/oven/golden_steamed_carrots", "main:tutorial/cook_secret_food", "golden_steamed_carrots"),
-			new SecretRecipe("matcha:food/campfire/golden_steamed_carrots", "main:tutorial/cook_secret_food", "golden_steamed_carrots"),
-			new SecretRecipe("matcha:food/oven/baked_golden_apple", "main:tutorial/cook_secret_food", "baked_golden_apple"),
-			new SecretRecipe("matcha:food/campfire/baked_golden_apple", "main:tutorial/cook_secret_food", "baked_golden_apple"),
-			new SecretRecipe("matcha:food/oven/braised_crimson_fungus", "main:tutorial/cook_secret_food", "braised_crimson_fungus"),
-			new SecretRecipe("matcha:food/campfire/braised_crimson_fungus", "main:tutorial/cook_secret_food", "braised_crimson_fungus"),
-			new SecretRecipe("matcha:food/oven/brasied_warped_fungus", "main:tutorial/cook_secret_food", "braised_warped_fungus"),
-			new SecretRecipe("matcha:food/campfire/brasied_warped_fungus", "main:tutorial/cook_secret_food", "braised_warped_fungus"),
-			new SecretRecipe("matcha:food/crafting/golden_carrot_cupcake", "main:tutorial/cook_secret_meal", "golden_carrot_cupcake"),
-			new SecretRecipe("matcha:food/crafting/golden_pickled_carrots", "main:tutorial/cook_secret_meal", "golden_pickled_carrots"),
-			new SecretRecipe("matcha:food/crafting/golden_apple_empanada", "main:tutorial/cook_secret_meal", "golden_apple_empanada"),
-			new SecretRecipe("matcha:food/crafting/canned_golden_apples", "main:tutorial/cook_secret_meal", "canned_golden_apples"),
-			new SecretRecipe("matcha:food/crafting/pickled_warped_fungus", "main:tutorial/cook_secret_meal", "pickled_warped_fungus"),
-			new SecretRecipe("matcha:food/crafting/warped_stroganoff", "main:tutorial/cook_secret_meal", "warped_stroganoff", "main:cooking_recipes/warped_stroganoff_recipe"),
-			new SecretRecipe("matcha:food/crafting/pickled_crimson_fungus", "main:tutorial/cook_secret_meal", "pickled_crimson_fungus"),
-			new SecretRecipe("matcha:food/crafting/crimson_stroganoff", "main:tutorial/cook_secret_meal", "crimson_stroganoff"),
-			new SecretRecipe("matcha:food/crafting/sweet_berry_toast", "main:tutorial/cook_secret_meal", "sweet_berry_toast", "main:cooking_recipes/sweet_berry_toast_recipe"),
-			new SecretRecipe("matcha:food/crafting/warped_pizza", "main:tutorial/cook_secret_meal", "warped_pizza"),
-			new SecretRecipe("matcha:food/crafting/gnocchi", "main:tutorial/cook_secret_meal", "gnocchi", "main:cooking_recipes/gnocchi_recipe")
+			new SecretRecipe("matcha:food/oven/golden_steamed_carrots", "matcha:tutorial/cook_secret_food", "golden_steamed_carrots"),
+			new SecretRecipe("matcha:food/campfire/golden_steamed_carrots", "matcha:tutorial/cook_secret_food", "golden_steamed_carrots"),
+			new SecretRecipe("matcha:food/oven/baked_golden_apple", "matcha:tutorial/cook_secret_food", "baked_golden_apple"),
+			new SecretRecipe("matcha:food/campfire/baked_golden_apple", "matcha:tutorial/cook_secret_food", "baked_golden_apple"),
+			new SecretRecipe("matcha:food/oven/braised_crimson_fungus", "matcha:tutorial/cook_secret_food", "braised_crimson_fungus"),
+			new SecretRecipe("matcha:food/campfire/braised_crimson_fungus", "matcha:tutorial/cook_secret_food", "braised_crimson_fungus"),
+			new SecretRecipe("matcha:food/oven/brasied_warped_fungus", "matcha:tutorial/cook_secret_food", "braised_warped_fungus"),
+			new SecretRecipe("matcha:food/campfire/brasied_warped_fungus", "matcha:tutorial/cook_secret_food", "braised_warped_fungus"),
+			new SecretRecipe("matcha:food/crafting/golden_carrot_cupcake", "matcha:tutorial/cook_secret_meal", "golden_carrot_cupcake"),
+			new SecretRecipe("matcha:food/crafting/golden_pickled_carrots", "matcha:tutorial/cook_secret_meal", "golden_pickled_carrots"),
+			new SecretRecipe("matcha:food/crafting/golden_apple_empanada", "matcha:tutorial/cook_secret_meal", "golden_apple_empanada"),
+			new SecretRecipe("matcha:food/crafting/canned_golden_apples", "matcha:tutorial/cook_secret_meal", "canned_golden_apples"),
+			new SecretRecipe("matcha:food/crafting/pickled_warped_fungus", "matcha:tutorial/cook_secret_meal", "pickled_warped_fungus"),
+			new SecretRecipe("matcha:food/crafting/warped_stroganoff", "matcha:tutorial/cook_secret_meal", "warped_stroganoff", "matcha:cooking_recipes/warped_stroganoff_recipe"),
+			new SecretRecipe("matcha:food/crafting/pickled_crimson_fungus", "matcha:tutorial/cook_secret_meal", "pickled_crimson_fungus"),
+			new SecretRecipe("matcha:food/crafting/crimson_stroganoff", "matcha:tutorial/cook_secret_meal", "crimson_stroganoff"),
+			new SecretRecipe("matcha:food/crafting/sweet_berry_toast", "matcha:tutorial/cook_secret_meal", "sweet_berry_toast", "matcha:cooking_recipes/sweet_berry_toast_recipe"),
+			new SecretRecipe("matcha:food/crafting/warped_pizza", "matcha:tutorial/cook_secret_meal", "warped_pizza"),
+			new SecretRecipe("matcha:food/crafting/gnocchi", "matcha:tutorial/cook_secret_meal", "gnocchi", "matcha:cooking_recipes/gnocchi_recipe")
 	);
 	private static IJeiRuntime jeiRuntime;
-	private static net.minecraft.client.multiplayer.ClientPacketListener lastConnection;
+	private static boolean tickListenerRegistered;
+	private static ClientPacketListener lastConnection;
 	private static List<RecipeHolder<CraftingRecipe>> craftingRecipes = List.of();
 	private static List<RecipeHolder<SmeltingRecipe>> smeltingRecipes = List.of();
 	private static List<RecipeHolder<CampfireCookingRecipe>> campfireRecipes = List.of();
@@ -83,9 +84,17 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 	@Override
 	public void onRuntimeAvailable(IJeiRuntime runtime) {
 		jeiRuntime = runtime;
-		ClientTickEvents.END_CLIENT_TICK.register(MatchaJeiPlugin::refreshSecretRecipes);
-		ClientPlayConnectionEvents.JOIN.register((connection, sender, client) -> resetRecipeCache());
-		ClientPlayConnectionEvents.DISCONNECT.register((connection, client) -> resetRecipeCache());
+		resetRecipeCache();
+		if (!tickListenerRegistered) {
+			ClientTickEvents.END_CLIENT_TICK.register(MatchaJeiPlugin::refreshSecretRecipes);
+			tickListenerRegistered = true;
+		}
+	}
+
+	@Override
+	public void onRuntimeUnavailable() {
+		jeiRuntime = null;
+		resetRecipeCache();
 	}
 
     @Override
@@ -247,7 +256,7 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 		jeiRuntime.getRecipeManager().unhideRecipes(type, visible);
 	}
 
-	private static long getUnlockedMask(net.minecraft.client.multiplayer.ClientPacketListener connection) {
+	private static long getUnlockedMask(ClientPacketListener connection) {
 		if (connection == null) {
 			return 0L;
 		}
