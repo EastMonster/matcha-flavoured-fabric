@@ -1,12 +1,12 @@
 {
 	"values": [
 		"matcha:sanguine",
-		"matcha:warding0",
-		"matcha:warding1",
-		"matcha:warding2",
-		"matcha:warding3",
+		"matcha:warding_1",
+		"matcha:warding_2",
+		"matcha:warding_3",
+		"matcha:warding_4",
 		"matcha:divinity",
 		"matcha:shakudo_regen",
-		"matcha:warding_armour"
+		"matcha:electrum_armour"
 	]
 }

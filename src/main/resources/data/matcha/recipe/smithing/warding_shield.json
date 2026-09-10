@@ -54,7 +54,7 @@
 				}
 			],
 			"minecraft:enchantments": {
-				"matcha:warding1": 1
+				"matcha:warding_1": 1
 			},
 			"minecraft:repairable": {
 				"items": [

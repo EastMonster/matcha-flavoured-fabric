@@ -476,7 +476,7 @@
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
-				"matcha:warding1": 1,
+				"matcha:warding_2": 1,
 				"minecraft:smite": 2
 			},
 			"minecraft:rarity": "rare",

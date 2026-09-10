@@ -30,6 +30,22 @@ final class MatchaStackMigration {
 			"ace_pride", "actup", "bi_pride", "classic_pride", "common_pride",
 			"inclusive_pride", "lesbian_pride", "nb_pride", "new_pride", "trans_pride"
 	);
+	private static final Map<String, String> WARDING_ENCHANTMENT_IDS = Map.ofEntries(
+			Map.entry("matcha:warding0", "matcha:warding_1"),
+			Map.entry("matcha:warding1", "matcha:warding_2"),
+			Map.entry("matcha:warding2", "matcha:warding_3"),
+			Map.entry("matcha:warding3", "matcha:warding_4"),
+			Map.entry("matcha:warding_armour", "matcha:electrum_armour")
+	);
+	private static final Set<String> WARDING_TIERS = Set.of(
+			"matcha:warding_1", "matcha:warding_2", "matcha:warding_3", "matcha:warding_4"
+	);
+	private static final Set<String> ELECTRUM_TOOLS = Set.of(
+			"matcha:electrum_axe", "matcha:electrum_dolabra", "matcha:electrum_hoe",
+			"matcha:electrum_mattock", "matcha:electrum_pickaxe", "matcha:electrum_shovel",
+			"matcha:electrum_spear", "matcha:electrum_sword"
+	);
+	private static final String WARDING_SHIELD = "matcha:warding_shield";
 	private static final String NAZAR_CARRIER = "minecraft:glistering_melon_slice";
 	private static final String NAZAR_PATH = "nazar";
 	private static final String STEEL_CARRIER = "minecraft:resin_brick";
@@ -124,6 +140,13 @@ final class MatchaStackMigration {
 
 	static Dynamic<?> migrateV3(Dynamic<?> data) {
 		return migrateTranslationKeys(migrateAxolotl(migrateBannerPatternIds(migrateItemRenames(data))));
+	}
+
+	static Dynamic<?> migrateV4(Dynamic<?> data) {
+		if (!(data.getValue() instanceof Tag tag)) {
+			return data;
+		}
+		return new Dynamic<>(NbtOps.INSTANCE, migrateWardingEnchantments(tag, false, null));
 	}
 
 	static Dynamic<?> migrateTranslationKeys(Dynamic<?> data) {
@@ -240,6 +263,74 @@ final class MatchaStackMigration {
 			}
 		}
 		return tag;
+	}
+
+	private static Tag migrateWardingEnchantments(Tag tag, boolean customData, String itemId) {
+		if (tag instanceof CompoundTag compound) {
+			String id = compound.getStringOr("id", "");
+			String currentItemId = !customData && (ELECTRUM_TOOLS.contains(id) || id.equals(WARDING_SHIELD))
+					? id : itemId;
+			for (String key : List.copyOf(compound.keySet())) {
+				Tag child = compound.get(key);
+				if (child == null) continue;
+				boolean childCustomData = customData || key.equals("minecraft:custom_data");
+				Tag migrated = migrateWardingEnchantments(child, childCustomData, currentItemId);
+				if (!customData && ENCHANTMENT_COMPONENTS.contains(key) && migrated instanceof CompoundTag enchantments) {
+					renameWardingEnchantments(enchantments);
+					updateIntrinsicWarding(enchantments, currentItemId);
+				} else if (!customData && TRANSLATION_COMPONENTS.contains(key)) {
+					renameWardingTranslationKeys(migrated);
+				}
+				compound.put(key, migrated);
+			}
+			return compound;
+		}
+		if (tag instanceof ListTag list) {
+			for (int index = 0; index < list.size(); index++) {
+				list.set(index, migrateWardingEnchantments(list.get(index), customData, itemId));
+			}
+		}
+		return tag;
+	}
+
+	private static void renameWardingEnchantments(CompoundTag enchantments) {
+		for (String oldId : List.copyOf(enchantments.keySet())) {
+			String newId = WARDING_ENCHANTMENT_IDS.get(oldId);
+			if (newId == null) continue;
+			Tag level = enchantments.remove(oldId);
+			if (!enchantments.contains(newId)) enchantments.put(newId, level);
+		}
+	}
+
+	private static void updateIntrinsicWarding(CompoundTag enchantments, String itemId) {
+		if (ELECTRUM_TOOLS.contains(itemId)) {
+			WARDING_TIERS.forEach(enchantments::remove);
+		} else if (WARDING_SHIELD.equals(itemId)) {
+			Tag level = enchantments.remove("matcha:warding_2");
+			if (level != null && !enchantments.contains("matcha:warding_1")) {
+				enchantments.put("matcha:warding_1", level);
+			}
+		}
+	}
+
+	private static void renameWardingTranslationKeys(Tag tag) {
+		if (tag instanceof CompoundTag compound) {
+			String translate = compound.getStringOr("translate", "");
+			String renamed = switch (translate) {
+				case "enchantment.matcha.warding0" -> "enchantment.matcha.warding_1";
+				case "enchantment.matcha.warding1" -> "enchantment.matcha.warding_2";
+				case "enchantment.matcha.warding2" -> "enchantment.matcha.warding_3";
+				case "enchantment.matcha.warding3" -> "enchantment.matcha.warding_4";
+				default -> null;
+			};
+			if (renamed != null) compound.putString("translate", renamed);
+			for (String key : List.copyOf(compound.keySet())) {
+				Tag child = compound.get(key);
+				if (child != null) renameWardingTranslationKeys(child);
+			}
+		} else if (tag instanceof ListTag list) {
+			for (Tag child : list) renameWardingTranslationKeys(child);
+		}
 	}
 
 	private static String renamedItemName(String translate) {
@@ -437,7 +528,9 @@ final class MatchaStackMigration {
 		CompoundTag components = compound.get("components") instanceof CompoundTag child ? child : compound;
 		for (String component : ENCHANTMENT_COMPONENTS) {
 			if (components.get(component) instanceof CompoundTag enchantments
-					&& (enchantments.contains("matcha:warding1") || enchantments.contains("matcha-flavoured:warding1"))) {
+					&& (enchantments.contains("matcha:warding1")
+							|| enchantments.contains("matcha-flavoured:warding1")
+							|| enchantments.contains("matcha:warding_2"))) {
 				return true;
 			}
 		}

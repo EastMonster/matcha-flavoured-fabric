@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import monster.east.matchaff.compat.TrinketsCompat;
+import monster.east.matchaff.enchantment.EnchantmentMechanics;
 import monster.east.matchaff.item.*;
 import monster.east.matchaff.mechanic.*;
 import monster.east.matchaff.network.SleepFastForwardPayload;

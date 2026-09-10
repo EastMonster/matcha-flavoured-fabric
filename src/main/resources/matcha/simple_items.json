@@ -695,7 +695,7 @@
 				"color": "white"
 			},
 			"minecraft:enchantments": {
-				"matcha:warding0": 1
+				"matcha:warding_1": 1
 			},
 			"minecraft:enchantment_glint_override": false
 		}
