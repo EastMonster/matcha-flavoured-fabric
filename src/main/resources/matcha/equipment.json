@@ -410,62 +410,62 @@
 	{
 		"id": "electrum_axe",
 		"source": "data/matcha/recipe/smithing/electrum_axe.json",
-		"carrier": "minecraft:diamond_axe"
+		"carrier": "minecraft:netherite_axe"
 	},
 	{
 		"id": "electrum_boots",
 		"source": "data/matcha/recipe/smithing/electrum_boots.json",
-		"carrier": "minecraft:diamond_boots"
+		"carrier": "minecraft:netherite_boots"
 	},
 	{
 		"id": "electrum_chestplate",
 		"source": "data/matcha/recipe/smithing/electrum_chestplate.json",
-		"carrier": "minecraft:diamond_chestplate"
+		"carrier": "minecraft:netherite_chestplate"
 	},
 	{
 		"id": "electrum_dolabra",
 		"source": "data/matcha/recipe/smithing/electrum_dolabra.json",
-		"carrier": "minecraft:stone_axe"
+		"carrier": "minecraft:netherite_axe"
 	},
 	{
 		"id": "electrum_helmet",
 		"source": "data/matcha/recipe/smithing/electrum_helmet.json",
-		"carrier": "minecraft:diamond_helmet"
+		"carrier": "minecraft:netherite_helmet"
 	},
 	{
 		"id": "electrum_hoe",
 		"source": "data/matcha/recipe/smithing/electrum_hoe.json",
-		"carrier": "minecraft:stone_hoe"
+		"carrier": "minecraft:netherite_hoe"
 	},
 	{
 		"id": "electrum_leggings",
 		"source": "data/matcha/recipe/smithing/electrum_leggings.json",
-		"carrier": "minecraft:diamond_leggings"
+		"carrier": "minecraft:netherite_leggings"
 	},
 	{
 		"id": "electrum_mattock",
 		"source": "data/matcha/recipe/smithing/electrum_mattock.json",
-		"carrier": "minecraft:stone_hoe"
+		"carrier": "minecraft:netherite_hoe"
 	},
 	{
 		"id": "electrum_pickaxe",
 		"source": "data/matcha/recipe/smithing/electrum_pickaxe.json",
-		"carrier": "minecraft:stone_pickaxe"
+		"carrier": "minecraft:netherite_pickaxe"
 	},
 	{
 		"id": "electrum_shovel",
 		"source": "data/matcha/recipe/smithing/electrum_shovel.json",
-		"carrier": "minecraft:stone_shovel"
+		"carrier": "minecraft:netherite_shovel"
 	},
 	{
 		"id": "electrum_spear",
 		"source": "data/matcha/recipe/smithing/electrum_spear.json",
-		"carrier": "minecraft:stone_spear"
+		"carrier": "minecraft:netherite_spear"
 	},
 	{
 		"id": "electrum_sword",
 		"source": "data/matcha/recipe/smithing/electrum_sword.json",
-		"carrier": "minecraft:stone_sword"
+		"carrier": "minecraft:netherite_sword"
 	},
 	{
 		"id": "iron_dolabra",

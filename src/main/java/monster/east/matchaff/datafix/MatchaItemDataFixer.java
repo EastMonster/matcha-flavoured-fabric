@@ -8,16 +8,18 @@ import monster.east.matchaff.datafix.fix.ItemNamespaceFix;
 import monster.east.matchaff.datafix.fix.ItemRenameFix;
 import monster.east.matchaff.datafix.fix.NazarItemFix;
 import monster.east.matchaff.datafix.fix.References;
+import monster.east.matchaff.datafix.fix.WardingEnchantmentFix;
 import monster.east.matchaff.datafix.schema.V1;
 import monster.east.matchaff.datafix.schema.V2;
 import monster.east.matchaff.datafix.schema.V3;
+import monster.east.matchaff.datafix.schema.V4;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 
 /** Migrates Matcha ItemStacks and banner patterns before their codecs resolve registry IDs. */
 public final class MatchaItemDataFixer {
 	public static final String DATA_VERSION_KEY = "matcha_data_version";
-	private static final int CURRENT_DATA_VERSION = 3;
+	private static final int CURRENT_DATA_VERSION = 4;
 	private static final DataFixer FIXER = createFixer();
 
 	private MatchaItemDataFixer() {
@@ -64,6 +66,8 @@ public final class MatchaItemDataFixer {
 		builder.addFixer(new NazarItemFix(v2));
 		Schema v3 = builder.addSchema(3, V3::new);
 		builder.addFixer(new ItemRenameFix(v3));
+		Schema v4 = builder.addSchema(4, V4::new);
+		builder.addFixer(new WardingEnchantmentFix(v4));
 		return builder.build().fixer();
 	}
 }

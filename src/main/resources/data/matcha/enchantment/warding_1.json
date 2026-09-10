@@ -2,7 +2,7 @@
 	"exclusive_set": "#matcha:exclusive_set/intrinsic_weapon",
 	"anvil_cost": 0,
 	"description": {
-		"translate": "enchantment.matcha.warding1",
+		"translate": "enchantment.matcha.warding_1",
 		"color": "yellow"
 	},
 	"max_cost": {
@@ -52,7 +52,8 @@
 		"matcha:steel_dolabra",
 		"matcha:steel_sword",
 		"matcha:warding_shield",
-		"matcha:warding_sword"
+		"matcha:warding_sword",
+		"matcha:wooden_cross"
 	],
 	"weight": 1
 }

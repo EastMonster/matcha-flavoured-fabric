@@ -5,7 +5,7 @@ import eu.pb4.trinkets.api.TrinketsApi;
 import eu.pb4.trinkets.api.component.TrinketDataComponents;
 import eu.pb4.trinkets.api.component.TrinketEquippable;
 import eu.pb4.trinkets.api.event.TrinketEquipmentAttributeModifiersCallback;
-import monster.east.matchaff.mechanic.EnchantmentMechanics;
+import monster.east.matchaff.enchantment.EnchantmentMechanics;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
