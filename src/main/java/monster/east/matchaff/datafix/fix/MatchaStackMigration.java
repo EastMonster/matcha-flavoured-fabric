@@ -22,6 +22,7 @@ final class MatchaStackMigration {
 	private static final String NEW_NAMESPACE = "matcha:";
 	private static final String OLD_BANNER_PATTERN_NAMESPACE = "main:";
 	private static final String NEW_BANNER_PATTERN_NAMESPACE = "matcha:";
+	private static final String ADAMANT_DOLABRA = "matcha:adamant_dolabra";
 	private static final Set<String> ENCHANTMENT_COMPONENTS = Set.of("minecraft:enchantments", "minecraft:stored_enchantments");
 	private static final Set<String> TRANSLATION_COMPONENTS = Set.of(
 			"minecraft:item_name", "minecraft:custom_name", "minecraft:lore"
@@ -146,7 +147,8 @@ final class MatchaStackMigration {
 		if (!(data.getValue() instanceof Tag tag)) {
 			return data;
 		}
-		return new Dynamic<>(NbtOps.INSTANCE, migrateWardingEnchantments(tag, false, null));
+		Tag wardingMigrated = migrateWardingEnchantments(tag, false, null);
+		return new Dynamic<>(NbtOps.INSTANCE, migrateDolabra(wardingMigrated, false, null));
 	}
 
 	static Dynamic<?> migrateTranslationKeys(Dynamic<?> data) {
@@ -291,6 +293,57 @@ final class MatchaStackMigration {
 			}
 		}
 		return tag;
+	}
+
+	private static Tag migrateDolabra(Tag tag, boolean customData, String itemId) {
+		if (tag instanceof CompoundTag compound) {
+			String currentItemId = itemId;
+			if (!customData && compound.contains("id")) {
+				currentItemId = ADAMANT_DOLABRA.equals(compound.getStringOr("id", "")) ? ADAMANT_DOLABRA : null;
+			}
+			for (String key : List.copyOf(compound.keySet())) {
+				Tag child = compound.get(key);
+				if (child == null) continue;
+				boolean childCustomData = customData || key.equals("minecraft:custom_data");
+				Tag migrated = migrateDolabra(child, childCustomData, currentItemId);
+				if (!customData && ADAMANT_DOLABRA.equals(currentItemId)) {
+					if (ENCHANTMENT_COMPONENTS.contains(key) && migrated instanceof CompoundTag enchantments) {
+						enchantments.remove("matcha:divinity");
+						enchantments.remove("matcha-flavoured:divinity");
+					} else if (key.equals("minecraft:attribute_modifiers") && migrated instanceof ListTag modifiers) {
+						updateDolabraAttackDamage(modifiers);
+					} else if (key.equals("minecraft:lore") && migrated instanceof ListTag lore) {
+						updateDolabraLore(lore);
+					}
+				}
+				compound.put(key, migrated);
+			}
+			return compound;
+		}
+		if (tag instanceof ListTag list) {
+			for (int index = 0; index < list.size(); index++) {
+				list.set(index, migrateDolabra(list.get(index), customData, itemId));
+			}
+		}
+		return tag;
+	}
+
+	private static void updateDolabraAttackDamage(ListTag modifiers) {
+		for (Tag tag : modifiers) {
+			if (tag instanceof CompoundTag modifier
+					&& modifier.getStringOr("id", "").equals("attack_damage")
+					&& Double.compare(modifier.getDoubleOr("amount", Double.NaN), 9.0) == 0) {
+				modifier.putDouble("amount", 6.0);
+			}
+		}
+	}
+
+	private static void updateDolabraLore(ListTag lore) {
+		for (Tag tag : lore) {
+			if (tag instanceof CompoundTag component && component.getStringOr("text", "").equals("🗡 10")) {
+				component.putString("text", "🗡 7");
+			}
+		}
 	}
 
 	private static void renameWardingEnchantments(CompoundTag enchantments) {

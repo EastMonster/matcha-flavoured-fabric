@@ -278,6 +278,26 @@ public final class MatchaItemDataFixerCheck {
 		MatchaItemDataFixer.updateIfNeeded(wardingShield);
 		assert shieldEnchantments.contains("matcha:warding_1");
 		assert !shieldEnchantments.contains("matcha:warding_2");
+
+		CompoundTag dolabra = stackWithEnchantments("matcha:adamant_dolabra", "matcha:divinity");
+		dolabra.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		CompoundTag dolabraComponents = dolabra.getCompound("components").orElseThrow();
+		ListTag modifiers = new ListTag();
+		CompoundTag attackDamage = new CompoundTag();
+		attackDamage.putString("id", "attack_damage");
+		attackDamage.putDouble("amount", 9.0);
+		modifiers.add(attackDamage);
+		dolabraComponents.put("minecraft:attribute_modifiers", modifiers);
+		ListTag lore = new ListTag();
+		CompoundTag attackLore = new CompoundTag();
+		attackLore.putString("text", "🗡 10");
+		lore.add(attackLore);
+		dolabraComponents.put("minecraft:lore", lore);
+		MatchaItemDataFixer.updateIfNeeded(dolabra);
+		assert dolabra.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
+		assert !dolabraComponents.getCompound("minecraft:enchantments").orElseThrow().contains("matcha:divinity");
+		assert modifiers.getCompound(0).orElseThrow().getDoubleOr("amount", 0.0) == 6.0;
+		assert "🗡 7".equals(lore.getCompound(0).orElseThrow().getStringOr("text", ""));
 	}
 
 	private static CompoundTag stackWithEnchantments(String id, String enchantment) {
