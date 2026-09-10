@@ -22,7 +22,21 @@ final class MatchaStackMigration {
 	private static final String NEW_NAMESPACE = "matcha:";
 	private static final String OLD_BANNER_PATTERN_NAMESPACE = "main:";
 	private static final String NEW_BANNER_PATTERN_NAMESPACE = "matcha:";
+	private static final String ADAMANT_ARMOUR = "matcha:adamant_armour";
+	private static final String ADAMANT_WEAPON = "matcha:adamant_weapon";
+	private static final String ADAMANT_TOOL = "matcha:adamant_tool";
 	private static final String ADAMANT_DOLABRA = "matcha:adamant_dolabra";
+	private static final Set<String> ADAMANT_ARMOUR_ITEMS = Set.of(
+			"minecraft:netherite_helmet", "minecraft:netherite_chestplate",
+			"minecraft:netherite_leggings", "minecraft:netherite_boots"
+	);
+	private static final Set<String> ADAMANT_WEAPON_ITEMS = Set.of(
+			"minecraft:netherite_sword", "minecraft:netherite_spear", "matcha:adamant_claymore"
+	);
+	private static final Set<String> ADAMANT_TOOL_ITEMS = Set.of(
+			"minecraft:netherite_axe", "minecraft:netherite_pickaxe", "minecraft:netherite_shovel",
+			"minecraft:netherite_hoe", ADAMANT_DOLABRA, "matcha:adamant_mattock"
+	);
 	private static final Set<String> ENCHANTMENT_COMPONENTS = Set.of("minecraft:enchantments", "minecraft:stored_enchantments");
 	private static final Set<String> TRANSLATION_COMPONENTS = Set.of(
 			"minecraft:item_name", "minecraft:custom_name", "minecraft:lore"
@@ -148,7 +162,7 @@ final class MatchaStackMigration {
 			return data;
 		}
 		Tag wardingMigrated = migrateWardingEnchantments(tag, false, null);
-		return new Dynamic<>(NbtOps.INSTANCE, migrateDolabra(wardingMigrated, false, null));
+		return new Dynamic<>(NbtOps.INSTANCE, migrateAdamant(wardingMigrated, false, null, false));
 	}
 
 	static Dynamic<?> migrateTranslationKeys(Dynamic<?> data) {
@@ -295,37 +309,108 @@ final class MatchaStackMigration {
 		return tag;
 	}
 
-	private static Tag migrateDolabra(Tag tag, boolean customData, String itemId) {
+	private static Tag migrateAdamant(Tag tag, boolean customData, String itemId, boolean adamant) {
 		if (tag instanceof CompoundTag compound) {
 			String currentItemId = itemId;
+			boolean currentAdamant = adamant;
 			if (!customData && compound.contains("id")) {
-				currentItemId = ADAMANT_DOLABRA.equals(compound.getStringOr("id", "")) ? ADAMANT_DOLABRA : null;
+				currentItemId = compound.getStringOr("id", "");
+				currentAdamant = isAdamantStack(compound, currentItemId);
 			}
 			for (String key : List.copyOf(compound.keySet())) {
 				Tag child = compound.get(key);
 				if (child == null) continue;
 				boolean childCustomData = customData || key.equals("minecraft:custom_data");
-				Tag migrated = migrateDolabra(child, childCustomData, currentItemId);
-				if (!customData && ADAMANT_DOLABRA.equals(currentItemId)) {
-					if (ENCHANTMENT_COMPONENTS.contains(key) && migrated instanceof CompoundTag enchantments) {
-						enchantments.remove("matcha:divinity");
-						enchantments.remove("matcha-flavoured:divinity");
-					} else if (key.equals("minecraft:attribute_modifiers") && migrated instanceof ListTag modifiers) {
-						updateDolabraAttackDamage(modifiers);
-					} else if (key.equals("minecraft:lore") && migrated instanceof ListTag lore) {
-						updateDolabraLore(lore);
-					}
-				}
+				Tag migrated = migrateAdamant(child, childCustomData, currentItemId, currentAdamant);
 				compound.put(key, migrated);
+			}
+			if (!customData && currentAdamant) {
+				CompoundTag components = compound.get("components") instanceof CompoundTag existing
+						? existing : new CompoundTag();
+				updateAdamantComponents(components, currentItemId);
+				compound.put("components", components);
 			}
 			return compound;
 		}
 		if (tag instanceof ListTag list) {
 			for (int index = 0; index < list.size(); index++) {
-				list.set(index, migrateDolabra(list.get(index), customData, itemId));
+				list.set(index, migrateAdamant(list.get(index), customData, itemId, adamant));
 			}
 		}
 		return tag;
+	}
+
+	private static boolean isAdamantStack(CompoundTag stack, String itemId) {
+		if (!ADAMANT_ARMOUR_ITEMS.contains(itemId) && !ADAMANT_WEAPON_ITEMS.contains(itemId)
+				&& !ADAMANT_TOOL_ITEMS.contains(itemId)) {
+			return false;
+		}
+		if ((ADAMANT_WEAPON_ITEMS.contains(itemId) || ADAMANT_TOOL_ITEMS.contains(itemId))
+				&& !itemId.startsWith("minecraft:netherite_")) {
+			return true;
+		}
+		if (stack.get("components") instanceof CompoundTag components) {
+			if (components.get("minecraft:custom_data") instanceof CompoundTag customData
+					&& customData.contains("has_intrinsic_enchants")) {
+				return true;
+			}
+			for (String component : ENCHANTMENT_COMPONENTS) {
+				if (components.get(component) instanceof CompoundTag enchantments
+						&& (enchantments.contains("matcha:divinity")
+						|| enchantments.contains("matcha-flavoured:divinity"))) {
+					return true;
+				}
+			}
+			if (components.get("minecraft:item_name") instanceof CompoundTag itemName
+					&& itemName.getStringOr("translate", "").equals("item." + itemId.replace(':', '.'))) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private static void updateAdamantComponents(CompoundTag components, String itemId) {
+		CompoundTag enchantments = components.get("minecraft:enchantments") instanceof CompoundTag existing
+				? existing : new CompoundTag();
+		updateAdamantEnchantments(enchantments, itemId);
+		components.put("minecraft:enchantments", enchantments);
+		if (components.get("minecraft:stored_enchantments") instanceof CompoundTag stored) {
+			updateAdamantEnchantments(stored, itemId);
+		}
+		if (ADAMANT_DOLABRA.equals(itemId)) {
+			if (components.get("minecraft:attribute_modifiers") instanceof ListTag modifiers) {
+				updateDolabraAttackDamage(modifiers);
+			}
+			if (components.get("minecraft:lore") instanceof ListTag lore) {
+				updateDolabraLore(lore);
+			}
+		}
+	}
+
+	private static void updateAdamantEnchantments(CompoundTag enchantments, String itemId) {
+		if (ADAMANT_DOLABRA.equals(itemId)) {
+			enchantments.remove("matcha:divinity");
+			enchantments.remove("matcha-flavoured:divinity");
+			enchantments.putInt(ADAMANT_TOOL, 1);
+		} else if (ADAMANT_ARMOUR_ITEMS.contains(itemId)) {
+			moveEnchantment(enchantments, "matcha:divinity", ADAMANT_ARMOUR);
+			moveEnchantment(enchantments, "matcha-flavoured:divinity", ADAMANT_ARMOUR);
+			enchantments.putInt(ADAMANT_ARMOUR, 1);
+		} else if (ADAMANT_WEAPON_ITEMS.contains(itemId)) {
+			enchantments.putInt(ADAMANT_WEAPON, 1);
+		} else if (ADAMANT_TOOL_ITEMS.contains(itemId)) {
+			enchantments.putInt(ADAMANT_TOOL, 1);
+			if (itemId.equals("minecraft:netherite_axe")) {
+				enchantments.putInt(ADAMANT_WEAPON, 1);
+			}
+		}
+	}
+
+	private static void moveEnchantment(CompoundTag enchantments, String oldId, String newId) {
+		Tag level = enchantments.remove(oldId);
+		if (level != null && !enchantments.contains(newId)) {
+			enchantments.put(newId, level);
+		}
 	}
 
 	private static void updateDolabraAttackDamage(ListTag modifiers) {
@@ -356,6 +441,7 @@ final class MatchaStackMigration {
 	}
 
 	private static void updateIntrinsicWarding(CompoundTag enchantments, String itemId) {
+		if (itemId == null) return;
 		if (ELECTRUM_TOOLS.contains(itemId)) {
 			WARDING_TIERS.forEach(enchantments::remove);
 		} else if (WARDING_SHIELD.equals(itemId)) {

@@ -13,6 +13,6 @@ public class WardingEnchantmentFix extends DataFix {
 	@Override
 	protected TypeRewriteRule makeRule() {
 		Type<?> root = getInputSchema().getType(References.ROOT);
-		return writeFixAndRead("Matcha Warding enchantment migration", root, root, MatchaStackMigration::migrateV4);
+		return writeFixAndRead("Matcha Warding and Adamant intrinsic migration", root, root, MatchaStackMigration::migrateV4);
 	}
 }

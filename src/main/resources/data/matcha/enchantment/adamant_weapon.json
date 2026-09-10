@@ -1,0 +1,39 @@
+{
+	"exclusive_set": "#matcha:exclusive_set/intrinsic_weapon",
+	"primary_items": "#minecraft:enchantable/weapon",
+	"anvil_cost": 0,
+	"description": {
+		"translate": "enchantment.matcha.adamant_weapon",
+		"color": "#b6a09a"
+	},
+	"effects": {
+		"minecraft:post_attack": [
+			{
+				"effect": {
+					"type": "minecraft:apply_mob_effect",
+					"to_apply": "minecraft:weakness",
+					"min_duration": 8,
+					"max_duration": 12,
+					"min_amplifier": 1,
+					"max_amplifier": 1
+				},
+				"enchanted": "attacker",
+				"affected": "victim"
+			}
+		]
+	},
+	"max_cost": {
+		"base": 0,
+		"per_level_above_first": 0
+	},
+	"max_level": 1,
+	"min_cost": {
+		"base": 1,
+		"per_level_above_first": 0
+	},
+	"slots": [
+		"mainhand"
+	],
+	"supported_items": "#minecraft:enchantable/weapon",
+	"weight": 1
+}

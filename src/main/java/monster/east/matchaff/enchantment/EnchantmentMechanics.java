@@ -32,7 +32,7 @@ public final class EnchantmentMechanics {
 				Registry<Enchantment> enchantments = player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 				List<ItemStack> extraHeadItems = extraHeadItems(player);
 				WardingEnchantment.tick(player, enchantments);
-				DivinityEnchantment.tick(player, enchantments);
+				AdamantArmourEnchantment.tick(player, enchantments);
 				BloodrageEnchantment.tick(player, enchantments);
 				CleanseEnchantment.tick(player, enchantments);
 				ShakudoRegenEnchantment.tick(player, enchantments);

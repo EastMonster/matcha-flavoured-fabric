@@ -11,6 +11,7 @@
 				"color": "gold"
 			},
 			"minecraft:enchantments": {
+				"matcha:adamant_weapon": 1,
 				"minecraft:sharpness": 1,
 				"minecraft:unbreaking": 2
 			},
