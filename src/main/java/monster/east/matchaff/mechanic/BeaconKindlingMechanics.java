@@ -158,7 +158,6 @@ final class BeaconKindlingMechanics {
 				end(server, owner, task, false, true);
 			}
 		}
-		save(server, tick);
 	}
 
 	private static void end(

@@ -120,6 +120,8 @@ public final class EnchantmentMechanics {
 	private static void tick(ServerPlayer player) {
 		Registry<Enchantment> enchantments = player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 		ItemStack mainHand = player.getMainHandItem();
+		ItemStack head = player.getItemBySlot(EquipmentSlot.HEAD);
+		List<ItemStack> extraHeadItems = extraHeadItems(player);
 
 		// Hand-held warding runs every tick, matching the enchantment tick effect.
 		int heldWarding = heldWardingLevel(player, enchantments);
@@ -214,19 +216,19 @@ public final class EnchantmentMechanics {
 		}
 
 		// Head-slot buffs.
-		if (maxHeadLevel(player, enchantments, CONDUIT_POWER) > 0) {
+		if (maxHeadLevel(head, extraHeadItems, enchantments, CONDUIT_POWER) > 0) {
 			if (player.isInWater()) {
 				player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 20, 0, true, false));
 			}
 			player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 20, 0, true, false));
 		}
-		if (maxHeadLevel(player, enchantments, FIRE_PROOF) > 0) {
+		if (maxHeadLevel(head, extraHeadItems, enchantments, FIRE_PROOF) > 0) {
 			player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20, 0, true, false));
 		}
-		if (maxHeadLevel(player, enchantments, HASTE) > 0) {
+		if (maxHeadLevel(head, extraHeadItems, enchantments, HASTE) > 0) {
 			player.addEffect(new MobEffectInstance(MobEffects.HASTE, 20, 1, true, false));
 		}
-		if (maxHeadLevel(player, enchantments, REGENERATION) > 0 && !player.hasEffect(MobEffects.REGENERATION)) {
+		if (maxHeadLevel(head, extraHeadItems, enchantments, REGENERATION) > 0 && !player.hasEffect(MobEffects.REGENERATION)) {
 			player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 0, true, false));
 		}
 
@@ -463,12 +465,25 @@ public final class EnchantmentMechanics {
 		return Math.max(maxLevel(first, enchantments, id), maxLevel(second, enchantments, id));
 	}
 
-	private static int maxHeadLevel(ServerPlayer player, Registry<Enchantment> enchantments, Identifier id) {
-		int level = maxLevel(player.getItemBySlot(EquipmentSlot.HEAD), enchantments, id);
+	private static List<ItemStack> extraHeadItems(ServerPlayer player) {
+		if (EXTRA_HEAD_ITEMS.isEmpty()) {
+			return List.of();
+		}
+		List<ItemStack> items = new ArrayList<>();
 		for (Function<ServerPlayer, Iterable<ItemStack>> provider : EXTRA_HEAD_ITEMS) {
 			for (ItemStack stack : provider.apply(player)) {
-				level = Math.max(level, maxLevel(stack, enchantments, id));
+				items.add(stack);
 			}
+		}
+		return items;
+	}
+
+	private static int maxHeadLevel(
+			ItemStack head, List<ItemStack> extraHeadItems, Registry<Enchantment> enchantments, Identifier id
+	) {
+		int level = maxLevel(head, enchantments, id);
+		for (ItemStack stack : extraHeadItems) {
+			level = Math.max(level, maxLevel(stack, enchantments, id));
 		}
 		return level;
 	}
