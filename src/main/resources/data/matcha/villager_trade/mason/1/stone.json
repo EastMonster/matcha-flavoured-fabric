@@ -12,7 +12,7 @@
 			"minecraft:item_name": {
 				"translate": "trade.matcha.bulk_stone"
 			},
-			"minecraft:item_model": "minecraft:stone",
+			"minecraft:item_model": "matcha:bulk_stone",
 			"minecraft:lore": [
 				{
 					"translate": "trade.matcha.bulk_stone.desc",

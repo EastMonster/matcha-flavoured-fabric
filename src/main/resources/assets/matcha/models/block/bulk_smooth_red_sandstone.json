@@ -1,0 +1,7 @@
+{
+	"parent": "matcha:block/bulk_template",
+	"textures": {
+		"block": "minecraft:block/smooth_red_sandstone",
+		"particle": "minecraft:block/smooth_red_sandstone"
+	}
+}
