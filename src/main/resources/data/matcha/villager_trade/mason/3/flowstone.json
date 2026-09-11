@@ -12,7 +12,7 @@
 			"minecraft:item_name": {
 				"translate": "trade.matcha.bulk_dripstone"
 			},
-			"minecraft:item_model": "minecraft:dripstone_block",
+			"minecraft:item_model": "matcha:bulk_flowstone",
 			"minecraft:lore": [
 				{
 					"translate": "trade.matcha.bulk_dripstone.desc",

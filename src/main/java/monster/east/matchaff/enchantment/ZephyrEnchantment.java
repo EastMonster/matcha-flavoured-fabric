@@ -22,7 +22,8 @@ final class ZephyrEnchantment {
 	}
 
 	static void tick(ServerPlayer player, Registry<Enchantment> enchantments) {
-		if (EnchantmentUtil.maxLevel(player.getItemBySlot(EquipmentSlot.FEET), enchantments, ZEPHYR) == 0) {
+		int zephyrLevel = EnchantmentUtil.maxLevel(player.getItemBySlot(EquipmentSlot.FEET), enchantments, ZEPHYR);
+		if (zephyrLevel == 0) {
 			return;
 		}
 		int ticks = player.getAttachedOrElse(TICKS, 0);
@@ -31,7 +32,9 @@ final class ZephyrEnchantment {
 			ticks++;
 			player.setAttached(TICKS, ticks);
 			player.addEffect(new MobEffectInstance(MobEffects.JUMP_BOOST, 5, 6, true, false));
-			player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 5, 1, true, false));
+			if (zephyrLevel >= 2) {
+				player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 5, 1, true, false));
+			}
 			level.sendParticles(ParticleTypes.DUST_PLUME,
 					player.getX(), player.getY(), player.getZ(), 1, 0.3, 0, 0.3, 0.1);
 			if (ticks == 45) {
@@ -40,7 +43,7 @@ final class ZephyrEnchantment {
 				level.playSound(null, player.getX(), player.getY(), player.getZ(),
 						SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.75F, 1.0F);
 			}
-		} else if (ticks > 0 && !player.onGround() && player.hasEffect(MobEffects.SLOW_FALLING)) {
+		} else if (zephyrLevel >= 3 && ticks > 0 && !player.onGround() && player.hasEffect(MobEffects.SLOW_FALLING)) {
 			level.sendParticles(ParticleTypes.GUST,
 					player.getX(), player.getY() + 0.1, player.getZ(), 1, 0.1, 0, 0.1, 0);
 			if (ticks >= 45) {

@@ -12,7 +12,7 @@
 			"minecraft:item_name": {
 				"translate": "trade.matcha.bulk_diorite"
 			},
-			"minecraft:item_model": "minecraft:diorite",
+			"minecraft:item_model": "matcha:bulk_diorite",
 			"minecraft:lore": [
 				{
 					"translate": "trade.matcha.bulk_diorite.desc",
