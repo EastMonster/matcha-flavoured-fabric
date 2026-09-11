@@ -912,5 +912,6 @@
 	"advancements.matcha.anglers_almanac.echo_fish.desc": "ザンキョウウナギ\\nあらゆる物音が10倍恐ろしく響くようなディープダークに棲む謎のウナギ。本人はいたって快適らしい。",
 	"advancements.matcha.anglers_almanac.tropical_fish.desc": "クマノミ\\nファインディング・ニモ：バッドエンド回収",
 	"advancements.matcha.anglers_almanac.pufferfish.desc": "フグ\\n風船のように膨らむ魚。風船と同じく、ほぼ食用不可。",
-	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": ""
+	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": "",
+	"trinkets.slot.head.earring": "イヤリング"
 }

@@ -3,9 +3,11 @@ package monster.east.matchaff;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.item.*;
 import monster.east.matchaff.mechanic.*;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.fabricmc.fabric.api.registry.FuelValueEvents;
@@ -67,6 +69,9 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		VanillaFoodDefaults.init();
 		PlayerMechanics.init();
 		EnchantmentMechanics.init();
+		if (FabricLoader.getInstance().isModLoaded(TrinketsCompat.MOD_ID)) {
+			TrinketsCompat.init();
+		}
 		EffectsMechanics.init();
 		MechanicMechanics.init();
 		AbbeyMechanics.init();

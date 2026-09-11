@@ -32,8 +32,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -70,6 +72,7 @@ public final class EnchantmentMechanics {
 	private static final EquipmentSlot[] ARMOR_SLOTS = {
 			EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET
 	};
+	private static final List<Function<ServerPlayer, Iterable<ItemStack>>> EXTRA_HEAD_ITEMS = new ArrayList<>();
 
 	private static final TagKey<EntityType<?>> WARDING_TARGETS = TagKey.create(
 			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("matcha", "warding_targets")
@@ -89,6 +92,10 @@ public final class EnchantmentMechanics {
 	);
 
 	private EnchantmentMechanics() {
+	}
+
+	public static void registerExtraHeadItems(Function<ServerPlayer, ? extends Iterable<ItemStack>> provider) {
+		EXTRA_HEAD_ITEMS.add(player -> provider.apply(player));
 	}
 
 	public static void init() {
@@ -207,20 +214,19 @@ public final class EnchantmentMechanics {
 		}
 
 		// Head-slot buffs.
-		ItemStack head = player.getItemBySlot(EquipmentSlot.HEAD);
-		if (maxLevel(head, enchantments, CONDUIT_POWER) > 0) {
+		if (maxHeadLevel(player, enchantments, CONDUIT_POWER) > 0) {
 			if (player.isInWater()) {
 				player.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 20, 0, true, false));
 			}
 			player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 20, 0, true, false));
 		}
-		if (maxLevel(head, enchantments, FIRE_PROOF) > 0) {
+		if (maxHeadLevel(player, enchantments, FIRE_PROOF) > 0) {
 			player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20, 0, true, false));
 		}
-		if (maxLevel(head, enchantments, HASTE) > 0) {
+		if (maxHeadLevel(player, enchantments, HASTE) > 0) {
 			player.addEffect(new MobEffectInstance(MobEffects.HASTE, 20, 1, true, false));
 		}
-		if (maxLevel(head, enchantments, REGENERATION) > 0 && !player.hasEffect(MobEffects.REGENERATION)) {
+		if (maxHeadLevel(player, enchantments, REGENERATION) > 0 && !player.hasEffect(MobEffects.REGENERATION)) {
 			player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 0, true, false));
 		}
 
@@ -455,6 +461,16 @@ public final class EnchantmentMechanics {
 
 	private static int maxLevel(ItemStack first, ItemStack second, Registry<Enchantment> enchantments, Identifier id) {
 		return Math.max(maxLevel(first, enchantments, id), maxLevel(second, enchantments, id));
+	}
+
+	private static int maxHeadLevel(ServerPlayer player, Registry<Enchantment> enchantments, Identifier id) {
+		int level = maxLevel(player.getItemBySlot(EquipmentSlot.HEAD), enchantments, id);
+		for (Function<ServerPlayer, Iterable<ItemStack>> provider : EXTRA_HEAD_ITEMS) {
+			for (ItemStack stack : provider.apply(player)) {
+				level = Math.max(level, maxLevel(stack, enchantments, id));
+			}
+		}
+		return level;
 	}
 
 	private static boolean elapsed(ServerPlayer player, int interval) {

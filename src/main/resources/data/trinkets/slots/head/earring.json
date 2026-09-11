@@ -1,0 +1,5 @@
+{
+	"icon": "matcha:container/slots/earring",
+	"order": -500,
+	"validator_predicates": ["trinkets:default"]
+}

@@ -9,14 +9,25 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.MatchaFlavouredFabric;
 
 public final class MatchaFlavouredClient implements ClientModInitializer {
 	public static final String NO_LEAF_EXTENSIONS_PACK = "matcha-flavoured:no_leaf_extensions";
 	public static final String VANILLA_PREVIEW_PACK = "matcha-flavoured:vanilla_preview";
+	public static final String TRINKETS_MATCHA_PACK = "matcha-flavoured:trinkets_matcha";
 
 	@Override
 	public void onInitializeClient() {
+		if (FabricLoader.getInstance().isModLoaded(TrinketsCompat.MOD_ID)) {
+			TrinketsCompatClient.init();
+			ResourceLoader.registerBuiltinPack(
+					Identifier.parse(TRINKETS_MATCHA_PACK),
+					FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
+					Component.translatable("matcha.config.trinkets_matcha.pack"),
+					PackActivationType.ALWAYS_ENABLED
+			);
+		}
 		MatchaClientConfig.load();
 		ClientLifecycleEvents.CLIENT_STARTED.register(MatchaFlavouredClient::refreshVanillaPreview);
 		InvalidateRenderStateCallback.EVENT.register(() -> refreshVanillaPreview(Minecraft.getInstance()));

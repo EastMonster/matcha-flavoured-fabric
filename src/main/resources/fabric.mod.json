@@ -71,6 +71,7 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"modmenu": "*"
+		"modmenu": "*",
+		"trinkets_updated": "*"
 	}
 }

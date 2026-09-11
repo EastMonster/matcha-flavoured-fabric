@@ -694,5 +694,6 @@
 	"item.matcha.ptero_chicken_nugget": "Kuřecí nugetka ve tvaru Pterodaktyla",
 	"item.matcha.tricero_chicken_nugget": "Kuřecí nugetka ve tvaru Triceratopse",
 	"item.matcha.nopales": "Nopales",
-	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": ""
+	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": "",
+	"trinkets.slot.head.earring": "Náušnice"
 }

@@ -869,5 +869,6 @@
 	"advancements.matcha.anglers_almanac.european_eel.desc": "Un mystérieux spécimen qui passe sa vie à voyager entre rivières et océans, parce qu'il ne peut pas se contenter d'un seul habitat, apparement.",
 	"advancements.matcha.anglers_almanac.sculk_vein.desc": "Une étrange forme de vie provenant des abîmes qui se répand sur toutes les surfaces.",
 	"advancements.matcha.anglers_almanac.echo_shard.desc": "Un mystérieux fragment d'une ancienne cité, renfermant les souvenirs de ce qu'elle était, et des mauvaises décisions qu'il l'ont conduite jusqu'ici.",
-	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": ""
+	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": "",
+	"trinkets.slot.head.earring": "Boucle d'oreille"
 }
