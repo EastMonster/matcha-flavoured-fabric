@@ -1286,24 +1286,6 @@
 		}
 	},
 	{
-		"id": "iou",
-		"type": "book",
-		"tab": "ingredients",
-		"carrier": "minecraft:writable_book",
-		"components": {
-			"minecraft:writable_book_content": {
-				"pages": [
-					{
-						"raw": "I don't have any good ideas for the weaponsmith. If you do let me know. I dont want them to sell tools or weapons I want the players to MAKE them."
-					}
-				]
-			},
-			"minecraft:item_name": {
-				"translate": "item.matcha.iou"
-			}
-		}
-	},
-	{
 		"id": "oil",
 		"type": "item",
 		"tab": "ingredients",
