@@ -1,0 +1,7 @@
+{
+	"parent": "matcha:block/bulk_template",
+	"textures": {
+		"block": "minecraft:block/andesite",
+		"particle": "minecraft:block/andesite"
+	}
+}

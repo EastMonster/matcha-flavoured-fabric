@@ -1,0 +1,7 @@
+{
+	"parent": "matcha:block/bulk_template",
+	"textures": {
+		"block": "minecraft:block/glass",
+		"particle": "minecraft:block/glass"
+	}
+}
