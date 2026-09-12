@@ -15,12 +15,14 @@
 			"minecraft:max_damage": 350,
 			"minecraft:lore": [
 				{
-					"text": "🗡 5",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["5"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.6",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.6"],
 					"color": "dark_green",
 					"italic": false
 				}

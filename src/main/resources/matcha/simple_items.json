@@ -302,6 +302,42 @@
 		}
 	},
 	{
+		"id": "rose_classic",
+		"type": "item",
+		"tab": "ingredients",
+		"hidden": true,
+		"components": {
+			"minecraft:item_model": "matcha:rose_classic",
+			"minecraft:item_name": {
+				"translate": "item.matcha.rose_classic"
+			}
+		}
+	},
+	{
+		"id": "cyan_rose_classic",
+		"type": "item",
+		"tab": "ingredients",
+		"hidden": true,
+		"components": {
+			"minecraft:item_model": "matcha:cyan_rose_classic",
+			"minecraft:item_name": {
+				"translate": "item.matcha.cyan_rose_classic"
+			}
+		}
+	},
+	{
+		"id": "dandelion_classic",
+		"type": "item",
+		"tab": "ingredients",
+		"hidden": true,
+		"components": {
+			"minecraft:item_model": "matcha:dandelion_classic",
+			"minecraft:item_name": {
+				"translate": "item.matcha.dandelion_classic"
+			}
+		}
+	},
+	{
 		"id": "floral_bundle",
 		"type": "bundle",
 		"tab": "tools",
@@ -512,7 +548,7 @@
 					"italic": false
 				},
 				{
-					"translate": "effect.matcha.weakness_ii",
+					"translate": "effect.matcha.weakness_2",
 					"with": [
 						"01:00"
 					],
@@ -558,7 +594,7 @@
 					"italic": false
 				},
 				{
-					"translate": "effect.matcha.poison_ii",
+					"translate": "effect.matcha.poison_2",
 					"with": [
 						"01:00"
 					],
@@ -760,6 +796,13 @@
 		}
 	},
 	{
+		"id": "raw_diamond",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/blast/diamond_from_blasting_raw_diamond.json",
+		"components": {}
+	},
+	{
 		"id": "dough",
 		"type": "item",
 		"tab": "ingredients",
@@ -805,7 +848,6 @@
 		"id": "estus_flask",
 		"type": "potion",
 		"tab": "foods",
-		"source": "data/matcha/recipe/crafting/estus_flask.json",
 		"carrier": "minecraft:potion",
 		"components": {
 			"minecraft:potion_contents": {
@@ -1332,7 +1374,7 @@
 			"minecraft:tooltip_display": {"hidden_components": ["minecraft:potion_contents"]},
 			"minecraft:lore": [
 				{"translate": "desc.matcha.throwable", "color": "gray", "italic": false},
-				{"text": "🏃 +40% (5:00)", "color": "#37cafb", "italic": false}
+				{"translate": "effect.matcha.speed_2", "with": ["5:00"], "color": "#37cafb", "italic": false}
 			],
 			"minecraft:custom_name": {"translate": "item.matcha.bubbling_mead", "italic": false}
 		}

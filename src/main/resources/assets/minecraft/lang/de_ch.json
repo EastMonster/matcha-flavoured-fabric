@@ -159,6 +159,7 @@
 	"item.minecraft.rabbit": "Rohes Fleisch",
 	"item.minecraft.cod": "Kabeljau",
 	"item.minecraft.salmon": "Lachs",
+	"item.kleispack.rose_classic": "Rose",
 	"item.kleispack.cyan_rose_classic": "Türkisi Rose",
 	"item.kleispack.dandelion_classic": "Löwezahn",
 	"item.kleispack.porkchop_classic": "Schweinefleisch",
@@ -180,5 +181,9 @@
 	"filled_map.village_savanna": "Karte zue Savannedorf",
 	"filled_map.village_snowy": "Karte zue Verschneitem Dorf",
 	"filled_map.village_taiga": "Karte zue Taigadorf",
-	"filled_map.shipwreck": "Karte zue Schiffswrack"
+	"filled_map.shipwreck": "Karte zue Schiffswrack",
+	"trim_material.minecraft.iron": "Stahl",
+	"trim_material.minecraft.netherite": "Iise",
+	"trim_material.minecraft.redstone": "Zinnober",
+	"trim_material.minecraft.emerald": "Patina"
 }

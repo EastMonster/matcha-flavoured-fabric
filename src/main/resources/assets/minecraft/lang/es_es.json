@@ -183,5 +183,9 @@
 	"filled_map.village_savanna": "Mapa de aldea de sabana abandonada",
 	"filled_map.village_snowy": "Mapa de aldea de llanura nevada abandonada",
 	"filled_map.village_taiga": "Mapa de aldea de taiga abandonada",
-	"filled_map.shipwreck": "Mapa de naufragio"
+	"filled_map.shipwreck": "Mapa de naufragio",
+	"trim_material.minecraft.iron": "Incrustaciones de acero",
+	"trim_material.minecraft.netherite": "Incrustaciones de hierro",
+	"trim_material.minecraft.redstone": "Incrustaciones de cinabrio",
+	"trim_material.minecraft.emerald": "Incrustaciones de pátina"
 }

@@ -1,9 +1,12 @@
 package monster.east.matchaff.mechanic;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.TagKey;
@@ -24,6 +27,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.levelgen.structure.Structure;
 
 import java.util.List;
 
@@ -31,11 +35,24 @@ public final class MobMechanics {
 	private static final TagKey<EntityType<?>> MUNDANE_HOSTILES = TagKey.create(
 			Registries.ENTITY_TYPE, id("mundane_hostiles")
 	);
+	private static final ResourceKey<Structure> TRIAL_CHAMBERS = ResourceKey.create(
+			Registries.STRUCTURE, Identifier.fromNamespaceAndPath("minecraft", "trial_chambers")
+	);
+	private static final ResourceKey<Structure> ABBEY = ResourceKey.create(
+			Registries.STRUCTURE, Identifier.fromNamespaceAndPath("matcha-flavoured", "abbey_overgrown")
+	);
+	private static HolderSet<Structure> dungeonStructures;
 
 	private MobMechanics() {
 	}
 
 	static void init() {
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> dungeonStructures = null);
+		ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) -> {
+			if (success) {
+				dungeonStructures = null;
+			}
+		});
 		ServerEntityEvents.ENTITY_LOAD.register(MobMechanics::initializeMundaneHostile);
 	}
 
@@ -76,9 +93,10 @@ public final class MobMechanics {
 		boolean sky = level.canSeeSky(pos);
 		if (isSafeSurface(level)) {
 			int minY = type == EntityTypes.DROWNED ? 43 : 63;
-			return sky || (pos.getY() >= minY && pos.getY() <= 350);
+			return sky || (pos.getY() >= minY && pos.getY() <= 350
+					&& (type == EntityTypes.DROWNED || !inDungeon(level, pos)));
 		}
-		if (type == EntityTypes.CREEPER && (sky || pos.getY() >= 63)) {
+		if (type == EntityTypes.CREEPER && (sky || (pos.getY() >= 63 && !inDungeon(level, pos)))) {
 			return true;
 		}
 		return !BuiltInRegistries.ENTITY_TYPE.wrapAsHolder(type).is(EntityTypeTags.UNDEAD) && sky;
@@ -88,6 +106,15 @@ public final class MobMechanics {
 		var objective = level.getServer().getScoreboard().getObjective("gamerule_safe_surface");
 		return objective != null && level.getServer().getScoreboard()
 				.getOrCreatePlayerScore(net.minecraft.world.scores.ScoreHolder.forNameOnly("gamerule"), objective).get() >= 1;
+	}
+
+	private static boolean inDungeon(ServerLevel level, BlockPos pos) {
+		if (dungeonStructures == null) {
+			var structures = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
+			dungeonStructures = HolderSet.direct(
+					structures.getOrThrow(TRIAL_CHAMBERS), structures.getOrThrow(ABBEY));
+		}
+		return level.structureManager().getStructureWithPieceAt(pos, dungeonStructures).isValid();
 	}
 
 	private static void modifyMob(Mob mob, Difficulty difficulty) {
@@ -156,7 +183,7 @@ public final class MobMechanics {
 			int health = difficulty == Difficulty.HARD ? 40 : 30;
 			setBase(mob, Attributes.MAX_HEALTH, health);
 			mob.setHealth(health);
-			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.28 : 0.25);
+			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.265 : 0.25);
 			setBase(mob, Attributes.ATTACK_DAMAGE, difficulty == Difficulty.HARD ? 15 : 10);
 			setBase(mob, Attributes.ARMOR, difficulty == Difficulty.HARD ? 14 : 12);
 			setBase(mob, Attributes.FOLLOW_RANGE, difficulty == Difficulty.HARD ? 60 : 50);

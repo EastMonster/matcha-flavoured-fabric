@@ -101,7 +101,8 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 				.add(crook, context.baseSmeltTime()));
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
 		equipment.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
-		batchItems.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
+		batchItems.stream().filter(entry -> !entry.hidden())
+				.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
 		foods.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.FOOD_AND_DRINKS)));
 		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
 		CreativeOrder.register(creativeItems);

@@ -28,7 +28,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "Lägg till en utrustning, vapen eller verktyg",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "Vilken legering som helst",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "Smidesuppgraderingsmall",
-	"container.upgrade.missing_template_tooltip": "Lägg till en smidesmall eller basmetall",
+	"container.upgrade.missing_template_tooltip": "Lägg till en smidesmall eller ingenting.",
 	"item.minecraft.nether_star": "Gudomlig förmån",
 	"item.minecraft.turtle_helmet": "Sköldpaddahjälm",
 	"item.minecraft.honeycomb": "Vax",
@@ -181,5 +181,9 @@
 	"filled_map.village_savanna": "Karta över övergiven savannby",
 	"filled_map.village_snowy": "Karta över övergiven snöby",
 	"filled_map.village_taiga": "Karta över övergiven Taiga by",
-	"filled_map.shipwreck": "Karta av skeppsvrak"
+	"filled_map.shipwreck": "Karta av skeppsvrak",
+	"trim_material.minecraft.iron": "Stålmaterial",
+	"trim_material.minecraft.netherite": "Järnmaterial",
+	"trim_material.minecraft.redstone": "Cinnobermaterial",
+	"trim_material.minecraft.emerald": "Pinatamaterial"
 }

@@ -261,7 +261,34 @@
 				"translate": "item.matcha.crystal_heart"
 			},
 			"minecraft:rarity": "rare",
-			"minecraft:enchantment_glint_override": true
+			"minecraft:enchantment_glint_override": true,
+			"minecraft:consumable": {
+				"consume_seconds": 60,
+				"animation": "spyglass",
+				"has_consume_particles": false,
+				"on_consume_effects": []
+			},
+			"minecraft:death_protection": {
+				"death_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "minecraft:regeneration",
+								"amplifier": 10,
+								"duration": 3,
+								"show_particles": false,
+								"show_icon": false
+							},
+							{
+								"id": "minecraft:resistance",
+								"amplifier": 4,
+								"duration": 1
+							}
+						]
+					}
+				]
+			}
 		}
 	},
 	{
@@ -308,7 +335,7 @@
 		"source": "data/matcha/recipe/crafting/music_disc_golden.json",
 		"carrier": "minecraft:music_disc_11",
 		"components": {
-			"minecraft:item_name": { "text": "Golden Disc" },
+		"minecraft:custom_name": { "translate": "item.minecraft.music_disc_13", "italic": false },
 			"minecraft:jukebox_playable": "matcha:golden",
 			"minecraft:max_stack_size": 1
 		}
@@ -320,7 +347,7 @@
 		"source": "data/custom_music/recipe/music_disc_labyrinthine.json",
 		"carrier": "minecraft:music_disc_cat",
 		"components": {
-			"minecraft:item_name": { "text": "Labyrinthine Disc" },
+		"minecraft:custom_name": { "translate": "item.minecraft.music_disc_13", "italic": false },
 			"minecraft:jukebox_playable": "main:labyrinthine",
 			"minecraft:max_stack_size": 1
 		}
@@ -332,7 +359,7 @@
 		"source": "data/matcha/recipe/crafting/music_disc_crete.json",
 		"carrier": "minecraft:music_disc_11",
 		"components": {
-			"minecraft:item_name": { "translate": "item.matcha.music_disc_crete" },
+		"minecraft:custom_name": { "translate": "item.minecraft.music_disc_13", "italic": false },
 			"minecraft:jukebox_playable": "matcha:crete",
 			"minecraft:max_stack_size": 1
 		}
@@ -341,10 +368,9 @@
 		"id": "music_disc_elegy_of_the_abbey",
 		"type": "music_disc",
 		"tab": "tools",
-		"source": "data/matcha/recipe/crafting/music_disc_elegy_of_the_abbey.json",
 		"carrier": "minecraft:music_disc_11",
 		"components": {
-			"minecraft:item_name": { "translate": "item.matcha.music_disc_elegy_of_the_abbey" },
+		"minecraft:custom_name": { "translate": "item.minecraft.music_disc_13", "italic": false },
 			"minecraft:jukebox_playable": "matcha:elegy_of_the_abbey",
 			"minecraft:max_stack_size": 1
 		}
@@ -356,7 +382,7 @@
 		"source": "data/matcha/recipe/crafting/music_disc_malachite.json",
 		"carrier": "minecraft:music_disc_11",
 		"components": {
-			"minecraft:item_name": { "translate": "item.matcha.music_disc_malachite" },
+		"minecraft:custom_name": { "translate": "item.minecraft.music_disc_13", "italic": false },
 			"minecraft:jukebox_playable": "matcha:malachite",
 			"minecraft:max_stack_size": 1
 		}

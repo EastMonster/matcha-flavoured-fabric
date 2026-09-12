@@ -431,7 +431,7 @@
         "italic": false
       },
       {
-        "translate": "effect.matcha.haste_ii",
+        "translate": "effect.matcha.haste_2",
         "with": [
           "2:30"
         ],
@@ -478,7 +478,7 @@
         "italic": false
       },
       {
-        "translate": "effect.matcha.strength_ii",
+        "translate": "effect.matcha.strength_2",
         "with": [
           "2:30"
         ],
@@ -578,7 +578,7 @@
         "italic": false
       },
       {
-        "translate": "effect.matcha.regen_ii",
+        "translate": "effect.matcha.regen_2",
         "with": [
           "0:20"
         ],
@@ -889,7 +889,7 @@
         "italic": false
       },
       {
-        "translate": "effect.matcha.levitation_xxx",
+        "translate": "effect.matcha.levitation_30",
         "with": [
           "0:01"
         ],
@@ -1250,7 +1250,7 @@
         "italic": false
       },
       {
-        "translate": "effect.matcha.regen_ii",
+        "translate": "effect.matcha.regen_2",
         "with": [
           "0:45"
         ],
@@ -1782,7 +1782,8 @@
         "italic": false
       },
       {
-        "text": "🏃 +20% (5:00)",
+		"translate": "effect.matcha.speed",
+		"with": ["5:00"],
         "color": "#37cafb",
         "italic": false
       }
@@ -2313,7 +2314,7 @@
         "italic": false
       },
       {
-        "translate": "effect.matcha.haste_ii",
+        "translate": "effect.matcha.haste_2",
         "with": [
           "30:00"
         ],

@@ -28,7 +28,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "ꞁooʇ ɹo uodɐǝʍ ɹoɯɹɐ ppⱯ",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "ʎoꞁꞁⱯ ʎuⱯ",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "ǝʇɐꞁdɯǝ⟘ ǝpɐɹᵷd∩ ᵷuᴉɥʇᴉɯS",
-	"container.upgrade.missing_template_tooltip": "ꞁɐʇǝW ǝsɐᗺ ɹo ǝʇɐꞁdɯǝ⟘ ᵷuᴉɥʇᴉɯS ppⱯ",
+	"container.upgrade.missing_template_tooltip": "ʎʇbɯƎ ǝʌɐǝꞀ ɹo ǝʇɐꞁbɯǝ⟘ ᵷuᴉɥʇᴉɯS ppⱯ",
 	"item.minecraft.nether_star": "ɹnoʌɐℲ ǝuᴉʌᴉᗡ",
 	"item.minecraft.turtle_helmet": "ʇǝɯꞁꞁǝɥS ǝꞁʇɹn⟘",
 	"item.minecraft.honeycomb": "xɐM",
@@ -183,5 +183,9 @@
 	"filled_map.village_savanna": "bɐW ǝᵷɐꞁꞁᴉɅ ɐuuɐʌɐS pǝuopuɐqⱯ",
 	"filled_map.village_snowy": "bɐW ǝᵷɐꞁꞁᴉɅ ʎʍouS pǝuopuɐqⱯ",
 	"filled_map.village_taiga": "bɐW ǝᵷɐꞁꞁᴉɅ ɐᵷᴉɐ⟘ pǝuopuɐqⱯ",
-	"filled_map.shipwreck": "bɐW ʞɔǝɹʍbᴉɥS"
+	"filled_map.shipwreck": "bɐW ʞɔǝɹʍbᴉɥS",
+	"trim_material.minecraft.iron": "ꞁɐᴉɹǝʇɐW ꞁǝǝʇS",
+	"trim_material.minecraft.netherite": "ꞁɐᴉɹǝʇɐW uoɹI",
+	"trim_material.minecraft.redstone": "ꞁɐᴉɹǝʇɐW ɹɐqɐuuᴉƆ",
+	"trim_material.minecraft.emerald": "ꞁɐᴉɹǝʇɐW ɐuᴉʇɐԀ"
 }

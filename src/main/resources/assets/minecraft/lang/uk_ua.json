@@ -183,5 +183,9 @@
 	"filled_map.village_savanna": "Мапа дослідника покинутого саванного села",
 	"filled_map.village_snowy": "Мапа дослідника покинутого сніжного села",
 	"filled_map.village_taiga": "Мапа дослідника покинутого тайгового села",
-	"filled_map.shipwreck": "Мапа дослідника уламків корабля"
+	"filled_map.shipwreck": "Мапа дослідника уламків корабля",
+	"trim_material.minecraft.iron": "Стальний матеріал",
+	"trim_material.minecraft.netherite": "Залізний матеріал",
+	"trim_material.minecraft.redstone": "Кіноварний матеріал",
+	"trim_material.minecraft.emerald": "Патиновий матеріал"
 }

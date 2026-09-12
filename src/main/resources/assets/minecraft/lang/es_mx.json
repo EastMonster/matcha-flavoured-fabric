@@ -17,9 +17,9 @@
 	"container.crafting": "",
 	"container.furnace": "Horno",
 	"container.smoker": "Horno de barro",
-	"block.minecraft.brewing_stand": "Alambique alquímico",
-	"container.brewing": "§0Alambique alquímico",
-	"item.minecraft.brewing_stand": "Alambique alquímico",
+	"block.minecraft.brewing_stand": "Soporte de química",
+	"container.brewing": "§0Soporte de química",
+	"item.minecraft.brewing_stand": "Soporte de química",
 	"container.cartography_table": "",
 	"container.upgrade": "",
 	"container.shulkerBox": "Saco grande",
@@ -28,7 +28,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "Coloca una armadura, arma o herramienta",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "Cualquier aleación",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "Plantilla de mejora de herrería",
-	"container.upgrade.missing_template_tooltip": "Coloca una plantilla de herrería o manténlo vacío",
+	"container.upgrade.missing_template_tooltip": "Coloca una plantilla de herrería o mantenlo vacío",
 	"item.minecraft.nether_star": "Favor divino",
 	"item.minecraft.turtle_helmet": "Caparazón de tortuga",
 	"item.minecraft.honeycomb": "Cera",
@@ -183,5 +183,9 @@
 	"filled_map.village_savanna": "Mapa de aldea de la sabana abandonada",
 	"filled_map.village_snowy": "Mapa de aldea nevada abandonada",
 	"filled_map.village_taiga": "Mapa de aldea de la taiga abandonada",
-	"filled_map.shipwreck": "Mapa de naufragio"
+	"filled_map.shipwreck": "Mapa de naufragio",
+	"trim_material.minecraft.iron": "Material de acero",
+	"trim_material.minecraft.netherite": "Material de hierro",
+	"trim_material.minecraft.redstone": "Material de cinabrio",
+	"trim_material.minecraft.emerald": "Material de pátina"
 }

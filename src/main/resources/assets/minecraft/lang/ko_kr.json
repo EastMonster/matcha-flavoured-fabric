@@ -28,7 +28,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "갑옷, 무기 또는 도구",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "아무 합금",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "대장장이 강화 형판",
-	"container.upgrade.missing_template_tooltip": "대장장이 형판 또는 기본 금속을 추가하세요",
+	"container.upgrade.missing_template_tooltip": "대장장이 형판을 추가하거나 비워두세요",
 	"item.minecraft.nether_star": "신성한 은총",
 	"item.minecraft.turtle_helmet": "거북이 뚜껑",
 	"item.minecraft.honeycomb": "밀랍",
@@ -177,5 +177,15 @@
 	"filled_map.monument": "바다 유적 지도",
 	"filled_map.trial_chambers": "시련의 회당 지도",
 	"filled_map.mansion": "저택 지도",
-	"item.minecraft.potion.effect.empty": "물병"
+	"item.minecraft.potion.effect.empty": "물병",
+	"filled_map.village_desert": "버려진 사막 마을 지도",
+	"filled_map.village_plains": "버려진 평원 마을 지도",
+	"filled_map.village_savanna": "버려진 사바나 마을 지도",
+	"filled_map.village_snowy": "버려진 눈 덮인 마을 지도",
+	"filled_map.village_taiga": "버려진 타이가 마을 지도",
+	"filled_map.shipwreck": "난파선 지도",
+	"trim_material.minecraft.iron": "강철 소재",
+	"trim_material.minecraft.netherite": "철 소재",
+	"trim_material.minecraft.redstone": "진사 소재",
+	"trim_material.minecraft.emerald": "녹청 소재"
 }

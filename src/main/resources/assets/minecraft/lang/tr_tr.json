@@ -181,5 +181,9 @@
 	"filled_map.village_plains": "Terk Edilmiş Çayır Köyü Haritası",
 	"filled_map.village_savanna": "Terk Edilmiş Savan Köyü Haritası",
 	"filled_map.village_snowy": "Terk Edilmiş Karlı Köy Haritası",
-	"filled_map.village_taiga": "Terk Edilmiş Tayga Köyü Haritası"
+	"filled_map.village_taiga": "Terk Edilmiş Tayga Köyü Haritası",
+	"trim_material.minecraft.iron": "Çelik Materyali",
+	"trim_material.minecraft.netherite": "Demir Materyali",
+	"trim_material.minecraft.redstone": "Zincifre Materyali",
+	"trim_material.minecraft.emerald": "Jengar Materyali"
 }

@@ -160,6 +160,7 @@
 	"item.minecraft.rabbit": "Råt kød",
 	"item.minecraft.cod": "Torsk",
 	"item.minecraft.salmon": "Laks",
+	"item.kleispack.rose_classic": "Rose",
 	"item.kleispack.cyan_rose_classic": "Cyan rose",
 	"item.kleispack.dandelion_classic": "Mælkebøtte",
 	"item.kleispack.porkchop_classic": "Svinekotelet",
@@ -180,5 +181,9 @@
 	"filled_map.village_plains": "Forladt landsbykort",
 	"filled_map.village_savanna": "Forladt savannelandsbykort",
 	"filled_map.village_snowy": "Forladt snelandsbykort",
-	"filled_map.village_taiga": "Forladt granskovlandsbykort"
+	"filled_map.village_taiga": "Forladt granskovlandsbykort",
+	"trim_material.minecraft.iron": "Stålmateriale",
+	"trim_material.minecraft.netherite": "Jernmateriale",
+	"trim_material.minecraft.redstone": "Cinnobermateriale",
+	"trim_material.minecraft.emerald": "Patinamateriale"
 }

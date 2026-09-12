@@ -27,7 +27,8 @@ import java.util.Objects;
 public final class TrinketsCompat {
 	public static final String MOD_ID = "trinkets_updated";
 	public static final List<String> EARRING_IDS = List.of(
-			"amber_earrings", "opal_earrings", "topaz_earrings"
+			"amber_earrings", "opal_earrings", "topaz_earrings",
+			"diamond_earrings", "amethyst_earrings", "lapis_earrings"
 	);
 	private static final String EARRING_SLOT = "head/earring";
 	private static final TagKey<Item> EARRINGS = TagKey.create(

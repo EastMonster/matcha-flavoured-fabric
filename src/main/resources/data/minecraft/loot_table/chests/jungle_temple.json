@@ -4,7 +4,8 @@
 		{
 			"entries": [
 				{
-					"type": "minecraft:item",
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/raw_diamond",
 					"functions": [
 						{
 							"count": {
@@ -15,7 +16,6 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:diamond",
 					"weight": 6
 				},
 				{

@@ -26,7 +26,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "Add armour, cutlass, o' tool",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "Any alloy",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "Captain's upgrade template o' smithing",
-	"container.upgrade.missing_template_tooltip": "Add template o' smithing, or a base metal",
+	"container.upgrade.missing_template_tooltip": "Add template o' smithing, or leave 't barren",
 	"item.minecraft.nether_star": "Favour o' the gods",
 	"item.minecraft.turtle_helmet": "Helmet o' turtle's shell",
 	"item.minecraft.enchanted_book": "Book o' hell",
@@ -149,6 +149,7 @@
 	"item.minecraft.cooked_rabbit": "Cooked flesh",
 	"item.minecraft.rabbit": "Raw flesh",
 	"item.minecraft.cod": "Codfish",
+	"item.kleispack.rose_classic": "Rose",
 	"item.kleispack.cyan_rose_classic": "Cyan rose",
 	"item.kleispack.dandelion_classic": "Yellow flower",
 	"item.kleispack.porkchop_classic": "Pigmeat",
@@ -170,5 +171,9 @@
 	"filled_map.village_savanna": "Map t' th' abandoned landlubbers' territory in th' savanna",
 	"filled_map.village_snowy": "Map t' th' abandoned landlubbers' territory in th' snow",
 	"filled_map.village_taiga": "Map t' th' abandoned landlubbers' territory in th' boreal forest",
-	"filled_map.shipwreck": "Map t' th' shipwreck"
+	"filled_map.shipwreck": "Map t' th' shipwreck",
+	"trim_material.minecraft.iron": "Material o' hardened steel",
+	"trim_material.minecraft.netherite": "Material o' steel",
+	"trim_material.minecraft.redstone": "Material o' cinnamon",
+	"trim_material.minecraft.emerald": "Material o' weath'red copper"
 }

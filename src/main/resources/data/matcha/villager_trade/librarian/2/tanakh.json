@@ -36,5 +36,9 @@
 		"count": 1,
 		"id": "matcha:tanakh"
 	},
+	"additional_wants": {
+		"count": 1,
+		"id": "matcha:crystal_heart"
+	},
 	"xp": 30
 }

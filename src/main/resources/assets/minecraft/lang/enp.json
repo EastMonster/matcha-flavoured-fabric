@@ -137,5 +137,9 @@
 	"filled_map.village_savanna": "Forsaken Bareland Thorp Draft",
 	"filled_map.village_snowy": "Forsaken Snowy Thorp Draft",
 	"filled_map.village_taiga": "Forsaken Harttartree Thorp Draft",
-	"filled_map.shipwreck": "Shipbreach Draft"
+	"filled_map.shipwreck": "Shipbreach Draft",
+	"trim_material.minecraft.iron": "Steel Anwork",
+	"trim_material.minecraft.netherite": "Iron Anwork",
+	"trim_material.minecraft.redstone": "Tiver Anwork",
+	"trim_material.minecraft.emerald": "Greenoom Anwork"
 }

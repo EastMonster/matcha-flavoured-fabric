@@ -17,8 +17,8 @@ import monster.east.matchaff.MatchaFlavouredFabric;
 import monster.east.matchaff.network.SleepFastForwardPayload;
 
 public final class MatchaFlavouredClient implements ClientModInitializer {
-	private static final int CLOUD_TIME_SCALE = 120;
-	private static boolean sleepFastForwarding;
+	private static final int CLOUD_TIME_SCALE = 100;
+	private static int sleepRate;
 	private static ClientLevel trackedLevel;
 	private static long extraCloudTicks;
 	public static final String NO_LEAF_EXTENSIONS_PACK = "matcha-flavoured:no_leaf_extensions";
@@ -28,7 +28,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		ClientPlayNetworking.registerGlobalReceiver(SleepFastForwardPayload.TYPE, (payload, context) ->
-				context.client().execute(() -> sleepFastForwarding = payload.active()));
+				context.client().execute(() -> sleepRate = payload.active() ? CLOUD_TIME_SCALE : 0));
 		ClientTickEvents.END_CLIENT_TICK.register(MatchaFlavouredClient::tickCloudTime);
 		ClientTickEvents.END_CLIENT_TICK.register(DolabraVisuals::tick);
 		if (FabricLoader.getInstance().isModLoaded(TrinketsCompat.MOD_ID)) {
@@ -65,9 +65,9 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		if (client.level != trackedLevel) {
 			trackedLevel = client.level;
 			extraCloudTicks = 0;
-			sleepFastForwarding = false;
+			sleepRate = 0;
 		}
-		if (client.level != null && sleepFastForwarding) {
+		if (client.level != null && sleepRate > 0) {
 			extraCloudTicks += CLOUD_TIME_SCALE - 1L;
 		}
 	}

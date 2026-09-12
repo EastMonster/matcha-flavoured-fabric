@@ -24,8 +24,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.entity.npc.villager.VillagerData;
 import net.minecraft.world.entity.npc.villager.VillagerProfession;
 import net.minecraft.world.entity.animal.happyghast.HappyGhast;
+import net.minecraft.world.entity.monster.skeleton.WitherSkeleton;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
@@ -42,6 +44,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -61,6 +64,7 @@ public final class GameplayMechanics {
 	private static final Identifier HAPPY_GHAST_HORN = id("mechanics/happy_ghast_horn");
 	private static final Identifier KILL_DRAGON = id("end/kill_dragon");
 	private static final Identifier SUMMONED_WITHER = id("mechanics/summoned_wither");
+	private static final Identifier ENTER_FORTRESS = id("mechanics/enter_fortress");
 	private static final AttachmentType<Integer> WATER_BOTTLE_INVENTORY_VERSION = AttachmentRegistry.create(
 			id("water_bottle_inventory_version")
 	);
@@ -69,6 +73,7 @@ public final class GameplayMechanics {
 	private static final Map<UUID, Integer> LAST_CAKE_SLICES = new HashMap<>();
 	private static final Set<Villager> VILLAGERS =
 			Collections.newSetFromMap(new IdentityHashMap<>());
+	private static final Set<UUID> AMNESTIC_VILLAGERS = new HashSet<>();
 
 	private GameplayMechanics() {
 	}
@@ -81,6 +86,7 @@ public final class GameplayMechanics {
 			LAST_WATER_BUCKET_USE.clear();
 			LAST_CAKE_SLICES.clear();
 			VILLAGERS.clear();
+			AMNESTIC_VILLAGERS.clear();
 		});
 		UseBlockCallback.EVENT.register(GameplayMechanics::useMechanicItem);
 		ServerEntityEvents.ENTITY_LOAD.register(GameplayMechanics::trackVillager);
@@ -103,10 +109,12 @@ public final class GameplayMechanics {
 				checkHappyGhast(player);
 				checkDragonReward(server, player);
 				checkSummonedWither(player, tick);
+				checkWitherSkeletons(player);
 				checkNetherWater(player);
 				checkCake(player);
 				stackWaterBottles(player);
 			}
+			refreshAmnesticVillagers();
 			TimedMechanics.tick(server, tick);
 			BeaconKindlingMechanics.tick(server, tick);
 			WardingStoneMechanics.tick();
@@ -150,11 +158,38 @@ public final class GameplayMechanics {
 				.filter(villager -> villager.level() == level && !villager.isRemoved())
 				.min(Comparator.comparingDouble(villager -> villager.distanceToSqr(Vec3.atCenterOf(pos))))
 				.ifPresent(villager -> {
+					AMNESTIC_VILLAGERS.add(villager.getUUID());
 					villager.setVillagerData(villager.getVillagerData()
 							.withProfession(level.registryAccess(), VillagerProfession.NONE).withLevel(1));
-					villager.setVillagerXp(0);
+					villager.refreshBrain(level);
 					((VillagerAccessor) villager).matcha$setLastRestockGameTime(0);
 				});
+	}
+
+	private static void refreshAmnesticVillagers() {
+		// Vanilla only appends the next tier when a trade grants XP; rebuild all tiers here.
+		for (Villager villager : VILLAGERS) {
+			if (villager.isRemoved()
+					|| !AMNESTIC_VILLAGERS.contains(villager.getUUID())
+					|| villager.getVillagerData().profession().is(VillagerProfession.NONE)
+					|| !(villager.level() instanceof ServerLevel level)) {
+				continue;
+			}
+			int targetLevel = 1;
+			while (VillagerData.canLevelUp(targetLevel)
+					&& villager.getVillagerXp() >= VillagerData.getMaxXpPerLevel(targetLevel)) {
+				targetLevel++;
+			}
+			villager.setVillagerData(villager.getVillagerData().withLevel(1));
+			villager.getOffers();
+			VillagerAccessor accessor = (VillagerAccessor) villager;
+			for (int levelNumber = 2; levelNumber <= targetLevel; levelNumber++) {
+				villager.setVillagerData(villager.getVillagerData().withLevel(levelNumber));
+				accessor.matcha$updateTrades(level);
+			}
+			accessor.matcha$setLastRestockGameTime(0);
+			AMNESTIC_VILLAGERS.remove(villager.getUUID());
+		}
 	}
 
 	private static void checkEstus(ServerPlayer player) {
@@ -274,6 +309,21 @@ public final class GameplayMechanics {
 		}
 		TimedMechanics.scheduleWither(player, tick);
 		WorldMechanics.revoke(player, SUMMONED_WITHER);
+	}
+
+	private static void checkWitherSkeletons(ServerPlayer player) {
+		if (!WorldMechanics.advancementDone(player, ENTER_FORTRESS)) {
+			return;
+		}
+		ServerLevel level = player.level();
+		for (WitherSkeleton skeleton : level.getEntitiesOfClass(WitherSkeleton.class,
+				player.getBoundingBox().inflate(5.0), skeleton ->
+						skeleton.isAlive() && skeleton.distanceToSqr(player) <= 25.0)) {
+			BlockPos block = BlockPos.containing(skeleton.getEyePosition().add(skeleton.getLookAngle()));
+			level.destroyBlock(block, true);
+			level.destroyBlock(block.below(), true);
+		}
+		WorldMechanics.revoke(player, ENTER_FORTRESS);
 	}
 
 	private static void checkNetherWater(ServerPlayer player) {

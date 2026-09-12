@@ -102,13 +102,14 @@ public final class SimpleItemRegistrar {
 		} else if (item instanceof BrushItem) {
 			DispenserBlock.registerBehavior(item, Objects.requireNonNull(DispenserBlock.DISPENSER_REGISTRY.get(Items.BRUSH)));
 		}
-		return new BatchItem(item, tab(definition.tab));
+		return new BatchItem(item, tab(definition.tab), definition.hidden);
 	}
 
 
 	private static Item createItem(BatchDefinition definition, Item.Properties properties) {
 		return switch (definition.type) {
-			case "item" -> new Item(properties);
+			case "item" -> "crystal_heart".equals(definition.id)
+					? new CrystalHeartItem(properties) : new Item(properties);
 			case "arrow" -> "minecraft:tipped_arrow".equals(definition.carrier)
 					? new MatchaTippedArrowItem(properties)
 					: new ArrowItem(properties);
@@ -154,7 +155,7 @@ public final class SimpleItemRegistrar {
 		};
 	}
 
-	public record BatchItem(Item item, ResourceKey<CreativeModeTab> tab) {
+	public record BatchItem(Item item, ResourceKey<CreativeModeTab> tab, boolean hidden) {
 	}
 
 	private static final class BatchDefinition {
@@ -163,6 +164,7 @@ public final class SimpleItemRegistrar {
 		private String tab;
 		private String carrier;
 		private String source;
+		private boolean hidden;
 		private Map<String, JsonElement> components;
 	}
 }

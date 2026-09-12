@@ -130,7 +130,8 @@
 					"weight": 5
 				},
 				{
-					"type": "minecraft:item",
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/raw_diamond",
 					"functions": [
 						{
 							"add": false,
@@ -142,7 +143,6 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:diamond",
 					"weight": 5
 				},
 				{

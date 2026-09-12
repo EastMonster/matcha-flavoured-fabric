@@ -1,0 +1,17 @@
+{
+	"wants": {
+		"id": "minecraft:emerald",
+		"count": 1
+	},
+	"additional_wants": {
+		"id": "minecraft:diamond",
+		"count": 2
+	},
+	"gives": {
+		"id": "matcha:diamond_earrings",
+		"count": 1
+	},
+	"max_uses": 999,
+	"reputation_discount": 0,
+	"xp": 10
+}

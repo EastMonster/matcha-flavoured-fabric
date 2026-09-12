@@ -9,7 +9,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.numbers.StyledFormat;
@@ -32,7 +31,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
-import net.minecraft.world.clock.WorldClocks;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.HashMap;
@@ -41,7 +39,7 @@ import java.util.Set;
 import java.util.UUID;
 
 /**
- * World-level mechanics for the slow day cycle, boat/sulphur particles,
+ * World-level mechanics for timeline-driven day/night, boat/sulphur particles,
  * glass-bottle crafting bonus, infinite anvil repairs and global gamerules.
  */
 public final class WorldMechanics {
@@ -51,7 +49,8 @@ public final class WorldMechanics {
 	private static final String REWARD_VERSION_OBJECTIVE = "matcha_reward_version";
 	private static final String GAMERULES_OBJECTIVE = "matcha_gamerules_version";
 	private static final String GAMERULES_HOLDER = "current";
-	private static final int RECIPE_UNLOCK_VERSION = 1_12_01_004;
+	private static final int RECIPE_UNLOCK_VERSION = 1_12_01_006;
+	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
 	private static final String VERSION_LABEL = "1.12.1";
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("glass_bottle_from_crafting");
@@ -109,12 +108,19 @@ public final class WorldMechanics {
 		}
 		var objective = scoreboard.getObjective(GAMERULES_OBJECTIVE);
 		var applied = scoreboard.getPlayerScoreInfo(ScoreHolder.forNameOnly(GAMERULES_HOLDER), objective);
-		if (applied != null) {
+		// The version marker does not record the current gamerule value; always
+		// restore this rule before allowing the version check to short-circuit.
+		var rules = server.getGameRules();
+		rules.set(GameRules.ADVANCE_TIME, true, server);
+		if (applied != null && applied.value() >= GAMERULES_VERSION) {
 			return;
 		}
-		var rules = server.getGameRules();
+		if (applied != null) {
+			scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(GAMERULES_HOLDER), objective)
+					.set(GAMERULES_VERSION);
+			return;
+		}
 		rules.set(GameRules.NATURAL_HEALTH_REGENERATION, false, server);
-		rules.set(GameRules.ADVANCE_TIME, false, server);
 		rules.set(GameRules.SPAWN_PHANTOMS, false, server);
 		rules.set(GameRules.KEEP_INVENTORY, true, server);
 		rules.set(GameRules.BLOCK_EXPLOSION_DROP_DECAY, false, server);
@@ -122,7 +128,7 @@ public final class WorldMechanics {
 		rules.set(GameRules.ENDER_PEARLS_VANISH_ON_DEATH, false, server);
 		rules.set(GameRules.MAX_BLOCK_MODIFICATIONS, 200000, server);
 		rules.set(GameRules.COMMAND_BLOCK_OUTPUT, false, server);
-		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(GAMERULES_HOLDER), objective).set(1);
+		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(GAMERULES_HOLDER), objective).set(GAMERULES_VERSION);
 	}
 
 	private static void cacheDifficulty(MinecraftServer server) {
@@ -170,10 +176,6 @@ public final class WorldMechanics {
 			return;
 		}
 		int tick = server.getTickCount();
-		if (tick % 3 == 0) {
-			var clock = server.registryAccess().lookupOrThrow(Registries.WORLD_CLOCK).getOrThrow(WorldClocks.OVERWORLD);
-			server.clockManager().addTicks(clock, 1);
-		}
 		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 			VillageMechanics.tickPlayer(player);
 			boatParticles(player);
@@ -188,8 +190,7 @@ public final class WorldMechanics {
 
 	private static void welcome(ServerPlayer player) {
 		migrateRecipeUnlocks(player);
-		player.sendSystemMessage(Component.translatable("message.matcha.welcome")
-				.append(Component.literal(VERSION_LABEL))
+		player.sendSystemMessage(Component.translatable("message.matcha.welcome", VERSION_LABEL)
 				.withStyle(style -> style.withColor(TextColor.fromRgb(0x65E082))));
 		player.sendSystemMessage(Component.translatable("message.matcha.welcome.desc")
 				.withStyle(style -> style.withColor(TextColor.fromRgb(0x8FB398))));

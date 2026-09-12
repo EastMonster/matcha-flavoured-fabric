@@ -24,7 +24,6 @@ final class CleanseEnchantment {
 		}
 		if (EnchantmentUtil.maxLevel(player.getItemBySlot(EquipmentSlot.CHEST), enchantments, CHEST) > 0) {
 			player.removeEffect(MobEffects.POISON);
-			player.removeEffect(MobEffects.WITHER);
 		}
 		if (EnchantmentUtil.maxLevel(player.getItemBySlot(EquipmentSlot.LEGS), enchantments, LEGS) > 0) {
 			player.removeEffect(MobEffects.SLOWNESS);

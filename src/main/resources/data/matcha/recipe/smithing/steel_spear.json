@@ -34,7 +34,8 @@
 			],
 			"minecraft:lore": [
 				{
-					"text": "\uD83D\uDCA5 1",
+					"translate": "desc.matcha.knockback_attribute",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},

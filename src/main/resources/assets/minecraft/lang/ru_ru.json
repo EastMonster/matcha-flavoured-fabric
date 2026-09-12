@@ -3,7 +3,7 @@
 	"block.minecraft.stone": "Известняк",
 	"item.minecraft.wheat": "Солома",
 	"block.minecraft.wheat": "Солома",
-	"item.minecraft.wheat_seeds": "Пшеничное зерно",
+	"item.minecraft.wheat_seeds": "Пшеничные зёрна",
 	"item.minecraft.beetroot": "Томаты",
 	"block.minecraft.beetroots": "Томаты",
 	"item.minecraft.beetroot_seeds": "Семена томата",
@@ -183,5 +183,9 @@
 	"filled_map.village_savanna": "Карта заброшенной саванной деревни",
 	"filled_map.village_snowy": "Карта заброшенной заснеженной деревни",
 	"filled_map.village_taiga": "Карта заброшенной таёжной деревни",
-	"filled_map.shipwreck": "Карта затонувшего корабля"
+	"filled_map.shipwreck": "Карта затонувшего корабля",
+	"trim_material.minecraft.iron": "Стальная",
+	"trim_material.minecraft.netherite": "Железная",
+	"trim_material.minecraft.redstone": "Киноварная",
+	"trim_material.minecraft.emerald": "Патиновая"
 }

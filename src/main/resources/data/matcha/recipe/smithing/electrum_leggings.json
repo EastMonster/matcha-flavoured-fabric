@@ -8,12 +8,14 @@
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
 				{
-					"text": "🛡 6",
+					"translate": "desc.matcha.armour",
+					"with": ["6"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": " 3",
+					"translate": "desc.matcha.armour_toughness",
+					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -28,7 +30,7 @@
 					"italic": false
 				},
 				{
-					"translate": "enchantment.matcha.warding3.set_bonus_divinity",
+					"translate": "enchantment.matcha.divinity.set_bonus",
 					"color": "aqua",
 					"italic": false
 				},

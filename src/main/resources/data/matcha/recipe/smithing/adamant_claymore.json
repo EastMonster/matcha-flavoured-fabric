@@ -17,12 +17,14 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "🗡 9",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["9"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.0",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.0"],
 					"color": "dark_green",
 					"italic": false
 				},

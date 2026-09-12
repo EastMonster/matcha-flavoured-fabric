@@ -96,22 +96,34 @@ final class WardingEnchantment {
 			}
 		}
 
-		LivingEntity damaged = nearestTarget(targets, player, damageRadius, DAMAGE_TARGETS);
-		if (damaged != null) {
-			boolean wearingCopper = wearingCopperArmor(damaged);
-			if (wearingCopper && level < 4) {
-				resistanceEffect(serverLevel, player, damaged);
+		LivingEntity copper = nearestCopperTarget(targets, player, damageRadius);
+		if (copper != null) {
+			if (level < 4) {
+				resistanceEffect(serverLevel, player, copper);
 			} else {
-				float damage = level == 4 && !wearingCopper ? 2.0F : 1.0F;
-				damage(serverLevel, damaged, damage);
+				damage(serverLevel, copper, 1.0F);
 			}
+			return;
 		}
 		if (witherRadius > 0) {
 			LivingEntity wither = nearestTarget(targets, player, witherRadius, TARGETS, EntityTypes.WITHER);
 			if (wither != null) {
 				damage(serverLevel, wither, level == 4 ? 2.0F : 1.0F);
+				return;
 			}
 		}
+		LivingEntity damaged = nearestTarget(targets, player, damageRadius, DAMAGE_TARGETS);
+		if (damaged != null) {
+			damage(serverLevel, damaged, level == 4 ? 2.0F : 1.0F);
+		}
+	}
+
+	private static LivingEntity nearestCopperTarget(List<LivingEntity> targets, LivingEntity center, double radius) {
+		double radiusSquared = radius * radius;
+		return targets.stream()
+				.filter(entity -> wearingCopperArmor(entity) && entity.distanceToSqr(center) <= radiusSquared)
+				.min(Comparator.comparingDouble(entity -> entity.distanceToSqr(center)))
+				.orElse(null);
 	}
 
 	private static LivingEntity nearestTarget(
@@ -136,7 +148,7 @@ final class WardingEnchantment {
 	private static List<LivingEntity> targets(ServerLevel level, LivingEntity center, double radius) {
 		double radiusSquared = radius * radius;
 		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), entity ->
-				(entity.is(TARGETS) || entity.is(SLOWED_TARGETS))
+				(entity.is(TARGETS) || entity.is(SLOWED_TARGETS) || wearingCopperArmor(entity))
 						&& entity.distanceToSqr(center) <= radiusSquared);
 	}
 

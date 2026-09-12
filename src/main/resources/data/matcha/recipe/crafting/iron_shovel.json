@@ -25,17 +25,20 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 8",
+					"translate": "desc.matcha.mining_speed",
+					"with": ["8"],
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 4.5",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["4.5"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}

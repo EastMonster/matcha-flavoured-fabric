@@ -32,5 +32,9 @@
 		"count": 1,
 		"id": "matcha:solomon"
 	},
+	"additional_wants": {
+		"count": 2,
+		"id": "matcha:crystal_heart"
+	},
 	"xp": 80
 }

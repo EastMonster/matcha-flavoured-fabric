@@ -57,6 +57,24 @@ public final class MatchaItemDataFixerCheck {
 		plainCarrier.putString("id", "minecraft:glistering_melon_slice");
 		assert "minecraft:glistering_melon_slice".equals(MatchaItemDataFixer.update(plainCarrier).getStringOr("id", ""));
 
+		Map.of(
+				"minecraft:rose_classic", "rose_classic",
+				"minecraft:cyan_rose_classic", "cyan_rose_classic",
+				"minecraft:dandelion_classic", "dandelion_classic"
+		).forEach((oldModel, path) -> {
+			CompoundTag classicFlower = new CompoundTag();
+			classicFlower.putString("id", "minecraft:poppy");
+			CompoundTag classicFlowerComponents = new CompoundTag();
+			classicFlowerComponents.putString("minecraft:item_model", oldModel);
+			classicFlower.put("components", classicFlowerComponents);
+			CompoundTag fixedClassicFlower = MatchaItemDataFixer.update(classicFlower);
+			assert ("matcha:" + path).equals(fixedClassicFlower.getStringOr("id", ""));
+			CompoundTag fixedComponents = fixedClassicFlower.getCompound("components").orElseThrow();
+			assert ("matcha:" + path).equals(fixedComponents.getStringOr("minecraft:item_model", ""));
+			assert ("item.matcha." + path).equals(
+					fixedComponents.getCompound("minecraft:item_name").orElseThrow().getStringOr("translate", ""));
+		});
+
 		// Old-build Nazar used the pre-migration enchantment namespace.
 		CompoundTag nazarLegacy = new CompoundTag();
 		nazarLegacy.putString("id", "minecraft:glistering_melon_slice");

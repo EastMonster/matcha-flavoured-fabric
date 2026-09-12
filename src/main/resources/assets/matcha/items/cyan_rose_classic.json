@@ -1,6 +1,19 @@
 {
 	"model": {
-		"type": "minecraft:model",
-		"model": "matcha:item/cyan_rose_classic"
+		"type": "minecraft:select",
+		"property": "minecraft:display_context",
+		"cases": [
+			{
+				"when": "fixed",
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/cyan_rose_classic"
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/cyan_rose_classic"
+		}
 	}
 }

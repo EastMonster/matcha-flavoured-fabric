@@ -28,7 +28,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "putt da bonk armo toolz thin her",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "some fancy metel K?",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "metel upgrade papr",
-	"container.upgrade.missing_template_tooltip": "putt upgrade papr OR metel her plz?",
+	"container.upgrade.missing_template_tooltip": "putt upgrade papr OR do notting plz?",
 	"item.minecraft.nether_star": "GOD LIKEZ U",
 	"item.minecraft.turtle_helmet": "TURTL no mor bonk hat",
 	"item.minecraft.honeycomb": "bee goo",
@@ -182,5 +182,6 @@
 	"filled_map.village_plains": "MAP TOO VILLAG IN DA GRAS PLACE",
 	"filled_map.village_savanna": "map two villlage in da hot tree palce",
 	"filled_map.village_snowy": "cold pwdr everywhere willage mapp",
-	"filled_map.village_taiga": "Map 4 village with da BIG trees"
+	"filled_map.village_taiga": "Map 4 village with da BIG trees",
+	"filled_map.shipwreck": "Map 2 No worki underwota ship"
 }

@@ -182,5 +182,9 @@
 	"filled_map.village_savanna": "Elhagyatott szavannabéli falu térképe",
 	"filled_map.village_snowy": "Elhagyatott hómezei falu térképe",
 	"filled_map.village_taiga": "Elhagyatott tajgai falu térképe",
-	"filled_map.shipwreck": "Hajóroncs térképe"
+	"filled_map.shipwreck": "Hajóroncs térképe",
+	"trim_material.minecraft.iron": "Acél",
+	"trim_material.minecraft.netherite": "Vas",
+	"trim_material.minecraft.redstone": "Cinnabarit",
+	"trim_material.minecraft.emerald": "Platina"
 }

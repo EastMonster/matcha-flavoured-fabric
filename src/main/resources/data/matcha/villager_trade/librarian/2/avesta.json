@@ -34,5 +34,9 @@
 		"count": 1,
 		"id": "matcha:avesta"
 	},
+	"additional_wants": {
+		"count": 1,
+		"id": "matcha:crystal_heart"
+	},
 	"xp": 30
 }

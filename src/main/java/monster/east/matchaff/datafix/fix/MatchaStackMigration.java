@@ -6,6 +6,7 @@ import com.mojang.serialization.Dynamic;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.Tag;
 
 import java.io.InputStreamReader;
@@ -17,7 +18,7 @@ import java.util.Objects;
 import java.util.Set;
 
 /** Shared ItemStack migration walker used by the Matcha item data fixes. */
-final class MatchaStackMigration {
+public final class MatchaStackMigration {
 	private static final String OLD_NAMESPACE = "matcha-flavoured:";
 	private static final String NEW_NAMESPACE = "matcha:";
 	private static final String OLD_BANNER_PATTERN_NAMESPACE = "main:";
@@ -119,6 +120,14 @@ final class MatchaStackMigration {
 			Map.entry("bundle.mushroom", "mushy_bundle"),
 			Map.entry("bundle.lava_kit", "lava_kit")
 	);
+	private static final Map<String, String> CLASSIC_FLOWER_MODELS = Map.of(
+			"minecraft:rose_classic", "rose_classic",
+			"minecraft:cyan_rose_classic", "cyan_rose_classic",
+			"minecraft:dandelion_classic", "dandelion_classic",
+			"matcha:rose_classic", "rose_classic",
+			"matcha:cyan_rose_classic", "cyan_rose_classic",
+			"matcha:dandelion_classic", "dandelion_classic"
+	);
 	private static final Set<String> BLESSING_LORE_PATHS = Set.of(
 			"aeolus", "ahura_mazda", "apollo", "arachnae", "ares", "artemis", "clement",
 			"cronus", "daedalus", "demeter", "eros", "glaucus", "god_king", "hyacinthus",
@@ -162,7 +171,50 @@ final class MatchaStackMigration {
 			return data;
 		}
 		Tag wardingMigrated = migrateWardingEnchantments(tag, false, null);
-		return new Dynamic<>(NbtOps.INSTANCE, migrateAdamant(wardingMigrated, false, null, false));
+		Tag adamantMigrated = migrateAdamant(wardingMigrated, false, null, false);
+		Tag loreMigrated = migrateLegacyEquipmentLore(adamantMigrated, false, null);
+		renameV4TranslationKeys(loreMigrated);
+		return new Dynamic<>(NbtOps.INSTANCE, migrateClassicFlowers(loreMigrated, false));
+	}
+
+	public static CompoundTag migrateCurrentV4(CompoundTag tag) {
+		migrateLegacyEquipmentLore(tag, false, null);
+		renameV4TranslationKeys(tag);
+		migrateClassicFlowers(tag, false);
+		return tag;
+	}
+
+	private static Tag migrateClassicFlowers(Tag tag, boolean customData) {
+		if (tag instanceof CompoundTag compound) {
+			if (!customData && compound.contains("id")) {
+				CompoundTag components = compound.get("components") instanceof CompoundTag existing
+						? existing : null;
+				String oldModel = components == null ? "" : components.getStringOr("minecraft:item_model", "");
+				String path = CLASSIC_FLOWER_MODELS.get(oldModel);
+				if (path != null) {
+					compound.putString("id", NEW_NAMESPACE + path);
+					if (components == null) components = new CompoundTag();
+					components.putString("minecraft:item_model", NEW_NAMESPACE + path);
+					CompoundTag itemName = new CompoundTag();
+					itemName.putString("translate", "item.matcha." + path);
+					components.put("minecraft:item_name", itemName);
+					compound.put("components", components);
+				}
+			}
+			for (String key : List.copyOf(compound.keySet())) {
+				Tag child = compound.get(key);
+				if (child != null) {
+					compound.put(key, migrateClassicFlowers(child, customData || key.equals("minecraft:custom_data")));
+				}
+			}
+			return compound;
+		}
+		if (tag instanceof ListTag list) {
+			for (int index = 0; index < list.size(); index++) {
+				list.set(index, migrateClassicFlowers(list.get(index), customData));
+			}
+		}
+		return tag;
 	}
 
 	static Dynamic<?> migrateTranslationKeys(Dynamic<?> data) {
@@ -295,7 +347,7 @@ final class MatchaStackMigration {
 					renameWardingEnchantments(enchantments);
 					updateIntrinsicWarding(enchantments, currentItemId);
 				} else if (!customData && TRANSLATION_COMPONENTS.contains(key)) {
-					renameWardingTranslationKeys(migrated);
+					renameV4TranslationKeys(migrated);
 				}
 				compound.put(key, migrated);
 			}
@@ -436,6 +488,90 @@ final class MatchaStackMigration {
 		}
 	}
 
+	private static Tag migrateLegacyEquipmentLore(Tag tag, boolean customData, String itemId) {
+		if (tag instanceof CompoundTag compound) {
+			String currentItemId = !customData && compound.contains("id") ? compound.getStringOr("id", "") : itemId;
+			for (String key : List.copyOf(compound.keySet())) {
+				Tag child = compound.get(key);
+				if (child != null) compound.put(key, migrateLegacyEquipmentLore(child,
+						customData || key.equals("minecraft:custom_data"), currentItemId));
+			}
+			if (!customData && isLegacyVanillaEquipment(currentItemId)
+					&& compound.get("components") instanceof CompoundTag components
+					&& components.get("minecraft:lore") instanceof ListTag lore) {
+				if (ADAMANT_ARMOUR_ITEMS.contains(currentItemId)) updateAdamantSetBonusLore(lore);
+				for (Tag entry : lore) {
+					if (!(entry instanceof CompoundTag component)) continue;
+					String text = component.getStringOr("text", "");
+					String key = loreTranslationKey(text);
+					if (key == null) continue;
+					component.remove("text");
+					component.putString("translate", key);
+					ListTag with = new ListTag();
+					with.add(StringTag.valueOf(text.substring(text.indexOf(' ') + 1)));
+					component.put("with", with);
+				}
+			}
+			return compound;
+		}
+		if (tag instanceof ListTag list) {
+			for (int index = 0; index < list.size(); index++) list.set(index, migrateLegacyEquipmentLore(list.get(index), customData, itemId));
+		}
+		return tag;
+	}
+
+	private static void updateAdamantSetBonusLore(ListTag lore) {
+		boolean hasDoom = false;
+		for (Tag entry : lore) {
+			if (entry instanceof CompoundTag component
+					&& component.getStringOr("translate", "").equals("enchantment.matcha.adamant_armour.set_bonus")) {
+				hasDoom = true;
+				break;
+			}
+		}
+		for (int index = 0; index < lore.size(); index++) {
+			if (!(lore.get(index) instanceof CompoundTag component)) continue;
+			String translate = component.getStringOr("translate", "");
+			if (translate.equals("enchantment.matcha.adamant_armour.set_bonus")
+					&& component.getStringOr("color", "").equals("aqua")) {
+				component.putString("translate", "enchantment.matcha.divinity.set_bonus");
+				CompoundTag doom = component.copy();
+				doom.putString("translate", "enchantment.matcha.adamant_armour.set_bonus");
+				doom.putString("color", "red");
+				lore.add(index, doom);
+				return;
+			}
+			if (!hasDoom && translate.equals("enchantment.matcha.divinity.set_bonus")
+					&& component.getStringOr("color", "").equals("aqua")) {
+				CompoundTag doom = component.copy();
+				doom.putString("translate", "enchantment.matcha.adamant_armour.set_bonus");
+				doom.putString("color", "red");
+				lore.add(index, doom);
+				return;
+			}
+		}
+	}
+
+	private static boolean isLegacyVanillaEquipment(String id) {
+		if (id == null) return false;
+		if (!id.startsWith("minecraft:")) return false;
+		String path = id.substring("minecraft:".length());
+		return path.equals("mace")
+				|| path.matches("(?:wooden|copper|iron|golden|diamond|netherite)_(?:axe|hoe|pickaxe|shovel|spear|sword)")
+				|| path.matches("netherite_(?:helmet|chestplate|leggings|boots)");
+	}
+
+	private static String loreTranslationKey(String text) {
+		if (text.startsWith("🗡 ")) return "desc.matcha.attack_damage";
+		if (text.startsWith("🕒 ")) return "desc.matcha.cooldown";
+		if (text.startsWith("⛏ ")) return "desc.matcha.mining_speed";
+		if (text.startsWith("🛡 ")) return "desc.matcha.armour";
+		if (text.startsWith("\uE008 ")) return "desc.matcha.armour_toughness";
+		if (text.startsWith("🏃 ")) return "desc.matcha.speed_attribute";
+		if (text.startsWith("💥🚫 ")) return "desc.matcha.knockback_resistance";
+		return null;
+	}
+
 	private static void renameWardingEnchantments(CompoundTag enchantments) {
 		for (String oldId : List.copyOf(enchantments.keySet())) {
 			String newId = WARDING_ENCHANTMENT_IDS.get(oldId);
@@ -457,7 +593,7 @@ final class MatchaStackMigration {
 		}
 	}
 
-	private static void renameWardingTranslationKeys(Tag tag) {
+	private static void renameV4TranslationKeys(Tag tag) {
 		if (tag instanceof CompoundTag compound) {
 			String translate = compound.getStringOr("translate", "");
 			String renamed = switch (translate) {
@@ -465,15 +601,22 @@ final class MatchaStackMigration {
 				case "enchantment.matcha.warding1" -> "enchantment.matcha.warding_2";
 				case "enchantment.matcha.warding2" -> "enchantment.matcha.warding_3";
 				case "enchantment.matcha.warding3" -> "enchantment.matcha.warding_4";
+				case "effect.matcha.regen_ii" -> "effect.matcha.regen_2";
+				case "effect.matcha.weakness_ii" -> "effect.matcha.weakness_2";
+				case "effect.matcha.poison_ii" -> "effect.matcha.poison_2";
+				case "effect.matcha.haste_ii" -> "effect.matcha.haste_2";
+				case "effect.matcha.strength_ii" -> "effect.matcha.strength_2";
+				case "effect.matcha.levitation_iii" -> "effect.matcha.levitation_3";
+				case "effect.matcha.levitation_xxx" -> "effect.matcha.levitation_30";
 				default -> null;
 			};
 			if (renamed != null) compound.putString("translate", renamed);
 			for (String key : List.copyOf(compound.keySet())) {
 				Tag child = compound.get(key);
-				if (child != null) renameWardingTranslationKeys(child);
+				if (child != null) renameV4TranslationKeys(child);
 			}
 		} else if (tag instanceof ListTag list) {
-			for (Tag child : list) renameWardingTranslationKeys(child);
+			for (Tag child : list) renameV4TranslationKeys(child);
 		}
 	}
 
