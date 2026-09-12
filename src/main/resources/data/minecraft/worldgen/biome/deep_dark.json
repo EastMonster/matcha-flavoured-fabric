@@ -60,7 +60,8 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
-          "matcha-flavoured:ore_emerald_deep"
+          "minecraft:ore_emerald",
+          "matcha:ore_emerald_deep_mountain"
     ],
     [
       "minecraft:sculk_vein",

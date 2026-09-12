@@ -56,6 +56,11 @@
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:ore_drops",
                   "function": "minecraft:apply_bonus"
+                },
+                {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "matcha:electrum_tool",
+                  "formula": "minecraft:ore_drops"
                 }
               ],
               "name": "minecraft:copper_ingot"
@@ -75,6 +80,11 @@
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:ore_drops",
                   "function": "minecraft:apply_bonus"
+                },
+                {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "matcha:electrum_tool",
+                  "formula": "minecraft:ore_drops"
                 }
               ],
               "name": "minecraft:raw_copper"

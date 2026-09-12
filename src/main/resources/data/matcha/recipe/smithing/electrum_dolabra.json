@@ -80,7 +80,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"minecraft:fortune": 2,
+				"matcha:electrum_tool": 3,
 				"minecraft:looting": 1
 			},
 			"minecraft:repairable": {

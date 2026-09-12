@@ -108,7 +108,8 @@ public final class SimpleItemRegistrar {
 
 	private static Item createItem(BatchDefinition definition, Item.Properties properties) {
 		return switch (definition.type) {
-			case "item" -> new Item(properties);
+			case "item" -> "crystal_heart".equals(definition.id)
+					? new CrystalHeartItem(properties) : new Item(properties);
 			case "arrow" -> "minecraft:tipped_arrow".equals(definition.carrier)
 					? new MatchaTippedArrowItem(properties)
 					: new ArrowItem(properties);

@@ -56,6 +56,141 @@
 		}
 	},
 	{
+		"id": "diamond_earrings",
+		"source": "data/matcha/villager_trade/toolsmith/1/diamond_earrings.json",
+		"carrier": "minecraft:netherite_helmet",
+		"components": {
+			"minecraft:max_damage": 250,
+			"minecraft:lore": [
+				{
+					"text": "⛊ 1",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha.diamond_earrings",
+				"color": "aqua"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 1,
+					"operation": "add_value",
+					"slot": "head"
+				},
+				{
+					"type": "minecraft:knockback_resistance",
+					"id": "minecraft:armor.helmet",
+					"amount": 0,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "matcha:diamond_earrings"
+			},
+			"minecraft:unbreakable": {}
+		}
+	},
+	{
+		"id": "amethyst_earrings",
+		"source": "data/matcha/villager_trade/toolsmith/1/amethyst_earrings.json",
+		"carrier": "minecraft:netherite_helmet",
+		"components": {
+			"minecraft:max_damage": 250,
+			"minecraft:lore": [
+				{
+					"text": "⛊ 1",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha.amethyst_earrings",
+				"color": "#b38ef3"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 1,
+					"operation": "add_value",
+					"slot": "head"
+				},
+				{
+					"type": "minecraft:knockback_resistance",
+					"id": "minecraft:armor.helmet",
+					"amount": 0,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "matcha:amethyst_earrings"
+			},
+			"minecraft:unbreakable": {}
+		}
+	},
+	{
+		"id": "lapis_earrings",
+		"source": "data/matcha/villager_trade/toolsmith/1/lapis_earrings.json",
+		"carrier": "minecraft:netherite_helmet",
+		"components": {
+			"minecraft:max_damage": 250,
+			"minecraft:lore": [
+				{
+					"text": "⛊ 1",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha.lapis_earrings",
+				"color": "#325caa"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 1,
+					"operation": "add_value",
+					"slot": "head"
+				},
+				{
+					"type": "minecraft:knockback_resistance",
+					"id": "minecraft:armor.helmet",
+					"amount": 0,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "matcha:lapis_earrings"
+			},
+			"minecraft:unbreakable": {}
+		}
+	},
+	{
 		"id": "bloodrage_hatchet",
 		"source": "data/matcha/villager_trade/leatherworker/4/hatchet.json",
 		"carrier": "minecraft:iron_axe",

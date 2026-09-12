@@ -70,7 +70,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"minecraft:fortune": 3
+				"matcha:electrum_tool": 3
 			},
 			"minecraft:repairable": {
 				"items": [

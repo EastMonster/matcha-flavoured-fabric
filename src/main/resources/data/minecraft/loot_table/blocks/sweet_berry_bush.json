@@ -71,6 +71,14 @@
 					"parameters": {
 						"bonusMultiplier": 1
 					}
+				},
+				{
+					"function": "minecraft:apply_bonus",
+					"enchantment": "matcha:electrum_tool",
+					"formula": "minecraft:uniform_bonus_count",
+					"parameters": {
+						"bonusMultiplier": 1
+					}
 				}
 			],
 			"rolls": 1
@@ -137,6 +145,14 @@
 					"enchantment": "minecraft:fortune",
 					"formula": "minecraft:uniform_bonus_count",
 					"function": "minecraft:apply_bonus",
+					"parameters": {
+						"bonusMultiplier": 1
+					}
+				},
+				{
+					"function": "minecraft:apply_bonus",
+					"enchantment": "matcha:electrum_tool",
+					"formula": "minecraft:uniform_bonus_count",
 					"parameters": {
 						"bonusMultiplier": 1
 					}

@@ -156,7 +156,7 @@ public final class MobMechanics {
 			int health = difficulty == Difficulty.HARD ? 40 : 30;
 			setBase(mob, Attributes.MAX_HEALTH, health);
 			mob.setHealth(health);
-			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.28 : 0.25);
+			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.265 : 0.25);
 			setBase(mob, Attributes.ATTACK_DAMAGE, difficulty == Difficulty.HARD ? 15 : 10);
 			setBase(mob, Attributes.ARMOR, difficulty == Difficulty.HARD ? 14 : 12);
 			setBase(mob, Attributes.FOLLOW_RANGE, difficulty == Difficulty.HARD ? 60 : 50);

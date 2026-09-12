@@ -29,6 +29,11 @@
                   "count": 2
                 },
                 {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "matcha:electrum_tool",
+                  "formula": "minecraft:ore_drops"
+                },
+                {
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:ore_drops",
                   "function": "minecraft:apply_bonus"
@@ -68,6 +73,11 @@
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:ore_drops",
                   "function": "minecraft:apply_bonus"
+                },
+                {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "matcha:electrum_tool",
+                  "formula": "minecraft:ore_drops"
                 },
                 {
                   "function": "minecraft:explosion_decay"
