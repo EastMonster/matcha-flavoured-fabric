@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "poplar_fence",
+  "ingredient": "#minecraft:poplar_logs",
+  "result": {
+    "count": 3,
+    "id": "minecraft:poplar_fence"
+  }
+}
