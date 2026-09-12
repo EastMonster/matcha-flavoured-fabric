@@ -48,7 +48,13 @@
 		"LeavesCullMixin",
 		"TitleScreenMixin",
 		"TrueDarknessMixin",
-		"WheatRaycastMixin"
+		"WheatRaycastMixin",
+		"DolabraItemInHandMixin",
+		"DolabraItemRenderStateMixin",
+		"DolabraItemLayerRenderStateMixin",
+		"DolabraHudMixin",
+		"DolabraContainerScreenMixin",
+		"DolabraGuiGraphicsMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

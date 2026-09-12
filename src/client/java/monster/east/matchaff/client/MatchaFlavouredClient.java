@@ -30,6 +30,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		ClientPlayNetworking.registerGlobalReceiver(SleepFastForwardPayload.TYPE, (payload, context) ->
 				context.client().execute(() -> sleepFastForwarding = payload.active()));
 		ClientTickEvents.END_CLIENT_TICK.register(MatchaFlavouredClient::tickCloudTime);
+		ClientTickEvents.END_CLIENT_TICK.register(DolabraVisuals::tick);
 		if (FabricLoader.getInstance().isModLoaded(TrinketsCompat.MOD_ID)) {
 			TrinketsCompatClient.init();
 			ResourceLoader.registerBuiltinPack(

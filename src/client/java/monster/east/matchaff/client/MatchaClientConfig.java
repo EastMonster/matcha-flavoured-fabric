@@ -16,6 +16,7 @@ public final class MatchaClientConfig {
 	private static final Path PATH = FabricLoader.getInstance().getConfigDir()
 			.resolve("matcha-flavoured-client.properties");
 	private static boolean trueDarkness = true;
+	private static boolean dolabraVisuals = true;
 
 	private MatchaClientConfig() {
 	}
@@ -28,6 +29,7 @@ public final class MatchaClientConfig {
 		try (Reader reader = Files.newBufferedReader(PATH)) {
 			properties.load(reader);
 			trueDarkness = Boolean.parseBoolean(properties.getProperty("true_darkness", "true"));
+			dolabraVisuals = Boolean.parseBoolean(properties.getProperty("dolabra_visuals", "true"));
 		} catch (IOException exception) {
 			LOGGER.warn("Could not read Matcha client config", exception);
 		}
@@ -39,8 +41,22 @@ public final class MatchaClientConfig {
 
 	static void toggleTrueDarkness() {
 		trueDarkness = !trueDarkness;
+		save();
+	}
+
+	public static boolean dolabraVisuals() {
+		return dolabraVisuals;
+	}
+
+	static void toggleDolabraVisuals() {
+		dolabraVisuals = !dolabraVisuals;
+		save();
+	}
+
+	private static void save() {
 		Properties properties = new Properties();
 		properties.setProperty("true_darkness", Boolean.toString(trueDarkness));
+		properties.setProperty("dolabra_visuals", Boolean.toString(dolabraVisuals));
 		try {
 			Files.createDirectories(PATH.getParent());
 			try (Writer writer = Files.newBufferedWriter(PATH)) {

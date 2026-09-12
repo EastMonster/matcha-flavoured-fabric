@@ -970,6 +970,8 @@
 	"matcha.config.trinkets_matcha.pack": "Matcha Flavoured: Trinkets GUI",
 	"matcha.config.true_darkness": "Overworld True Darkness",
 	"matcha.config.true_darkness.tooltip": "Use the data pack's pitch-black ambient light in the Overworld. This only changes what you see.",
+	"matcha.config.dolabra_visuals": "Adaptive Dolabra Visuals",
+	"matcha.config.dolabra_visuals.tooltip": "Automatically orient dolabras toward the effective head for the block under the crosshair.",
 	"matcha.config.vanilla_preview": "Vanilla Appearance (Beta)",
 	"matcha.config.vanilla_preview.pack": "Matcha Flavoured: Vanilla Appearance Preview",
 	"matcha.config.vanilla_preview.tooltip": "Restore some modified textures to their vanilla versions.",

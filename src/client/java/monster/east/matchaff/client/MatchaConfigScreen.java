@@ -40,8 +40,16 @@ public final class MatchaConfigScreen extends Screen {
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.true_darkness.tooltip")))
 				.build());
 
+		addRenderableWidget(Button.builder(dolabraVisualsLabel(), button -> {
+					MatchaClientConfig.toggleDolabraVisuals();
+					button.setMessage(dolabraVisualsLabel());
+				})
+				.bounds(width / 2 - 100, height / 2 + 18, 200, 20)
+				.tooltip(Tooltip.create(Component.translatable("matcha.config.dolabra_visuals.tooltip")))
+				.build());
+
 		addRenderableWidget(Button.builder(CommonComponents.GUI_DONE, button -> onClose())
-				.bounds(width / 2 - 100, height / 2 + 26, 200, 20)
+				.bounds(width / 2 - 100, height / 2 + 52, 200, 20)
 				.build());
 	}
 
@@ -87,6 +95,12 @@ public final class MatchaConfigScreen extends Screen {
 	private static Component trueDarknessLabel() {
 		return CommonComponents.optionStatus(
 				Component.translatable("matcha.config.true_darkness"), MatchaClientConfig.trueDarkness());
+	}
+
+	private static Component dolabraVisualsLabel() {
+		return CommonComponents.optionStatus(
+				Component.translatable("matcha.config.dolabra_visuals"),
+				MatchaClientConfig.dolabraVisuals());
 	}
 
 	@Override
