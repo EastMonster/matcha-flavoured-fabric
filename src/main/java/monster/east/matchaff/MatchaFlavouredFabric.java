@@ -6,6 +6,7 @@ import com.google.gson.JsonElement;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.item.*;
 import monster.east.matchaff.mechanic.*;
+import monster.east.matchaff.network.SleepFastForwardPayload;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
@@ -66,6 +67,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	);
 	@Override
 	public void onInitialize() {
+		SleepFastForwardPayload.register();
 		VanillaFoodDefaults.init();
 		PlayerMechanics.init();
 		EnchantmentMechanics.init();

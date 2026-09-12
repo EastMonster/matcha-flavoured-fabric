@@ -43,6 +43,8 @@ import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.Scoreboard;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import monster.east.matchaff.network.SleepFastForwardPayload;
 
 /**
  * Matcha player mechanics, replacing the datapack's scoreboard/function tick
@@ -80,6 +82,7 @@ public final class PlayerMechanics {
 	private static final AttachmentType<Integer> HEART_INVENTORY_VERSION = AttachmentRegistry.create(
 			Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_inventory_version")
 	);
+	private static boolean sleepFastForwarding;
 
 	private static final String HEARTS_OBJECTIVE = "Hearts";
 
@@ -88,6 +91,7 @@ public final class PlayerMechanics {
 
 	public static void init() {
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+			sleepFastForwarding = false;
 			var scoreboard = server.getScoreboard();
 			if (scoreboard.getObjective(HEARTS_OBJECTIVE) == null) {
 				scoreboard.addObjective(HEARTS_OBJECTIVE, ObjectiveCriteria.DUMMY,
@@ -104,6 +108,7 @@ public final class PlayerMechanics {
 		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			if (!server.tickRateManager().runsNormally()) {
+				setSleepFastForwarding(server, false);
 				return;
 			}
 			manageSleep(server);
@@ -111,10 +116,13 @@ public final class PlayerMechanics {
 				tick(player);
 			}
 		});
-		ServerPlayerEvents.JOIN.register(player -> ensureWorldScore(
-				player.level().getServer().getScoreboard(),
-				player.level().getServer().getScoreboard().getObjective(HEARTS_OBJECTIVE),
-				player.getScoreboardName(), 20));
+		ServerPlayerEvents.JOIN.register(player -> {
+			ensureWorldScore(
+					player.level().getServer().getScoreboard(),
+					player.level().getServer().getScoreboard().getObjective(HEARTS_OBJECTIVE),
+					player.getScoreboardName(), 20);
+			sendSleepFastForwarding(player);
+		});
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
 			if (entity instanceof ServerPlayer player) {
 				int hearts = getHearts(player);
@@ -301,8 +309,10 @@ public final class PlayerMechanics {
 		int percentage = server.getGameRules().get(GameRules.PLAYERS_SLEEPING_PERCENTAGE);
 		int needed = Math.max(1, (int) Math.ceil(active * percentage / 100.0));
 		if (sleeping < needed || !anyInWindow) {
+			setSleepFastForwarding(server, false);
 			return;
 		}
+		setSleepFastForwarding(server, true);
 		if (server.getGameRules().get(GameRules.ADVANCE_WEATHER)) {
 			server.setWeatherParameters(ServerLevel.RAIN_DELAY.sample(server.overworld().getRandom()), 0, false, false);
 		}
@@ -310,6 +320,22 @@ public final class PlayerMechanics {
 				.lookupOrThrow(Registries.WORLD_CLOCK)
 				.getOrThrow(WorldClocks.OVERWORLD);
 		server.clockManager().addTicks(clock, 120);
+	}
+
+	private static void setSleepFastForwarding(MinecraftServer server, boolean active) {
+		if (sleepFastForwarding == active) {
+			return;
+		}
+		sleepFastForwarding = active;
+		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+			sendSleepFastForwarding(player);
+		}
+	}
+
+	private static void sendSleepFastForwarding(ServerPlayer player) {
+		if (ServerPlayNetworking.canSend(player, SleepFastForwardPayload.TYPE)) {
+			ServerPlayNetworking.send(player, new SleepFastForwardPayload(sleepFastForwarding));
+		}
 	}
 
 	private static int minimumHearts(ServerPlayer player) {
