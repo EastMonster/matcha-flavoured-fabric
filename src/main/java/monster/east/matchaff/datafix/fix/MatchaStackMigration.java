@@ -324,7 +324,7 @@ final class MatchaStackMigration {
 				Tag migrated = migrateAdamant(child, childCustomData, currentItemId, currentAdamant);
 				compound.put(key, migrated);
 			}
-			if (!customData && currentAdamant) {
+			if (!customData && currentAdamant && compound.contains("id")) {
 				CompoundTag components = compound.get("components") instanceof CompoundTag existing
 						? existing : new CompoundTag();
 				updateAdamantComponents(components, currentItemId);
@@ -396,10 +396,15 @@ final class MatchaStackMigration {
 			moveEnchantment(enchantments, "matcha:divinity", ADAMANT_ARMOUR);
 			moveEnchantment(enchantments, "matcha-flavoured:divinity", ADAMANT_ARMOUR);
 			enchantments.putInt(ADAMANT_ARMOUR, 1);
-		} else if (ADAMANT_WEAPON_ITEMS.contains(itemId)) {
-			enchantments.putInt(ADAMANT_WEAPON, 1);
-		} else if (ADAMANT_TOOL_ITEMS.contains(itemId)) {
-			enchantments.putInt(ADAMANT_TOOL, 1);
+		} else if (ADAMANT_WEAPON_ITEMS.contains(itemId) || ADAMANT_TOOL_ITEMS.contains(itemId)) {
+			enchantments.remove("matcha:divinity");
+			enchantments.remove("matcha-flavoured:divinity");
+			if (ADAMANT_WEAPON_ITEMS.contains(itemId)) {
+				enchantments.putInt(ADAMANT_WEAPON, 1);
+			}
+			if (ADAMANT_TOOL_ITEMS.contains(itemId)) {
+				enchantments.putInt(ADAMANT_TOOL, 1);
+			}
 			if (itemId.equals("minecraft:netherite_axe")) {
 				enchantments.putInt(ADAMANT_WEAPON, 1);
 			}

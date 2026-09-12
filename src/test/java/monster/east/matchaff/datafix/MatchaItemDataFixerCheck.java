@@ -297,8 +297,12 @@ public final class MatchaItemDataFixerCheck {
 		CompoundTag adamantPickaxe = namedAdamantStack("minecraft:netherite_pickaxe");
 		CompoundTag adamantPickaxeEnchantments = adamantPickaxe.getCompound("components").orElseThrow()
 				.getCompound("minecraft:enchantments").orElseThrow();
+		adamantPickaxeEnchantments.putInt("matcha:divinity", 1);
+		adamantPickaxeEnchantments.putInt("matcha-flavoured:divinity", 1);
 		MatchaItemDataFixer.updateIfNeeded(adamantPickaxe);
 		assert adamantPickaxeEnchantments.contains("matcha:adamant_tool");
+		assert !adamantPickaxeEnchantments.contains("matcha:divinity");
+		assert !adamantPickaxeEnchantments.contains("matcha-flavoured:divinity");
 
 		CompoundTag adamantSword = namedAdamantStack("minecraft:netherite_sword");
 		CompoundTag adamantSwordEnchantments = adamantSword.getCompound("components").orElseThrow()
@@ -333,7 +337,9 @@ public final class MatchaItemDataFixerCheck {
 		dolabraComponents.put("minecraft:lore", lore);
 		MatchaItemDataFixer.updateIfNeeded(dolabra);
 		assert dolabra.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
-		assert !dolabraComponents.getCompound("minecraft:enchantments").orElseThrow().contains("matcha:divinity");
+		CompoundTag migratedEnchantments = dolabraComponents.getCompound("minecraft:enchantments").orElseThrow();
+		assert !migratedEnchantments.contains("matcha:divinity");
+		assert !migratedEnchantments.contains("components");
 		assert modifiers.getCompound(0).orElseThrow().getDoubleOr("amount", 0.0) == 6.0;
 		assert "🗡 7".equals(lore.getCompound(0).orElseThrow().getStringOr("text", ""));
 	}
