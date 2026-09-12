@@ -8,11 +8,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:bruschetta",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 3,
+								"type": "minecraft:uniform", "min": 3,
 								"max": 5
 							}
 						}

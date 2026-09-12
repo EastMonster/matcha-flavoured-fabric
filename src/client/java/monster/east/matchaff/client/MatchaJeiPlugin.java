@@ -157,11 +157,11 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
             return stacks.toList();
         }
         var connection = Minecraft.getInstance().getConnection();
-        var contextBuilder = new ContextMap.Builder();
+        var contextBuilder = ContextMap.builder();
         if (connection != null) {
-            contextBuilder.withParameter(SlotDisplayContext.REGISTRIES, connection.registryAccess());
+            contextBuilder.set(SlotDisplayContext.REGISTRIES, connection.registryAccess());
         }
-        return ingredient.display().resolveForStacks(contextBuilder.create(SlotDisplayContext.CONTEXT));
+        return ingredient.display().resolveForStacks(contextBuilder.buildAndValidate(SlotDisplayContext.CONTEXT));
     }
 
     @Override

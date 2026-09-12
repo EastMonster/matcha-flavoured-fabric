@@ -5,14 +5,14 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 8,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:arrow",
@@ -20,17 +20,17 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 8,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
-							"function": "minecraft:set_potion",
+							"type": "minecraft:set_potion",
 							"id": "minecraft:poison"
 						}
 					],
@@ -39,14 +39,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 2,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:emerald",
@@ -54,14 +54,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 13,
 								"min": 6
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:wind_charge",
@@ -69,14 +69,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 12,
 								"min": 5
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:iron_ingot",
@@ -84,14 +84,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 2,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:honey_bottle",
@@ -99,10 +99,10 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"amplifier": {
@@ -110,7 +110,7 @@
 								"max": 1,
 								"min": 0
 							},
-							"function": "minecraft:set_ominous_bottle_amplifier"
+							"type": "minecraft:set_ominous_bottle_amplifier"
 						}
 					],
 					"name": "minecraft:ominous_bottle",
@@ -118,28 +118,28 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 12,
 								"min": 4
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:wind_charge"
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 4,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:diamond"

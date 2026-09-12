@@ -16,6 +16,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Prediction;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.Entity;
@@ -401,7 +402,7 @@ public final class WorldMechanics {
 		if (advancementDone(player, advancementId)) {
 			ItemStack reward = new ItemStack(Items.GLASS_BOTTLE, count);
 			if (!player.addItem(reward)) {
-				var dropped = player.drop(reward, false);
+				var dropped = player.drop(reward, false, Prediction.SERVER_ONLY);
 				if (dropped != null) {
 					dropped.setNoPickUpDelay();
 					dropped.setTarget(player.getUUID());

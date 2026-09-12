@@ -7,9 +7,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "resin_clump",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
 								"min": 16,

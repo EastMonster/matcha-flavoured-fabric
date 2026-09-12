@@ -3,18 +3,15 @@ package monster.east.matchaff.mixin;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 
 import net.minecraft.advancements.AdvancementNode;
 import net.minecraft.advancements.AdvancementTree;
 import net.minecraft.resources.Identifier;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AdvancementTree.class)
 public abstract class AdvancementTreeMixin {
@@ -26,17 +23,14 @@ public abstract class AdvancementTreeMixin {
 			Identifier.fromNamespaceAndPath("matcha", "anglers_almanac/root")
 	);
 
-	@Shadow @Final
-	private Set<AdvancementNode> roots;
-
-	@Inject(method = "setListener", at = @At("HEAD"))
-	private void matcha$orderRoots(AdvancementTree.Listener listener, CallbackInfo callbackInfo) {
-		List<AdvancementNode> orderedRoots = new ArrayList<>(this.roots);
+	@Inject(method = "roots", at = @At("RETURN"), cancellable = true)
+	private void matcha$orderRoots(CallbackInfoReturnable<Iterable<AdvancementNode>> callbackInfo) {
+		List<AdvancementNode> orderedRoots = new ArrayList<>();
+		callbackInfo.getReturnValue().forEach(orderedRoots::add);
 		orderedRoots.sort(Comparator
 				.comparingInt(AdvancementTreeMixin::matcha$order)
 				.thenComparing(node -> node.holder().id().toString()));
-		this.roots.clear();
-		this.roots.addAll(orderedRoots);
+		callbackInfo.setReturnValue(orderedRoots);
 	}
 
 	@Unique

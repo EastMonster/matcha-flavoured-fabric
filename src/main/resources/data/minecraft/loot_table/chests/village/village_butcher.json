@@ -9,14 +9,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:porkchop",
@@ -24,14 +24,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:bone",
@@ -39,14 +39,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:beef",
@@ -54,14 +54,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:mutton",
@@ -69,14 +69,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:coal",

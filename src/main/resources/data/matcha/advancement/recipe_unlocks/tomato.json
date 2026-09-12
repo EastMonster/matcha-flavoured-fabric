@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/tomato_seeds_from_tomato"
+				"recipes": "matcha:crafting/tomato_seeds_from_tomato"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

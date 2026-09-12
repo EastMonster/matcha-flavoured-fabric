@@ -16,11 +16,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:compass",
@@ -28,7 +28,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -36,7 +36,7 @@
 								"max": 2,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:sculk_catalyst",
@@ -44,11 +44,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:lead",
@@ -56,11 +56,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:diamond_horse_armor",
@@ -68,7 +68,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -76,7 +76,7 @@
 								"max": 5,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:leather",
@@ -94,9 +94,9 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "minecraft:swift_sneak"
 						}
 					],
@@ -105,7 +105,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -113,7 +113,7 @@
 								"max": 10,
 								"min": 4
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:sculk",
@@ -121,7 +121,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -129,7 +129,7 @@
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:sculk_sensor",
@@ -137,7 +137,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -145,7 +145,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:candle",
@@ -153,7 +153,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -161,7 +161,7 @@
 								"max": 15,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:amethyst_shard",
@@ -174,7 +174,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -182,7 +182,7 @@
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:echo_shard",
@@ -190,7 +190,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -198,7 +198,7 @@
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:disc_fragment_5",
@@ -206,9 +206,9 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					],
@@ -217,7 +217,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -225,7 +225,7 @@
 								"max": 10,
 								"min": 3
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:book",
@@ -233,7 +233,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -241,7 +241,7 @@
 								"max": 15,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:bone",
@@ -249,7 +249,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -257,7 +257,7 @@
 								"max": 15,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:soul_torch",
@@ -265,7 +265,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -273,7 +273,7 @@
 								"max": 15,
 								"min": 6
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:coal",
@@ -325,15 +325,14 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:prismarine_shard",
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 1,
-								"max": 2
-							}
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 2
 						}
-					]
+					}
 				}
 			],
 			"rolls": 1

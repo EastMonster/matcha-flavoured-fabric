@@ -10,15 +10,16 @@
 
 [中文说明](README_ZH.md)
 
-A Fabric mod port of Klei Wright's [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) data and resource pack for Minecraft 26.2.
+A Fabric mod port of Klei Wright's [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) data and resource pack for Minecraft 26.2/26.3.
 
 I made this port because I am not particularly fond of using heavily modified vanilla items as new items, as the original data pack does. That approach also makes browsing and using the content with JEI inconvenient. The Fabric version therefore registers its equipment, food, fish, blessings, music discs, and most other custom content as proper mod items.
 
 ## Requirements
 
-- Minecraft 26.2
-- Fabric Loader 0.19.3 or newer
-- Fabric API 0.156.0+26.2 or newer
+|Minecraft|26.2|26.3|
+|---|---|---|
+|Fabric Loader|0.19.3+|0.19.5+|
+|Fabric API|0.156.0+|0.160.6+|
 
 ## Installation
 

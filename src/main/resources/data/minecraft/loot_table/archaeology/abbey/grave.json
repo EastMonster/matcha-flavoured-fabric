@@ -6,24 +6,24 @@
 				{
 					"type": "minecraft:item",
 					"quality": 1,
-					"functions": [],
+					"modifier": [],
 					"name": "minecraft:emerald"
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [],
+					"modifier": [],
 					"name": "minecraft:bone_meal",
 					"weight": 4
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [],
+					"modifier": [],
 					"name": "minecraft:bone",
 					"weight": 7
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [],
+					"modifier": [],
 					"name": "minecraft:skeleton_skull",
 					"weight": 2
 				},

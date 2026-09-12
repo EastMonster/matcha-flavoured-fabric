@@ -51,13 +51,13 @@
     "root": {
       "trigger": "minecraft:tick",
       "conditions": {
-        "player": {
+        "player": {"type":"minecraft:entity_properties","entity":"this","predicate":{
           "minecraft:type_specific/player": {
             "advancements": {
               "matcha:anglers_almanac/root": true
             }
           }
-        }
+        }}
       }
     }
   }

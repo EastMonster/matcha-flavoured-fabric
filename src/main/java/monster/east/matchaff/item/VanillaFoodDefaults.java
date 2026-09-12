@@ -96,9 +96,9 @@ public class VanillaFoodDefaults {
 	}
 
 	private static Definition definitionFromLootEntry(JsonObject entry, String source) {
-		for (JsonElement element : entry.getAsJsonArray("functions")) {
+		for (JsonElement element : entry.getAsJsonArray("modifier")) {
 			JsonObject function = element.getAsJsonObject();
-			if ("minecraft:set_components".equals(function.get("function").getAsString())) {
+			if ("minecraft:set_components".equals(function.get("type").getAsString())) {
 				return new Definition(entry.get("name").getAsString(), function.getAsJsonObject("components"));
 			}
 		}

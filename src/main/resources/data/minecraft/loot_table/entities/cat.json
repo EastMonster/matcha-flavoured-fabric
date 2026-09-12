@@ -8,9 +8,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:string",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 0,
@@ -29,20 +29,19 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:rabbit",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": 1,
               "add": false
             },
             {
-              "function": "minecraft:furnace_smelt",
-              "conditions": [
-                {
-                  "condition": "minecraft:any_of",
+              "type": "minecraft:furnace_smelt",
+              "condition": {
+                  "type": "minecraft:any_of",
                   "terms": [
                     {
-                      "condition": "minecraft:entity_properties",
+                      "type": "minecraft:entity_properties",
                       "entity": "this",
                       "predicate": {
                         "flags": {
@@ -51,7 +50,7 @@
                       }
                     },
                     {
-                      "condition": "minecraft:entity_properties",
+                      "type": "minecraft:entity_properties",
                       "entity": "direct_attacker",
                       "predicate": {
                         "equipment": {
@@ -69,10 +68,9 @@
                     }
                   ]
                 }
-              ]
             },
             {
-              "function": "minecraft:enchanted_count_increase",
+              "type": "minecraft:enchanted_count_increase",
               "enchantment": "minecraft:looting",
               "count": {
                 "type": "minecraft:uniform",

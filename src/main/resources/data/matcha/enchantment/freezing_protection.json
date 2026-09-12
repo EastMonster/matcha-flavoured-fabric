@@ -15,16 +15,16 @@
 					}
 				},
 				"requirements": {
-					"condition": "minecraft:damage_source_properties",
+					"type": "minecraft:damage_source_properties",
 					"predicate": {
 						"tags": [
 							{
 								"expected": true,
-								"id": "minecraft:is_freezing"
+								"id": "#minecraft:is_freezing"
 							},
 							{
 								"expected": false,
-								"id": "minecraft:bypasses_invulnerability"
+								"id": "#minecraft:bypasses_invulnerability"
 							}
 						]
 					}
@@ -47,3 +47,5 @@
 	"supported_items": "#minecraft:enchantable/chest_armor",
 	"weight": 5
 }
+
+

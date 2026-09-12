@@ -1,10 +1,7 @@
 {
-	"asset_name": "electrum",
+	"palette_id": "matcha:trim/electrum",
 	"description": {
 		"translate": "trim_material.matcha.electrum",
 		"color": "#ebe3a1"
-	},
-	"override_armor_assets": {
-		"matcha:electrum": "electrum_darker"
 	}
 }

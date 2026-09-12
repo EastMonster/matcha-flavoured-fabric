@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/golden_pickaxe"
+				"recipes": "matcha:crafting/golden_pickaxe"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

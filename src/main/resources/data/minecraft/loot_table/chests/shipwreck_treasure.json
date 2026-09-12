@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -14,7 +14,7 @@
 								"max": 5,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:iron_ingot",
@@ -22,7 +22,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -30,7 +30,7 @@
 								"max": 5,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:gold_ingot",
@@ -38,7 +38,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -46,7 +46,7 @@
 								"max": 2,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:emerald",
@@ -55,7 +55,7 @@
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:chests/common/treasure_ores",
-					"functions": [],
+					"modifier": [],
 					"weight": 5
 				}
 			],
@@ -70,7 +70,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -78,7 +78,7 @@
 								"max": 10,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:iron_nugget",
@@ -86,7 +86,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -94,7 +94,7 @@
 								"max": 10,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:gold_nugget",
@@ -102,7 +102,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -110,7 +110,7 @@
 								"max": 10,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:lapis_lazuli",
@@ -132,11 +132,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 2,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:coast_armor_trim_smithing_template"
@@ -153,11 +153,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:copper_nautilus_armor",
@@ -165,11 +165,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:iron_nautilus_armor",
@@ -177,11 +177,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:golden_nautilus_armor",
@@ -189,11 +189,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:diamond_nautilus_armor",

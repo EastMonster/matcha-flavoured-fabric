@@ -4,49 +4,49 @@
 		"steel_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_dolabra"
+				"recipes": "matcha:smithing/steel_dolabra"
 			}
 		},
 		"steel_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_mattock"
+				"recipes": "matcha:smithing/steel_mattock"
 			}
 		},
 		"shakudo_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/shakudo_dolabra"
+				"recipes": "matcha:smithing/shakudo_dolabra"
 			}
 		},
 		"shakudo_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/shakudo_mattock"
+				"recipes": "matcha:smithing/shakudo_mattock"
 			}
 		},
 		"bronze_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_dolabra"
+				"recipes": "matcha:smithing/bronze_dolabra"
 			}
 		},
 		"bronze_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_mattock"
+				"recipes": "matcha:smithing/bronze_mattock"
 			}
 		},
 		"electrum_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_mattock"
+				"recipes": "matcha:smithing/electrum_mattock"
 			}
 		},
 		"electrum_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_dolabra"
+				"recipes": "matcha:smithing/electrum_dolabra"
 			}
 		}
 	},

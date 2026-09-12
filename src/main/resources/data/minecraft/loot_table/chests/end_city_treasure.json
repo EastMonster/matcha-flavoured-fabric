@@ -7,11 +7,11 @@
 					"type": "minecraft:item",
 					"name": "minecraft:iron_block",
 					"weight": 8,
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 5,
+								"type": "minecraft:uniform", "min": 5,
 								"max": 12
 							}
 						}
@@ -19,14 +19,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 9,
 								"min": 5
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:diamond",
@@ -34,14 +34,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 16,
 								"min": 12
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:iron_ingot",
@@ -49,14 +49,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 7,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:gold_ingot",
@@ -64,14 +64,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:emerald",

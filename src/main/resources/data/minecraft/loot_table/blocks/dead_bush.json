@@ -9,31 +9,27 @@
 					"children": [
 						{
 							"type": "minecraft:item",
-							"conditions": [
-								{
-									"condition": "minecraft:match_tool",
+							"condition": {
+									"type": "minecraft:match_tool",
 									"predicate": {
 										"items": "minecraft:shears"
 									}
-								}
-							],
+								},
 							"name": "minecraft:dead_bush"
 						},
 						{
 							"type": "minecraft:item",
 							"name": "minecraft:dead_bush",
-							"conditions": [
-								{
-									"condition": "minecraft:match_tool",
+							"condition": {
+									"type": "minecraft:match_tool",
 									"predicate": {
 										"items": "#minecraft:hoes"
 									}
 								}
-							]
 						},
 						{
 							"type": "minecraft:item",
-							"functions": [
+							"modifier": [
 								{
 									"add": false,
 									"count": {
@@ -41,10 +37,10 @@
 										"max": 2,
 										"min": 0
 									},
-									"function": "minecraft:set_count"
+									"type": "minecraft:set_count"
 								},
 								{
-									"function": "minecraft:explosion_decay"
+									"type": "minecraft:explosion_decay"
 								}
 							],
 							"name": "minecraft:stick"

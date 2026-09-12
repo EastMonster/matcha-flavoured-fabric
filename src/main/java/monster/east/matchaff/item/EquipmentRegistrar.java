@@ -10,16 +10,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentSerialization;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShieldItem;
-import net.minecraft.world.item.ShovelItem;
-import net.minecraft.world.item.context.UseOnContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,7 +57,6 @@ public final class EquipmentRegistrar {
 	}
 
 	private static EquipmentItem register(EquipmentDefinition definition) {
-		Item carrier = BuiltInRegistries.ITEM.getValue(Identifier.parse(definition.carrier));
 		Item.Properties properties = new Item.Properties();
 		CarrierDefaults.apply(properties, definition.carrier);
 		Map<String, JsonElement> components = components(definition);
@@ -71,7 +65,8 @@ public final class EquipmentRegistrar {
 		}
 		Component name = ItemComponents.decode(ComponentSerialization.CODEC, components.get("minecraft:item_name"));
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha", definition.id));
-		Item item = Registry.register(BuiltInRegistries.ITEM, key, createItem(carrier, properties.setId(key), name));
+		Item item = Registry.register(BuiltInRegistries.ITEM, key,
+				createItem(definition.carrier, properties.setId(key), name));
 		return new EquipmentItem(item, tab(components));
 	}
 
@@ -90,11 +85,8 @@ public final class EquipmentRegistrar {
 		}
 	}
 
-	private static Item createItem(Item carrier, Item.Properties properties, Component name) {
-		if (carrier instanceof AxeItem || carrier instanceof HoeItem || carrier instanceof ShovelItem) {
-			return new UseOnCarrierItem(carrier, properties, name);
-		}
-		if (carrier instanceof ShieldItem) {
+	private static Item createItem(String carrier, Item.Properties properties, Component name) {
+		if ("minecraft:shield".equals(carrier)) {
 			return new NamedShieldItem(properties, name);
 		}
 		return new NamedItem(properties, name);
@@ -118,33 +110,6 @@ public final class EquipmentRegistrar {
 		private String carrier;
 		private String source;
 		private Map<String, JsonElement> components;
-	}
-
-	/**
-	 * Axe, hoe and shovel interactions live in their Item subclasses rather
-	 * than data components. The vanilla carrier operates on the stack stored in
-	 * the context, so delegating preserves the exact interaction while damage is
-	 * still applied to the migrated Matcha item.
-	 */
-	private static final class UseOnCarrierItem extends Item {
-		private final Item carrier;
-		private final Component name;
-
-		private UseOnCarrierItem(Item carrier, Item.Properties properties, Component name) {
-			super(properties);
-			this.carrier = carrier;
-			this.name = name;
-		}
-
-		@Override
-		public Component getName(ItemStack stack) {
-			return name;
-		}
-
-		@Override
-		public InteractionResult useOn(UseOnContext context) {
-			return carrier.useOn(context);
-		}
 	}
 
 	private static final class NamedItem extends Item {

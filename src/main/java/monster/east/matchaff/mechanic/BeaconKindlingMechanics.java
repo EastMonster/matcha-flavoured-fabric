@@ -173,7 +173,7 @@ final class BeaconKindlingMechanics {
 				var trader = EntityTypes.WANDERING_TRADER.create(level, EntitySpawnReason.COMMAND);
 				if (trader != null) {
 					trader.setPos(task.pos().getX() + 1.5, task.pos().getY(), task.pos().getZ() + 0.5);
-					trader.setInvulnerable(true);
+					trader.setPermanentlyInvulnerable(true);
 					trader.setDespawnDelay(Math.max(1, 18000 - elapsed));
 					trader.addTag("summoned_by_beacon");
 					BEACONS.put(owner, new BeaconTask(task.level(), task.pos(), task.startTick(), trader.getUUID()));

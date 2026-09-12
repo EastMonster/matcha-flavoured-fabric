@@ -6,9 +6,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_pickaxe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -52,10 +52,10 @@
 								"max": 0.8,
 								"min": 0.15
 							},
-							"function": "minecraft:set_damage"
+							"type": "minecraft:set_damage"
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -63,9 +63,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_axe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -108,10 +108,10 @@
 								"max": 0.8,
 								"min": 0.15
 							},
-							"function": "minecraft:set_damage"
+							"type": "minecraft:set_damage"
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -119,9 +119,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_shovel",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -164,10 +164,10 @@
 								"max": 0.8,
 								"min": 0.15
 							},
-							"function": "minecraft:set_damage"
+							"type": "minecraft:set_damage"
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -175,9 +175,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_hoe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -220,10 +220,10 @@
 								"max": 0.8,
 								"min": 0.15
 							},
-							"function": "minecraft:set_damage"
+							"type": "minecraft:set_damage"
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

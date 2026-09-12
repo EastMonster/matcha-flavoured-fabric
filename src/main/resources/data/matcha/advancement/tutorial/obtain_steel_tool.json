@@ -4,79 +4,79 @@
 		"steel_axe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_axe"
+				"recipes": "matcha:smithing/steel_axe"
 			}
 		},
 		"steel_pickaxe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_pickaxe"
+				"recipes": "matcha:smithing/steel_pickaxe"
 			}
 		},
 		"steel_shovel": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_shovel"
+				"recipes": "matcha:smithing/steel_shovel"
 			}
 		},
 		"steel_hoe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_hoe"
+				"recipes": "matcha:smithing/steel_hoe"
 			}
 		},
 		"steel_sword": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_sword"
+				"recipes": "matcha:smithing/steel_sword"
 			}
 		},
 		"steel_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_dolabra"
+				"recipes": "matcha:smithing/steel_dolabra"
 			}
 		},
 		"steel_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_mattock"
+				"recipes": "matcha:smithing/steel_mattock"
 			}
 		},
 		"steel_shears": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_shears"
+				"recipes": "matcha:smithing/steel_shears"
 			}
 		},
 		"steel_spear": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_spear"
+				"recipes": "matcha:smithing/steel_spear"
 			}
 		},
 		"steel_chestplate": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_chestplate"
+				"recipes": "matcha:smithing/steel_chestplate"
 			}
 		},
 		"steel_leggings": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_leggings"
+				"recipes": "matcha:smithing/steel_leggings"
 			}
 		},
 		"steel_helmet": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_helmet"
+				"recipes": "matcha:smithing/steel_helmet"
 			}
 		},
 		"steel_boots": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/steel_boots"
+				"recipes": "matcha:smithing/steel_boots"
 			}
 		}
 	},

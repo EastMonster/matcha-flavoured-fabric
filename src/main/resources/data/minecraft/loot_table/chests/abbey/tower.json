@@ -7,9 +7,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:compound_bow",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_damage",
+							"type": "minecraft:set_damage",
 							"damage": {
 								"type": "minecraft:uniform",
 								"min": 0.1,
@@ -17,7 +17,7 @@
 							}
 						},
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:item_model": "matcha:compound_bow",
 								"minecraft:item_name": {
@@ -35,9 +35,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_sword",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_damage",
+							"type": "minecraft:set_damage",
 							"damage": {
 								"type": "minecraft:uniform",
 								"min": 0.1,
@@ -45,7 +45,7 @@
 							}
 						},
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:attribute_modifiers": [
 									{
@@ -96,7 +96,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -104,7 +104,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:bone",
@@ -112,7 +112,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -120,7 +120,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:glowstone_dust",
@@ -129,7 +129,7 @@
 				{
 					"type": "minecraft:item",
 					"quality": 1,
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -137,7 +137,7 @@
 								"max": 1,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:emerald",
@@ -147,12 +147,12 @@
 					"type": "minecraft:item",
 					"name": "minecraft:rabbit_hide",
 					"weight": 10,
-					"conditions": [],
-					"functions": [
+					
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 4,
+								"type": "minecraft:uniform", "min": 4,
 								"max": 8
 							}
 						}
@@ -163,7 +163,7 @@
 		},
 		{
 			"rolls": {
-				"min": 0,
+				"type": "minecraft:uniform", "min": 0,
 				"max": 1
 			},
 			"entries": [
@@ -194,11 +194,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:arrow",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 16,
+								"type": "minecraft:uniform", "min": 16,
 								"max": 32
 							}
 						}

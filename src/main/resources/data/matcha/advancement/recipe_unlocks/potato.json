@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:food/oven/baked_potato"
+				"recipes": "matcha:food/oven/baked_potato"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

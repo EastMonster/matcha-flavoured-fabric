@@ -4,103 +4,103 @@
 		"bane_of_arthopods": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/bane_of_arthopods"
+				"recipes": "matcha:blessing/bane_of_arthopods"
 			}
 		},
 		"channeling_smite": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/channeling_smite"
+				"recipes": "matcha:blessing/channeling_smite"
 			}
 		},
 		"depth_strider_riptide_aqua_affinity_respiration": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/depth_strider_riptide_aqua_affinity_respiration"
+				"recipes": "matcha:blessing/depth_strider_riptide_aqua_affinity_respiration"
 			}
 		},
 		"efficiency_unbreaking": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/efficiency_unbreaking"
+				"recipes": "matcha:blessing/efficiency_unbreaking"
 			}
 		},
 		"feather_falling": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/feather_falling"
+				"recipes": "matcha:blessing/feather_falling"
 			}
 		},
 		"flame_fire_aspect_fire_protection": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/flame_fire_aspect_fire_protection"
+				"recipes": "matcha:blessing/flame_fire_aspect_fire_protection"
 			}
 		},
 		"infinity": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/infinity"
+				"recipes": "matcha:blessing/infinity"
 			}
 		},
 		"mending": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/mending"
+				"recipes": "matcha:blessing/mending"
 			}
 		},
 		"reach": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/reach"
+				"recipes": "matcha:blessing/reach"
 			}
 		},
 		"silk_touch": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/silk_touch"
+				"recipes": "matcha:blessing/silk_touch"
 			}
 		},
 		"traversal": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/traversal"
+				"recipes": "matcha:blessing/traversal"
 			}
 		},
 		"unbreaking": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/unbreaking"
+				"recipes": "matcha:blessing/unbreaking"
 			}
 		},
 		"warding": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/warding"
+				"recipes": "matcha:blessing/warding"
 			}
 		},
 		"frost_walker_frost_protection": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/frost_walker_frost_protection"
+				"recipes": "matcha:blessing/frost_walker_frost_protection"
 			}
 		},
 		"wind_burst_anemos": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/wind_burst_anemos"
+				"recipes": "matcha:blessing/wind_burst_anemos"
 			}
 		},
 		"zephyr": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/zephyr"
+				"recipes": "matcha:blessing/zephyr"
 			}
 		},
 		"looting_fortune": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/looting_fortune"
+				"recipes": "matcha:blessing/looting_fortune"
 			}
 		}
 	},

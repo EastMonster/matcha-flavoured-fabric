@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -14,7 +14,7 @@
 								"max": 5,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:leather",
@@ -34,12 +34,12 @@
 					"type": "minecraft:item",
 					"name": "minecraft:disc_fragment_5",
 					"weight": 32,
-					"conditions": [],
-					"functions": [
+					
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 2,
+								"type": "minecraft:uniform", "min": 2,
 								"max": 8
 							}
 						}
@@ -59,11 +59,11 @@
 					"type": "minecraft:item",
 					"name": "minecraft:diamond",
 					"weight": 5,
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 1,
+								"type": "minecraft:uniform", "min": 1,
 								"max": 3
 							}
 						}
@@ -71,9 +71,9 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					],
@@ -92,7 +92,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -100,7 +100,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:iron_ingot",
@@ -108,7 +108,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -116,7 +116,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:gold_ingot",
@@ -129,7 +129,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -137,7 +137,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:gold_nugget",
@@ -150,7 +150,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -158,7 +158,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:rabbit_hide",
@@ -166,7 +166,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -174,7 +174,7 @@
 								"max": 4,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:red_candle",
@@ -187,7 +187,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -195,7 +195,7 @@
 								"max": 4,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:candle",
@@ -213,7 +213,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -221,7 +221,7 @@
 								"max": 8,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:bone",
@@ -229,7 +229,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -237,7 +237,7 @@
 								"max": 8,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:glowstone_dust",
@@ -245,7 +245,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -253,7 +253,7 @@
 								"max": 1,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:skeleton_skull",

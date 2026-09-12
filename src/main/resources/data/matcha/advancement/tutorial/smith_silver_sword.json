@@ -4,7 +4,7 @@
 		"craft_primary_material": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/silver_sword"
+				"recipes": "matcha:smithing/silver_sword"
 			}
 		}
 	},

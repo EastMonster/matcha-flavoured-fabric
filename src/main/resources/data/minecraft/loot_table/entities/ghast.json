@@ -5,7 +5,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
@@ -13,7 +13,7 @@
 								"min": 0
 							},
 							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
+							"type": "minecraft:enchanted_count_increase"
 						}
 					],
 					"name": "minecraft:ghast_tear"
@@ -25,14 +25,14 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 2,
 								"min": 0
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"count": {
@@ -41,7 +41,7 @@
 								"min": 0
 							},
 							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
+							"type": "minecraft:enchanted_count_increase"
 						}
 					],
 					"name": "minecraft:gunpowder"
@@ -50,9 +50,9 @@
 			"rolls": 1
 		},
 		{
-			"conditions": [
+			"condition": {"type":"minecraft:all_of","terms":[
 				{
-					"condition": "minecraft:damage_source_properties",
+					"type": "minecraft:damage_source_properties",
 					"predicate": {
 						"direct_entity": {
 							"minecraft:entity_type": "minecraft:fireball"
@@ -60,25 +60,25 @@
 						"tags": [
 							{
 								"expected": true,
-								"id": "minecraft:is_projectile"
+								"id": "#minecraft:is_projectile"
 							}
 						]
 					}
 				},
 				{
-					"condition": "minecraft:killed_by_player"
+					"type": "minecraft:killed_by_player"
 				}
-			],
+			]},
 			"entries": [
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:music_disc_tears"
 				}
 			],
-			"functions": [
+			"modifier": [
 				{
 					"count": 1,
-					"function": "minecraft:set_count"
+					"type": "minecraft:set_count"
 				}
 			],
 			"rolls": 1

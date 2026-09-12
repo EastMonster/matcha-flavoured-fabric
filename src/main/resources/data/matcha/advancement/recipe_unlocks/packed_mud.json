@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/mudkiln"
+				"recipes": "matcha:crafting/mudkiln"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

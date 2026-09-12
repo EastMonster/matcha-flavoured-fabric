@@ -8,9 +8,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:arrow",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
 								"min": 0,
@@ -19,7 +19,7 @@
 							"add": false
 						},
 						{
-							"function": "minecraft:enchanted_count_increase",
+							"type": "minecraft:enchanted_count_increase",
 							"enchantment": "minecraft:looting",
 							"count": {
 								"type": "minecraft:uniform",
@@ -30,11 +30,9 @@
 					]
 				}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
+			"condition": {
+					"type": "minecraft:killed_by_player"
 				}
-			]
 		},
 		{
 			"rolls": 1,
@@ -43,9 +41,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:bone",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
 								"min": 0,
@@ -54,7 +52,7 @@
 							"add": false
 						},
 						{
-							"function": "minecraft:enchanted_count_increase",
+							"type": "minecraft:enchanted_count_increase",
 							"enchantment": "minecraft:looting",
 							"count": {
 								"type": "minecraft:uniform",
@@ -62,15 +60,11 @@
 								"max": 1
 							}
 						}
-					],
-					"conditions": []
-				}
+					]}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
+			"condition": {
+					"type": "minecraft:killed_by_player"
 				}
-			]
 		},
 		{
 			"rolls": 1,
@@ -79,9 +73,9 @@
 					"type": "minecraft:item",
 					"name": "minecraft:glowstone_dust",
 					"weight": 10,
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
 								"min": 0,
@@ -91,11 +85,9 @@
 					]
 				}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
+			"condition": {
+					"type": "minecraft:killed_by_player"
 				}
-			]
 		}
 	],
 	"random_sequence": "minecraft:entities/skeleton"

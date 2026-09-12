@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/wooden_pickaxe"
+				"recipes": "matcha:crafting/wooden_pickaxe"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

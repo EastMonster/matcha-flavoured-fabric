@@ -2,20 +2,17 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "condition": {
+          "type": "minecraft:survives_explosion"
+        },
       "entries": [
         {
           "type": "minecraft:alternatives",
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
+              "condition": {
+                  "type": "minecraft:match_tool",
                   "predicate": {
                     "predicates": {
                       "minecraft:enchantments": [
@@ -25,8 +22,7 @@
                       ]
                     }
                   }
-                }
-              ],
+                },
               "name": "minecraft:copper_block"
             },
             {

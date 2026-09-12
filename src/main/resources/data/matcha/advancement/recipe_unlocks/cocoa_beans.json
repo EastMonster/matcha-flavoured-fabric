@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:food/oven/chocolate"
+				"recipes": "matcha:food/oven/chocolate"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

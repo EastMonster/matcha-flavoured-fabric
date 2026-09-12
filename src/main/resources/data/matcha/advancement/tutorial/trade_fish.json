@@ -4,9 +4,9 @@
 		"traded": {
 			"trigger": "minecraft:villager_trade",
 			"conditions": {
-				"villager": {
+				"villager": {"type":"minecraft:entity_properties","entity":"this","predicate":{
 					"minecraft:nbt": "{VillagerData:{profession:\"minecraft:fisherman\"}}"
-				},
+				}},
 				"item": {
 					"items": "minecraft:emerald"
 				}

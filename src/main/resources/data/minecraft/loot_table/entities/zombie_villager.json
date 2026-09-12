@@ -8,9 +8,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:rabbit_hide",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
 								"min": 1,
@@ -19,7 +19,7 @@
 							"add": false
 						},
 						{
-							"function": "minecraft:enchanted_count_increase",
+							"type": "minecraft:enchanted_count_increase",
 							"enchantment": "minecraft:looting",
 							"count": {
 								"type": "minecraft:uniform",
@@ -30,11 +30,9 @@
 					]
 				}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
+			"condition": {
+					"type": "minecraft:killed_by_player"
 				}
-			]
 		},
 		{
 			"rolls": 1,
@@ -43,9 +41,9 @@
 					"type": "minecraft:item",
 					"name": "minecraft:blaze_powder",
 					"weight": 10,
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
 								"type": "minecraft:uniform",
 								"min": 0,
@@ -53,7 +51,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchanted_count_increase",
+							"type": "minecraft:enchanted_count_increase",
 							"enchantment": "minecraft:looting",
 							"count": {
 								"type": "minecraft:uniform",
@@ -69,20 +67,18 @@
 					"weight": 1
 				}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
+			"condition": {
+					"type": "minecraft:killed_by_player"
 				}
-			]
 		},
 		{
 			"bonus_rolls": 0,
-			"conditions": [
+			"condition": {"type":"minecraft:all_of","terms":[
 				{
-					"condition": "minecraft:killed_by_player"
+					"type": "minecraft:killed_by_player"
 				},
 				{
-					"condition": "minecraft:entity_properties",
+					"type": "minecraft:entity_properties",
 					"entity": "this",
 					"predicate": {
 						"flags": {
@@ -93,7 +89,7 @@
 						}
 					}
 				}
-			],
+			]},
 			"entries": [
 				{
 					"type": "minecraft:item",

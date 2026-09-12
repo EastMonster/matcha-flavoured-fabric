@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/divine_favour"
+				"recipes": "matcha:crafting/divine_favour"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

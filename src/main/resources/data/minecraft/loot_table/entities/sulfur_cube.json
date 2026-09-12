@@ -7,25 +7,21 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:gunpowder",
-					"conditions": [
+					"condition": {
+							"type": "minecraft:killed_by_player"
+						},
+					"modifier": [
 						{
-							"condition": "minecraft:killed_by_player"
-						}
-					],
-					"functions": [
-						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 1,
+								"type": "minecraft:uniform", "min": 1,
 								"max": 2
 							}
 						},
 						{
-							"function": "minecraft:enchanted_count_increase",
+							"type": "minecraft:enchanted_count_increase",
 							"count": 1,
-							"enchantment": "minecraft:looting",
-							"conditions": []
-						}
+							"enchantment": "minecraft:looting"}
 					]
 				}
 			]
@@ -36,25 +32,21 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:sulfur_goo",
-					"conditions": [
+					"condition": {
+							"type": "minecraft:killed_by_player"
+						},
+					"modifier": [
 						{
-							"condition": "minecraft:killed_by_player"
-						}
-					],
-					"functions": [
-						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 1,
+								"type": "minecraft:uniform", "min": 1,
 								"max": 2
 							}
 						},
 						{
-							"function": "minecraft:enchanted_count_increase",
+							"type": "minecraft:enchanted_count_increase",
 							"count": 2,
-							"enchantment": "minecraft:looting",
-							"conditions": []
-						}
+							"enchantment": "minecraft:looting"}
 					]
 				}
 			]

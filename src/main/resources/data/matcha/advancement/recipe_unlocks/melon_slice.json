@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:food/oven/grilled_melon"
+				"recipes": "matcha:food/oven/grilled_melon"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

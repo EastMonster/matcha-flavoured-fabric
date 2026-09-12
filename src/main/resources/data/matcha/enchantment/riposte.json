@@ -44,12 +44,12 @@
 					]
 				},
 				"requirements": {
-					"condition": "minecraft:all_of",
+					"type": "minecraft:all_of",
 					"terms": [
 						{
-							"condition": "minecraft:inverted",
+							"type": "minecraft:inverted",
 							"term": {
-								"condition": "minecraft:entity_properties",
+								"type": "minecraft:entity_properties",
 								"entity": "this",
 								"predicate": {
 									"vehicle": {}
@@ -57,7 +57,7 @@
 							}
 						},
 						{
-							"condition": "minecraft:entity_properties",
+							"type": "minecraft:entity_properties",
 							"entity": "this",
 							"predicate": {
 								"flags": {
@@ -66,7 +66,7 @@
 							}
 						},
 						{
-							"condition": "minecraft:entity_properties",
+							"type": "minecraft:entity_properties",
 							"entity": "this",
 							"predicate": {
 								"flags": {
@@ -96,3 +96,4 @@
 	"supported_items": "matcha:hepatizon_sword",
 	"weight": 5
 }
+

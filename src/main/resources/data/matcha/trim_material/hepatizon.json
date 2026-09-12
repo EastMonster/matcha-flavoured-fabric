@@ -1,10 +1,7 @@
 {
-	"asset_name": "hepatizon",
+	"palette_id": "matcha:trim/hepatizon",
 	"description": {
 		"translate": "trim_material.matcha.hepatizon",
 		"color": "#ac7b5c"
-	},
-	"override_armor_assets": {
-		"matcha:hepatizon": "hepatizon_darker"
 	}
 }

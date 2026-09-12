@@ -11,8 +11,6 @@ import monster.east.matchaff.network.SleepFastForwardPayload;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
-import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
-import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -35,12 +33,11 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.ItemLore;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.food.VillagerFood;
 import net.minecraft.world.level.block.DispenserBlock;
 
 import java.io.InputStreamReader;
@@ -86,19 +83,6 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		List<Item> foods = registerFoods();
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
 		List<SimpleItemRegistrar.BatchItem> batchItems = SimpleItemRegistrar.registerAll();
-		FabricPotionBrewingBuilder.BUILD.register(builder -> builder.registerPotionRecipe(
-				Potions.AWKWARD,
-				Ingredient.of(Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
-						Identifier.fromNamespaceAndPath("matcha", "freshwater_pufferfish")))),
-				Potions.WATER_BREATHING
-		));
-		Item compoundBow = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
-				Identifier.fromNamespaceAndPath("matcha", "compound_bow")));
-		Item crook = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
-				Identifier.fromNamespaceAndPath("matcha", "crook")));
-		FuelValueEvents.BUILD.register((builder, context) -> builder
-				.add(compoundBow, context.baseSmeltTime() * 3 / 2)
-				.add(crook, context.baseSmeltTime()));
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
 		equipment.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
 		batchItems.stream().filter(entry -> !entry.hidden())
@@ -233,6 +217,9 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 				consumable.build()
 		);
 		if (definition.maxStackSize != null) properties.stacksTo(definition.maxStackSize);
+		if (definition.villagerFoodNutrition != null) {
+			properties.component(DataComponents.VILLAGER_FOOD, new VillagerFood(definition.villagerFoodNutrition));
+		}
 		if (definition.remainder != null) {
 			properties.usingConvertsTo(Objects.requireNonNull(
 					BuiltInRegistries.ITEM.getValue(Identifier.parse(definition.remainder))
@@ -261,7 +248,8 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private record FoodDefinition(
 			String id, int nutrition, float saturation, boolean alwaysEdible,
 			Float consumeSeconds, String animation, String sound, Boolean particles,
-		String remainder, Integer maxStackSize, JsonElement lore, List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components
+		String remainder, Integer maxStackSize, Integer villagerFoodNutrition, JsonElement lore,
+		List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components
 	) {}
 
 	private record ConsumeEffectDefinition(

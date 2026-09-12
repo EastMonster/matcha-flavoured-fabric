@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:food/oven/honey_ginger_tea"
+				"recipes": "matcha:food/oven/honey_ginger_tea"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

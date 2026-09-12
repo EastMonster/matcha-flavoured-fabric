@@ -15,5 +15,13 @@
 				"texture": "matcha:electrum"
 			}
 		]
-	}
+	},
+	"trim_overrides": [
+		{
+			"palette": "matcha:trim/electrum_darker",
+			"when": {
+				"material": "matcha:electrum"
+			}
+		}
+	]
 }

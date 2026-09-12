@@ -10,15 +10,16 @@
 
 [English](README.md)
 
-这是 Klei Wright 制作的 [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) 数据包与资源包的非官方 Fabric mod 移植版，适用于 Minecraft 26.2。
+这是 Klei Wright 制作的 [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) 数据包与资源包的非官方 Fabric mod 移植版，适用于 Minecraft 26.2/26.3。
 
 制作这个移植版的主要原因，是我个人不太喜欢数据包通过大幅修改原版物品来充当新物品的实现方式。这种方式与 JEI 结合使用时也不够方便。因此，Fabric 版把装备、食物、鱼、祝福、唱片及大部分其他自定义内容注册成了真正独立的 mod 物品。
 
 ## 环境要求
 
-- Minecraft 26.2
-- Fabric Loader 0.19.3 或更高版本
-- Fabric API 0.156.0+26.2 或更高版本
+|Minecraft|26.2|26.3|
+|---|---|---|
+|Fabric Loader|0.19.3+|0.19.5+|
+|Fabric API|0.156.0+|0.160.6+|
 
 ## 安装
 

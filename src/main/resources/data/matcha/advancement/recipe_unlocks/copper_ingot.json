@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/copper_wire"
+				"recipes": "matcha:crafting/copper_wire"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

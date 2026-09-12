@@ -6,9 +6,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_helmet",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                             "minecraft:enchantments": {
                                 "minecraft:fire_protection": 2
@@ -34,7 +34,7 @@
                         }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -42,9 +42,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_chestplate",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:enchantments": {
                                     "minecraft:fire_protection": 3
@@ -70,7 +70,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -78,9 +78,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_leggings",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:enchantments": {
                                     "minecraft:fire_protection": 2
@@ -106,7 +106,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -114,9 +114,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_boots",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:enchantments": {
                                     "minecraft:fire_protection": 2
@@ -151,7 +151,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -159,9 +159,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_pickaxe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:max_damage": 350,
                                 "minecraft:enchantments": {
@@ -208,7 +208,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -216,9 +216,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_axe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:max_damage": 350,
                                 "minecraft:enchantments": {
@@ -255,7 +255,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -263,9 +263,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_shovel",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:max_damage": 350,
                                 "minecraft:enchantments": {
@@ -311,7 +311,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -319,9 +319,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "golden_hoe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:max_damage": 350,
                                 "minecraft:enchantments": {
@@ -357,7 +357,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -365,9 +365,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_spear",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:lore": [
                                     {
@@ -398,7 +398,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -406,9 +406,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:golden_sword",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
                                 "minecraft:max_damage": 350,
                                 "minecraft:enchantments": {
@@ -439,7 +439,7 @@
                             }
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

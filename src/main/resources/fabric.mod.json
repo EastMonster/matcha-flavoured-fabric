@@ -3,7 +3,7 @@
 	"id": "matcha-flavoured",
 	"version": "${version}",
 	"name": "Matcha Flavoured",
-	"description": "Klei Wright's Matcha Flavoured data and resource pack, packaged for Fabric 26.2.",
+	"description": "Klei Wright's Matcha Flavoured data and resource pack, packaged for Fabric 26.3.",
 	"authors": [
 		"Klei Wright"
 	],
@@ -69,7 +69,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
-		"minecraft": "~26.2",
+		"minecraft": "~26.3",
 		"java": ">=25",
 		"fabric-api": "*"
 	},

@@ -4,29 +4,13 @@
 		"killed_villager": {
 			"trigger": "minecraft:player_killed_entity",
 			"conditions": {
-				"entity": [
-					{
-						"condition": "minecraft:entity_properties",
-						"entity": "this",
-						"predicate": {
-							"minecraft:entity_type": "minecraft:villager"
-						}
-					}
-				]
+				"entity": {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:entity_type":"minecraft:villager"}}
 			}
 		},
 		"killed_wandering_traveller": {
 			"trigger": "minecraft:player_killed_entity",
 			"conditions": {
-				"entity": [
-					{
-						"condition": "minecraft:entity_properties",
-						"entity": "this",
-						"predicate": {
-							"minecraft:entity_type": "minecraft:wandering_trader"
-						}
-					}
-				]
+				"entity": {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:entity_type":"minecraft:wandering_trader"}}
 			}
 		}
 	},

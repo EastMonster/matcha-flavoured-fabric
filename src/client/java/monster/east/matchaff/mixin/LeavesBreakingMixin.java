@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.client.renderer.v1.mesh.Mesh;
 import net.fabricmc.fabric.api.client.renderer.v1.mesh.MutableMesh;
 import net.fabricmc.fabric.api.client.renderer.v1.mesh.QuadEmitter;
 import net.fabricmc.fabric.api.client.renderer.v1.mesh.QuadView;
-import net.minecraft.client.renderer.SubmitNodeCollection;
+import net.fabricmc.fabric.api.client.renderer.v1.render.submit.ExtendedBlockModelSubmit;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
  * Fabric API takes over the breaking animation for block models: it generates
  * a Mesh from the block model (including out-of-bounds leaf panels from the
  * datapack's cross_leaves and glow lichen ground models) and submits it
- * through the four-argument submitBreakingBlockModel on SubmitNodeCollection.
+ * through Fabric's {@link ExtendedBlockModelSubmit}.
  * This mixin filters that Mesh, dropping any quad whose vertices fall outside
  * the 0..1 normalized block box, so the breaking cracks no longer show up in
  * the air around leaves. Normal rendering is untouched (it uses the chunk
@@ -27,14 +27,14 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
  * implementation). Hardcoding Indigo's MutableMeshImpl here would crash with a
  * ClassCastException whenever Sodium owns the mesh.
  */
-@Mixin(SubmitNodeCollection.class)
+@Mixin(ExtendedBlockModelSubmit.class)
 public abstract class LeavesBreakingMixin {
 	@ModifyVariable(
-		method = "submitBreakingBlockModel(Lcom/mojang/blaze3d/vertex/PoseStack;Ljava/util/List;Lnet/fabricmc/fabric/api/client/renderer/v1/mesh/Mesh;I)V",
+		method = "<init>",
 		at = @At("HEAD"),
 		argsOnly = true
 	)
-	private Mesh matcha$dropOutOfBoundsBreakingQuads(Mesh mesh) {
+	private static Mesh matcha$dropOutOfBoundsBreakingQuads(Mesh mesh) {
 		return filterOutOfBounds(mesh);
 	}
 

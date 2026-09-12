@@ -6,9 +6,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_helmet",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -26,7 +26,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -34,9 +34,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_chestplate",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -54,7 +54,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -62,9 +62,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_leggings",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -82,7 +82,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -90,9 +90,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_boots",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -110,7 +110,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -118,9 +118,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_sword",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:attribute_modifiers": [
 									{
@@ -159,7 +159,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -167,9 +167,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_spear",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -192,7 +192,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -200,9 +200,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_pickaxe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -241,7 +241,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -249,9 +249,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_axe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -289,7 +289,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -297,9 +297,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_shovel",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -337,7 +337,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -345,9 +345,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_hoe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -385,7 +385,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

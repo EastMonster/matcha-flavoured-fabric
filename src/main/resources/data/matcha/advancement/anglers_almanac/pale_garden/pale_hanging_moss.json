@@ -31,13 +31,13 @@
     "catch": {
       "trigger": "minecraft:fishing_rod_hooked",
       "conditions": {
-        "player": {
+        "player": {"type":"minecraft:entity_properties","entity":"this","predicate":{
           "minecraft:type_specific/player": {
             "advancements": {
               "matcha:anglers_almanac/root": true
             }
           }
-        },
+        }},
         "item": {
           "items": "minecraft:pale_hanging_moss"
         }

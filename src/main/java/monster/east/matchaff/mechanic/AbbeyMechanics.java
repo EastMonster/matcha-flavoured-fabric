@@ -9,6 +9,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.commands.arguments.coordinates.LocalCoordinates;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
@@ -354,9 +355,8 @@ public final class AbbeyMechanics {
 	 * command source's {@code execute positioned}, using the marker's rotation.
 	 */
 	private static Vec3 localPos(Marker marker, double left, double up, double forward) {
-		Vec3 offset = Vec3.applyLocalCoordinatesToRotation(
-				new Vec2(marker.getXRot(), marker.getYRot()), new Vec3(left, up, forward));
-		return marker.position().add(offset);
+		return new LocalCoordinates(left, up, forward)
+				.apply(marker.position(), new Vec2(marker.getXRot(), marker.getYRot()));
 	}
 
 	private static BlockPos localBlockPos(Marker marker, int left, int up, int forward) {

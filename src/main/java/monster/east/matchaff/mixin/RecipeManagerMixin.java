@@ -1,23 +1,24 @@
 package monster.east.matchaff.mixin;
 
 import com.google.gson.Gson;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderSet;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
-import net.minecraft.server.packs.resources.ResourceManager;
-import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.RecipeMap;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.crafting.RecipeManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * Removes the vanilla recipes listed in the datapack's pack.mcmeta filter
@@ -30,14 +31,36 @@ public abstract class RecipeManagerMixin {
 	@Unique
 	private static final Set<String> BLOCKED_RECIPES = loadBlockedRecipes();
 
-	@Inject(method = "prepare", at = @At("RETURN"), cancellable = true)
-	private void matcha$dropBlockedRecipes(ResourceManager manager, ProfilerFiller profiler,
-	                                       CallbackInfoReturnable<RecipeMap> cir) {
-		RecipeMap map = cir.getReturnValue();
-		List<RecipeHolder<?>> filtered = map.values().stream()
-				.filter(holder -> !isBlocked(holder.id().identifier()))
-				.toList();
-		cir.setReturnValue(RecipeMap.create(filtered));
+	@ModifyArg(
+			method = "<init>",
+			at = @At(value = "INVOKE", target =
+					"Lnet/minecraft/world/item/crafting/RecipeMap;create(Lnet/minecraft/core/HolderLookup;)Lnet/minecraft/world/item/crafting/RecipeMap;")
+	)
+	private static HolderLookup<net.minecraft.world.item.crafting.Recipe<?>> matcha$dropBlockedRecipes(
+			HolderLookup<net.minecraft.world.item.crafting.Recipe<?>> lookup) {
+		return new HolderLookup<>() {
+			@Override
+			public Stream<Holder.Reference<net.minecraft.world.item.crafting.Recipe<?>>> listElements() {
+				return lookup.listElements().filter(holder -> !isBlocked(holder.key().identifier()));
+			}
+
+			@Override
+			public Stream<HolderSet.Named<net.minecraft.world.item.crafting.Recipe<?>>> listTags() {
+				return lookup.listTags();
+			}
+
+			@Override
+			public Optional<Holder.Reference<net.minecraft.world.item.crafting.Recipe<?>>> get(
+					ResourceKey<net.minecraft.world.item.crafting.Recipe<?>> key) {
+				return lookup.get(key);
+			}
+
+			@Override
+			public Optional<HolderSet.Named<net.minecraft.world.item.crafting.Recipe<?>>> get(
+					TagKey<net.minecraft.world.item.crafting.Recipe<?>> key) {
+				return lookup.get(key);
+			}
+		};
 	}
 
 	@Unique

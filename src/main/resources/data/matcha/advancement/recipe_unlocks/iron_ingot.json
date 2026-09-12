@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/iron_pickaxe"
+				"recipes": "matcha:crafting/iron_pickaxe"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

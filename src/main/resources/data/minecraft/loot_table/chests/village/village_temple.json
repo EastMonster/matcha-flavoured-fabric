@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -14,7 +14,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:glowstone_dust",
@@ -28,7 +28,7 @@
 				{
 					"type": "minecraft:item",
 					"weight": 5,
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -36,7 +36,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:lapis_lazuli"
@@ -44,7 +44,7 @@
 				{
 					"type": "minecraft:item",
 					"weight": 5,
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -52,7 +52,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:gold_ingot"
@@ -60,7 +60,7 @@
 				{
 					"type": "minecraft:item",
 					"weight": 5,
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -68,7 +68,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:emerald"

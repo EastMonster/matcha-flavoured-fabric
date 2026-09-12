@@ -4,73 +4,73 @@
 		"bronze_axe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_axe"
+				"recipes": "matcha:smithing/bronze_axe"
 			}
 		},
 		"bronze_pickaxe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_pickaxe"
+				"recipes": "matcha:smithing/bronze_pickaxe"
 			}
 		},
 		"bronze_shovel": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_shovel"
+				"recipes": "matcha:smithing/bronze_shovel"
 			}
 		},
 		"bronze_hoe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_hoe"
+				"recipes": "matcha:smithing/bronze_hoe"
 			}
 		},
 		"bronze_sword": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_sword"
+				"recipes": "matcha:smithing/bronze_sword"
 			}
 		},
 		"bronze_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_dolabra"
+				"recipes": "matcha:smithing/bronze_dolabra"
 			}
 		},
 		"bronze_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_mattock"
+				"recipes": "matcha:smithing/bronze_mattock"
 			}
 		},
 		"bronze_helmet": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_helmet"
+				"recipes": "matcha:smithing/bronze_helmet"
 			}
 		},
 		"bronze_chestplate": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_chestplate"
+				"recipes": "matcha:smithing/bronze_chestplate"
 			}
 		},
 		"bronze_leggings": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_leggings"
+				"recipes": "matcha:smithing/bronze_leggings"
 			}
 		},
 		"bronze_boots": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_boots"
+				"recipes": "matcha:smithing/bronze_boots"
 			}
 		},
 		"bronze_spear": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_spear"
+				"recipes": "matcha:smithing/bronze_spear"
 			}
 		}
 	},

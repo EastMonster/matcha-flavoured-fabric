@@ -4,73 +4,73 @@
 		"electrum_axe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_axe"
+				"recipes": "matcha:smithing/electrum_axe"
 			}
 		},
 		"electrum_pickaxe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_pickaxe"
+				"recipes": "matcha:smithing/electrum_pickaxe"
 			}
 		},
 		"electrum_shovel": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_shovel"
+				"recipes": "matcha:smithing/electrum_shovel"
 			}
 		},
 		"electrum_hoe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_hoe"
+				"recipes": "matcha:smithing/electrum_hoe"
 			}
 		},
 		"electrum_sword": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_sword"
+				"recipes": "matcha:smithing/electrum_sword"
 			}
 		},
 		"electrum_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_dolabra"
+				"recipes": "matcha:smithing/electrum_dolabra"
 			}
 		},
 		"electrum_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_mattock"
+				"recipes": "matcha:smithing/electrum_mattock"
 			}
 		},
 		"electrum_spear": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_spear"
+				"recipes": "matcha:smithing/electrum_spear"
 			}
 		},
 		"electrum_helmet": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_helmet"
+				"recipes": "matcha:smithing/electrum_helmet"
 			}
 		},
 		"electrum_chestplate": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_chestplate"
+				"recipes": "matcha:smithing/electrum_chestplate"
 			}
 		},
 		"electrum_leggings": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_leggings"
+				"recipes": "matcha:smithing/electrum_leggings"
 			}
 		},
 		"electrum_boots": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/electrum_boots"
+				"recipes": "matcha:smithing/electrum_boots"
 			}
 		}
 	},

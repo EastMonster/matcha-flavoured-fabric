@@ -8,11 +8,11 @@
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:materials/raw_diamond",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 2,
+								"type": "minecraft:uniform",								"min": 2,
 								"max": 4
 							}
 						}
@@ -25,7 +25,7 @@
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:chests/common/treasure_ores",
-					"functions": []
+					"modifier": []
 				}
 			],
 			"rolls": {
@@ -42,11 +42,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 2,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:coast_armor_trim_smithing_template"
@@ -63,11 +63,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:copper_nautilus_armor",
@@ -75,11 +75,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:iron_nautilus_armor",
@@ -87,11 +87,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:golden_nautilus_armor",
@@ -99,11 +99,11 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:diamond_nautilus_armor",

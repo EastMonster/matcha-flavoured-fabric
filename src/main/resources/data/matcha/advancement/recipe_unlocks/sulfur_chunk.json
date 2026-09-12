@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/fire_charge"
+				"recipes": "matcha:crafting/fire_charge"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

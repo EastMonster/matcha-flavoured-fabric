@@ -1,73 +1,71 @@
 {
-	"type": "minecraft:block",
-	"pools": [
-		{
-			"bonus_rolls": 0,
-			"functions": [
-				{
-					"function": "minecraft:apply_bonus",
-					"enchantment": "matcha:electrum_tool",
-					"formula": "minecraft:uniform_bonus_count",
-					"parameters": {
-						"bonusMultiplier": 1
-					}
-				},
-				{
-					"function": "minecraft:apply_bonus",
-					"enchantment": "minecraft:fortune",
-					"formula": "minecraft:uniform_bonus_count",
-					"parameters": {
-						"bonusMultiplier": 1
-					}
-				}
-			],
-			"conditions": [
-				{
-					"block": "minecraft:cave_vines",
-					"condition": "minecraft:block_state_property",
-					"properties": {
-						"berries": "true"
-					}
-				}
-			],
-			"entries": [
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:glow_berries",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:lore": [
-									{
-										"text": "❣",
-										"color": "red",
-										"italic": false
-									}
-								],
-								"minecraft:consumable": {
-									"on_consume_effects": [
-										{
-											"type": "minecraft:apply_effects",
-											"effects": [
-												{
-													"id": "minecraft:regeneration",
-													"amplifier": 2,
-													"duration": 20,
-													"show_particles": false,
-													"show_icon": false
-												}
-											]
-										}
-									]
-								}
-							}
-						}
-					]
-				}
-			],
-			"rolls": 1
-		}
-	],
-	"random_sequence": "minecraft:blocks/cave_vines"
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "condition": {
+        "block": "minecraft:cave_vines",
+        "type": "minecraft:match_block",
+        "properties": {
+          "berries": "true"
+        }
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glow_berries",
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:lore": [
+                  {
+                    "text": "❣",
+                    "color": "red",
+                    "italic": false
+                  }
+                ],
+                "minecraft:consumable": {
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:regeneration",
+                          "amplifier": 2,
+                          "duration": 20,
+                          "show_particles": false,
+                          "show_icon": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1,
+      "modifier": [
+        {
+          "enchantment": "matcha:electrum_tool",
+          "formula": "minecraft:uniform_bonus_count",
+          "parameters": {
+            "bonusMultiplier": 1
+          },
+          "type": "minecraft:apply_bonus"
+        },
+        {
+          "enchantment": "minecraft:fortune",
+          "formula": "minecraft:uniform_bonus_count",
+          "parameters": {
+            "bonusMultiplier": 1
+          },
+          "type": "minecraft:apply_bonus"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:blocks/cave_vines"
 }

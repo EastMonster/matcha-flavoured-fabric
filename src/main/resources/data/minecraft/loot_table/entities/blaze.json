@@ -3,15 +3,13 @@
 	"pools": [
 		{
 			"bonus_rolls": 0,
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
-				}
-			],
+			"condition": {
+					"type": "minecraft:killed_by_player"
+				},
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -19,7 +17,7 @@
 								"max": 4,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"count": {
@@ -28,7 +26,7 @@
 								"min": 0
 							},
 							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
+							"type": "minecraft:enchanted_count_increase"
 						}
 					],
 					"name": "minecraft:fire_charge"

@@ -4,7 +4,7 @@
 		"made_hell_bound_book": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:blessing/hell_bound_book"
+				"recipes": "matcha:blessing/hell_bound_book"
 			}
 		}
 	},

@@ -3,14 +3,7 @@
 		"eat_glow_jam": {
 			"trigger": "minecraft:item_used_on_block",
 			"conditions": {
-				"location": [
-					{
-						"condition": "minecraft:match_tool",
-						"predicate": {
-							"items": "matcha:bedrock_buster"
-						}
-					}
-				]
+				"location": {"type":"minecraft:match_tool","predicate":{"items":"matcha:bedrock_buster"}}
 			}
 		}
 	},

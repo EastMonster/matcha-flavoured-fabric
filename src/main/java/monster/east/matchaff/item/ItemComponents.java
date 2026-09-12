@@ -5,8 +5,10 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.ComponentSerialization;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.util.Unit;
 import net.minecraft.world.item.Item;
@@ -68,6 +70,8 @@ public class ItemComponents {
 					properties.delayedComponent(DataComponents.ATTRIBUTE_MODIFIERS, provider -> decode(ItemAttributeModifiers.CODEC, provider, json));
 			case "minecraft:tool" ->
 					properties.delayedComponent(DataComponents.TOOL, provider -> decode(Tool.CODEC, provider, json));
+			case "minecraft:cooking_fuel" -> properties.cookingFuel(ResourceKey.create(
+					Registries.CONTEXT_INT_PROVIDER, Identifier.parse(json.getAsString())));
 			case "minecraft:equippable" ->
 					properties.delayedComponent(DataComponents.EQUIPPABLE, provider -> decode(Equippable.CODEC, provider, json));
 			case "minecraft:repairable" ->

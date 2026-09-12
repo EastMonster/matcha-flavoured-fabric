@@ -5,14 +5,14 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:emerald",
@@ -20,14 +20,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 24,
 								"min": 16
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:wind_charge",
@@ -35,17 +35,17 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 12,
 								"min": 4
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
-							"function": "minecraft:set_potion",
+							"type": "minecraft:set_potion",
 							"id": "minecraft:strong_slowness"
 						}
 					],
@@ -54,14 +54,14 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 5,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:diamond",
@@ -69,10 +69,10 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"amplifier": {
@@ -80,7 +80,7 @@
 								"max": 4,
 								"min": 2
 							},
-							"function": "minecraft:set_ominous_bottle_amplifier"
+							"type": "minecraft:set_ominous_bottle_amplifier"
 						}
 					],
 					"name": "minecraft:ominous_bottle"

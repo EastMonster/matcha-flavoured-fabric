@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/fire_starter"
+				"recipes": "matcha:crafting/fire_starter"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

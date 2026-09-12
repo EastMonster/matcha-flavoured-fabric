@@ -15,5 +15,13 @@
 				"texture": "matcha:shakudo"
 			}
 		]
-	}
+	},
+	"trim_overrides": [
+		{
+			"palette": "matcha:trim/shakudo_darker",
+			"when": {
+				"material": "matcha:shakudo"
+			}
+		}
+	]
 }

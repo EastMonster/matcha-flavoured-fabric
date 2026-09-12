@@ -2,13 +2,13 @@
 	"type": "minecraft:block",
 	"pools": [
 		{
-			"conditions": [],
+			
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": 2
 						}
 					],
@@ -23,9 +23,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:obsidian",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": 4
 						}
 					]
@@ -38,9 +38,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:enchanted_book",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_enchantments",
+							"type": "minecraft:set_enchantments",
 							"enchantments": {}
 						}
 					]

@@ -3,12 +3,12 @@
 	"pools": [
 		{
 			"bonus_rolls": 0,
-			"conditions": [
+			"condition": {"type":"minecraft:all_of","terms":[
 				{
-					"condition": "minecraft:killed_by_player"
+					"type": "minecraft:killed_by_player"
 				},
 				{
-					"condition": "minecraft:random_chance_with_enchanted_bonus",
+					"type": "minecraft:random_chance_with_enchanted_bonus",
 					"enchanted_chance": {
 						"type": "minecraft:linear",
 						"base": 0.6,
@@ -17,7 +17,7 @@
 					"enchantment": "minecraft:looting",
 					"unenchanted_chance": 0.5
 				}
-			],
+			]},
 			"entries": [
 				{
 					"type": "minecraft:item",

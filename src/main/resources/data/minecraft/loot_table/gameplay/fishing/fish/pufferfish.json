@@ -8,9 +8,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:pufferfish",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{

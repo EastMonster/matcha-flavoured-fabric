@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/benzene"
+				"recipes": "matcha:crafting/benzene"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

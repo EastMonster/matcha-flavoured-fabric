@@ -4,7 +4,7 @@
 		"has_primary_material": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "minecraft:brush"
+				"recipes": "minecraft:brush"
 			}
 		}
 	},

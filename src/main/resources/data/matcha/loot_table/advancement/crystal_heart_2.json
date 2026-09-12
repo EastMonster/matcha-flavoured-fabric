@@ -8,9 +8,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:crystal_heart",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": 2
 						}
 					]

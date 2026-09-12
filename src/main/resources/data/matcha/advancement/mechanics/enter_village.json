@@ -4,17 +4,7 @@
 		"entered": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"player": {
-					"minecraft:location": {
-						"structures": [
-							"minecraft:village_plains",
-							"minecraft:village_desert",
-							"minecraft:village_savanna",
-							"minecraft:village_snowy",
-							"minecraft:village_taiga"
-						]
-					}
-				}
+				"player": {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:location":{"structures":["minecraft:village_plains","minecraft:village_desert","minecraft:village_savanna","minecraft:village_snowy","minecraft:village_taiga"]}}}
 			}
 		}
 	}

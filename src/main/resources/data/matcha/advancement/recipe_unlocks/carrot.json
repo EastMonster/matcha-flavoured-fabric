@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:food/oven/steamed_carrots"
+				"recipes": "matcha:food/oven/steamed_carrots"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

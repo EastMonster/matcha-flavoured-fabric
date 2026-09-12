@@ -1,16 +1,17 @@
 package monster.east.matchaff.mixin;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.ServerAdvancementManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
-import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Removes the vanilla advancement trees (story/adventure/end/husbandry/nether)
@@ -22,15 +23,18 @@ public abstract class ServerAdvancementManagerMixin {
 	@Unique
 	private static final Set<String> BLOCKED_PREFIXES = Set.of("story/", "adventure/", "end/", "husbandry/", "nether/");
 
-	@ModifyVariable(
-			method = "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
-			at = @At("HEAD"),
-			argsOnly = true
+	@Redirect(
+			method = "<init>",
+			at = @At(
+					value = "INVOKE",
+					target = "Lnet/minecraft/core/HolderLookup$RegistryLookup;listElements()Ljava/util/stream/Stream;"
+			)
 	)
-	private Map<Identifier, Advancement> matcha$dropVanillaAdvancements(Map<Identifier, Advancement> preparations) {
-		return preparations.entrySet().stream()
-				.filter(entry -> !isVanillaTreeAdvancement(entry.getKey()))
-				.collect(Collectors.toUnmodifiableMap(Map.Entry::getKey, Map.Entry::getValue));
+	private Stream<Holder.Reference<Advancement>> matcha$dropVanillaAdvancements(
+			HolderLookup.RegistryLookup<Advancement> advancements
+	) {
+		return advancements.listElements()
+				.filter(advancement -> !isVanillaTreeAdvancement(advancement.key().identifier()));
 	}
 
 	@Unique

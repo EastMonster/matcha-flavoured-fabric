@@ -6,106 +6,92 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"conditions": [
-						{
-							"condition": "minecraft:match_tool",
+					"condition": {
+							"type": "minecraft:match_tool",
 							"predicate": {
 								"items": "#matcha:glow_lichen_harvesters"
 							}
-						}
-					],
-					"functions": [
+						},
+					"modifier": [
 						{
 							"add": true,
-							"conditions": [
-								{
+							"condition": {
 									"block": "minecraft:glow_lichen",
-									"condition": "minecraft:block_state_property",
+									"type": "minecraft:match_block",
 									"properties": {
 										"down": "true"
 									}
-								}
-							],
+								},
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"add": true,
-							"conditions": [
-								{
+							"condition": {
 									"block": "minecraft:glow_lichen",
-									"condition": "minecraft:block_state_property",
+									"type": "minecraft:match_block",
 									"properties": {
 										"up": "true"
 									}
-								}
-							],
+								},
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"add": true,
-							"conditions": [
-								{
+							"condition": {
 									"block": "minecraft:glow_lichen",
-									"condition": "minecraft:block_state_property",
+									"type": "minecraft:match_block",
 									"properties": {
 										"north": "true"
 									}
-								}
-							],
+								},
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"add": true,
-							"conditions": [
-								{
+							"condition": {
 									"block": "minecraft:glow_lichen",
-									"condition": "minecraft:block_state_property",
+									"type": "minecraft:match_block",
 									"properties": {
 										"south": "true"
 									}
-								}
-							],
+								},
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"add": true,
-							"conditions": [
-								{
+							"condition": {
 									"block": "minecraft:glow_lichen",
-									"condition": "minecraft:block_state_property",
+									"type": "minecraft:match_block",
 									"properties": {
 										"west": "true"
 									}
-								}
-							],
+								},
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"add": true,
-							"conditions": [
-								{
+							"condition": {
 									"block": "minecraft:glow_lichen",
-									"condition": "minecraft:block_state_property",
+									"type": "minecraft:match_block",
 									"properties": {
 										"east": "true"
 									}
-								}
-							],
+								},
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"add": true,
 							"count": -1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
-							"function": "minecraft:explosion_decay"
+							"type": "minecraft:explosion_decay"
 						}
 					],
 					"name": "minecraft:glow_lichen"

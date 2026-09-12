@@ -9,7 +9,7 @@
 					"children": [
 						{
 							"type": "minecraft:item",
-							"conditions": [],
+							
 							"name": "minecraft:sculk_vein"
 						}
 					]

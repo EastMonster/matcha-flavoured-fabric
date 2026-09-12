@@ -9,26 +9,22 @@
 					"children": [
 						{
 							"type": "minecraft:item",
-							"conditions": [
-								{
-									"condition": "minecraft:match_tool",
+							"condition": {
+									"type": "minecraft:match_tool",
 									"predicate": {
 										"items": "minecraft:shears"
 									}
-								}
-							],
+								},
 							"name": "minecraft:fern"
 						},
 						{
 							"type": "minecraft:item",
-							"conditions": [
-								{
-									"condition": "minecraft:match_tool",
+							"condition": {
+									"type": "minecraft:match_tool",
 									"predicate": {
 										"items": "#minecraft:hoes"
 									}
-								}
-							],
+								},
 							"name": "minecraft:fern"
 						}
 					]

@@ -6,9 +6,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:chainmail_helmet",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 300,
 								"minecraft:lore": [
@@ -43,7 +43,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -51,9 +51,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:chainmail_chestplate",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 300,
 								"minecraft:lore": [
@@ -88,7 +88,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -96,9 +96,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:chainmail_leggings",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 300,
 								"minecraft:lore": [
@@ -133,7 +133,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -141,9 +141,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:chainmail_boots",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 300,
 								"minecraft:lore": [
@@ -178,7 +178,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

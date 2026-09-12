@@ -6,9 +6,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_helmet",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -31,7 +31,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -39,9 +39,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_chestplate",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -64,7 +64,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -72,9 +72,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_leggings",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -97,7 +97,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -105,9 +105,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_boots",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -130,7 +130,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -138,9 +138,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_sword",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -163,7 +163,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -171,9 +171,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_spear",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -196,7 +196,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -204,9 +204,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_pickaxe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 2500,
 								"minecraft:tool": {
@@ -250,7 +250,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -258,9 +258,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_axe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 2500,
 								"minecraft:tool": {
@@ -299,7 +299,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -307,9 +307,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_shovel",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 2500,
 								"minecraft:tool": {
@@ -348,7 +348,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -356,9 +356,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:diamond_hoe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 2500,
 								"minecraft:tool": {
@@ -397,7 +397,7 @@
 							}
 						},
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

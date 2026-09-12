@@ -462,6 +462,7 @@
 				"translate": "item.matcha.crook"
 			},
 			"minecraft:max_damage": 300,
+			"minecraft:cooking_fuel": "matcha:cooking/crook",
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:stick"

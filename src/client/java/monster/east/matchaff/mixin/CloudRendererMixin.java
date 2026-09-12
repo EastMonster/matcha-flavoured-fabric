@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(CloudRenderer.class)
 public abstract class CloudRendererMixin {
 	@ModifyVariable(
-			method = "render(ILnet/minecraft/client/CloudStatus;FILnet/minecraft/world/phys/Vec3;JF)V",
+			method = "prepare(ILnet/minecraft/client/CloudStatus;FILnet/minecraft/world/phys/Vec3;JF)V",
 			at = @At("HEAD"),
 			argsOnly = true
 	)

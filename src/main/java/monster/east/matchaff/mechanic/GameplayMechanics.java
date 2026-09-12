@@ -17,6 +17,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -213,7 +214,7 @@ public final class GameplayMechanics {
 							MobEffects.RESISTANCE, easy ? 200 : 100, 0, true, true));
 					ItemStack reward = new ItemStack(Items.GLOWSTONE_DUST, 1);
 					if (!player.addItem(reward)) {
-						var dropped = player.drop(reward, false);
+						var dropped = player.drop(reward, false, Prediction.SERVER_ONLY);
 						if (dropped != null) {
 							dropped.setNoPickUpDelay();
 							dropped.setTarget(player.getUUID());

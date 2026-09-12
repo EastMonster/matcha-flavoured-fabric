@@ -1911,6 +1911,7 @@
     "nutrition": 0,
     "saturation": 0,
     "alwaysEdible": true,
+    "villagerFoodNutrition": 4,
     "effects": [
       {
         "type": "apply",

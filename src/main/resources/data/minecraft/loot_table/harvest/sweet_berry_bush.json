@@ -6,23 +6,21 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"conditions": [
-						{
+					"condition": {
 							"block": "minecraft:sweet_berry_bush",
-							"condition": "minecraft:block_state_property",
+							"type": "minecraft:match_block",
 							"properties": {
 								"age": "3"
 							}
-						}
-					],
-					"functions": [
+						},
+					"modifier": [
 						{
 							"add": false,
 							"count": 1,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -61,7 +59,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -69,10 +67,10 @@
 								"max": 2,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{

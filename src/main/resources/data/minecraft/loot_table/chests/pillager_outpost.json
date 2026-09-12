@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -14,7 +14,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:bone",
@@ -22,7 +22,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -30,7 +30,7 @@
 								"max": 4,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:glowstone_dust",
@@ -39,7 +39,7 @@
 				{
 					"type": "minecraft:item",
 					"quality": 1,
-					"functions": [
+					"modifier": [
 						{
 							"add": false,
 							"count": {
@@ -47,7 +47,7 @@
 								"max": 1,
 								"min": 1
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:emerald",
@@ -57,12 +57,12 @@
 					"type": "minecraft:item",
 					"name": "minecraft:rabbit_hide",
 					"weight": 10,
-					"conditions": [],
-					"functions": [
+					
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 4,
+								"type": "minecraft:uniform", "min": 4,
 								"max": 8
 							}
 						}
@@ -77,11 +77,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:arrow",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
-								"min": 8,
+								"type": "minecraft:uniform", "min": 8,
 								"max": 16
 							}
 						}
@@ -96,14 +96,14 @@
 					"name": "minecraft:goat_horn"
 				}
 			],
-			"functions": [
+			"modifier": [
 				{
-					"function": "minecraft:set_instrument",
+					"type": "minecraft:set_instrument",
 					"options": "#minecraft:regular_goat_horns"
 				}
 			],
 			"rolls": {
-				"max": 1,
+				"type": "minecraft:uniform", "max": 1,
 				"min": 1
 			}
 		},
@@ -115,10 +115,10 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": 2,
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						}
 					],
 					"name": "minecraft:sentry_armor_trim_smithing_template"

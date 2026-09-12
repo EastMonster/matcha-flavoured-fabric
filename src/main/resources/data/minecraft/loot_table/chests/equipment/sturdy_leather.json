@@ -6,9 +6,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:sturdy_leather_helmet",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -16,9 +16,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:sturdy_leather_chestplate",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -26,9 +26,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:sturdy_leather_leggings",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]
@@ -36,9 +36,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:sturdy_leather_boots",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

@@ -13,7 +13,7 @@
 		},
 		"has_the_recipe": {
 			"conditions": {
-				"recipe": "matcha:crafting/divine_fragment"
+				"recipes": "matcha:crafting/divine_fragment"
 			},
 			"trigger": "minecraft:recipe_unlocked"
 		}

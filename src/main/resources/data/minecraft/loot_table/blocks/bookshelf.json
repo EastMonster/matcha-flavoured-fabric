@@ -8,9 +8,8 @@
 					"children": [
 						{
 							"type": "minecraft:item",
-							"conditions": [
-								{
-									"condition": "minecraft:match_tool",
+							"condition": {
+									"type": "minecraft:match_tool",
 									"predicate": {
 										"predicates": {
 											"minecraft:enchantments": [
@@ -23,17 +22,16 @@
 											]
 										}
 									}
-								}
-							],
+								},
 							"name": "minecraft:bookshelf"
 						},
 						{
 							"type": "minecraft:item",
-							"functions": [
-          {
-            "count": 1,
-            "function": "minecraft:set_count"
-          }
+							"modifier": [
+								{
+									"count": 1,
+									"type": "minecraft:set_count"
+								}
 							],
 							"name": "minecraft:book"
 						}

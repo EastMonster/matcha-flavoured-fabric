@@ -35,7 +35,6 @@
 		"SpawnEggInteractionMixin",
 		"VillagerAccessor",
 		"LivingEntityEquipmentMixin",
-		"VillagerFoodMixin",
 		"WolfTamingMixin",
 		"WheatShapeMixin"
 	],

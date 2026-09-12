@@ -9,21 +9,19 @@
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "matcha:adamant_tool"
-                        }
-                      ]
-                    }
+              "condition": {
+                "type": "minecraft:match_tool",
+                "predicate": {
+                  "predicates": {
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "matcha:adamant_tool"
+                      }
+                    ]
                   }
                 }
-              ],
-              "functions": [
+              },
+              "modifier": [
                 {
                   "add": false,
                   "count": {
@@ -31,45 +29,43 @@
                     "max": 2,
                     "min": 1
                   },
-                  "function": "minecraft:set_count"
+                  "type": "minecraft:set_count"
                 },
                 {
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
+                  "type": "minecraft:apply_bonus"
                 },
                 {
-                  "function": "minecraft:apply_bonus",
                   "enchantment": "matcha:electrum_tool",
-                  "formula": "minecraft:ore_drops"
+                  "formula": "minecraft:ore_drops",
+                  "type": "minecraft:apply_bonus"
                 }
               ],
               "name": "minecraft:copper_ingot"
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
+              "condition": {
+                "type": "minecraft:match_tool",
+                "predicate": {
+                  "predicates": {
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
                         }
-                      ]
-                    }
+                      }
+                    ]
                   }
                 }
-              ],
+              },
               "name": "minecraft:copper_ore"
             },
             {
               "type": "minecraft:item",
-              "functions": [
+              "modifier": [
                 {
                   "add": false,
                   "count": {
@@ -77,20 +73,20 @@
                     "max": 2,
                     "min": 1
                   },
-                  "function": "minecraft:set_count"
+                  "type": "minecraft:set_count"
                 },
                 {
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
+                  "type": "minecraft:apply_bonus"
                 },
                 {
-                  "function": "minecraft:apply_bonus",
                   "enchantment": "matcha:electrum_tool",
-                  "formula": "minecraft:ore_drops"
+                  "formula": "minecraft:ore_drops",
+                  "type": "minecraft:apply_bonus"
                 },
                 {
-                  "function": "minecraft:explosion_decay"
+                  "type": "minecraft:explosion_decay"
                 }
               ],
               "name": "minecraft:raw_copper"

@@ -8,9 +8,7 @@
 				{
 					"type": "minecraft:item",
 					"name": "matcha:avesta",
-					"weight": 1,
-					"conditions": []
-				}
+					"weight": 1}
 			]
 		}
 	],

@@ -7,7 +7,7 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:white_wool",
-					"functions": []
+					"modifier": []
 				}
 			],
 			"rolls": {
@@ -15,18 +15,16 @@
 				"max": 3,
 				"min": 1
 			},
-			"functions": [
+			"modifier": [
 				{
-					"function": "minecraft:apply_bonus",
+					"type": "minecraft:apply_bonus",
 					"enchantment": "minecraft:looting",
 					"formula": "minecraft:uniform_bonus_count",
 					"parameters": {
 						"bonusMultiplier": 3
 					}
 				}
-			],
-			"conditions": []
-		}
+			]}
 	],
 	"random_sequence": "minecraft:shearing/sheep/white"
 }

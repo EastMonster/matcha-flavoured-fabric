@@ -9,9 +9,8 @@
           "children": [
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
+              "condition": {
+                  "type": "minecraft:match_tool",
                   "predicate": {
                     "predicates": {
                       "minecraft:enchantments": [
@@ -24,8 +23,7 @@
                       ]
                     }
                   }
-                }
-              ],
+                },
               "name": "minecraft:gravel"
             }
           ]
@@ -39,11 +37,10 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:dirt",
-          "conditions": [
-            {
-              "condition": "minecraft:inverted",
+          "condition": {
+              "type": "minecraft:inverted",
               "term": {
-                "condition": "minecraft:match_tool",
+                "type": "minecraft:match_tool",
                 "predicate": {
                   "predicates": {
                     "minecraft:enchantments": [
@@ -58,7 +55,6 @@
                 }
               }
             }
-          ]
         }
       ]
     },
@@ -68,11 +64,10 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:flint",
-          "conditions": [
-            {
-              "condition": "minecraft:inverted",
+          "condition": {
+              "type": "minecraft:inverted",
               "term": {
-                "condition": "minecraft:match_tool",
+                "type": "minecraft:match_tool",
                 "predicate": {
                   "predicates": {
                     "minecraft:enchantments": [
@@ -87,7 +82,6 @@
                 }
               }
             }
-          ]
         }
       ]
     }

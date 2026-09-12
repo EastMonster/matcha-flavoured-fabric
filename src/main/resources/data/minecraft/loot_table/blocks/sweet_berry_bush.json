@@ -1,29 +1,27 @@
 {
 	"type": "minecraft:block",
-	"functions": [
+	"modifier": [
 		{
-			"function": "minecraft:explosion_decay"
+			"type": "minecraft:explosion_decay"
 		}
 	],
 	"pools": [
 		{
 			"bonus_rolls": 0,
-			"conditions": [
-				{
+			"condition": {
 					"block": "minecraft:sweet_berry_bush",
-					"condition": "minecraft:block_state_property",
+					"type": "minecraft:match_block",
 					"properties": {
 						"age": "3"
 					}
-				}
-			],
+				},
 			"entries": [
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:sweet_berries",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -54,7 +52,7 @@
 					]
 				}
 			],
-			"functions": [
+			"modifier": [
 				{
 					"add": false,
 					"count": {
@@ -62,18 +60,18 @@
 						"max": 3,
 						"min": 2
 					},
-					"function": "minecraft:set_count"
+					"type": "minecraft:set_count"
 				},
 				{
 					"enchantment": "minecraft:fortune",
 					"formula": "minecraft:uniform_bonus_count",
-					"function": "minecraft:apply_bonus",
+					"type": "minecraft:apply_bonus",
 					"parameters": {
 						"bonusMultiplier": 1
 					}
 				},
 				{
-					"function": "minecraft:apply_bonus",
+					"type": "minecraft:apply_bonus",
 					"enchantment": "matcha:electrum_tool",
 					"formula": "minecraft:uniform_bonus_count",
 					"parameters": {
@@ -85,22 +83,20 @@
 		},
 		{
 			"bonus_rolls": 0,
-			"conditions": [
-				{
+			"condition": {
 					"block": "minecraft:sweet_berry_bush",
-					"condition": "minecraft:block_state_property",
+					"type": "minecraft:match_block",
 					"properties": {
 						"age": "2"
 					}
-				}
-			],
+				},
 			"entries": [
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:sweet_berries",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{
@@ -131,7 +127,7 @@
 					]
 				}
 			],
-			"functions": [
+			"modifier": [
 				{
 					"add": false,
 					"count": {
@@ -139,18 +135,18 @@
 						"max": 2,
 						"min": 1
 					},
-					"function": "minecraft:set_count"
+					"type": "minecraft:set_count"
 				},
 				{
 					"enchantment": "minecraft:fortune",
 					"formula": "minecraft:uniform_bonus_count",
-					"function": "minecraft:apply_bonus",
+					"type": "minecraft:apply_bonus",
 					"parameters": {
 						"bonusMultiplier": 1
 					}
 				},
 				{
-					"function": "minecraft:apply_bonus",
+					"type": "minecraft:apply_bonus",
 					"enchantment": "matcha:electrum_tool",
 					"formula": "minecraft:uniform_bonus_count",
 					"parameters": {

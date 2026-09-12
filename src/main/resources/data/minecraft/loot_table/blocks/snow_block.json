@@ -8,9 +8,8 @@
 					"children": [
 						{
 							"type": "minecraft:item",
-							"conditions": [
-								{
-									"condition": "minecraft:match_tool",
+							"condition": {
+									"type": "minecraft:match_tool",
 									"predicate": {
 										"predicates": {
 											"minecraft:enchantments": [
@@ -23,25 +22,24 @@
 											]
 										}
 									}
-								}
-							],
+								},
 							"name": "minecraft:snow_block"
 						},
 						{
 							"type": "minecraft:item",
-							"functions": [
+							"modifier": [
 								{
-									"function": "minecraft:set_components",
+									"type": "minecraft:set_components",
 									"components": {
 										"minecraft:max_stack_size": 64
 									}
 								},
 								{
 									"count": 4,
-									"function": "minecraft:set_count"
+									"type": "minecraft:set_count"
 								},
 								{
-									"function": "minecraft:explosion_decay"
+									"type": "minecraft:explosion_decay"
 								}
 							],
 							"name": "minecraft:snowball"

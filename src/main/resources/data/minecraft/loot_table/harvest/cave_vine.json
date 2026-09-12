@@ -7,9 +7,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:glow_berries",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [
 									{

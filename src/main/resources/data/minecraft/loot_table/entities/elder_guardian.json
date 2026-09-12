@@ -7,18 +7,16 @@
 				{
 					"type": "minecraft:loot_table",
 					"value": "minecraft:gameplay/fishing",
-					"functions": []
+					"modifier": []
 				}
 			],
 			"rolls": 3
 		},
 		{
 			"bonus_rolls": 0,
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
-				}
-			],
+			"condition": {
+					"type": "minecraft:killed_by_player"
+				},
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
@@ -36,11 +34,9 @@
 				}
 			],
 			"rolls": 1,
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
+			"condition": {
+					"type": "minecraft:killed_by_player"
 				}
-			]
 		},
 		{
 			"rolls": 1,
@@ -50,11 +46,9 @@
 					"value": "matcha:kleis_items/opal"
 				}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:killed_by_player"
+			"condition": {
+					"type": "minecraft:killed_by_player"
 				}
-			]
 		}
 	],
 	"random_sequence": "minecraft:entities/elder_guardian"

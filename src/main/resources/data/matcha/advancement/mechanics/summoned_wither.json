@@ -3,9 +3,9 @@
 		"summon_wither": {
 			"trigger": "minecraft:summoned_entity",
 			"conditions": {
-				"entity": {
+				"entity": {"type":"minecraft:entity_properties","entity":"this","predicate":{
 					"minecraft:entity_type": "minecraft:wither"
-				}
+				}}
 			}
 		}
 	},
