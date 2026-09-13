@@ -2,6 +2,7 @@ package monster.east.matchaff.mechanic;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.AdvancementHolder;
@@ -99,6 +100,7 @@ final class BeaconKindlingMechanics {
 	}
 
 	static void init() {
+		ServerEntityEvents.ENTITY_LOAD.register(BeaconKindlingMechanics::discardOrphanTrader);
 		ServerLifecycleEvents.SERVER_STOPPING.register(server -> save(server, server.getTickCount()));
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			BEACONS.clear();
@@ -172,9 +174,10 @@ final class BeaconKindlingMechanics {
 				if (trader != null) {
 					trader.setPos(task.pos().getX() + 1.5, task.pos().getY(), task.pos().getZ() + 0.5);
 					trader.setInvulnerable(true);
+					trader.setDespawnDelay(Math.max(1, 18000 - elapsed));
 					trader.addTag("summoned_by_beacon");
-					level.addFreshEntity(trader);
 					BEACONS.put(owner, new BeaconTask(task.level(), task.pos(), task.startTick(), trader.getUUID()));
+					level.addFreshEntity(trader);
 					server.getPlayerList().broadcastSystemMessage(
 							Component.translatable("message.matcha.wandering_trader.summoned")
 							.withStyle(ChatFormatting.GRAY), false);
@@ -205,9 +208,10 @@ final class BeaconKindlingMechanics {
 	) {
 		ServerLevel level = server.getLevel(task.level());
 		if (level != null) {
-			if (task.trader() != null && level.getEntity(task.trader()) != null) {
-				Entity trader = level.getEntity(task.trader());
-				level.sendParticles(ParticleTypes.POOF, trader.getX(), trader.getY() + 0.5, trader.getZ(),
+			Entity trader = task.trader() == null ? null : level.getEntityInAnyDimension(task.trader());
+			if (trader != null) {
+				ServerLevel traderLevel = (ServerLevel) trader.level();
+				traderLevel.sendParticles(ParticleTypes.POOF, trader.getX(), trader.getY() + 0.5, trader.getZ(),
 						50, 0.2, 1.0, 0.2, 0);
 				trader.discard();
 			}
@@ -234,6 +238,17 @@ final class BeaconKindlingMechanics {
 							.withStyle(ChatFormatting.GRAY), false);
 		}
 		save(server, server.getTickCount());
+	}
+
+	private static void discardOrphanTrader(Entity entity, ServerLevel level) {
+		if (entity.getType() != EntityTypes.WANDERING_TRADER
+				|| !entity.entityTags().contains("summoned_by_beacon")) {
+			return;
+		}
+		load(level.getServer(), level.getServer().getTickCount());
+		if (BEACONS.values().stream().noneMatch(task -> entity.getUUID().equals(task.trader()))) {
+			entity.discard();
+		}
 	}
 
 	private static BeaconSavedData data(MinecraftServer server) {
