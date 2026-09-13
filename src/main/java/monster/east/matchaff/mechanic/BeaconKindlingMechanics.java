@@ -27,6 +27,7 @@ import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +38,9 @@ final class BeaconKindlingMechanics {
 			Identifier.fromNamespaceAndPath("matcha", "tutorial/light_beacon");
 
 	private record BeaconTask(ResourceKey<Level> level, BlockPos pos, int startTick, UUID trader) {
+	}
+
+	record BeaconStatus(int remainingTicks, boolean traderSummoned) {
 	}
 
 	private record PersistedBeacon(
@@ -158,6 +162,21 @@ final class BeaconKindlingMechanics {
 				end(server, owner, task, false, true);
 			}
 		}
+	}
+
+	static BeaconStatus status(MinecraftServer server, ResourceKey<Level> level, BlockPos pos) {
+		int tick = server.getTickCount();
+		load(server, tick);
+		return BEACONS.values().stream()
+				.filter(task -> task.level().equals(level) && task.pos().equals(pos))
+				.map(task -> {
+					int limit = task.trader() == null ? 12000 : 18000;
+					return new BeaconStatus(
+							Math.max(0, limit - Math.max(0, tick - task.startTick())), task.trader() != null);
+				})
+				.filter(status -> status.remainingTicks() > 0)
+				.min(Comparator.comparingInt(BeaconStatus::remainingTicks))
+				.orElse(new BeaconStatus(0, false));
 	}
 
 	private static void end(

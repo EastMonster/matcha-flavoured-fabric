@@ -3,7 +3,8 @@
 	"package": "monster.east.matchaff.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"JadeHarvestToolMixin"
+		"JadeHarvestToolMixin",
+		"JadeBeaconKindlingMixin"
 	],
 	"injectors": {
 		"defaultRequire": 0

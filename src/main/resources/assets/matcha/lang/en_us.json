@@ -975,5 +975,7 @@
 	"matcha.config.vanilla_preview": "Vanilla Appearance (Beta)",
 	"matcha.config.vanilla_preview.pack": "Matcha Flavoured: Vanilla Appearance Preview",
 	"matcha.config.vanilla_preview.tooltip": "Restore some modified textures to their vanilla versions.",
+	"tooltip.matcha.beacon_kindling.arrival": "Wandering Trader arrives in: %s",
+	"tooltip.matcha.beacon_kindling.departure": "Wandering Trader leaves in: %s",
 	"trinkets.slot.head.earring": "Earring"
 }

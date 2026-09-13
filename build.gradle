@@ -7,6 +7,7 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+	maven { url = 'https://api.modrinth.com/maven' }
 	maven { url = 'https://maven.terraformersmc.com/releases/' }
 	maven { url = 'https://maven.blamejared.com/' }
 	maven { url = 'https://maven.nucleoid.xyz/releases' }
@@ -43,6 +44,7 @@ dependencies {
 	compileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 	compileOnly "mezz.jei:jei-${project.minecraft_version}-fabric-api:${project.jei_version}"
 	compileOnly "eu.pb4:trinkets:${project.trinkets_version}"
+	compileOnly "maven.modrinth:jade:${project.jade_version}+fabric"
 }
 
 processResources {

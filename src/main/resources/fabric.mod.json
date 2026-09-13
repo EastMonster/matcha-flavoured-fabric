@@ -54,6 +54,9 @@
 		],
 		"jei_mod_plugin": [
 			"monster.east.matchaff.client.MatchaJeiPlugin"
+		],
+		"jade": [
+			"monster.east.matchaff.mechanic.MatchaJadePlugin"
 		]
 	},
 	"mixins": [
@@ -72,6 +75,7 @@
 	},
 	"suggests": {
 		"modmenu": "*",
+		"jade": "*",
 		"trinkets_updated": "*"
 	}
 }
