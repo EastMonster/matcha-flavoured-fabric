@@ -119,7 +119,8 @@ public final class SimpleItemRegistrar {
 			case "shears" -> new ShearsItem(properties);
 			case "flint_and_steel" -> new FlintAndSteelItem(properties);
 			case "splash_potion" -> new SplashPotionItem(properties);
-			case "spawn_egg" -> new SpawnEggItem(properties);
+			case "spawn_egg" -> "warding_stone".equals(definition.id)
+					? new WardingStoneItem(properties) : new SpawnEggItem(properties);
 			case "item_frame" -> new ItemFrameItem(EntityTypes.ITEM_FRAME, properties);
 			case "instrument" -> new InstrumentItem(properties);
 			case "music_disc" -> new Item(properties);

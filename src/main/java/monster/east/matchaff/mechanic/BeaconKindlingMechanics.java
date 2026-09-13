@@ -23,8 +23,14 @@ import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -100,7 +106,21 @@ final class BeaconKindlingMechanics {
 		});
 	}
 
-	static void place(ServerPlayer player, ServerLevel level, BlockPos pos) {
+	static boolean place(
+			ServerPlayer player, ServerLevel level, InteractionHand hand, BlockHitResult hit, ItemStack stack
+	) {
+		BlockPlaceContext context = new BlockPlaceContext(level, player, hand, stack, hit);
+		if (!context.canPlace()) {
+			return false;
+		}
+		BlockPos pos = context.getClickedPos();
+		BlockState state = Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.SIGNAL_FIRE, true);
+		if (!state.canSurvive(level, pos)
+				|| !level.isUnobstructed(state, pos, CollisionContext.placementContext(player))
+				|| !level.setBlock(pos, state, 3)) {
+			return false;
+		}
+
 		int tick = level.getServer().getTickCount();
 		load(level.getServer(), tick);
 		AdvancementHolder advancement = level.getServer().getAdvancements().get(LIGHT_BEACON);
@@ -115,13 +135,14 @@ final class BeaconKindlingMechanics {
 		if (BEACONS.containsKey(player.getUUID())) {
 			player.sendSystemMessage(Component.translatable("message.matcha.wandering_trader.beacon_placed")
 					.withStyle(ChatFormatting.GRAY));
-			return;
+			return true;
 		}
 		BEACONS.put(player.getUUID(), new BeaconTask(level.dimension(), pos.immutable(), tick, null));
 		save(level.getServer(), tick);
 		level.getServer().getPlayerList().broadcastSystemMessage(
 				Component.translatable("message.matcha.wandering_trader.initialise")
 				.withStyle(ChatFormatting.GRAY), false);
+		return true;
 	}
 
 	static void tick(MinecraftServer server, int tick) {

@@ -165,8 +165,8 @@ public final class MechanicMechanics {
 				? clicked : clicked.relative(hit.getDirection());
 		if (amnestic) {
 			useAmnestic(serverPlayer, (ServerLevel) level, target);
-		} else {
-			BeaconKindlingMechanics.place(serverPlayer, (ServerLevel) level, target);
+		} else if (!BeaconKindlingMechanics.place(serverPlayer, (ServerLevel) level, hand, hit, stack)) {
+			return InteractionResult.FAIL;
 		}
 		if (!serverPlayer.isCreative()) {
 			stack.shrink(1);

@@ -95,7 +95,13 @@ final class WardingStoneMechanics {
 			boolean anchored = level.getBlockState(pos).is(Blocks.LODESTONE);
 			if (!setup) {
 				if (!anchored) {
-					level.setBlockAndUpdate(pos, Blocks.LODESTONE.defaultBlockState());
+					var lodestone = Blocks.LODESTONE.defaultBlockState();
+					if (!level.getBlockState(pos).canBeReplaced()
+							|| !lodestone.canSurvive(level, pos)
+							|| !level.setBlockAndUpdate(pos, lodestone)) {
+						stone.discard();
+						continue;
+					}
 				}
 				level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.25F, 1.0F);
 				level.sendParticles(ParticleTypes.SCULK_SOUL, stoneX, stoneY + 0.5, stoneZ,
