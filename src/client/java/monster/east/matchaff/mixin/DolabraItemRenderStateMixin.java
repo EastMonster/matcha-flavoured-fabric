@@ -5,6 +5,7 @@ import monster.east.matchaff.client.DolabraVisuals;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.item.ItemStackRenderState;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,6 +17,9 @@ public abstract class DolabraItemRenderStateMixin {
 	@Unique
 	private boolean matcha$guiMirror;
 
+	@Shadow
+	public abstract void appendModelIdentityElement(Object element);
+
 	@Inject(method = "clear", at = @At("HEAD"))
 	private void matcha$clearGuiMirror(CallbackInfo ci) {
 		this.matcha$guiMirror = false;
@@ -25,6 +29,7 @@ public abstract class DolabraItemRenderStateMixin {
 	private void matcha$markGuiMirror(CallbackInfoReturnable<ItemStackRenderState.LayerRenderState> cir) {
 		if (DolabraVisuals.guiMirrorRequested()) {
 			this.matcha$guiMirror = true;
+			this.appendModelIdentityElement(Boolean.TRUE);
 		}
 	}
 
