@@ -810,6 +810,7 @@
 	"item.matcha.seitan": "Wheatlire",
 	"item.matcha.oil": "Eal",
 	"item.matcha.stego_chicken_nugget": "Harweeded Entask Chicken Climper",
+	"item.matcha.brachio_chicken_nugget": "Longneck Entask Chicken Climper",
 	"item.matcha.ptero_chicken_nugget": "Flying Entask Chicken Climper",
 	"item.matcha.tricero_chicken_nugget": "Horned Entask Chicken Climper",
 	"item.matcha.nopales": "Thorntree Lith",
@@ -822,6 +823,7 @@
 	"item.matcha.pumpkin_curry": "Harvestovet Pepper Broth",
 	"advancements.matcha.cook_pumpkin_curry.title": "Strongbroth",
 	"advancements.matcha.cook_pumpkin_curry.desc": "Make Harvestovet Pepper Broth",
+	"advancements.matcha.anglers_almanac.chance": "Likelihood: %s",
 	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": "",
 	"trinkets.slot.head.earring": "Earring"
 }

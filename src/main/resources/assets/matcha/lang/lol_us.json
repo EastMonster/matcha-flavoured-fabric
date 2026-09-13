@@ -757,9 +757,11 @@
 	"item.matcha.seitan": "plant but lik meat?",
 	"item.matcha.oil": "blak mony goo",
 	"item.matcha.stego_chicken_nugget": "chiken but pointy dino",
+	"item.matcha.brachio_chicken_nugget": "chickn but BIG BIG dino",
 	"item.matcha.ptero_chicken_nugget": "chiickn but wingz dino",
 	"item.matcha.tricero_chicken_nugget": "chickn bur rino dino",
 	"item.matcha.nopales": "spiky plant but food?",
+	"advancements.matcha.anglers_almanac.chance": "u get it only %s o times",
 	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": "",
 	"trinkets.slot.head.earring": "Ear Bling"
 }
