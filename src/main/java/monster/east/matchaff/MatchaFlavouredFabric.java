@@ -75,7 +75,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 			TrinketsCompat.init();
 		}
 		EffectsMechanics.init();
-		MechanicMechanics.init();
+		GameplayMechanics.init();
 		AbbeyMechanics.init();
 		WorldMechanics.init();
 		FoodHealMechanics.init();
