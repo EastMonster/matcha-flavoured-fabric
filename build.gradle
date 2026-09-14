@@ -18,11 +18,15 @@ repositories {
 	// for more information about repositories.
 }
 
+
+def devRunDir = "run/mc-${project.minecraft_version}"
 loom {
 	splitEnvironmentSourceSets()
 
-  runs {
+    runs {
 		client {
+            runDir "${devRunDir}/"
+            
 			programArgs '--username', 'East_Monster'
 			programArgs '--width', '1920', '--height', '1200'
 		}
