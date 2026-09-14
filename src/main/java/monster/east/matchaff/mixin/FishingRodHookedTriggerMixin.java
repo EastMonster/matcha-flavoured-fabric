@@ -3,6 +3,7 @@ package monster.east.matchaff.mixin;
 import java.util.Collection;
 
 import monster.east.matchaff.mechanic.FishingSoundMechanics;
+import monster.east.matchaff.mechanic.FishingStatsMechanics;
 
 import net.minecraft.advancements.triggers.FishingRodHookedTrigger;
 import net.minecraft.server.level.ServerPlayer;
@@ -25,5 +26,6 @@ public abstract class FishingRodHookedTriggerMixin {
 			ServerPlayer player, ItemStack rod, FishingHook hook, Collection<ItemStack> items, CallbackInfo ci
 	) {
 		FishingSoundMechanics.onCaught(player, items);
+		FishingStatsMechanics.onCaught(player, items);
 	}
 }

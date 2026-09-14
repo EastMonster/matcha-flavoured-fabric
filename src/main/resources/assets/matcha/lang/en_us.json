@@ -978,5 +978,6 @@
 	"matcha.config.vanilla_preview.pack": "Matcha Flavoured: Vanilla Appearance Preview",
 	"matcha.config.vanilla_preview.tooltip": "Restore some modified textures to their vanilla versions.",
 	"config.jade.plugin_matcha-flavoured.beacon_kindling": "Beacon Kindling",
-	"trinkets.slot.head.earring": "Earring"
+	"trinkets.slot.head.earring": "Earring",
+	"stat_type.matcha.fish_caught": "Fishing catches"
 }

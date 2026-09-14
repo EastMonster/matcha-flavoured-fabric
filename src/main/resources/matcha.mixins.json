@@ -39,6 +39,8 @@
 	],
 	"client": [
 		"AirBubblesHudMixin",
+		"AdvancementsScreenMixin",
+		"AdvancementWidgetMixin",
 		"ClientAdvancementsAccessor",
 		"ClientLevelMixin",
 		"CloudRendererMixin",
