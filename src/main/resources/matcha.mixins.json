@@ -19,6 +19,8 @@
 		"RecipeManagerMixin",
 		"RecipeCraftedMixin",
 		"ItemInstanceMixin",
+		"AdvancementNodeMixin",
+		"AdvancementTreeMixin",
 		"ServerAdvancementManagerMixin",
 		"SmithingTransformRecipeMixin",
 		"ExperienceMixin",
