@@ -3,6 +3,7 @@
     "type": "minecraft:select",
     "property": "minecraft:trim_material",
     "cases": [
+      {
         "model": {
           "type": "minecraft:model",
           "model": "minecraft:item/copper_chestplate_amethyst_trim"
