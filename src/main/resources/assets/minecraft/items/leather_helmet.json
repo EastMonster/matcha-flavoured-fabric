@@ -6,21 +6,39 @@
 			{
 				"model": {
 					"type": "minecraft:model",
-					"model": "minecraft:item/leather_helmet_electrum_trim"
+					"model": "minecraft:item/leather_helmet_electrum_trim",
+					"tints": [
+						{
+							"type": "minecraft:dye",
+							"default": -6265536
+						}
+					]
 				},
 				"when": "matcha:electrum"
 			},
 			{
 				"model": {
 					"type": "minecraft:model",
-					"model": "minecraft:item/leather_helmet_hepatizon_trim"
+					"model": "minecraft:item/leather_helmet_hepatizon_trim",
+					"tints": [
+						{
+							"type": "minecraft:dye",
+							"default": -6265536
+						}
+					]
 				},
 				"when": "matcha:hepatizon"
 			},
 			{
 				"model": {
 					"type": "minecraft:model",
-					"model": "minecraft:item/leather_helmet_shakudo_trim"
+					"model": "minecraft:item/leather_helmet_shakudo_trim",
+					"tints": [
+						{
+							"type": "minecraft:dye",
+							"default": -6265536
+						}
+					]
 				},
 				"when": "matcha:shakudo"
 			},
