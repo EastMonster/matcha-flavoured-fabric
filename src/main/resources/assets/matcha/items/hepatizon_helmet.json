@@ -6,6 +6,27 @@
 			{
 				"model": {
 					"type": "minecraft:model",
+					"model": "matcha:item/hepatizon_helmet_electrum_trim"
+				},
+				"when": "matcha:electrum"
+			},
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:item/hepatizon_helmet_hepatizon_trim"
+				},
+				"when": "matcha:hepatizon"
+			},
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:item/hepatizon_helmet_shakudo_trim"
+				},
+				"when": "matcha:shakudo"
+			},
+			{
+				"model": {
+					"type": "minecraft:model",
 					"model": "matcha:item/hepatizon_helmet_amethyst_trim"
 				},
 				"when": "minecraft:amethyst"

@@ -6,6 +6,27 @@
 			{
 				"model": {
 					"type": "minecraft:model",
+					"model": "matcha:item/shakudo_leggings_electrum_trim"
+				},
+				"when": "matcha:electrum"
+			},
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:item/shakudo_leggings_hepatizon_trim"
+				},
+				"when": "matcha:hepatizon"
+			},
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:item/shakudo_leggings_shakudo_trim"
+				},
+				"when": "matcha:shakudo"
+			},
+			{
+				"model": {
+					"type": "minecraft:model",
 					"model": "matcha:item/shakudo_leggings_amethyst_trim"
 				},
 				"when": "minecraft:amethyst"
@@ -83,7 +104,7 @@
 		],
 		"fallback": {
 			"type": "minecraft:model",
-			"model": "minecraft:item/shakudo_leggings"
+			"model": "matcha:item/shakudo_leggings"
 		}
 	}
 }
