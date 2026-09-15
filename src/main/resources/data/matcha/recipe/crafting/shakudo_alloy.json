@@ -11,6 +11,9 @@
 	],
 	"result": {
 		"count": 1,
-		"id": "matcha:shakudo"
+		"id": "matcha:shakudo",
+		"components": {
+			"minecraft:provides_trim_material": "matcha:shakudo"
+		}
 	}
 }
