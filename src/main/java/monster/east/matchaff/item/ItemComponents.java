@@ -14,6 +14,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.item.component.BundleContents;
+import net.minecraft.world.item.component.DeathProtection;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.component.Tool;
@@ -84,6 +85,8 @@ public class ItemComponents {
 					properties.delayedComponent(DataComponents.JUKEBOX_PLAYABLE, provider -> decode(DataComponents.JUKEBOX_PLAYABLE.codec(), provider, json));
 			case "minecraft:consumable" ->
 					properties.delayedComponent(DataComponents.CONSUMABLE, provider -> decode(DataComponents.CONSUMABLE.codec(), provider, json));
+			case "minecraft:death_protection" ->
+					properties.delayedComponent(DataComponents.DEATH_PROTECTION, provider -> decode(DeathProtection.CODEC, provider, json));
 			case "minecraft:use_remainder" ->
 					properties.delayedComponent(DataComponents.USE_REMAINDER, provider -> decode(UseRemainder.CODEC, provider, json));
 			case "minecraft:food" ->

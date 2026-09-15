@@ -12,7 +12,6 @@
 		"minecraft:netherite_boots",
 		"minecraft:netherite_sword",
 		"matcha:adamant_claymore",
-		"matcha:adamant_dolabra",
 		"matcha:adamant_mattock"
 	],
 	"anvil_cost": 0,
@@ -45,7 +44,6 @@
 		"minecraft:netherite_boots",
 		"minecraft:netherite_sword",
 		"matcha:adamant_claymore",
-		"matcha:adamant_dolabra",
 		"matcha:adamant_mattock"
 	],
 	"weight": 1

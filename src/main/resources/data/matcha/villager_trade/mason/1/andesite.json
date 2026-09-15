@@ -12,7 +12,7 @@
 			"minecraft:item_name": {
 				"translate": "trade.matcha.bulk_andesite"
 			},
-			"minecraft:item_model": "minecraft:andesite",
+			"minecraft:item_model": "matcha:bulk_andesite",
 			"minecraft:lore": [
 				{
 					"translate": "trade.matcha.bulk_andesite.desc",

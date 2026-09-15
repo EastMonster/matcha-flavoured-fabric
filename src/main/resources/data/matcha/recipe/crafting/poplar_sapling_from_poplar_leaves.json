@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "poplar_sapling",
+	"category": "misc",
+	"ingredients": [
+		[
+			"minecraft:yellow_poplar_leaves",
+			"minecraft:orange_poplar_leaves",
+			"minecraft:red_poplar_leaves"
+		]
+	],
+	"result": {
+		"count": 1,
+		"id": "minecraft:poplar_sapling"
+	}
+}

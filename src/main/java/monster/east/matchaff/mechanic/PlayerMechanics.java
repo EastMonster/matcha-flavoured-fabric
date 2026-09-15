@@ -1,25 +1,19 @@
 package monster.east.matchaff.mechanic;
 
 import net.minecraft.ChatFormatting;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
-import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.numbers.StyledFormat;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,7 +21,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
@@ -51,7 +44,8 @@ import monster.east.matchaff.network.SleepFastForwardPayload;
  * loop:
  *   * hunger bar is meaningless: food >= 10 drains (hunger 256), food <= 6 is
  *     force-saturated so sprinting always works; natural regen stays off
- *   * crystal hearts: auto-consumed from the inventory up to 30 hearts.
+ *   * crystal hearts: actively used to gain hearts below the 30-heart cap,
+ *     and provide vanilla death protection while held.
  *     Death costs two points and can push a player below 10 hearts; the
  *     world-wide minimum starts at 20 and drops by 2 each time the first
  *     player reaches an "age" milestone. Easy keeps the 20-point floor.
@@ -65,9 +59,6 @@ public final class PlayerMechanics {
 	private static final int ABSOLUTE_MINIMUM_HEARTS = 6;
 	private static final TagKey<Biome> FROZEN_BIOME = TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("minecraft", "is_frozen"));
 	private static final Identifier FREEZING_PROTECTION = Identifier.fromNamespaceAndPath("matcha", "freezing_protection");
-	private static final Identifier HEART_CONTAINER_OBTAINED = Identifier.fromNamespaceAndPath(
-			"matcha", "mechanics/heart_container_obtained"
-	);
 	private static final String CURRENT_MINIMUM = "current_minimum_hearts";
 	private static final String[] AGE_HOLDERS = {
 			"copper_age", "iron_age", "diamond_age", "nether_age",
@@ -79,9 +70,6 @@ public final class PlayerMechanics {
 			"matcha:tutorial/obtain_electrum", "matcha:tutorial/obtain_adamant",
 			"matcha:tutorial/find_stronghold"
 	};
-	private static final AttachmentType<Integer> HEART_INVENTORY_VERSION = AttachmentRegistry.create(
-			Identifier.fromNamespaceAndPath("matcha-flavoured", "heart_inventory_version")
-	);
 	private static boolean sleepFastForwarding;
 
 	private static final String HEARTS_OBJECTIVE = "Hearts";
@@ -125,11 +113,7 @@ public final class PlayerMechanics {
 		});
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
 			if (entity instanceof ServerPlayer player) {
-				int hearts = getHearts(player);
-				int minimum = minimumHearts(player);
-				hearts = Math.max(minimum, hearts - 2);
-				setHearts(player, hearts);
-				applyMaxHealth(player, hearts);
+				loseHeart(player);
 			}
 		});
 	}
@@ -198,58 +182,31 @@ public final class PlayerMechanics {
 	}
 
 	private static void manageHearts(ServerPlayer player) {
-		int hearts = getHearts(player);
-		applyMaxHealth(player, hearts);
-		// Creative refills items, so an auto-consume loop would never end there
-		// (the datapack's own comment warned about this for estus).
-		if (player.isCreative() || hearts >= MAX_HEARTS) {
-			return;
-		}
-		var inventory = player.getInventory();
-		int inventoryVersion = inventory.getTimesChanged();
-		AdvancementHolder obtained = player.level().getServer().getAdvancements().get(HEART_CONTAINER_OBTAINED);
-		boolean newlyObtained = obtained != null && player.getAdvancements().getOrStartProgress(obtained).isDone();
-		if (!newlyObtained && player.getAttachedOrElse(HEART_INVENTORY_VERSION, -1) == inventoryVersion) {
-			return;
-		}
-		player.setAttached(HEART_INVENTORY_VERSION, inventoryVersion);
-		Item heartContainer = heartContainerItem();
-		boolean consumed = false;
-		for (int slot = 0; slot < inventory.getContainerSize(); slot++) {
-			ItemStack stack = inventory.getItem(slot);
-			if (stack.isEmpty() || !stack.is(heartContainer)) {
-				continue;
-			}
-			while (!stack.isEmpty() && hearts < MAX_HEARTS) {
-				stack.shrink(1);
-				inventory.setChanged();
-				if (obtained != null) {
-					for (String criterion : obtained.value().criteria().keySet()) {
-						player.getAdvancements().revoke(obtained, criterion);
-					}
-				}
-				hearts = Math.min(MAX_HEARTS, hearts + 2);
-				setHearts(player, hearts);
-				player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 10, false, false));
-				consumed = true;
-			}
-		}
-		if (consumed) {
-			applyMaxHealth(player, hearts);
-			// One sound per pickup batch instead of one per heart container,
-			// matching the upstream Hashiru optimisation.
-			player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-					SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.5F, 0.0F);
-		}
+		applyMaxHealth(player, getHearts(player));
 	}
 
-	/**
-	 * Looked up lazily: the item registry only has matcha:crystal_heart after
-	 * the registrar ran, so a static field would resolve to air and match every
-	 * empty inventory slot.
-	 */
-	private static Item heartContainerItem() {
-		return BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", "crystal_heart"));
+	/** Called while a Crystal Heart is actively being consumed. */
+	public static void useCrystalHeart(ServerPlayer player) {
+		if (player.isCreative()) {
+			return;
+		}
+		int hearts = getHearts(player);
+		if (hearts >= MAX_HEARTS) {
+			return;
+		}
+		player.hurtServer(player.level(), player.level().damageSources().magic(), 999.0F);
+		hearts = Math.min(MAX_HEARTS, hearts + 2);
+		setHearts(player, hearts);
+		applyMaxHealth(player, hearts);
+		player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 10, false, false));
+		player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 20, 4, false, false));
+	}
+
+	/** Removes one heart container while respecting the current difficulty floor. */
+	public static void loseHeart(ServerPlayer player) {
+		int hearts = Math.max(minimumHearts(player), getHearts(player) - 2);
+		setHearts(player, hearts);
+		applyMaxHealth(player, hearts);
 	}
 
 	private static void manageExperience(ServerPlayer player) {

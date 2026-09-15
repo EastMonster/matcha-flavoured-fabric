@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "copper_torch",
+	"category": "misc",
+	"key": {
+		"C": "minecraft:copper_nugget",
+		"#": "minecraft:stick"
+	},
+	"pattern": [
+		"###",
+		"#C#",
+		"###"
+	],
+	"result": {
+		"count": 8,
+		"id": "minecraft:copper_torch"
+	}
+}

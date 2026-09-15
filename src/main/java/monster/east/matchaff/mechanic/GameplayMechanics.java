@@ -26,6 +26,7 @@ import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.entity.npc.villager.VillagerProfession;
 import net.minecraft.world.entity.animal.happyghast.HappyGhast;
+import net.minecraft.world.entity.monster.skeleton.WitherSkeleton;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
@@ -61,6 +62,7 @@ public final class GameplayMechanics {
 	private static final Identifier HAPPY_GHAST_HORN = id("mechanics/happy_ghast_horn");
 	private static final Identifier KILL_DRAGON = id("end/kill_dragon");
 	private static final Identifier SUMMONED_WITHER = id("mechanics/summoned_wither");
+	private static final Identifier ENTER_FORTRESS = id("mechanics/enter_fortress");
 	private static final AttachmentType<Integer> WATER_BOTTLE_INVENTORY_VERSION = AttachmentRegistry.create(
 			id("water_bottle_inventory_version")
 	);
@@ -103,6 +105,7 @@ public final class GameplayMechanics {
 				checkHappyGhast(player);
 				checkDragonReward(server, player);
 				checkSummonedWither(player, tick);
+				checkWitherSkeletons(player);
 				checkNetherWater(player);
 				checkCake(player);
 				stackWaterBottles(player);
@@ -274,6 +277,21 @@ public final class GameplayMechanics {
 		}
 		TimedMechanics.scheduleWither(player, tick);
 		WorldMechanics.revoke(player, SUMMONED_WITHER);
+	}
+
+	private static void checkWitherSkeletons(ServerPlayer player) {
+		if (!WorldMechanics.advancementDone(player, ENTER_FORTRESS)) {
+			return;
+		}
+		ServerLevel level = player.level();
+		for (WitherSkeleton skeleton : level.getEntitiesOfClass(WitherSkeleton.class,
+				player.getBoundingBox().inflate(5.0), skeleton ->
+						skeleton.isAlive() && skeleton.distanceToSqr(player) <= 25.0)) {
+			BlockPos block = BlockPos.containing(skeleton.getEyePosition().add(skeleton.getLookAngle()));
+			level.destroyBlock(block, true);
+			level.destroyBlock(block.below(), true);
+		}
+		WorldMechanics.revoke(player, ENTER_FORTRESS);
 	}
 
 	private static void checkNetherWater(ServerPlayer player) {

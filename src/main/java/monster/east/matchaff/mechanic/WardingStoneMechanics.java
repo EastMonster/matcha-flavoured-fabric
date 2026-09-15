@@ -150,31 +150,21 @@ final class WardingStoneMechanics {
 							&& u.distanceToSqr(stone) <= 26.0 * 26.0)) {
 				target.addEffect(new MobEffectInstance(
 						MobEffects.SLOWNESS, 40, 2, false, false));
+				level.sendParticles(ParticleTypes.SCULK_SOUL, target.getX(), target.getY() + 0.1, target.getZ(),
+						5, 0.25, 0.0, 0.25, 0.01);
 			}
 
 			if (level.getServer().getTickCount() % 10 == 0) {
-				LivingEntity generalTarget = nearestTarget(level, stone, 24.0, target -> true);
-				if (generalTarget != null && nearestTarget(level, generalTarget, 20.0,
-						target -> target.getType() == EntityTypes.WITHER) == null) {
-					level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
-							generalTarget.getX(), generalTarget.getY() + 2.0, generalTarget.getZ(),
-							1, 0.25, 0.25, 0.25, 0.025);
-					LivingEntity damageTarget = nearestTarget(level, generalTarget, 14.0, target -> true);
-					if (damageTarget != null) {
-						damageTarget.hurtServer(level, level.damageSources().fellOutOfWorld(), 7.0F);
-					}
+				LivingEntity witherTarget = nearestTarget(level, stone, 24.0,
+						target -> target.getType() == EntityTypes.WITHER, false);
+				if (witherTarget != null) {
+					damage(level, witherTarget, 2.0F);
+					continue;
 				}
 
-				LivingEntity witherTarget = nearestTarget(level, stone, 24.0,
-						target -> target.getType() == EntityTypes.WITHER);
-				if (witherTarget != null) {
-					level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME,
-							witherTarget.getX(), witherTarget.getY() + 2.5, witherTarget.getZ(),
-							2, 1.0, 1.0, 1.0, 0.5);
-					LivingEntity damageTarget = nearestTarget(level, witherTarget, 14.0, target -> true);
-					if (damageTarget != null) {
-						damageTarget.hurtServer(level, level.damageSources().fellOutOfWorld(), 2.0F);
-					}
+				LivingEntity damageTarget = nearestTarget(level, stone, 24.0, target -> true);
+				if (damageTarget != null) {
+					damage(level, damageTarget, 7.0F);
 				}
 			}
 		}
@@ -189,14 +179,27 @@ final class WardingStoneMechanics {
 	private static LivingEntity nearestTarget(
 			ServerLevel level, LivingEntity center, double radius, Predicate<LivingEntity> predicate
 	) {
+		return nearestTarget(level, center, radius, predicate, true);
+	}
+
+	private static LivingEntity nearestTarget(
+			ServerLevel level, LivingEntity center, double radius,
+			Predicate<LivingEntity> predicate, boolean requireTargetTag
+	) {
 		double radiusSquared = radius * radius;
 		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), target ->
-				target.is(WARDING_STONE_TARGETS)
+				(!requireTargetTag || target.is(WARDING_STONE_TARGETS))
 						&& predicate.test(target)
 						&& target.distanceToSqr(center) <= radiusSquared)
 				.stream()
 				.min(Comparator.comparingDouble(target -> target.distanceToSqr(center)))
 				.orElse(null);
+	}
+
+	private static void damage(ServerLevel level, LivingEntity target, float amount) {
+		level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, target.getX(), target.getEyeY(), target.getZ(),
+				10, 0.1, 0.2, 0.1, 0.05);
+		target.hurtServer(level, level.damageSources().fellOutOfWorld(), amount);
 	}
 
 	private static HolderSet<Structure> forbiddenStructures(ServerLevel level) {

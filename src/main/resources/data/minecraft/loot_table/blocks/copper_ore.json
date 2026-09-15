@@ -16,6 +16,45 @@
                     "predicates": {
                       "minecraft:enchantments": [
                         {
+                          "enchantments": "matcha:adamant_tool"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "functions": [
+                {
+                  "add": false,
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "max": 2,
+                    "min": 1
+                  },
+                  "function": "minecraft:set_count"
+                },
+                {
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:ore_drops",
+                  "function": "minecraft:apply_bonus"
+                },
+                {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "matcha:electrum_tool",
+                  "formula": "minecraft:ore_drops"
+                }
+              ],
+              "name": "minecraft:copper_ingot"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
                           "enchantments": "minecraft:silk_touch",
                           "levels": {
                             "min": 1
@@ -44,6 +83,11 @@
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:ore_drops",
                   "function": "minecraft:apply_bonus"
+                },
+                {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "matcha:electrum_tool",
+                  "formula": "minecraft:ore_drops"
                 },
                 {
                   "function": "minecraft:explosion_decay"

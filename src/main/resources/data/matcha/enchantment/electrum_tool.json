@@ -1,0 +1,22 @@
+{
+	"anvil_cost": 0,
+	"description": {
+		"translate": "enchantment.matcha.electrum_tool",
+		"color": "yellow"
+	},
+	"exclusive_set": "#minecraft:exclusive_set/mining",
+	"max_cost": {
+		"base": 1,
+		"per_level_above_first": 1
+	},
+	"max_level": 3,
+	"min_cost": {
+		"base": 1,
+		"per_level_above_first": 1
+	},
+	"slots": [
+		"mainhand"
+	],
+	"supported_items": "#minecraft:enchantable/mining_loot",
+	"weight": 3
+}
