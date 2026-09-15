@@ -939,5 +939,13 @@
 	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": "",
 	"advancements.matcha.anglers_almanac.sulfur_chunk.desc": "Какой-то комок. Возможно, намек на то, что тебя сейчас либо разорвёт в клочья, либо отправит в стратосферу гейзером. Ну или просто ингредиент для зелёного красителя. Фиг его знает.",
 	"advancements.matcha.anglers_almanac.goat_horn.desc": "Так как первое, что тебе нужно на рыбалке, это громкий способ сообщить всем, что ты снова поймал что-то, кроме рыбы.",
+	"trim_material.minecraft.iron": "Стальная",
+	"trim_material.minecraft.redstone": "Киноварная",
+	"trim_material.minecraft.emerald": "Патиновая",
+	"trim_material.matcha.electrum": "Электрумовая",
+	"trim_material.matcha.hepatizon": "Гепатизоновая",
+	"trim_material.matcha.shakudo": "Сякудовая",
+	"trim_material.matcha.silver": "Серебрянная",
+	"trim_material.minecraft.netherite": "Адамантовая",
 	"trinkets.slot.head.earring": "Серьга"
 }
