@@ -1,19 +1,22 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "equipment",
-  "ingredients": [
-    "minecraft:copper_ingot",
-    "minecraft:copper_ingot",
-    "minecraft:copper_ingot",
-    "minecraft:copper_ingot",
-    "minecraft:copper_ingot",
-    "minecraft:copper_ingot",
-    "minecraft:copper_ingot",
-    "minecraft:prismarine_crystals",
-    "gold_ingot"
-  ],
-  "result": {
-    "count": 1,
-    "id": "matcha:hepatizon"
-  }
+	"type": "minecraft:crafting_shapeless",
+	"category": "equipment",
+	"ingredients": [
+		"minecraft:copper_ingot",
+		"minecraft:copper_ingot",
+		"minecraft:copper_ingot",
+		"minecraft:copper_ingot",
+		"minecraft:copper_ingot",
+		"minecraft:copper_ingot",
+		"minecraft:copper_ingot",
+		"minecraft:prismarine_crystals",
+		"gold_ingot"
+	],
+	"result": {
+		"count": 1,
+		"id": "matcha:hepatizon",
+		"components": {
+			"minecraft:provides_trim_material": "matcha:hepatizon"
+		}
+	}
 }
