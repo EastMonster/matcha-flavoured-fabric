@@ -979,5 +979,13 @@
 	"matcha.config.vanilla_preview.tooltip": "Restore some modified textures to their vanilla versions.",
 	"config.jade.plugin_matcha-flavoured.beacon_kindling": "Beacon Kindling",
 	"trinkets.slot.head.earring": "Earring",
-	"stat_type.matcha.fish_caught": "Fishing catches"
+	"stat_type.matcha.fish_caught": "Fishing catches",
+	"trim_material.minecraft.iron": "Steel Material",
+	"trim_material.minecraft.netherite": "Iron Material",
+	"trim_material.minecraft.redstone": "Cinnabar Material",
+	"trim_material.minecraft.emerald": "Patina Material",
+	"trim_material.matcha.shakudo": "Shakudo Material",
+	"trim_material.matcha.hepatizon": "Hepatizon Material",
+	"trim_material.matcha.electrum": "Electrum Material",
+	"trim_material.matcha.silver": "Silver Material"
 }
