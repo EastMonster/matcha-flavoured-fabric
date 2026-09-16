@@ -1,0 +1,10 @@
+{
+	"asset_name": "shakudo",
+	"description": {
+		"translate": "trim_material.matcha.shakudo",
+		"color": "#c96691"
+	},
+	"override_armor_assets": {
+		"matcha:shakudo": "shakudo_darker"
+	}
+}

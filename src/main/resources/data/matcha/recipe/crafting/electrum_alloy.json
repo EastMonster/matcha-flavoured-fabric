@@ -1,19 +1,22 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:gold_ingot",
-    "minecraft:gold_ingot",
-    "minecraft:gold_ingot",
-    "minecraft:gold_ingot",
-    "matcha:divine_fragment",
-    "minecraft:prismarine_crystals",
-    "minecraft:prismarine_crystals",
-    "minecraft:prismarine_crystals",
-    "minecraft:prismarine_crystals"
-  ],
-  "result": {
-    "count": 1,
-    "id": "matcha:electrum"
-  }
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"minecraft:gold_ingot",
+		"matcha:divine_fragment",
+		"minecraft:prismarine_crystals",
+		"minecraft:prismarine_crystals",
+		"minecraft:prismarine_crystals",
+		"minecraft:prismarine_crystals"
+	],
+	"result": {
+		"count": 1,
+		"id": "matcha:electrum",
+		"components": {
+			"minecraft:provides_trim_material": "matcha:electrum"
+		}
+	}
 }
