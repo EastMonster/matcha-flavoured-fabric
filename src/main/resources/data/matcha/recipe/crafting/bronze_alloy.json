@@ -14,9 +14,6 @@
 	],
 	"result": {
 		"count": 1,
-		"id": "matcha:hepatizon",
-		"components": {
-			"minecraft:provides_trim_material": "matcha:hepatizon"
-		}
+		"id": "matcha:hepatizon"
 	}
 }

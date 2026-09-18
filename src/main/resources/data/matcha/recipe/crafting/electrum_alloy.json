@@ -14,9 +14,6 @@
 	],
 	"result": {
 		"count": 1,
-		"id": "matcha:electrum",
-		"components": {
-			"minecraft:provides_trim_material": "matcha:electrum"
-		}
+		"id": "matcha:electrum"
 	}
 }

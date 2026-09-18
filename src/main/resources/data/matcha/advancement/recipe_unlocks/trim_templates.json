@@ -1,0 +1,52 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_primary_material": {
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:bolt_armor_trim_smithing_template",
+							"minecraft:coast_armor_trim_smithing_template",
+							"minecraft:dune_armor_trim_smithing_template",
+							"minecraft:eye_armor_trim_smithing_template",
+							"minecraft:flow_armor_trim_smithing_template",
+							"minecraft:host_armor_trim_smithing_template",
+							"minecraft:raiser_armor_trim_smithing_template",
+							"minecraft:rib_armor_trim_smithing_template",
+							"minecraft:sentry_armor_trim_smithing_template",
+							"minecraft:shaper_armor_trim_smithing_template",
+							"minecraft:silence_armor_trim_smithing_template",
+							"minecraft:snout_armor_trim_smithing_template",
+							"minecraft:spire_armor_trim_smithing_template",
+							"minecraft:tide_armor_trim_smithing_template",
+							"minecraft:vex_armor_trim_smithing_template",
+							"minecraft:ward_armor_trim_smithing_template",
+							"minecraft:wayfinder_armor_trim_smithing_template",
+							"minecraft:wild_armor_trim_smithing_template"
+						]
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [
+		[
+			"has_primary_material"
+		]
+	],
+	"rewards": {
+		"recipes": [
+			"matcha:crafting/trim_colour_cinnabar",
+			"matcha:crafting/trim_colour_amethyst",
+			"matcha:crafting/trim_colour_resin",
+			"matcha:crafting/trim_colour_gold",
+			"matcha:crafting/trim_colour_diamond",
+			"matcha:crafting/trim_colour_quartz",
+			"matcha:crafting/trim_colour_lapis",
+			"matcha:crafting/trim_colour_iron",
+			"matcha:crafting/trim_colour_steel"
+		]
+	}
+}

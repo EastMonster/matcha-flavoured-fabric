@@ -1361,5 +1361,161 @@
 			],
 			"minecraft:custom_name": {"translate": "item.matcha.pickled_warped_fungus", "color": "#3cc6c8", "italic": false}
 		}
+	},
+	{
+		"id": "trim_colour_amethyst",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_amethyst",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:amethyst",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.amethyst", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_cinnabar",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_cinnabar",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:redstone",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.redstone", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_diamond",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_diamond",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:diamond",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.diamond", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_electrum",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_electrum",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "matcha:electrum",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.matcha.electrum", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_gold",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_gold",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:gold",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.gold", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_hepatizon",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_hepatizon",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "matcha:hepatizon",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.matcha.hepatizon", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_iron",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_iron",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:netherite",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.netherite", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_lapis",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_lapis",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:lapis",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.lapis", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_patina",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_patina",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:emerald",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.emerald", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_quartz",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_quartz",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:quartz",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.quartz", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_resin",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_resin",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:resin",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.resin", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_shakudo",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_shakudo",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "matcha:shakudo",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.matcha.shakudo", "color": "gray", "italic": false}]
+		}
+	},
+	{
+		"id": "trim_colour_steel",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {
+			"minecraft:item_model": "matcha:trim_colour_steel",
+			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:provides_trim_material": "minecraft:iron",
+			"minecraft:rarity": "uncommon",
+			"minecraft:lore": [{"translate": "trim_material.minecraft.iron", "color": "gray", "italic": false}]
+		}
 	}
 ]

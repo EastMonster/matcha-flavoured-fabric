@@ -1,8 +1,18 @@
 {
-	"replace": false,
+	"replace": true,
 	"values": [
-		"matcha:electrum",
-		"matcha:shakudo",
-		"matcha:hepatizon"
+		"matcha:trim_colour_amethyst",
+		"matcha:trim_colour_cinnabar",
+		"matcha:trim_colour_diamond",
+		"matcha:trim_colour_electrum",
+		"matcha:trim_colour_gold",
+		"matcha:trim_colour_hepatizon",
+		"matcha:trim_colour_iron",
+		"matcha:trim_colour_lapis",
+		"matcha:trim_colour_patina",
+		"matcha:trim_colour_quartz",
+		"matcha:trim_colour_resin",
+		"matcha:trim_colour_shakudo",
+		"matcha:trim_colour_steel"
 	]
 }

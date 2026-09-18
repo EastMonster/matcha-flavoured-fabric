@@ -22,6 +22,7 @@ import net.minecraft.world.item.component.UseRemainder;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.item.equipment.Equippable;
+import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.food.FoodProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -94,6 +95,8 @@ public class ItemComponents {
 					properties.delayedComponent(DataComponents.BANNER_PATTERNS, provider -> decode(DataComponents.BANNER_PATTERNS.codec(), provider, json));
 			case "minecraft:trim" ->
 					properties.delayedComponent(DataComponents.TRIM, provider -> decode(DataComponents.TRIM.codec(), provider, json));
+			case "minecraft:provides_trim_material" ->
+					properties.delayedComponent(DataComponents.PROVIDES_TRIM_MATERIAL, provider -> decode(TrimMaterial.CODEC, provider, json));
 			default -> throw new IllegalArgumentException("Unsupported item component: " + id);
 		}
 	}

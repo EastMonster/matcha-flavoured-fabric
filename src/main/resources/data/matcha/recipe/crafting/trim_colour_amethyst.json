@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "trim_colour",
+	"category": "equipment",
+	"key": {
+		"#": "minecraft:iron_ingot",
+		"C": "minecraft:amethyst_block",
+		"S": "matcha:steel"
+	},
+	"pattern": [
+		"#S#",
+		"#C#",
+		"###"
+	],
+	"result": {
+		"count": 1,
+		"id": "matcha:trim_colour_amethyst"
+	}
+}

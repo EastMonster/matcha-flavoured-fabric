@@ -346,6 +346,21 @@
 			"hepatizon",
 			"electrum"
 		],
+		"trim_colours": [
+			"trim_colour_amethyst",
+			"trim_colour_cinnabar",
+			"trim_colour_diamond",
+			"trim_colour_electrum",
+			"trim_colour_gold",
+			"trim_colour_hepatizon",
+			"trim_colour_iron",
+			"trim_colour_lapis",
+			"trim_colour_patina",
+			"trim_colour_quartz",
+			"trim_colour_resin",
+			"trim_colour_shakudo",
+			"trim_colour_steel"
+		],
 		"gems": [
 			"amber",
 			"opal",
