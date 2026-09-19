@@ -78,7 +78,8 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha:electrum_tool": 2
+				"matcha:electrum_tool": 2,
+				"matcha:warding_1": 1
 			},
 			"minecraft:repairable": {
 				"items": [

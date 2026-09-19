@@ -1,0 +1,7 @@
+{
+	"parent": "matcha:block/bulk_template",
+	"textures": {
+		"block": "minecraft:block/cinnabar",
+		"particle": "minecraft:block/cinnabar"
+	}
+}

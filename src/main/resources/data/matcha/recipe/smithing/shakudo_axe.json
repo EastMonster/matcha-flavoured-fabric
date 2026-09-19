@@ -76,7 +76,8 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"minecraft:silk_touch": 1
+				"minecraft:silk_touch": 1,
+				"matcha:shakudo_weapon": 1
 			}
 		}
 	}

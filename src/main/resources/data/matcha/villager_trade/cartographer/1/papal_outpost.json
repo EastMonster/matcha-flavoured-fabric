@@ -28,7 +28,7 @@
 		{
 			"function": "minecraft:set_components",
 			"components": {
-				"minecraft:item_model": "minecraft:papal_outpost_map"
+				"minecraft:item_model": "matcha:papal_outpost_map"
 			}
 		}
 	],

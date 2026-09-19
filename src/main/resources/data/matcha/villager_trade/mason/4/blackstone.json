@@ -1,13 +1,41 @@
 {
-	"gives": {
-		"id": "minecraft:blackstone",
-		"count": 64
-	},
 	"max_uses": 999,
-	"reputation_discount": 0,
+	"xp": 30,
 	"wants": {
 		"count": 1,
 		"id": "minecraft:emerald"
 	},
-	"xp": 30
+	"gives": {
+		"count": 1,
+		"id": "minecraft:poisonous_potato",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "trade.matcha.bulk_blackstone"
+			},
+			"minecraft:item_model": "matcha:bulk_blackstone",
+			"minecraft:lore": [
+				{
+					"translate": "trade.matcha.bulk_blackstone.desc",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "trade.matcha.bulk.desc",
+					"color": "dark_gray",
+					"italic": false
+				}
+			],
+			"!minecraft:food": {},
+			"minecraft:consumable": {
+				"consume_seconds": 0,
+				"sound": "minecraft:block.stone.fall",
+				"has_consume_particles": false,
+				"!on_consume_effects": {}
+			},
+			"use_remainder": {
+				"id": "minecraft:blackstone",
+				"count": 64
+			}
+		}
+	}
 }

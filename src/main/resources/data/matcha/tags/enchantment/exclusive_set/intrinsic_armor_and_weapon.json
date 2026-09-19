@@ -1,12 +1,12 @@
 {
 	"values": [
-		"matcha:sanguine",
+		"matcha:shakudo_weapon",
 		"matcha:warding_1",
 		"matcha:warding_2",
 		"matcha:warding_3",
 		"matcha:warding_4",
 		"matcha:adamant_armour",
-		"matcha:shakudo_regen",
+		"matcha:shakudo_armour",
 		"matcha:electrum_armour"
 	]
 }

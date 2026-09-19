@@ -4,8 +4,7 @@
 		{
 			"entries": [
 				{
-					"type": "minecraft:loot_table",
-					"value": "matcha:materials/raw_diamond",
+					"type": "minecraft:item",
 					"functions": [
 						{
 							"count": {
@@ -15,7 +14,8 @@
 							},
 							"function": "minecraft:set_count"
 						}
-					]
+					],
+					"name": "minecraft:diamond"
 				},
 				{
 					"type": "minecraft:item",

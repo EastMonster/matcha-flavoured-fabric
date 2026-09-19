@@ -83,8 +83,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"matcha:electrum_tool": 3,
-				"minecraft:looting": 1
+				"matcha:electrum_tool": 3
 			},
 			"minecraft:repairable": {
 				"items": [

@@ -21,12 +21,12 @@
     },
     {
       "function": "minecraft:set_components",
-      "components": { "minecraft:item_model": "minecraft:abbey_map" }
+      "components": { "minecraft:item_model": "matcha:abbey_map" }
     }
   ],
   "gives": {
     "id": "minecraft:map",
-    "components": { "minecraft:item_model": "minecraft:abbey_map" }
+    "components": { "minecraft:item_model": "matcha:abbey_map" }
   },
   "max_uses": 999,
   "wants": {

@@ -75,7 +75,7 @@
 							"entries": [
 								{
 									"type": "minecraft:loot_table",
-									"value": "minecraft:chests/fishing_buried_treasure"
+									"value": "matcha:chests/fishing/treasure"
 								}
 							]
 						}

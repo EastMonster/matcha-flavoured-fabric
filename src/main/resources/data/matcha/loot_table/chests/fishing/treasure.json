@@ -1,0 +1,133 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"bonus_rolls": 1,
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/raw_diamond",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 2,
+								"max": 4
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:chests/common/treasure_ores",
+					"functions": []
+				}
+			],
+			"rolls": {
+				"type": "minecraft:constant",
+				"value": 2
+			}
+		},
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:empty",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 2,
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:coast_armor_trim_smithing_template"
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:empty",
+					"weight": 100
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:copper_nautilus_armor",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:iron_nautilus_armor",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:golden_nautilus_armor",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:diamond_nautilus_armor",
+					"weight": 2
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/paradise_lost"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/divine_comedy"
+				},
+				{
+					"type": "minecraft:empty"
+                }
+			]
+		}
+	],
+	"random_sequence": "minecraft:chests/shipwreck_treasure"
+}

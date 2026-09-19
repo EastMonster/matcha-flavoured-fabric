@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 final class ShakudoRegenEnchantment {
-	private static final Identifier SHAKUDO_REGEN = EnchantmentUtil.id("shakudo_regen");
+	private static final Identifier SHAKUDO_REGEN = EnchantmentUtil.id("shakudo_armour");
 	private static final Identifier SHAKUDO_ELYTRA = EnchantmentUtil.id("shakudo_elytra");
 
 	private ShakudoRegenEnchantment() {

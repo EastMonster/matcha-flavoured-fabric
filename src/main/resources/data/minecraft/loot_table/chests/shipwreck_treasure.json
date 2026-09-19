@@ -54,7 +54,8 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:materials/raw_diamond",
+					"value": "matcha:chests/common/treasure_ores",
+					"functions": [],
 					"weight": 5
 				}
 			],

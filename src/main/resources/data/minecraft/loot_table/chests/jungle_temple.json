@@ -5,17 +5,8 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:materials/raw_diamond",
-					"functions": [
-						{
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
-							},
-							"function": "minecraft:set_count"
-						}
-					],
+					"value": "matcha:chests/uncommon/treasure_ores",
+					"functions": [],
 					"weight": 6
 				},
 				{

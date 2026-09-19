@@ -64,7 +64,7 @@
 			"minecraft:enchantments": {
 				"matcha:cleanse_armor_chest": 1,
 				"matcha:magic_protection": 1,
-				"matcha:shakudo_regen": 1
+				"matcha:shakudo_armour": 1
 			}
 		}
 	}

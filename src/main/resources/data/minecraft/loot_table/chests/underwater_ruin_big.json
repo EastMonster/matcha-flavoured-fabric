@@ -30,7 +30,7 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:gold_nugget",
+          "name": "minecraft:raw_gold",
 					"weight": 10
 				},
 				{

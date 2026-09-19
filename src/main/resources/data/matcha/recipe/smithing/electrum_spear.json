@@ -49,8 +49,9 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"minecraft:smite": 2,
-				"minecraft:looting": 2
+				"minecraft:smite": 4,
+				"minecraft:looting": 2,
+				"matcha:warding_2": 1
 			},
 			"minecraft:repairable": {
 				"items": [
