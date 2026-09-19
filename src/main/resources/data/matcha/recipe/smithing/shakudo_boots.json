@@ -8,7 +8,8 @@
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
-					"text": "\uD83D\uDEE1 3",
+					"translate": "desc.matcha.armour",
+					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
 				},

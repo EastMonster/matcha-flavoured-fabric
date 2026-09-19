@@ -2,6 +2,7 @@ package monster.east.matchaff.datafix;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
 
 import java.util.Map;
 
@@ -360,6 +361,47 @@ public final class MatchaItemDataFixerCheck {
 		assert !migratedEnchantments.contains("components");
 		assert modifiers.getCompound(0).orElseThrow().getDoubleOr("amount", 0.0) == 6.0;
 		assert "🗡 7".equals(lore.getCompound(0).orElseThrow().getStringOr("text", ""));
+
+		CompoundTag legacyEquipment = new CompoundTag();
+		legacyEquipment.putString("id", "minecraft:diamond_sword");
+		CompoundTag legacyEquipmentComponents = new CompoundTag();
+		ListTag legacyEquipmentLore = new ListTag();
+		legacyEquipmentLore.add(StringTag.valueOf("🗡 10"));
+		legacyEquipmentComponents.put("minecraft:lore", legacyEquipmentLore);
+		legacyEquipment.put("components", legacyEquipmentComponents);
+		MatchaItemDataFixer.updateIfNeeded(legacyEquipment);
+		CompoundTag migratedLore = legacyEquipmentLore.getCompound(0).orElseThrow();
+		assert "desc.matcha.attack_damage".equals(migratedLore.getStringOr("translate", ""));
+		assert "10".equals(legacyEquipmentLore.getCompound(0).orElseThrow()
+				.getList("with").orElseThrow().getString(0));
+
+		CompoundTag legacyFood = new CompoundTag();
+		legacyFood.putString("id", "matcha:honey_ginger_tea");
+		CompoundTag legacyFoodComponents = new CompoundTag();
+		ListTag legacyFoodLore = new ListTag();
+		legacyFoodLore.add(StringTag.valueOf("🏃 +40% (0:30)"));
+		legacyFoodComponents.put("minecraft:lore", legacyFoodLore);
+		legacyFood.put("components", legacyFoodComponents);
+		legacyFood.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		MatchaItemDataFixer.updateIfNeeded(legacyFood);
+		CompoundTag migratedFoodLore = legacyFoodLore.getCompound(0).orElseThrow();
+		assert "effect.matcha.speed_2".equals(migratedFoodLore.getStringOr("translate", ""));
+		assert "0:30".equals(migratedFoodLore.getList("with").orElseThrow().getString(0));
+
+		CompoundTag legacyTool = new CompoundTag();
+		legacyTool.putString("id", "matcha:hepatizon_pickaxe");
+		CompoundTag legacyToolComponents = new CompoundTag();
+		ListTag legacyToolLore = new ListTag();
+		legacyToolLore.add(StringTag.valueOf("⛊ 4"));
+		legacyToolLore.add(StringTag.valueOf("⬇⛊ 1"));
+		legacyToolLore.add(StringTag.valueOf("🧍↔🧍 +3"));
+		legacyToolComponents.put("minecraft:lore", legacyToolLore);
+		legacyTool.put("components", legacyToolComponents);
+		legacyTool.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		MatchaItemDataFixer.updateIfNeeded(legacyTool);
+		assert "desc.matcha.armour".equals(legacyToolLore.getCompound(0).orElseThrow().getStringOr("translate", ""));
+		assert "desc.matcha.fall_height_attribute".equals(legacyToolLore.getCompound(1).orElseThrow().getStringOr("translate", ""));
+		assert "desc.matcha.entity_interaction_range".equals(legacyToolLore.getCompound(2).orElseThrow().getStringOr("translate", ""));
 	}
 
 	private static CompoundTag stackWithEnchantments(String id, String enchantment) {

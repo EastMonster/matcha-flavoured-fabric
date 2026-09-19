@@ -35,12 +35,14 @@
 			"minecraft:max_damage": 800,
 			"minecraft:lore": [
 				{
-					"text": "🛡 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.02",
+					"translate": "desc.matcha.speed_attribute",
+					"with": ["+0.02"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -109,7 +111,8 @@
 			"minecraft:max_damage": 800,
 			"minecraft:lore": [
 				{
-				"text": "🛡 1",
+				"translate": "desc.matcha.armour",
+				"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -875,7 +878,8 @@
 					"italic": false
 				},
 				{
-					"text": "🏃 +60% (0:02)",
+					"translate": "effect.matcha.speed_3",
+					"with": ["0:02"],
 					"color": "#37cafb",
 					"italic": false
 				}

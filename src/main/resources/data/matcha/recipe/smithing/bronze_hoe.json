@@ -19,22 +19,26 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "\u26CF 20",
+					"translate": "desc.matcha.mining_speed",
+					"with": ["20"],
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "\uD83D\uDDE1 1",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "\uD83D\uDD52 4",
+					"translate": "desc.matcha.cooldown",
+					"with": ["4"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "\uD83C\uDFC3 \u002B0.005",
+					"translate": "desc.matcha.speed_attribute",
+					"with": ["+0.005"],
 					"color": "dark_green",
 					"italic": false
 				},

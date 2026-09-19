@@ -35,17 +35,20 @@
 			],
 			"minecraft:lore": [
 				{
-					"text": "\uD83D\uDDE1 6",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["6"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "\uD83D\uDD52 1.9",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.9"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "\uD83C\uDFC3 \u002B0.01",
+					"translate": "desc.matcha.speed_attribute",
+					"with": ["+0.01"],
 					"color": "dark_green",
 					"italic": false
 				},

@@ -17,12 +17,14 @@
 					"italic": false
 				},
 				{
-					"text": "\uD83D\uDDE1 8",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["8"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "\uD83D\uDD52 0.9",
+					"translate": "desc.matcha.cooldown",
+					"with": ["0.9"],
 					"color": "dark_green",
 					"italic": false
 				},

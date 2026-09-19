@@ -14,12 +14,14 @@
 			"minecraft:max_damage": 350,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 3",
+					"translate": "desc.matcha.armour",
+					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⬇⛊ 1",
+					"translate": "desc.matcha.fall_height_attribute",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},

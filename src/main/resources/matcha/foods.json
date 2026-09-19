@@ -1447,7 +1447,8 @@
         "italic": false
       },
       {
-        "text": "🏃 +40% (30:00)",
+        "translate": "effect.matcha.speed_2",
+        "with": ["30:00"],
         "color": "#37cafb",
         "italic": false
       }
@@ -1588,7 +1589,8 @@
         "italic": false
       },
       {
-        "text": "🏃 +20% (0:30)",
+        "translate": "effect.matcha.speed",
+        "with": ["0:30"],
         "color": "#37cafb",
         "italic": false
       },
@@ -1658,7 +1660,8 @@
         "italic": false
       },
       {
-        "text": "🏃 +40% (3:00)",
+        "translate": "effect.matcha.speed_2",
+        "with": ["3:00"],
         "color": "#37cafb",
         "italic": false
       }
@@ -3386,7 +3389,8 @@
           "italic": false
         },
         {
-          "text": "🏃 +20% (10:00)",
+          "translate": "effect.matcha.speed",
+          "with": ["10:00"],
           "color": "#37cafb",
           "italic": false
         }

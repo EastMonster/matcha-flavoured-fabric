@@ -8,17 +8,20 @@
 			"minecraft:max_damage": 1000,
 			"minecraft:lore": [
 				{
-					"text": "\uD83D\uDCA5\uD83D\uDEAB \u002B1",
+					"translate": "desc.matcha.knockback_resistance",
+					"with": ["+1"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "\u26CA 2",
+					"translate": "desc.matcha.armour",
+					"with": ["2"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "\u26E8 1",
+					"translate": "desc.matcha.armour_toughness",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},

@@ -29,12 +29,14 @@
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:lore": [
 				{
-					"text": "\uD83D\uDDE1 6",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["6"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "\uD83D\uDD52 1.6",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.6"],
 					"color": "dark_green",
 					"italic": false
 				},

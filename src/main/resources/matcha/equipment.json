@@ -22,7 +22,8 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -63,7 +64,8 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -108,7 +110,8 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -153,7 +156,8 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -526,12 +530,14 @@
 					"italic": false
 				},
 				{
-					"text": "🧍↔🧍 +3",
+					"translate": "desc.matcha.entity_interaction_range",
+					"with": ["+3"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⬇⛊ 1",
+					"translate": "desc.matcha.fall_height_attribute",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -631,7 +637,8 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -677,7 +684,8 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -909,7 +917,8 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}

@@ -974,6 +974,7 @@
 	"desc.matcha.knockback_attribute": " %s",
 	"effect.matcha.speed": " +20%% (%s)",
 	"effect.matcha.speed_2": " +40%% (%s)",
+	"effect.matcha.speed_3": " +60%% (%s)",
 	"subtitles.matcha.fishing.1_star": "Caught a §7⭐§8☆☆☆§r fish",
 	"subtitles.matcha.fishing.2_star": "Caught a §a⭐⭐§8☆☆§r fish",
 	"subtitles.matcha.fishing.3_star": "Caught a §b⭐⭐⭐§8☆§r fish",

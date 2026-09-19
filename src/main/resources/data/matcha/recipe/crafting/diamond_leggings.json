@@ -13,12 +13,14 @@
 		"components": {
 			"minecraft:lore": [
 				{
-					"text": "⛊ 6",
+					"translate": "desc.matcha.armour",
+					"with": ["6"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "⛨ 2",
+					"translate": "desc.matcha.armour_toughness",
+					"with": ["2"],
 					"color": "dark_green",
 					"italic": false
 				}

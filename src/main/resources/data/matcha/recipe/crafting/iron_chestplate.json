@@ -13,7 +13,8 @@
 		"components": {
 			"minecraft:lore": [
 				{
-					"text": "⛊ 6",
+					"translate": "desc.matcha.armour",
+					"with": ["6"],
 					"color": "dark_green",
 					"italic": false
 				}

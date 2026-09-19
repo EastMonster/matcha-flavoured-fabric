@@ -17,7 +17,8 @@
 			"minecraft:max_damage": 200,
 			"minecraft:lore": [
 				{
-					"text": "⛊ 2",
+					"translate": "desc.matcha.armour",
+					"with": ["2"],
 					"color": "dark_green",
 					"italic": false
 				}

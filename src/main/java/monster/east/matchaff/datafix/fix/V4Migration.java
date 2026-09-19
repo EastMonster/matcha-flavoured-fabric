@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * V4 migrates Warding and intrinsic enchantments, plus legacy equipment lore and resource-model data.
+ * V4 migrates Warding and intrinsic enchantments, plus legacy item lore and resource-model data.
  * It also handles Adamant equipment, Shakudo enchantments, Electrum tools, map models, and classic flowers.
  */
 public final class V4Migration extends DataFix {
@@ -86,7 +86,7 @@ public final class V4Migration extends DataFix {
 		return MatchaDataFixSupport.apply(data, tag -> {
 			Tag wardingMigrated = migrateWardingEnchantments(tag, false, null);
 			Tag adamantMigrated = migrateAdamant(wardingMigrated, false, null, false);
-			Tag loreMigrated = migrateLegacyEquipmentLore(adamantMigrated, false, null);
+			Tag loreMigrated = migrateLegacyItemLore(adamantMigrated, false);
 			renameV4TranslationKeys(loreMigrated);
 			Tag mapMigrated = migrateMapItemModels(loreMigrated, false);
 			Tag flowersMigrated = migrateClassicFlowers(mapMigrated, false);
@@ -251,38 +251,61 @@ public final class V4Migration extends DataFix {
 	}
 
 	private static void updateDolabraLore(ListTag lore) {
-		for (Tag tag : lore) {
-			if (tag instanceof CompoundTag component && component.getStringOr("text", "").equals("🗡 10")) component.putString("text", "🗡 7");
+		for (int index = 0; index < lore.size(); index++) {
+			Tag tag = lore.get(index);
+			if (tag instanceof CompoundTag component && component.getStringOr("text", "").equals("🗡 10")) {
+				component.putString("text", "🗡 7");
+			} else if (tag instanceof StringTag text && text.value().equals("🗡 10")) {
+				lore.set(index, StringTag.valueOf("🗡 7"));
+			}
 		}
 	}
 
-	private static Tag migrateLegacyEquipmentLore(Tag tag, boolean customData, String itemId) {
+	private static Tag migrateLegacyItemLore(Tag tag, boolean customData) {
 		if (tag instanceof CompoundTag compound) {
-			String currentItemId = !customData && compound.contains("id") ? compound.getStringOr("id", "") : itemId;
+			String itemId = compound.getStringOr("id", "");
 			for (String key : List.copyOf(compound.keySet())) {
 				Tag child = compound.get(key);
-				if (child != null) compound.put(key, migrateLegacyEquipmentLore(child, customData || key.equals("minecraft:custom_data"), currentItemId));
+				if (child != null) compound.put(key, migrateLegacyItemLore(child, customData || key.equals("minecraft:custom_data")));
 			}
-			if (!customData && isLegacyVanillaEquipment(currentItemId)
+			if (!customData && compound.contains("id")
 					&& compound.get("components") instanceof CompoundTag components
 					&& components.get("minecraft:lore") instanceof ListTag lore) {
-				if (ADAMANT_ARMOUR_ITEMS.contains(currentItemId)) updateAdamantSetBonusLore(lore);
-				for (Tag entry : lore) {
-					if (!(entry instanceof CompoundTag component)) continue;
-					String text = component.getStringOr("text", "");
+				if (ADAMANT_ARMOUR_ITEMS.contains(itemId)) updateAdamantSetBonusLore(lore);
+				for (int index = 0; index < lore.size(); index++) {
+					Tag entry = lore.get(index);
+					CompoundTag component;
+					String text;
+					if (entry instanceof CompoundTag existing) {
+						component = existing;
+						text = component.getStringOr("text", "");
+					} else if (entry instanceof StringTag existing) {
+						component = new CompoundTag();
+						text = existing.value();
+					} else {
+						continue;
+					}
 					String key = loreTranslationKey(text);
+					String value = text.substring(text.indexOf(' ') + 1);
+					if (text.startsWith("🏃 +20% (") || text.startsWith("🏃 +40% (") || text.startsWith("🏃 +60% (")) {
+						if (!text.endsWith(")")) continue;
+						key = text.startsWith("🏃 +20% (") ? "effect.matcha.speed"
+								: text.startsWith("🏃 +40% (") ? "effect.matcha.speed_2" : "effect.matcha.speed_3";
+						value = text.substring(text.indexOf('(') + 1, text.length() - 1);
+					}
 					if (key == null) continue;
 					component.remove("text");
 					component.putString("translate", key);
 					ListTag with = new ListTag();
-					with.add(StringTag.valueOf(text.substring(text.indexOf(' ') + 1)));
+					with.add(StringTag.valueOf(value));
 					component.put("with", with);
+					lore.set(index, component);
 				}
 			}
 			return compound;
 		}
 		if (tag instanceof ListTag list) {
-			for (int index = 0; index < list.size(); index++) list.set(index, migrateLegacyEquipmentLore(list.get(index), customData, itemId));
+			for (int index = 0; index < list.size(); index++) list.set(index, migrateLegacyItemLore(list.get(index), customData));
 		}
 		return tag;
 	}
@@ -317,20 +340,14 @@ public final class V4Migration extends DataFix {
 		}
 	}
 
-	private static boolean isLegacyVanillaEquipment(String id) {
-		if (id == null || !id.startsWith("minecraft:")) return false;
-		String path = id.substring("minecraft:".length());
-		return path.equals("mace")
-				|| path.matches("(?:wooden|copper|iron|golden|diamond|netherite)_(?:axe|hoe|pickaxe|shovel|spear|sword)")
-				|| path.matches("netherite_(?:helmet|chestplate|leggings|boots)");
-	}
-
 	private static String loreTranslationKey(String text) {
 		if (text.startsWith("🗡 ")) return "desc.matcha.attack_damage";
 		if (text.startsWith("🕒 ")) return "desc.matcha.cooldown";
 		if (text.startsWith("⛏ ")) return "desc.matcha.mining_speed";
-		if (text.startsWith("🛡 ")) return "desc.matcha.armour";
-		if (text.startsWith("\uE008 ")) return "desc.matcha.armour_toughness";
+		if (text.startsWith("🛡 ") || text.startsWith("⛊ ")) return "desc.matcha.armour";
+		if (text.startsWith("⛨ ") || text.startsWith("\uE008 ")) return "desc.matcha.armour_toughness";
+		if (text.startsWith("⬇⛊ ")) return "desc.matcha.fall_height_attribute";
+		if (text.startsWith("🧍↔🧍 ")) return "desc.matcha.entity_interaction_range";
 		if (text.startsWith("🏃 ")) return "desc.matcha.speed_attribute";
 		if (text.startsWith("💥🚫 ")) return "desc.matcha.knockback_resistance";
 		return null;
