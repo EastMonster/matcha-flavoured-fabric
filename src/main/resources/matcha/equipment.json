@@ -56,6 +56,141 @@
 		}
 	},
 	{
+		"id": "diamond_earrings",
+		"source": "data/matcha/villager_trade/toolsmith/1/diamond_earrings.json",
+		"carrier": "minecraft:netherite_helmet",
+		"components": {
+			"minecraft:max_damage": 250,
+			"minecraft:lore": [
+				{
+					"text": "⛊ 1",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha.diamond_earrings",
+				"color": "aqua"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 1,
+					"operation": "add_value",
+					"slot": "head"
+				},
+				{
+					"type": "minecraft:knockback_resistance",
+					"id": "minecraft:armor.helmet",
+					"amount": 0,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "matcha:diamond_earrings"
+			},
+			"minecraft:unbreakable": {}
+		}
+	},
+	{
+		"id": "amethyst_earrings",
+		"source": "data/matcha/villager_trade/toolsmith/1/amethyst_earrings.json",
+		"carrier": "minecraft:netherite_helmet",
+		"components": {
+			"minecraft:max_damage": 250,
+			"minecraft:lore": [
+				{
+					"text": "⛊ 1",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha.amethyst_earrings",
+				"color": "#b38ef3"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 1,
+					"operation": "add_value",
+					"slot": "head"
+				},
+				{
+					"type": "minecraft:knockback_resistance",
+					"id": "minecraft:armor.helmet",
+					"amount": 0,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "matcha:amethyst_earrings"
+			},
+			"minecraft:unbreakable": {}
+		}
+	},
+	{
+		"id": "lapis_earrings",
+		"source": "data/matcha/villager_trade/toolsmith/1/lapis_earrings.json",
+		"carrier": "minecraft:netherite_helmet",
+		"components": {
+			"minecraft:max_damage": 250,
+			"minecraft:lore": [
+				{
+					"text": "⛊ 1",
+					"color": "dark_green",
+					"italic": false
+				}
+			],
+			"minecraft:item_name": {
+				"translate": "item.matcha.lapis_earrings",
+				"color": "#325caa"
+			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "minecraft:armor.helmet",
+					"amount": 1,
+					"operation": "add_value",
+					"slot": "head"
+				},
+				{
+					"type": "minecraft:knockback_resistance",
+					"id": "minecraft:armor.helmet",
+					"amount": 0,
+					"operation": "add_value",
+					"slot": "head"
+				}
+			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
+			"minecraft:equippable": {
+				"slot": "head",
+				"asset_id": "matcha:lapis_earrings"
+			},
+			"minecraft:unbreakable": {}
+		}
+	},
+	{
 		"id": "bloodrage_hatchet",
 		"source": "data/matcha/villager_trade/leatherworker/4/hatchet.json",
 		"carrier": "minecraft:iron_axe",
@@ -97,17 +232,20 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 10",
+					"translate": "desc.matcha.mining_speed",
+					"with": ["10"],
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 9",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["9"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -156,12 +294,14 @@
 			"minecraft:max_damage": 250,
 			"minecraft:lore": [
 				{
-					"text": "🛡 1",
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🏃 +0.1",
+					"translate": "desc.matcha.speed_attribute",
+					"with": ["+0.1"],
 					"color": "dark_green",
 					"italic": false
 				}
@@ -253,17 +393,20 @@
 			],
 			"minecraft:lore": [
 				{
-					"text": "🧍↔🧍 -1",
+					"translate": "desc.matcha.entity_interaction_range",
+					"with": ["-1"],
 					"color": "red",
 					"italic": false
 				},
 				{
-					"text": "🗡 6",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["6"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.6",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.6"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -365,17 +508,20 @@
 			],
 			"minecraft:lore": [
 				{
-					"text": "⛏ 2",
+					"translate": "desc.matcha.mining_speed",
+					"with": ["2"],
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 5",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["5"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 3",
+					"translate": "desc.matcha.cooldown",
+					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -410,62 +556,62 @@
 	{
 		"id": "electrum_axe",
 		"source": "data/matcha/recipe/smithing/electrum_axe.json",
-		"carrier": "minecraft:diamond_axe"
+		"carrier": "minecraft:netherite_axe"
 	},
 	{
 		"id": "electrum_boots",
 		"source": "data/matcha/recipe/smithing/electrum_boots.json",
-		"carrier": "minecraft:diamond_boots"
+		"carrier": "minecraft:netherite_boots"
 	},
 	{
 		"id": "electrum_chestplate",
 		"source": "data/matcha/recipe/smithing/electrum_chestplate.json",
-		"carrier": "minecraft:diamond_chestplate"
+		"carrier": "minecraft:netherite_chestplate"
 	},
 	{
 		"id": "electrum_dolabra",
 		"source": "data/matcha/recipe/smithing/electrum_dolabra.json",
-		"carrier": "minecraft:stone_axe"
+		"carrier": "minecraft:netherite_axe"
 	},
 	{
 		"id": "electrum_helmet",
 		"source": "data/matcha/recipe/smithing/electrum_helmet.json",
-		"carrier": "minecraft:diamond_helmet"
+		"carrier": "minecraft:netherite_helmet"
 	},
 	{
 		"id": "electrum_hoe",
 		"source": "data/matcha/recipe/smithing/electrum_hoe.json",
-		"carrier": "minecraft:stone_hoe"
+		"carrier": "minecraft:netherite_hoe"
 	},
 	{
 		"id": "electrum_leggings",
 		"source": "data/matcha/recipe/smithing/electrum_leggings.json",
-		"carrier": "minecraft:diamond_leggings"
+		"carrier": "minecraft:netherite_leggings"
 	},
 	{
 		"id": "electrum_mattock",
 		"source": "data/matcha/recipe/smithing/electrum_mattock.json",
-		"carrier": "minecraft:stone_hoe"
+		"carrier": "minecraft:netherite_hoe"
 	},
 	{
 		"id": "electrum_pickaxe",
 		"source": "data/matcha/recipe/smithing/electrum_pickaxe.json",
-		"carrier": "minecraft:stone_pickaxe"
+		"carrier": "minecraft:netherite_pickaxe"
 	},
 	{
 		"id": "electrum_shovel",
 		"source": "data/matcha/recipe/smithing/electrum_shovel.json",
-		"carrier": "minecraft:stone_shovel"
+		"carrier": "minecraft:netherite_shovel"
 	},
 	{
 		"id": "electrum_spear",
 		"source": "data/matcha/recipe/smithing/electrum_spear.json",
-		"carrier": "minecraft:stone_spear"
+		"carrier": "minecraft:netherite_spear"
 	},
 	{
 		"id": "electrum_sword",
 		"source": "data/matcha/recipe/smithing/electrum_sword.json",
-		"carrier": "minecraft:stone_sword"
+		"carrier": "minecraft:netherite_sword"
 	},
 	{
 		"id": "iron_dolabra",
@@ -575,17 +721,20 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 6",
+					"translate": "desc.matcha.mining_speed",
+					"with": ["6"],
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 9",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["9"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 0.9",
+					"translate": "desc.matcha.cooldown",
+					"with": ["0.9"],
 					"color": "dark_green",
 					"italic": false
 				}

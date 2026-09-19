@@ -384,7 +384,14 @@
 			"conditions": {
 				"recipe_id": "matcha:crafting/clone_lily_of_the_valley"
 			}
-			
+
+		},
+		"clone_lily_pad": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "matcha:crafting/clone_lily_pad"
+			}
+
 		},
 		"clone_cornflower": {
 			"trigger": "minecraft:recipe_crafted",
@@ -635,6 +642,7 @@
 			"made_dough_from_water",
 			"made_cake",
 			"made_hell_bound_book",
+			"clone_lily_pad",
 			"stego_chicken_nugget", "tricero_chicken_nugget", "brachio_chicken_nugget", "ptero_chicken_nugget",
 			"lumpia", "bunuelo", "fish_and_chips", "oatmeal", "ice_cream"
 		]

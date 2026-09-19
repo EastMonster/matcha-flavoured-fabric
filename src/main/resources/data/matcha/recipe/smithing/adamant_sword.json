@@ -11,17 +11,20 @@
 				"color": "gold"
 			},
 			"minecraft:enchantments": {
+				"matcha:adamant_weapon": 1,
 				"minecraft:sharpness": 1,
 				"minecraft:unbreaking": 2
 			},
 			"minecraft:lore": [
 				{
-					"text": "🗡 8",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["8"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.6",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.6"],
 					"color": "dark_green",
 					"italic": false
 				},

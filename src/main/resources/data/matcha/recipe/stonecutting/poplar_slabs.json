@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "poplar_slab",
+	"ingredient": "#minecraft:poplar_logs",
+	"result": {
+		"count": 8,
+		"id": "minecraft:poplar_slab"
+	}
+}

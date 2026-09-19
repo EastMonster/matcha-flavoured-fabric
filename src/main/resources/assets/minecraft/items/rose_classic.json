@@ -1,6 +1,19 @@
 {
 	"model": {
-		"type": "minecraft:model",
-		"model": "matcha:item/rose_classic"
+		"type": "minecraft:select",
+		"property": "minecraft:display_context",
+		"cases": [
+			{
+				"when": "fixed",
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/rose_classic"
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/rose_classic"
+		}
 	}
 }

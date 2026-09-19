@@ -28,7 +28,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "Dodaj armor, broń lub narzędzie",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "Jakikolwiek stop",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "Szablon kowalski",
-	"container.upgrade.missing_template_tooltip": "Umieść szablon kowalski lub metal bazowy",
+	"container.upgrade.missing_template_tooltip": "Umieść szablon kowalski lub pozostaw puste",
 	"item.minecraft.nether_star": "Boska łaska",
 	"item.minecraft.turtle_helmet": "Hełm żółwia",
 	"item.minecraft.honeycomb": "Wosk",

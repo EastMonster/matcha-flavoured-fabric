@@ -8,12 +8,14 @@
 			"minecraft:max_damage": 400,
 			"minecraft:lore": [
 				{
-					"text": "🗡 6",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["6"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.6",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.6"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -59,7 +61,7 @@
 			},
 			"minecraft:enchantments": {
 				"minecraft:smite": 3,
-				"matcha:warding0": 1
+				"matcha:warding_1": 1
 			},
 			"minecraft:enchantment_glint_override": true,
 			"minecraft:repairable": {

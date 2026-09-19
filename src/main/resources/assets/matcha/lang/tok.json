@@ -6,6 +6,9 @@
 	"item.matcha.beacon_kindling": "palisa seli wawa",
 	"item.matcha.divine_fragment": "kipisi sewi",
 	"item.matcha.copper_shears": "ilo kipisi lili ante",
-	"advancements.matcha.anglers_almanac.angler_pottery_sherd.desc": "",
+	"lore.matcha.fish_rarity.1": "§7⭐§8☆☆☆",
+	"lore.matcha.fish_rarity.2": "§a⭐⭐§8☆☆",
+	"lore.matcha.fish_rarity.3": "§b⭐⭐⭐§8☆",
+	"lore.matcha.fish_rarity.4": "§d⭐⭐⭐⭐",
 	"trinkets.slot.head.earring": "sike kute"
 }

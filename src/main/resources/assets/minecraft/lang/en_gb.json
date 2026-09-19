@@ -21,5 +21,8 @@
 	"item.minecraft.netherite_horse_armor": "Adamant Horse Armour",
 	"item.minecraft.netherite_nautilus_armor": "Adamant Nautilus Armour",
 	"block.minecraft.glowstone": "Crystallised Estus",
-	"entity.minecraft.villager.leatherworker": "Forester"
+	"entity.minecraft.villager.leatherworker": "Forester",
+	"item.kleispack.rose_classic": "Rose",
+	"item.kleispack.cyan_rose_classic": "Cyan Rose",
+	"item.kleispack.dandelion_classic": "Dandelion"
 }

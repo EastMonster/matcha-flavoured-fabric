@@ -29,17 +29,20 @@
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 10",
+					"translate": "desc.matcha.mining_speed",
+					"with": ["10"],
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 6",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["6"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.2",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.2"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -80,8 +83,7 @@
 				]
 			},
 			"minecraft:enchantments": {
-				"minecraft:fortune": 2,
-				"matcha:warding1": 1,
+				"matcha:electrum_tool": 3,
 				"minecraft:looting": 1
 			},
 			"minecraft:repairable": {

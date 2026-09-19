@@ -1,8 +1,8 @@
 {
 	"block.minecraft.allium": "风信子",
 	"block.minecraft.stone": "石灰岩",
-	"item.minecraft.wheat": "稻草",
-	"block.minecraft.wheat": "稻草",
+	"item.minecraft.wheat": "麦秆",
+	"block.minecraft.wheat": "麦秆",
 	"item.minecraft.wheat_seeds": "小麦籽粒",
 	"item.minecraft.beetroot": "番茄",
 	"block.minecraft.beetroots": "番茄",
@@ -183,5 +183,9 @@
 	"filled_map.village_savanna": "废弃热带草原村庄地图",
 	"filled_map.village_snowy": "废弃雪原村庄地图",
 	"filled_map.village_taiga": "废弃针叶林村庄地图",
-	"filled_map.shipwreck": "沉船地图"
+	"filled_map.shipwreck": "沉船地图",
+	"trim_material.minecraft.iron": "钢质",
+	"trim_material.minecraft.netherite": "铁质",
+	"trim_material.minecraft.redstone": "辰砂质",
+	"trim_material.minecraft.emerald": "铜绿质"
 }

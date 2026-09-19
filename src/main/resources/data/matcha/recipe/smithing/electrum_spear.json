@@ -21,12 +21,14 @@
 			],
 			"minecraft:lore": [
 				{
-					"text": "🗡 4",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["4"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.18",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.18"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -48,8 +50,7 @@
 			},
 			"minecraft:enchantments": {
 				"minecraft:smite": 2,
-				"minecraft:looting": 2,
-				"matcha:warding2": 1
+				"minecraft:looting": 2
 			},
 			"minecraft:repairable": {
 				"items": [

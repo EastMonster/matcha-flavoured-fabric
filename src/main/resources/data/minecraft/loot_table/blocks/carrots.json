@@ -72,6 +72,15 @@
 							}
 						},
 						{
+							"function": "minecraft:apply_bonus",
+							"enchantment": "matcha:electrum_tool",
+							"formula": "minecraft:binomial_with_bonus_count",
+							"parameters": {
+								"extra": 3,
+								"probability": 0.5714286
+							}
+						},
+						{
 							"function": "minecraft:set_components",
 							"components": {
 								"minecraft:lore": [

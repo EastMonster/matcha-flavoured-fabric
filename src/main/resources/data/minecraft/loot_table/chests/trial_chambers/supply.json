@@ -19,42 +19,6 @@
 					"weight": 2
 				},
 				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 8,
-								"min": 4
-							},
-							"function": "minecraft:set_count"
-						},
-						{
-							"function": "minecraft:set_potion",
-							"id": "minecraft:poison"
-						}
-					],
-					"name": "minecraft:tipped_arrow"
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 8,
-								"min": 4
-							},
-							"function": "minecraft:set_count"
-						},
-						{
-							"function": "minecraft:set_potion",
-							"id": "minecraft:slowness"
-						}
-					],
-					"name": "minecraft:tipped_arrow"
-				},
-				{
 					"type": "minecraft:loot_table",
 					"value": "minecraft:food/baked_potato",
 					"name": "minecraft:baked_potato",

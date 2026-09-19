@@ -1,5 +1,6 @@
 {
 	"fishing.1_star": {
+		"subtitle": "subtitles.matcha.fishing.1_star",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/1_star",
@@ -9,6 +10,7 @@
 		]
 	},
 	"fishing.2_star": {
+		"subtitle": "subtitles.matcha.fishing.2_star",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/2_star",
@@ -18,6 +20,7 @@
 		]
 	},
 	"fishing.3_star": {
+		"subtitle": "subtitles.matcha.fishing.3_star",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/3_star",
@@ -27,6 +30,7 @@
 		]
 	},
 	"fishing.4_star": {
+		"subtitle": "subtitles.matcha.fishing.4_star",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/4_star",
@@ -36,6 +40,7 @@
 		]
 	},
 	"fishing.axolotl": {
+		"subtitle": "subtitles.matcha.fishing.axolotl",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/axolotl",
@@ -45,6 +50,7 @@
 		]
 	},
 	"fishing.enchanted_book": {
+		"subtitle": "subtitles.matcha.fishing.enchanted_book",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/enchanted_book",
@@ -54,6 +60,7 @@
 		]
 	},
 	"fishing.fish_bones": {
+		"subtitle": "subtitles.matcha.fishing.fish_bones",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/fish_bones",
@@ -63,6 +70,7 @@
 		]
 	},
 	"fishing.frog": {
+		"subtitle": "subtitles.matcha.fishing.frog",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/frog",
@@ -72,6 +80,7 @@
 		]
 	},
 	"fishing.junk": {
+		"subtitle": "subtitles.matcha.fishing.junk",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/junk",
@@ -81,6 +90,7 @@
 		]
 	},
 	"fishing.nautilus_shell": {
+		"subtitle": "subtitles.matcha.fishing.nautilus_shell",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/nautilus_shell",
@@ -90,6 +100,7 @@
 		]
 	},
 	"fishing.treasure": {
+		"subtitle": "subtitles.matcha.fishing.treasure",
 		"sounds": [
 			{
 				"name": "matcha:custom/fishing/treasure",

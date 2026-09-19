@@ -18,5 +18,8 @@
 	"item.minecraft.nether_wart": "Hellspore",
 	"block.minecraft.nether_wart": "Hellspore",
 	"block.minecraft.glowstone": "Crystallised Estus",
-	"entity.minecraft.villager.leatherworker": "Forester"
+	"entity.minecraft.villager.leatherworker": "Forester",
+	"item.kleispack.rose_classic": "Rose",
+	"item.kleispack.cyan_rose_classic": "Cyan Rose",
+	"item.kleispack.dandelion_classic": "Dandelion"
 }

@@ -7,29 +7,37 @@
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:enchantments": {
-				"matcha:divinity": 1,
+				"matcha:adamant_armour": 1,
 				"minecraft:unbreaking": 2,
 				"minecraft:protection": 1
 			},
 			"minecraft:lore": [
 				{
-					"text": "🛡 3",
+					"translate": "desc.matcha.armour",
+					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": " 3",
+					"translate": "desc.matcha.armour_toughness",
+					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "💥🚫 1",
+					"translate": "desc.matcha.knockback_resistance",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
 					"translate": "tooltip.matcha.set_bonus",
 					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.matcha.adamant_armour.set_bonus",
+					"color": "red",
 					"italic": false
 				},
 				{

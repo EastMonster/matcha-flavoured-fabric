@@ -1,5 +1,5 @@
 {
-	"period_ticks": 192000,
+	"period_ticks": 576000,
 	"clock": "minecraft:overworld",
 	"tracks": {
 		"minecraft:gameplay/surface_slime_spawn_chance": {
@@ -10,31 +10,31 @@
 					"value": 0.5
 				},
 				{
-					"ticks": 24000,
-					"value": 0.375
-				},
-				{
-					"ticks": 48000,
-					"value": 0.25
-				},
-				{
 					"ticks": 72000,
-					"value": 0.125
-				},
-				{
-					"ticks": 96000,
-					"value": 0
-				},
-				{
-					"ticks": 120000,
-					"value": 0.125
+					"value": 0.375
 				},
 				{
 					"ticks": 144000,
 					"value": 0.25
 				},
 				{
-					"ticks": 168000,
+					"ticks": 216000,
+					"value": 0.125
+				},
+				{
+					"ticks": 288000,
+					"value": 0
+				},
+				{
+					"ticks": 360000,
+					"value": 0.125
+				},
+				{
+					"ticks": 432000,
+					"value": 0.25
+				},
+				{
+					"ticks": 504000,
 					"value": 0.375
 				}
 			],
@@ -47,32 +47,50 @@
 					"value": "full_moon"
 				},
 				{
-					"ticks": 24000,
+					"ticks": 36000,
 					"value": "waning_gibbous"
 				},
 				{
-					"ticks": 48000,
-					"value": "third_quarter"
-				},
-				{
-					"ticks": 72000,
-					"value": "waning_crescent"
-				},
-				{
-					"ticks": 96000,
-					"value": "new_moon"
-				},
-				{
-					"ticks": 120000,
-					"value": "waxing_crescent"
-				},
-				{
-					"ticks": 144000,
+					"ticks": 108000,
 					"value": "first_quarter"
 				},
 				{
-					"ticks": 168000,
+					"ticks": 180000,
+					"value": "waning_crescent"
+				},
+				{
+					"ticks": 252000,
+					"value": "new_moon"
+				},
+				{
+					"ticks": 324000,
+					"value": "waxing_crescent"
+				},
+				{
+					"ticks": 396000,
+					"value": "third_quarter"
+				},
+				{
+					"ticks": 468000,
 					"value": "waxing_gibbous"
+				},
+				{
+					"ticks": 540000,
+					"value": "full_moon"
+				}
+			]
+		},
+		"minecraft:visual/moon_angle": {
+			"ease": "linear",
+			"modifier": "override",
+			"keyframes": [
+				{
+					"ticks": 0,
+					"value": 90
+				},
+				{
+					"ticks": 576000,
+					"value": 2970
 				}
 			]
 		}

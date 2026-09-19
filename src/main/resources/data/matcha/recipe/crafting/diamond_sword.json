@@ -14,12 +14,14 @@
 		"components": {
 			"minecraft:lore": [
 				{
-					"text": "🗡 7",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["7"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1.6",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1.6"],
 					"color": "dark_green",
 					"italic": false
 				}

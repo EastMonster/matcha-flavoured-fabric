@@ -2,6 +2,8 @@ package monster.east.matchaff.mixin;
 
 import monster.east.matchaff.compat.TrinketsCompat;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -35,5 +37,15 @@ public abstract class LivingEntityEquipmentMixin {
 		TrinketsCompat.refreshEarringArmor(player);
 		this.matcha$lastHeadEquipment = current.copy();
 		this.matcha$headEquipmentInitialized = true;
+	}
+
+	@Inject(
+			method = "dropFromLootTable(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/damagesource/DamageSource;Z)V",
+			at = @At("HEAD"), cancellable = true
+	)
+	private void matcha$skipNoDropsLoot(ServerLevel level, DamageSource source, boolean playerKilled, CallbackInfo ci) {
+		if (((LivingEntity) (Object) this).entityTags().contains("NoDrops")) {
+			ci.cancel();
+		}
 	}
 }

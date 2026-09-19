@@ -57,6 +57,24 @@ public final class MatchaItemDataFixerCheck {
 		plainCarrier.putString("id", "minecraft:glistering_melon_slice");
 		assert "minecraft:glistering_melon_slice".equals(MatchaItemDataFixer.update(plainCarrier).getStringOr("id", ""));
 
+		Map.of(
+				"minecraft:rose_classic", "rose_classic",
+				"minecraft:cyan_rose_classic", "cyan_rose_classic",
+				"minecraft:dandelion_classic", "dandelion_classic"
+		).forEach((oldModel, path) -> {
+			CompoundTag classicFlower = new CompoundTag();
+			classicFlower.putString("id", "minecraft:poppy");
+			CompoundTag classicFlowerComponents = new CompoundTag();
+			classicFlowerComponents.putString("minecraft:item_model", oldModel);
+			classicFlower.put("components", classicFlowerComponents);
+			CompoundTag fixedClassicFlower = MatchaItemDataFixer.update(classicFlower);
+			assert ("matcha:" + path).equals(fixedClassicFlower.getStringOr("id", ""));
+			CompoundTag fixedComponents = fixedClassicFlower.getCompound("components").orElseThrow();
+			assert ("matcha:" + path).equals(fixedComponents.getStringOr("minecraft:item_model", ""));
+			assert ("item.matcha." + path).equals(
+					fixedComponents.getCompound("minecraft:item_name").orElseThrow().getStringOr("translate", ""));
+		});
+
 		// Old-build Nazar used the pre-migration enchantment namespace.
 		CompoundTag nazarLegacy = new CompoundTag();
 		nazarLegacy.putString("id", "minecraft:glistering_melon_slice");
@@ -66,7 +84,7 @@ public final class MatchaItemDataFixerCheck {
 		nazarLegacyComponents.put("minecraft:enchantments", nazarLegacyEnchantments);
 		nazarLegacy.put("components", nazarLegacyComponents);
 		assert "matcha:nazar".equals(MatchaItemDataFixer.update(nazarLegacy).getStringOr("id", ""));
-		assert nazarLegacyEnchantments.contains("matcha:warding1") && !nazarLegacyEnchantments.contains("matcha-flavoured:warding1");
+		assert nazarLegacyEnchantments.contains("matcha:warding_2") && !nazarLegacyEnchantments.contains("matcha-flavoured:warding1");
 
 		CompoundTag steelCarrier = new CompoundTag();
 		steelCarrier.putString("id", "minecraft:resin_brick");
@@ -185,7 +203,7 @@ public final class MatchaItemDataFixerCheck {
 		assert "item.matcha.amnestic.place_hint".equals(fixedLore.getCompound(15).orElseThrow().getStringOr("translate", ""));
 		assert "desc.matcha.full".equals(fixedLore.getCompound(16).orElseThrow().getStringOr("translate", ""));
 		assert "effect.matcha.water_breathing".equals(fixedLore.getCompound(17).orElseThrow().getStringOr("translate", ""));
-		assert "enchantment.matcha.warding1".equals(fixedTranslationComponents.getCompound("minecraft:custom_name").orElseThrow().getStringOr("translate", ""));
+		assert "enchantment.matcha.warding_2".equals(fixedTranslationComponents.getCompound("minecraft:custom_name").orElseThrow().getStringOr("translate", ""));
 
 		CompoundTag customTranslationData = new CompoundTag();
 		customTranslationData.putString("translate", "item.kleispack.blessing.aeolus");
@@ -218,13 +236,13 @@ public final class MatchaItemDataFixerCheck {
 		CompoundTag fixed = MatchaItemDataFixer.update(stackWithCustomData);
 		assert "matcha:amber".equals(fixed.getStringOr("id", ""));
 		assert "matcha-flavoured:bronze_sword".equals(customData.getStringOr("id", ""));
-		assert enchantments.contains("matcha:warding1") && !enchantments.contains("matcha-flavoured:warding1");
+		assert enchantments.contains("matcha:warding_2") && !enchantments.contains("matcha-flavoured:warding1");
 		assert storedEnchantments.contains("matcha:anemos") && !storedEnchantments.contains("matcha-flavoured:anemos");
 
 		CompoundTag oneTime = new CompoundTag();
 		oneTime.putString("id", "matcha-flavoured:amber");
 		assert "matcha:amber".equals(MatchaItemDataFixer.updateIfNeeded(oneTime).getStringOr("id", ""));
-		assert oneTime.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 3;
+		assert oneTime.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
 		oneTime.putString("id", "matcha-flavoured:amber");
 		assert "matcha-flavoured:amber".equals(MatchaItemDataFixer.updateIfNeeded(oneTime).getStringOr("id", ""));
 
@@ -232,6 +250,135 @@ public final class MatchaItemDataFixerCheck {
 		v2.putString("id", "matcha:bronze_sword");
 		v2.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 2);
 		assert "matcha:hepatizon_sword".equals(MatchaItemDataFixer.updateIfNeeded(v2).getStringOr("id", ""));
-		assert v2.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 3;
+		assert v2.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
+
+		CompoundTag v3Warding = new CompoundTag();
+		v3Warding.putString("id", "matcha:warding_sword");
+		v3Warding.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		CompoundTag v3Components = new CompoundTag();
+		CompoundTag v3Enchantments = new CompoundTag();
+		v3Enchantments.putInt("matcha:warding0", 1);
+		v3Enchantments.putInt("matcha:warding1", 1);
+		v3Enchantments.putInt("matcha:warding2", 1);
+		v3Enchantments.putInt("matcha:warding3", 1);
+		v3Enchantments.putInt("matcha:warding_armour", 1);
+		v3Components.put("minecraft:enchantments", v3Enchantments);
+		CompoundTag v3StoredEnchantments = new CompoundTag();
+		v3StoredEnchantments.putInt("matcha:warding1", 1);
+		v3Components.put("minecraft:stored_enchantments", v3StoredEnchantments);
+		CompoundTag v3Name = new CompoundTag();
+		v3Name.putString("translate", "enchantment.matcha.warding3");
+		v3Components.put("minecraft:custom_name", v3Name);
+		v3Warding.put("components", v3Components);
+		CompoundTag fixedV3Warding = MatchaItemDataFixer.updateIfNeeded(v3Warding);
+		assert fixedV3Warding.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
+		assert v3Enchantments.contains("matcha:warding_1") && !v3Enchantments.contains("matcha:warding0");
+		assert v3Enchantments.contains("matcha:warding_2") && !v3Enchantments.contains("matcha:warding1");
+		assert v3Enchantments.contains("matcha:warding_3") && !v3Enchantments.contains("matcha:warding2");
+		assert v3Enchantments.contains("matcha:warding_4") && !v3Enchantments.contains("matcha:warding3");
+		assert v3Enchantments.contains("matcha:electrum_armour") && !v3Enchantments.contains("matcha:warding_armour");
+		assert v3StoredEnchantments.contains("matcha:warding_2") && !v3StoredEnchantments.contains("matcha:warding1");
+		assert "enchantment.matcha.warding_4".equals(v3Name.getStringOr("translate", ""));
+
+		CompoundTag electrumTool = stackWithEnchantments("matcha:electrum_pickaxe", "matcha:warding2");
+		electrumTool.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		CompoundTag toolEnchantments = electrumTool.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		toolEnchantments.putInt("minecraft:fortune", 3);
+		MatchaItemDataFixer.updateIfNeeded(electrumTool);
+		assert !toolEnchantments.contains("matcha:warding_3");
+		assert toolEnchantments.getIntOr("minecraft:fortune", 0) == 3;
+
+		CompoundTag wardingShield = stackWithEnchantments("matcha:warding_shield", "matcha:warding1");
+		wardingShield.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		CompoundTag shieldEnchantments = wardingShield.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		MatchaItemDataFixer.updateIfNeeded(wardingShield);
+		assert shieldEnchantments.contains("matcha:warding_1");
+		assert !shieldEnchantments.contains("matcha:warding_2");
+
+		CompoundTag adamantHelmet = namedAdamantStack("minecraft:netherite_helmet");
+		CompoundTag adamantHelmetEnchantments = adamantHelmet.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		adamantHelmetEnchantments.putInt("matcha:divinity", 1);
+		MatchaItemDataFixer.updateIfNeeded(adamantHelmet);
+		assert adamantHelmetEnchantments.contains("matcha:adamant_armour");
+		assert !adamantHelmetEnchantments.contains("matcha:divinity");
+
+		CompoundTag adamantAxe = namedAdamantStack("minecraft:netherite_axe");
+		CompoundTag adamantAxeEnchantments = adamantAxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		MatchaItemDataFixer.updateIfNeeded(adamantAxe);
+		assert adamantAxeEnchantments.contains("matcha:adamant_tool");
+		assert adamantAxeEnchantments.contains("matcha:adamant_weapon");
+
+		CompoundTag adamantPickaxe = namedAdamantStack("minecraft:netherite_pickaxe");
+		CompoundTag adamantPickaxeEnchantments = adamantPickaxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		adamantPickaxeEnchantments.putInt("matcha:divinity", 1);
+		adamantPickaxeEnchantments.putInt("matcha-flavoured:divinity", 1);
+		MatchaItemDataFixer.updateIfNeeded(adamantPickaxe);
+		assert adamantPickaxeEnchantments.contains("matcha:adamant_tool");
+		assert !adamantPickaxeEnchantments.contains("matcha:divinity");
+		assert !adamantPickaxeEnchantments.contains("matcha-flavoured:divinity");
+
+		CompoundTag adamantSword = namedAdamantStack("minecraft:netherite_sword");
+		CompoundTag adamantSwordEnchantments = adamantSword.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow();
+		MatchaItemDataFixer.updateIfNeeded(adamantSword);
+		assert adamantSwordEnchantments.contains("matcha:adamant_weapon");
+
+		CompoundTag ordinaryEnchantedItem = stackWithEnchantments("minecraft:diamond_pickaxe", "minecraft:unbreaking");
+		ordinaryEnchantedItem.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		MatchaItemDataFixer.updateIfNeeded(ordinaryEnchantedItem);
+		assert "minecraft:diamond_pickaxe".equals(ordinaryEnchantedItem.getStringOr("id", ""));
+
+		CompoundTag bareAdamantClaymore = new CompoundTag();
+		bareAdamantClaymore.putString("id", "matcha:adamant_claymore");
+		CompoundTag fixedBareAdamantClaymore = MatchaItemDataFixer.updateIfNeeded(bareAdamantClaymore);
+		assert fixedBareAdamantClaymore.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow().contains("matcha:adamant_weapon");
+
+		CompoundTag dolabra = stackWithEnchantments("matcha:adamant_dolabra", "matcha:divinity");
+		dolabra.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		CompoundTag dolabraComponents = dolabra.getCompound("components").orElseThrow();
+		ListTag modifiers = new ListTag();
+		CompoundTag attackDamage = new CompoundTag();
+		attackDamage.putString("id", "attack_damage");
+		attackDamage.putDouble("amount", 9.0);
+		modifiers.add(attackDamage);
+		dolabraComponents.put("minecraft:attribute_modifiers", modifiers);
+		ListTag lore = new ListTag();
+		CompoundTag attackLore = new CompoundTag();
+		attackLore.putString("text", "🗡 10");
+		lore.add(attackLore);
+		dolabraComponents.put("minecraft:lore", lore);
+		MatchaItemDataFixer.updateIfNeeded(dolabra);
+		assert dolabra.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
+		CompoundTag migratedEnchantments = dolabraComponents.getCompound("minecraft:enchantments").orElseThrow();
+		assert !migratedEnchantments.contains("matcha:divinity");
+		assert !migratedEnchantments.contains("components");
+		assert modifiers.getCompound(0).orElseThrow().getDoubleOr("amount", 0.0) == 6.0;
+		assert "🗡 7".equals(lore.getCompound(0).orElseThrow().getStringOr("text", ""));
+	}
+
+	private static CompoundTag stackWithEnchantments(String id, String enchantment) {
+		CompoundTag stack = new CompoundTag();
+		stack.putString("id", id);
+		CompoundTag components = new CompoundTag();
+		CompoundTag enchantments = new CompoundTag();
+		enchantments.putInt(enchantment, 1);
+		components.put("minecraft:enchantments", enchantments);
+		stack.put("components", components);
+		return stack;
+	}
+
+	private static CompoundTag namedAdamantStack(String id) {
+		CompoundTag stack = stackWithEnchantments(id, "minecraft:unbreaking");
+		stack.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 3);
+		CompoundTag itemName = new CompoundTag();
+		itemName.putString("translate", "item." + id.replace(':', '.'));
+		stack.getCompound("components").orElseThrow().put("minecraft:item_name", itemName);
+		return stack;
 	}
 }

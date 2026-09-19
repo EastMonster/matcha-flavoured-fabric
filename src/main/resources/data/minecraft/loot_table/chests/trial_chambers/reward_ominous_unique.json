@@ -23,9 +23,24 @@
 					"weight": 1
 				},
 				{
+					"type": "minecraft:item",
+					"name": "minecraft:prismarine_crystals",
+					"quality": 8
+				},
+				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:treasure/crystal_heart",
 					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/tanakh",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/quran",
+					"weight": 3
 				}
 			],
 			"rolls": 1

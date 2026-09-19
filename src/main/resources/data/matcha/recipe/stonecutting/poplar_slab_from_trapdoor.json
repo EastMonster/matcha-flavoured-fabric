@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "poplar_slab",
+  "ingredient": "minecraft:poplar_trapdoor",
+  "result": {
+    "count": 1,
+    "id": "minecraft:poplar_slab"
+  }
+}

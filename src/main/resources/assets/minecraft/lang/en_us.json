@@ -28,7 +28,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "Add armor weapon or tool",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "Any Alloy",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "Smithing Upgrade Template",
-	"container.upgrade.missing_template_tooltip": "Add Smithing Template or Base Metal",
+	"container.upgrade.missing_template_tooltip": "Add Smithing Template or Leave Empty",
 	"item.minecraft.nether_star": "Divine Favor",
 	"item.minecraft.honeycomb": "Wax",
 	"item.minecraft.enchanted_book": "§cHell-Bound Book",
@@ -183,5 +183,9 @@
 	"item.kleispack.rose_classic": "Rose",
 	"item.kleispack.cyan_rose_classic": "Cyan Rose",
 	"item.kleispack.dandelion_classic": "Dandelion",
-	"item.kleispack.porkchop_classic": "Porkchop"
+	"item.kleispack.porkchop_classic": "Porkchop",
+	"trim_material.minecraft.iron": "Steel Material",
+	"trim_material.minecraft.netherite": "Iron Material",
+	"trim_material.minecraft.redstone": "Cinnabar Material",
+	"trim_material.minecraft.emerald": "Patina Material"
 }

@@ -7,7 +7,9 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -19,7 +21,7 @@ public abstract class SpawnEggInteractionMixin {
 		if (!cir.getReturnValue().consumesAction()
 				|| !(context.getLevel() instanceof ServerLevel level)
 				|| !(context.getPlayer() instanceof ServerPlayer player)
-				|| !level.getBlockState(context.getClickedPos()).is(Blocks.SPAWNER)) {
+				|| !isSpawner(level.getBlockState(context.getClickedPos()))) {
 			return;
 		}
 
@@ -30,12 +32,18 @@ public abstract class SpawnEggInteractionMixin {
 		player.hurtServer(level, level.damageSources().generic(), 20.0F);
 	}
 
-	private static void clearSpawners(ServerLevel level, BlockPos center, int radius) {
+	@Unique
+    private static void clearSpawners(ServerLevel level, BlockPos center, int radius) {
 		for (BlockPos pos : BlockPos.betweenClosed(center.offset(-radius, -radius, -radius),
 				center.offset(radius, radius, radius))) {
-			if (level.getBlockState(pos).is(Blocks.SPAWNER)) {
+			if (isSpawner(level.getBlockState(pos))) {
 				level.destroyBlock(pos, true);
 			}
 		}
+	}
+
+	@Unique
+    private static boolean isSpawner(BlockState state) {
+		return state.is(Blocks.SPAWNER) || state.is(Blocks.TRIAL_SPAWNER);
 	}
 }

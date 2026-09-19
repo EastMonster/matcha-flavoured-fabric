@@ -23,22 +23,26 @@
 				"damage_per_block": 1
 			},
 			"minecraft:enchantments": {
+				"matcha:adamant_tool": 1,
 				"minecraft:efficiency": 1,
 				"minecraft:unbreaking": 2
 			},
 			"minecraft:lore": [
 				{
-					"text": "⛏ 13",
+					"translate": "desc.matcha.mining_speed",
+					"with": ["13"],
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 1",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 4",
+					"translate": "desc.matcha.cooldown",
+					"with": ["4"],
 					"color": "dark_green",
 					"italic": false
 				},

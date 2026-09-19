@@ -28,7 +28,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "防具、武器、または道具を追加する",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "任意の合金",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "鍛冶強化型",
-	"container.upgrade.missing_template_tooltip": "鍛冶型またはベースメタルを追加する",
+	"container.upgrade.missing_template_tooltip": "鍛冶型を追加するか、空のままにする",
 	"item.minecraft.nether_star": "神聖な恩恵",
 	"item.minecraft.turtle_helmet": "カメのシェルメット",
 	"item.minecraft.honeycomb": "蝋",
@@ -183,5 +183,9 @@
 	"filled_map.village_savanna": "サバンナの廃村の地図",
 	"filled_map.village_snowy": "雪原の廃村の地図",
 	"filled_map.village_taiga": "タイガの廃村の地図",
-	"filled_map.shipwreck": "難破船の地図"
+	"filled_map.shipwreck": "難破船の地図",
+	"trim_material.minecraft.iron": "鋼素材",
+	"trim_material.minecraft.netherite": "鉄素材",
+	"trim_material.minecraft.redstone": "辰砂素材",
+	"trim_material.minecraft.emerald": "緑青素材"
 }

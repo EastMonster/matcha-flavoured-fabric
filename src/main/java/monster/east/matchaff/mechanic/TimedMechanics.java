@@ -8,6 +8,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
@@ -15,6 +17,7 @@ import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
@@ -90,14 +93,23 @@ final class TimedMechanics {
 	}
 
 	static void scheduleWither(ServerPlayer player, int tick) {
-		if (player.level().dimension() != Level.END) {
-			return;
-		}
 		ServerLevel level = player.level();
 		level.getEntitiesOfClass(WitherBoss.class, player.getBoundingBox().inflate(64.0), Entity::isAlive)
 				.stream().min(Comparator.comparingDouble(wither -> wither.distanceToSqr(player)))
-				.ifPresent(wither -> PENDING_WITHERS.add(
-						new WitherTask(tick + 23, level.dimension(), wither.getUUID())));
+				.ifPresent(wither -> {
+					BlockPos pos = wither.blockPosition();
+					// Use generated terrain height
+					boolean onOverworldSurface = level.dimension() == Level.OVERWORLD
+							&& pos.getY() > 62
+							&& pos.getY() == level.getChunkSource().getGenerator().getBaseHeight(
+									pos.getX(), pos.getZ(), Heightmap.Types.WORLD_SURFACE_WG,
+									level, level.getChunkSource().randomState());
+					if (!onOverworldSurface) {
+						player.sendSystemMessage(Component.translatable("error.matcha.wither_spawn_invalid")
+								.withStyle(ChatFormatting.RED));
+						PENDING_WITHERS.add(new WitherTask(tick + 23, level.dimension(), wither.getUUID()));
+					}
+				});
 	}
 
 	private static void processWitherTasks(MinecraftServer server, int tick) {

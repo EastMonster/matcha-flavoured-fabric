@@ -12,7 +12,7 @@
 			"minecraft:item_name": {
 				"translate": "trade.matcha.bulk_calcite"
 			},
-			"minecraft:item_model": "minecraft:calcite",
+			"minecraft:item_model": "matcha:bulk_calcite",
 			"minecraft:lore": [
 				{
 					"translate": "trade.matcha.bulk_calcite.desc",

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import monster.east.matchaff.compat.TrinketsCompat;
+import monster.east.matchaff.enchantment.EnchantmentMechanics;
 import monster.east.matchaff.item.*;
 import monster.east.matchaff.mechanic.*;
 import monster.east.matchaff.network.SleepFastForwardPayload;
@@ -100,7 +101,8 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 				.add(crook, context.baseSmeltTime()));
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
 		equipment.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
-		batchItems.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
+		batchItems.stream().filter(entry -> !entry.hidden())
+				.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
 		foods.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.FOOD_AND_DRINKS)));
 		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
 		CreativeOrder.register(creativeItems);

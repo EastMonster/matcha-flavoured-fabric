@@ -27,7 +27,8 @@
 					"italic": false
 				},
 				{
-					"text": "\uD83D\uDCA5 2",
+					"translate": "desc.matcha.knockback_attribute",
+					"with": ["2"],
 					"color": "dark_green",
 					"italic": false
 				},

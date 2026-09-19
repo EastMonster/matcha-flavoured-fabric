@@ -12,7 +12,7 @@
 			"minecraft:item_name": {
 				"translate": "trade.matcha.bulk_granite"
 			},
-			"minecraft:item_model": "minecraft:granite",
+			"minecraft:item_model": "matcha:bulk_granite",
 			"minecraft:lore": [
 				{
 					"translate": "trade.matcha.bulk_granite.desc",

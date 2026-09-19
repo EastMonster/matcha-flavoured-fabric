@@ -16,17 +16,20 @@
 			"minecraft:max_damage": 200,
 			"minecraft:lore": [
 				{
-					"text": "⛏ 2",
+					"translate": "desc.matcha.mining_speed",
+					"with": ["2"],
 					"color": "blue",
 					"italic": false
 				},
 				{
-					"text": "🗡 2.5",
+					"translate": "desc.matcha.attack_damage",
+					"with": ["2.5"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
-					"text": "🕒 1",
+					"translate": "desc.matcha.cooldown",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				}

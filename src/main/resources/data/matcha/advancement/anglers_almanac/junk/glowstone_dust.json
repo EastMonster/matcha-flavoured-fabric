@@ -9,7 +9,7 @@
     },
     "description": [
       {
-        "translate": "advancements.matcha.anglers_almanac.glowstone_dust.desc",
+				"translate": "advancements.matcha.anglers_almanac.estus_ash.desc",
         "color": "dark_aqua",
         "italic": true
       },
