@@ -28,14 +28,20 @@
 								],
 								"minecraft:lore": [
 									{
-										"text": "🗡 6",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"6"
+										]
 									},
 									{
-										"text": "🕒 1.6",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1.6"
+										]
 									}
 								],
 								"minecraft:max_damage": 500,
@@ -61,14 +67,20 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "🗡 3",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"3"
+										]
 									},
 									{
-										"text": "🕒 1.05",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1.05"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -105,19 +117,28 @@
 								},
 								"minecraft:lore": [
 									{
-										"text": "⛏ 7",
 										"color": "blue",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"7"
+										]
 									},
 									{
-										"text": "🗡 4",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"4"
+										]
 									},
 									{
-										"text": "🕒 1.2",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1.2"
+										]
 									}
 								],
 								"minecraft:max_damage": 500,
@@ -158,19 +179,28 @@
 								},
 								"minecraft:lore": [
 									{
-										"text": "⛏ 7",
 										"color": "blue",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"7"
+										]
 									},
 									{
-										"text": "🗡 9",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"9"
+										]
 									},
 									{
-										"text": "🕒 0.9",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"0.9"
+										]
 									}
 								],
 								"minecraft:max_damage": 500
@@ -201,19 +231,28 @@
 								},
 								"minecraft:lore": [
 									{
-										"text": "⛏ 8",
 										"color": "blue",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"8"
+										]
 									},
 									{
-										"text": "🗡 4.5",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"4.5"
+										]
 									},
 									{
-										"text": "🕒 1",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -254,19 +293,28 @@
 								},
 								"minecraft:lore": [
 									{
-										"text": "⛏ 8",
 										"color": "blue",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"8"
+										]
 									},
 									{
-										"text": "🗡 1",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"1"
+										]
 									},
 									{
-										"text": "🕒 3",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"3"
+										]
 									}
 								],
 								"minecraft:max_damage": 500

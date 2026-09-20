@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/compass/copper",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/compass/gold",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/compass/titanium",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

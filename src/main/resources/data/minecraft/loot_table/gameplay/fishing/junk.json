@@ -132,7 +132,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:axolotl_spawn_egg",
+					"name": "minecraft:chicken_spawn_egg",
 					"weight": 10,
 					"condition": {
 							"type": "minecraft:location_check",
@@ -151,7 +151,10 @@
 									"translate": "item.matcha.axolotl"
 								},
 								"minecraft:max_stack_size": 1,
-								"minecraft:item_model": "matcha:axolotl"
+								"minecraft:item_model": "matcha:axolotl",
+								"minecraft:entity_data": {
+									"id": "minecraft:axolotl"
+								}
 							}
 						}
 					]

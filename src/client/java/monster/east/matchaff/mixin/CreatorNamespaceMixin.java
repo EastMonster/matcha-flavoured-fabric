@@ -82,7 +82,6 @@ public abstract class CreatorNamespaceMixin implements FabricItem {
 			"golden_carrot",
 			"melon_slice",
 			"popped_chorus_fruit",
-			"rabbit_stew",
 			"sweet_berries"
 	);
 

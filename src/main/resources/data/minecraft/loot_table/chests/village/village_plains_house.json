@@ -43,12 +43,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/bread",
+					"value": "matcha:food/bread",
 					"weight": 10
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/apple",
+					"value": "matcha:food/apple",
 					"weight": 10
 				},
 				{

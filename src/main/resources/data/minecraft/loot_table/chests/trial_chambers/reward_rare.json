@@ -52,12 +52,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/pumpkin_empanada",
+					"value": "matcha:food/pumpkin_empanada",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/bruschetta",
+					"value": "matcha:food/bruschetta",
 					"weight": 2
 				},
 				{
@@ -97,13 +97,25 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/iron",
-					"weight": 3
+					"value": "matcha:equipment/iron/equipment",
+					"weight": 3,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/diamond",
-					"weight": 1
+					"value": "matcha:equipment/diamond/equipment",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				},
 				{
 					"type": "minecraft:item",

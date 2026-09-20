@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/ruby"
+					"value": "matcha:treasure/ruby"
 				}
 			]
 		},
@@ -127,8 +127,15 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/gold",
-					"weight": 5
+					"value": "matcha:equipment/diamond/equipment",
+					"weight": 20,
+					"quality": -1,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				}
 			],
 			"rolls": {

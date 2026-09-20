@@ -65,18 +65,24 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/bread",
+					"value": "matcha:food/bread",
 					"weight": 10
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/apple",
+					"value": "matcha:food/apple",
 					"weight": 10
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/diamond",
-					"weight": 5
+					"value": "matcha:equipment/diamond/equipment",
+					"weight": 5,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				},
 				{
 					"type": "minecraft:item",

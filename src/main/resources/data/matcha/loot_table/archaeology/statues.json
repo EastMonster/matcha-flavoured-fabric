@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:entity",
+	"pools": [
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "matcha:cheerful_clay_statue"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "matcha:mournful_clay_statue"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "matcha:archealogy/statues"
+}

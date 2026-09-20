@@ -65,7 +65,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/carrot"
+					"value": "matcha:food/carrot"
 				},
 				{
 					"type": "minecraft:item",
@@ -158,8 +158,14 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/sturdy_leather",
-					"weight": 15
+					"value": "matcha:equipment/sturdy_leather/armour",
+					"weight": 15,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				}
 			],
 			"rolls": {

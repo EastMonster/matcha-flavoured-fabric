@@ -5,9 +5,8 @@
 			"rolls": 1,
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "matcha:divine_fragment",
-					"weight": 1
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/divine_fragment"
 				}
 			]
 		}

@@ -455,7 +455,6 @@
 		"id": "gnocchi_recipe",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/loot_table/kleis_items/gnocchi_recipe.json",
 		"carrier": "minecraft:paper",
 		"components": {
 			"minecraft:item_name": {

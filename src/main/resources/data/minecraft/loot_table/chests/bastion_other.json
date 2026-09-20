@@ -91,12 +91,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/golden_carrot",
+					"value": "matcha:food/golden_carrot",
 					"weight": 12
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/golden_apple",
+					"value": "matcha:food/golden_apple",
 					"weight": 6,
 					"quality": 1
 				},
@@ -113,8 +113,15 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/diamond_tools_damaged",
-					"weight": 10
+					"value": "matcha:equipment/diamond/equipment",
+					"weight": 20,
+					"quality": -1,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				}
 			],
 			"rolls": {
@@ -242,6 +249,12 @@
 					"type": "minecraft:item",
 					"modifier": [
 						{
+							"function": "minecraft:set_components",
+							"components": {
+								"!minecraft:entity_data": {}
+							}
+						},
+						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 6,
@@ -250,7 +263,7 @@
 							"type": "minecraft:set_count"
 						}
 					],
-					"name": "matcha:benzene",
+					"name": "minecraft:endermite_spawn_egg",
 					"weight": 2
 				},
 				{

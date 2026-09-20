@@ -1,0 +1,69 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_pickaxe",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:tool": {
+									"rules": [
+										{
+											"blocks": "#matcha:non_mineable/iron",
+											"speed": 3,
+											"correct_for_drops": false
+										},
+										{
+											"blocks": "#minecraft:mineable/pickaxe",
+											"speed": 7,
+											"correct_for_drops": true
+										}
+									],
+									"default_mining_speed": 1,
+									"damage_per_block": 1
+								},
+								"minecraft:lore": [
+									{
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"7"
+										],
+										"color": "blue",
+										"italic": false
+									},
+									{
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"4"
+										],
+										"color": "dark_green",
+										"italic": false
+									},
+									{
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1.2"
+										],
+										"color": "dark_green",
+										"italic": false
+									}
+								],
+								"minecraft:max_damage": 500,
+								"minecraft:tooltip_display": {
+									"hidden_components": [
+										"minecraft:attribute_modifiers"
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

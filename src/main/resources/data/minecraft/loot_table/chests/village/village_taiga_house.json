@@ -44,12 +44,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/sweet_berries",
+					"value": "matcha:food/sweet_berries",
 					"weight": 10
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/bread",
+					"value": "matcha:food/bread",
 					"weight": 10
 				},
 				{

@@ -5,32 +5,32 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/pickled_carrots",
+					"value": "matcha:food/pickled_carrots",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/apple_empanada",
+					"value": "matcha:food/apple_empanada",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/bread",
+					"value": "matcha:food/bread",
 					"weight": 4
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/baked_potato",
+					"value": "matcha:food/baked_potato",
 					"weight": 4
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/mead",
+					"value": "matcha:food/mead",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/pumpkin_empanada",
+					"value": "matcha:food/pumpkin_empanada",
 					"weight": 2
 				}
 			],

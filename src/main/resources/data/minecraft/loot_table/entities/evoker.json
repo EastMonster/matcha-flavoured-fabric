@@ -46,7 +46,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/divine_fragment"
+					"value": "matcha:treasure/divine_fragment"
 				}
 			],
 			"condition": {"type":"minecraft:all_of","terms":[

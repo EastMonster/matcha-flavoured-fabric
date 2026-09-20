@@ -1,0 +1,64 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:diamond_shovel",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:max_damage": 2500,
+								"minecraft:tool": {
+									"rules": [
+										{
+											"blocks": "#minecraft:mineable/shovel",
+											"speed": 9,
+											"correct_for_drops": true
+										}
+									],
+									"default_mining_speed": 1,
+									"damage_per_block": 1
+								},
+								"minecraft:lore": [
+									{
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"9"
+										],
+										"color": "blue",
+										"italic": false
+									},
+									{
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"5.5"
+										],
+										"color": "dark_green",
+										"italic": false
+									},
+									{
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1"
+										],
+										"color": "dark_green",
+										"italic": false
+									}
+								],
+								"minecraft:tooltip_display": {
+									"hidden_components": [
+										"minecraft:attribute_modifiers"
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
