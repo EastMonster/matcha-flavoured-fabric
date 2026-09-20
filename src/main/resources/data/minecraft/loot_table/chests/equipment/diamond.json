@@ -12,12 +12,15 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "⛊ 3",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.armour",
+										"with": [
+											"3"
+										]
 									},
 									{
-										"text": "⛨ 2",
+										"text": " 2",
 										"color": "dark_green",
 										"italic": false
 									}
@@ -45,12 +48,15 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "⛊ 8",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.armour",
+										"with": [
+											"8"
+										]
 									},
 									{
-										"text": "⛨ 2",
+										"text": " 2",
 										"color": "dark_green",
 										"italic": false
 									}
@@ -78,12 +84,15 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "⛊ 6",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.armour",
+										"with": [
+											"6"
+										]
 									},
 									{
-										"text": "⛨ 2",
+										"text": " 2",
 										"color": "dark_green",
 										"italic": false
 									}
@@ -111,12 +120,15 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "⛊ 3",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.armour",
+										"with": [
+											"3"
+										]
 									},
 									{
-										"text": "⛨ 2",
+										"text": " 2",
 										"color": "dark_green",
 										"italic": false
 									}
@@ -144,14 +156,20 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "🗡 7",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"7"
+										]
 									},
 									{
-										"text": "🕒 1.6",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1.6"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -177,14 +195,20 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "🗡 4",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"4"
+										]
 									},
 									{
-										"text": "🕒 0.95",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"0.95"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -227,19 +251,28 @@
 								},
 								"minecraft:lore": [
 									{
-										"text": "⛏ 9",
 										"color": "blue",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"9"
+										]
 									},
 									{
-										"text": "🗡 5",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"5"
+										]
 									},
 									{
-										"text": "🕒 1.2",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1.2"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -276,19 +309,28 @@
 								},
 								"minecraft:lore": [
 									{
-										"text": "⛏ 9",
 										"color": "blue",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"9"
+										]
 									},
 									{
-										"text": "🗡 9",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"9"
+										]
 									},
 									{
-										"text": "🕒 1",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -325,19 +367,28 @@
 								},
 								"minecraft:lore": [
 									{
-										"text": "⛏ 9",
 										"color": "blue",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"9"
+										]
 									},
 									{
-										"text": "🗡 5.5",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"5.5"
+										]
 									},
 									{
-										"text": "🕒 1",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -374,19 +425,28 @@
 								},
 								"minecraft:lore": [
 									{
-										"text": "⛏ 9",
 										"color": "blue",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											"9"
+										]
 									},
 									{
-										"text": "🗡 1",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"1"
+										]
 									},
 									{
-										"text": "🕒 4",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"4"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {

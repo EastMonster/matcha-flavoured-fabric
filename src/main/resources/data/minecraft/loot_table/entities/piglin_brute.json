@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/divine_fragment"
+					"value": "matcha:treasure/divine_fragment"
 				}
 			],
 			"conditions": [
@@ -33,7 +33,7 @@
 				},
 				{
 					"condition": "minecraft:random_chance_with_enchanted_bonus",
-					"unenchanted_chance": 0.30,
+					"unenchanted_chance": 0.3,
 					"enchanted_chance": {
 						"type": "minecraft:linear",
 						"base": 0.35,

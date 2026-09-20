@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "matcha:music_disc_elegy_of_the_abbey"
+				}
+			]
+		}
+	]
+}

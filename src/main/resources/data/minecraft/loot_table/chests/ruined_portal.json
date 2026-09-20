@@ -30,22 +30,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/golden_apple",
-					"weight": 15
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 24,
-								"min": 4
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:raw_gold",
+					"value": "matcha:food/golden_apple",
 					"weight": 15
 				},
 				{
@@ -55,7 +40,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/golden_carrot",
+					"value": "matcha:food/golden_carrot",
 					"weight": 5
 				},
 				{
@@ -75,18 +60,24 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:gold_ingot",
+					"name": "minecraft:raw_gold",
 					"weight": 5
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/enchanted_golden_apple",
+					"value": "matcha:food/enchanted_golden_apple",
 					"weight": 1
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/gold",
-					"weight": 80
+					"value": "matcha:equipment/gold/armour",
+					"weight": 80,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				}
 			],
 			"rolls": {

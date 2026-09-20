@@ -48,7 +48,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/bread",
+					"value": "matcha:food/bread",
 					"weight": 10
 				},
 				{
@@ -69,7 +69,7 @@
 					"type": "minecraft:item",
 					"functions": [
 						{
-							"count": {	
+							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 1

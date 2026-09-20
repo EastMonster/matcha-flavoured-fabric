@@ -1,0 +1,103 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:netherite_shovel",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:max_damage": 5000,
+								"minecraft:tool": {
+									"rules": [
+										{
+											"blocks": "#minecraft:mineable/shovel",
+											"speed": 15,
+											"correct_for_drops": true
+										}
+									],
+									"default_mining_speed": 1,
+									"damage_per_block": 1
+								},
+								"minecraft:custom_data": {
+									"has_intrinsic_enchants": 1
+								},
+								"minecraft:stored_enchantments": {
+									"matcha:adamant_tool": 1,
+									"minecraft:efficiency": 2,
+									"minecraft:unbreaking": 2
+								},
+								"minecraft:lore": [
+									{
+										"translate": "desc.matcha.mining_speed",
+										"with": [
+											{
+												"text": "15"
+											}
+										],
+										"color": "blue",
+										"italic": false
+									},
+									{
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											{
+												"text": "6.5"
+											}
+										],
+										"color": "dark_green",
+										"italic": false
+									},
+									{
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											{
+												"text": "1"
+											}
+										],
+										"color": "dark_green",
+										"italic": false
+									},
+									{
+										"color": "gray",
+										"italic": false,
+										"text": "Repaired with:"
+									},
+									{
+										"translate": "block.minecraft.diamond_block",
+										"color": "dark_gray",
+										"italic": false
+									},
+									{
+										"translate": "item.minecraft.netherite_scrap",
+										"color": "dark_gray",
+										"italic": false
+									}
+								],
+								"minecraft:tooltip_display": {
+									"hidden_components": [
+										"minecraft:attribute_modifiers"
+									]
+								},
+								"minecraft:repairable": {
+									"items": [
+										"minecraft:diamond_block",
+										"minecraft:netherite_scrap"
+									]
+								},
+								"minecraft:item_name": {
+									"translate": "item.minecraft.netherite_shovel",
+									"color": "gold"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

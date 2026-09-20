@@ -1,0 +1,15 @@
+{
+	"values": [
+		"#matcha:obsidian_based",
+		"#minecraft:diamond_ores",
+		"#minecraft:iron_ores",
+		"#minecraft:gold_ores",
+		"#minecraft:emerald_ores",
+		"#minecraft:redstone_ores",
+		"minecraft:deepslate_lapis_ore",
+		"minecraft:reinforced_deepslate",
+		"minecraft:deepslate",
+		"minecraft:cobbled_deepslate",
+		"minecraft:polished_deepslate"
+	]
+}

@@ -63,8 +63,11 @@
 									]
 								},
 								"minecraft:item_model": "minecraft:bread",
-								"minecraft:item_name": {
-									"translate": "item.minecraft.bread"
+								"minecraft:item_name": "Bread",
+								"minecraft:food": {
+									"nutrition": 0,
+									"saturation": 0,
+									"can_always_eat": true
 								}
 							}
 						},

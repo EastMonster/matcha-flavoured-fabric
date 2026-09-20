@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:axolotl_spawn_egg",
+					"name": "minecraft:chicken_spawn_egg",
 					"functions": [
 						{
 							"function": "minecraft:set_components",

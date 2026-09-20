@@ -7,8 +7,19 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha:fish_bones",
-					"weight": 10
+					"name": "minecraft:bone",
+					"weight": 10,
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "fish_bones",
+								"minecraft:item_name": {
+									"translate": "item.matcha.fish_bones"
+								}
+							}
+						}
+					]
 				},
 				{
 					"type": "minecraft:item",

@@ -2,125 +2,16 @@
 	"type": "minecraft:chest",
 	"pools": [
 		{
-			"bonus_rolls": 0,
 			"entries": [
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 5,
-								"min": 1
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:iron_ingot",
-					"weight": 90
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 5,
-								"min": 1
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:gold_ingot",
-					"weight": 10
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 2,
-								"min": 1
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:emerald",
-					"weight": 40
-				},
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:chests/common/treasure_ores",
-					"functions": [],
-					"weight": 5
+					"functions": []
 				}
 			],
 			"rolls": {
-				"type": "minecraft:uniform",
-				"max": 6,
-				"min": 3
-			}
-		},
-		{
-			"bonus_rolls": 0,
-			"entries": [
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 10,
-								"min": 1
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:iron_nugget",
-					"weight": 50
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 10,
-								"min": 1
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:gold_nugget",
-					"weight": 10
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 10,
-								"min": 1
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:lapis_lazuli",
-					"weight": 20
-				}
-			],
-			"rolls": {
-				"type": "minecraft:uniform",
-				"max": 5,
-				"min": 2
+				"type": "minecraft:constant",
+				"value": 1
 			}
 		},
 		{

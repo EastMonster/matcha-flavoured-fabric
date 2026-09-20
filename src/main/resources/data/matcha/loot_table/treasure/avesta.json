@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "matcha:avesta",
+					"weight": 1,
+					"conditions": []
+				}
+			]
+		}
+	]
+}

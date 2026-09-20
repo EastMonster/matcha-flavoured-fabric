@@ -20,14 +20,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/baked_potato",
-					"name": "minecraft:baked_potato",
+					"value": "matcha:food/baked_potato",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/glow_berries",
-					"name": "minecraft:glow_berries",
+					"value": "matcha:food/glow_berries",
 					"weight": 2
 				},
 				{
@@ -102,11 +100,11 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/apple_empanada"
+					"value": "matcha:food/apple_empanada"
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/milk_bottle"
+					"value": "matcha:food/milk_bottle"
 				}
 			],
 			"rolls": {

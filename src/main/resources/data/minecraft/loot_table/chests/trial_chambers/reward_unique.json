@@ -5,7 +5,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/golden_apple",
+					"value": "matcha:food/golden_apple",
 					"weight": 4
 				},
 				{
@@ -25,7 +25,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/trident",
+					"value": "matcha:equipment/misc/trident",
 					"quality": 1
 				},
 				{

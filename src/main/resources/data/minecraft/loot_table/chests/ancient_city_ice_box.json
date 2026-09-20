@@ -5,12 +5,12 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/pickled_carrots",
+					"value": "matcha:food/pickled_carrots",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/glow_jam",
+					"value": "matcha:food/glow_jam",
 					"weight": 2
 				},
 				{

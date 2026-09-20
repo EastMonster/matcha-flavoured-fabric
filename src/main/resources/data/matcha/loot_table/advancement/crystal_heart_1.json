@@ -6,17 +6,11 @@
 			"bonus_rolls": 0,
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "matcha:crystal_heart",
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": 1
-						}
-					]
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/crystal_heart",
+					"functions": []
 				}
 			]
 		}
-	],
-	"random_sequence": "matcha:advancement/reward"
+	]
 }

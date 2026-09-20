@@ -30,7 +30,7 @@
 							"function": "minecraft:set_count"
 						}
 					],
-          "name": "minecraft:raw_gold",
+					"name": "minecraft:raw_gold",
 					"weight": 10
 				},
 				{
@@ -68,7 +68,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/golden_apple",
+					"value": "matcha:food/golden_apple",
 					"weight": 1
 				},
 				{

@@ -71,7 +71,6 @@
 		"id": "cheerful_clay_statue",
 		"type": "instrument",
 		"tab": "tools",
-		"source": "data/minecraft/loot_table/archaeology/statues.json",
 		"carrier": "minecraft:goat_horn",
 		"components": {
 			"minecraft:item_name": {
@@ -311,7 +310,6 @@
 		"id": "mournful_clay_statue",
 		"type": "instrument",
 		"tab": "tools",
-		"source": "data/minecraft/loot_table/archaeology/statues.json",
 		"carrier": "minecraft:goat_horn",
 		"components": {
 			"minecraft:item_name": {

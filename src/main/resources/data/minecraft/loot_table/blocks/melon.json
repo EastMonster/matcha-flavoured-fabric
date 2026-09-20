@@ -29,7 +29,8 @@
 							"name": "minecraft:melon"
 						},
 						{
-							"type": "minecraft:item",
+							"type": "minecraft:loot_table",
+							"value": "matcha:food/melon_slice",
 							"functions": [
 								{
 									"add": false,
@@ -64,37 +65,8 @@
 								},
 								{
 									"function": "minecraft:explosion_decay"
-								},
-								{
-									"function": "minecraft:set_components",
-									"components": {
-										"minecraft:lore": [
-											{
-												"text": "❣",
-												"color": "red",
-												"italic": false
-											}
-										],
-										"minecraft:consumable": {
-											"on_consume_effects": [
-												{
-													"type": "minecraft:apply_effects",
-													"effects": [
-														{
-															"id": "minecraft:regeneration",
-															"amplifier": 2,
-													        "duration": 12,
-															"show_particles": false,
-															"show_icon": false
-														}
-													]
-												}
-											]
-										}
-									}
 								}
-							],
-							"name": "minecraft:melon_slice"
+							]
 						}
 					]
 				}

@@ -39,7 +39,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/special_compass",
+					"value": "matcha:equipment/compass/any_weighted",
 					"weight": 1
 				},
 				{
@@ -78,7 +78,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/solomon",
+					"value": "matcha:treasure/solomon",
 					"weight": 1
 				}
 			]

@@ -5,12 +5,8 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/enchanted_golden_apple",
-					"quality": 1
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:music_disc_creator"
+					"value": "matcha:music_disc/elegy_of_the_abbey",
+					"weight": 4
 				},
 				{
 					"type": "minecraft:item",
@@ -19,18 +15,13 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/divine_fragment",
-					"weight": 1
+					"value": "matcha:treasure/divine_fragment",
+					"weight": 6
 				},
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:prismarine_crystals",
 					"quality": 8
-				},
-				{
-					"type": "minecraft:loot_table",
-					"value": "matcha:treasure/crystal_heart",
-					"weight": 1
 				},
 				{
 					"type": "minecraft:loot_table",

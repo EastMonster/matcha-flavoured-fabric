@@ -5,44 +5,9 @@
 			"bonus_rolls": 0,
 			"entries": [
 				{
-					"type": "minecraft:item",
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/chorus_fruit",
 					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:lore": [
-									{
-										"text": "❣",
-										"color": "red",
-										"italic": false
-									},
-									{
-										"translate": "effect.matcha.warping",
-										"color": "#a945b0",
-										"italic": false
-									}
-								],
-								"minecraft:consumable": {
-									"on_consume_effects": [
-										{
-											"type": "minecraft:teleport_randomly"
-										},
-										{
-											"type": "minecraft:apply_effects",
-											"effects": [
-												{
-													"id": "minecraft:regeneration",
-													"amplifier": 2,
-													"duration": 12,
-													"show_particles": false,
-													"show_icon": false
-												}
-											]
-										}
-									]
-								}
-							}
-						},
 						{
 							"function": "minecraft:apply_bonus",
 							"enchantment": "minecraft:fortune",
@@ -71,8 +36,7 @@
 						{
 							"function": "minecraft:explosion_decay"
 						}
-					],
-					"name": "minecraft:chorus_fruit"
+					]
 				}
 			],
 			"rolls": 1

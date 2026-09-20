@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/ruby"
+					"value": "matcha:treasure/ruby"
 				}
 			]
 		},
@@ -80,14 +80,21 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/golden_apple",
+					"value": "matcha:food/golden_apple",
 					"weight": 10,
 					"quality": 1
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/diamond_tools_damaged",
-					"weight": 10
+					"value": "matcha:equipment/diamond/equipment",
+					"weight": 20,
+					"quality": -1,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				}
 			],
 			"rolls": {
@@ -225,54 +232,13 @@
 				},
 				{
 					"type": "minecraft:item",
-					"functions": [
-						{
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 5,
-								"min": 2
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:porkchop"
+					"name": "minecraft:porkchop",
+					"functions": []
 				},
 				{
-					"type": "minecraft:item",
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/cooked_porkchop",
 					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:lore": [
-									{
-										"text": "❤❤",
-										"color": "red",
-										"italic": false
-									}
-								],
-								"minecraft:consumable": {
-									"on_consume_effects": [
-										{
-											"type": "minecraft:apply_effects",
-											"effects": [
-												{
-													"id": "minecraft:regeneration",
-													"amplifier": 2,
-													"duration": 48,
-													"show_particles": false,
-													"show_icon": false
-												}
-											],
-											"probability": 1
-										}
-									]
-								},
-								"minecraft:item_model": "minecraft:cooked_porkchop",
-								"minecraft:item_name": {
-									"translate": "item.minecraft.cooked_porkchop"
-								}
-							}
-						},
 						{
 							"count": {
 								"type": "minecraft:uniform",
@@ -281,8 +247,7 @@
 							},
 							"function": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:cooked_porkchop"
+					]
 				},
 				{
 					"type": "minecraft:item",

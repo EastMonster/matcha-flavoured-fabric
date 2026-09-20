@@ -15,20 +15,6 @@
 								"min": 0.1,
 								"max": 0.5
 							}
-						},
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_model": "matcha:compound_bow",
-								"minecraft:item_name": {
-									"translate": "item.matcha.compound_bow"
-								},
-								"minecraft:max_damage": 500,
-								"minecraft:enchantments": {
-									"minecraft:power": 1
-								},
-								"minecraft:enchantment_glint_override": false
-							}
 						}
 					]
 				},
@@ -65,14 +51,20 @@
 								],
 								"minecraft:lore": [
 									{
-										"text": "🗡 6",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"6"
+										]
 									},
 									{
-										"text": "🕒 1.6",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1.6"
+										]
 									}
 								],
 								"minecraft:max_damage": 500,

@@ -14,82 +14,7 @@
 								"minecraft:tool": {
 									"rules": [
 										{
-											"blocks": "#minecraft:copper_ores",
-											"speed": 3,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "#minecraft:coal_ores",
-											"speed": 3,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "minecraft:stone",
-											"speed": 3,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "minecraft:smoker",
-											"speed": 4,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "minecraft:mud_bricks",
-											"speed": 3,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "minecraft:packed_mud",
-											"speed": 3,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "minecraft:mud_brick_slab",
-											"speed": 3,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "minecraft:mud_brick_stairs",
-											"speed": 3,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "minecraft:cobblestone",
-											"speed": 3,
-											"correct_for_drops": true
-										},
-										{
-											"blocks": "#minecraft:iron_ores",
-											"speed": 3,
-											"correct_for_drops": false
-										},
-										{
-											"blocks": "#minecraft:gold_ores",
-											"speed": 3,
-											"correct_for_drops": false
-										},
-										{
-											"blocks": "#minecraft:diamond_ores",
-											"speed": 3,
-											"correct_for_drops": false
-										},
-										{
-											"blocks": "#minecraft:emerald_ores",
-											"speed": 3,
-											"correct_for_drops": false
-										},
-										{
-											"blocks": "#minecraft:redstone_ores",
-											"speed": 3,
-											"correct_for_drops": false
-										},
-										{
-											"blocks": "#minecraft:lapis_ores",
-											"speed": 3,
-											"correct_for_drops": false
-										},
-										{
-											"blocks": "minecraft:obsidian",
+											"blocks": "#matcha:non_mineable/wood",
 											"speed": 3,
 											"correct_for_drops": false
 										},
@@ -105,19 +30,25 @@
 								"minecraft:lore": [
 									{
 										"translate": "desc.matcha.mining_speed",
-										"with": ["3"],
+										"with": [
+											"3"
+										],
 										"color": "blue",
 										"italic": false
 									},
 									{
 										"translate": "desc.matcha.attack_damage",
-										"with": ["2"],
+										"with": [
+											"2"
+										],
 										"color": "dark_green",
 										"italic": false
 									},
 									{
 										"translate": "desc.matcha.cooldown",
-										"with": ["1.2"],
+										"with": [
+											"1.2"
+										],
 										"color": "dark_green",
 										"italic": false
 									}

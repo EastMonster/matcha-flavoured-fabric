@@ -1,0 +1,61 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_sword",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:attribute_modifiers": [
+									{
+										"type": "minecraft:attack_damage",
+										"id": "attack_damage",
+										"amount": 5,
+										"operation": "add_value",
+										"slot": "mainhand"
+									},
+									{
+										"type": "minecraft:attack_speed",
+										"id": "attack_speed",
+										"amount": -2.4,
+										"operation": "add_value",
+										"slot": "mainhand"
+									}
+								],
+								"minecraft:lore": [
+									{
+										"translate": "desc.matcha.attack_damage",
+										"with": [
+											"6"
+										],
+										"color": "dark_green",
+										"italic": false
+									},
+									{
+										"translate": "desc.matcha.cooldown",
+										"with": [
+											"1.6"
+										],
+										"color": "dark_green",
+										"italic": false
+									}
+								],
+								"minecraft:max_damage": 500,
+								"minecraft:tooltip_display": {
+									"hidden_components": [
+										"minecraft:attribute_modifiers"
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

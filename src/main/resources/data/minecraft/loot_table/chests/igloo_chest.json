@@ -78,7 +78,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/golden_apple"
+					"value": "matcha:food/golden_apple"
 				}
 			],
 			"rolls": 1

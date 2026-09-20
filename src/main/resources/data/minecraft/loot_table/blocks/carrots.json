@@ -10,39 +10,9 @@
 			"bonus_rolls": 0,
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:carrot",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:lore": [
-									{
-										"text": "❣",
-										"color": "red",
-										"italic": false
-									}
-								],
-								"minecraft:consumable": {
-									"on_consume_effects": [
-										{
-											"type": "minecraft:apply_effects",
-											"effects": [
-												{
-													"id": "minecraft:regeneration",
-													"amplifier": 2,
-													"duration": 20,
-													"show_particles": false,
-													"show_icon": false
-												}
-											],
-											"probability": 1
-										}
-									]
-								}
-							}
-						}
-					]
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/carrot",
+					"functions": []
 				}
 			],
 			"rolls": 1
@@ -60,7 +30,8 @@
 			],
 			"entries": [
 				{
-					"type": "minecraft:item",
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/carrot",
 					"functions": [
 						{
 							"enchantment": "minecraft:fortune",
@@ -72,45 +43,15 @@
 							}
 						},
 						{
-							"function": "minecraft:apply_bonus",
 							"enchantment": "matcha:electrum_tool",
 							"formula": "minecraft:binomial_with_bonus_count",
+							"function": "minecraft:apply_bonus",
 							"parameters": {
 								"extra": 3,
 								"probability": 0.5714286
 							}
-						},
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:lore": [
-									{
-										"text": "❣",
-										"color": "red",
-										"italic": false
-									}
-								],
-								"minecraft:consumable": {
-									"on_consume_effects": [
-										{
-											"type": "minecraft:apply_effects",
-											"effects": [
-												{
-													"id": "minecraft:regeneration",
-													"amplifier": 2,
-													"duration": 20,
-													"show_particles": false,
-													"show_icon": false
-												}
-											],
-											"probability": 1
-										}
-									]
-								}
-							}
 						}
-					],
-					"name": "minecraft:carrot"
+					]
 				}
 			],
 			"rolls": 1

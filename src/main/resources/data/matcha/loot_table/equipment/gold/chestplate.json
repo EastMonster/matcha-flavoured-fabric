@@ -1,0 +1,45 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:golden_chestplate",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:enchantments": {
+									"minecraft:fire_protection": 3
+								},
+								"minecraft:enchantment_glint_override": false,
+								"minecraft:max_damage": 200,
+								"minecraft:lore": [
+									{
+										"translate": "desc.matcha.armour",
+										"with": [
+											"5"
+										],
+										"color": "dark_green",
+										"italic": false
+									}
+								],
+								"minecraft:tooltip_display": {
+									"hidden_components": [
+										"minecraft:attribute_modifiers"
+									]
+								},
+								"minecraft:item_name": {
+									"translate": "item.minecraft.golden_chestplate",
+									"color": "white"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

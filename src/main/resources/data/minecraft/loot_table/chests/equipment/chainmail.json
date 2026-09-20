@@ -13,9 +13,12 @@
 								"minecraft:max_damage": 300,
 								"minecraft:lore": [
 									{
-										"text": "⛊ 2",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.armour",
+										"with": [
+											"2"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -58,9 +61,12 @@
 								"minecraft:max_damage": 300,
 								"minecraft:lore": [
 									{
-										"text": "⛊ 6",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.armour",
+										"with": [
+											"6"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -103,9 +109,12 @@
 								"minecraft:max_damage": 300,
 								"minecraft:lore": [
 									{
-										"text": "⛊ 5",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.armour",
+										"with": [
+											"5"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {
@@ -148,9 +157,12 @@
 								"minecraft:max_damage": 300,
 								"minecraft:lore": [
 									{
-										"text": "⛊ 2",
 										"color": "dark_green",
-										"italic": false
+										"italic": false,
+										"translate": "desc.matcha.armour",
+										"with": [
+											"2"
+										]
 									}
 								],
 								"minecraft:tooltip_display": {

@@ -55,9 +55,6 @@
                   "parameters": {
                     "bonusMultiplier": 1
                   }
-                },
-                {
-                  "function": "minecraft:explosion_decay"
                 }
               ],
               "name": "minecraft:gunpowder"

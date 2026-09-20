@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/enchanted_golden_apple",
+					"value": "matcha:food/enchanted_golden_apple",
 					"weight": 1,
 					"quality": 1
 				},
@@ -169,7 +169,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:food/glow_berries",
+					"value": "matcha:food/glow_berries",
 					"weight": 3
 				},
 				{
@@ -278,6 +278,18 @@
 					],
 					"name": "minecraft:coal",
 					"weight": 7
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/diamond/equipment",
+					"weight": 20,
+					"quality": -1,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				}
 			],
 			"rolls": {
@@ -301,7 +313,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/topaz",
+					"value": "matcha:treasure/topaz",
 					"weight": 5,
 					"quality": 1
 				},
@@ -313,9 +325,19 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/divine_fragment_poly",
+					"value": "matcha:treasure/divine_fragment",
 					"weight": 2,
-					"quality": 2
+					"quality": 2,
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 3
+							},
+							"function": "minecraft:set_count"
+						}
+					]
 				}
 			],
 			"rolls": 1
@@ -323,20 +345,15 @@
 		{
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:prismarine_shard",
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 1,
-								"max": 2
-							}
-						}
-					]
+					"type": "minecraft:loot_table",
+					"value": "matcha:chests/uncommon/treasure_ores",
+					"functions": []
 				}
 			],
-			"rolls": 1
+			"rolls": {
+				"type": "minecraft:constant",
+				"value": 1
+			}
 		}
 	],
 	"random_sequence": "minecraft:chests/ancient_city"

@@ -16,6 +16,27 @@
                     "predicates": {
                       "minecraft:enchantments": [
                         {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "name": "minecraft:deepslate_emerald_ore"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
                           "enchantments": "matcha:adamant_tool"
                         }
                       ]
@@ -39,27 +60,6 @@
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              ],
-              "name": "minecraft:deepslate_emerald_ore"
-            },
-            {
-              "type": "minecraft:item",
               "functions": [
                 {
                   "enchantment": "minecraft:fortune",
@@ -70,9 +70,6 @@
                   "function": "minecraft:apply_bonus",
                   "enchantment": "matcha:electrum_tool",
                   "formula": "minecraft:ore_drops"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
                 }
               ],
               "name": "minecraft:prismarine_shard"

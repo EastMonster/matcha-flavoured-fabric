@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/diamond/armour"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/diamond/tools"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/diamond/weapons"
+				}
+			]
+		}
+	]
+}

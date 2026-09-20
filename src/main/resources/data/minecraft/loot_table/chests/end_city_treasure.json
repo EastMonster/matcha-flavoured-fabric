@@ -88,7 +88,13 @@
 				{
 					"type": "minecraft:loot_table",
 					"value": "minecraft:chests/equipment/diamond",
-					"weight": 20
+					"weight": 20,
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#minecraft:on_random_loot"
+						}
+					]
 				}
 			],
 			"rolls": {

@@ -21,6 +21,38 @@
 			]
 		},
 		{
+			"bonus_rolls": 1,
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/raw_diamond",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 2,
+								"max": 4
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:chests/common/treasure_ores",
+					"functions": []
+				}
+			],
+			"rolls": {
+				"type": "minecraft:constant",
+				"value": 2
+			}
+		},
+		{
 			"bonus_rolls": 0,
 			"entries": [
 				{
@@ -38,69 +70,6 @@
 					],
 					"name": "minecraft:book",
 					"weight": 10
-				},
-				{
-					"type": "minecraft:item",
-					"quality": 1,
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 12,
-								"min": 3
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:gold_ingot",
-					"weight": 10
-				},
-				{
-					"type": "minecraft:item",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 1
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:tnt",
-					"weight": 5
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:iron_block",
-					"quality": 1,
-					"conditions": [],
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 1,
-								"max": 2
-							}
-						}
-					]
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:iron_ingot",
-					"weight": 10,
-					"conditions": [],
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 5,
-								"max": 12
-							}
-						}
-					]
 				}
 			],
 			"rolls": {
@@ -129,22 +98,6 @@
 					"weight": 10
 				},
 				{
-					"type": "minecraft:loot_table",
-					"value": "matcha:materials/raw_diamond",
-					"functions": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
-							},
-							"function": "minecraft:set_count"
-						}
-					],
-					"weight": 5
-				},
-				{
 					"type": "minecraft:item",
 					"quality": 3,
 					"functions": [],
@@ -167,7 +120,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/trident",
+					"value": "matcha:equipment/misc/trident",
 					"weight": 5
 				},
 				{
