@@ -50,7 +50,7 @@ public final class WorldMechanics {
 	private static final String REWARD_VERSION_OBJECTIVE = "matcha_reward_version";
 	private static final String GAMERULES_OBJECTIVE = "matcha_gamerules_version";
 	private static final String GAMERULES_HOLDER = "current";
-	private static final int RECIPE_UNLOCK_VERSION = 1_12_02_001;
+	private static final int RECIPE_UNLOCK_VERSION = 1_12_02_002;
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
 	private static final String VERSION_LABEL = "1.12.2";

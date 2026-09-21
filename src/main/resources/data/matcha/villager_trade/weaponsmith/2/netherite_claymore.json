@@ -1,14 +1,13 @@
 {
   "wants": {
-    "id": "matcha:electrum_leggings",
+    "id": "matcha:adamant_claymore",
     "count": 1
   },
   "gives": {
-    "id": "matcha:electrum",
+    "id": "minecraft:netherite_ingot",
     "count": 1
   },
   "max_uses": 999,
   "reputation_discount": 0,
   "xp": 10
 }
-

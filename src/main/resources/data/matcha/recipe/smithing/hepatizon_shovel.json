@@ -1,20 +1,15 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:hepatizon",
-	"base": "minecraft:copper_pickaxe",
+	"base": "minecraft:copper_shovel",
 	"result": {
-		"id": "matcha:hepatizon_pickaxe",
+		"id": "matcha:hepatizon_shovel",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
 				"rules": [
 					{
-						"blocks": "minecraft:obsidian",
-						"speed": 3,
-						"correct_for_drops": false
-					},
-					{
-						"blocks": "#minecraft:mineable/pickaxe",
+						"blocks": "#minecraft:mineable/shovel",
 						"speed": 20,
 						"correct_for_drops": true
 					}
@@ -31,13 +26,13 @@
 				},
 				{
 					"translate": "desc.matcha.attack_damage",
-					"with": ["4.5"],
+					"with": ["5"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
 					"translate": "desc.matcha.cooldown",
-					"with": ["1.2"],
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -59,37 +54,37 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha.hepatizon_pickaxe",
+				"translate": "item.matcha.hepatizon_shovel",
 				"color": "#ac7b5c"
 			},
-			"minecraft:attribute_modifiers": [
-				{
-					"type": "minecraft:attack_damage",
-					"id": "attack_damage",
-					"amount": 3.5,
-					"operation": "add_value",
-					"slot": "mainhand"
-				},
-				{
-					"type": "minecraft:attack_speed",
-					"id": "attack_speed",
-					"amount": -2.8,
-					"operation": "add_value",
-					"slot": "mainhand"
-				},
-				{
-					"type": "minecraft:movement_speed",
-					"id": "bronze_sword",
-					"amount": 0.0055,
-					"operation": "add_value",
-					"slot": "mainhand"
-				}
-			],
 			"minecraft:tooltip_display": {
 				"hidden_components": [
 					"minecraft:attribute_modifiers"
 				]
 			},
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:attack_speed",
+					"id": "attack_speed",
+					"amount": -3,
+					"operation": "add_value",
+					"slot": "mainhand"
+				},
+				{
+					"type": "minecraft:attack_damage",
+					"id": "attack_damage",
+					"amount": 4,
+					"operation": "add_value",
+					"slot": "mainhand"
+				},
+				{
+					"type": "minecraft:movement_speed",
+					"id": "hepatizon_sword",
+					"amount": 0.0055,
+					"operation": "add_value",
+					"slot": "mainhand"
+				}
+			],
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:copper_block"

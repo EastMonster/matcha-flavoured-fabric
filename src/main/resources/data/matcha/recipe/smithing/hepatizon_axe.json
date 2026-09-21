@@ -1,54 +1,75 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:hepatizon",
-	"base": "minecraft:copper_spear",
+	"base": "minecraft:copper_axe",
 	"result": {
-		"id": "matcha:hepatizon_spear",
+		"id": "matcha:hepatizon_axe",
 		"components": {
 			"minecraft:max_damage": 1000,
+			"minecraft:tool": {
+				"rules": [
+					{
+						"blocks": "#minecraft:mineable/axe",
+						"speed": 20,
+						"correct_for_drops": true
+					}
+				],
+				"default_mining_speed": 1,
+				"damage_per_block": 1
+			},
 			"minecraft:item_name": {
-				"translate": "item.matcha.hepatizon_spear",
+				"translate": "item.matcha.hepatizon_axe",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [
 				{
-					"type": "minecraft:movement_speed",
-					"id": "bronze_sword",
-					"amount": 0.0105,
-					"operation": "add_value",
-					"slot": "mainhand"
-				},
-				{
 					"type": "minecraft:attack_damage",
-					"id": "damage",
-					"amount": 2,
+					"id": "attack_damage",
+					"amount": 8,
 					"operation": "add_value",
 					"slot": "mainhand"
 				},
 				{
 					"type": "minecraft:attack_speed",
 					"id": "attack_speed",
-					"amount": -2.82,
+					"amount": -2.9,
+					"operation": "add_value"
+				},
+				{
+					"type": "minecraft:movement_speed",
+					"id": "hepatizon_axe",
+					"amount": 0.0055,
 					"operation": "add_value",
 					"slot": "mainhand"
 				}
 			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
 			"minecraft:lore": [
 				{
+					"translate": "desc.matcha.mining_speed",
+					"with": ["20"],
+					"color": "blue",
+					"italic": false
+				},
+				{
 					"translate": "desc.matcha.attack_damage",
-					"with": ["3"],
+					"with": ["9"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
 					"translate": "desc.matcha.cooldown",
-					"with": ["1.18"],
+					"with": ["1.1"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
 					"translate": "desc.matcha.speed_attribute",
-					"with": ["+0.01"],
+					"with": ["+0.005"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -63,19 +84,10 @@
 					"italic": false
 				}
 			],
-			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
-			},
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:copper_block"
 				]
-			},
-			"minecraft:enchantment_glint_override": false,
-			"minecraft:enchantments": {
-				"minecraft:lunge": 3
 			}
 		}
 	}

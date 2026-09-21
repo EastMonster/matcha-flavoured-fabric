@@ -47,8 +47,18 @@
 					"italic": false
 				},
 				{
-					"translate": "tooltip.matcha.repaired_with",
+					"translate": "tooltip.matcha.set_bonus",
 					"color": "dark_gray",
+					"italic": false
+				},
+				{
+					"translate": "enchantment.matcha.divinity.set_bonus",
+					"color": "aqua",
+					"italic": false
+				},
+				{
+					"translate": "tooltip.matcha.repaired_with",
+					"color": "gray",
 					"italic": false
 				},
 				{

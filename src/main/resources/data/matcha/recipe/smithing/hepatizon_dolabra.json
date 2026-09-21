@@ -52,7 +52,7 @@
 				},
 				{
 					"translate": "desc.matcha.speed_attribute",
-					"with": ["+0.003"],
+					"with": ["+0.005"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -84,8 +84,8 @@
 				},
 				{
 					"type": "minecraft:movement_speed",
-					"id": "bronze_sword",
-					"amount": 0.003,
+					"id": "hepatizon_dolabra",
+					"amount": 0.005,
 					"operation": "add_value",
 					"slot": "mainhand"
 				}

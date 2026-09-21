@@ -262,32 +262,32 @@
 	},
 	{
 		"id": "hepatizon_axe",
-		"source": "data/matcha/recipe/smithing/bronze_axe.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_axe.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "hepatizon_boots",
-		"source": "data/matcha/recipe/smithing/bronze_boots.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_boots.json",
 		"carrier": "minecraft:copper_boots"
 	},
 	{
 		"id": "hepatizon_chestplate",
-		"source": "data/matcha/recipe/smithing/bronze_chestplate.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_chestplate.json",
 		"carrier": "minecraft:copper_chestplate"
 	},
 	{
 		"id": "hepatizon_dolabra",
-		"source": "data/matcha/recipe/smithing/bronze_dolabra.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_dolabra.json",
 		"carrier": "minecraft:stone_axe"
 	},
 	{
 		"id": "hepatizon_helmet",
-		"source": "data/matcha/recipe/smithing/bronze_helmet.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_helmet.json",
 		"carrier": "minecraft:copper_helmet"
 	},
 	{
 		"id": "hepatizon_hoe",
-		"source": "data/matcha/recipe/smithing/bronze_hoe.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_hoe.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
@@ -344,32 +344,32 @@
 	},
 	{
 		"id": "hepatizon_leggings",
-		"source": "data/matcha/recipe/smithing/bronze_leggings.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_leggings.json",
 		"carrier": "minecraft:copper_leggings"
 	},
 	{
 		"id": "hepatizon_mattock",
-		"source": "data/matcha/recipe/smithing/bronze_mattock.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_mattock.json",
 		"carrier": "minecraft:stone_hoe"
 	},
 	{
 		"id": "hepatizon_pickaxe",
-		"source": "data/matcha/recipe/smithing/bronze_pickaxe.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_pickaxe.json",
 		"carrier": "minecraft:stone_pickaxe"
 	},
 	{
 		"id": "hepatizon_shovel",
-		"source": "data/matcha/recipe/smithing/bronze_shovel.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_shovel.json",
 		"carrier": "minecraft:stone_shovel"
 	},
 	{
 		"id": "hepatizon_spear",
-		"source": "data/matcha/recipe/smithing/bronze_spear.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_spear.json",
 		"carrier": "minecraft:stone_spear"
 	},
 	{
 		"id": "hepatizon_sword",
-		"source": "data/matcha/recipe/smithing/bronze_sword.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_sword.json",
 		"carrier": "minecraft:stone_sword"
 	},
 	{

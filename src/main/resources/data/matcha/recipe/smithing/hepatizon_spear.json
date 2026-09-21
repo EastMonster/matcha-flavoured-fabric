@@ -1,34 +1,34 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:hepatizon",
-	"base": "minecraft:copper_sword",
+	"base": "minecraft:copper_spear",
 	"result": {
-		"id": "matcha:hepatizon_sword",
+		"id": "matcha:hepatizon_spear",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:item_name": {
-				"translate": "item.matcha.hepatizon_sword",
+				"translate": "item.matcha.hepatizon_spear",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [
 				{
-					"type": "minecraft:attack_speed",
-					"id": "attack_speed",
-					"amount": -2.1,
+					"type": "minecraft:movement_speed",
+					"id": "hepatizon_spear",
+					"amount": 0.0105,
 					"operation": "add_value",
 					"slot": "mainhand"
 				},
 				{
 					"type": "minecraft:attack_damage",
-					"id": "attack_damage",
-					"amount": 5,
+					"id": "damage",
+					"amount": 2,
 					"operation": "add_value",
 					"slot": "mainhand"
 				},
 				{
-					"type": "minecraft:movement_speed",
-					"id": "bronze_sword",
-					"amount": 0.0105,
+					"type": "minecraft:attack_speed",
+					"id": "attack_speed",
+					"amount": -2.82,
 					"operation": "add_value",
 					"slot": "mainhand"
 				}
@@ -36,13 +36,13 @@
 			"minecraft:lore": [
 				{
 					"translate": "desc.matcha.attack_damage",
-					"with": ["6"],
+					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
 					"translate": "desc.matcha.cooldown",
-					"with": ["1.9"],
+					"with": ["1.18"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -75,7 +75,7 @@
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:enchantments": {
-				"matcha:riposte": 1
+				"minecraft:lunge": 3
 			}
 		}
 	}

@@ -4,7 +4,7 @@
 		"bronze_elytra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipes": "matcha:smithing/bronze_elytra"
+				"recipes": "matcha:smithing/hepatizon_elytra"
 			}
 		}
 	},

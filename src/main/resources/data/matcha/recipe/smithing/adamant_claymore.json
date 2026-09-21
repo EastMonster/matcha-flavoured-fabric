@@ -24,7 +24,7 @@
 				},
 				{
 					"translate": "desc.matcha.cooldown",
-					"with": ["1.0"],
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
