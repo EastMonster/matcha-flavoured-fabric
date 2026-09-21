@@ -1,15 +1,15 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:hepatizon",
-	"base": "minecraft:copper_shovel",
+	"base": "minecraft:copper_hoe",
 	"result": {
-		"id": "matcha:hepatizon_shovel",
+		"id": "matcha:hepatizon_hoe",
 		"components": {
 			"minecraft:max_damage": 1000,
 			"minecraft:tool": {
 				"rules": [
 					{
-						"blocks": "#minecraft:mineable/shovel",
+						"blocks": "#minecraft:mineable/hoe",
 						"speed": 20,
 						"correct_for_drops": true
 					}
@@ -26,13 +26,13 @@
 				},
 				{
 					"translate": "desc.matcha.attack_damage",
-					"with": ["5"],
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
 					"translate": "desc.matcha.cooldown",
-					"with": ["1"],
+					"with": ["4"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -54,37 +54,23 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha.hepatizon_shovel",
+				"translate": "item.matcha.hepatizon_hoe",
 				"color": "#ac7b5c"
-			},
-			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
 			},
 			"minecraft:attribute_modifiers": [
 				{
-					"type": "minecraft:attack_speed",
-					"id": "attack_speed",
-					"amount": -3,
-					"operation": "add_value",
-					"slot": "mainhand"
-				},
-				{
-					"type": "minecraft:attack_damage",
-					"id": "attack_damage",
-					"amount": 4,
-					"operation": "add_value",
-					"slot": "mainhand"
-				},
-				{
 					"type": "minecraft:movement_speed",
-					"id": "bronze_sword",
+					"id": "hepatizon_sword",
 					"amount": 0.0055,
 					"operation": "add_value",
 					"slot": "mainhand"
 				}
 			],
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:copper_block"

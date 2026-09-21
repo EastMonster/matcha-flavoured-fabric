@@ -4,23 +4,7 @@
     "count": 1
   },
   "gives": {
-    "id": "minecraft:bundle",
-    "components": {
-      "minecraft:bundle_contents": [
-        {
-          "id": "matcha:hepatizon",
-          "count": 1
-        },
-        {
-          "id": "minecraft:copper_ingot",
-          "count": 2
-        },
-        {
-          "id": "minecraft:stick",
-          "count": 2
-        }
-      ]
-    },
+    "id": "matcha:hepatizon",
     "count": 1
   },
   "max_uses": 999,

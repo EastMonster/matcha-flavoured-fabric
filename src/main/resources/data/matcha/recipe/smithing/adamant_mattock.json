@@ -48,7 +48,7 @@
 				},
 				{
 					"translate": "tooltip.matcha.repaired_with",
-					"color": "dark_gray",
+					"color": "gray",
 					"italic": false
 				},
 				{

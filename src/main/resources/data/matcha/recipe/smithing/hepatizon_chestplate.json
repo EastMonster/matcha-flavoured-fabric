@@ -1,15 +1,15 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:hepatizon",
-	"base": "minecraft:copper_helmet",
+	"base": "minecraft:copper_chestplate",
 	"result": {
-		"id": "matcha:hepatizon_helmet",
+		"id": "matcha:hepatizon_chestplate",
 		"components": {
 			"minecraft:max_damage": 500,
 			"minecraft:lore": [
 				{
 					"translate": "desc.matcha.armour",
-					"with": ["3"],
+					"with": ["8"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -31,23 +31,23 @@
 				}
 			],
 			"minecraft:item_name": {
-				"translate": "item.matcha.hepatizon_helmet",
+				"translate": "item.matcha.hepatizon_chestplate",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [
 				{
 					"type": "minecraft:movement_speed",
-					"id": "bronze_helmet",
+					"id": "hepatizon_chestplate",
 					"amount": 0.01,
 					"operation": "add_value",
-					"slot": "head"
+					"slot": "chest"
 				},
 				{
 					"type": "minecraft:armor",
-					"id": "minecraft:armor.helmet",
-					"amount": 3,
+					"id": "minecraft:armor.chestplate",
+					"amount": 8,
 					"operation": "add_value",
-					"slot": "head"
+					"slot": "chest"
 				}
 			],
 			"minecraft:tooltip_display": {
@@ -57,7 +57,7 @@
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
-				"slot": "head",
+				"slot": "chest",
 				"asset_id": "matcha:bronze"
 			},
 			"minecraft:repairable": {

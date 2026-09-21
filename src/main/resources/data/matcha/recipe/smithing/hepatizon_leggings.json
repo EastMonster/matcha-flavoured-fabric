@@ -37,7 +37,7 @@
 			"minecraft:attribute_modifiers": [
 				{
 					"type": "minecraft:movement_speed",
-					"id": "bronze_leggings",
+					"id": "hepatizon_leggings",
 					"amount": 0.01,
 					"operation": "add_value",
 					"slot": "legs"

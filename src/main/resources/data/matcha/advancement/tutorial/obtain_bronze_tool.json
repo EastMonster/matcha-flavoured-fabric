@@ -4,73 +4,73 @@
 		"bronze_axe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_axe"
+				"recipe_id": "matcha:smithing/hepatizon_axe"
 			}
 		},
 		"bronze_pickaxe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_pickaxe"
+				"recipe_id": "matcha:smithing/hepatizon_pickaxe"
 			}
 		},
 		"bronze_shovel": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_shovel"
+				"recipe_id": "matcha:smithing/hepatizon_shovel"
 			}
 		},
 		"bronze_hoe": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_hoe"
+				"recipe_id": "matcha:smithing/hepatizon_hoe"
 			}
 		},
 		"bronze_sword": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_sword"
+				"recipe_id": "matcha:smithing/hepatizon_sword"
 			}
 		},
 		"bronze_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_dolabra"
+				"recipe_id": "matcha:smithing/hepatizon_dolabra"
 			}
 		},
 		"bronze_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_mattock"
+				"recipe_id": "matcha:smithing/hepatizon_mattock"
 			}
 		},
 		"bronze_helmet": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_helmet"
+				"recipe_id": "matcha:smithing/hepatizon_helmet"
 			}
 		},
 		"bronze_chestplate": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_chestplate"
+				"recipe_id": "matcha:smithing/hepatizon_chestplate"
 			}
 		},
 		"bronze_leggings": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_leggings"
+				"recipe_id": "matcha:smithing/hepatizon_leggings"
 			}
 		},
 		"bronze_boots": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_boots"
+				"recipe_id": "matcha:smithing/hepatizon_boots"
 			}
 		},
 		"bronze_spear": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_spear"
+				"recipe_id": "matcha:smithing/hepatizon_spear"
 			}
 		}
 	},

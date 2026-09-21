@@ -28,13 +28,13 @@
 		"bronze_dolabra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_dolabra"
+				"recipe_id": "matcha:smithing/hepatizon_dolabra"
 			}
 		},
 		"bronze_mattock": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
-				"recipe_id": "matcha:smithing/bronze_mattock"
+				"recipe_id": "matcha:smithing/hepatizon_mattock"
 			}
 		},
 		"electrum_mattock": {

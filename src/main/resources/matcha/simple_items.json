@@ -29,7 +29,7 @@
 		"id": "bronze_elytra",
 		"type": "item",
 		"tab": "combat",
-		"source": "data/matcha/recipe/smithing/bronze_elytra.json",
+		"source": "data/matcha/recipe/smithing/hepatizon_elytra.json",
 		"carrier": "minecraft:elytra",
 		"components": {
 			"minecraft:max_damage": 800,
