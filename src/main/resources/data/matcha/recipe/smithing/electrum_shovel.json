@@ -35,18 +35,7 @@
 					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.diamond_block",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.electrum_shovel",
 				"color": "yellow"

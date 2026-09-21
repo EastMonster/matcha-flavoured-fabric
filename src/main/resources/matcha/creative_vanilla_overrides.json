@@ -63,6 +63,49 @@
 	{"id": "minecraft:netherite_shovel", "source": "data/matcha/recipe/smithing/adamant_shovel.json", "tab": "tools"},
 	{"id": "minecraft:netherite_spear", "source": "data/matcha/recipe/smithing/adamant_spear.json", "tab": "combat"},
 	{"id": "minecraft:netherite_sword", "source": "data/matcha/recipe/smithing/adamant_sword.json", "tab": "combat"},
+	{
+		"id": "minecraft:trident",
+		"tab": "combat",
+		"result": {
+			"id": "minecraft:trident",
+			"count": 1,
+			"components": {
+				"minecraft:lore": [
+					{
+						"translate": "desc.matcha.attack_damage",
+						"with": ["9"],
+						"color": "dark_green",
+						"italic": false
+					},
+					{
+						"translate": "desc.matcha.cooldown",
+						"with": ["1.1"],
+						"color": "dark_green",
+						"italic": false
+					}],
+				"minecraft:max_damage": 500,
+				"minecraft:tooltip_display": {
+					"hidden_components": ["minecraft:attribute_modifiers"]
+				},
+				"minecraft:repairable": {
+					"items": ["minecraft:diamond"]
+				}
+			}
+		}
+	},
+	{
+		"id": "minecraft:elytra",
+		"tab": "tools",
+		"result": {
+			"id": "minecraft:elytra",
+			"count": 1,
+			"components": {
+				"minecraft:repairable": {
+					"items": ["minecraft:honeycomb", "minecraft:feather"]
+				}
+			}
+		}
+	},
 	{"id": "minecraft:shears", "source": "data/matcha/recipe/crafting/iron_shears.json", "tab": "tools"},
 	{"id": "minecraft:wooden_axe", "source": "data/matcha/recipe/crafting/wooden_axe.json", "tab": "tools"},
 	{"id": "minecraft:wooden_axe", "source": "data/matcha/recipe/crafting/wooden_axe.json", "tab": "combat"},

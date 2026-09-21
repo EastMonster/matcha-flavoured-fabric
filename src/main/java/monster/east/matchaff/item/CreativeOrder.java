@@ -102,11 +102,12 @@ public class CreativeOrder {
 				JsonObject entry = element.getAsJsonObject();
 				Identifier id = Identifier.parse(entry.get("id").getAsString());
 				Item item = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(id), "Unknown creative item: " + id);
-				String source = entry.get("source").getAsString();
-				JsonObject recipe = readResourceObject(source);
-				JsonObject result = recipe.getAsJsonObject("result");
+				String source = entry.has("source") ? entry.get("source").getAsString() : "inline result";
+				JsonObject result = entry.has("result")
+						? entry.getAsJsonObject("result")
+						: readResourceObject(source).getAsJsonObject("result");
 				if (!id.toString().equals(result.get("id").getAsString())) {
-					throw new IllegalStateException("Creative override item does not match recipe result: " + source);
+					throw new IllegalStateException("Creative override item does not match result: " + source);
 				}
 				overrides.add(new VanillaOverride(item, tab(entry.get("tab").getAsString()), result));
 			}

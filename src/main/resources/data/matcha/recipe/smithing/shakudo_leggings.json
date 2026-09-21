@@ -22,18 +22,7 @@
 					"translate": "enchantment.matcha.shakudo_regen_bonus",
 					"color": "#e85e8f",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.copper_block",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.shakudo_leggings",
 				"color": "#c96691"

@@ -8,6 +8,11 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.steel_shovel"
 			},
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"minecraft:attribute_modifiers"
+				]
+			},
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {
 				"rules": [
@@ -38,18 +43,7 @@
 					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "item.minecraft.iron_ingot",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:repairable": {
 				"items": [
 					"minecraft:iron_ingot"

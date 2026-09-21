@@ -44,23 +44,7 @@
 					"translate": "enchantment.matcha.divinity.set_bonus",
 					"color": "aqua",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.diamond_block",
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "item.minecraft.netherite_scrap",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:tooltip_display": {
 				"hidden_components": [
 					"minecraft:attribute_modifiers"

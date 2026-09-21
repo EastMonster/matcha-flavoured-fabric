@@ -31,18 +31,7 @@
 					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "item.minecraft.iron_ingot",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:max_damage": 3000,
 			"minecraft:tool": {
 				"rules": [
