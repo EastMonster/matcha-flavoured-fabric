@@ -45,23 +45,7 @@
 					"with": ["+0.02"],
 					"color": "dark_green",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.honeycomb_block",
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.copper_block",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.bronze_elytra",
 				"color": "#ac7b5c"
@@ -125,23 +109,7 @@
 					"translate": "enchantment.matcha.shakudo_elytra_regen_bonus",
 					"color": "#e85e8f",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.honeycomb_block",
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.copper_block",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.shakudo_elytra",
 				"color": "#c96691"
@@ -190,10 +158,7 @@
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:iron_nugget",
-					"minecraft:iron_ingot"
-				]
+				"items": "minecraft:copper_block"
 			},
 			"minecraft:enchantments": {
 				"minecraft:looting": 2

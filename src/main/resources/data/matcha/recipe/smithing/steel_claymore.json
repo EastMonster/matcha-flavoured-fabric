@@ -48,18 +48,7 @@
 					],
 					"color": "dark_gray",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "item.minecraft.iron_ingot",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:blocks_attacks": {
 				"disable_cooldown_scale": 2,
 				"damage_reductions": [

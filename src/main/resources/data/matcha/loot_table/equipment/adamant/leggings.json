@@ -84,7 +84,7 @@
 								"minecraft:repairable": {
 									"items": [
 										"minecraft:diamond_block",
-										"minecraft:gold_block"
+										"minecraft:netherite_scrap"
 									]
 								},
 								"minecraft:item_name": {

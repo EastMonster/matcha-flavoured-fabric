@@ -41,18 +41,7 @@
 					"with": ["+0.005"],
 					"color": "dark_green",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.copper_block",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.hepatizon_hoe",
 				"color": "#ac7b5c"

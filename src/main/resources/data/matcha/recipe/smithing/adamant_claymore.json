@@ -48,23 +48,7 @@
 					],
 					"color": "dark_gray",
 					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.repaired_with",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "block.minecraft.diamond_block",
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "item.minecraft.netherite_scrap",
-					"color": "dark_gray",
-					"italic": false
-				}
-			],
+				}],
 			"minecraft:blocks_attacks": {
 				"disable_cooldown_scale": 1,
 				"damage_reductions": [
