@@ -105,9 +105,17 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		if (lines.contains(header)) {
 			return;
 		}
-		lines.add(header);
+		int insertionIndex = lines.size();
+		if (flag.isAdvanced()) {
+			Component advancedId = Component.literal(itemId.toString()).withStyle(ChatFormatting.DARK_GRAY);
+			int advancedIndex = lines.indexOf(advancedId);
+			if (advancedIndex >= 0) {
+				insertionIndex = advancedIndex;
+			}
+		}
+		lines.add(insertionIndex++, header);
 		for (Holder<Item> material : repairable.items()) {
-			lines.add(new ItemStack(material).getHoverName()
+			lines.add(insertionIndex++, new ItemStack(material).getHoverName()
 					.copy().withStyle(style -> style.withColor(ChatFormatting.DARK_GRAY).withItalic(false)));
 		}
 	}
