@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:electrum",
-	"base": "minecraft:diamond_hoe",
+	"base": ["minecraft:diamond_hoe", "matcha:diamond_mattock"],
 	"result": {
 		"id": "matcha:electrum_mattock",
 		"components": {

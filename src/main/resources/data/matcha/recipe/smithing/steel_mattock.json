@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:steel",
-	"base": "minecraft:iron_hoe",
+	"base": ["minecraft:iron_hoe", "matcha:iron_mattock"],
 	"result": {
 		"id": "matcha:steel_mattock",
 		"components": {
