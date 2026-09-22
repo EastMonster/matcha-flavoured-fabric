@@ -14,11 +14,6 @@
 		"components": {
 			"minecraft:lore": [
 				{
-					"text": "❤",
-					"color": "red",
-					"italic": false
-				},
-				{
 					"translate": "effect.matcha.night_vision",
 						"with": [
 							"0:30"

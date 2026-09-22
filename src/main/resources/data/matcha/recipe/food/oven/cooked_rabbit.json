@@ -7,13 +7,6 @@
 	"result": {
 		"id": "minecraft:cooked_rabbit",
 		"components": {
-			"minecraft:lore": [
-				{
-					"text": "❤❤",
-					"color": "red",
-					"italic": false
-				}
-			],
 			"minecraft:consumable": {
 				"on_consume_effects": [
 					{

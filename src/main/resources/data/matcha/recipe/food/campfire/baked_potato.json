@@ -7,13 +7,6 @@
   "result": {
     "id": "minecraft:baked_potato",
     "components": {
-      "minecraft:lore": [
-        {
-          "text": "❤❤❣",
-          "color": "red",
-          "italic": false
-        }
-      ],
       "minecraft:consumable": {
         "consume_seconds": 1.6,
         "has_consume_particles": true,

@@ -14,11 +14,6 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "",
-										"color": "red",
-										"italic": false
-									},
-									{
 										"translate": "effect.matcha.warping",
 										"color": "#a945b0",
 										"italic": false

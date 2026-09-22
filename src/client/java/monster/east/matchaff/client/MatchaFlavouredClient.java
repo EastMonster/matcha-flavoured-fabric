@@ -24,7 +24,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.enchantment.Repairable;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import monster.east.matchaff.mechanic.FoodHealMechanics;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.MatchaFlavouredFabric;
 import monster.east.matchaff.network.SleepFastForwardPayload;
@@ -40,6 +45,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		ItemTooltipCallback.EVENT.register(MatchaFlavouredClient::appendFoodHealingTooltip);
 		ItemTooltipCallback.EVENT.register(MatchaFlavouredClient::appendRepairTooltip);
 		ClientPlayNetworking.registerGlobalReceiver(SleepFastForwardPayload.TYPE, (payload, context) ->
 				context.client().execute(() -> sleepRate = payload.active() ? CLOUD_TIME_SCALE : 0));
@@ -69,6 +75,56 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 				Component.translatable("matcha.config.vanilla_preview.pack"),
 				PackActivationType.NORMAL
 		);
+	}
+
+	private static void appendFoodHealingTooltip(ItemStack stack, Item.TooltipContext context,
+			TooltipFlag flag, List<Component> lines) {
+		if (stack.get(DataComponents.FOOD) == null) {
+			return;
+		}
+		TooltipDisplay display = stack.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT);
+		if (!display.shows(DataComponents.LORE)) {
+			return;
+		}
+		Consumable consumable = stack.get(DataComponents.CONSUMABLE);
+		if (consumable == null) {
+			return;
+		}
+
+		int healingPoints = 0;
+		for (var consumeEffect : consumable.onConsumeEffects()) {
+			if (!(consumeEffect instanceof ApplyStatusEffectsConsumeEffect apply) || apply.probability() <= 0.0F) {
+				continue;
+			}
+			List<MobEffectInstance> regens = apply.effects().stream()
+					.filter(effect -> effect.getEffect() == MobEffects.REGENERATION)
+					.toList();
+			healingPoints += FoodHealMechanics.firstHealingPoints(regens);
+		}
+		if (healingPoints <= 0) {
+			return;
+		}
+
+		for (int i = 0; i < lines.size(); i++) {
+			String oldText = lines.get(i).getString();
+			if (isHealingLine(oldText)) {
+				lines.set(i, healingTooltip(healingPoints));
+				return;
+			}
+		}
+		lines.add(Math.min(1, lines.size()), healingTooltip(healingPoints));
+	}
+
+	private static Component healingTooltip(int healingPoints) {
+		String text = "\uE030".repeat(healingPoints / 2)
+				+ (healingPoints % 2 == 0 ? "" : "\uE032");
+		return Component.literal(text)
+				.withStyle(style -> style.withColor(ChatFormatting.RED).withItalic(false));
+	}
+
+	private static boolean isHealingLine(String text) {
+		return !text.isEmpty() && text.chars().allMatch(character ->
+				character == '❤' || character == '❣' || character == '\uE030' || character == '\uE032');
 	}
 
 	private static void appendRepairTooltip(ItemStack stack, Item.TooltipContext context,

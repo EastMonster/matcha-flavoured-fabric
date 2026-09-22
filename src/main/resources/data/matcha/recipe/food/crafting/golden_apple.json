@@ -14,11 +14,6 @@
 		"components": {
 			"minecraft:lore": [
 				{
-					"text": "❤❤",
-					"color": "red",
-					"italic": false
-				},
-				{
 					"text": "❤❤ (2:00)",
 					"color": "aqua",
 					"italic": false

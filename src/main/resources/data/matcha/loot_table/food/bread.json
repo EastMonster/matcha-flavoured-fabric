@@ -14,11 +14,6 @@
 							"components": {
 								"minecraft:lore": [
 									{
-										"text": "",
-										"color": "red",
-										"italic": false
-									},
-									{
 										"color": "gray",
 										"italic": false,
 										"text": " Cleanse Maleffect"
