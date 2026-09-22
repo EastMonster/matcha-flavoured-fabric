@@ -12,13 +12,6 @@
 						{
 							"type": "minecraft:set_components",
 							"components": {
-								"minecraft:lore": [
-									{
-										"text": "❣",
-										"color": "red",
-										"italic": false
-									}
-								],
 								"minecraft:consumable": {
 									"on_consume_effects": [
 										{

@@ -31,7 +31,7 @@ public final class FoodHealMechanics {
 		HealTask(MobEffectInstance segment, int duration) {
 			this.ticksLeft = duration;
 			if (isHealingSimulation(segment)) {
-				this.interval = Math.max(1, 50 >> segment.getAmplifier());
+				this.interval = healingInterval(segment);
 				this.visibleEffect = null;
 			} else {
 				this.interval = 0;
@@ -135,11 +135,31 @@ public final class FoodHealMechanics {
 		return applied;
 	}
 
+	/** Returns the health points represented by the first high-amplifier regeneration segment. */
+	public static int firstHealingPoints(List<MobEffectInstance> regens) {
+		int elapsed = 0;
+		for (MobEffectInstance segment : buildChain(regens)) {
+			int effectiveDuration = segment.getDuration() - elapsed;
+			if (effectiveDuration <= 0) {
+				break;
+			}
+			if (segment.getAmplifier() >= 2) {
+				return effectiveDuration / healingInterval(segment);
+			}
+			elapsed += effectiveDuration;
+		}
+		return 0;
+	}
+
 	private static boolean isHealingSimulation(MobEffectInstance segment) {
 		// Matcha's direct food-heal segments are hidden Regeneration III/IV.
 		// Lower amplifiers are genuine timed effects even when their icon is hidden,
 		// as on the enchanted golden apple's Regeneration II.
 		return !segment.showIcon() && segment.getAmplifier() >= 2;
+	}
+
+	private static int healingInterval(MobEffectInstance segment) {
+		return Math.max(1, 50 >> segment.getAmplifier());
 	}
 
 	/**
