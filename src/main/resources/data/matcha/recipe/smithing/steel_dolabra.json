@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:steel",
-	"base": "minecraft:iron_axe",
+	"base": ["minecraft:iron_axe", "matcha:iron_dolabra"],
 	"result": {
 		"id": "matcha:steel_dolabra",
 		"components": {

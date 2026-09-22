@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:electrum",
-	"base": "minecraft:diamond_axe",
+	"base": ["minecraft:diamond_axe", "matcha:diamond_dolabra"],
 	"result": {
 		"id": "matcha:electrum_dolabra",
 		"components": {

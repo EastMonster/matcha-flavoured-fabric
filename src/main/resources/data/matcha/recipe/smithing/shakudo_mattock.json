@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:shakudo",
-	"base": "minecraft:copper_hoe",
+	"base": ["minecraft:copper_hoe", "matcha:copper_mattock"],
 	"result": {
 		"id": "matcha:shakudo_mattock",
 		"components": {
@@ -31,7 +31,7 @@
 				},
 				{
 					"translate": "desc.matcha.attack_damage",
-					"with": ["4"],
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -55,7 +55,7 @@
 				{
 					"type": "minecraft:attack_damage",
 					"id": "attack_damage",
-					"amount": 3,
+					"amount": 1,
 					"operation": "add_value",
 					"slot": "mainhand"
 				},

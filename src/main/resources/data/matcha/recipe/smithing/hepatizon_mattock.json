@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:hepatizon",
-	"base": "minecraft:copper_hoe",
+	"base": ["minecraft:copper_hoe", "matcha:copper_mattock"],
 	"result": {
 		"id": "matcha:hepatizon_mattock",
 		"components": {

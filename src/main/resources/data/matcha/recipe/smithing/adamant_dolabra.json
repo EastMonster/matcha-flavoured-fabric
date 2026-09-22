@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "minecraft:netherite_ingot",
-	"base": "minecraft:diamond_axe",
+	"base": ["minecraft:diamond_axe", "matcha:diamond_dolabra"],
 	"result": {
 		"id": "matcha:adamant_dolabra",
 		"components": {

@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "matcha:shakudo",
-	"base": "minecraft:copper_axe",
+	"base": ["minecraft:copper_axe", "matcha:copper_dolabra"],
 	"result": {
 		"id": "matcha:shakudo_dolabra",
 		"components": {

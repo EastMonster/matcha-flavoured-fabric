@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smithing_transform",
 	"addition": "minecraft:netherite_ingot",
-	"base": "minecraft:diamond_hoe",
+	"base": ["minecraft:diamond_hoe", "matcha:diamond_mattock"],
 	"result": {
 		"id": "matcha:adamant_mattock",
 		"components": {
