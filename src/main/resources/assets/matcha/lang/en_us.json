@@ -987,7 +987,7 @@
 	"subtitles.matcha.fishing.nautilus_shell": "Caught a nautilus shell",
 	"subtitles.matcha.fishing.frog": "Caught a frog",
 	"advancements.matcha.anglers_almanac.estus_ash.desc": "Though it appears to be soluble, estus ash precipitates out of solution over time. With no emulsifiers in the water, a sediment of ash forms on the bed. So why then, is the sediment so thin?",
-	"effect.matcha.warping": "🌀 Warping",
+	"effect.matcha.warping": "\uE02A Warping",
 	"advancements.matcha.anglers_almanac.glowstone_dust.desc": "A little glowing dust pulled from the water. Not treasure, but it is shiny.",
 	"desc.matcha.full": "🍖 Full (%s)",
 	"item.matcha.rusty_axe": "Rusty Axe",

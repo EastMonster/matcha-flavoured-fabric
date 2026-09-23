@@ -6,21 +6,24 @@
 			{
 				"model": {
 					"type": "minecraft:model",
-					"model": "matcha:item/sturdy_leather_chestplate_electrum_trim"
+					"model": "matcha:item/sturdy_leather_chestplate_electrum_trim",
+					"tints": [{ "type": "minecraft:dye", "default": -6265536 }]
 				},
 				"when": "matcha:electrum"
 			},
 			{
 				"model": {
 					"type": "minecraft:model",
-					"model": "matcha:item/sturdy_leather_chestplate_hepatizon_trim"
+					"model": "matcha:item/sturdy_leather_chestplate_hepatizon_trim",
+					"tints": [{ "type": "minecraft:dye", "default": -6265536 }]
 				},
 				"when": "matcha:hepatizon"
 			},
 			{
 				"model": {
 					"type": "minecraft:model",
-					"model": "matcha:item/sturdy_leather_chestplate_shakudo_trim"
+					"model": "matcha:item/sturdy_leather_chestplate_shakudo_trim",
+					"tints": [{ "type": "minecraft:dye", "default": -6265536 }]
 				},
 				"when": "matcha:shakudo"
 			},

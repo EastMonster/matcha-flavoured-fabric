@@ -1,0 +1,19 @@
+{
+	"layers": {
+		"humanoid": [
+			{
+				"texture": "matcha:hepatizon"
+			}
+		],
+		"humanoid_leggings": [
+			{
+				"texture": "matcha:hepatizon"
+			}
+		],
+		"horse_body": [
+			{
+				"texture": "matcha:hepatizon"
+			}
+		]
+	}
+}

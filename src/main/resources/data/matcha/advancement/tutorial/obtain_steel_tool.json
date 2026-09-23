@@ -92,8 +92,11 @@
 			}
 		],
 		"icon": {
+			"components": {
+				"minecraft:item_model": "matcha:steel_pickaxe"
+			},
 			"count": 1,
-			"id": "matcha:steel_shovel"
+			"id": "minecraft:iron_shovel"
 		},
 		"title": {
 			"translate": "advancements.matcha.tutorial.obtain_steel_tool.title"
@@ -119,8 +122,6 @@
 		]
 	],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_1"
-		]
+		"loot": ["matcha:advancement/obol_1"]
 	}
 }

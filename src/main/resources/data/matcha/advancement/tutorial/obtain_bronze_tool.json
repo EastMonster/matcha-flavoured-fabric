@@ -112,8 +112,6 @@
 		]
 	],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_1"
-		]
+		"loot": ["matcha:advancement/obol_1"]
 	}
 }

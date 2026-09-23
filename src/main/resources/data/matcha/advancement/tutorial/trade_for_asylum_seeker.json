@@ -1,5 +1,5 @@
 {
-	"parent": "matcha:tutorial/obtain_obol",
+	"parent": "matcha:tutorial/light_beacon",
 	"criteria": {
 		"traded": {
 			"trigger": "minecraft:villager_trade",
@@ -31,14 +31,8 @@
 		},
 		"hidden": false
 	},
-	"requirements": [
-		[
-			"traded"
-		]
-	],
+	"requirements": [["traded"]],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_1"
-		]
+		"loot": ["matcha:advancement/obol_1"]
 	}
 }

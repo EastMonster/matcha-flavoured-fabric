@@ -1,6 +1,20 @@
 {
 	"model": {
-		"type": "minecraft:model",
-		"model": "matcha:item/crook"
-	}
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:item/crook"
+				},
+				"when": ["gui", "ground", "fixed", "on_shelf"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/crook_in_hand"
+		},
+		"property": "minecraft:display_context"
+	},
+	"swap_animation_scale": 1.95
 }

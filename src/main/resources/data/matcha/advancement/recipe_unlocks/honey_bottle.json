@@ -10,26 +10,16 @@
 				]
 			},
 			"trigger": "minecraft:inventory_changed"
-		},
-		"has_the_recipe": {
-			"conditions": {
-				"recipe": "matcha:food/oven/honey_ginger_tea"
-			},
-			"trigger": "minecraft:recipe_unlocked"
 		}
 	},
-	"requirements": [
-		[
-			"has_the_recipe",
-			"has_primary_material"
-		]
-	],
+	"requirements": [["has_primary_material"]],
 	"rewards": {
 		"recipes": [
 			"matcha:food/oven/honey_ginger_tea",
 			"matcha:food/crafting/mead",
 			"matcha:food/crafting/bubbling_mead",
 			"matcha:food/crafting/honied_french_toast",
+			"matcha:crafting/honey_block",
 			"matcha:food/crafting/sugar_from_honey_bottle"
 		]
 	}

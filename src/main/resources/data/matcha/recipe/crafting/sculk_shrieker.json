@@ -3,13 +3,9 @@
 	"key": {
 		"#": "minecraft:sculk_vein",
 		"E": "minecraft:echo_shard",
-		"b": "#matcha:bone_fish"
+		"b": "minecraft:bone"
 	},
-	"pattern": [
-		"b b",
-		"# #",
-		"#E#"
-	],
+	"pattern": ["b b", "# #", "#E#"],
 	"result": {
 		"id": "minecraft:sculk_shrieker"
 	}

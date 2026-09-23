@@ -3,19 +3,12 @@
 	"group": "tnt",
 	"category": "redstone",
 	"key": {
-		"P": [
-			"minecraft:paper",
-			"minecraft:sand"
-		],
+		"P": ["minecraft:paper", "minecraft:sand"],
 		"#": "minecraft:gunpowder"
 	},
-	"pattern": [
-		"P#P",
-		"#P#",
-		"P#P"
-	],
+	"pattern": ["P#P", "#P#", "P#P"],
 	"result": {
-		"count": 4,
+		"count": 2,
 		"id": "minecraft:tnt"
 	}
 }

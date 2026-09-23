@@ -29,14 +29,8 @@
 		"frame": "goal",
 		"hidden": false
 	},
-	"requirements": [
-		[
-			"bronze_elytra"
-		]
-	],
+	"requirements": [["bronze_elytra"]],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_4"
-		]
+		"loot": ["matcha:advancement/obol_4"]
 	}
 }

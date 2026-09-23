@@ -35,14 +35,8 @@
 		"announce_to_chat": true,
 		"hidden": false
 	},
-	"requirements": [
-		[
-			"get_heart"
-		]
-	],
+	"requirements": [["get_heart"]],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_2"
-		]
+		"loot": ["matcha:advancement/obol_2"]
 	}
 }

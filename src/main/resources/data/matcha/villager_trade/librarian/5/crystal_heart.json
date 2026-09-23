@@ -13,7 +13,7 @@
 	"max_uses": 999,
 	"reputation_discount": 0,
 	"wants": {
-		"count": 1,
+		"count": 2,
 		"id": "matcha:crystal_heart"
 	},
 	"xp": 80

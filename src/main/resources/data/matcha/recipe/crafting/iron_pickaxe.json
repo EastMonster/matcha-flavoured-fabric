@@ -5,17 +5,13 @@
 		"#": "minecraft:stick",
 		"X": "iron_ingot"
 	},
-	"pattern": [
-		"XXX",
-		" # ",
-		" # "
-	],
+	"pattern": ["XXX", " # ", " # "],
 	"result": {
 		"components": {
 			"minecraft:tool": {
 				"rules": [
 					{
-						"blocks": "minecraft:obsidian",
+						"blocks": "#matcha:non_mineable/iron",
 						"speed": 3,
 						"correct_for_drops": false
 					},
@@ -50,9 +46,7 @@
 			],
 			"minecraft:max_damage": 500,
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			}
 		},
 		"count": 1,

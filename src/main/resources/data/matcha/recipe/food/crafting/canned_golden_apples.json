@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:golden_apple",
+		"matcha:baked_golden_apple",
 		"minecraft:sugar",
 		"minecraft:glass_bottle"
 	],

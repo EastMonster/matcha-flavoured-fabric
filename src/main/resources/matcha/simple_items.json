@@ -45,7 +45,8 @@
 					"with": ["+0.02"],
 					"color": "dark_green",
 					"italic": false
-				}],
+				}
+			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.bronze_elytra",
 				"color": "#ac7b5c"
@@ -67,21 +68,16 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:enchantments": {},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
 				"slot": "chest",
-				"asset_id": "matcha:bronze_elytra"
+				"asset_id": "matcha:hepatizon_elytra"
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:honeycomb_block",
-					"minecraft:copper_block"
-				]
+				"items": ["minecraft:honeycomb_block", "minecraft:copper_block"]
 			}
 		}
 	},
@@ -95,8 +91,8 @@
 			"minecraft:max_damage": 800,
 			"minecraft:lore": [
 				{
-				"translate": "desc.matcha.armour",
-				"with": ["1"],
+					"translate": "desc.matcha.armour",
+					"with": ["1"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -109,7 +105,8 @@
 					"translate": "enchantment.matcha.shakudo_elytra_regen_bonus",
 					"color": "#e85e8f",
 					"italic": false
-				}],
+				}
+			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.shakudo_elytra",
 				"color": "#c96691"
@@ -118,15 +115,13 @@
 				{
 					"type": "minecraft:armor",
 					"id": "minecraft:armor.chestplate",
-				"amount": 1,
+					"amount": 1,
 					"operation": "add_value",
 					"slot": "chest"
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:enchantments": {
 				"matcha:max_magic_protection": 1,
@@ -139,10 +134,7 @@
 				"asset_id": "matcha:shakudo_elytra"
 			},
 			"minecraft:repairable": {
-				"items": [
-				"minecraft:honeycomb_block",
-				"minecraft:copper_block"
-				]
+				"items": ["minecraft:honeycomb_block", "minecraft:copper_block"]
 			}
 		}
 	},
@@ -161,7 +153,7 @@
 				"items": "minecraft:copper_block"
 			},
 			"minecraft:enchantments": {
-				"minecraft:looting": 2
+				"minecraft:looting": 3
 			},
 			"minecraft:enchantment_glint_override": false
 		}
@@ -456,9 +448,7 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
@@ -468,9 +458,7 @@
 				},
 				{
 					"translate": "effect.matcha.weakness_2",
-					"with": [
-						"01:00"
-					],
+					"with": ["01:00"],
 					"color": "#b6a09a",
 					"italic": false
 				}
@@ -502,9 +490,7 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
@@ -514,9 +500,7 @@
 				},
 				{
 					"translate": "effect.matcha.poison_2",
-					"with": [
-						"01:00"
-					],
+					"with": ["01:00"],
 					"color": "#48a53b",
 					"italic": false
 				}
@@ -569,9 +553,7 @@
 			},
 			"minecraft:max_damage": 3000,
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:iron_ingot"
-				]
+				"items": ["minecraft:iron_ingot"]
 			}
 		}
 	},
@@ -837,16 +819,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.infested",
-					"with": [
-						"05:00"
-					],
+					"with": ["05:00"],
 					"color": "#9bb0b0",
 					"italic": false
 				}
@@ -874,16 +852,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.invisibility",
-					"with": [
-						"10:00"
-					],
+					"with": ["10:00"],
 					"color": "#92b7ce",
 					"italic": false
 				}
@@ -912,16 +886,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.oozing",
-					"with": [
-						"05:00"
-					],
+					"with": ["05:00"],
 					"color": "#76c270",
 					"italic": false
 				}
@@ -955,24 +925,18 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.darkness",
-					"with": [
-						"01:00"
-					],
+					"with": ["01:00"],
 					"color": "#37a9a8",
 					"italic": false
 				},
 				{
 					"translate": "effect.matcha.blindness",
-					"with": [
-						"00:30"
-					],
+					"with": ["00:30"],
 					"color": "#37a9a8",
 					"italic": false
 				}
@@ -1000,16 +964,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.poison",
-					"with": [
-						"02:00"
-					],
+					"with": ["02:00"],
 					"color": "#48a53b",
 					"italic": false
 				}
@@ -1039,16 +999,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.slowness",
-					"with": [
-						"05:00"
-					],
+					"with": ["05:00"],
 					"color": "#e5c75d",
 					"italic": false
 				}
@@ -1076,16 +1032,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.weakness",
-					"with": [
-						"05:00"
-					],
+					"with": ["05:00"],
 					"color": "#92b7ce",
 					"italic": false
 				}
@@ -1114,16 +1066,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.weaving",
-					"with": [
-						"05:00"
-					],
+					"with": ["05:00"],
 					"color": "#a78b93",
 					"italic": false
 				}
@@ -1152,16 +1100,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.wind_charged",
-					"with": [
-						"05:00"
-					],
+					"with": ["05:00"],
 					"color": "#92a1c3",
 					"italic": false
 				}
@@ -1190,16 +1134,12 @@
 				]
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:potion_contents"
-				]
+				"hidden_components": ["minecraft:potion_contents"]
 			},
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.wither",
-					"with": [
-						"02:00"
-					],
+					"with": ["02:00"],
 					"color": "#866570",
 					"italic": false
 				}
@@ -1284,19 +1224,35 @@
 			"minecraft:max_stack_size": 64,
 			"minecraft:potion_contents": {
 				"custom_color": 15978319,
-				"custom_effects": [{
-					"id": "minecraft:speed",
-					"amplifier": 1,
-					"duration": 6000,
-					"show_icon": true
-				}]
+				"custom_effects": [
+					{
+						"id": "minecraft:speed",
+						"amplifier": 1,
+						"duration": 6000,
+						"show_icon": true
+					}
+				]
 			},
-			"minecraft:tooltip_display": {"hidden_components": ["minecraft:potion_contents"]},
+			"minecraft:tooltip_display": {
+				"hidden_components": ["minecraft:potion_contents"]
+			},
 			"minecraft:lore": [
-				{"translate": "desc.matcha.throwable", "color": "gray", "italic": false},
-				{"translate": "effect.matcha.speed_2", "with": ["5:00"], "color": "#37cafb", "italic": false}
+				{
+					"translate": "desc.matcha.throwable",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "effect.matcha.speed_2",
+					"with": ["5:00"],
+					"color": "#37cafb",
+					"italic": false
+				}
 			],
-			"minecraft:custom_name": {"translate": "item.matcha.bubbling_mead", "italic": false}
+			"minecraft:custom_name": {
+				"translate": "item.matcha.bubbling_mead",
+				"italic": false
+			}
 		}
 	},
 	{
@@ -1309,19 +1265,36 @@
 			"minecraft:max_stack_size": 64,
 			"minecraft:potion_contents": {
 				"custom_color": 9615310,
-				"custom_effects": [{
-					"id": "minecraft:invisibility",
-					"duration": 6000,
-					"show_particles": false,
-					"show_icon": true
-				}]
+				"custom_effects": [
+					{
+						"id": "minecraft:invisibility",
+						"duration": 6000,
+						"show_particles": false,
+						"show_icon": true
+					}
+				]
 			},
-			"minecraft:tooltip_display": {"hidden_components": ["minecraft:potion_contents"]},
+			"minecraft:tooltip_display": {
+				"hidden_components": ["minecraft:potion_contents"]
+			},
 			"minecraft:lore": [
-				{"translate": "desc.matcha.throwable", "color": "gray", "italic": false},
-				{"translate": "effect.matcha.invisibility", "with": ["5:00"], "color": "#92b7ce", "italic": false}
+				{
+					"translate": "desc.matcha.throwable",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "effect.matcha.invisibility",
+					"with": ["5:00"],
+					"color": "#92b7ce",
+					"italic": false
+				}
 			],
-			"minecraft:custom_name": {"translate": "item.matcha.pickled_warped_fungus", "color": "#3cc6c8", "italic": false}
+			"minecraft:custom_name": {
+				"translate": "item.matcha.pickled_warped_fungus",
+				"color": "#3cc6c8",
+				"italic": false
+			}
 		}
 	},
 	{
@@ -1330,10 +1303,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_amethyst",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:amethyst",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.amethyst", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.amethyst",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1342,10 +1324,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_cinnabar",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:redstone",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.redstone", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.redstone",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1354,10 +1345,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_diamond",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:diamond",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.diamond", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.diamond",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1366,10 +1366,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_electrum",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "matcha:electrum",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.matcha.electrum", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.matcha.electrum",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1378,10 +1387,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_gold",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:gold",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.gold", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.gold",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1390,10 +1408,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_hepatizon",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "matcha:hepatizon",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.matcha.hepatizon", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.matcha.hepatizon",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1402,10 +1429,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_iron",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:netherite",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.netherite", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.netherite",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1414,10 +1450,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_lapis",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:lapis",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.lapis", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.lapis",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1426,10 +1471,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_patina",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:emerald",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.emerald", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.emerald",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1438,10 +1492,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_quartz",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:quartz",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.quartz", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.quartz",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1450,10 +1513,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_resin",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:resin",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.resin", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.resin",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1462,10 +1534,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_shakudo",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "matcha:shakudo",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.matcha.shakudo", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.matcha.shakudo",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	},
 	{
@@ -1474,10 +1555,19 @@
 		"tab": "ingredients",
 		"components": {
 			"minecraft:item_model": "matcha:trim_colour_steel",
-			"minecraft:custom_name": {"translate": "item.matcha.trim_colour", "italic": false},
+			"minecraft:custom_name": {
+				"translate": "item.matcha.trim_colour",
+				"italic": false
+			},
 			"minecraft:provides_trim_material": "minecraft:iron",
 			"minecraft:rarity": "uncommon",
-			"minecraft:lore": [{"translate": "trim_material.minecraft.iron", "color": "gray", "italic": false}]
+			"minecraft:lore": [
+				{
+					"translate": "trim_material.minecraft.iron",
+					"color": "gray",
+					"italic": false
+				}
+			]
 		}
 	}
 ]
