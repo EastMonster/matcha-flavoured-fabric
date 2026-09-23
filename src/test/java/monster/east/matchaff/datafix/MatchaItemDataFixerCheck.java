@@ -4,6 +4,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
 
+import java.util.List;
 import java.util.Map;
 
 /** Run with assertions enabled to check the isolated ItemStack DataFixer rule. */
@@ -243,7 +244,7 @@ public final class MatchaItemDataFixerCheck {
 		CompoundTag oneTime = new CompoundTag();
 		oneTime.putString("id", "matcha-flavoured:amber");
 		assert "matcha:amber".equals(MatchaItemDataFixer.updateIfNeeded(oneTime).getStringOr("id", ""));
-		assert oneTime.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
+		assert oneTime.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 5;
 		oneTime.putString("id", "matcha-flavoured:amber");
 		assert "matcha-flavoured:amber".equals(MatchaItemDataFixer.updateIfNeeded(oneTime).getStringOr("id", ""));
 
@@ -251,7 +252,7 @@ public final class MatchaItemDataFixerCheck {
 		v2.putString("id", "matcha:bronze_sword");
 		v2.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 2);
 		assert "matcha:hepatizon_sword".equals(MatchaItemDataFixer.updateIfNeeded(v2).getStringOr("id", ""));
-		assert v2.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
+		assert v2.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 5;
 
 		CompoundTag v3Warding = new CompoundTag();
 		v3Warding.putString("id", "matcha:warding_sword");
@@ -272,7 +273,7 @@ public final class MatchaItemDataFixerCheck {
 		v3Components.put("minecraft:custom_name", v3Name);
 		v3Warding.put("components", v3Components);
 		CompoundTag fixedV3Warding = MatchaItemDataFixer.updateIfNeeded(v3Warding);
-		assert fixedV3Warding.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
+		assert fixedV3Warding.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 5;
 		assert v3Enchantments.contains("matcha:warding_1") && !v3Enchantments.contains("matcha:warding0");
 		assert v3Enchantments.contains("matcha:warding_2") && !v3Enchantments.contains("matcha:warding1");
 		assert v3Enchantments.contains("matcha:warding_3") && !v3Enchantments.contains("matcha:warding2");
@@ -355,7 +356,7 @@ public final class MatchaItemDataFixerCheck {
 		lore.add(attackLore);
 		dolabraComponents.put("minecraft:lore", lore);
 		MatchaItemDataFixer.updateIfNeeded(dolabra);
-		assert dolabra.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 4;
+		assert dolabra.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 5;
 		CompoundTag migratedEnchantments = dolabraComponents.getCompound("minecraft:enchantments").orElseThrow();
 		assert !migratedEnchantments.contains("matcha:divinity");
 		assert !migratedEnchantments.contains("components");
@@ -388,6 +389,95 @@ public final class MatchaItemDataFixerCheck {
 		assert "effect.matcha.speed_2".equals(migratedFoodLore.getStringOr("translate", ""));
 		assert "0:30".equals(migratedFoodLore.getList("with").orElseThrow().getString(0));
 
+		CompoundTag oldWoodenPickaxe = oldPickaxe("minecraft:wooden_pickaxe", List.of(
+				mines("#minecraft:copper_ores", 3), mines("#minecraft:coal_ores", 3),
+				mines("minecraft:stone", 3), mines("minecraft:smoker", 4),
+				mines("minecraft:mud_bricks", 3), mines("minecraft:packed_mud", 3),
+				mines("minecraft:mud_brick_slab", 3), mines("minecraft:mud_brick_stairs", 3),
+				mines("minecraft:cobblestone", 3),
+				denies("#minecraft:iron_ores", 3), denies("#minecraft:gold_ores", 3),
+				denies("#minecraft:diamond_ores", 3), denies("#minecraft:emerald_ores", 3),
+				denies("#minecraft:redstone_ores", 3), denies("#minecraft:lapis_ores", 3),
+				denies("minecraft:obsidian", 3), mines("#minecraft:mineable/pickaxe", 3)
+		));
+		oldWoodenPickaxe.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 4);
+		MatchaItemDataFixer.updateIfNeeded(oldWoodenPickaxe);
+		ListTag woodenRules = oldWoodenPickaxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:tool").orElseThrow().getList("rules").orElseThrow();
+		assert woodenRules.size() == 2;
+		assert "#matcha:non_mineable/wood".equals(woodenRules.getCompound(0).orElseThrow().getStringOr("blocks", ""));
+
+		CompoundTag oldCopperPickaxe = oldPickaxe("minecraft:copper_pickaxe", List.of(
+				new ToolRule("#minecraft:emerald_ores", null, true),
+				new ToolRule("#minecraft:redstone_ores", null, false),
+				denies("#minecraft:diamond_ores", 4), denies("minecraft:obsidian", 3),
+				mines("#minecraft:mineable/pickaxe", 6)
+		));
+		oldCopperPickaxe.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 4);
+		MatchaItemDataFixer.updateIfNeeded(oldCopperPickaxe);
+		ListTag copperRules = oldCopperPickaxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:tool").orElseThrow().getList("rules").orElseThrow();
+		assert copperRules.size() == 2;
+		assert "#matcha:non_mineable/copper".equals(copperRules.getCompound(0).orElseThrow().getStringOr("blocks", ""));
+
+		CompoundTag oldGoldenPickaxe = oldPickaxe("minecraft:golden_pickaxe", List.of(
+				new ToolRule("minecraft:obsidian", 3f, false),
+				new ToolRule("#minecraft:mineable/pickaxe", 12f, true)
+		));
+		oldGoldenPickaxe.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 4);
+		MatchaItemDataFixer.updateIfNeeded(oldGoldenPickaxe);
+		CompoundTag goldenTool = oldGoldenPickaxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:tool").orElseThrow();
+		ListTag goldenRules = goldenTool.getList("rules").orElseThrow();
+		assert "#matcha:obsidian_based".equals(goldenRules.getCompound(0).orElseThrow().getStringOr("blocks", ""));
+		assert goldenTool.getFloatOr("default_mining_speed", 0) == 1;
+		assert goldenTool.getIntOr("damage_per_block", 0) == 1;
+
+		CompoundTag oldIronPickaxe = oldPickaxe("minecraft:iron_pickaxe", List.of(
+				denies("minecraft:obsidian", 3), mines("#minecraft:mineable/pickaxe", 7)
+		));
+		oldIronPickaxe.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 4);
+		MatchaItemDataFixer.updateIfNeeded(oldIronPickaxe);
+		ListTag ironRules = oldIronPickaxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:tool").orElseThrow().getList("rules").orElseThrow();
+		assert "#matcha:non_mineable/iron".equals(ironRules.getCompound(0).orElseThrow().getStringOr("blocks", ""));
+
+		CompoundTag customPickaxe = oldPickaxe("minecraft:golden_pickaxe", List.of(
+				denies("minecraft:obsidian", 3),
+				new ToolRule("#minecraft:mineable/pickaxe", 12f, true)
+		));
+		customPickaxe.getCompound("components").orElseThrow().getCompound("minecraft:tool").orElseThrow()
+				.getList("rules").orElseThrow().getCompound(0).orElseThrow().putString("custom_rule_data", "keep");
+		customPickaxe.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 4);
+		MatchaItemDataFixer.updateIfNeeded(customPickaxe);
+		assert "minecraft:obsidian".equals(customPickaxe.getCompound("components").orElseThrow()
+				.getCompound("minecraft:tool").orElseThrow().getList("rules").orElseThrow()
+				.getCompound(0).orElseThrow().getStringOr("blocks", ""));
+
+		CompoundTag nonElectrumFortune = stackWithEnchantments("matcha:shakudo_mattock", "minecraft:fortune");
+		nonElectrumFortune.getCompound("components").orElseThrow().getCompound("minecraft:enchantments").orElseThrow()
+				.putInt("minecraft:fortune", 3);
+		nonElectrumFortune.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 4);
+		MatchaItemDataFixer.updateIfNeeded(nonElectrumFortune);
+		assert nonElectrumFortune.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow().getIntOr("minecraft:fortune", 0) == 1;
+
+		CompoundTag electrumFortune = stackWithEnchantments("matcha:electrum_pickaxe", "minecraft:fortune");
+		electrumFortune.getCompound("components").orElseThrow().getCompound("minecraft:enchantments").orElseThrow()
+				.putInt("minecraft:fortune", 2);
+		electrumFortune.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 4);
+		MatchaItemDataFixer.updateIfNeeded(electrumFortune);
+		assert electrumFortune.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow().getIntOr("minecraft:fortune", 0) == 2;
+
+		CompoundTag nonToolFortune = stackWithEnchantments("minecraft:diamond_sword", "minecraft:fortune");
+		nonToolFortune.getCompound("components").orElseThrow().getCompound("minecraft:enchantments").orElseThrow()
+				.putInt("minecraft:fortune", 3);
+		nonToolFortune.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 4);
+		MatchaItemDataFixer.updateIfNeeded(nonToolFortune);
+		assert nonToolFortune.getCompound("components").orElseThrow()
+				.getCompound("minecraft:enchantments").orElseThrow().getIntOr("minecraft:fortune", 0) == 3;
+
 		CompoundTag legacyTool = new CompoundTag();
 		legacyTool.putString("id", "matcha:hepatizon_pickaxe");
 		CompoundTag legacyToolComponents = new CompoundTag();
@@ -413,6 +503,38 @@ public final class MatchaItemDataFixerCheck {
 		components.put("minecraft:enchantments", enchantments);
 		stack.put("components", components);
 		return stack;
+	}
+
+	private static CompoundTag oldPickaxe(String id, List<ToolRule> rules) {
+		CompoundTag stack = new CompoundTag();
+		stack.putString("id", id);
+		CompoundTag tool = new CompoundTag();
+		ListTag oldRules = new ListTag();
+		for (ToolRule rule : rules) {
+			CompoundTag entry = new CompoundTag();
+			entry.putString("blocks", rule.blocks());
+			if (rule.speed() != null) entry.putFloat("speed", rule.speed());
+			if (rule.correctForDrops() != null) entry.putBoolean("correct_for_drops", rule.correctForDrops());
+			oldRules.add(entry);
+		}
+		tool.put("rules", oldRules);
+		tool.putFloat("default_mining_speed", 1);
+		tool.putInt("damage_per_block", 1);
+		CompoundTag components = new CompoundTag();
+		components.put("minecraft:tool", tool);
+		stack.put("components", components);
+		return stack;
+	}
+
+	private static ToolRule mines(String blocks, float speed) {
+		return new ToolRule(blocks, speed, true);
+	}
+
+	private static ToolRule denies(String blocks, float speed) {
+		return new ToolRule(blocks, speed, false);
+	}
+
+	private record ToolRule(String blocks, Float speed, Boolean correctForDrops) {
 	}
 
 	private static CompoundTag namedAdamantStack(String id) {
