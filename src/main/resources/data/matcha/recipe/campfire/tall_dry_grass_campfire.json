@@ -1,12 +1,9 @@
 {
 	"type": "minecraft:campfire_cooking",
 	"category": "food",
-	"cookingtime": 200,
+	"cookingtime": 100,
 	"experience": 0.35,
-	"ingredient": [
-		"minecraft:tall_grass",
-		"minecraft:large_fern"
-	],
+	"ingredient": ["minecraft:tall_grass", "minecraft:large_fern"],
 	"result": {
 		"id": "minecraft:tall_dry_grass"
 	}

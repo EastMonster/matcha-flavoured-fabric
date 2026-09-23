@@ -3,7 +3,7 @@
 	"group": "ladder",
 	"ingredient": "#minecraft:logs",
 	"result": {
-		"count": 8,
+		"count": 16,
 		"id": "minecraft:ladder"
 	}
 }

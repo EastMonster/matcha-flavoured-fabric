@@ -42,9 +42,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
 				"slot": "head",
@@ -91,9 +89,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
 				"slot": "head",
@@ -137,9 +133,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
 				"slot": "head",
@@ -183,9 +177,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
 				"slot": "head",
@@ -230,9 +222,7 @@
 				"color": "white"
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:lore": [
 				{
@@ -331,9 +321,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
 				"slot": "head",
@@ -413,17 +401,14 @@
 					"with": ["1.6"],
 					"color": "dark_green",
 					"italic": false
-				}],
+				}
+			],
 			"minecraft:tooltip_display": {
 				"hide_tooltip": false,
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:iron_ingot"
-				]
+				"items": ["minecraft:iron_ingot"]
 			},
 			"minecraft:enchantments": {
 				"matcha:slaughter": 1,
@@ -453,9 +438,7 @@
 			"minecraft:max_damage": 300,
 			"minecraft:cooking_fuel": "matcha:cooking/crook",
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:stick"
-				]
+				"items": ["minecraft:stick"]
 			},
 			"minecraft:attribute_modifiers": [
 				{
@@ -475,7 +458,7 @@
 				{
 					"type": "minecraft:entity_interaction_range",
 					"id": "entity_interaction_range",
-					"amount": 3,
+					"amount": 5,
 					"operation": "add_value",
 					"slot": "offhand"
 				},
@@ -492,18 +475,12 @@
 					"amount": 1,
 					"operation": "add_value",
 					"slot": "offhand"
-				},
-				{
-					"type": "minecraft:attack_speed",
-					"id": "crook",
-					"amount": -1,
-					"operation": "add_value"
 				}
 			],
 			"minecraft:lore": [
 				{
 					"translate": "desc.matcha.mining_speed",
-					"with": ["2"],
+					"with": ["8"],
 					"color": "blue",
 					"italic": false
 				},
@@ -515,13 +492,13 @@
 				},
 				{
 					"translate": "desc.matcha.cooldown",
-					"with": ["3"],
+					"with": ["4"],
 					"color": "dark_green",
 					"italic": false
 				},
 				{
 					"translate": "desc.matcha.entity_interaction_range",
-					"with": ["+3"],
+					"with": ["3"],
 					"color": "dark_green",
 					"italic": false
 				},
@@ -532,10 +509,19 @@
 					"italic": false
 				}
 			],
+			"minecraft:tool": {
+				"rules": [
+					{
+						"blocks": "#minecraft:mineable/hoe",
+						"speed": 8,
+						"correct_for_drops": true
+					}
+				],
+				"default_mining_speed": 1,
+				"damage_per_block": 1
+			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			}
 		}
 	},
@@ -647,9 +633,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
 				"slot": "head",
@@ -694,9 +678,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
 				"slot": "head",
@@ -738,9 +720,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			}
 		}
 	},
@@ -927,9 +907,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
 				"slot": "head",

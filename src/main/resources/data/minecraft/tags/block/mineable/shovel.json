@@ -1,7 +1,3 @@
 {
-  "values": [
-    "#minecraft:candle_cakes",
-    "minecraft:cake",
-    "minecraft:petrified_oak_slab"
-  ]
+	"values": ["minecraft:petrified_oak_slab"]
 }

@@ -127,16 +127,25 @@
 			}
 		]
 	},
-  	"custom.crete": {
-  		"sounds": [
-  			{
-  				"name": "matcha:custom/crete",
-  				"volume": 1,
-  				"stream": true
-  			}
-  		]
-  	},
-  	"custom.elegy_of_the_abbey": {
+	"custom.crete": {
+		"sounds": [
+			{
+				"name": "matcha:custom/crete",
+				"volume": 1,
+				"stream": true
+			}
+		]
+	},
+	"custom.background.abbey": {
+		"sounds": [
+			{
+				"name": "matcha:custom/background/abbey",
+				"volume": 0.7,
+				"stream": true
+			}
+		]
+	},
+	"custom.elegy_of_the_abbey": {
 		"sounds": [
 			{
 				"name": "matcha:custom/elegy_of_the_abbey",

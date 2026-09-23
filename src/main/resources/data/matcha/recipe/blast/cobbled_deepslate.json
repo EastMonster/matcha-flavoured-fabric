@@ -2,7 +2,12 @@
 	"type": "minecraft:blasting",
 	"group": "cobbled_deepslate",
 	"category": "misc",
-	"ingredient": "minecraft:deepslate",
+	"ingredient": [
+		"minecraft:deepslate",
+		"minecraft:cracked_deepslate_bricks",
+		"minecraft:cracked_deepslate_tiles",
+		"minecraft:polished_deepslate"
+	],
 	"result": {
 		"id": "minecraft:cobbled_deepslate"
 	},

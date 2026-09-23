@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"minecraft:sugar_cane",
+		"matcha:molasses",
 		"minecraft:sugar",
 		"minecraft:glowstone_dust",
 		"matcha:dough"

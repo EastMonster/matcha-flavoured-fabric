@@ -18,12 +18,7 @@
 			"trigger": "minecraft:recipe_unlocked"
 		}
 	},
-	"requirements": [
-		[
-			"has_the_recipe",
-			"has_primary_material"
-		]
-	],
+	"requirements": [["has_the_recipe", "has_primary_material"]],
 	"rewards": {
 		"recipes": [
 			"matcha:crafting/smithing_table",
@@ -38,7 +33,17 @@
 			"matcha:crafting/cauldron_from_steel",
 			"matcha:crafting/bucket_from_steel",
 			"matcha:crafting/activator_rail_from_steel",
-			"matcha:crafting/smithing_template"
+			"matcha:crafting/smithing_template",
+			"matcha:crafting/trim_colour_amethyst",
+			"matcha:crafting/trim_colour_cinnabar",
+			"matcha:crafting/trim_colour_diamond",
+			"matcha:crafting/trim_colour_gold",
+			"matcha:crafting/trim_colour_iron",
+			"matcha:crafting/trim_colour_lapis",
+			"matcha:crafting/trim_colour_patina",
+			"matcha:crafting/trim_colour_quartz",
+			"matcha:crafting/trim_colour_resin",
+			"matcha:crafting/trim_colour_steel"
 		]
 	}
 }

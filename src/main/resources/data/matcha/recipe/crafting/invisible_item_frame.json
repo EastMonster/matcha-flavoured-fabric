@@ -6,11 +6,7 @@
 		"#": "minecraft:stick",
 		"X": "minecraft:glass_pane"
 	},
-	"pattern": [
-		"###",
-		"#X#",
-		"###"
-	],
+	"pattern": [" # ", "#X#", " # "],
 	"result": {
 		"count": 1,
 		"id": "matcha:invisible_item_frame"

@@ -1,70 +1,66 @@
 {
-  "parent": "matcha:anglers_almanac/junk/tadpole",
-  "display": {
-    "icon": {
-      "id": "minecraft:axolotl_spawn_egg",
-      "components": {
-        "minecraft:item_model": "matcha:axolotl"
-      }
-    },
-    "title": {
-      "translate": "item.matcha.axolotl"
-    },
-    "description": [
-      {
-        "translate": "advancements.matcha.anglers_almanac.axolotl.desc",
-        "color": "dark_aqua",
-        "italic": true
-      },
-      "\n",
-      {
-        "translate": "advancements.matcha.anglers_almanac.chance",
-        "with": [
-          "9%"
-        ],
-        "color": "gray",
-        "italic": false
-      },
-      "\n",
-      {
-        "translate": "advancements.matcha.anglers_almanac.only_in",
-        "extra": [
-          {
-            "translate": "biome.minecraft.lush_caves"
-          },
-          ", ",
-          {
-            "translate": "biome.minecraft.dripstone_caves"
-          }
-        ],
-        "color": "gray",
-        "italic": false
-      }
-    ],
-    "show_toast": true,
-    "announce_to_chat": false,
-    "hidden": true
-  },
-  "criteria": {
-    "catch": {
-      "trigger": "minecraft:fishing_rod_hooked",
-      "conditions": {
-        "player": {"type":"minecraft:entity_properties","entity":"this","predicate":{
-          "minecraft:type_specific/player": {
-            "advancements": {
-              "matcha:anglers_almanac/root": true
-            }
-          }
-        }},
-        "item": {
-          "items": "minecraft:axolotl_spawn_egg"
-        }
-      }
-    }
-  },
-  "requirements": [
-    [
-      "catch"
-    ]
-  ]
+	"parent": "matcha:anglers_almanac/junk/tadpole",
+	"display": {
+		"icon": {
+			"id": "minecraft:axolotl_spawn_egg",
+			"components": {
+				"minecraft:item_model": "matcha:axolotl"
+			}
+		},
+		"title": {
+			"translate": "item.matcha.axolotl"
+		},
+		"description": [
+			{
+				"translate": "advancements.matcha.anglers_almanac.axolotl.desc",
+				"color": "dark_aqua",
+				"italic": true
+			},
+			"\n",
+			{
+				"translate": "advancements.matcha.anglers_almanac.chance",
+				"with": ["9%"],
+				"color": "gray",
+				"italic": false
+			},
+			"\n",
+			{
+				"translate": "advancements.matcha.anglers_almanac.only_in",
+				"extra": [
+					{
+						"translate": "biome.minecraft.lush_caves"
+					},
+					", ",
+					{
+						"translate": "biome.minecraft.dripstone_caves"
+					}
+				],
+				"color": "gray",
+				"italic": false
+			}
+		],
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"criteria": {
+		"catch": {
+			"trigger": "minecraft:fishing_rod_hooked",
+			"conditions": {
+				"player": {
+					"minecraft:type_specific/player": {
+						"advancements": {
+							"matcha:anglers_almanac/root": true
+						}
+					}
+				},
+				"item": {
+					"components": {
+						"minecraft:item_model": "matcha:axolotl"
+					}
+				}
+			}
+		}
+	},
+	"requirements": [["catch"]]
 }

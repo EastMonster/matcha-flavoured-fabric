@@ -1,0 +1,10 @@
+{
+	"layers": {
+		"wings": [
+			{
+				"texture": "matcha:hepatizon_elytra",
+				"use_player_texture": false
+			}
+		]
+	}
+}

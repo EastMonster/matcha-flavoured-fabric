@@ -62,8 +62,11 @@
 			}
 		],
 		"icon": {
+			"components": {
+				"minecraft:item_model": "matcha:steel_dolabra"
+			},
 			"count": 1,
-			"id": "matcha:shakudo_dolabra"
+			"id": "minecraft:stone_axe"
 		},
 		"title": {
 			"translate": "advancements.matcha.tutorial.upgrade_mattock.title"
@@ -84,8 +87,6 @@
 		]
 	],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_1"
-		]
+		"loot": ["matcha:advancement/obol_1"]
 	}
 }

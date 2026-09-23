@@ -1,6 +1,19 @@
 {
 	"model": {
-		"type": "minecraft:model",
-		"model": "matcha:item/mournful_clay_statue"
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/mournful_clay_statue"
+				},
+				"when": ["fixed"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/mournful_clay_statue"
+		},
+		"property": "minecraft:display_context"
 	}
 }

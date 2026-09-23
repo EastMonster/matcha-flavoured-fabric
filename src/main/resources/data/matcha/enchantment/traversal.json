@@ -23,12 +23,12 @@
 					]
 				},
 				"requirements": {
-					"type": "minecraft:all_of",
+					"condition": "minecraft:all_of",
 					"terms": [
 						{
-							"type": "minecraft:inverted",
+							"condition": "minecraft:inverted",
 							"term": {
-								"type": "minecraft:entity_properties",
+								"condition": "minecraft:entity_properties",
 								"entity": "this",
 								"predicate": {
 									"vehicle": {}
@@ -36,17 +36,17 @@
 							}
 						},
 						{
-							"type": "minecraft:any_of",
+							"condition": "minecraft:any_of",
 							"terms": [
 								{
-									"type": "minecraft:all_of",
+									"condition": "minecraft:all_of",
 									"terms": [
 										{
 											"active": true,
-											"type": "minecraft:enchantment_active_check"
+											"condition": "minecraft:enchantment_active_check"
 										},
 										{
-											"type": "minecraft:entity_properties",
+											"condition": "minecraft:entity_properties",
 											"entity": "this",
 											"predicate": {
 												"flags": {
@@ -55,10 +55,10 @@
 											}
 										},
 										{
-											"type": "minecraft:any_of",
+											"condition": "minecraft:any_of",
 											"terms": [
 												{
-													"type": "minecraft:entity_properties",
+													"condition": "minecraft:entity_properties",
 													"entity": "this",
 													"predicate": {
 														"movement_affected_by": {
@@ -69,7 +69,18 @@
 													}
 												},
 												{
-													"type": "minecraft:entity_properties",
+													"condition": "minecraft:entity_properties",
+													"entity": "this",
+													"predicate": {
+														"stepping_on": {
+															"block": {
+																"blocks": "#matcha:is_path"
+															}
+														}
+													}
+												},
+												{
+													"condition": "minecraft:entity_properties",
 													"entity": "this",
 													"predicate": {
 														"flags": {
@@ -82,25 +93,47 @@
 									]
 								},
 								{
-									"type": "minecraft:all_of",
+									"condition": "minecraft:all_of",
 									"terms": [
 										{
 											"active": false,
-											"type": "minecraft:enchantment_active_check"
+											"condition": "minecraft:enchantment_active_check"
 										},
 										{
-											"type": "minecraft:entity_properties",
+											"condition": "minecraft:entity_properties",
 											"entity": "this",
 											"predicate": {
 												"flags": {
 													"is_flying": false
-												},
-												"movement_affected_by": {
-													"block": {
-														"blocks": "#matcha:is_path"
-													}
 												}
 											}
+										},
+										{
+											"condition": "minecraft:any_of",
+											"terms": [
+												{
+													"condition": "minecraft:entity_properties",
+													"entity": "this",
+													"predicate": {
+														"movement_affected_by": {
+															"block": {
+																"blocks": "#matcha:is_path"
+															}
+														}
+													}
+												},
+												{
+													"condition": "minecraft:entity_properties",
+													"entity": "this",
+													"predicate": {
+														"stepping_on": {
+															"block": {
+																"blocks": "#matcha:is_path"
+															}
+														}
+													}
+												}
+											]
 										}
 									]
 								}
@@ -115,28 +148,50 @@
 					"amount": 1
 				},
 				"requirements": {
-					"type": "minecraft:all_of",
+					"condition": "minecraft:all_of",
 					"terms": [
 						{
 							"chance": {
 								"type": "minecraft:enchantment_level",
 								"amount": 0.04
 							},
-							"type": "minecraft:random_chance"
+							"condition": "minecraft:random_chance"
 						},
 						{
-							"type": "minecraft:entity_properties",
+							"condition": "minecraft:entity_properties",
 							"entity": "this",
 							"predicate": {
 								"flags": {
 									"is_on_ground": true
-								},
-								"movement_affected_by": {
-									"block": {
-											"blocks": "#matcha:is_path"
-									}
 								}
 							}
+						},
+						{
+							"condition": "minecraft:any_of",
+							"terms": [
+								{
+									"condition": "minecraft:entity_properties",
+									"entity": "this",
+									"predicate": {
+										"movement_affected_by": {
+											"block": {
+												"blocks": "#matcha:is_path"
+											}
+										}
+									}
+								},
+								{
+									"condition": "minecraft:entity_properties",
+									"entity": "this",
+									"predicate": {
+										"stepping_on": {
+											"block": {
+												"blocks": "#matcha:is_path"
+											}
+										}
+									}
+								}
+							]
 						}
 					]
 				}
@@ -166,25 +221,52 @@
 					}
 				},
 				"requirements": {
-					"type": "minecraft:entity_properties",
-					"entity": "this",
-					"predicate": {
-						"flags": {
-							"is_flying": false,
-							"is_on_ground": true
-						},
-						"movement": {
-							"horizontal_speed": {
-								"min": 0.000009999999747378752
+					"condition": "minecraft:all_of",
+					"terms": [
+						{
+							"condition": "minecraft:entity_properties",
+							"entity": "this",
+							"predicate": {
+								"flags": {
+									"is_flying": false,
+									"is_on_ground": true
+								},
+								"movement": {
+									"horizontal_speed": {
+										"min": 0.000009999999747378752
+									}
+								},
+								"periodic_tick": 5
 							}
 						},
-						"movement_affected_by": {
-							"block": {
-								"blocks": "#matcha:is_path"
-							}
-						},
-						"periodic_tick": 5
-					}
+						{
+							"condition": "minecraft:any_of",
+							"terms": [
+								{
+									"condition": "minecraft:entity_properties",
+									"entity": "this",
+									"predicate": {
+										"movement_affected_by": {
+											"block": {
+												"blocks": "#matcha:is_path"
+											}
+										}
+									}
+								},
+								{
+									"condition": "minecraft:entity_properties",
+									"entity": "this",
+									"predicate": {
+										"stepping_on": {
+											"block": {
+												"blocks": "#matcha:is_path"
+											}
+										}
+									}
+								}
+							]
+						}
+					]
 				}
 			}
 		]
@@ -198,10 +280,7 @@
 		"base": 1,
 		"per_level_above_first": 1
 	},
-	"slots": [
-		"feet"
-	],
+	"slots": ["feet"],
 	"supported_items": "#minecraft:enchantable/foot_armor",
 	"weight": 1
 }
-

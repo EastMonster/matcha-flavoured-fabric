@@ -1,10 +1,14 @@
 {
-	"parent": "matcha:tutorial/obtain_obol",
+	"parent": "matcha:tutorial/light_beacon",
 	"criteria": {
 		"traded": {
 			"trigger": "minecraft:villager_trade",
 			"conditions": {
-				"villager": {"type":"minecraft:entity_properties","entity":"this","predicate":{}},
+				"villager": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {}
+				},
 				"item": {
 					"items": "matcha:asylum_seeker"
 				}
@@ -31,14 +35,8 @@
 		},
 		"hidden": false
 	},
-	"requirements": [
-		[
-			"traded"
-		]
-	],
+	"requirements": [["traded"]],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_1"
-		]
+		"loot": ["matcha:advancement/obol_1"]
 	}
 }

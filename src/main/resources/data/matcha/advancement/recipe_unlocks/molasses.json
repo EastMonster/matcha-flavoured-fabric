@@ -1,0 +1,19 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_primary_material": {
+			"conditions": {
+				"items": [{ "items": "matcha:molasses" }]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [["has_primary_material"]],
+	"rewards": {
+		"recipes": [
+			"matcha:food/crafting/puerquito",
+			"matcha:food/crafting/sugar_from_molasses",
+			"matcha:crafting/honey_block_from_molasses"
+		]
+	}
+}

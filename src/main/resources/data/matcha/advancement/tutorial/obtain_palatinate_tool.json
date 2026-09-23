@@ -86,8 +86,11 @@
 			}
 		],
 		"icon": {
+			"components": {
+				"minecraft:item_model": "matcha:shakudo_pickaxe"
+			},
 			"count": 1,
-			"id": "matcha:shakudo_axe"
+			"id": "minecraft:wooden_axe"
 		},
 		"title": {
 			"translate": "advancements.matcha.tutorial.obtain_palatinate_tool.title"
@@ -112,8 +115,6 @@
 		]
 	],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_1"
-		]
+		"loot": ["matcha:advancement/obol_1"]
 	}
 }

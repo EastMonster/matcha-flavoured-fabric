@@ -5,30 +5,13 @@
 		"#": "minecraft:stick",
 		"X": "copper_ingot"
 	},
-	"pattern": [
-		"XXX",
-		" # ",
-		" # "
-	],
+	"pattern": ["XXX", " # ", " # "],
 	"result": {
 		"components": {
 			"minecraft:tool": {
 				"rules": [
 					{
-						"blocks": "#minecraft:emerald_ores",
-						"correct_for_drops": true
-					},
-					{
-						"blocks": "#minecraft:redstone_ores",
-						"correct_for_drops": false
-					},
-					{
-						"blocks": "#minecraft:diamond_ores",
-						"speed": 4,
-						"correct_for_drops": false
-					},
-					{
-						"blocks": "minecraft:obsidian",
+						"blocks": "#matcha:non_mineable/copper",
 						"speed": 3,
 						"correct_for_drops": false
 					},
@@ -63,9 +46,7 @@
 			],
 			"minecraft:max_damage": 350,
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			}
 		},
 		"count": 1,

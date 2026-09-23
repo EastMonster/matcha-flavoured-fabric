@@ -50,7 +50,7 @@ public final class WorldMechanics {
 	private static final String REWARD_VERSION_OBJECTIVE = "matcha_reward_version";
 	private static final String GAMERULES_OBJECTIVE = "matcha_gamerules_version";
 	private static final String GAMERULES_HOLDER = "current";
-	private static final int RECIPE_UNLOCK_VERSION = 1_12_02_002;
+	private static final int RECIPE_UNLOCK_VERSION = 1_12_02_006;
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
 	private static final String VERSION_LABEL = "1.12.2";
@@ -424,14 +424,6 @@ public final class WorldMechanics {
 			ItemStack replacement = new ItemStack(Items.ELYTRA);
 			replacement.set(DataComponents.REPAIRABLE, new Repairable(HolderSet.direct(
 					Items.HONEYCOMB.builtInRegistryHolder(), Items.FEATHER.builtInRegistryHolder())));
-			replacement.set(DataComponents.LORE, new ItemLore(java.util.List.of(
-					Component.translatable("tooltip.matcha.repaired_with")
-							.withStyle(style -> style.withColor(ChatFormatting.GRAY).withItalic(false)),
-					Component.translatable("item.minecraft.honeycomb")
-							.withStyle(style -> style.withColor(ChatFormatting.DARK_GRAY).withItalic(false)),
-					Component.translatable("item.minecraft.feather")
-							.withStyle(style -> style.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
-			)));
 			player.setItemSlot(EquipmentSlot.CHEST, replacement);
 		}
 		revoke(player, ELYTRA_ADVANCEMENT);
