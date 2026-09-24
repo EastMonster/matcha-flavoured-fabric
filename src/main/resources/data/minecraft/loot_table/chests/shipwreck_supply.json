@@ -160,9 +160,9 @@
 					"type": "minecraft:loot_table",
 					"value": "matcha:equipment/sturdy_leather/armour",
 					"weight": 15,
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

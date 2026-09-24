@@ -7,9 +7,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:leather_helmet",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 200,
 								"minecraft:lore": [
@@ -35,9 +35,7 @@
 									}
 								],
 								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
+									"hidden_components": ["minecraft:attribute_modifiers"]
 								},
 								"minecraft:enchantment_glint_override": false,
 								"minecraft:attribute_modifiers": [

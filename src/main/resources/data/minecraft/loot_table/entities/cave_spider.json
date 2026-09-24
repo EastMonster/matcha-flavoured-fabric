@@ -5,14 +5,14 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 2.0,
 								"min": 0.0
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"count": {
@@ -21,55 +21,52 @@
 								"min": 0.0
 							},
 							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
+							"type": "minecraft:enchanted_count_increase"
 						}
 					],
 					"name": "minecraft:string"
 				}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:entity_properties",
-					"entity": "this",
-					"predicate": {
-						"entity_tags": {
-							"none_of": [
-								"NoDrops"
-							]
-						}
+			"condition": {
+				"type": "minecraft:entity_properties",
+				"entity": "this",
+				"predicate": {
+					"entity_tags": {
+						"none_of": ["NoDrops"]
 					}
 				}
-			],
+			},
 			"rolls": 1.0
 		},
 		{
-			"conditions": [
-				{
-					"condition": "minecraft:entity_properties",
-					"entity": "this",
-					"predicate": {
-						"entity_tags": {
-							"none_of": [
-								"NoDrops"
-							]
+			"condition": {
+				"type": "minecraft:all_of",
+				"terms": [
+					{
+						"type": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {
+							"entity_tags": {
+								"none_of": ["NoDrops"]
+							}
 						}
+					},
+					{
+						"type": "minecraft:killed_by_player"
 					}
-				},
-				{
-					"condition": "minecraft:killed_by_player"
-				}
-			],
+				]
+			},
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 1.0,
 								"min": -1.0
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"count": {
@@ -78,7 +75,7 @@
 								"min": 0.0
 							},
 							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
+							"type": "minecraft:enchanted_count_increase"
 						}
 					],
 					"name": "minecraft:spider_eye"

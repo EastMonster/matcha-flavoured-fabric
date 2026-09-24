@@ -7,10 +7,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:leather",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 1,
 								"max": 3
 							}
@@ -20,10 +21,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:rabbit_hide",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 2,
 								"max": 8
 							}
@@ -38,10 +40,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:glowstone_dust",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 2,
 								"max": 6
 							}
@@ -51,10 +54,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:bone",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 2,
 								"max": 4
 							}
@@ -64,10 +68,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:arrow",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 8,
 								"max": 12
 							}
@@ -82,10 +87,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:flint",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 2,
 								"max": 4
 							}
@@ -95,11 +101,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:quartz",
-					"conditions": [],
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 4,
 								"max": 11
 							}
@@ -114,11 +120,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:wheat",
-					"conditions": [],
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 2,
 								"max": 5
 							}
@@ -128,10 +134,11 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:wheat_seeds",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": {
+								"type": "minecraft:uniform",
 								"min": 4,
 								"max": 12
 							}

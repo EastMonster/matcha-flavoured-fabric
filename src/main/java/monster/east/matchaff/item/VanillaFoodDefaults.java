@@ -31,10 +31,6 @@ public class VanillaFoodDefaults {
 			"dried_kelp", "golden_apple", "golden_carrot",
 			"popped_chorus_fruit"
 	);
-	private static final List<String> LOOT_FILES = List.of(
-			"apple", "carrot", "glow_berries", "sweet_berries", "enchanted_golden_apple"
-	);
-
 	private VanillaFoodDefaults() {
 	}
 
@@ -43,9 +39,7 @@ public class VanillaFoodDefaults {
 		for (String name : RECIPE_FILES) {
 			definitions.add(readRecipe(name));
 		}
-		for (String name : LOOT_FILES) {
-			definitions.add(readLootTable(name));
-		}
+		definitions.addAll(readVanillaDefaults());
 		definitions.add(readNestedLootTable(
 				"/data/minecraft/loot_table/blocks/beetroots.json", "minecraft:beetroot"));
 		definitions.add(readNestedLootTable(
@@ -80,11 +74,13 @@ public class VanillaFoodDefaults {
 		return new Definition(result.get("id").getAsString(), result.getAsJsonObject("components"));
 	}
 
-	private static Definition readLootTable(String name) {
-		JsonObject root = readJson("/data/minecraft/loot_table/food/" + name + ".json");
-		JsonObject entry = root.getAsJsonArray("pools").get(0).getAsJsonObject()
-				.getAsJsonArray("entries").get(0).getAsJsonObject();
-		return definitionFromLootEntry(entry, name);
+	private static List<Definition> readVanillaDefaults() {
+		JsonObject root = readJson("/matcha/vanilla_food_defaults.json");
+		List<Definition> definitions = new ArrayList<>();
+		for (Map.Entry<String, JsonElement> entry : root.entrySet()) {
+			definitions.add(new Definition(entry.getKey(), entry.getValue().getAsJsonObject()));
+		}
+		return definitions;
 	}
 
 	private static Definition readNestedLootTable(String path, String itemId) {

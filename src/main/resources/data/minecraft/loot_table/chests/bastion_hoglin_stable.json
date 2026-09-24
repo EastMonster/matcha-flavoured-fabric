@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/ruby"
+					"value": "matcha:treasure/ruby"
 				}
 			]
 		},
@@ -28,7 +28,8 @@
 					"modifier": [
 						{
 							"count": {
-								"type": "minecraft:uniform", "min": 2,
+								"type": "minecraft:uniform",
+								"min": 2,
 								"max": 3
 							},
 							"type": "minecraft:set_count"
@@ -91,7 +92,8 @@
 				}
 			],
 			"rolls": {
-				"type": "minecraft:uniform", "min": 1,
+				"type": "minecraft:uniform",
+				"min": 1,
 				"max": 3
 			}
 		},

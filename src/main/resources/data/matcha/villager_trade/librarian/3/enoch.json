@@ -19,13 +19,11 @@
 				"minecraft:sharpness": 3
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:enchantments"
-				]
+				"hidden_components": ["minecraft:enchantments"]
 			}
 		}
 	},
-	"given_item_modifiers": [],
+	"given_item_modifier": [],
 	"max_uses": 999,
 	"reputation_discount": 0,
 	"wants": {
@@ -38,4 +36,3 @@
 	},
 	"xp": 50
 }
-

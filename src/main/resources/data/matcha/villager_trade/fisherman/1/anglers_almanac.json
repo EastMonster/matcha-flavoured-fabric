@@ -16,7 +16,7 @@
 		},
 		"count": 1
 	},
-	"given_item_modifiers": [],
+	"given_item_modifier": [],
 	"max_uses": 999,
 	"wants": {
 		"count": 1,
@@ -25,4 +25,3 @@
 	"reputation_discount": 0,
 	"xp": 10
 }
-

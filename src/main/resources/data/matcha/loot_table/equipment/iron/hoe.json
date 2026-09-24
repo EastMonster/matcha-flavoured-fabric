@@ -7,9 +7,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:iron_hoe",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:tool": {
 									"rules": [
@@ -22,32 +22,24 @@
 									"damage_per_block": 1
 								},
 								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
+									"hidden_components": ["minecraft:attribute_modifiers"]
 								},
 								"minecraft:lore": [
 									{
 										"translate": "desc.matcha.mining_speed",
-										"with": [
-											"8"
-										],
+										"with": ["8"],
 										"color": "blue",
 										"italic": false
 									},
 									{
 										"translate": "desc.matcha.attack_damage",
-										"with": [
-											"1"
-										],
+										"with": ["1"],
 										"color": "dark_green",
 										"italic": false
 									},
 									{
 										"translate": "desc.matcha.cooldown",
-										"with": [
-											"3"
-										],
+										"with": ["3"],
 										"color": "dark_green",
 										"italic": false
 									}

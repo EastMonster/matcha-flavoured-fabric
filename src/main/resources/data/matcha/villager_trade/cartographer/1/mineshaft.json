@@ -1,33 +1,26 @@
 {
-	"given_item_modifiers": [
+	"given_item_modifier": [
 		{
-			"decoration": "minecraft:red_x",
-			"destination": "minecraft:on_mineshaft_explorer_maps",
-			"function": "minecraft:exploration_map",
+			"decoration": "minecraft:mineshaft",
+			"destination": "#minecraft:on_mineshaft_maps",
+			"type": "minecraft:exploration_map",
 			"search_radius": 100
 		},
 		{
-			"function": "minecraft:set_name",
-			"name": {
-				"translate": "filled_map.mineshaft"
-			},
-			"target": "item_name"
-		},
-		{
-			"function": "minecraft:filtered",
+			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:filled_map",
+				"items": "minecraft:buried_mineshaft_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}
 			},
 			"on_fail": {
-				"function": "minecraft:discard"
+				"type": "minecraft:discard"
 			}
 		}
 	],
 	"gives": {
-		"id": "minecraft:map"
+		"id": "minecraft:buried_mineshaft_map"
 	},
 	"max_uses": 999,
 	"wants": {
@@ -36,4 +29,3 @@
 	},
 	"xp": 10
 }
-

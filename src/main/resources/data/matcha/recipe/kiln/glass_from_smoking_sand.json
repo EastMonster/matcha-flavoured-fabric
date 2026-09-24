@@ -2,7 +2,7 @@
 	"type": "minecraft:smoking",
 	"group": "glass",
 	"category": "blocks",
-	"cookingtime": 100,
+	"cookingtime": 200,
 	"experience": 0.35,
 	"ingredient": ["minecraft:sand", "minecraft:red_sand"],
 	"result": {

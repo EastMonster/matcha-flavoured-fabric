@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smoking",
 	"category": "misc",
-	"cookingtime": 100,
+	"cookingtime": 200,
 	"experience": 0.3,
 	"ingredient": "minecraft:clay_ball",
 	"result": {

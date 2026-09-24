@@ -266,9 +266,9 @@
 					"type": "minecraft:loot_table",
 					"value": "matcha:equipment/diamond/equipment",
 					"weight": 20,
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

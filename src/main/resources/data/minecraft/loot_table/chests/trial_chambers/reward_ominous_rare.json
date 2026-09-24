@@ -16,7 +16,8 @@
 						{
 							"type": "minecraft:set_count",
 							"count": {
-								"type": "minecraft:uniform", "min": 6,
+								"type": "minecraft:uniform",
+								"min": 6,
 								"max": 9
 							}
 						}
@@ -59,10 +60,7 @@
 					"modifier": [
 						{
 							"type": "minecraft:enchant_randomly",
-							"options": [
-								"minecraft:breach",
-								"minecraft:density"
-							]
+							"options": ["minecraft:breach", "minecraft:density"]
 						}
 					],
 					"name": "minecraft:book",
@@ -92,7 +90,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/divine_fragment",
+					"value": "matcha:treasure/divine_fragment",
 					"weight": 1
 				}
 			],

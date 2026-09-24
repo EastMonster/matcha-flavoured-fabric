@@ -1,244 +1,244 @@
 {
-  "type": "minecraft:chest",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:nautilus_shell",
-          "modifier": [
-            {
-              "type": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bonus_rolls": 0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:book",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "quality": 1,
-          "modifier": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 12,
-                "min": 6
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:gold_ingot",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:tnt",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:iron_block",
-          "quality": 1,
-          "modifier": [
-            {
-              "type": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:iron_ingot",
-          "weight": 10,
-          "modifier": [
-            {
-              "type": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 5,
-                "max": 12
-              }
-            }
-          ]
-        }
-      ],
-      "rolls": {
-        "type": "minecraft:uniform",
-        "max": 9,
-        "min": 7
-      }
-    },
-    {
-      "bonus_rolls": 0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "quality": 2,
-          "modifier": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:emerald",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "matcha:materials/raw_diamond",
-          "weight": 5,
-          "modifier": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 5,
-                "min": 2
-              },
-              "type": "minecraft:set_count"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "quality": 3,
-          "modifier": [],
-          "name": "minecraft:prismarine_crystals",
-          "weight": 5
-        }
-      ],
-      "rolls": {
-        "type": "minecraft:uniform",
-        "max": 2,
-        "min": 1
-      }
-    },
-    {
-      "bonus_rolls": 0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/equipment/trident",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "add": false,
-              "count": 1,
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:copper_nautilus_armor",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "add": false,
-              "count": 1,
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:iron_nautilus_armor",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "add": false,
-              "count": 1,
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:golden_nautilus_armor",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "add": false,
-              "count": 1,
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:diamond_nautilus_armor",
-          "weight": 2
-        }
-      ],
-      "rolls": 1
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "matcha:treasure/paradise_lost"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "matcha:treasure/divine_comedy"
-        }
-      ]
-    }
-  ],
-  "random_sequence": "minecraft:chests/buried_treasure"
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:nautilus_shell",
+					"modifier": [
+						{
+							"type": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 1,
+								"max": 3
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 4,
+								"min": 1
+							},
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:book",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"quality": 1,
+					"modifier": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 12,
+								"min": 6
+							},
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:gold_ingot",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 4,
+								"min": 1
+							},
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:tnt",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_block",
+					"quality": 1,
+					"modifier": [
+						{
+							"type": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 1,
+								"max": 2
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_ingot",
+					"weight": 10,
+					"modifier": [
+						{
+							"type": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 5,
+								"max": 12
+							}
+						}
+					]
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 9,
+				"min": 7
+			}
+		},
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"quality": 2,
+					"modifier": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:emerald",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/raw_diamond",
+					"weight": 5,
+					"modifier": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 5,
+								"min": 2
+							},
+							"type": "minecraft:set_count"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"quality": 3,
+					"modifier": [],
+					"name": "minecraft:prismarine_crystals",
+					"weight": 5
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 2,
+				"min": 1
+			}
+		},
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:empty",
+					"weight": 30
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/misc/trident",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"add": false,
+							"count": 1,
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:copper_nautilus_armor",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"add": false,
+							"count": 1,
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:iron_nautilus_armor",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"add": false,
+							"count": 1,
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:golden_nautilus_armor",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"add": false,
+							"count": 1,
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:diamond_nautilus_armor",
+					"weight": 2
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:empty",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/paradise_lost"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/divine_comedy"
+				}
+			]
+		}
+	],
+	"random_sequence": "minecraft:chests/buried_treasure"
 }

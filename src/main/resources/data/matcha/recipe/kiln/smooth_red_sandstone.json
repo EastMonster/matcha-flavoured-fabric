@@ -2,7 +2,7 @@
 	"type": "minecraft:smoking",
 	"group": "smooth_red_sandstone",
 	"category": "blocks",
-	"cookingtime": 100,
+	"cookingtime": 200,
 	"experience": 0.35,
 	"ingredient": "minecraft:red_sandstone",
 	"result": {

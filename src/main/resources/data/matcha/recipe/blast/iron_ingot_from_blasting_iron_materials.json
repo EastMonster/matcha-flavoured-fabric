@@ -2,7 +2,7 @@
 	"type": "minecraft:blasting",
 	"group": "iron_ingot",
 	"category": "misc",
-	"cookingtime": 100,
+	"cookingtime": 200,
 	"experience": 0.2,
 	"ingredient": [
 		"minecraft:iron_pickaxe",

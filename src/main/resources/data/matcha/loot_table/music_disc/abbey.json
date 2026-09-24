@@ -7,9 +7,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:music_disc_11",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:jukebox_playable": "matcha:abbey",
 								"minecraft:item_model": "matcha:music_disc_abbey"

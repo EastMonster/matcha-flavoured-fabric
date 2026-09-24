@@ -2,7 +2,7 @@
 	"type": "minecraft:blasting",
 	"group": "diamond",
 	"category": "misc",
-	"cookingtime": 100,
+	"cookingtime": 200,
 	"experience": 0.2,
 	"ingredient": [
 		"minecraft:diamond_pickaxe",

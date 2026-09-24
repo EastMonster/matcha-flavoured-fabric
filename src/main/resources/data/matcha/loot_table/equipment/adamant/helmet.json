@@ -7,9 +7,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:netherite_helmet",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_components",
+							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 1000,
 								"minecraft:custom_data": {
@@ -23,25 +23,19 @@
 								"minecraft:lore": [
 									{
 										"translate": "desc.matcha.armour",
-										"with": [
-											"3"
-										],
+										"with": ["3"],
 										"color": "dark_green",
 										"italic": false
 									},
 									{
 										"translate": "desc.matcha.armour_toughness",
-										"with": [
-											"3"
-										],
+										"with": ["3"],
 										"color": "dark_green",
 										"italic": false
 									},
 									{
 										"translate": "desc.matcha.knockback_resistance",
-										"with": [
-											"1"
-										],
+										"with": ["1"],
 										"color": "dark_green",
 										"italic": false
 									},
@@ -77,9 +71,7 @@
 									}
 								],
 								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
+									"hidden_components": ["minecraft:attribute_modifiers"]
 								},
 								"minecraft:repairable": {
 									"items": [

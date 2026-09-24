@@ -1,20 +1,20 @@
 {
-	"given_item_modifiers": [
+	"given_item_modifier": [
 		{
 			"decoration": "minecraft:red_x",
-			"destination": "minecraft:on_papal_outpost_explorer_maps",
-			"function": "minecraft:exploration_map",
+			"destination": "#minecraft:on_papal_outpost_explorer_maps",
+			"type": "minecraft:exploration_map",
 			"search_radius": 100
 		},
 		{
-			"function": "minecraft:set_name",
+			"type": "minecraft:set_name",
 			"name": {
 				"translate": "filled_map.papal_outpost"
 			},
 			"target": "item_name"
 		},
 		{
-			"function": "minecraft:filtered",
+			"type": "minecraft:filtered",
 			"item_filter": {
 				"items": "minecraft:filled_map",
 				"predicates": {
@@ -22,18 +22,18 @@
 				}
 			},
 			"on_fail": {
-				"function": "minecraft:discard"
+				"type": "minecraft:discard"
 			}
 		},
 		{
-			"function": "minecraft:set_components",
+			"type": "minecraft:set_components",
 			"components": {
 				"minecraft:item_model": "matcha:papal_outpost_map"
 			}
 		}
 	],
 	"gives": {
-		"id": "minecraft:map"
+		"id": "minecraft:filled_map"
 	},
 	"max_uses": 999,
 	"wants": {
@@ -42,4 +42,3 @@
 	},
 	"xp": 40
 }
-

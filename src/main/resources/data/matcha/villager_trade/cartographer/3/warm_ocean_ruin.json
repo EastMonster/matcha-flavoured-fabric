@@ -1,33 +1,26 @@
 {
-	"given_item_modifiers": [
+	"given_item_modifier": [
 		{
-			"decoration": "minecraft:red_x",
-			"destination": "minecraft:on_warm_ocean_ruin_explorer_maps",
-			"function": "minecraft:exploration_map",
+			"decoration": "minecraft:ocean_ruin_warm",
+			"destination": "#minecraft:on_ocean_ruin_warm_maps",
+			"type": "minecraft:exploration_map",
 			"search_radius": 100
 		},
 		{
-			"function": "minecraft:set_name",
-			"name": {
-				"translate": "filled_map.warm_ocean_ruin"
-			},
-			"target": "item_name"
-		},
-		{
-			"function": "minecraft:filtered",
+			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:filled_map",
+				"items": "minecraft:warm_ocean_ruins_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}
 			},
 			"on_fail": {
-				"function": "minecraft:discard"
+				"type": "minecraft:discard"
 			}
 		}
 	],
 	"gives": {
-		"id": "minecraft:map"
+		"id": "minecraft:warm_ocean_ruins_map"
 	},
 	"max_uses": 999,
 	"wants": {
@@ -36,4 +29,3 @@
 	},
 	"xp": 40
 }
-

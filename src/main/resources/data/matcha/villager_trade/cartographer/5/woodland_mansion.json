@@ -1,32 +1,25 @@
 {
-	"given_item_modifiers": [
+	"given_item_modifier": [
 		{
-			"destination": "minecraft:on_woodland_explorer_maps",
-			"function": "minecraft:exploration_map",
+			"destination": "#minecraft:on_woodland_mansion_maps",
+			"type": "minecraft:exploration_map",
 			"search_radius": 100
 		},
 		{
-			"function": "minecraft:set_name",
-			"name": {
-				"translate": "filled_map.mansion"
-			},
-			"target": "item_name"
-		},
-		{
-			"function": "minecraft:filtered",
+			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:filled_map",
+				"items": "minecraft:woodland_mansion_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}
 			},
 			"on_fail": {
-				"function": "minecraft:discard"
+				"type": "minecraft:discard"
 			}
 		}
 	],
 	"gives": {
-		"id": "minecraft:map"
+		"id": "minecraft:woodland_mansion_map"
 	},
 	"max_uses": 999,
 	"wants": {
@@ -35,4 +28,3 @@
 	},
 	"xp": 60
 }
-

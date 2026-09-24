@@ -5,14 +5,14 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"functions": [
+					"modifier": [
 						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 3,
 								"min": 2
 							},
-							"function": "minecraft:set_count"
+							"type": "minecraft:set_count"
 						},
 						{
 							"count": {
@@ -21,7 +21,7 @@
 								"min": 0
 							},
 							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
+							"type": "minecraft:enchanted_count_increase"
 						}
 					],
 					"name": "minecraft:leather"

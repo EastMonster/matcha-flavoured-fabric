@@ -11,7 +11,8 @@
 						{
 							"type": "minecraft:set_count",
 							"count": {
-								"type": "minecraft:uniform", "min": 5,
+								"type": "minecraft:uniform",
+								"min": 5,
 								"max": 12
 							}
 						}
@@ -89,9 +90,9 @@
 					"type": "minecraft:loot_table",
 					"value": "minecraft:chests/equipment/diamond",
 					"weight": 20,
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:enchant_randomly",
+							"type": "minecraft:enchant_randomly",
 							"options": "#minecraft:on_random_loot"
 						}
 					]

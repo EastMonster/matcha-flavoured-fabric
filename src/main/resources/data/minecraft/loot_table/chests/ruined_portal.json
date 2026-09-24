@@ -1,123 +1,123 @@
 {
-  "type": "minecraft:chest",
-  "pools": [
-    {
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:obsidian",
-          "weight": 40
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:flint_and_steel",
-          "weight": 40
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:fire_charge",
-          "weight": 40
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:food/golden_apple",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 24,
-                "min": 4
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:raw_gold",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:golden_horse_armor",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:food/golden_carrot",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:clock",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8,
-                "min": 2
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:gold_ingot",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:food/enchanted_golden_apple",
-          "weight": 1
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/equipment/gold",
-          "weight": 80
-        }
-      ],
-      "rolls": {
-        "type": "minecraft:uniform",
-        "max": 12,
-        "min": 10
-      }
-    },
-    {
-      "entries": [
-        {
-          "type": "minecraft:empty"
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:lodestone",
-          "weight": 2
-        }
-      ],
-      "rolls": 1
-    }
-  ],
-  "random_sequence": "minecraft:chests/ruined_portal"
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 2,
+								"min": 1
+							},
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:obsidian",
+					"weight": 40
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:flint_and_steel",
+					"weight": 40
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:fire_charge",
+					"weight": 40
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "minecraft:food/golden_apple",
+					"weight": 15
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 24,
+								"min": 4
+							},
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:raw_gold",
+					"weight": 15
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:golden_horse_armor",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/golden_carrot",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:clock",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 8,
+								"min": 2
+							},
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:gold_ingot",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/enchanted_golden_apple",
+					"weight": 1
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "minecraft:chests/equipment/gold",
+					"weight": 80
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 12,
+				"min": 10
+			}
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:empty"
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 2,
+								"min": 1
+							},
+							"type": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:lodestone",
+					"weight": 2
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:chests/ruined_portal"
 }

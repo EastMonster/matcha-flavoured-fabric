@@ -2,7 +2,7 @@
 	"type": "minecraft:blasting",
 	"group": "gold_ingot",
 	"category": "misc",
-	"cookingtime": 100,
+	"cookingtime": 200,
 	"experience": 0.2,
 	"ingredient": [
 		"minecraft:golden_pickaxe",

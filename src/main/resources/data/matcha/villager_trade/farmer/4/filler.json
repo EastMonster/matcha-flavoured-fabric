@@ -2,9 +2,9 @@
 	"gives": {
 		"id": "minecraft:emerald"
 	},
-	"given_item_modifiers": [
+	"given_item_modifier": [
 		{
-			"function": "minecraft:discard"
+			"type": "minecraft:discard"
 		}
 	],
 	"max_uses": 16,
@@ -15,4 +15,3 @@
 	},
 	"xp": 2
 }
-

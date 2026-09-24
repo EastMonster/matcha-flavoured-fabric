@@ -1,33 +1,26 @@
 {
-	"given_item_modifiers": [
+	"given_item_modifier": [
 		{
-			"decoration": "minecraft:village_desert",
-			"destination": "minecraft:on_desert_explorer_maps",
-			"function": "minecraft:exploration_map",
+			"decoration": "minecraft:desert_pyramid",
+			"destination": "#minecraft:on_desert_pyramid_maps",
+			"type": "minecraft:exploration_map",
 			"search_radius": 100
 		},
 		{
-			"function": "minecraft:set_name",
-			"name": {
-				"translate": "filled_map.desert_pyramid"
-			},
-			"target": "item_name"
-		},
-		{
-			"function": "minecraft:filtered",
+			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:filled_map",
+				"items": "minecraft:desert_pyramid_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}
 			},
 			"on_fail": {
-				"function": "minecraft:discard"
+				"type": "minecraft:discard"
 			}
 		}
 	],
 	"gives": {
-		"id": "minecraft:map"
+		"id": "minecraft:desert_pyramid_map"
 	},
 	"max_uses": 999,
 	"wants": {
@@ -36,4 +29,3 @@
 	},
 	"xp": 20
 }
-

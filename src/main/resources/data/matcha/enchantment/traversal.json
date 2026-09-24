@@ -23,12 +23,12 @@
 					]
 				},
 				"requirements": {
-					"condition": "minecraft:all_of",
+					"type": "minecraft:all_of",
 					"terms": [
 						{
-							"condition": "minecraft:inverted",
+							"type": "minecraft:inverted",
 							"term": {
-								"condition": "minecraft:entity_properties",
+								"type": "minecraft:entity_properties",
 								"entity": "this",
 								"predicate": {
 									"vehicle": {}
@@ -36,17 +36,17 @@
 							}
 						},
 						{
-							"condition": "minecraft:any_of",
+							"type": "minecraft:any_of",
 							"terms": [
 								{
-									"condition": "minecraft:all_of",
+									"type": "minecraft:all_of",
 									"terms": [
 										{
 											"active": true,
-											"condition": "minecraft:enchantment_active_check"
+											"type": "minecraft:enchantment_active_check"
 										},
 										{
-											"condition": "minecraft:entity_properties",
+											"type": "minecraft:entity_properties",
 											"entity": "this",
 											"predicate": {
 												"flags": {
@@ -55,10 +55,10 @@
 											}
 										},
 										{
-											"condition": "minecraft:any_of",
+											"type": "minecraft:any_of",
 											"terms": [
 												{
-													"condition": "minecraft:entity_properties",
+													"type": "minecraft:entity_properties",
 													"entity": "this",
 													"predicate": {
 														"movement_affected_by": {
@@ -69,7 +69,7 @@
 													}
 												},
 												{
-													"condition": "minecraft:entity_properties",
+													"type": "minecraft:entity_properties",
 													"entity": "this",
 													"predicate": {
 														"stepping_on": {
@@ -80,7 +80,7 @@
 													}
 												},
 												{
-													"condition": "minecraft:entity_properties",
+													"type": "minecraft:entity_properties",
 													"entity": "this",
 													"predicate": {
 														"flags": {
@@ -93,14 +93,14 @@
 									]
 								},
 								{
-									"condition": "minecraft:all_of",
+									"type": "minecraft:all_of",
 									"terms": [
 										{
 											"active": false,
-											"condition": "minecraft:enchantment_active_check"
+											"type": "minecraft:enchantment_active_check"
 										},
 										{
-											"condition": "minecraft:entity_properties",
+											"type": "minecraft:entity_properties",
 											"entity": "this",
 											"predicate": {
 												"flags": {
@@ -109,10 +109,10 @@
 											}
 										},
 										{
-											"condition": "minecraft:any_of",
+											"type": "minecraft:any_of",
 											"terms": [
 												{
-													"condition": "minecraft:entity_properties",
+													"type": "minecraft:entity_properties",
 													"entity": "this",
 													"predicate": {
 														"movement_affected_by": {
@@ -123,7 +123,7 @@
 													}
 												},
 												{
-													"condition": "minecraft:entity_properties",
+													"type": "minecraft:entity_properties",
 													"entity": "this",
 													"predicate": {
 														"stepping_on": {
@@ -148,17 +148,17 @@
 					"amount": 1
 				},
 				"requirements": {
-					"condition": "minecraft:all_of",
+					"type": "minecraft:all_of",
 					"terms": [
 						{
 							"chance": {
 								"type": "minecraft:enchantment_level",
 								"amount": 0.04
 							},
-							"condition": "minecraft:random_chance"
+							"type": "minecraft:random_chance"
 						},
 						{
-							"condition": "minecraft:entity_properties",
+							"type": "minecraft:entity_properties",
 							"entity": "this",
 							"predicate": {
 								"flags": {
@@ -167,10 +167,10 @@
 							}
 						},
 						{
-							"condition": "minecraft:any_of",
+							"type": "minecraft:any_of",
 							"terms": [
 								{
-									"condition": "minecraft:entity_properties",
+									"type": "minecraft:entity_properties",
 									"entity": "this",
 									"predicate": {
 										"movement_affected_by": {
@@ -181,7 +181,7 @@
 									}
 								},
 								{
-									"condition": "minecraft:entity_properties",
+									"type": "minecraft:entity_properties",
 									"entity": "this",
 									"predicate": {
 										"stepping_on": {
@@ -221,10 +221,10 @@
 					}
 				},
 				"requirements": {
-					"condition": "minecraft:all_of",
+					"type": "minecraft:all_of",
 					"terms": [
 						{
-							"condition": "minecraft:entity_properties",
+							"type": "minecraft:entity_properties",
 							"entity": "this",
 							"predicate": {
 								"flags": {
@@ -240,10 +240,10 @@
 							}
 						},
 						{
-							"condition": "minecraft:any_of",
+							"type": "minecraft:any_of",
 							"terms": [
 								{
-									"condition": "minecraft:entity_properties",
+									"type": "minecraft:entity_properties",
 									"entity": "this",
 									"predicate": {
 										"movement_affected_by": {
@@ -254,7 +254,7 @@
 									}
 								},
 								{
-									"condition": "minecraft:entity_properties",
+									"type": "minecraft:entity_properties",
 									"entity": "this",
 									"predicate": {
 										"stepping_on": {

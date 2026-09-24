@@ -6,42 +6,48 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/divine_fragment"
+					"value": "matcha:treasure/divine_fragment"
 				}
 			],
-			"condition": {"type":"minecraft:all_of","terms":[
-				{
-					"type": "minecraft:killed_by_player"
-				},
-				{
-					"type": "minecraft:random_chance_with_enchanted_bonus",
-					"unenchanted_chance": 0.15,
-					"enchanted_chance": {
-						"type": "minecraft:linear",
-						"base": 0.25,
-						"per_level_above_first": 0.1
+			"condition": {
+				"type": "minecraft:all_of",
+				"terms": [
+					{
+						"type": "minecraft:killed_by_player"
 					},
-					"enchantment": "minecraft:looting"
-				}
-			]}
+					{
+						"type": "minecraft:random_chance_with_enchanted_bonus",
+						"unenchanted_chance": 0.15,
+						"enchanted_chance": {
+							"type": "minecraft:linear",
+							"base": 0.25,
+							"per_level_above_first": 0.1
+						},
+						"enchantment": "minecraft:looting"
+					}
+				]
+			}
 		},
 		{
 			"bonus_rolls": 0,
-			"condition": {"type":"minecraft:all_of","terms":[
-				{
-					"type": "minecraft:killed_by_player"
-				},
-				{
-					"type": "minecraft:random_chance_with_enchanted_bonus",
-					"unenchanted_chance": 0.30,
-					"enchanted_chance": {
-						"type": "minecraft:linear",
-						"base": 0.35,
-						"per_level_above_first": 0.05
+			"condition": {
+				"type": "minecraft:all_of",
+				"terms": [
+					{
+						"type": "minecraft:killed_by_player"
 					},
-					"enchantment": "minecraft:looting"
-				}
-			]},
+					{
+						"type": "minecraft:random_chance_with_enchanted_bonus",
+						"unenchanted_chance": 0.3,
+						"enchanted_chance": {
+							"type": "minecraft:linear",
+							"base": 0.35,
+							"per_level_above_first": 0.05
+						},
+						"enchantment": "minecraft:looting"
+					}
+				]
+			},
 			"entries": [
 				{
 					"type": "minecraft:item",

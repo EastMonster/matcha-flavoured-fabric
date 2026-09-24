@@ -2,7 +2,7 @@
 	"type": "minecraft:smoking",
 	"group": "smooth_quartz",
 	"category": "blocks",
-	"cookingtime": 100,
+	"cookingtime": 200,
 	"experience": 0.1,
 	"ingredient": "minecraft:quartz_block",
 	"result": {
