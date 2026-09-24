@@ -13,6 +13,8 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.fabricmc.fabric.api.registry.FuelValueEvents;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -51,6 +53,9 @@ import java.util.List;
 import java.util.Objects;
 
 public final class MatchaFlavouredFabric implements ModInitializer {
+	private static final String CLIFFTREE_MOD_ID = "clifftree";
+	private static final Identifier CLIFFTREE_COMPAT_PACK =
+			Identifier.fromNamespaceAndPath("matcha-flavoured", "clifftree_compat");
 	private static volatile boolean vanillaPreviewActive;
 
 	public static boolean vanillaPreviewActive() {
@@ -68,6 +73,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	);
 	@Override
 	public void onInitialize() {
+		registerClifftreeCompatPack();
 		SleepFastForwardPayload.register();
 		VanillaFoodDefaults.init();
 		PlayerMechanics.init();
@@ -107,6 +113,17 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
 		CreativeOrder.register(creativeItems);
 		CreativeOrder.registerVanillaOverrides();
+	}
+
+	private static void registerClifftreeCompatPack() {
+		if (!FabricLoader.getInstance().isModLoaded(CLIFFTREE_MOD_ID)) {
+			return;
+		}
+		ResourceManagerHelper.registerBuiltinResourcePack(
+				CLIFFTREE_COMPAT_PACK,
+				FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
+				ResourcePackActivationType.ALWAYS_ENABLED
+		);
 	}
 
 	private static Item register(String name) {

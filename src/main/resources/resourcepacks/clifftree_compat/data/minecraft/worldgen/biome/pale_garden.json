@@ -1,0 +1,189 @@
+{
+	"attributes": {
+		"minecraft:audio/background_music": {},
+		"minecraft:audio/music_volume": 0.0,
+		"minecraft:visual/fog_color": "#817770",
+		"minecraft:visual/sky_color": "#b9b9b9",
+		"minecraft:visual/water_fog_color": "#556980",
+		"minecraft:visual/fog_start_distance": -128,
+		"minecraft:visual/fog_end_distance": 384,
+		"minecraft:visual/sky_light_factor": 0.75,
+		"minecraft:visual/sunrise_sunset_color": "#00000000",
+		"minecraft:visual/cloud_color": "#7DFFFFFF",
+		"minecraft:gameplay/increased_fire_burnout": true,
+		"minecraft:visual/block_light_tint": "#ffe7b8",
+		"minecraft:visual/default_dripstone_particle": {
+			"type": "minecraft:block",
+			"block_state": "minecraft:air"
+		}
+	},
+	"carvers": [
+		"minecraft:cave",
+		"minecraft:cave_extra_underground",
+		"minecraft:canyon"
+	],
+	"downfall": 0.8,
+	"effects": {
+		"dry_foliage_color": "#a0a69c",
+		"foliage_color": "#878d76",
+		"grass_color": "#778272",
+		"water_color": "#9b9fa8"
+	},
+	"features": [
+		[],
+		["minecraft:lake_lava_underground"],
+		["minecraft:amethyst_geode"],
+		["minecraft:monster_room", "minecraft:monster_room_deep"],
+		[],
+		["clifftree:stone_cliff"],
+		[
+			"minecraft:ore_dirt",
+			"minecraft:ore_gravel",
+			"minecraft:ore_granite_upper",
+			"minecraft:ore_granite_lower",
+			"minecraft:ore_diorite_upper",
+			"minecraft:ore_diorite_lower",
+			"minecraft:ore_andesite_upper",
+			"minecraft:ore_andesite_lower",
+			"minecraft:ore_tuff",
+			"minecraft:ore_coal_upper",
+			"minecraft:ore_coal_lower",
+			"minecraft:ore_iron_upper",
+			"minecraft:ore_iron_middle",
+			"minecraft:ore_iron_small",
+			"minecraft:ore_gold",
+			"minecraft:ore_gold_lower",
+			"minecraft:ore_redstone",
+			"minecraft:ore_redstone_lower",
+			"minecraft:ore_diamond",
+			"minecraft:ore_diamond_medium",
+			"minecraft:ore_diamond_large",
+			"minecraft:ore_diamond_buried",
+			"minecraft:ore_lapis",
+			"minecraft:ore_lapis_buried",
+			"minecraft:ore_copper",
+			"minecraft:underwater_magma",
+			"matcha-flavoured:ore_emerald_deep"
+		],
+		[],
+		["minecraft:spring_water"],
+		[
+			"minecraft:glow_lichen",
+			"minecraft:pale_garden_vegetation",
+			"minecraft:pale_moss_patch",
+			"minecraft:pale_garden_flowers",
+			"minecraft:flower_pale_garden",
+			"minecraft:patch_grass_forest",
+			"minecraft:patch_sugar_cane",
+			"clifftree:patch_pumpkin_pale_garden",
+			"clifftree:patch_tall_grass_extra",
+			"clifftree:bonemeal/pale_garden"
+		],
+		["minecraft:freeze_top_layer"]
+	],
+	"has_precipitation": true,
+	"spawn_costs": {
+		"minecraft:spider": {
+			"energy_budget": 0.5,
+			"charge": 0.7
+		},
+		"minecraft:zombie": {
+			"energy_budget": 0.5,
+			"charge": 0.7
+		},
+		"minecraft:zombie_villager": {
+			"energy_budget": 0.5,
+			"charge": 0.7
+		},
+		"minecraft:skeleton": {
+			"energy_budget": 0.5,
+			"charge": 0.7
+		},
+		"minecraft:creeper": {
+			"energy_budget": 0.5,
+			"charge": 0.7
+		},
+		"minecraft:enderman": {
+			"energy_budget": 0.5,
+			"charge": 0.7
+		},
+		"minecraft:witch": {
+			"energy_budget": 0.5,
+			"charge": 0.7
+		}
+	},
+	"spawners": {
+		"ambient": [
+			{
+				"type": "minecraft:bat",
+				"maxCount": 8,
+				"minCount": 8,
+				"weight": 10
+			}
+		],
+		"axolotls": [],
+		"creature": [],
+		"misc": [],
+		"monster": [
+			{
+				"type": "minecraft:spider",
+				"maxCount": 4,
+				"minCount": 4,
+				"weight": 100
+			},
+			{
+				"type": "minecraft:zombie",
+				"maxCount": 2,
+				"minCount": 2,
+				"weight": 95
+			},
+			{
+				"type": "minecraft:zombie_villager",
+				"maxCount": 1,
+				"minCount": 1,
+				"weight": 5
+			},
+			{
+				"type": "minecraft:skeleton",
+				"maxCount": 1,
+				"minCount": 1,
+				"weight": 80
+			},
+			{
+				"type": "minecraft:creeper",
+				"maxCount": 1,
+				"minCount": 1,
+				"weight": 20
+			},
+			{
+				"type": "minecraft:slime",
+				"maxCount": 4,
+				"minCount": 4,
+				"weight": 100
+			},
+			{
+				"type": "minecraft:enderman",
+				"maxCount": 4,
+				"minCount": 1,
+				"weight": 20
+			},
+			{
+				"type": "minecraft:witch",
+				"maxCount": 1,
+				"minCount": 1,
+				"weight": 10
+			}
+		],
+		"underground_water_creature": [
+			{
+				"type": "minecraft:glow_squid",
+				"maxCount": 6,
+				"minCount": 4,
+				"weight": 10
+			}
+		],
+		"water_ambient": [],
+		"water_creature": []
+	},
+	"temperature": 0.7
+}

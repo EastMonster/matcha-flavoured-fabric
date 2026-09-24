@@ -1,0 +1,77 @@
+{
+	"attributes": {
+		"minecraft:gameplay/can_pillager_patrol_spawn": false,
+		"minecraft:visual/sky_color": "#2b71b7",
+		"minecraft:visual/fog_color": "#9ac3d9",
+		"minecraft:visual/star_brightness": 0.5,
+		"minecraft:visual/fog_start_distance": 0,
+		"minecraft:visual/fog_end_distance": 640,
+		"minecraft:visual/sky_fog_end_distance": 256
+	},
+	"carvers": [],
+	"downfall": 0.4,
+	"effects": {
+		"water_color": "#00679F"
+	},
+	"features": [],
+	"has_precipitation": false,
+	"spawn_costs": {},
+	"spawners": {
+		"ambient": [],
+		"axolotls": [],
+		"misc": [],
+		"monster": [
+			{
+				"type": "minecraft:spider",
+				"weight": 80,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:zombie",
+				"weight": 95,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:zombie_villager",
+				"weight": 5,
+				"minCount": 1,
+				"maxCount": 1
+			},
+			{
+				"type": "minecraft:skeleton",
+				"weight": 100,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:creeper",
+				"weight": 100,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:slime",
+				"weight": 100,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:enderman",
+				"weight": 10,
+				"minCount": 1,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:drowned",
+				"weight": 100,
+				"minCount": 1,
+				"maxCount": 1
+			}
+		],
+		"water_ambient": [],
+		"water_creature": []
+	},
+	"temperature": 0.8
+}

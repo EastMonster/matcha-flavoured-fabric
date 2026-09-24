@@ -1,0 +1,130 @@
+{
+	"attributes": {
+		"minecraft:gameplay/can_pillager_patrol_spawn": false,
+		"minecraft:gameplay/increased_fire_burnout": true,
+		"minecraft:visual/sky_color": "#77a8ff",
+		"minecraft:visual/fog_color": "#A890CA",
+		"minecraft:visual/fog_start_distance": -16,
+		"minecraft:visual/fog_end_distance": 512,
+		"minecraft:visual/water_fog_color": "#232126",
+		"minecraft:visual/ambient_particles": [
+			{
+				"particle": {
+					"type": "minecraft:mycelium"
+				},
+				"probability": 0.0003
+			},
+			{
+				"particle": {
+					"type": "minecraft:white_ash"
+				},
+				"probability": 0.0001
+			}
+		],
+		"minecraft:visual/water_fog_end_distance": {
+			"argument": 0.85,
+			"modifier": "multiply"
+		},
+		"minecraft:visual/cloud_color": "#DCF0E1F0"
+	},
+	"carvers": [
+		"minecraft:cave",
+		"minecraft:cave_extra_underground",
+		"minecraft:canyon"
+	],
+	"downfall": 1.0,
+	"effects": {
+		"water_color": "#a2b5dd",
+		"grass_color": "#BDA2A9"
+	},
+	"features": [
+		[],
+		["minecraft:lake_lava_underground"],
+		["minecraft:amethyst_geode", "clifftree:island_rock"],
+		["minecraft:monster_room", "minecraft:monster_room_deep"],
+		[],
+		["clifftree:stone_cliff"],
+		[
+			"minecraft:ore_dirt",
+			"minecraft:ore_gravel",
+			"minecraft:ore_granite_upper",
+			"minecraft:ore_granite_lower",
+			"minecraft:ore_diorite_upper",
+			"minecraft:ore_diorite_lower",
+			"minecraft:ore_andesite_upper",
+			"minecraft:ore_andesite_lower",
+			"minecraft:ore_tuff",
+			"minecraft:ore_coal_upper",
+			"minecraft:ore_coal_lower",
+			"minecraft:ore_iron_upper",
+			"minecraft:ore_iron_middle",
+			"minecraft:ore_iron_small",
+			"minecraft:ore_gold",
+			"minecraft:ore_gold_lower",
+			"minecraft:ore_redstone",
+			"minecraft:ore_redstone_lower",
+			"minecraft:ore_diamond",
+			"minecraft:ore_diamond_medium",
+			"minecraft:ore_diamond_large",
+			"minecraft:ore_diamond_buried",
+			"minecraft:ore_lapis",
+			"minecraft:ore_lapis_buried",
+			"minecraft:ore_copper",
+			"minecraft:underwater_magma",
+			"matcha-flavoured:ore_emerald_deep",
+			"clifftree:ore_coal_lush"
+		],
+		"#clifftree:extra_gold_remove",
+		["minecraft:spring_water", "minecraft:spring_lava"],
+		[
+			"minecraft:glow_lichen",
+			"minecraft:mushroom_island_vegetation",
+			"minecraft:patch_pumpkin",
+			"minecraft:patch_sugar_cane",
+			"clifftree:patch_grass_island",
+			"clifftree:huge_red_mushroom",
+			"clifftree:huge_brown_mushroom",
+			"clifftree:mushroom_field_patch",
+			"clifftree:patch_mushroom_mud",
+			"clifftree:shelf_fungus",
+			"clifftree:shelf_fungus_cave",
+			"clifftree:island_cave_mushroom"
+		],
+		["minecraft:freeze_top_layer"]
+	],
+	"has_precipitation": true,
+	"spawn_costs": {},
+	"spawners": {
+		"ambient": [
+			{
+				"type": "minecraft:bat",
+				"maxCount": 8,
+				"minCount": 8,
+				"weight": 10
+			}
+		],
+		"axolotls": [],
+		"creature": [
+			{
+				"type": "minecraft:mooshroom",
+				"maxCount": 8,
+				"minCount": 4,
+				"weight": 8
+			}
+		],
+		"misc": [],
+		"monster": [],
+		"underground_water_creature": [
+			{
+				"type": "minecraft:glow_squid",
+				"maxCount": 6,
+				"minCount": 4,
+				"weight": 10
+			}
+		],
+		"water_ambient": [],
+		"water_creature": []
+	},
+	"temperature": 0.9,
+	"creature_spawn_probability": 0.15
+}

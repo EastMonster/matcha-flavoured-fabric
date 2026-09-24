@@ -1,0 +1,193 @@
+{
+	"attributes": {
+		"minecraft:audio/background_music": {
+			"creative": {
+				"max_delay": 24000,
+				"min_delay": 12000,
+				"sound": "minecraft:music.creative"
+			},
+			"default": {
+				"max_delay": 24000,
+				"min_delay": 12000,
+				"sound": "minecraft:music.game"
+			},
+			"underwater": {
+				"max_delay": 24000,
+				"min_delay": 12000,
+				"sound": "minecraft:music.under_water"
+			}
+		},
+		"minecraft:gameplay/increased_fire_burnout": true,
+		"minecraft:visual/sky_color": "#5FAAC5",
+		"minecraft:visual/fog_color": "#93D9C8",
+		"minecraft:visual/fog_start_distance": -16,
+		"minecraft:visual/fog_end_distance": 768,
+		"minecraft:visual/water_fog_color": "#04201E",
+		"minecraft:visual/sky_light_color": "#ecffed",
+		"minecraft:visual/cloud_color": "#D2E6FFF0"
+	},
+	"effects": {
+		"water_color": "#00818A",
+		"grass_color": "#5EC541",
+		"foliage_color": "#4b9e17"
+	},
+	"carvers": [
+		"minecraft:cave",
+		"minecraft:cave_extra_underground",
+		"minecraft:canyon"
+	],
+	"features": [
+		[],
+		["minecraft:lake_lava_underground"],
+		["minecraft:amethyst_geode"],
+		["minecraft:monster_room", "minecraft:monster_room_deep"],
+		[],
+		["clifftree:stone_cliff"],
+		[
+			"minecraft:ore_dirt",
+			"minecraft:ore_gravel",
+			"minecraft:ore_granite_upper",
+			"minecraft:ore_granite_lower",
+			"minecraft:ore_diorite_upper",
+			"minecraft:ore_diorite_lower",
+			"minecraft:ore_andesite_upper",
+			"minecraft:ore_andesite_lower",
+			"minecraft:ore_tuff",
+			"minecraft:ore_coal_upper",
+			"minecraft:ore_coal_lower",
+			"minecraft:ore_iron_upper",
+			"minecraft:ore_iron_middle",
+			"minecraft:ore_iron_small",
+			"minecraft:ore_gold",
+			"minecraft:ore_gold_lower",
+			"minecraft:ore_redstone",
+			"minecraft:ore_redstone_lower",
+			"minecraft:ore_diamond",
+			"minecraft:ore_diamond_large",
+			"minecraft:ore_diamond_buried",
+			"minecraft:ore_lapis",
+			"minecraft:ore_lapis_buried",
+			"minecraft:ore_copper",
+			"minecraft:underwater_magma",
+			"minecraft:disk_clay"
+		],
+		"#clifftree:extra_gold_remove",
+		["minecraft:spring_water", "minecraft:spring_lava"],
+		[
+			"minecraft:glow_lichen",
+			"minecraft:trees_sparse_jungle",
+			"minecraft:flower_warm",
+			"minecraft:patch_grass_jungle",
+			"minecraft:patch_bush",
+			"minecraft:brown_mushroom_normal",
+			"minecraft:red_mushroom_normal",
+			"minecraft:patch_sugar_cane_desert",
+			"minecraft:patch_pumpkin",
+			"minecraft:patch_firefly_bush_near_water",
+			"minecraft:seagrass_deep_warm",
+			"minecraft:vines",
+			"minecraft:seagrass_river",
+			"minecraft:patch_melon_sparse",
+			"clifftree:glow_lichen_cave_river",
+			"clifftree:bonemeal/forest"
+		],
+		["minecraft:freeze_top_layer"]
+	],
+	"spawners": {
+		"monster": [
+			{
+				"type": "minecraft:spider",
+				"weight": 100,
+				"minCount": 8,
+				"maxCount": 8
+			},
+			{
+				"type": "minecraft:zombie",
+				"weight": 95,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:zombie_villager",
+				"weight": 5,
+				"minCount": 1,
+				"maxCount": 1
+			},
+			{
+				"type": "minecraft:skeleton",
+				"weight": 100,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:creeper",
+				"weight": 100,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:slime",
+				"weight": 100,
+				"minCount": 4,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:enderman",
+				"weight": 10,
+				"minCount": 1,
+				"maxCount": 4
+			},
+			{
+				"type": "minecraft:witch",
+				"weight": 5,
+				"minCount": 1,
+				"maxCount": 1
+			},
+			{
+				"type": "minecraft:drowned",
+				"weight": 100,
+				"minCount": 1,
+				"maxCount": 1
+			}
+		],
+		"creature": [],
+		"ambient": [
+			{
+				"type": "minecraft:bat",
+				"weight": 10,
+				"minCount": 8,
+				"maxCount": 8
+			}
+		],
+		"axolotls": [],
+		"underground_water_creature": [
+			{
+				"type": "minecraft:glow_squid",
+				"weight": 10,
+				"minCount": 4,
+				"maxCount": 6
+			}
+		],
+		"water_creature": [
+			{
+				"type": "minecraft:squid",
+				"weight": 2,
+				"minCount": 1,
+				"maxCount": 4
+			}
+		],
+		"water_ambient": [
+			{
+				"type": "minecraft:tropical_fish",
+				"weight": 5,
+				"minCount": 3,
+				"maxCount": 5
+			}
+		],
+		"misc": []
+	},
+	"spawn_costs": {},
+	"has_precipitation": true,
+	"temperature": 0.95,
+	"downfall": 0.9
+}

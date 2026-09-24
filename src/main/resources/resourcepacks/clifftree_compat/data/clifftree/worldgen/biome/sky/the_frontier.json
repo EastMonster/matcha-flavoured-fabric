@@ -1,0 +1,38 @@
+{
+	"attributes": {
+		"minecraft:gameplay/can_pillager_patrol_spawn": false,
+		"minecraft:visual/sky_color": "#244a70",
+		"minecraft:visual/fog_color": "#7aa1b6",
+		"minecraft:visual/star_brightness": 0.75,
+		"minecraft:visual/fog_start_distance": -128,
+		"minecraft:visual/fog_end_distance": 1024,
+		"minecraft:visual/sky_fog_end_distance": 512,
+		"minecraft:visual/sky_light_factor": 0.5,
+		"minecraft:visual/ambient_particles": [
+			{
+				"particle": {
+					"type": "minecraft:end_rod"
+				},
+				"probability": 0.0001
+			}
+		],
+		"minecraft:visual/cloud_color": "#7DFFFFFF"
+	},
+	"carvers": [],
+	"downfall": 0.4,
+	"effects": {
+		"water_color": "#445c8c"
+	},
+	"features": [],
+	"has_precipitation": false,
+	"spawn_costs": {},
+	"spawners": {
+		"ambient": [],
+		"axolotls": [],
+		"misc": [],
+		"monster": [],
+		"water_ambient": [],
+		"water_creature": []
+	},
+	"temperature": 0.8
+}
