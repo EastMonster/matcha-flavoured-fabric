@@ -226,7 +226,7 @@
 							"type": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:beetroot_seeds",
+					"name": "matcha:tomato_seeds",
 					"weight": 10
 				}
 			],
@@ -292,7 +292,8 @@
 		},
 		{
 			"rolls": {
-				"type": "minecraft:uniform", "min": 0,
+				"type": "minecraft:uniform",
+				"min": 0,
 				"max": 1
 			},
 			"entries": [

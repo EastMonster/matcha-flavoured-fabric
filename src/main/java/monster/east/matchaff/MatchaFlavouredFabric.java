@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import monster.east.matchaff.compat.TrinketsCompat;
+import monster.east.matchaff.block.TomatoCropBlock;
 import monster.east.matchaff.enchantment.EnchantmentMechanics;
 import monster.east.matchaff.item.*;
 import monster.east.matchaff.mechanic.*;
@@ -80,6 +81,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		FoodHealMechanics.init();
 		registerNameColors();
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
+		Item tomatoSeed = TomatoCropBlock.register();
 		List<Item> foods = registerFoods();
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
 		List<SimpleItemRegistrar.BatchItem> batchItems = SimpleItemRegistrar.registerAll();
@@ -88,6 +90,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		batchItems.stream().filter(entry -> !entry.hidden())
 				.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
 		foods.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.FOOD_AND_DRINKS)));
+		creativeItems.add(new CreativeOrder.Entry(tomatoSeed, CreativeModeTabs.INGREDIENTS));
 		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
 		CreativeOrder.register(creativeItems);
 		CreativeOrder.registerVanillaOverrides();

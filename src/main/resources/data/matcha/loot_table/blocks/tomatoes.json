@@ -1,0 +1,59 @@
+{
+	"type": "minecraft:block",
+	"modifier": [],
+	"pools": [
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:food/tomato",
+							"condition": {
+								"block": "matcha:tomatoes",
+								"type": "minecraft:match_block",
+								"properties": {
+									"age": "3"
+								}
+							},
+							"modifier": [
+								{
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:uniform_bonus_count",
+									"parameters": {
+										"bonusMultiplier": 1
+									},
+									"type": "minecraft:apply_bonus"
+								},
+								{
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:uniform_bonus_count",
+									"parameters": {
+										"bonusMultiplier": 1
+									},
+									"type": "minecraft:apply_bonus"
+								},
+								{
+									"count": {
+										"type": "minecraft:uniform",
+										"min": 1,
+										"max": 3
+									},
+									"type": "minecraft:set_count"
+								}
+							]
+						},
+						{
+							"type": "minecraft:item",
+							"name": "matcha:tomato_seeds"
+						}
+					]
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "matcha:blocks/tomatoes"
+}

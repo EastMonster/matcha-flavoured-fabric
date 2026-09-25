@@ -220,7 +220,7 @@ public final class MatchaItemDataFixerCheck {
 
 		CompoundTag elytra = new CompoundTag();
 		elytra.putString("id", "matcha:bronze_elytra");
-		assert "matcha:bronze_elytra".equals(MatchaItemDataFixer.update(elytra).getStringOr("id", ""));
+		assert "matcha:hepatizon_elytra".equals(MatchaItemDataFixer.update(elytra).getStringOr("id", ""));
 
 		CompoundTag customData = new CompoundTag();
 		customData.putString("id", "matcha-flavoured:bronze_sword");

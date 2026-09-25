@@ -5,7 +5,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "minecraft:beetroot"
+						"items": "matcha:tomato"
 					}
 				]
 			},
@@ -18,12 +18,7 @@
 			"trigger": "minecraft:recipe_unlocked"
 		}
 	},
-	"requirements": [
-		[
-			"has_the_recipe",
-			"has_primary_material"
-		]
-	],
+	"requirements": [["has_the_recipe", "has_primary_material"]],
 	"rewards": {
 		"recipes": [
 			"matcha:crafting/tomato_seeds_from_tomato",

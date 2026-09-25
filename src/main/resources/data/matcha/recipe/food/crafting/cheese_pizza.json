@@ -2,14 +2,10 @@
 	"type": "minecraft:crafting_shaped",
 	"group": "pizza",
 	"category": "misc",
-	"pattern": [
-		"CCC",
-		"TTT",
-		"DDD"
-	],
+	"pattern": ["CCC", "TTT", "DDD"],
 	"key": {
 		"D": "matcha:dough",
-		"T": "minecraft:beetroot",
+		"T": "matcha:tomato",
 		"C": "matcha:cheese"
 	},
 	"result": {

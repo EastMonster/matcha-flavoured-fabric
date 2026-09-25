@@ -1,12 +1,10 @@
 {
 	"type": "minecraft:crafting_shapeless",
-	"group": "beetroot_seeds",
+	"group": "tomato_seeds",
 	"category": "misc",
-	"ingredients": [
-		"minecraft:beetroot"
-	],
+	"ingredients": ["matcha:tomato"],
 	"result": {
 		"count": 3,
-		"id": "minecraft:beetroot_seeds"
+		"id": "matcha:tomato_seeds"
 	}
 }
