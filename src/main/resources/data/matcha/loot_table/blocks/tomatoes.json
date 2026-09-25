@@ -13,43 +13,34 @@
 							"value": "matcha:food/tomato",
 							"conditions": [
 								{
-									"block": "minecraft:beetroots",
+									"block": "matcha:tomatoes",
 									"condition": "minecraft:block_state_property",
-									"properties": {
-										"age": "3"
-									}
+									"properties": { "age": "3" }
 								}
 							],
-							"name": "minecraft:beetroot",
+							"name": "matcha:tomato",
 							"functions": [
 								{
 									"function": "minecraft:apply_bonus",
 									"enchantment": "matcha:electrum_tool",
 									"formula": "minecraft:uniform_bonus_count",
-									"parameters": {
-										"bonusMultiplier": 1
-									}
+									"parameters": { "bonusMultiplier": 1 }
 								},
 								{
 									"function": "minecraft:apply_bonus",
 									"enchantment": "minecraft:fortune",
 									"formula": "minecraft:uniform_bonus_count",
-									"parameters": {
-										"bonusMultiplier": 1
-									}
+									"parameters": { "bonusMultiplier": 1 }
 								},
 								{
 									"function": "minecraft:set_count",
-									"count": {
-										"min": 1,
-										"max": 3
-									}
+									"count": { "min": 1, "max": 3 }
 								}
 							]
 						},
 						{
 							"type": "minecraft:item",
-							"name": "minecraft:beetroot_seeds"
+							"name": "matcha:tomato_seeds"
 						}
 					]
 				}
@@ -57,5 +48,5 @@
 			"rolls": 1
 		}
 	],
-	"random_sequence": "minecraft:blocks/beetroots"
+	"random_sequence": "matcha:blocks/tomatoes"
 }

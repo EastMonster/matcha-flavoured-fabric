@@ -26,7 +26,7 @@
 		}
 	},
 	{
-		"id": "bronze_elytra",
+		"id": "hepatizon_elytra",
 		"type": "item",
 		"tab": "combat",
 		"source": "data/matcha/recipe/smithing/hepatizon_elytra.json",
@@ -40,7 +40,7 @@
 			"minecraft:attribute_modifiers": [
 				{
 					"type": "minecraft:movement_speed",
-					"id": "bronze_elytra",
+					"id": "hepatizon_elytra",
 					"amount": 0.02,
 					"operation": "add_value",
 					"slot": "chest"
@@ -495,7 +495,7 @@
 					"count": 16
 				},
 				{
-					"id": "beetroot_seeds",
+					"id": "matcha:tomato_seeds",
 					"count": 16
 				},
 				{

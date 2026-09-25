@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:beetroot",
+					"name": "matcha:tomato",
 					"functions": [
 						{
 							"function": "minecraft:set_components",

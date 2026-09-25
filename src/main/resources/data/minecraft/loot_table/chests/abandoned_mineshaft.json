@@ -189,7 +189,7 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:beetroot_seeds",
+					"name": "matcha:tomato_seeds",
 					"weight": 10
 				}
 			],

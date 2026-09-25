@@ -79,7 +79,7 @@ public final class V1Migration extends DataFix {
 				 var reader = new InputStreamReader(Objects.requireNonNull(stream), StandardCharsets.UTF_8)) {
 			Set<String> paths = new HashSet<>();
 			collectPaths(JsonParser.parseReader(reader), paths);
-			paths.addAll(Set.of("bronze_axe", "bronze_boots", "bronze_chestplate", "bronze_dolabra", "bronze_helmet", "bronze_hoe", "bronze_laurel", "bronze_leggings", "bronze_mattock", "bronze_pickaxe", "bronze_shovel", "bronze_spear", "bronze_sword", "bronze_shears", "palatinate_sword", "axolotl"));
+			paths.addAll(Set.of("bronze_axe", "bronze_boots", "bronze_chestplate", "bronze_dolabra", "bronze_elytra", "bronze_helmet", "bronze_hoe", "bronze_laurel", "bronze_leggings", "bronze_mattock", "bronze_pickaxe", "bronze_shovel", "bronze_spear", "bronze_sword", "bronze_shears", "palatinate_sword", "axolotl"));
 			return Set.copyOf(paths);
 		} catch (Exception exception) {
 			throw new IllegalStateException("Could not read Matcha item migration paths", exception);

@@ -3,7 +3,7 @@
 	"category": "food",
 	"cookingtime": 100,
 	"experience": 0.35,
-	"ingredient": "minecraft:beetroot",
+	"ingredient": "matcha:tomato",
 	"result": {
 		"id": "matcha:grilled_tomatoes"
 	}

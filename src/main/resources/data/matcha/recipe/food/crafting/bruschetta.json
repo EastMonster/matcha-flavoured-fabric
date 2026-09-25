@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
-	"ingredients": [
-		"minecraft:beetroot",
-		"matcha:cheese",
-		"bread"
-	],
+	"ingredients": ["matcha:tomato", "matcha:cheese", "bread"],
 	"result": {
 		"id": "matcha:bruschetta"
 	}

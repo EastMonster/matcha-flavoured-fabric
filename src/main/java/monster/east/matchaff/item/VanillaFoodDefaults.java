@@ -41,7 +41,7 @@ public class VanillaFoodDefaults {
 		}
 		definitions.addAll(readDefaults());
 		definitions.add(readNestedLootTable(
-				"/data/minecraft/loot_table/blocks/beetroots.json", "minecraft:beetroot"));
+				"/data/matcha/loot_table/food/tomato.json", "matcha:tomato"));
 		definitions.add(readNestedLootTable(
 				"/data/minecraft/loot_table/blocks/chorus_plant.json", "minecraft:chorus_fruit"));
 		definitions.add(readNestedLootTable(

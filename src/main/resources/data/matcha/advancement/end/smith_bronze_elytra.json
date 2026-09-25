@@ -1,7 +1,7 @@
 {
 	"parent": "matcha:end/elytra",
 	"criteria": {
-		"bronze_elytra": {
+		"hepatizon_elytra": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipe_id": "matcha:smithing/hepatizon_elytra"
@@ -21,7 +21,7 @@
 		],
 		"icon": {
 			"count": 1,
-			"id": "matcha:bronze_elytra"
+			"id": "matcha:hepatizon_elytra"
 		},
 		"title": {
 			"translate": "advancements.matcha.end.smith_bronze_elytra.title"
@@ -29,7 +29,7 @@
 		"frame": "goal",
 		"hidden": false
 	},
-	"requirements": [["bronze_elytra"]],
+	"requirements": [["hepatizon_elytra"]],
 	"rewards": {
 		"loot": ["matcha:advancement/obol_4"]
 	}

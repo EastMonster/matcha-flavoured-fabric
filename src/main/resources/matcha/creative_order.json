@@ -104,7 +104,7 @@
 			"hepatizon_chestplate",
 			"hepatizon_leggings",
 			"hepatizon_boots",
-			"bronze_elytra"
+			"hepatizon_elytra"
 		],
 		"electrum_armour": [
 			"electrum_helmet",
@@ -287,7 +287,8 @@
 			"nopales",
 			"pumpkin_curry",
 			"bubbling_mead"
-		]
+		],
+		"fresh_vegetables": ["tomato"]
 	},
 	"ingredients": {
 		"cooking_recipes": [
@@ -343,6 +344,7 @@
 			"divine_fragment"
 		],
 		"animal_materials": ["fish_bones", "fox_pelt", "sulfur_goo", "tallow"],
+		"seeds": ["tomato_seeds"],
 		"blessings": [
 			"blessing_aeolus",
 			"blessing_apollo",

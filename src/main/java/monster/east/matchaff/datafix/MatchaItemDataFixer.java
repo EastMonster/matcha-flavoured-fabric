@@ -10,19 +10,21 @@ import monster.east.matchaff.datafix.fix.MatchaDataFixSupport;
 import monster.east.matchaff.datafix.fix.V3Migration;
 import monster.east.matchaff.datafix.fix.V4Migration;
 import monster.east.matchaff.datafix.fix.V5Migration;
+import monster.east.matchaff.datafix.fix.V6Migration;
 import monster.east.matchaff.datafix.schema.V1;
 import monster.east.matchaff.datafix.schema.V2;
 import monster.east.matchaff.datafix.schema.V3;
 import monster.east.matchaff.datafix.schema.V4;
 import monster.east.matchaff.datafix.schema.V5;
+import monster.east.matchaff.datafix.schema.V6;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 
 
-/** Migrates Matcha ItemStacks and banner patterns before their codecs resolve registry IDs. */
+/** Migrates Matcha ItemStacks, block states, and banner patterns before their codecs resolve registry IDs. */
 public final class MatchaItemDataFixer {
 	public static final String DATA_VERSION_KEY = "matcha_data_version";
-	private static final int CURRENT_DATA_VERSION = 5;
+	private static final int CURRENT_DATA_VERSION = 6;
 	private static final DataFixer FIXER = createFixer();
 
 	private MatchaItemDataFixer() {
@@ -73,6 +75,8 @@ public final class MatchaItemDataFixer {
 		builder.addFixer(new V4Migration(v4));
 		Schema v5 = builder.addSchema(5, V5::new);
 		builder.addFixer(new V5Migration(v5));
+		Schema v6 = builder.addSchema(6, V6::new);
+		builder.addFixer(new V6Migration(v6));
 		return builder.build().fixer();
 	}
 }
