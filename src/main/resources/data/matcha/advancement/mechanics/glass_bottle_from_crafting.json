@@ -6,413 +6,354 @@
 			"conditions": {
 				"recipes": "matcha:crafting/black_concrete_from_concrete_powder"
 			}
-
 		},
 		"made_blue_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/blue_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_brown_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/brown_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_cheese": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/cheese"
 			}
-			
 		},
 		"made_clay_from_mud_and_potion": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clay_from_mud_and_potion"
 			}
-			
 		},
 		"made_cyan_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/cyan_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_exposed_chiseled_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_chiseled_copper_from_patina"
 			}
-			
 		},
 		"made_exposed_copper_bars_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_copper_bars_from_patina"
 			}
-			
 		},
 		"made_exposed_copper_chain_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_copper_chain_from_patina"
 			}
-			
 		},
 		"made_exposed_copper_door_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_copper_door_from_patina"
 			}
-			
 		},
 		"made_exposed_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_copper_from_patina"
 			}
-			
 		},
 		"made_exposed_copper_golem_statue_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_copper_golem_statue_from_patina"
 			}
-			
 		},
 		"made_exposed_copper_grate_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_copper_grate_from_patina"
 			}
-			
 		},
 		"made_exposed_cut_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_cut_copper_from_patina"
 			}
-			
 		},
 		"made_exposed_cut_copper_slab_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_cut_copper_slab_from_patina"
 			}
-			
 		},
 		"made_exposed_cut_copper_stairs_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/exposed_cut_copper_stairs_from_patina"
 			}
-			
 		},
 		"made_glow_ink_sac_alternate": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/phosphor"
 			}
-			
 		},
 		"made_gray_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/gray_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_green_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/green_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_green_curry": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/uncooked_green_curry"
 			}
-			
 		},
 		"made_green_dye_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/green_dye_from_patina"
 			}
-			
 		},
 		"made_light_blue_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/light_blue_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_light_gray_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/light_gray_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_lime_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/lime_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_magenta_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/magenta_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_pink_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/pink_concrete_from_concrete_powder"
 			}
-
 		},
 		"made_mud_from_dirt_and_potion": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/mud"
 			}
-			
 		},
 		"made_orange_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/orange_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_oxidized_chiseled_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_chiseled_copper_from_patina"
 			}
-			
 		},
 		"made_oxidized_copper_bars_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_copper_bars_from_patina"
 			}
-			
 		},
 		"made_oxidized_copper_chain_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_copper_chain_from_patina"
 			}
-			
 		},
 		"made_oxidized_copper_door_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_copper_door_from_patina"
 			}
-			
 		},
 		"made_oxidized_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_copper_from_patina"
 			}
-			
 		},
 		"made_oxidized_copper_golem_statue_from_statue": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_copper_golem_statue_from_statue"
 			}
-			
 		},
 		"made_oxidized_copper_grate_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_copper_grate_from_patina"
 			}
-			
 		},
 		"made_oxidized_cut_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_cut_copper_from_patina"
 			}
-			
 		},
 		"made_oxidized_cut_copper_slab_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_cut_copper_slab_from_patina"
 			}
-			
 		},
 		"made_oxidized_cut_copper_stairs_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/oxidized_cut_copper_stairs_from_patina"
 			}
-			
 		},
 		"made_paneer_makhani": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/uncooked_paneer_makhani"
 			}
-			
 		},
 		"made_purple_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/purple_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_red_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/red_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_weathered_chiseled_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_chiseled_copper_from_patina"
 			}
-			
 		},
 		"made_weathered_copper_bars_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_copper_bars_from_patina"
 			}
-			
 		},
 		"made_weathered_copper_chain_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_copper_chain_from_patina"
 			}
-			
 		},
 		"made_weathered_copper_door_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_copper_door_from_patina"
 			}
-			
 		},
 		"made_weathered_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_copper_from_patina"
 			}
-			
 		},
 		"made_weathered_copper_golem_statue_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_copper_golem_statue_from_patina"
 			}
-			
 		},
 		"made_weathered_copper_grate_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_copper_grate_from_patina"
 			}
-			
 		},
 		"made_weathered_cut_copper_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_cut_copper_from_patina"
 			}
-			
 		},
 		"made_weathered_cut_copper_slab_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_cut_copper_slab_from_patina"
 			}
-			
 		},
 		"made_weathered_cut_copper_stairs_from_patina": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/weathered_cut_copper_stairs_from_patina"
 			}
-			
 		},
 		"made_white_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/white_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_yellow_concrete_from_concrete_powder": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/yellow_concrete_from_concrete_powder"
 			}
-			
 		},
 		"made_stabilised_estus": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/stabilised_estus"
 			}
-			
 		},
 		"made_lily_of_the_valley": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_lily_of_the_valley"
 			}
-
 		},
 		"clone_lily_pad": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_lily_pad"
 			}
-
 		},
 		"clone_cornflower": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_cornflower"
 			}
-			
 		},
 		"clone_wither_rose": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_wither_rose"
 			}
-			
 		},
 		"clone_spore_blossom": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_spore_blossom"
 			}
-			
 		},
 		"clone_big_dripleaf": {
 			"trigger": "minecraft:recipe_crafted",
@@ -431,136 +372,145 @@
 			"conditions": {
 				"recipes": "matcha:crafting/clone_oxeye_daisy"
 			}
-			
 		},
 		"clone_open_eyeblossom": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_open_eyeblossom"
 			}
-			
 		},
 		"clone_closed_eyeblossom": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_closed_eyeblossom"
 			}
-			
 		},
 		"clone_poppy": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_poppy"
 			}
-			
 		},
 		"clone_allium": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_allium"
 			}
-			
 		},
 		"clone_blue_orchid": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_blue_orchid"
 			}
-			
 		},
 		"clone_azure_bluet": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_azure_bluet"
 			}
-			
 		},
 		"clone_red_tulip": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_red_tulip"
 			}
-			
 		},
 		"clone_orange_tulip": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_orange_tulip"
 			}
-			
 		},
 		"clone_pink_tulip": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_pink_tulip"
 			}
-			
 		},
 		"clone_white_tulip": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:crafting/clone_white_tulip"
 			}
-			
 		},
 		"made_glow_berry_crumble": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/glow_berry_crumble"
 			}
-			
 		},
 		"made_latkes": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/latke"
 			}
-			
 		},
 		"made_warped_stroganoff": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/warped_stroganoff"
 			}
-			
 		},
 		"made_chorus_mochi": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/chorus_mochi"
 			}
-			
 		},
 		"made_dough_from_water": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/dough_from_water"
 			}
-			
 		},
 		"made_cake": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:food/crafting/cake"
 			}
-			
 		},
 		"made_hell_bound_book": {
 			"trigger": "minecraft:recipe_crafted",
 			"conditions": {
 				"recipes": "matcha:blessing/hell_bound_book"
 			}
-			
 		},
-		"stego_chicken_nugget": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/stego_chicken_nugget"}},
-		"tricero_chicken_nugget": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/tricero_chicken_nugget"}},
-		"brachio_chicken_nugget": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/brachio_chicken_nugget"}},
-		"ptero_chicken_nugget": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/ptero_chicken_nugget"}},
-		"lumpia": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/lumpia"}},
-		"bunuelo": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/bunuelo"}},
-		"fish_and_chips": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/fish_and_chips"}},
-		"oatmeal": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/oatmeal"}},
-		"ice_cream": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipes": "matcha:food/crafting/ice_cream"}}
+		"stego_chicken_nugget": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/stego_chicken_nugget" }
+		},
+		"tricero_chicken_nugget": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/tricero_chicken_nugget" }
+		},
+		"brachio_chicken_nugget": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/brachio_chicken_nugget" }
+		},
+		"ptero_chicken_nugget": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/ptero_chicken_nugget" }
+		},
+		"lumpia": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/lumpia" }
+		},
+		"bunuelo": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/bunuelo" }
+		},
+		"fish_and_chips": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/fish_and_chips" }
+		},
+		"oatmeal": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/oatmeal" }
+		},
+		"ice_cream": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:food/crafting/ice_cream" }
+		}
 	},
 	"requirements": [
 		[
@@ -643,8 +593,15 @@
 			"made_cake",
 			"made_hell_bound_book",
 			"clone_lily_pad",
-			"stego_chicken_nugget", "tricero_chicken_nugget", "brachio_chicken_nugget", "ptero_chicken_nugget",
-			"lumpia", "bunuelo", "fish_and_chips", "oatmeal", "ice_cream"
+			"stego_chicken_nugget",
+			"tricero_chicken_nugget",
+			"brachio_chicken_nugget",
+			"ptero_chicken_nugget",
+			"lumpia",
+			"bunuelo",
+			"fish_and_chips",
+			"oatmeal",
+			"ice_cream"
 		]
 	],
 	"rewards": {

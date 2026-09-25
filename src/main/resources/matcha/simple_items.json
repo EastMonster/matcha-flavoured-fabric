@@ -669,7 +669,7 @@
 		"id": "raw_diamond",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blast/diamond_from_blasting_raw_diamond.json",
+		"source": "data/matcha/recipe/blast/diamond_from_blasting_diamond_materials.json",
 		"components": {}
 	},
 	{
