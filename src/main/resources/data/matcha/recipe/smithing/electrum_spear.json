@@ -19,23 +19,8 @@
 					"slot": "mainhand"
 				}
 			],
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["4"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1.18"],
-					"color": "dark_green",
-					"italic": false
-				}],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:enchantments": {
 				"minecraft:smite": 4,
@@ -43,9 +28,7 @@
 				"matcha:warding_2": 1
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:diamond_block"
-				]
+				"items": ["minecraft:diamond_block"]
 			}
 		}
 	}

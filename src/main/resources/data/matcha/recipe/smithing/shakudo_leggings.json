@@ -6,23 +6,6 @@
 		"id": "matcha:shakudo_leggings",
 		"components": {
 			"minecraft:max_damage": 500,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["6"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.per_equipment_bonus",
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "enchantment.matcha.shakudo_regen_bonus",
-					"color": "#e85e8f",
-					"italic": false
-				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.shakudo_leggings",
 				"color": "#c96691"
@@ -37,9 +20,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -47,9 +28,7 @@
 				"asset_id": "matcha:shakudo"
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:copper_block"
-				]
+				"items": ["minecraft:copper_block"]
 			},
 			"minecraft:enchantments": {
 				"matcha:cleanse_armor_legs": 1,

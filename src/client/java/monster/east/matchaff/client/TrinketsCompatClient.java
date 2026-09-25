@@ -5,6 +5,7 @@ import eu.pb4.trinkets.api.TrinketSlotAccess;
 import eu.pb4.trinkets.api.client.TrinketRenderer;
 import eu.pb4.trinkets.api.client.TrinketRendererRegistry;
 import monster.east.matchaff.compat.TrinketsCompat;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.player.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -26,6 +27,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.equipment.Equippable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public final class TrinketsCompatClient {
@@ -39,18 +42,60 @@ public final class TrinketsCompatClient {
 			TrinketRendererRegistry.registerRenderer(item, EarringRenderer::new);
 		}
 		ItemTooltipCallback.EVENT.register((stack, context, flag, lines) -> {
-			TooltipDisplay display = stack.get(DataComponents.TOOLTIP_DISPLAY);
-			if (!isMatchaEarring(stack) || display == null
-					|| display.shows(DataComponents.ATTRIBUTE_MODIFIERS)) {
+			if (!isMatchaEarring(stack)) {
 				return;
 			}
-			lines.removeIf(TrinketsCompatClient::isTrinketsAttributeLine);
+			TooltipDisplay display = stack.get(DataComponents.TOOLTIP_DISPLAY);
+			boolean hideTrinketsAttributes = display != null
+					&& !display.shows(DataComponents.ATTRIBUTE_MODIFIERS);
+			List<Component> slotLines = new ArrayList<>();
+			for (int i = 0; i < lines.size(); i++) {
+				Component line = lines.get(i);
+				if (isTrinketsSlotLine(line)) {
+					slotLines.add(lines.remove(i--));
+				} else if (hideTrinketsAttributes && isTrinketsAttributeLine(line)) {
+					lines.remove(i--);
+				}
+			}
+			if (!slotLines.isEmpty()) {
+				int insertionIndex = -1;
+				for (int i = 0; i < lines.size(); i++) {
+					if (isUnbreakableLine(lines.get(i))) {
+						insertionIndex = i;
+						break;
+					}
+				}
+				if (insertionIndex < 0 && flag.isAdvanced()) {
+					Identifier itemId = BuiltInRegistries.ITEM.getKey(stack.getItem());
+					int advancedIdIndex = lines.indexOf(
+							Component.literal(itemId.toString()).withStyle(ChatFormatting.DARK_GRAY));
+					if (advancedIdIndex >= 0) {
+						insertionIndex = advancedIdIndex;
+					}
+				}
+				if (insertionIndex < 0) {
+					insertionIndex = lines.size();
+				}
+				lines.addAll(insertionIndex, slotLines);
+			}
 		});
 	}
 
 	private static boolean isMatchaEarring(ItemStack stack) {
 		Identifier id = BuiltInRegistries.ITEM.getKey(stack.getItem());
 		return id.getNamespace().equals("matcha") && TrinketsCompat.EARRING_IDS.contains(id.getPath());
+	}
+
+	private static boolean isTrinketsSlotLine(Component line) {
+		if (!(line.getContents() instanceof TranslatableContents contents)) {
+			return false;
+		}
+		return contents.getKey().startsWith("trinkets.tooltip.slots.");
+	}
+
+	private static boolean isUnbreakableLine(Component line) {
+		return line.getContents() instanceof TranslatableContents contents
+				&& contents.getKey().equals("item.unbreakable");
 	}
 
 	private static boolean isTrinketsAttributeLine(Component line) {

@@ -5,39 +5,13 @@
 		"#": "minecraft:stick",
 		"X": "#minecraft:wooden_tool_materials"
 	},
-	"pattern": [
-		"X",
-		"#",
-		"#"
-	],
+	"pattern": ["X", "#", "#"],
 	"result": {
 		"id": "minecraft:wooden_shovel",
 		"components": {
 			"minecraft:max_damage": 200,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["2"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["2.5"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			}
 		}
 	}

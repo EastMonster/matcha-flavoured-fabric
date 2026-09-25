@@ -33,20 +33,6 @@
 		"carrier": "minecraft:elytra",
 		"components": {
 			"minecraft:max_damage": 800,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.speed_attribute",
-					"with": ["+0.02"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.bronze_elytra",
 				"color": "#ac7b5c"
@@ -89,24 +75,6 @@
 		"carrier": "minecraft:elytra",
 		"components": {
 			"minecraft:max_damage": 800,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.elytra_bonus",
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "enchantment.matcha.shakudo_elytra_regen_bonus",
-					"color": "#e85e8f",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.shakudo_elytra",
 				"color": "#c96691"

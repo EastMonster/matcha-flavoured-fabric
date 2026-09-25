@@ -6,20 +6,6 @@
 		"id": "matcha:hepatizon_boots",
 		"components": {
 			"minecraft:max_damage": 500,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["3"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.speed_attribute",
-					"with": ["+0.01"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.hepatizon_boots",
 				"color": "#ac7b5c"

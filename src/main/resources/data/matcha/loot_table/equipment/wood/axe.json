@@ -12,30 +12,8 @@
 							"type": "minecraft:set_components",
 							"components": {
 								"minecraft:max_damage": 200,
-								"minecraft:lore": [
-									{
-										"translate": "desc.matcha.mining_speed",
-										"with": ["2"],
-										"color": "blue",
-										"italic": false
-									},
-									{
-										"translate": "desc.matcha.attack_damage",
-										"with": ["7"],
-										"color": "dark_green",
-										"italic": false
-									},
-									{
-										"translate": "desc.matcha.cooldown",
-										"with": ["0.8"],
-										"color": "dark_green",
-										"italic": false
-									}
-								],
 								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
+									"hidden_components": ["minecraft:attribute_modifiers"]
 								}
 							}
 						}

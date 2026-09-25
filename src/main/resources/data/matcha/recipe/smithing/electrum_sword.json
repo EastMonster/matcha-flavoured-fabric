@@ -6,19 +6,6 @@
 		"id": "matcha:electrum_sword",
 		"components": {
 			"minecraft:max_damage": 3000,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["7"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1.9"],
-					"color": "dark_green",
-					"italic": false
-				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.electrum_sword",
 				"color": "yellow"
@@ -40,9 +27,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:enchantments": {
 				"minecraft:looting": 2,
@@ -50,9 +35,7 @@
 				"matcha:warding_3": 1
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:diamond_block"
-				]
+				"items": ["minecraft:diamond_block"]
 			}
 		}
 	}

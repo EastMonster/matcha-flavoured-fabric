@@ -17,25 +17,6 @@
 				"default_mining_speed": 1,
 				"damage_per_block": 1
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["12"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["9"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1.2"],
-					"color": "dark_green",
-					"italic": false
-				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.electrum_axe",
 				"color": "yellow"
@@ -57,9 +38,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:enchantments": {
 				"matcha:electrum_tool": 3,
@@ -68,9 +47,7 @@
 				"matcha:warding_2": 1
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:diamond_block"
-				]
+				"items": ["minecraft:diamond_block"]
 			}
 		}
 	}

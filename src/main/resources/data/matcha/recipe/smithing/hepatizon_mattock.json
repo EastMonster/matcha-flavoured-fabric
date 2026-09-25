@@ -27,35 +27,8 @@
 				"color": "#ac7b5c"
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["15"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["3.5"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["3"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.speed_attribute",
-					"with": ["+0.005"],
-					"color": "dark_green",
-					"italic": false
-				}],
 			"minecraft:attribute_modifiers": [
 				{
 					"type": "minecraft:attack_damage",
@@ -80,9 +53,7 @@
 				}
 			],
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:copper_block"
-				]
+				"items": ["minecraft:copper_block"]
 			}
 		}
 	},

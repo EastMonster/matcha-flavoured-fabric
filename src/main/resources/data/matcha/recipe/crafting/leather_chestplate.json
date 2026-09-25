@@ -8,20 +8,6 @@
 	"result": {
 		"components": {
 			"minecraft:max_damage": 200,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["3"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.fall_height_attribute",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},

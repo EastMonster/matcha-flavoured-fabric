@@ -5,33 +5,13 @@
 		"#": "minecraft:stick",
 		"X": "#minecraft:wooden_tool_materials"
 	},
-	"pattern": [
-		"X",
-		"X",
-		"#"
-	],
+	"pattern": ["X", "X", "#"],
 	"result": {
 		"id": "minecraft:wooden_sword",
 		"components": {
 			"minecraft:max_damage": 200,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["4"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1.6"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			}
 		}
 	}

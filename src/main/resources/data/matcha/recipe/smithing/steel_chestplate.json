@@ -6,25 +6,6 @@
 		"id": "matcha:steel_chestplate",
 		"components": {
 			"minecraft:max_damage": 1000,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["7"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.armour_toughness",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.knockback_resistance",
-					"with": ["2"],
-					"color": "dark_green",
-					"italic": false
-				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.steel_chestplate",
 				"color": "white"
@@ -53,9 +34,7 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -63,9 +42,7 @@
 				"asset_id": "matcha:steel"
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:iron_ingot"
-				]
+				"items": ["minecraft:iron_ingot"]
 			},
 			"minecraft:enchantments": {
 				"minecraft:blast_protection": 4

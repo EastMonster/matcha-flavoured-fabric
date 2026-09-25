@@ -11,20 +11,6 @@
 						{
 							"type": "minecraft:set_components",
 							"components": {
-								"minecraft:lore": [
-									{
-										"translate": "desc.matcha.attack_damage",
-										"with": ["3"],
-										"color": "dark_green",
-										"italic": false
-									},
-									{
-										"translate": "desc.matcha.cooldown",
-										"with": ["1.05"],
-										"color": "dark_green",
-										"italic": false
-									}
-								],
 								"minecraft:tooltip_display": {
 									"hidden_components": ["minecraft:attribute_modifiers"]
 								},

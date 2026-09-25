@@ -5,11 +5,7 @@
 		"#": "minecraft:stick",
 		"X": "copper_ingot"
 	},
-	"pattern": [
-		"XX ",
-		" #X",
-		" # "
-	],
+	"pattern": ["XX ", " #X", " # "],
 	"result": {
 		"components": {
 			"minecraft:item_name": {
@@ -31,30 +27,8 @@
 				"default_mining_speed": 1,
 				"damage_per_block": 1
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["5"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["2"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:max_damage": 350
 		},

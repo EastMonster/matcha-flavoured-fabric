@@ -5,11 +5,7 @@
 		"#": "minecraft:stick",
 		"X": "minecraft:diamond"
 	},
-	"pattern": [
-		"XXX",
-		"X# ",
-		" # "
-	],
+	"pattern": ["XXX", "X# ", " # "],
 	"result": {
 		"components": {
 			"minecraft:tool": {
@@ -37,30 +33,8 @@
 				"translate": "item.matcha.diamond_dolabra"
 			},
 			"minecraft:max_damage": 2500,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["8"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["7"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:attribute_modifiers": [
 				{
