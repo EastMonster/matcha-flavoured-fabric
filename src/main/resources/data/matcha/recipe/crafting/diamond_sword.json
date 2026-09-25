@@ -5,31 +5,11 @@
 		"#": "minecraft:stick",
 		"X": "diamond"
 	},
-	"pattern": [
-		"X",
-		"X",
-		"#"
-	],
+	"pattern": ["X", "X", "#"],
 	"result": {
 		"components": {
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["7"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1.6"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:max_damage": 2500
 		},

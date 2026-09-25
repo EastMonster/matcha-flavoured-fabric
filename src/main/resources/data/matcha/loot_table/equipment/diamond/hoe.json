@@ -23,36 +23,8 @@
 									"default_mining_speed": 1,
 									"damage_per_block": 1
 								},
-								"minecraft:lore": [
-									{
-										"translate": "desc.matcha.mining_speed",
-										"with": [
-											"9"
-										],
-										"color": "blue",
-										"italic": false
-									},
-									{
-										"translate": "desc.matcha.attack_damage",
-										"with": [
-											"1"
-										],
-										"color": "dark_green",
-										"italic": false
-									},
-									{
-										"translate": "desc.matcha.cooldown",
-										"with": [
-											"4"
-										],
-										"color": "dark_green",
-										"italic": false
-									}
-								],
 								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
+									"hidden_components": ["minecraft:attribute_modifiers"]
 								}
 							}
 						}

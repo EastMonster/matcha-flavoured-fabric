@@ -5,11 +5,7 @@
 		"#": "minecraft:stick",
 		"X": "iron_ingot"
 	},
-	"pattern": [
-		"XXX",
-		"X#X",
-		" # "
-	],
+	"pattern": ["XXX", "X#X", " # "],
 	"result": {
 		"components": {
 			"minecraft:item_name": {
@@ -17,30 +13,8 @@
 			},
 			"minecraft:max_damage": 5000,
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["1"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["4.5"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tool": {
 				"rules": [
 					{

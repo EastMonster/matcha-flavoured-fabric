@@ -12,26 +12,6 @@
 			"minecraft:enchantments": {
 				"minecraft:fortune": 1
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["12"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["2"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1.2"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},

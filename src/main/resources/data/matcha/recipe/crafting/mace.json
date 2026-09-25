@@ -6,32 +6,12 @@
 		"X": "iron_ingot",
 		"H": "minecraft:heavy_core"
 	},
-	"pattern": [
-		"H",
-		"#",
-		"X"
-	],
+	"pattern": ["H", "#", "X"],
 	"result": {
 		"components": {
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["6"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["0.6"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:max_damage": 800,
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:repairable": {
 				"items": "minecraft:iron_ingot"

@@ -11,20 +11,8 @@
 						{
 							"function": "minecraft:set_components",
 							"components": {
-								"minecraft:lore": [
-									{
-										"translate": "desc.matcha.armour",
-										"with": [
-											"1"
-										],
-										"color": "dark_green",
-										"italic": false
-									}
-								],
 								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
+									"hidden_components": ["minecraft:attribute_modifiers"]
 								},
 								"minecraft:max_damage": 200
 							}

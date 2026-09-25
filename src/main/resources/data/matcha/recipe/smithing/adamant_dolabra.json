@@ -32,39 +32,27 @@
 				"minecraft:efficiency": 1,
 				"minecraft:unbreaking": 2
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["13"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["7"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:attribute_modifiers": [
-				{"type": "minecraft:attack_damage", "id": "attack_damage", "amount": 6, "operation": "add_value", "slot": "mainhand"},
-				{"type": "minecraft:attack_speed", "id": "attack_speed", "amount": -3.0, "operation": "add_value", "slot": "mainhand"}
+				{
+					"type": "minecraft:attack_damage",
+					"id": "attack_damage",
+					"amount": 6,
+					"operation": "add_value",
+					"slot": "mainhand"
+				},
+				{
+					"type": "minecraft:attack_speed",
+					"id": "attack_speed",
+					"amount": -3.0,
+					"operation": "add_value",
+					"slot": "mainhand"
+				}
 			],
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:diamond_block",
-					"minecraft:netherite_scrap"
-				]
+				"items": ["minecraft:diamond_block", "minecraft:netherite_scrap"]
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.adamant_dolabra",

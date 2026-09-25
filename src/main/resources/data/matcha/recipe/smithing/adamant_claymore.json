@@ -15,56 +15,16 @@
 				"minecraft:sharpness": 1,
 				"minecraft:unbreaking": 2
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["9"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.when_blocking",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.melee_blocking",
-					"with": [
-						"80"
-					],
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.projectile_blocking",
-					"with": [
-						"70"
-					],
-					"color": "dark_gray",
-					"italic": false
-				}],
 			"minecraft:blocks_attacks": {
 				"disable_cooldown_scale": 1,
 				"damage_reductions": [
 					{
-						"type": [
-							"minecraft:arrow",
-							"minecraft:mob_projectile"
-						],
+						"type": ["minecraft:arrow", "minecraft:mob_projectile"],
 						"base": 0,
 						"factor": 0.7
 					},
 					{
-						"type": [
-							"minecraft:mob_attack",
-							"minecraft:player_attack"
-						],
+						"type": ["minecraft:mob_attack", "minecraft:player_attack"],
 						"base": 0,
 						"factor": 0.8
 					}
@@ -78,15 +38,10 @@
 				"disabled_sound": "minecraft:item.shield.break"
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:diamond_block",
-					"minecraft:netherite_scrap"
-				]
+				"items": ["minecraft:diamond_block", "minecraft:netherite_scrap"]
 			},
 			"minecraft:attribute_modifiers": [
 				{
@@ -99,7 +54,7 @@
 				{
 					"type": "minecraft:attack_speed",
 					"id": "attack_speed",
-            "amount": -3.0,
+					"amount": -3.0,
 					"operation": "add_value",
 					"slot": "mainhand"
 				}

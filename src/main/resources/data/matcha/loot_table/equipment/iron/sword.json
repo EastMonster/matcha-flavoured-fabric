@@ -27,29 +27,9 @@
 										"slot": "mainhand"
 									}
 								],
-								"minecraft:lore": [
-									{
-										"translate": "desc.matcha.attack_damage",
-										"with": [
-											"6"
-										],
-										"color": "dark_green",
-										"italic": false
-									},
-									{
-										"translate": "desc.matcha.cooldown",
-										"with": [
-											"1.6"
-										],
-										"color": "dark_green",
-										"italic": false
-									}
-								],
 								"minecraft:max_damage": 500,
 								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
+									"hidden_components": ["minecraft:attribute_modifiers"]
 								}
 							}
 						}

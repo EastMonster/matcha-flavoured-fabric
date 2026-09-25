@@ -17,39 +17,12 @@
 				"default_mining_speed": 1,
 				"damage_per_block": 1
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["20"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["5"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.speed_attribute",
-					"with": ["+0.005"],
-					"color": "dark_green",
-					"italic": false
-				}],
 			"minecraft:item_name": {
 				"translate": "item.matcha.hepatizon_shovel",
 				"color": "#ac7b5c"
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:attribute_modifiers": [
 				{
@@ -75,9 +48,7 @@
 				}
 			],
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:copper_block"
-				]
+				"items": ["minecraft:copper_block"]
 			}
 		}
 	}

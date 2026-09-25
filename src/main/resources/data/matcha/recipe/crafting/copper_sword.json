@@ -5,32 +5,12 @@
 		"#": "minecraft:stick",
 		"X": "copper_ingot"
 	},
-	"pattern": [
-		"X",
-		"X",
-		"#"
-	],
+	"pattern": ["X", "X", "#"],
 	"result": {
 		"components": {
 			"minecraft:max_damage": 350,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["5"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1.6"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			}
 		},
 		"count": 1,

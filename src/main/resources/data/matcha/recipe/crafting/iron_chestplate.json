@@ -4,25 +4,11 @@
 	"key": {
 		"X": "minecraft:iron_ingot"
 	},
-	"pattern": [
-		"X X",
-		"XXX",
-		"XXX"
-	],
+	"pattern": ["X X", "XXX", "XXX"],
 	"result": {
 		"components": {
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["6"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:max_damage": 350
 		},

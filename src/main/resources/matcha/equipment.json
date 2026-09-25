@@ -20,14 +20,6 @@
 		"carrier": "minecraft:copper_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.amber_earrings",
 				"color": "#e58904"
@@ -60,14 +52,6 @@
 		"carrier": "minecraft:netherite_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.diamond_earrings",
 				"color": "aqua"
@@ -104,14 +88,6 @@
 		"carrier": "minecraft:netherite_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.amethyst_earrings",
 				"color": "#b38ef3"
@@ -148,14 +124,6 @@
 		"carrier": "minecraft:netherite_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.lapis_earrings",
 				"color": "#325caa"
@@ -224,26 +192,6 @@
 			"minecraft:tooltip_display": {
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["10"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["9"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:enchantments": {
 				"matcha:bloodrage": 1
 			},
@@ -286,20 +234,6 @@
 		"carrier": "minecraft:copper_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.speed_attribute",
-					"with": ["+0.1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.hepatizon_laurel",
 				"color": "#ac7b5c"
@@ -383,26 +317,6 @@
 					"operation": "add_value"
 				}
 			],
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.entity_interaction_range",
-					"with": ["-1"],
-					"color": "red",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["6"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["1.6"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
 				"hide_tooltip": false,
 				"hidden_components": ["minecraft:attribute_modifiers"]
@@ -474,38 +388,6 @@
 					"amount": 1,
 					"operation": "add_value",
 					"slot": "offhand"
-				}
-			],
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["8"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["5"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["4"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.entity_interaction_range",
-					"with": ["3"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.fall_height_attribute",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
 				}
 			],
 			"minecraft:tool": {
@@ -610,14 +492,6 @@
 		"carrier": "minecraft:iron_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.opal_earrings",
 				"color": "#ab85ad"
@@ -655,14 +529,6 @@
 		"carrier": "minecraft:leather_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.ruby_circlet",
 				"color": "#e63d5f"
@@ -698,26 +564,6 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.rusty_axe"
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.mining_speed",
-					"with": ["6"],
-					"color": "blue",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["9"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["0.9"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:tooltip_display": {
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			}
@@ -884,14 +730,6 @@
 		"carrier": "minecraft:copper_helmet",
 		"components": {
 			"minecraft:max_damage": 250,
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.armour",
-					"with": ["1"],
-					"color": "dark_green",
-					"italic": false
-				}
-			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.topaz_earrings",
 				"color": "yellow"

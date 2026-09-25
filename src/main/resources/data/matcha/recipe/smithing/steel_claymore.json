@@ -9,62 +9,16 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.steel_claymore"
 			},
-			"minecraft:lore": [
-				{
-					"translate": "desc.matcha.attack_damage",
-					"with": ["8"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.cooldown",
-					"with": ["0.7"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.knockback_attribute",
-					"with": ["2"],
-					"color": "dark_green",
-					"italic": false
-				},
-				{
-					"translate": "tooltip.matcha.when_blocking",
-					"color": "gray",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.melee_blocking",
-					"with": [
-						"70"
-					],
-					"color": "dark_gray",
-					"italic": false
-				},
-				{
-					"translate": "desc.matcha.projectile_blocking",
-					"with": [
-						"60"
-					],
-					"color": "dark_gray",
-					"italic": false
-				}],
 			"minecraft:blocks_attacks": {
 				"disable_cooldown_scale": 2,
 				"damage_reductions": [
 					{
-						"type": [
-							"minecraft:arrow",
-							"minecraft:mob_projectile"
-						],
+						"type": ["minecraft:arrow", "minecraft:mob_projectile"],
 						"base": 0,
 						"factor": 0.6
 					},
 					{
-						"type": [
-							"minecraft:mob_attack",
-							"minecraft:player_attack"
-						],
+						"type": ["minecraft:mob_attack", "minecraft:player_attack"],
 						"base": 0,
 						"factor": 0.7
 					}
@@ -78,14 +32,10 @@
 				"disabled_sound": "minecraft:item.shield.break"
 			},
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:attribute_modifiers"
-				]
+				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:repairable": {
-				"items": [
-					"minecraft:iron_ingot"
-				]
+				"items": ["minecraft:iron_ingot"]
 			},
 			"minecraft:attribute_modifiers": [
 				{
