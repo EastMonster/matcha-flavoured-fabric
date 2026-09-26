@@ -35,10 +35,11 @@ public final class MatchaItemDataFixer {
 	}
 
 	public static CompoundTag updateIfNeeded(CompoundTag tag) {
-		if (tag.getIntOr(DATA_VERSION_KEY, 0) >= CURRENT_DATA_VERSION) {
+		int fromVersion = tag.getIntOr(DATA_VERSION_KEY, 0);
+		if (fromVersion >= CURRENT_DATA_VERSION) {
 			return tag;
 		}
-		CompoundTag updated = update(tag);
+		CompoundTag updated = (CompoundTag) update(new Dynamic<>(NbtOps.INSTANCE, tag), fromVersion).getValue();
 		markCurrent(updated);
 		return updated;
 	}
@@ -49,9 +50,10 @@ public final class MatchaItemDataFixer {
 			Dynamic<T> updated = (Dynamic<T>) new Dynamic<>(NbtOps.INSTANCE, updateIfNeeded(tag));
 			return updated;
 		}
-		return data.get(DATA_VERSION_KEY).asInt(0) >= CURRENT_DATA_VERSION
+		int fromVersion = data.get(DATA_VERSION_KEY).asInt(0);
+		return fromVersion >= CURRENT_DATA_VERSION
 			? data
-			: update(data).set(DATA_VERSION_KEY, data.createInt(CURRENT_DATA_VERSION));
+			: update(data, fromVersion).set(DATA_VERSION_KEY, data.createInt(CURRENT_DATA_VERSION));
 	}
 
 	public static void markCurrent(CompoundTag tag) {
@@ -59,7 +61,11 @@ public final class MatchaItemDataFixer {
 	}
 
 	public static <T> Dynamic<T> update(Dynamic<T> data) {
-		return FIXER.update(MatchaDataFixSupport.ROOT, data, 0, CURRENT_DATA_VERSION);
+		return update(data, 0);
+	}
+
+	private static <T> Dynamic<T> update(Dynamic<T> data, int fromVersion) {
+		return FIXER.update(MatchaDataFixSupport.ROOT, data, Math.max(0, fromVersion), CURRENT_DATA_VERSION);
 	}
 
 	private static DataFixer createFixer() {
