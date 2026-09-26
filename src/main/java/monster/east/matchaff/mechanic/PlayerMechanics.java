@@ -311,9 +311,6 @@ public final class PlayerMechanics {
 		}
 		int rate = 300;
 		setSleepRate(server, rate);
-		if (server.getGameRules().get(GameRules.ADVANCE_WEATHER)) {
-			server.setWeatherParameters(ServerLevel.RAIN_DELAY.sample(server.overworld().getRandom()), 0, false, false);
-		}
 		var clock = server.registryAccess()
 				.lookupOrThrow(Registries.WORLD_CLOCK)
 				.getOrThrow(WorldClocks.OVERWORLD);
@@ -341,6 +338,8 @@ public final class PlayerMechanics {
 		remaining -= sleepRate;
 		if (remaining <= 0) {
 			player.stopSleepInBed(false, true);
+			MinecraftServer server = player.level().getServer();
+			server.setWeatherParameters(ServerLevel.RAIN_DELAY.sample(server.overworld().getRandom()), 0, false, false);
 			SLEEP_REMAINING.remove(uuid);
 		} else {
 			SLEEP_REMAINING.put(uuid, remaining);
