@@ -264,10 +264,19 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		if (insertionIndex < 0) {
 			insertionIndex = lines.size();
 			if (flag.isAdvanced()) {
-				int advancedIdIndex = lines.indexOf(
-						Component.literal(itemId.toString()).withStyle(ChatFormatting.DARK_GRAY));
-				if (advancedIdIndex >= 0) {
-					insertionIndex = advancedIdIndex;
+				for (int i = 0; i < lines.size(); i++) {
+					if (lines.get(i).getContents() instanceof TranslatableContents contents
+							&& contents.getKey().equals("item.durability")) {
+						insertionIndex = i;
+						break;
+					}
+				}
+				if (insertionIndex == lines.size()) {
+					int advancedIdIndex = lines.indexOf(
+							Component.literal(itemId.toString()).withStyle(ChatFormatting.DARK_GRAY));
+					if (advancedIdIndex >= 0) {
+						insertionIndex = advancedIdIndex;
+					}
 				}
 			}
 		}
