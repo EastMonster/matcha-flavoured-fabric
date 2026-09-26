@@ -65,7 +65,7 @@ public final class PlayerMechanics {
 	private static final String MINIMUM_HEARTS_OBJECTIVE = "minimum_hearts";
 	private static final String AGE_PROGRESS_OBJECTIVE = "matcha_heart_ages";
 	private static final String HEART_MIGRATION_OBJECTIVE = "matcha_heart_ver";
-	private static final int HEART_MIGRATION_VERSION = 1;
+	private static final int HEART_MIGRATION_VERSION = 2;
 	private static final String[] AGE_ADVANCEMENTS = {
 			"matcha:tutorial/obtain_copper", "matcha:tutorial/obtain_iron_ingot",
 			"matcha:tutorial/obtain_diamond", "matcha:tutorial/enter_nether",
@@ -161,9 +161,6 @@ public final class PlayerMechanics {
 			}
 			completedAges |= ageMask;
 			ageScore.set(completedAges);
-			if (difficulty == Difficulty.PEACEFUL) {
-				continue;
-			}
 			int floor = getStoredMinimumHearts(player);
 			if (floor <= ABSOLUTE_MINIMUM_HEARTS) {
 				break;
@@ -405,7 +402,7 @@ public final class PlayerMechanics {
 		migrateLegacyHeartFloor(player);
 	}
 
-	/** Applies completed age milestones once to saves created before per-player floors. */
+	/** Initializes legacy floors and repairs milestones already recorded without a floor decrease. */
 	private static void migrateLegacyHeartFloor(ServerPlayer player) {
 		var scoreboard = player.level().getServer().getScoreboard();
 		var minimumObjective = scoreboard.getObjective(MINIMUM_HEARTS_OBJECTIVE);
@@ -415,14 +412,25 @@ public final class PlayerMechanics {
 			return;
 		}
 		var migration = scoreboard.getOrCreatePlayerScore(player, migrationObjective);
-		if (migration.get() >= HEART_MIGRATION_VERSION) {
+		int previousVersion = migration.get();
+		if (previousVersion >= HEART_MIGRATION_VERSION) {
 			return;
 		}
-		int completedAges = completedAgeMask(player);
-		scoreboard.getOrCreatePlayerScore(player, ageObjective).set(completedAges);
-		scoreboard.getOrCreatePlayerScore(player, minimumObjective).set(
-				Math.max(ABSOLUTE_MINIMUM_HEARTS, DEFAULT_MINIMUM_HEARTS - Integer.bitCount(completedAges) * 2));
+		var ageScore = scoreboard.getOrCreatePlayerScore(player, ageObjective);
+		var minimumScore = scoreboard.getOrCreatePlayerScore(player, minimumObjective);
+		int completedAges;
+		if (previousVersion < 1) {
+			completedAges = completedAgeMask(player);
+			ageScore.set(completedAges);
+		} else {
+			completedAges = ageScore.get();
+		}
+		minimumScore.set(minimumHeartsForAgeMask(completedAges));
 		migration.set(HEART_MIGRATION_VERSION);
+	}
+
+	private static int minimumHeartsForAgeMask(int ageMask) {
+		return Math.max(ABSOLUTE_MINIMUM_HEARTS, DEFAULT_MINIMUM_HEARTS - Integer.bitCount(ageMask) * 2);
 	}
 
 	private static int completedAgeMask(ServerPlayer player) {
