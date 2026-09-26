@@ -218,9 +218,7 @@ public final class MatchaItemDataFixerCheck {
 		assert "item.kleispack.blessing.aeolus".equals(fixedCustomTranslation.getCompound("components").orElseThrow()
 				.getCompound("minecraft:custom_data").orElseThrow().getStringOr("translate", ""));
 
-		CompoundTag elytra = new CompoundTag();
-		elytra.putString("id", "matcha:bronze_elytra");
-		assert "matcha:hepatizon_elytra".equals(MatchaItemDataFixer.update(elytra).getStringOr("id", ""));
+		checkV6Migration();
 
 		CompoundTag customData = new CompoundTag();
 		customData.putString("id", "matcha-flavoured:bronze_sword");
@@ -492,6 +490,71 @@ public final class MatchaItemDataFixerCheck {
 		assert "desc.matcha.armour".equals(legacyToolLore.getCompound(0).orElseThrow().getStringOr("translate", ""));
 		assert "desc.matcha.fall_height_attribute".equals(legacyToolLore.getCompound(1).orElseThrow().getStringOr("translate", ""));
 		assert "desc.matcha.entity_interaction_range".equals(legacyToolLore.getCompound(2).orElseThrow().getStringOr("translate", ""));
+	}
+
+	private static void checkV6Migration() {
+		CompoundTag player = new CompoundTag();
+		player.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 5);
+		ListTag inventory = new ListTag();
+
+		CompoundTag elytra = new CompoundTag();
+		elytra.putString("id", "matcha:bronze_elytra");
+		CompoundTag components = new CompoundTag();
+		ListTag modifiers = new ListTag();
+		CompoundTag oldModifier = new CompoundTag();
+		oldModifier.putString("id", "matcha-flavoured:bronze_elytra");
+		modifiers.add(oldModifier);
+		CompoundTag otherModifier = new CompoundTag();
+		otherModifier.putString("id", "matcha:bronze_sword");
+		modifiers.add(otherModifier);
+		components.put("minecraft:attribute_modifiers", modifiers);
+		elytra.put("components", components);
+		inventory.add(elytra);
+
+		CompoundTag beetroot = new CompoundTag();
+		beetroot.putString("id", "minecraft:beetroot");
+		inventory.add(beetroot);
+		CompoundTag beetrootSeeds = new CompoundTag();
+		beetrootSeeds.putString("id", "minecraft:beetroot_seeds");
+		inventory.add(beetrootSeeds);
+		player.put("Inventory", inventory);
+
+		CompoundTag migratedPlayer = MatchaItemDataFixer.updateIfNeeded(player);
+		ListTag migratedInventory = migratedPlayer.getList("Inventory").orElseThrow();
+		CompoundTag migratedElytra = migratedInventory.getCompound(0).orElseThrow();
+		assert "matcha:hepatizon_elytra".equals(migratedElytra.getStringOr("id", ""));
+		ListTag migratedModifiers = migratedElytra.getCompound("components").orElseThrow()
+				.getList("minecraft:attribute_modifiers").orElseThrow();
+		assert "matcha-flavoured:hepatizon_elytra".equals(
+				migratedModifiers.getCompound(0).orElseThrow().getStringOr("id", ""));
+		assert "matcha:bronze_sword".equals(migratedModifiers.getCompound(1).orElseThrow().getStringOr("id", ""));
+		assert "matcha:tomato".equals(migratedInventory.getCompound(1).orElseThrow().getStringOr("id", ""));
+		assert "matcha:tomato_seeds".equals(migratedInventory.getCompound(2).orElseThrow().getStringOr("id", ""));
+		assert migratedPlayer.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 6;
+
+		CompoundTag chunk = new CompoundTag();
+		chunk.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 5);
+		ListTag sections = new ListTag();
+		CompoundTag section = new CompoundTag();
+		CompoundTag blockStates = new CompoundTag();
+		ListTag palette = new ListTag();
+		CompoundTag oldCrop = new CompoundTag();
+		oldCrop.putString("Name", "minecraft:beetroots");
+		palette.add(oldCrop);
+		CompoundTag otherBlock = new CompoundTag();
+		otherBlock.putString("Name", "minecraft:wheat");
+		palette.add(otherBlock);
+		blockStates.put("palette", palette);
+		section.put("block_states", blockStates);
+		sections.add(section);
+		chunk.put("sections", sections);
+
+		CompoundTag migratedChunk = MatchaItemDataFixer.updateIfNeeded(chunk);
+		ListTag migratedPalette = migratedChunk.getList("sections").orElseThrow().getCompound(0).orElseThrow()
+				.getCompound("block_states").orElseThrow().getList("palette").orElseThrow();
+		assert "matcha:tomatoes".equals(migratedPalette.getCompound(0).orElseThrow().getStringOr("Name", ""));
+		assert "minecraft:wheat".equals(migratedPalette.getCompound(1).orElseThrow().getStringOr("Name", ""));
+		assert migratedChunk.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 6;
 	}
 
 	private static CompoundTag stackWithEnchantments(String id, String enchantment) {
