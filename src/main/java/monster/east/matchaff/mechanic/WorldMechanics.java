@@ -24,7 +24,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.level.Level;
@@ -57,6 +56,8 @@ public final class WorldMechanics {
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("mechanics/glass_bottle_from_crafting");
 	private static final Identifier TWO_GLASS_BOTTLES_ADVANCEMENT = id("mechanics/two_glass_bottles_from_crafting");
 	private static final Identifier ELYTRA_ADVANCEMENT = id("item_contingencies/elytra");
+	private static final Repairable ELYTRA_REPAIRABLE = new Repairable(HolderSet.direct(
+			Items.HONEYCOMB.builtInRegistryHolder(), Items.FEATHER.builtInRegistryHolder()));
 
 	private static final Map<UUID, Integer> LAST_BOATING_DISTANCE = new HashMap<>();
 
@@ -420,11 +421,9 @@ public final class WorldMechanics {
 		if (elytra.is(Items.ELYTRA)
 				&& elytra.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).isEmpty()
 				&& Identifier.withDefaultNamespace("elytra").equals(elytra.get(DataComponents.ITEM_MODEL))
-				&& elytra.getOrDefault(DataComponents.LORE, ItemLore.EMPTY).lines().isEmpty()) {
-			ItemStack replacement = new ItemStack(Items.ELYTRA);
-			replacement.set(DataComponents.REPAIRABLE, new Repairable(HolderSet.direct(
-					Items.HONEYCOMB.builtInRegistryHolder(), Items.FEATHER.builtInRegistryHolder())));
-			player.setItemSlot(EquipmentSlot.CHEST, replacement);
+				&& !ELYTRA_REPAIRABLE.equals(elytra.get(DataComponents.REPAIRABLE))) {
+			elytra.set(DataComponents.REPAIRABLE, ELYTRA_REPAIRABLE);
+			player.setItemSlot(EquipmentSlot.CHEST, elytra);
 		}
 		revoke(player, ELYTRA_ADVANCEMENT);
 	}
