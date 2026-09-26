@@ -59,7 +59,7 @@ public final class PlayerMechanics {
 	private static final int MAX_HEARTS = 60;
 	private static final int DEFAULT_MINIMUM_HEARTS = 20;
 	private static final int ABSOLUTE_MINIMUM_HEARTS = 6;
-	private static final int CRYSTAL_HEART_COOLDOWN_TICKS = 30;
+	private static final int CRYSTAL_HEART_COOLDOWN_TICKS = 20;
 	private static final TagKey<Biome> FROZEN_BIOME = TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("minecraft", "is_frozen"));
 	private static final Identifier FREEZING_PROTECTION = Identifier.fromNamespaceAndPath("matcha", "freezing_protection");
 	private static final String MINIMUM_HEARTS_OBJECTIVE = "minimum_hearts";
@@ -241,9 +241,10 @@ public final class PlayerMechanics {
 		player.getCooldowns().addCooldown(cooldownStack, CRYSTAL_HEART_COOLDOWN_TICKS);
 	}
 
-	/** Removes one heart container while respecting the current difficulty floor. */
+	/** Removes one or two heart containers while respecting the current difficulty floor. */
 	public static void loseHeart(ServerPlayer player) {
-		int hearts = Math.max(getMinimumHearts(player), getHearts(player) - 2);
+		int loss = WorldMechanics.cachedDifficulty(player.level().getServer()) == Difficulty.HARD ? 4 : 2;
+		int hearts = Math.max(getMinimumHearts(player), getHearts(player) - loss);
 		setHearts(player, hearts);
 		applyMaxHealth(player, hearts);
 	}

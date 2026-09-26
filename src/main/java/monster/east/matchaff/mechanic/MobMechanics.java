@@ -92,8 +92,7 @@ public final class MobMechanics {
 		}
 		boolean sky = level.canSeeSky(pos);
 		if (isSafeSurface(level)) {
-			int minY = type == EntityTypes.DROWNED ? 43 : 63;
-			return sky || (pos.getY() >= minY && pos.getY() <= 350
+			return sky || (pos.getY() >= 63 && pos.getY() <= 350
 					&& (type == EntityTypes.DROWNED || !inDungeon(level, pos)));
 		}
 		if (type == EntityTypes.CREEPER && (sky || (pos.getY() >= 63 && !inDungeon(level, pos)))) {
