@@ -6,11 +6,14 @@
 > [!WARNING]
 > - The core content of this unofficial Fabric port has been tested, but some edge cases may differ from the original data pack. Please back up your worlds before playing.
 > - This mod does not support playing directly in worlds previously used with the data pack. Please create a new world.
-> - Multiplayer behavior has not been tested. Use this mod with caution in multiplayer.
+> - Multiplayer behavior has not been fully tested. Use this mod with caution in multiplayer.
+
+> [!NOTE]
+> **Discloure:** AI-generated code is included in this project. If you are uncomfortable with this, refrain from using this mod.
 
 [中文说明](README_ZH.md)
 
-A Fabric mod port of Klei Wright's [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) data and resource pack for Minecraft 26.2/26.3.
+A Fabric mod port of Klei Wright's [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) data and resource pack. **Not affiliated with or endorsed by the original author.**
 
 I made this port because I am not particularly fond of using heavily modified vanilla items as new items, as the original data pack does. That approach also makes browsing and using the content with JEI inconvenient. The Fabric version therefore registers its equipment, food, fish, blessings, music discs, and most other custom content as proper mod items.
 
@@ -27,18 +30,20 @@ Install Fabric Loader and Fabric API, then place the mod JAR in your `mods` fold
 
 Create a new world to play this mod. Existing items from the data-pack version are not automatically converted into the mod's independently registered items.
 
-## Improvements over the data pack
+## Improvements
 
 - Most custom equipment, food, fish, blessings, behavior items, and music discs are registered as independent items under the `matcha` namespace instead of repurposing vanilla items, which makes the added items easier to distinguish and browse in inventory tools such as JEI and Jade. Item IDs and commands therefore differ from the data-pack version, and **existing data-pack stacks are not converted automatically**. Registered items are placed across the relevant vanilla creative tabs.
 - Food healing is now scheduled per meal instead of relying on the regeneration effect the data pack uses. Vanilla regeneration refreshes in place (its duration never stacks), so eating the same food twice in a row silently lost part of the heal. Each food's hidden healing-simulation segment now ticks independently, so consecutive bites heal their full intended amount. 
 - Breaking cracks no longer appear floating in the air around leaves and glow lichen: the breaking animation now drops quads that fall outside the block's bounds. The out-of-bounds leaf extension panels are also culled inside canopies to reduce the number of rendered faces, while the canopy keeps its solid look.
 - The Mod Menu settings screen can disable Overworld True Darkness per client without changing server gameplay.
 - [Trinkets Updated](https://modrinth.com/mod/trinkets-updated) compatibility lets earrings be worn alongside a helmet. Earring armor bonuses do not apply while a helmet is equipped.
+- [CliffTree](https://modrinth.com/datapack/clifftree) compatibility (Fabric Mod version only). If you would like Matcha to support more terrain mods, feel free to submit suggestions in [Issues](https://github.com/EastMonster/matcha-flavoured-fabric/issues)!
 
-## Changes that may cause behavioral differences
+## Changes that (may) cause behavioral differences
 
-- Command-driven mechanics are reimplemented in Java. Tested gameplay is intended to match the data pack, but very short timing windows, multiplayer target selection, and server restarts during delayed actions may behave differently.
+- Command-driven mechanics are reimplemented in Java. Tested gameplay is intended to match the data pack, but something may behave differently.
 - Gives selected vanilla food carriers Matcha components by default so creative-tab and plain `/give` stacks match their crafted or dropped counterparts. This can also apply Matcha food behavior to those vanilla IDs when another source creates an otherwise unmodified stack.
+- This mod changes sleeping behavior in multiplayer: time will not speed up until all players are asleep.
 
 Bug reports are welcome, but exact one-to-one compatibility with every data-pack edge case is not promised.
 

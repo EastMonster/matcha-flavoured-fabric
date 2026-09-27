@@ -6,11 +6,14 @@
 > [!WARNING]
 > - 此非官方 Fabric 移植版的核心内容已经过测试，但部分边缘情况可能与原数据包不同。游玩前请备份存档。
 > - 本 mod 不支持直接使用原数据包的存档游玩，请创建新世界。
-> - 本 mod 尚未测试多人游戏下的表现，请谨慎使用。
+> - 本 mod 尚未完整测试多人游戏下的表现，请谨慎使用。
+
+> [!NOTE]
+> **信息披露：**本项目包含 AI 生成的代码。如果您对此介意，请勿使用本 mod。
 
 [English](README.md)
 
-这是 Klei Wright 制作的 [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) 数据包与资源包的非官方 Fabric mod 移植版，适用于 Minecraft 26.2/26.3。
+这是 Klei Wright 制作的 [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) 数据包与资源包的非官方 Fabric mod 移植版。**与原作者无隶属关系，也未获得原作者认可。**
 
 制作这个移植版的主要原因，是我个人不太喜欢数据包通过大幅修改原版物品来充当新物品的实现方式。这种方式与 JEI 结合使用时也不够方便。因此，Fabric 版把装备、食物、鱼、祝福、唱片及大部分其他自定义内容注册成了真正独立的 mod 物品。
 
@@ -34,11 +37,13 @@
 - 树叶和发光地衣的破坏纹理不再延伸到空气中；树冠内部的树叶外延模型会被剔除，以减少渲染面数，同时保持树冠实心的观感。
 - Mod Menu 设置页面可以让每位客户端玩家单独关闭主世界的 True Darkness，不会改变服务器玩法。
 - 兼容 [Trinkets Updated](https://modrinth.com/mod/trinkets-updated)：现在可以同时佩戴耳环和头盔；已佩戴头盔时，耳环提供的护甲值不生效。
+- 兼容 [CliffTree](https://modrinth.com/datapack/clifftree) 的 Fabric Mod 版本。如果你想让 Matcha 兼容更多的地形模组，欢迎在 [Issues](https://github.com/EastMonster/matcha-flavoured-fabric/issues) 提出建议！
 
-## 可能导致行为差异的修改
+## (可能) 导致行为差异的修改
 
-- 将依赖命令的玩法机制改写为 Java。已经测试的主要玩法以对齐数据包为目标，但极短时间窗口、多人目标选择，以及延迟动作期间重启服务器等边缘情况仍可能不同。
+- 将依赖命令的玩法机制改写为 Java。已经测试的主要玩法以对齐数据包为目标，但部分边缘情况仍可能不同。
 - 为部分原版食物载体设置了 Matcha 默认组件，使创造栏和普通 `/give` 得到的物品与合成或掉落版本一致。其他来源生成这些原版 ID 的无组件物品时，也可能因此获得 Matcha 食物行为。
+- 本 mod 在多人游戏下睡觉的行为与上游不同，在所有人睡下之前不会加速时间。
 
 欢迎反馈 Bug，但本项目不承诺与原数据包的所有边缘情况一比一完全兼容。
 
