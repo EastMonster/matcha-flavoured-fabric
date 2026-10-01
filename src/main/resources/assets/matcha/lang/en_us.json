@@ -1015,5 +1015,6 @@
 	"matcha.config.vanilla_preview": "Vanilla Appearance (Beta)",
 	"matcha.config.vanilla_preview.pack": "Matcha Flavoured: Vanilla Appearance Preview",
 	"matcha.config.vanilla_preview.tooltip": "Restore some modified textures to their vanilla versions.",
-	"trinkets.slot.head.earring": "Earring"
+	"trinkets.slot.head.earring": "Earring",
+	"merchant.matcha.favorite_food": "This villager likes %s."
 }
