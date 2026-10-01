@@ -51,6 +51,7 @@
 		"LeavesBreakingMixin",
 		"LeavesCullMixin",
 		"TitleScreenMixin",
+		"MerchantScreenMixin",
 		"TrueDarknessMixin",
 		"WheatRaycastMixin",
 		"DolabraItemInHandMixin",

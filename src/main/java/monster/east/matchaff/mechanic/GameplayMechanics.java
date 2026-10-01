@@ -12,6 +12,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
@@ -32,6 +33,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -74,6 +77,20 @@ public final class GameplayMechanics {
 	private static final Set<Villager> VILLAGERS =
 			Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final Set<UUID> AMNESTIC_VILLAGERS = new HashSet<>();
+	// Upstream favorite_food/food_trades/food_0..41, in random selection order.
+	private static final String[] FAVORITE_FOODS = {
+			"apple_empanada", "bokguk", "brachio_chicken_nugget", "brownie",
+			"bruschetta", "bubbling_mead", "bunuelo", "carrot_cupcake",
+			"cheese_pizza", "chocolate_chip_cookie", "crimson_stroganoff", "fish_and_chips",
+			"french_toast", "gimmari", "glow_berry_crumble", "gnocchi",
+			"honied_french_toast", "ice_cream", "kontomire_stew", "latke",
+			"lumpia", "mead", "meat_pizza", "melon_sorbet",
+			"mushroom_pizza", "oatmeal", "pad_thai", "ptero_chicken_nugget",
+			"puerquito", "pumpkin_empanada", "red_mushroom_stroganoff", "stego_chicken_nugget",
+			"stroganoff", "sweet_berry_danish", "tricero_chicken_nugget", "warped_pizza",
+			"green_curry", "honey_ginger_tea", "japanese_curry", "paneer_makhani",
+			"pumpkin_curry", "ramen"
+	};
 
 	private GameplayMechanics() {
 	}
@@ -115,6 +132,10 @@ public final class GameplayMechanics {
 				stackWaterBottles(player);
 			}
 			refreshAmnesticVillagers();
+			// First check after 3 seconds, then every 30 seconds, as in upstream.
+			if (tick >= 60 && (tick - 60) % 600 == 0) {
+				assignFavoriteFoods();
+			}
 			TimedMechanics.tick(server, tick);
 			BeaconKindlingMechanics.tick(server, tick);
 			WardingStoneMechanics.tick();
@@ -159,11 +180,43 @@ public final class GameplayMechanics {
 				.min(Comparator.comparingDouble(villager -> villager.distanceToSqr(Vec3.atCenterOf(pos))))
 				.ifPresent(villager -> {
 					AMNESTIC_VILLAGERS.add(villager.getUUID());
+					villager.removeTag("foodChecked");
 					villager.setVillagerData(villager.getVillagerData()
 							.withProfession(level.registryAccess(), VillagerProfession.NONE).withLevel(1));
 					villager.refreshBrain(level);
 					((VillagerAccessor) villager).matcha$setLastRestockGameTime(0);
 				});
+	}
+
+	private static void assignFavoriteFoods() {
+		for (Villager villager : VILLAGERS) {
+			if (villager.isRemoved() || villager.entityTags().contains("foodChecked")
+					|| villager.getVillagerData().profession().is(VillagerProfession.NONE)
+					|| villager.getVillagerXp() == 0) {
+				continue;
+			}
+			String food = FAVORITE_FOODS[villager.getRandom().nextInt(FAVORITE_FOODS.length)];
+			villager.getOffers().add(0, new MerchantOffer(
+					new ItemCost(BuiltInRegistries.ITEM.getValue(id(food))),
+					new ItemStack(Items.EMERALD), 1, 1, 0.0F));
+			villager.addTag("foodChecked");
+		}
+	}
+
+	public static boolean isFavoriteFoodOffer(MerchantOffer offer) {
+		ItemStack food = offer.getBaseCostA();
+		ItemStack result = offer.getResult();
+		if (food.getCount() != 1 || !offer.getCostB().isEmpty()
+				|| !result.is(Items.EMERALD) || result.getCount() != 1 || offer.getMaxUses() != 1) {
+			return false;
+		}
+		Identifier foodId = BuiltInRegistries.ITEM.getKey(food.getItem());
+		for (String favorite : FAVORITE_FOODS) {
+			if (foodId.equals(id(favorite))) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private static void refreshAmnesticVillagers() {
