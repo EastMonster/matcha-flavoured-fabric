@@ -194,13 +194,9 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		if (lines.contains(header)) {
 			return;
 		}
-		int insertionIndex = lines.size();
-		if (flag.isAdvanced()) {
-			Component advancedId = Component.literal(itemId.toString()).withStyle(ChatFormatting.DARK_GRAY);
-			int advancedIndex = lines.indexOf(advancedId);
-			if (advancedIndex >= 0) {
-				insertionIndex = advancedIndex;
-			}
+		int insertionIndex = flag.isAdvanced() ? advancedTooltipInsertionIndex(lines, itemId) : -1;
+		if (insertionIndex < 0) {
+			insertionIndex = lines.size();
 		}
 		lines.add(insertionIndex++, header);
 		for (Holder<Item> material : repairable.items()) {
@@ -216,6 +212,16 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			}
 		}
 		return false;
+	}
+
+	private static int advancedTooltipInsertionIndex(List<Component> lines, Identifier itemId) {
+		for (int i = 0; i < lines.size(); i++) {
+			if (lines.get(i).getContents() instanceof TranslatableContents contents
+					&& contents.getKey().equals("item.durability")) {
+				return i;
+			}
+		}
+		return lines.indexOf(Component.literal(itemId.toString()).withStyle(ChatFormatting.DARK_GRAY));
 	}
 
 	private static void appendDynamicEquipmentLore(ItemStack stack, Item.TooltipContext context,
@@ -262,22 +268,9 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			}
 		}
 		if (insertionIndex < 0) {
-			insertionIndex = lines.size();
-			if (flag.isAdvanced()) {
-				for (int i = 0; i < lines.size(); i++) {
-					if (lines.get(i).getContents() instanceof TranslatableContents contents
-							&& contents.getKey().equals("item.durability")) {
-						insertionIndex = i;
-						break;
-					}
-				}
-				if (insertionIndex == lines.size()) {
-					int advancedIdIndex = lines.indexOf(
-							Component.literal(itemId.toString()).withStyle(ChatFormatting.DARK_GRAY));
-					if (advancedIdIndex >= 0) {
-						insertionIndex = advancedIdIndex;
-					}
-				}
+			insertionIndex = flag.isAdvanced() ? advancedTooltipInsertionIndex(lines, itemId) : -1;
+			if (insertionIndex < 0) {
+				insertionIndex = lines.size();
 			}
 		}
 		lines.addAll(insertionIndex, generated);
