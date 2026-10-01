@@ -1,13 +1,16 @@
 {
 	"type": "minecraft:block",
+	"random_sequence": "minecraft:blocks/iron_ore",
 	"pools": [
 		{
+			"rolls": 1,
 			"entries": [
 				{
 					"type": "minecraft:alternatives",
 					"children": [
 						{
 							"type": "minecraft:item",
+							"name": "minecraft:iron_ore",
 							"conditions": [
 								{
 									"condition": "minecraft:match_tool",
@@ -24,11 +27,11 @@
 										}
 									}
 								}
-							],
-							"name": "minecraft:gold_ore"
+							]
 						},
 						{
 							"type": "minecraft:item",
+							"name": "minecraft:iron_ingot",
 							"conditions": [
 								{
 									"condition": "minecraft:match_tool",
@@ -45,39 +48,36 @@
 							],
 							"functions": [
 								{
+									"function": "minecraft:apply_bonus",
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:ore_drops"
+								},
+								{
+									"function": "minecraft:apply_bonus",
 									"enchantment": "minecraft:fortune",
-									"formula": "minecraft:ore_drops",
-									"function": "minecraft:apply_bonus"
+									"formula": "minecraft:ore_drops"
+								}
+							]
+						},
+						{
+							"type": "minecraft:item",
+							"name": "minecraft:raw_iron",
+							"functions": [
+								{
+									"function": "minecraft:apply_bonus",
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:ore_drops"
 								},
 								{
 									"function": "minecraft:apply_bonus",
 									"enchantment": "matcha:electrum_tool",
 									"formula": "minecraft:ore_drops"
 								}
-							],
-							"name": "minecraft:gold_ingot"
-						},
-						{
-							"type": "minecraft:item",
-							"functions": [
-								{
-									"enchantment": "minecraft:fortune",
-									"formula": "minecraft:ore_drops",
-									"function": "minecraft:apply_bonus"
-								},
-								{
-									"enchantment": "matcha:electrum_tool",
-									"formula": "minecraft:ore_drops",
-									"function": "minecraft:apply_bonus"
-								}
-							],
-							"name": "minecraft:raw_gold"
+							]
 						}
 					]
 				}
-			],
-			"rolls": 1
+			]
 		}
-	],
-	"random_sequence": "minecraft:blocks/gold_ore"
+	]
 }
