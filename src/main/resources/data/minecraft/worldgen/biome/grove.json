@@ -179,7 +179,7 @@
 			"minecraft:disk_clay",
 			"minecraft:disk_gravel",
 			"minecraft:ore_emerald",
-			"matcha-flavoured:ore_emerald_deep_mountain"
+			"matcha:ore_emerald_deep_mountain"
 		],
 		["minecraft:ore_infested"],
 		[
