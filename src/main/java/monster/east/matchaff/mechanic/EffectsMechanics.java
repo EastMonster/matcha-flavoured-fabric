@@ -5,36 +5,36 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
-import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetActionBarTextPacket;
+import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.Identifier;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.CustomData;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 /**
- * Soul Sight: eating glow jam / glow crumble / glow mash grants a delayed Glowing effect
- * to every entity within 50 blocks. Detection reuses the datapack's own
- * consume_item advancements: once granted, the effect fires and the
- * advancement is revoked so the next bite re-triggers it.
+ * Aura: consuming an item with an Aura marker charges a nearby Glowing effect.
+ * Repeated consumption during the windup changes its duration, not its deadline.
  */
 public final class EffectsMechanics {
-	private static final Identifier[] SOUL_SIGHT_ADVANCEMENTS = {
-			Identifier.fromNamespaceAndPath("matcha", "mechanics/glow_jam_eaten"),       // 30s
-			Identifier.fromNamespaceAndPath("matcha", "mechanics/glow_crumble_eaten"),   // 60s
-			Identifier.fromNamespaceAndPath("matcha", "mechanics/glow_mash_eaten"),      // 3s
-	};
-	private static final int[] SOUL_SIGHT_DURATIONS = {600, 1200, 60};
+	private static final TagKey<EntityType<?>> AURA_IMMUNE = TagKey.create(
+			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("matcha", "aura_immune"));
 	private static final String[] WITHER_COUNTDOWN = {
 			"\uE048\uE046\uE046\uE047",
 			"\uE048\uE046\uE046\uE049",
@@ -46,8 +46,7 @@ public final class EffectsMechanics {
 			"\uE04A\uE044\uE044\uE049"
 	};
 
-	/** Player UUID -> one [trigger tick, duration] task for each Soul Sight variant. */
-	private static final Map<UUID, int[][]> PENDING_SOUL_SIGHT = new HashMap<>();
+	private static final Map<UUID, AuraCharge> PENDING_AURA = new HashMap<>();
 	private static final Map<UUID, Integer> WITHER_TICKS = new HashMap<>();
 
 	private EffectsMechanics() {
@@ -55,18 +54,18 @@ public final class EffectsMechanics {
 
 	public static void init() {
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
-			PENDING_SOUL_SIGHT.clear();
+			PENDING_AURA.clear();
 			WITHER_TICKS.clear();
 		});
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
 			if (entity instanceof ServerPlayer player) {
-				PENDING_SOUL_SIGHT.remove(player.getUUID());
+				PENDING_AURA.remove(player.getUUID());
 				WITHER_TICKS.remove(player.getUUID());
 			}
 		});
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
 		{
-			PENDING_SOUL_SIGHT.remove(handler.getPlayer().getUUID());
+			PENDING_AURA.remove(handler.getPlayer().getUUID());
 			WITHER_TICKS.remove(handler.getPlayer().getUUID());
 		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
@@ -113,45 +112,32 @@ public final class EffectsMechanics {
 		WITHER_TICKS.remove(uuid);
 	}
 
-	private static void tick(ServerPlayer player) {
-		var advancements = player.level().getServer().getAdvancements();
-		for (int i = 0; i < SOUL_SIGHT_ADVANCEMENTS.length; i++) {
-			AdvancementHolder advancement = advancements.get(SOUL_SIGHT_ADVANCEMENTS[i]);
-			if (advancement == null || !player.getAdvancements().getOrStartProgress(advancement).isDone()) {
+	public static void onConsumed(ServerPlayer player, ItemStack stack) {
+		var data = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+		for (int seconds : new int[] {3, 30, 60}) {
+			if (data.getCompound("matcha:aura_" + seconds + "s").isEmpty()) {
 				continue;
 			}
-			var level = player.level();
-			level.playSound(null, player.getX(), player.getY(), player.getZ(),
-					SoundEvents.BELL_RESONATE, SoundSource.PLAYERS, 2.0F, 1.0F);
-			PENDING_SOUL_SIGHT.computeIfAbsent(player.getUUID(), uuid ->
-					new int[SOUL_SIGHT_ADVANCEMENTS.length][])[i] = new int[] {
-					player.level().getServer().getTickCount() + 48, SOUL_SIGHT_DURATIONS[i]
-			};
-			for (String criterion : advancement.value().criteria().keySet()) {
-				player.getAdvancements().revoke(advancement, criterion);
+			UUID uuid = player.getUUID();
+			AuraCharge pending = PENDING_AURA.get(uuid);
+			if (pending == null) {
+				player.connection.send(new ClientboundSoundPacket(Holder.direct(SoundEvents.BELL_RESONATE),
+						SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(),
+						2.0F, 1.0F, player.getRandom().nextLong()));
 			}
+			PENDING_AURA.put(uuid, AuraCharge.startOrUpdate(pending,
+					player.level().getServer().getTickCount(), seconds * 20));
 		}
+	}
 
-		int[][] pending = PENDING_SOUL_SIGHT.get(player.getUUID());
+	private static void tick(ServerPlayer player) {
+		AuraCharge pending = PENDING_AURA.get(player.getUUID());
 		if (pending == null) {
 			return;
 		}
-		int now = player.level().getServer().getTickCount();
-		boolean hasPending = false;
-		for (int i = 0; i < pending.length; i++) {
-			int[] task = pending[i];
-			if (task == null) {
-				continue;
-			}
-			if (now >= task[0]) {
-				pending[i] = null;
-				applyGlow(player, task[1]);
-			} else {
-				hasPending = true;
-			}
-		}
-		if (!hasPending) {
-			PENDING_SOUL_SIGHT.remove(player.getUUID());
+		if (pending.ready(player.level().getServer().getTickCount())) {
+			PENDING_AURA.remove(player.getUUID());
+			applyGlow(player, pending.duration());
 		}
 	}
 
@@ -160,9 +146,10 @@ public final class EffectsMechanics {
 		for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class,
 				player.getBoundingBox().inflate(50.0), target -> {
 					double distanceSquared = target.distanceToSqr(player);
-					return distanceSquared >= 0.01 && distanceSquared <= 2500.0;
+					return distanceSquared >= 0.01 && distanceSquared <= 2500.0
+							&& !target.getType().builtInRegistryHolder().is(AURA_IMMUNE);
 				})) {
-			entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, duration, 0, true, false));
+			entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, duration, 0, false, false), player);
 		}
 	}
 }

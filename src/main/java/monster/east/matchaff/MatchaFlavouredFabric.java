@@ -223,6 +223,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		if (definition.villagerFoodNutrition != null) {
 			properties.component(DataComponents.VILLAGER_FOOD, new VillagerFood(definition.villagerFoodNutrition));
 		}
+		if (definition.customData != null) ItemComponents.apply(properties, "minecraft:custom_data", definition.customData);
 		if (definition.remainder != null) {
 			properties.usingConvertsTo(Objects.requireNonNull(
 					BuiltInRegistries.ITEM.getValue(Identifier.parse(definition.remainder))
@@ -252,7 +253,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 			String id, int nutrition, float saturation, boolean alwaysEdible,
 			Float consumeSeconds, String animation, String sound, Boolean particles,
 		String remainder, Integer maxStackSize, Integer villagerFoodNutrition, JsonElement lore,
-		List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components
+		List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components, JsonElement customData
 	) {}
 
 	private record ConsumeEffectDefinition(

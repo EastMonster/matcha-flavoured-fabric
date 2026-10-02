@@ -55,6 +55,7 @@ public class ItemComponents {
 			case "minecraft:custom_name" ->
 					properties.component(DataComponents.CUSTOM_NAME, decode(ComponentSerialization.CODEC, json));
 			case "minecraft:lore" -> properties.component(DataComponents.LORE, decode(ItemLore.CODEC, json));
+			case "minecraft:custom_data" -> properties.component(DataComponents.CUSTOM_DATA, decode(DataComponents.CUSTOM_DATA.codec(), json));
 			case "minecraft:rarity" -> properties.component(DataComponents.RARITY, decode(Rarity.CODEC, json));
 			case "minecraft:enchantment_glint_override" ->
 					properties.component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, json.getAsBoolean());

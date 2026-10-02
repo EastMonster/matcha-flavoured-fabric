@@ -955,6 +955,7 @@
 	},
 	{
 		"id": "glow_berry_crumble",
+		"customData": { "matcha:aura_60s": {} },
 		"source": "data/matcha/recipe/food/crafting/glow_berry_crumble.json",
 		"lore": [
 			{
@@ -987,6 +988,7 @@
 	},
 	{
 		"id": "glow_jam",
+		"customData": { "matcha:aura_30s": {} },
 		"source": "data/matcha/recipe/food/crafting/glow_jam.json",
 		"lore": [
 			{
@@ -1022,6 +1024,7 @@
 	},
 	{
 		"id": "glow_mash",
+		"customData": { "matcha:aura_3s": {} },
 		"source": "data/matcha/recipe/food/oven/glow_mash.json",
 		"lore": [
 			{
