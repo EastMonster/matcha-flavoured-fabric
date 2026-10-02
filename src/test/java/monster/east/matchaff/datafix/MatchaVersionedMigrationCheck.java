@@ -41,6 +41,65 @@ public final class MatchaVersionedMigrationCheck {
 		assert fixed.getList("Inventory").orElseThrow().getCompound(0).orElseThrow()
 				.getCompound("components").orElseThrow().getStringOr("minecraft:jukebox_playable", "")
 				.equals("main:other_song");
+		checkIntrinsicConflicts();
+	}
+
+	private static void checkIntrinsicConflicts() {
+		for (String id : new String[] {
+				"matcha:electrum_axe", "matcha:electrum_dolabra", "matcha:electrum_hoe",
+				"matcha:electrum_mattock", "matcha:electrum_pickaxe", "matcha:electrum_shovel",
+				"matcha:electrum_spear", "matcha:electrum_sword", "matcha:silver_sword",
+				"matcha:shakudo_axe", "matcha:shakudo_dolabra", "matcha:shakudo_hoe",
+				"matcha:shakudo_mattock", "matcha:shakudo_pickaxe", "matcha:shakudo_shovel",
+				"minecraft:diamond_pickaxe", "minecraft:diamond_sword", "matcha:electrum_helmet"
+		}) {
+			CompoundTag data = playerData(6);
+			CompoundTag stack = data.getList("Inventory").orElseThrow().getCompound(0).orElseThrow();
+			stack.putString("id", id);
+			CompoundTag components = new CompoundTag();
+			CompoundTag enchantments = new CompoundTag();
+			for (String enchantment : new String[] {"silk_touch", "sharpness", "fortune", "smite", "unbreaking"}) {
+				enchantments.putInt("minecraft:" + enchantment, 3);
+			}
+			enchantments.putInt("matcha:electrum_tool", 3);
+			components.put("minecraft:enchantments", enchantments);
+			components.putInt("minecraft:damage", 123);
+			components.putString("minecraft:custom_name", "Keep this name");
+			stack.put("components", components);
+			// Real nested stacks are migrated, opaque custom data must be preserved.
+			CompoundTag custom = stack.copy();
+			components.put("minecraft:custom_data", custom);
+			ListTag nested = new ListTag();
+			nested.add(stack.copy());
+			components.put("minecraft:bundle_contents", nested);
+			CompoundTag expected = components.copy();
+			CompoundTag expectedEnchantments = expected.getCompound("minecraft:enchantments").orElseThrow();
+			boolean electrumTool = id.startsWith("matcha:electrum_")
+					&& !id.endsWith("spear") && !id.endsWith("sword") && !id.endsWith("helmet");
+			boolean smiteWeapon = id.equals("matcha:electrum_axe") || id.equals("matcha:electrum_spear")
+					|| id.equals("matcha:electrum_sword") || id.equals("matcha:silver_sword");
+			if (electrumTool) expectedEnchantments.remove("minecraft:silk_touch");
+			if (electrumTool) expectedEnchantments.remove("minecraft:fortune");
+			if (smiteWeapon) expectedEnchantments.remove("minecraft:sharpness");
+			if (id.startsWith("matcha:shakudo_")) expectedEnchantments.remove("minecraft:fortune");
+			CompoundTag current = data.copy();
+			current.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 7);
+			CompoundTag currentExpected = current.copy();
+			CompoundTag fixed = MatchaItemDataFixer.updateIfNeeded(data);
+			CompoundTag actual = fixed.getList("Inventory").orElseThrow().getCompound(0).orElseThrow()
+					.getCompound("components").orElseThrow();
+			assert actual.getCompound("minecraft:enchantments").orElseThrow().equals(expectedEnchantments) : id;
+			assert actual.getIntOr("minecraft:damage", 0) == 123;
+			assert actual.getStringOr("minecraft:custom_name", "").equals("Keep this name");
+			assert actual.getCompound("minecraft:custom_data").orElseThrow().equals(custom);
+			assert actual.getList("minecraft:bundle_contents").orElseThrow().getCompound(0).orElseThrow()
+					.getCompound("components").orElseThrow().getCompound("minecraft:enchantments").orElseThrow()
+					.equals(expectedEnchantments);
+			CompoundTag fixedExpected = fixed.copy();
+			assert MatchaItemDataFixer.updateIfNeeded(fixed).equals(fixedExpected);
+			// A save already marked V7 must not silently rerun amended V7 rules.
+			assert MatchaItemDataFixer.updateIfNeeded(current).equals(currentExpected);
+		}
 	}
 
 	private static CompoundTag playerData(int version) {

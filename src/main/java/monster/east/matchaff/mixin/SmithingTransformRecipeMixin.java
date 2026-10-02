@@ -4,11 +4,13 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.SmithingTransformRecipe;
 import net.minecraft.world.item.crafting.TransmuteRecipe;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +21,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * Smithing transform results normally replace the whole enchantments
  * component, dropping enchantments already on the base tool. This merges the
  * base enchantments back in, keeping the highest level where the recipe's own
- * intrinsic enchantments overlap.
+ * intrinsic enchantments overlap, then removes conflicts with the result's
+ * intrinsic enchantments (not enchantments inherited from the base).
  */
 @Mixin(SmithingTransformRecipe.class)
 public abstract class SmithingTransformRecipeMixin {
@@ -45,6 +48,19 @@ public abstract class SmithingTransformRecipeMixin {
 		ItemEnchantments.Mutable merged = new ItemEnchantments.Mutable(resultEnchantments);
 		for (Object2IntMap.Entry<Holder<Enchantment>> entry : baseEnchantments.entrySet()) {
 			merged.upgrade(entry.getKey(), entry.getIntValue());
+		}
+		for (Holder<Enchantment> intrinsic : resultTemplate
+				.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).keySet()) {
+			if (intrinsic.is(Identifier.fromNamespaceAndPath("matcha", "electrum_tool"))) {
+				merged.removeIf(enchantment -> enchantment.is(Enchantments.SILK_TOUCH)
+						|| enchantment.is(Enchantments.FORTUNE));
+			}
+			if (intrinsic.is(Enchantments.SMITE)) {
+				merged.removeIf(enchantment -> enchantment.is(Enchantments.SHARPNESS));
+			}
+			if (intrinsic.is(Enchantments.SILK_TOUCH)) {
+				merged.removeIf(enchantment -> enchantment.is(Enchantments.FORTUNE));
+			}
 		}
 		result.set(DataComponents.ENCHANTMENTS, merged.toImmutable());
 		return result;

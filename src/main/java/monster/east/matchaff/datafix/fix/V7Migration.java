@@ -8,8 +8,22 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 
-/** Migrates the three legacy main jukebox song references in saved ItemStacks. */
+import java.util.Set;
+
+/** Migrates legacy jukebox references and removes conflicts with intrinsic enchantments. */
 public final class V7Migration extends DataFix {
+	// Frozen migration scope, audited against recipe/registration defaults.
+	private static final Set<String> ELECTRUM_TOOLS = Set.of(
+			"matcha:electrum_axe", "matcha:electrum_dolabra", "matcha:electrum_hoe",
+			"matcha:electrum_mattock", "matcha:electrum_pickaxe", "matcha:electrum_shovel"
+	);
+	private static final Set<String> SMITE_WEAPONS = Set.of(
+			"matcha:electrum_axe", "matcha:electrum_spear", "matcha:electrum_sword", "matcha:silver_sword"
+	);
+	private static final Set<String> SHAKUDO_TOOLS = Set.of(
+			"matcha:shakudo_axe", "matcha:shakudo_dolabra", "matcha:shakudo_hoe",
+			"matcha:shakudo_mattock", "matcha:shakudo_pickaxe", "matcha:shakudo_shovel"
+	);
 	public V7Migration(Schema outputSchema) {
 		super(outputSchema, false);
 	}
@@ -17,7 +31,7 @@ public final class V7Migration extends DataFix {
 	@Override
 	protected TypeRewriteRule makeRule() {
 		Type<?> root = getInputSchema().getType(MatchaDataFixSupport.ROOT);
-		return writeFixAndRead("Matcha V7 jukebox song migration", root, root,
+		return writeFixAndRead("Matcha V7 jukebox and intrinsic enchantment migration", root, root,
 				data -> MatchaDataFixSupport.apply(data, V7Migration::migrate));
 	}
 
@@ -27,6 +41,15 @@ public final class V7Migration extends DataFix {
 				String song = components.getStringOr("minecraft:jukebox_playable", "");
 				if (song.equals("main:golden") || song.equals("main:dry_hands") || song.equals("main:labyrinthine")) {
 					components.putString("minecraft:jukebox_playable", "matcha:" + song.substring(5));
+				}
+				if (components.get("minecraft:enchantments") instanceof CompoundTag enchantments) {
+					String id = compound.getStringOr("id", "");
+					if (ELECTRUM_TOOLS.contains(id)) {
+						enchantments.remove("minecraft:silk_touch");
+						enchantments.remove("minecraft:fortune");
+					}
+					if (SMITE_WEAPONS.contains(id)) enchantments.remove("minecraft:sharpness");
+					if (SHAKUDO_TOOLS.contains(id)) enchantments.remove("minecraft:fortune");
 				}
 			}
 			for (String key : compound.keySet()) {
