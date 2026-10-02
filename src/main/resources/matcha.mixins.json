@@ -28,6 +28,7 @@
 		"FlintAndSteelInteractionMixin",
 		"FishingRodHookedTriggerMixin",
 		"FoodHealMixin",
+		"ConsumeItemTriggerMixin",
 		"HoneycombInteractionMixin",
 		"PowderSnowBootsMixin",
 		"ShearsCompatibilityMixin",

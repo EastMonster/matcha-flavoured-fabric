@@ -253,6 +253,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 				consumable.build()
 		);
 		if (definition.maxStackSize != null) properties.stacksTo(definition.maxStackSize);
+		if (definition.customData != null) ItemComponents.apply(properties, "minecraft:custom_data", definition.customData);
 		if (definition.remainder != null) {
 			properties.usingConvertsTo(Objects.requireNonNull(
 					BuiltInRegistries.ITEM.getValue(Identifier.parse(definition.remainder))
@@ -281,7 +282,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private record FoodDefinition(
 			String id, int nutrition, float saturation, boolean alwaysEdible,
 			Float consumeSeconds, String animation, String sound, Boolean particles,
-		String remainder, Integer maxStackSize, JsonElement lore, List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components
+		String remainder, Integer maxStackSize, JsonElement lore, List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components, JsonElement customData
 	) {}
 
 	private record ConsumeEffectDefinition(

@@ -1,0 +1,17 @@
+{
+	"values": [
+		"minecraft:armor_stand",
+		"#minecraft:boat",
+		"minecraft:chest_minecart",
+		"minecraft:minecart",
+		"minecraft:furnace_minecart",
+		"minecraft:hopper_minecart",
+		"minecraft:tnt_minecart",
+		"minecraft:painting",
+		"minecraft:item_frame",
+		"minecraft:glow_item_frame",
+		{ "id": "#c:boats", "required": false },
+		{ "id": "#c:item_frames", "required": false },
+		{ "id": "#c:minecarts", "required": false }
+	]
+}
