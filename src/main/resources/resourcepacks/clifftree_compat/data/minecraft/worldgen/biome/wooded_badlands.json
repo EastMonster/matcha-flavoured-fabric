@@ -72,7 +72,7 @@
 			"minecraft:ore_copper",
 			"minecraft:underwater_magma",
 			"minecraft:ore_gold_extra",
-			"matcha-flavoured:ore_emerald_deep"
+			"matcha:ore_emerald_deep"
 		],
 		[],
 		["minecraft:spring_water", "minecraft:spring_lava"],

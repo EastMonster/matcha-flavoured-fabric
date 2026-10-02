@@ -59,7 +59,7 @@
 			"minecraft:patch_pumpkin",
 			"minecraft:patch_sugar_cane",
 			"minecraft:patch_firefly_bush_near_water",
-			"matcha-flavoured:flower_beach"
+			"matcha:flower_beach"
 		],
 		["minecraft:freeze_top_layer"]
 	],

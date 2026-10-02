@@ -72,8 +72,8 @@
 			"minecraft:ore_lapis_buried",
 			"minecraft:ore_copper",
 			"minecraft:underwater_magma",
-			"matcha-flavoured:ore_emerald_deep",
-			"matcha-flavoured:ore_coal_deep_large"
+			"matcha:ore_emerald_deep",
+			"matcha:ore_coal_deep_large"
 		],
 		"#clifftree:extra_gold_remove",
 		["minecraft:spring_water", "minecraft:spring_lava"],

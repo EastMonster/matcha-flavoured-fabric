@@ -26,17 +26,9 @@
 	},
 	"features": [
 		[],
-		[
-			"minecraft:lake_lava_underground",
-			"minecraft:lake_lava_surface"
-		],
-		[
-			"minecraft:amethyst_geode"
-		],
-		[
-			"minecraft:monster_room",
-			"minecraft:monster_room_deep"
-		],
+		["minecraft:lake_lava_underground", "minecraft:lake_lava_surface"],
+		["minecraft:amethyst_geode"],
+		["minecraft:monster_room", "minecraft:monster_room_deep"],
 		[],
 		[],
 		[
@@ -70,13 +62,10 @@
 			"minecraft:disk_sand",
 			"minecraft:disk_clay",
 			"minecraft:disk_gravel",
-		      "matcha-flavoured:ore_emerald_deep"
+			"matcha:ore_emerald_deep"
 		],
 		[],
-		[
-			"minecraft:spring_water",
-			"minecraft:spring_lava"
-		],
+		["minecraft:spring_water", "minecraft:spring_lava"],
 		[
 			"minecraft:glow_lichen",
 			"minecraft:patch_grass_badlands",
@@ -89,9 +78,7 @@
 			"minecraft:patch_cactus_decorated",
 			"minecraft:patch_firefly_bush_near_water"
 		],
-		[
-			"minecraft:freeze_top_layer"
-		]
+		["minecraft:freeze_top_layer"]
 	],
 	"has_precipitation": false,
 	"spawn_costs": {},

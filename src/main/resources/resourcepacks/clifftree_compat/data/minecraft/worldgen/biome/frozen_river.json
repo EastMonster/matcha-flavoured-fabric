@@ -81,7 +81,7 @@
 			"minecraft:ore_lapis_buried",
 			"minecraft:ore_copper",
 			"minecraft:underwater_magma",
-			"matcha-flavoured:ore_emerald_deep",
+			"matcha:ore_emerald_deep",
 			"clifftree:ice_blobs"
 		],
 		"#clifftree:extra_gold_remove",

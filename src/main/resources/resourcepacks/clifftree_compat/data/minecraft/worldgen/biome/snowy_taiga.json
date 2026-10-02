@@ -71,7 +71,7 @@
 			"minecraft:ore_lapis_buried",
 			"minecraft:ore_copper",
 			"minecraft:underwater_magma",
-			"matcha-flavoured:ore_emerald_deep",
+			"matcha:ore_emerald_deep",
 			"clifftree:disk_snowy_grass"
 		],
 		"#clifftree:extra_gold_remove",
