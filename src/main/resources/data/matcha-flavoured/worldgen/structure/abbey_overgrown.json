@@ -26,22 +26,7 @@
 	],
 	"project_start_to_heightmap": "MOTION_BLOCKING_NO_LEAVES",
 	"size": 20,
-	"spawn_overrides": {
-		"creature": {
-			"bounding_box": "piece",
-			"spawns": [
-				{
-					"weight": 8,
-					"type": "minecraft:allay",
-					"count": {
-						"type": "minecraft:uniform",
-						"min_inclusive": 1,
-						"max_inclusive": 3
-					}
-				}
-			]
-		}
-	},
+	"spawn_overrides": {},
 	"start_height": {
 		"absolute": -10
 	},
