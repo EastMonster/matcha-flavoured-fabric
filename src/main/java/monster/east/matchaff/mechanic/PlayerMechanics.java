@@ -257,7 +257,7 @@ public final class PlayerMechanics {
 	}
 
 	private static void manageFreezingWater(ServerPlayer player) {
-		if (player.isCreative()) {
+		if (player.isCreative() || player.isSpectator()) {
 			return;
 		}
 		var level = player.level();
