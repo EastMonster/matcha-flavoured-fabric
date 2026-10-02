@@ -15,6 +15,32 @@ public final class MatchaVersionedMigrationCheck {
 
 		CompoundTag legacy = MatchaItemDataFixer.updateIfNeeded(playerData(0));
 		assert itemId(legacy).equals("matcha:steel");
+
+		for (String song : new String[] {"golden", "dry_hands", "labyrinthine"}) {
+			CompoundTag data = playerData(6);
+			CompoundTag components = new CompoundTag();
+			components.putString("minecraft:jukebox_playable", "main:" + song);
+			CompoundTag stack = data.getList("Inventory").orElseThrow().getCompound(0).orElseThrow();
+			stack.put("components", components);
+			CompoundTag custom = stack.copy();
+			components.put("minecraft:custom_data", custom);
+			CompoundTag migrated = MatchaItemDataFixer.updateIfNeeded(data);
+			CompoundTag fixedComponents = migrated.getList("Inventory").orElseThrow()
+					.getCompound(0).orElseThrow().getCompound("components").orElseThrow();
+			assert fixedComponents.getStringOr("minecraft:jukebox_playable", "").equals("matcha:" + song);
+			assert fixedComponents.getCompound("minecraft:custom_data").orElseThrow().equals(custom);
+			assert itemId(migrated).equals("minecraft:resin_brick");
+			assert migrated.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 7;
+			assert MatchaItemDataFixer.updateIfNeeded(migrated).equals(migrated);
+		}
+		CompoundTag unrelated = playerData(6);
+		CompoundTag components = new CompoundTag();
+		components.putString("minecraft:jukebox_playable", "main:other_song");
+		unrelated.getList("Inventory").orElseThrow().getCompound(0).orElseThrow().put("components", components);
+		CompoundTag fixed = MatchaItemDataFixer.updateIfNeeded(unrelated);
+		assert fixed.getList("Inventory").orElseThrow().getCompound(0).orElseThrow()
+				.getCompound("components").orElseThrow().getStringOr("minecraft:jukebox_playable", "")
+				.equals("main:other_song");
 	}
 
 	private static CompoundTag playerData(int version) {
