@@ -202,7 +202,7 @@
 		"type": "item",
 		"tab": "foods",
 		"source": "data/minecraft/loot_table/gameplay/fishing/fish/echo_fish.json",
-		"carrier": "minecraft:cod",
+		"carrier": "minecraft:salmon",
 		"components": {
 			"minecraft:item_name": {
 				"translate": "item.matcha.echo_fish"

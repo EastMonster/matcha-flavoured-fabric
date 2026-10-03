@@ -1,12 +1,3 @@
 {
-	"values": [
-		"minecraft:sulfur_cube",
-		"minecraft:armor_stand",
-		"#minecraft:boat",
-		"minecraft:chest_minecart",
-		"minecraft:minecart",
-		"minecraft:furnace_minecart",
-		"minecraft:hopper_minecart",
-		"minecraft:tnt_minecart"
-	]
+	"values": ["#matcha:non-living", "minecraft:sulfur_cube"]
 }

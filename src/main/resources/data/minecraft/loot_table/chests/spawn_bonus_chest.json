@@ -15,7 +15,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/apple",
+					"value": "matcha:food/minecraft/apple",
 					"modifier": [],
 					"weight": 5
 				}

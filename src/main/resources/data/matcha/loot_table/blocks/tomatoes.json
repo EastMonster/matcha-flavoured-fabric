@@ -10,7 +10,7 @@
 					"children": [
 						{
 							"type": "minecraft:loot_table",
-							"value": "matcha:food/tomato",
+							"value": "matcha:food/matcha/tomato",
 							"condition": {
 								"block": "matcha:tomatoes",
 								"type": "minecraft:match_block",
@@ -20,12 +20,12 @@
 							},
 							"modifier": [
 								{
-									"enchantment": "matcha:electrum_tool",
-									"formula": "minecraft:uniform_bonus_count",
-									"parameters": {
-										"bonusMultiplier": 1
+									"count": {
+										"type": "minecraft:uniform",
+										"min": 1,
+										"max": 3
 									},
-									"type": "minecraft:apply_bonus"
+									"type": "minecraft:set_count"
 								},
 								{
 									"enchantment": "minecraft:fortune",
@@ -36,12 +36,12 @@
 									"type": "minecraft:apply_bonus"
 								},
 								{
-									"count": {
-										"type": "minecraft:uniform",
-										"min": 1,
-										"max": 3
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:uniform_bonus_count",
+									"parameters": {
+										"bonusMultiplier": 1
 									},
-									"type": "minecraft:set_count"
+									"type": "minecraft:apply_bonus"
 								}
 							]
 						},

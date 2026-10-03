@@ -311,6 +311,13 @@
 					"slot": "mainhand"
 				},
 				{
+					"type": "minecraft:attack_speed",
+					"id": "attack_speed",
+					"amount": -2.4,
+					"operation": "add_value",
+					"slot": "mainhand"
+				},
+				{
 					"type": "minecraft:entity_interaction_range",
 					"id": "interaction_range",
 					"amount": -1,
@@ -358,7 +365,7 @@
 				{
 					"type": "minecraft:attack_damage",
 					"id": "attack_damage",
-					"amount": 1,
+					"amount": 4,
 					"operation": "add_value",
 					"slot": "mainhand"
 				},

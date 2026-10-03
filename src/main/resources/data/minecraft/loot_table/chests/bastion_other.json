@@ -93,12 +93,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/golden_carrot",
+					"value": "matcha:food/minecraft/golden_carrot",
 					"weight": 12
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/golden_apple",
+					"value": "matcha:food/minecraft/golden_apple",
 					"weight": 6,
 					"quality": 1
 				},
@@ -367,7 +367,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/gold",
+					"value": "matcha:equipment/gold/any",
 					"weight": 20
 				}
 			],

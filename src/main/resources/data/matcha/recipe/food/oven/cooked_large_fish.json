@@ -1,0 +1,31 @@
+{
+	"type": "minecraft:smelting",
+	"category": "food",
+	"cookingtime": 100,
+	"experience": 0.35,
+	"ingredient": "#matcha:fish_large",
+	"result": {
+		"id": "minecraft:cooked_salmon",
+		"components": {
+			"minecraft:consumable": {
+				"consume_seconds": 1.6,
+				"has_consume_particles": true,
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "minecraft:regeneration",
+								"amplifier": 2,
+								"duration": 60,
+								"show_particles": false,
+								"show_icon": false
+							}
+						]
+					}
+				]
+			},
+			"minecraft:item_model": "minecraft:cooked_salmon"
+		}
+	}
+}

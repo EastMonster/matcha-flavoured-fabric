@@ -13,6 +13,7 @@
 		}
 	},
 	"display": {
+		"frame": "goal",
 		"description": [
 			{
 				"text": " ",
@@ -32,9 +33,5 @@
 		},
 		"hidden": false
 	},
-	"requirements": [
-		[
-			"get_electrum"
-		]
-	]
+	"requirements": [["get_electrum"]]
 }

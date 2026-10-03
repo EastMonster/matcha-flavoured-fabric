@@ -76,31 +76,25 @@
 	"minecraft:enchanted_golden_apple": {
 		"minecraft:lore": [
 			{
-				"text": "❤❤❤❤❤❤❤❤ (2:00)",
+				"text": "\ue030\ue030\ue030\ue030\ue030\ue030\ue030\ue030 (2:00)",
 				"color": "aqua",
 				"italic": false
 			},
 			{
 				"translate": "effect.matcha.regen_2",
-				"with": [
-					"0:30"
-				],
+				"with": ["0:30"],
 				"color": "#e85e8f",
 				"italic": false
 			},
 			{
 				"translate": "effect.matcha.fire_resistance",
-				"with": [
-					"5:00"
-				],
+				"with": ["5:00"],
 				"color": "gold",
 				"italic": false
 			},
 			{
 				"translate": "effect.matcha.resistance",
-				"with": [
-					"5:00"
-				],
+				"with": ["5:00"],
 				"color": "blue",
 				"italic": false
 			}
@@ -120,15 +114,15 @@
 							"show_icon": false
 						},
 						{
-							"id": "minecraft:regeneration",
-							"amplifier": 1,
-							"duration": 600,
-							"show_particles": false
-						},
-						{
 							"id": "minecraft:absorption",
 							"amplifier": 3,
 							"duration": 2400,
+							"show_particles": false
+						},
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 1,
+							"duration": 600,
 							"show_particles": false
 						},
 						{
@@ -143,8 +137,71 @@
 							"duration": 6000,
 							"show_particles": false
 						}
-					],
-					"probability": 1
+					]
+				}
+			]
+		}
+	},
+	"matcha:tomato": {
+		"minecraft:consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 24,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		}
+	},
+	"minecraft:chorus_fruit": {
+		"minecraft:lore": [
+			{
+				"translate": "effect.matcha.warping",
+				"color": "#a945b0",
+				"italic": false
+			}
+		],
+		"minecraft:consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 12,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				},
+				{
+					"type": "minecraft:teleport_randomly"
+				}
+			]
+		}
+	},
+	"minecraft:melon_slice": {
+		"minecraft:consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 12,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
 				}
 			]
 		}

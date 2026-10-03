@@ -3019,7 +3019,7 @@
 	},
 	{
 		"id": "tomato",
-		"source": "data/matcha/loot_table/food/tomato.json",
+		"source": "data/matcha/loot_table/food/matcha/tomato.json",
 		"nutrition": 1,
 		"saturation": 0.6,
 		"effects": []

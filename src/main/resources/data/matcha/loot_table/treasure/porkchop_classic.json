@@ -1,0 +1,43 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:porkchop",
+					"modifier": [
+						{
+							"components": {
+								"minecraft:item_model": "matcha:porkchop_classic",
+								"minecraft:item_name": {
+									"translate": "item.kleispack.porkchop_classic"
+								},
+								"minecraft:consumable": {
+									"consume_seconds": 0,
+									"animation": "none",
+									"sound": {
+										"sound_id": "minecraft:intentionally_empty"
+									},
+									"has_consume_particles": false,
+									"on_consume_effects": [
+										{
+											"type": "minecraft:apply_effects",
+											"effects": [
+												{
+													"id": "minecraft:instant_health"
+												}
+											]
+										}
+									]
+								}
+							},
+							"type": "minecraft:set_components"
+						}
+					]
+				}
+			]
+		}
+	]
+}

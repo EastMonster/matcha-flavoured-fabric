@@ -26,8 +26,8 @@ import java.util.Objects;
 public class VanillaFoodDefaults {
 	private static final List<String> RECIPE_FILES = List.of(
 			"baked_potato", "bread",
-			"cooked_beef", "cooked_chicken", "cooked_cod", "cooked_mutton",
-			"cooked_pork", "cooked_rabbit", "cooked_salmon",
+			"cooked_beef", "cooked_chicken", "cooked_fish", "cooked_mutton",
+			"cooked_pork", "cooked_rabbit", "cooked_large_fish",
 			"dried_kelp", "golden_apple", "golden_carrot",
 			"popped_chorus_fruit"
 	);
@@ -40,12 +40,6 @@ public class VanillaFoodDefaults {
 			definitions.add(readRecipe(name));
 		}
 		definitions.addAll(readVanillaDefaults());
-		definitions.add(readNestedLootTable(
-				"/data/matcha/loot_table/food/tomato.json", "matcha:tomato"));
-		definitions.add(readNestedLootTable(
-				"/data/minecraft/loot_table/blocks/chorus_plant.json", "minecraft:chorus_fruit"));
-		definitions.add(readNestedLootTable(
-				"/data/minecraft/loot_table/blocks/melon.json", "minecraft:melon_slice"));
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
 			for (Definition definition : definitions) {
@@ -83,46 +77,6 @@ public class VanillaFoodDefaults {
 		return definitions;
 	}
 
-	private static Definition readNestedLootTable(String path, String itemId) {
-		JsonObject entry = findItemEntry(readJson(path), itemId);
-		if (entry == null) {
-			throw new IllegalStateException("No item entry for " + itemId + " in " + path);
-		}
-		return definitionFromLootEntry(entry, path);
-	}
-
-	private static Definition definitionFromLootEntry(JsonObject entry, String source) {
-		for (JsonElement element : entry.getAsJsonArray("modifier")) {
-			JsonObject function = element.getAsJsonObject();
-			if ("minecraft:set_components".equals(function.get("type").getAsString())) {
-				return new Definition(entry.get("name").getAsString(), function.getAsJsonObject("components"));
-			}
-		}
-		throw new IllegalStateException("No set_components function in loot table entry: " + source);
-	}
-
-	private static JsonObject findItemEntry(JsonElement element, String itemId) {
-		if (element.isJsonObject()) {
-			JsonObject object = element.getAsJsonObject();
-			if (object.has("name") && itemId.equals(object.get("name").getAsString())) {
-				return object;
-			}
-			for (Map.Entry<String, JsonElement> entry : object.entrySet()) {
-				JsonObject found = findItemEntry(entry.getValue(), itemId);
-				if (found != null) {
-					return found;
-				}
-			}
-		} else if (element.isJsonArray()) {
-			for (JsonElement child : element.getAsJsonArray()) {
-				JsonObject found = findItemEntry(child, itemId);
-				if (found != null) {
-					return found;
-				}
-			}
-		}
-		return null;
-	}
 
 	private static JsonObject readJson(String path) {
 		try (var stream = VanillaFoodDefaults.class.getResourceAsStream(path);
