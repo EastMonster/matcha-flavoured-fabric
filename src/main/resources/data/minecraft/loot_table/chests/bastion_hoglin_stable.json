@@ -80,7 +80,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/golden_apple",
+					"value": "matcha:food/minecraft/golden_apple",
 					"weight": 10,
 					"quality": 1
 				},
@@ -237,7 +237,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/cooked_porkchop",
+					"value": "matcha:food/minecraft/cooked_porkchop",
 					"functions": [
 						{
 							"count": {

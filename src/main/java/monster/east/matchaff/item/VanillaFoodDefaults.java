@@ -26,8 +26,8 @@ import java.util.Objects;
 public class VanillaFoodDefaults {
 	private static final List<String> RECIPE_FILES = List.of(
 			"baked_potato", "bread",
-			"cooked_beef", "cooked_chicken", "cooked_cod", "cooked_mutton",
-			"cooked_pork", "cooked_rabbit", "cooked_salmon",
+			"cooked_beef", "cooked_chicken", "cooked_fish", "cooked_mutton",
+			"cooked_pork", "cooked_rabbit", "cooked_large_fish",
 			"dried_kelp", "golden_apple", "golden_carrot",
 			"popped_chorus_fruit"
 	);
@@ -40,12 +40,6 @@ public class VanillaFoodDefaults {
 			definitions.add(readRecipe(name));
 		}
 		definitions.addAll(readDefaults());
-		definitions.add(readNestedLootTable(
-				"/data/matcha/loot_table/food/tomato.json", "matcha:tomato"));
-		definitions.add(readNestedLootTable(
-				"/data/minecraft/loot_table/blocks/chorus_plant.json", "minecraft:chorus_fruit"));
-		definitions.add(readNestedLootTable(
-				"/data/minecraft/loot_table/blocks/melon.json", "minecraft:melon_slice"));
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
 			for (Definition definition : definitions) {
@@ -82,72 +76,6 @@ public class VanillaFoodDefaults {
 		return definitions;
 	}
 
-	private static Definition readNestedLootTable(String path, String itemId) {
-		JsonObject entry = findItemEntry(readJson(path), itemId);
-		if (entry == null) entry = findLootTableEntry(readJson(path));
-		if (entry == null) {
-			throw new IllegalStateException("No item entry for " + itemId + " in " + path);
-		}
-		return definitionFromLootEntry(entry, path);
-	}
-
-	private static Definition definitionFromLootEntry(JsonObject entry, String source) {
-		if (entry.has("functions")) {
-			for (JsonElement element : entry.getAsJsonArray("functions")) {
-				JsonObject function = element.getAsJsonObject();
-				if ("minecraft:set_components".equals(function.get("function").getAsString())) {
-					return new Definition(entry.get("name").getAsString(), function.getAsJsonObject("components"));
-				}
-			}
-		}
-		if ("minecraft:loot_table".equals(entry.get("type").getAsString())) {
-			String[] id = entry.get("value").getAsString().split(":", 2);
-			JsonObject root = readJson("/data/" + id[0] + "/loot_table/" + id[1] + ".json");
-			JsonObject nested = entry.has("name") ? findItemEntry(root, entry.get("name").getAsString()) : findItemEntry(root, null);
-			if (nested != null) return definitionFromLootEntry(nested, source);
-		}
-		throw new IllegalStateException("No set_components function in loot table entry: " + source);
-	}
-
-	private static JsonObject findItemEntry(JsonElement element, String itemId) {
-		if (element.isJsonObject()) {
-			JsonObject object = element.getAsJsonObject();
-			if (object.has("name") && (itemId == null || itemId.equals(object.get("name").getAsString()))) {
-				return object;
-			}
-			for (Map.Entry<String, JsonElement> entry : object.entrySet()) {
-				JsonObject found = findItemEntry(entry.getValue(), itemId);
-				if (found != null) {
-					return found;
-				}
-			}
-		} else if (element.isJsonArray()) {
-			for (JsonElement child : element.getAsJsonArray()) {
-				JsonObject found = findItemEntry(child, itemId);
-				if (found != null) {
-					return found;
-				}
-			}
-		}
-		return null;
-	}
-
-	private static JsonObject findLootTableEntry(JsonElement element) {
-		if (element.isJsonObject()) {
-			JsonObject object = element.getAsJsonObject();
-			if ("minecraft:loot_table".equals(object.has("type") ? object.get("type").getAsString() : null)) return object;
-			for (Map.Entry<String, JsonElement> entry : object.entrySet()) {
-				JsonObject found = findLootTableEntry(entry.getValue());
-				if (found != null) return found;
-			}
-		} else if (element.isJsonArray()) {
-			for (JsonElement child : element.getAsJsonArray()) {
-				JsonObject found = findLootTableEntry(child);
-				if (found != null) return found;
-			}
-		}
-		return null;
-	}
 
 	private static JsonObject readJson(String path) {
 		try (var stream = VanillaFoodDefaults.class.getResourceAsStream(path);

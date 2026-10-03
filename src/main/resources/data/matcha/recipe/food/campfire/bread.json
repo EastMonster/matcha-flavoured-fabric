@@ -17,23 +17,6 @@
 			"minecraft:consumable": {
 				"on_consume_effects": [
 					{
-						"type": "minecraft:remove_effects",
-						"effects": [
-							"minecraft:poison",
-							"minecraft:mining_fatigue",
-							"minecraft:wither",
-							"minecraft:weakness",
-							"minecraft:bad_omen",
-							"minecraft:blindness",
-							"minecraft:darkness",
-							"minecraft:infested",
-							"minecraft:weaving",
-							"minecraft:nausea",
-							"minecraft:oozing",
-							"minecraft:slowness"
-						]
-					},
-					{
 						"type": "minecraft:apply_effects",
 						"effects": [
 							{
@@ -45,6 +28,10 @@
 							}
 						],
 						"probability": 1
+					},
+					{
+						"type": "minecraft:remove_effects",
+						"effects": "#matcha:harmful"
 					}
 				]
 			},

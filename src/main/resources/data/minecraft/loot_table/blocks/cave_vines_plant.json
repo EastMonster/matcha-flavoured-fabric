@@ -6,7 +6,7 @@
 			"functions": [
 				{
 					"function": "minecraft:apply_bonus",
-					"enchantment": "matcha:electrum_tool",
+					"enchantment": "minecraft:fortune",
 					"formula": "minecraft:uniform_bonus_count",
 					"parameters": {
 						"bonusMultiplier": 1
@@ -14,7 +14,7 @@
 				},
 				{
 					"function": "minecraft:apply_bonus",
-					"enchantment": "minecraft:fortune",
+					"enchantment": "matcha:electrum_tool",
 					"formula": "minecraft:uniform_bonus_count",
 					"parameters": {
 						"bonusMultiplier": 1
@@ -24,7 +24,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/glow_berries",
+					"value": "matcha:food/minecraft/glow_berries",
 					"functions": []
 				}
 			],

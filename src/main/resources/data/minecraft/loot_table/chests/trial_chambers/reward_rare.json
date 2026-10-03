@@ -52,12 +52,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/pumpkin_empanada",
+					"value": "matcha:food/matcha/pumpkin_empanada",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/bruschetta",
+					"value": "matcha:food/matcha/bruschetta",
 					"weight": 2
 				},
 				{

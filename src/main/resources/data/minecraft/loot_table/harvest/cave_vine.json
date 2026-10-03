@@ -6,7 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/glow_berries",
+					"value": "matcha:food/minecraft/glow_berries",
 					"functions": []
 				}
 			],

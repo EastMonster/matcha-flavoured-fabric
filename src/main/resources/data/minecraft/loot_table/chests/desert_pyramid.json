@@ -118,12 +118,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/golden_apple",
+					"value": "matcha:food/minecraft/golden_apple",
 					"weight": 20
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/enchanted_golden_apple",
+					"value": "matcha:food/minecraft/enchanted_golden_apple",
 					"weight": 2
 				},
 				{

@@ -22,12 +22,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/golden_apple",
+					"value": "matcha:food/minecraft/golden_apple",
 					"weight": 15
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/enchanted_golden_apple",
+					"value": "matcha:food/minecraft/enchanted_golden_apple",
 					"weight": 2
 				},
 				{
@@ -125,7 +125,7 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/bread",
+					"value": "matcha:food/minecraft/bread",
 					"weight": 20
 				},
 				{

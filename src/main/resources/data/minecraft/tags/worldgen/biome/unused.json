@@ -1,9 +1,18 @@
 {
-  "values": [
-    "minecraft:pale_garden",
-    "minecraft:sulfur_caves",
-    "minecraft:dripstone_caves",
-    "minecraft:lush_caves",
-    "minecraft:deep_dark"
-  ]
+	"values": [
+		"minecraft:mushroom_fields",
+		"minecraft:sulfur_caves",
+		"minecraft:deep_dark",
+		"minecraft:the_void",
+		"minecraft:the_end",
+		"minecraft:nether_wastes",
+		"minecraft:soul_sand_valley",
+		"minecraft:crimson_forest",
+		"minecraft:warped_forest",
+		"minecraft:basalt_deltas",
+		"minecraft:small_end_islands",
+		"minecraft:end_midlands",
+		"minecraft:end_highlands",
+		"minecraft:end_barrens"
+	]
 }

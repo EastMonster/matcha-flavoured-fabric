@@ -20,7 +20,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/sweet_berries",
+					"value": "matcha:food/minecraft/sweet_berries",
 					"functions": []
 				}
 			],
@@ -67,7 +67,7 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/sweet_berries",
+					"value": "matcha:food/minecraft/sweet_berries",
 					"functions": []
 				}
 			],

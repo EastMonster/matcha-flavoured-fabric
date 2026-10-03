@@ -1,13 +1,24 @@
 {
 	"type": "minecraft:block",
+	"random_sequence": "minecraft:blocks/chorus_plant",
 	"pools": [
 		{
-			"bonus_rolls": 0,
+			"rolls": 1,
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/chorus_fruit",
+					"value": "matcha:food/minecraft/chorus_fruit",
 					"functions": [
+						{
+							"function": "minecraft:explosion_decay"
+						},
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"max": 1,
+								"min": 0
+							}
+						},
 						{
 							"function": "minecraft:apply_bonus",
 							"enchantment": "minecraft:fortune",
@@ -23,24 +34,10 @@
 							"parameters": {
 								"bonusMultiplier": 1
 							}
-						},
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 1,
-								"min": 0
-							},
-							"function": "minecraft:set_count"
-						},
-						{
-							"function": "minecraft:explosion_decay"
 						}
 					]
 				}
-			],
-			"rolls": 1
+			]
 		}
-	],
-	"random_sequence": "minecraft:blocks/chorus_plant"
+	]
 }

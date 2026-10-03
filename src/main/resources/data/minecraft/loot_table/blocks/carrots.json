@@ -7,18 +7,16 @@
 	],
 	"pools": [
 		{
-			"bonus_rolls": 0,
+			"rolls": 1,
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/carrot",
-					"functions": []
+					"value": "matcha:food/minecraft/carrot"
 				}
-			],
-			"rolls": 1
+			]
 		},
 		{
-			"bonus_rolls": 0,
+			"rolls": 1,
 			"conditions": [
 				{
 					"block": "minecraft:carrots",
@@ -31,30 +29,29 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/carrot",
+					"value": "matcha:food/minecraft/carrot",
 					"functions": [
 						{
-							"enchantment": "minecraft:fortune",
-							"formula": "minecraft:binomial_with_bonus_count",
-							"function": "minecraft:apply_bonus",
-							"parameters": {
-								"extra": 3,
-								"probability": 0.5714286
+							"function": "minecraft:set_count",
+							"count": {
+								"type": "minecraft:uniform",
+								"min": 1,
+								"max": 4
 							}
 						},
 						{
 							"enchantment": "matcha:electrum_tool",
-							"formula": "minecraft:binomial_with_bonus_count",
-							"function": "minecraft:apply_bonus",
-							"parameters": {
-								"extra": 3,
-								"probability": 0.5714286
-							}
+							"formula": "minecraft:ore_drops",
+							"function": "minecraft:apply_bonus"
+						},
+						{
+							"enchantment": "minecraft:fortune",
+							"formula": "minecraft:ore_drops",
+							"function": "minecraft:apply_bonus"
 						}
 					]
 				}
-			],
-			"rolls": 1
+			]
 		}
 	],
 	"random_sequence": "minecraft:blocks/carrots"

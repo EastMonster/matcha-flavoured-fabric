@@ -1,14 +1,16 @@
 {
 	"type": "minecraft:block",
+	"random_sequence": "minecraft:blocks/melon",
 	"pools": [
 		{
-			"bonus_rolls": 0,
+			"rolls": 1,
 			"entries": [
 				{
 					"type": "minecraft:alternatives",
 					"children": [
 						{
 							"type": "minecraft:item",
+							"name": "minecraft:melon",
 							"conditions": [
 								{
 									"condition": "minecraft:match_tool",
@@ -25,21 +27,21 @@
 										}
 									}
 								}
-							],
-							"name": "minecraft:melon"
+							]
 						},
 						{
 							"type": "minecraft:loot_table",
-							"value": "matcha:food/melon_slice",
+							"value": "matcha:food/minecraft/melon_slice",
 							"functions": [
 								{
-									"add": false,
+									"function": "minecraft:explosion_decay"
+								},
+								{
+									"function": "minecraft:set_count",
 									"count": {
-										"type": "minecraft:uniform",
 										"max": 7,
 										"min": 3
-									},
-									"function": "minecraft:set_count"
+									}
 								},
 								{
 									"enchantment": "minecraft:fortune",
@@ -62,17 +64,12 @@
 									"limit": {
 										"max": 9
 									}
-								},
-								{
-									"function": "minecraft:explosion_decay"
 								}
 							]
 						}
 					]
 				}
-			],
-			"rolls": 1
+			]
 		}
-	],
-	"random_sequence": "minecraft:blocks/melon"
+	]
 }

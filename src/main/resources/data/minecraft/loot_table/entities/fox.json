@@ -84,7 +84,7 @@
 						{
 							"function": "minecraft:set_components",
 							"components": {
-								"minecraft:item_model": "fox_pelt",
+								"minecraft:item_model": "matcha:fox_pelt",
 								"minecraft:item_name": {
 									"translate": "item.matcha.fox_pelt"
 								}
@@ -115,7 +115,7 @@
 						{
 							"function": "minecraft:set_components",
 							"components": {
-								"minecraft:item_model": "fox_pelt_snowy",
+								"minecraft:item_model": "matcha:fox_pelt_snowy",
 								"minecraft:item_name": {
 									"translate": "item.matcha.fox_pelt"
 								}

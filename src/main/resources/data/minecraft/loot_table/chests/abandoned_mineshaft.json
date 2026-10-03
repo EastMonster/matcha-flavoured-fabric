@@ -5,12 +5,12 @@
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/golden_apple",
+					"value": "matcha:food/minecraft/golden_apple",
 					"weight": 20
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/enchanted_golden_apple",
+					"value": "matcha:food/minecraft/enchanted_golden_apple",
 					"weight": 1,
 					"quality": 1
 				},
@@ -139,12 +139,12 @@
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/bread",
+					"value": "matcha:food/minecraft/bread",
 					"weight": 10
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:food/glow_berries",
+					"value": "matcha:food/minecraft/glow_berries",
 					"weight": 10
 				},
 				{
