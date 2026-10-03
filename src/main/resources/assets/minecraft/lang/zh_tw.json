@@ -25,7 +25,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "放入盔甲、武器或工具",
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "任意合金錠",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "鍛造升級模板",
-	"container.upgrade.missing_template_tooltip": "放入鍛造升級模板或鍛造原材料",
+	"container.upgrade.missing_template_tooltip": "放入鍛造升級模板或保持淨空",
 	"item.minecraft.nether_star": "神聖恩惠",
 	"item.minecraft.turtle_helmet": "海龜殼",
 	"item.minecraft.honeycomb": "蠟",
@@ -180,5 +180,9 @@
 	"filled_map.village_savanna": "廢棄莽原村莊地圖",
 	"filled_map.village_snowy": "廢棄雪原村莊地圖",
 	"filled_map.village_taiga": "廢棄針葉林村莊地圖",
-	"filled_map.shipwreck": "沉船地圖"
+	"filled_map.shipwreck": "沉船地圖",
+	"trim_material.minecraft.iron": "鋼材質",
+	"trim_material.minecraft.netherite": "鐵材質",
+	"trim_material.minecraft.redstone": "硃砂材質",
+	"trim_material.minecraft.emerald": "銅綠材質"
 }
