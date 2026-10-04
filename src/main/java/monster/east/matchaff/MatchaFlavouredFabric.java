@@ -12,8 +12,10 @@ import monster.east.matchaff.network.SleepFastForwardPayload;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.fabricmc.fabric.api.registry.CompostableRegistry;
 import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.fabricmc.fabric.api.registry.FuelValueEvents;
+import net.fabricmc.fabric.api.registry.VillagerInteractionRegistries;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.minecraft.core.Holder;
@@ -92,6 +94,14 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		Item tomatoSeed = TomatoCropBlock.register();
 		List<Item> foods = registerFoods();
+		Item tomato = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
+				Identifier.fromNamespaceAndPath("matcha", "tomato")));
+		VillagerInteractionRegistries.registerFood(tomato, 1);
+		VillagerInteractionRegistries.registerFood(Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
+				Identifier.fromNamespaceAndPath("matcha", "naan"))), 4);
+		VillagerInteractionRegistries.registerCompostable(tomatoSeed);
+		CompostableRegistry.INSTANCE.add(tomato, 0.65F);
+		CompostableRegistry.INSTANCE.add(tomatoSeed, 0.3F);
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
 		List<SimpleItemRegistrar.BatchItem> batchItems = SimpleItemRegistrar.registerAll();
 		FabricPotionBrewingBuilder.BUILD.register(builder -> builder.registerPotionRecipe(

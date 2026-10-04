@@ -1,6 +1,4 @@
 {
 	"replace": false,
-	"values": [
-		"matcha:naan"
-	]
+	"values": ["matcha:naan", "matcha:tomato", "matcha:tomato_seeds"]
 }
