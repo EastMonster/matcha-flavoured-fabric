@@ -15,6 +15,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 
@@ -153,6 +154,9 @@ final class WardingEnchantment {
 	}
 
 	private static boolean wearingCopperArmor(LivingEntity entity) {
+		if (entity instanceof Player) {
+			return false;
+		}
 		return entity.getItemBySlot(EquipmentSlot.HEAD).is(Items.COPPER_HELMET)
 				|| entity.getItemBySlot(EquipmentSlot.CHEST).is(Items.COPPER_CHESTPLATE)
 				|| entity.getItemBySlot(EquipmentSlot.LEGS).is(Items.COPPER_LEGGINGS)
