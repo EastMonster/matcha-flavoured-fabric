@@ -7,6 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -19,6 +20,9 @@ final class AdamantArmourEnchantment {
 
 	static void tick(ServerPlayer player, Registry<Enchantment> enchantments) {
 		int pieces = EnchantmentUtil.countArmor(player, enchantments, ADAMANT_ARMOUR);
+		if (pieces == 4 && EnchantmentUtil.elapsed(player, 600)) {
+			player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 620, 0, false, false));
+		}
 		if (pieces == 0 || !EnchantmentUtil.elapsed(player, 60)) {
 			return;
 		}
