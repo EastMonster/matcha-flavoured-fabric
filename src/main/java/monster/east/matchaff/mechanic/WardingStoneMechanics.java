@@ -78,15 +78,14 @@ final class WardingStoneMechanics {
 			double stoneY = stone.getY();
 			double stoneZ = stone.getZ();
 			boolean setup = stone.entityTags().contains("WardingStoneSetup");
+			boolean effectsTick = level.getServer().getTickCount() % 10 == 0;
 
 			// Heal friendly villagers nearby.
-			var friends = level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(16.0),
-					f -> f.is(VILLAGER_FRIENDS)
-							&& f.distanceToSqr(stone) <= 16.0 * 16.0);
-			boolean someoneRegenerating = friends.stream()
-					.anyMatch(f -> f.hasEffect(MobEffects.REGENERATION));
-			if (!someoneRegenerating) {
-				for (LivingEntity friend : friends) {
+			if (effectsTick) {
+				for (LivingEntity friend : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(16.0),
+						f -> f.is(VILLAGER_FRIENDS)
+								&& !f.hasEffect(MobEffects.REGENERATION)
+								&& f.distanceToSqr(stone) <= 16.0 * 16.0)) {
 					friend.addEffect(new MobEffectInstance(
 							MobEffects.REGENERATION, 60, 0, false, false));
 				}
@@ -145,16 +144,16 @@ final class WardingStoneMechanics {
 			// Aura: slow and damage the dedicated 1.10 target set (including pillagers).
 			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
 					1, 0.5, 0.5, 0.5, 0);
-			for (LivingEntity target : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(26.0),
-					u -> u.is(WARDING_STONE_TARGETS)
-							&& u.distanceToSqr(stone) <= 26.0 * 26.0)) {
-				target.addEffect(new MobEffectInstance(
-						MobEffects.SLOWNESS, 40, 2, false, false));
-				level.sendParticles(ParticleTypes.SCULK_SOUL, target.getX(), target.getY() + 0.1, target.getZ(),
-						5, 0.25, 0.0, 0.25, 0.01);
-			}
+			if (effectsTick) {
+				for (LivingEntity target : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(24.0),
+						u -> u.is(WARDING_STONE_TARGETS)
+								&& u.distanceToSqr(stone) <= 24.0 * 24.0)) {
+					target.addEffect(new MobEffectInstance(
+							MobEffects.SLOWNESS, 20, 2, false, false));
+					level.sendParticles(ParticleTypes.SCULK_SOUL, target.getX(), target.getY() + 0.1, target.getZ(),
+							5, 0.25, 0.0, 0.25, 0.01);
+				}
 
-			if (level.getServer().getTickCount() % 10 == 0) {
 				LivingEntity witherTarget = nearestTarget(level, stone, 24.0,
 						target -> target.getType() == EntityTypes.WITHER, false);
 				if (witherTarget != null) {
