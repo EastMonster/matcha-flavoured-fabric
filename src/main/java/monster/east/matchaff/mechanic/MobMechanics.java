@@ -160,22 +160,19 @@ public final class MobMechanics {
 		if (type == EntityTypes.SILVERFISH) {
 			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 4 : 2);
 		}
+		if (baby && mob.is(EntityTypeTags.ZOMBIES)) {
+			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 7 : 4);
+		}
 		if (difficulty == Difficulty.EASY) {
-			if (baby && mob.is(EntityTypeTags.ZOMBIES)) {
-				setBase(mob, Attributes.MAX_HEALTH, 4);
-			}
 			return;
 		}
-		if (type == EntityTypes.ZOMBIE) {
-			if (baby) {
-				setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 5 : 4);
-			} else {
-				setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 15 : 10);
-				setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.35 : 0.34);
-				setBase(mob, Attributes.STEP_HEIGHT, 1);
-				if (difficulty == Difficulty.HARD) {
-					setBase(mob, Attributes.ATTACK_DAMAGE, 5);
-				}
+		if (type == EntityTypes.ZOMBIE && !baby) {
+			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 15 : 10);
+			setBase(mob, Attributes.MOVEMENT_SPEED, difficulty == Difficulty.HARD ? 0.38 : 0.34);
+			setBase(mob, Attributes.STEP_HEIGHT, 1);
+			if (difficulty == Difficulty.HARD) {
+				setBase(mob, Attributes.ATTACK_DAMAGE, 5);
+				setBase(mob, Attributes.JUMP_STRENGTH, 0.6);
 			}
 		}
 		if (type == EntityTypes.HUSK && !baby) {
@@ -190,8 +187,6 @@ public final class MobMechanics {
 			setBase(mob, Attributes.MOVEMENT_EFFICIENCY, 1);
 			setBase(mob, Attributes.WATER_MOVEMENT_EFFICIENCY, 1);
 			setBase(mob, Attributes.STEP_HEIGHT, 1);
-		} else if (type == EntityTypes.HUSK) {
-			setBase(mob, Attributes.MAX_HEALTH, difficulty == Difficulty.HARD ? 5 : 4);
 		}
 		if (type == EntityTypes.SPIDER) {
 			setBase(mob, Attributes.JUMP_STRENGTH, 0.85);
