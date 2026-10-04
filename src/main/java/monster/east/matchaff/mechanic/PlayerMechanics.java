@@ -288,7 +288,7 @@ public final class PlayerMechanics {
 		int active = 0;
 		int sleeping = 0;
 		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-			if (player.level().dimension() != Level.OVERWORLD) {
+			if (player.level().dimension() != Level.OVERWORLD || player.isSpectator()) {
 				continue;
 			}
 			active++;
