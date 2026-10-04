@@ -22,6 +22,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.clock.WorldClocks;
@@ -209,7 +210,7 @@ public final class PlayerMechanics {
 
 	/** Called while a Crystal Heart is actively being consumed. */
 	public static void useCrystalHeart(ServerPlayer player, ItemStack stack) {
-		if (player.isCreative()) {
+		if (player.isCreative() || player.getMainHandItem().is(Items.TOTEM_OF_UNDYING)) {
 			return;
 		}
 		ItemStack held = player.getItemInHand(player.getUsedItemHand());
