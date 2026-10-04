@@ -73,6 +73,8 @@ public class ItemComponents {
 					properties.delayedComponent(DataComponents.TOOL, provider -> decode(Tool.CODEC, provider, json));
 			case "minecraft:cooking_fuel" -> properties.cookingFuel(ResourceKey.create(
 					Registries.CONTEXT_INT_PROVIDER, Identifier.parse(json.getAsString())));
+			case "minecraft:compostable" -> properties.component(DataComponents.COMPOSTABLE,
+					decode(DataComponents.COMPOSTABLE.codec(), json));
 			case "minecraft:equippable" ->
 					properties.delayedComponent(DataComponents.EQUIPPABLE, provider -> decode(Equippable.CODEC, provider, json));
 			case "minecraft:repairable" ->

@@ -429,7 +429,7 @@ public final class GameplayMechanics {
 		if (previous == null || current <= previous) {
 			return;
 		}
-		player.addEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 20, 0, false, false));
+		player.addEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 1, 0, false, false));
 		player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3600, 1, false, false));
 	}
 

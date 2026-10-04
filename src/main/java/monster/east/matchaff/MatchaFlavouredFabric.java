@@ -12,6 +12,7 @@ import monster.east.matchaff.network.SleepFastForwardPayload;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.fabricmc.fabric.api.registry.VillagerInteractionRegistries;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -83,6 +84,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		Item tomatoSeed = TomatoCropBlock.register();
 		List<Item> foods = registerFoods();
+		VillagerInteractionRegistries.registerCompostable(tomatoSeed);
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
 		List<SimpleItemRegistrar.BatchItem> batchItems = SimpleItemRegistrar.registerAll();
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();

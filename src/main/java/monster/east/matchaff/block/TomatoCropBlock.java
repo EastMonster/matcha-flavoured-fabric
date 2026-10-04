@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.BeetrootBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.Objects;
 
@@ -35,7 +36,8 @@ public final class TomatoCropBlock extends BeetrootBlock {
 		ResourceKey<Item> itemKey = ResourceKey.create(
 				Registries.ITEM, Identifier.fromNamespaceAndPath("matcha", "tomato_seeds"));
 		seed = Registry.register(BuiltInRegistries.ITEM, itemKey,
-				new BlockItem(crop, new Item.Properties().useItemDescriptionPrefix().setId(itemKey)));
+				new BlockItem(crop, new Item.Properties().useItemDescriptionPrefix()
+						.compostable(ContextIntProviders.COMPOSTABLE_LOW).setId(itemKey)));
 		return seed;
 	}
 }
