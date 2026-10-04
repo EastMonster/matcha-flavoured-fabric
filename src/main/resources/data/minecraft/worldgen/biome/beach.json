@@ -18,10 +18,15 @@
 							"type": "minecraft:turtle",
 							"count": {
 								"type": "minecraft:uniform",
-								"min_inclusive": 2,
-								"max_inclusive": 5
+								"max_inclusive": 5,
+								"min_inclusive": 2
 							},
 							"weight": 5
+						},
+						{
+							"weight": 20,
+							"type": "minecraft:chicken",
+							"count": 4
 						}
 					],
 					"misc": [],

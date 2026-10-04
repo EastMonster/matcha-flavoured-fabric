@@ -1,184 +1,192 @@
 {
-	"type": "minecraft:block",
 	"pools": [
 		{
-			"bonus_rolls": 0,
-			"condition": {"type":"minecraft:all_of","terms":[
-				{
-					"block": "minecraft:tall_grass",
-					"type": "minecraft:match_block",
-					"properties": {
-						"half": "lower"
-					}
-				},
-				{
-					"type": "minecraft:location_check",
-					"offsetY": 1,
-					"predicate": {
-						"block": {
-							"blocks": "minecraft:tall_grass",
-							"state": {
-								"half": "upper"
-							}
-						}
-					}
-				}
-			]},
 			"entries": [
 				{
-					"type": "minecraft:alternatives",
 					"children": [
 						{
+							"name": "minecraft:short_grass",
 							"type": "minecraft:item",
-							"condition": {
-									"type": "minecraft:match_tool",
-									"predicate": {
-										"items": "minecraft:shears"
-									}
-								},
 							"modifier": [
 								{
-									"add": false,
 									"count": 2,
 									"type": "minecraft:set_count"
 								}
 							],
-							"name": "minecraft:short_grass"
+							"condition": {
+								"predicate": {
+									"items": "minecraft:shears"
+								},
+								"type": "minecraft:match_tool"
+							}
 						},
 						{
+							"name": "minecraft:wheat_seeds",
 							"type": "minecraft:item",
-							"condition": {"type":"minecraft:all_of","terms":[
-								{
-									"type": "minecraft:survives_explosion"
-								},
-								{
-									"chance": 0.125,
-									"type": "minecraft:random_chance"
-								},
-								{
-									"type": "minecraft:match_tool",
-									"predicate": {
-										"items": "#minecraft:hoes"
+							"condition": {
+								"terms": [
+									{
+										"type": "minecraft:survives_explosion"
+									},
+									{
+										"chance": 0.125,
+										"type": "minecraft:random_chance"
+									},
+									{
+										"predicate": {
+											"items": "#minecraft:hoes"
+										},
+										"type": "minecraft:match_tool"
 									}
-								}
-							]},
-							"name": "minecraft:wheat_seeds"
+								],
+								"type": "minecraft:all_of"
+							}
 						},
 						{
-							"type": "minecraft:alternatives",
 							"children": [
 								{
-									"type": "minecraft:item",
 									"name": "minecraft:short_grass",
+									"type": "minecraft:item",
 									"modifier": [
 										{
-											"type": "minecraft:set_count",
-											"count": 2
+											"count": 2,
+											"type": "minecraft:set_count"
 										}
 									],
 									"condition": {
-											"type": "minecraft:match_tool",
-											"predicate": {
-												"items": "#minecraft:hoes"
-											}
-										}
+										"predicate": {
+											"items": "#minecraft:hoes"
+										},
+										"type": "minecraft:match_tool"
+									}
 								}
-							]
+							],
+							"type": "minecraft:alternatives"
 						}
-					]
+					],
+					"type": "minecraft:alternatives"
 				}
 			],
-			"rolls": 1
+			"rolls": 1,
+			"condition": {
+				"terms": [
+					{
+						"type": "minecraft:match_block",
+						"blocks": "minecraft:tall_grass",
+						"state": {
+							"half": "lower"
+						}
+					},
+					{
+						"offsetY": 1,
+						"predicate": {
+							"block": {
+								"blocks": "minecraft:tall_grass",
+								"state": {
+									"half": "upper"
+								}
+							}
+						},
+						"type": "minecraft:location_check"
+					}
+				],
+				"type": "minecraft:all_of"
+			}
 		},
 		{
-			"bonus_rolls": 0,
-			"condition": {"type":"minecraft:all_of","terms":[
-				{
-					"block": "minecraft:tall_grass",
-					"type": "minecraft:match_block",
-					"properties": {
-						"half": "upper"
-					}
-				},
-				{
-					"type": "minecraft:location_check",
-					"offsetY": -1,
-					"predicate": {
-						"block": {
-							"blocks": "minecraft:tall_grass",
-							"state": {
-								"half": "lower"
-							}
-						}
-					}
-				}
-			]},
 			"entries": [
 				{
-					"type": "minecraft:alternatives",
 					"children": [
 						{
+							"name": "minecraft:short_grass",
 							"type": "minecraft:item",
-							"condition": {
-									"type": "minecraft:match_tool",
-									"predicate": {
-										"items": "minecraft:shears"
-									}
-								},
 							"modifier": [
 								{
-									"add": false,
 									"count": 2,
 									"type": "minecraft:set_count"
 								}
 							],
-							"name": "minecraft:short_grass"
+							"condition": {
+								"predicate": {
+									"items": "minecraft:shears"
+								},
+								"type": "minecraft:match_tool"
+							}
 						},
 						{
+							"name": "minecraft:wheat_seeds",
 							"type": "minecraft:item",
-							"condition": {"type":"minecraft:all_of","terms":[
-								{
-									"type": "minecraft:survives_explosion"
-								},
-								{
-									"chance": 0.125,
-									"type": "minecraft:random_chance"
-								},
-								{
-									"type": "minecraft:match_tool",
-									"predicate": {
-										"items": "#minecraft:hoes"
+							"condition": {
+								"terms": [
+									{
+										"type": "minecraft:survives_explosion"
+									},
+									{
+										"chance": 0.125,
+										"type": "minecraft:random_chance"
+									},
+									{
+										"predicate": {
+											"items": "#minecraft:hoes"
+										},
+										"type": "minecraft:match_tool"
 									}
-								}
-							]},
-							"name": "minecraft:wheat_seeds"
+								],
+								"type": "minecraft:all_of"
+							}
 						},
 						{
-							"type": "minecraft:alternatives",
 							"children": [
 								{
-									"type": "minecraft:item",
 									"name": "minecraft:short_grass",
+									"type": "minecraft:item",
 									"modifier": [
 										{
-											"type": "minecraft:set_count",
-											"count": 2
+											"count": 2,
+											"type": "minecraft:set_count"
 										}
 									],
 									"condition": {
-											"type": "minecraft:match_tool",
-											"predicate": {
-												"items": "#minecraft:hoes"
-											}
-										}
+										"predicate": {
+											"items": "#minecraft:hoes"
+										},
+										"type": "minecraft:match_tool"
+									}
 								}
-							]
+							],
+							"type": "minecraft:alternatives"
 						}
-					]
+					],
+					"type": "minecraft:alternatives"
 				}
 			],
-			"rolls": 1
+			"rolls": 1,
+			"condition": {
+				"terms": [
+					{
+						"type": "minecraft:match_block",
+						"blocks": "minecraft:tall_grass",
+						"state": {
+							"half": "upper"
+						}
+					},
+					{
+						"offsetY": -1,
+						"predicate": {
+							"block": {
+								"blocks": "minecraft:tall_grass",
+								"state": {
+									"half": "lower"
+								}
+							}
+						},
+						"type": "minecraft:location_check"
+					}
+				],
+				"type": "minecraft:all_of"
+			}
 		}
 	],
-	"random_sequence": "minecraft:blocks/tall_grass"
+	"random_sequence": "minecraft:blocks/tall_grass",
+	"type": "minecraft:block"
 }

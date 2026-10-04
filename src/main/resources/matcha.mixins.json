@@ -29,6 +29,7 @@
 		"FishingRodHookedTriggerMixin",
 		"FoodHealMixin",
 		"ConsumeItemTriggerMixin",
+		"MooshroomMilkingMixin",
 		"HoneycombInteractionMixin",
 		"PowderSnowBootsMixin",
 		"ShearsCompatibilityMixin",

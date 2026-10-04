@@ -1,209 +1,63 @@
 {
-	"type": "minecraft:chest",
 	"pools": [
 		{
-			"bonus_rolls": 0,
 			"entries": [
-				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 5,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:iron_ingot",
-					"weight": 90
-				},
-				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 5,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:gold_ingot",
-					"weight": 10
-				},
-				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 2,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:emerald",
-					"weight": 40
-				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "matcha:chests/common/treasure_ores",
-					"modifier": [],
-					"weight": 5
+					"value": "matcha:chests/common/treasure_ores"
 				}
 			],
-			"rolls": {
-				"type": "minecraft:uniform",
-				"max": 6,
-				"min": 3
-			}
+			"rolls": 1
 		},
 		{
-			"bonus_rolls": 0,
-			"entries": [
-				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 10,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:iron_nugget",
-					"weight": 50
-				},
-				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 10,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:gold_nugget",
-					"weight": 10
-				},
-				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 10,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
-					"name": "minecraft:lapis_lazuli",
-					"weight": 20
-				}
-			],
-			"rolls": {
-				"type": "minecraft:uniform",
-				"max": 5,
-				"min": 2
-			}
-		},
-		{
-			"bonus_rolls": 0,
 			"entries": [
 				{
 					"type": "minecraft:empty",
 					"weight": 5
 				},
 				{
+					"name": "minecraft:coast_armor_trim_smithing_template",
 					"type": "minecraft:item",
 					"modifier": [
 						{
-							"add": false,
 							"count": 2,
 							"type": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:coast_armor_trim_smithing_template"
+					]
 				}
 			],
 			"rolls": 1
 		},
 		{
-			"bonus_rolls": 0,
 			"entries": [
 				{
 					"type": "minecraft:empty",
 					"weight": 100
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": 1,
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:copper_nautilus_armor",
+					"type": "minecraft:item",
 					"weight": 20
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": 1,
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:iron_nautilus_armor",
+					"type": "minecraft:item",
 					"weight": 10
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": 1,
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:golden_nautilus_armor",
+					"type": "minecraft:item",
 					"weight": 5
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": 1,
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:diamond_nautilus_armor",
+					"type": "minecraft:item",
 					"weight": 2
 				}
 			],
 			"rolls": 1
 		},
 		{
-			"rolls": 1,
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
@@ -213,8 +67,10 @@
 					"type": "minecraft:loot_table",
 					"value": "matcha:treasure/divine_comedy"
 				}
-			]
+			],
+			"rolls": 1
 		}
 	],
-	"random_sequence": "minecraft:chests/shipwreck_treasure"
+	"random_sequence": "minecraft:chests/shipwreck_treasure",
+	"type": "minecraft:chest"
 }

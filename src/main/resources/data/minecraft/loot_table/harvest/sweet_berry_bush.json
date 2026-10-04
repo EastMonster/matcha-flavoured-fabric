@@ -1,36 +1,31 @@
 {
-	"type": "minecraft:block_interact",
 	"pools": [
 		{
-			"bonus_rolls": 0,
-			"entries": [
-				{
-					"type": "minecraft:loot_table",
-					"value": "matcha:food/minecraft/sweet_berries"
-				}
-			],
-			"rolls": 1,
-			"condition": {
-				"block": "minecraft:sweet_berry_bush",
-				"type": "minecraft:match_block",
-				"properties": {
-					"age": "3"
-				}
-			}
-		},
-		{
-			"bonus_rolls": 0,
 			"entries": [
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:food/minecraft/sweet_berries",
 					"modifier": [
 						{
-							"add": false,
+							"count": 1,
+							"type": "minecraft:set_count"
+						}
+					]
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/minecraft/sweet_berries",
+					"modifier": [
+						{
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 2,
-								"min": 1
+								"min": 1,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
@@ -40,5 +35,6 @@
 			"rolls": 1
 		}
 	],
-	"random_sequence": "minecraft:harvest/sweet_berry_bush"
+	"random_sequence": "minecraft:harvest/sweet_berry_bush",
+	"type": "minecraft:block_interact"
 }

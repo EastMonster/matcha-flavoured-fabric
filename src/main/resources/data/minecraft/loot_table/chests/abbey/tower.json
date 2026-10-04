@@ -65,21 +65,21 @@
 								],
 								"minecraft:lore": [
 									{
-										"text": "🗡 6",
+										"translate": "desc.matcha.attack_damage",
+										"with": ["6"],
 										"color": "dark_green",
 										"italic": false
 									},
 									{
-										"text": "🕒 1.6",
+										"translate": "desc.matcha.cooldown",
+										"with": ["1.6"],
 										"color": "dark_green",
 										"italic": false
 									}
 								],
 								"minecraft:max_damage": 500,
 								"minecraft:tooltip_display": {
-									"hidden_components": [
-										"minecraft:attribute_modifiers"
-									]
+									"hidden_components": ["minecraft:attribute_modifiers"]
 								},
 								"minecraft:enchantments": {
 									"matcha:anemos": 1
@@ -147,12 +147,13 @@
 					"type": "minecraft:item",
 					"name": "minecraft:rabbit_hide",
 					"weight": 10,
-					
+
 					"modifier": [
 						{
 							"type": "minecraft:set_count",
 							"count": {
-								"type": "minecraft:uniform", "min": 4,
+								"type": "minecraft:uniform",
+								"min": 4,
 								"max": 8
 							}
 						}
@@ -163,7 +164,8 @@
 		},
 		{
 			"rolls": {
-				"type": "minecraft:uniform", "min": 0,
+				"type": "minecraft:uniform",
+				"min": 0,
 				"max": 1
 			},
 			"entries": [
@@ -198,7 +200,8 @@
 						{
 							"type": "minecraft:set_count",
 							"count": {
-								"type": "minecraft:uniform", "min": 16,
+								"type": "minecraft:uniform",
+								"min": 16,
 								"max": 32
 							}
 						}

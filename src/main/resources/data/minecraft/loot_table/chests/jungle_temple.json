@@ -1,147 +1,121 @@
 {
-  "type": "minecraft:chest",
-  "pools": [
-    {
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "value": "matcha:chests/uncommon/treasure_ores",
-          "weight": 6,
-          "modifier": []
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 5,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:iron_ingot",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 7,
-                "min": 2
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:gold_ingot",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bamboo",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:emerald",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 6,
-                "min": 4
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bone",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 5,
-                "min": 1
-              },
-              "type": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:leather",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:copper_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:iron_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:golden_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:diamond_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "type": "minecraft:enchant_with_levels",
-              "levels": 30,
-              "options": "#minecraft:on_random_loot"
-            }
-          ],
-          "name": "minecraft:book"
-        }
-      ],
-      "rolls": {
-        "type": "minecraft:uniform",
-        "max": 8,
-        "min": 6
-      }
-    },
-    {
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:wild_armor_trim_smithing_template"
-        }
-      ],
-      "rolls": 1
-    }
-  ],
-  "random_sequence": "minecraft:chests/jungle_temple"
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:chests/uncommon/treasure_ores",
+					"weight": 6
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"entries": [
+				{
+					"name": "minecraft:bamboo",
+					"type": "minecraft:item",
+					"weight": 15,
+					"modifier": [
+						{
+							"count": {
+								"max": 3,
+								"min": 1,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
+				},
+				{
+					"name": "minecraft:emerald",
+					"type": "minecraft:item",
+					"weight": 5,
+					"modifier": [
+						{
+							"count": {
+								"max": 3,
+								"min": 1,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
+				},
+				{
+					"name": "minecraft:bone",
+					"type": "minecraft:item",
+					"weight": 20,
+					"modifier": [
+						{
+							"count": {
+								"max": 6,
+								"min": 4,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
+				},
+				{
+					"name": "minecraft:leather",
+					"type": "minecraft:item",
+					"weight": 3,
+					"modifier": [
+						{
+							"count": {
+								"max": 5,
+								"min": 1,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
+				},
+				{
+					"name": "minecraft:copper_horse_armor",
+					"type": "minecraft:item"
+				},
+				{
+					"name": "minecraft:iron_horse_armor",
+					"type": "minecraft:item"
+				},
+				{
+					"name": "minecraft:golden_horse_armor",
+					"type": "minecraft:item"
+				},
+				{
+					"name": "minecraft:diamond_horse_armor",
+					"type": "minecraft:item"
+				},
+				{
+					"name": "minecraft:book",
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"levels": 30,
+							"options": "#minecraft:on_random_loot",
+							"type": "minecraft:enchant_with_levels"
+						}
+					]
+				}
+			],
+			"rolls": {
+				"max": 4,
+				"min": 3,
+				"type": "minecraft:uniform"
+			}
+		},
+		{
+			"entries": [
+				{
+					"name": "minecraft:wild_armor_trim_smithing_template",
+					"type": "minecraft:item"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:chests/jungle_temple",
+	"type": "minecraft:chest"
 }

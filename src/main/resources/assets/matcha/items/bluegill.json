@@ -1,6 +1,19 @@
 {
 	"model": {
-		"type": "minecraft:model",
-		"model": "matcha:item/bluegill"
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/fish/bluegill"
+				},
+				"when": ["fixed"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/bluegill"
+		},
+		"property": "minecraft:display_context"
 	}
 }

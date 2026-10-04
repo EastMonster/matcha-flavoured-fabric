@@ -1,171 +1,142 @@
 {
-	"type": "minecraft:chest",
 	"pools": [
 		{
-			"bonus_rolls": 0,
 			"entries": [
 				{
+					"quality": 1,
 					"type": "minecraft:loot_table",
 					"value": "matcha:food/minecraft/enchanted_golden_apple",
-					"weight": 1,
-					"quality": 1
+					"weight": 1
 				},
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:music_disc_otherside"
+					"name": "minecraft:music_disc_otherside",
+					"type": "minecraft:item"
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": 1,
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:compass",
+					"type": "minecraft:item",
 					"weight": 2
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 2,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:sculk_catalyst",
-					"weight": 2
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 2,
 					"modifier": [
 						{
-							"add": false,
-							"count": 1,
+							"count": {
+								"max": 2,
+								"min": 1,
+								"type": "minecraft:uniform"
+							},
 							"type": "minecraft:set_count"
 						}
-					],
+					]
+				},
+				{
 					"name": "minecraft:lead",
+					"type": "minecraft:item",
 					"weight": 2
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": 1,
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:diamond_horse_armor",
+					"type": "minecraft:item",
 					"weight": 2
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 5,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:leather",
-					"weight": 2
+					"type": "minecraft:item",
+					"weight": 2,
+					"modifier": [
+						{
+							"count": {
+								"max": 5,
+								"min": 1,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
 				},
 				{
-					"type": "minecraft:item",
 					"name": "minecraft:music_disc_13",
+					"type": "minecraft:item",
 					"weight": 2
 				},
 				{
-					"type": "minecraft:item",
 					"name": "minecraft:music_disc_cat",
+					"type": "minecraft:item",
 					"weight": 2
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"type": "minecraft:enchant_randomly",
-							"options": "minecraft:swift_sneak"
-						}
-					],
 					"name": "minecraft:book",
-					"weight": 8
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 8,
 					"modifier": [
 						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 10,
-								"min": 4
-							},
-							"type": "minecraft:set_count"
+							"options": "minecraft:swift_sneak",
+							"type": "minecraft:enchant_randomly"
 						}
-					],
+					]
+				},
+				{
 					"name": "minecraft:sculk",
-					"weight": 3
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 3,
 					"modifier": [
 						{
-							"add": false,
 							"count": {
-								"type": "minecraft:uniform",
-								"max": 3,
-								"min": 1
+								"max": 10,
+								"min": 4,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
+					]
+				},
+				{
 					"name": "minecraft:sculk_sensor",
-					"weight": 3
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 3,
 					"modifier": [
 						{
-							"add": false,
 							"count": {
-								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 1
+								"max": 3,
+								"min": 1,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
+					]
+				},
+				{
 					"name": "minecraft:candle",
-					"weight": 3
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 3,
 					"modifier": [
 						{
-							"add": false,
 							"count": {
-								"type": "minecraft:uniform",
-								"max": 15,
-								"min": 1
+								"max": 4,
+								"min": 1,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
+					]
+				},
+				{
 					"name": "minecraft:amethyst_shard",
-					"weight": 3
+					"type": "minecraft:item",
+					"weight": 3,
+					"modifier": [
+						{
+							"count": {
+								"max": 15,
+								"min": 1,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
 				},
 				{
 					"type": "minecraft:loot_table",
@@ -173,149 +144,165 @@
 					"weight": 3
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 3,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:echo_shard",
-					"weight": 4
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 4,
 					"modifier": [
 						{
-							"add": false,
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 3,
-								"min": 1
+								"min": 1,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
+					]
+				},
+				{
 					"name": "minecraft:disc_fragment_5",
-					"weight": 4
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 4,
 					"modifier": [
 						{
-							"type": "minecraft:enchant_randomly",
-							"options": "#minecraft:on_random_loot"
-						}
-					],
-					"name": "minecraft:book",
-					"weight": 5
-				},
-				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
 							"count": {
-								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
+				},
+				{
+					"name": "minecraft:book",
+					"type": "minecraft:item",
+					"weight": 5,
+					"modifier": [
+						{
+							"options": "#minecraft:on_random_loot",
+							"type": "minecraft:enchant_randomly"
+						}
+					]
+				},
+				{
+					"name": "minecraft:book",
+					"type": "minecraft:item",
+					"weight": 5,
+					"modifier": [
+						{
+							"count": {
 								"max": 10,
-								"min": 3
+								"min": 3,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:book",
-					"weight": 5
+					]
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"add": false,
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 15,
-								"min": 1
-							},
-							"type": "minecraft:set_count"
-						}
-					],
 					"name": "minecraft:bone",
-					"weight": 5
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 5,
 					"modifier": [
 						{
-							"add": false,
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 15,
-								"min": 1
+								"min": 1,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
+					]
+				},
+				{
 					"name": "minecraft:soul_torch",
-					"weight": 5
-				},
-				{
 					"type": "minecraft:item",
+					"weight": 5,
 					"modifier": [
 						{
-							"add": false,
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 15,
-								"min": 6
+								"min": 1,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
+					]
+				},
+				{
 					"name": "minecraft:coal",
-					"weight": 7
+					"type": "minecraft:item",
+					"weight": 7,
+					"modifier": [
+						{
+							"count": {
+								"max": 15,
+								"min": 6,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
+				},
+				{
+					"quality": -1,
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/diamond/equipment",
+					"weight": 20,
+					"modifier": [
+						{
+							"options": "#minecraft:on_random_loot",
+							"type": "minecraft:enchant_randomly"
+						}
+					]
 				}
 			],
 			"rolls": {
-				"type": "minecraft:uniform",
 				"max": 10,
-				"min": 5
+				"min": 5,
+				"type": "minecraft:uniform"
 			}
 		},
 		{
 			"bonus_rolls": 1,
 			"entries": [
 				{
-					"type": "minecraft:item",
 					"name": "minecraft:ward_armor_trim_smithing_template",
-					"quality": -1
+					"quality": -1,
+					"type": "minecraft:item"
 				},
 				{
-					"type": "minecraft:item",
 					"name": "minecraft:silence_armor_trim_smithing_template",
-					"quality": -1
+					"quality": -1,
+					"type": "minecraft:item"
 				},
 				{
+					"quality": 1,
 					"type": "minecraft:loot_table",
 					"value": "matcha:treasure/topaz",
-					"weight": 5,
-					"quality": 1
+					"weight": 5
 				},
 				{
+					"quality": 1,
 					"type": "minecraft:loot_table",
 					"value": "matcha:treasure/crystal_heart",
-					"weight": 2,
-					"quality": 1
+					"weight": 2
 				},
 				{
+					"quality": 2,
 					"type": "minecraft:loot_table",
-					"value": "matcha:kleis_items/divine_fragment_poly",
+					"value": "matcha:treasure/divine_fragment",
 					"weight": 2,
-					"quality": 2
+					"modifier": [
+						{
+							"count": {
+								"max": 1,
+								"min": 3,
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
+						}
+					]
 				}
 			],
 			"rolls": 1
@@ -323,20 +310,13 @@
 		{
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:prismarine_shard",
-					"modifier": {
-						"type": "minecraft:set_count",
-						"count": {
-							"type": "minecraft:uniform",
-							"min": 1,
-							"max": 2
-						}
-					}
+					"type": "minecraft:loot_table",
+					"value": "matcha:chests/uncommon/treasure_ores"
 				}
 			],
 			"rolls": 1
 		}
 	],
-	"random_sequence": "minecraft:chests/ancient_city"
+	"random_sequence": "minecraft:chests/ancient_city",
+	"type": "minecraft:chest"
 }

@@ -1,89 +1,82 @@
 {
-	"type": "minecraft:block",
 	"pools": [
 		{
-			"bonus_rolls": 0,
 			"entries": [
 				{
+					"name": "minecraft:glow_lichen",
 					"type": "minecraft:item",
-					"condition": {
-							"type": "minecraft:match_tool",
-							"predicate": {
-								"items": "#matcha:vegetation_mineable"
-							}
-						},
 					"modifier": [
 						{
 							"add": true,
-							"condition": {
-									"block": "minecraft:glow_lichen",
-									"type": "minecraft:match_block",
-									"properties": {
-										"down": "true"
-									}
-								},
 							"count": 1,
-							"type": "minecraft:set_count"
+							"type": "minecraft:set_count",
+							"condition": {
+								"type": "minecraft:match_block",
+								"blocks": "minecraft:glow_lichen",
+								"state": {
+									"down": "true"
+								}
+							}
 						},
 						{
 							"add": true,
-							"condition": {
-									"block": "minecraft:glow_lichen",
-									"type": "minecraft:match_block",
-									"properties": {
-										"up": "true"
-									}
-								},
 							"count": 1,
-							"type": "minecraft:set_count"
+							"type": "minecraft:set_count",
+							"condition": {
+								"type": "minecraft:match_block",
+								"blocks": "minecraft:glow_lichen",
+								"state": {
+									"up": "true"
+								}
+							}
 						},
 						{
 							"add": true,
-							"condition": {
-									"block": "minecraft:glow_lichen",
-									"type": "minecraft:match_block",
-									"properties": {
-										"north": "true"
-									}
-								},
 							"count": 1,
-							"type": "minecraft:set_count"
+							"type": "minecraft:set_count",
+							"condition": {
+								"type": "minecraft:match_block",
+								"blocks": "minecraft:glow_lichen",
+								"state": {
+									"north": "true"
+								}
+							}
 						},
 						{
 							"add": true,
-							"condition": {
-									"block": "minecraft:glow_lichen",
-									"type": "minecraft:match_block",
-									"properties": {
-										"south": "true"
-									}
-								},
 							"count": 1,
-							"type": "minecraft:set_count"
+							"type": "minecraft:set_count",
+							"condition": {
+								"type": "minecraft:match_block",
+								"blocks": "minecraft:glow_lichen",
+								"state": {
+									"south": "true"
+								}
+							}
 						},
 						{
 							"add": true,
-							"condition": {
-									"block": "minecraft:glow_lichen",
-									"type": "minecraft:match_block",
-									"properties": {
-										"west": "true"
-									}
-								},
 							"count": 1,
-							"type": "minecraft:set_count"
+							"type": "minecraft:set_count",
+							"condition": {
+								"type": "minecraft:match_block",
+								"blocks": "minecraft:glow_lichen",
+								"state": {
+									"west": "true"
+								}
+							}
 						},
 						{
 							"add": true,
-							"condition": {
-									"block": "minecraft:glow_lichen",
-									"type": "minecraft:match_block",
-									"properties": {
-										"east": "true"
-									}
-								},
 							"count": 1,
-							"type": "minecraft:set_count"
+							"type": "minecraft:set_count",
+							"condition": {
+								"type": "minecraft:match_block",
+								"blocks": "minecraft:glow_lichen",
+								"state": {
+									"east": "true"
+								}
+							}
 						},
 						{
 							"add": true,
@@ -94,11 +87,17 @@
 							"type": "minecraft:explosion_decay"
 						}
 					],
-					"name": "minecraft:glow_lichen"
+					"condition": {
+						"predicate": {
+							"items": "#matcha:vegetation_mineable"
+						},
+						"type": "minecraft:match_tool"
+					}
 				}
 			],
 			"rolls": 1
 		}
 	],
-	"random_sequence": "minecraft:blocks/glow_lichen"
+	"random_sequence": "minecraft:blocks/glow_lichen",
+	"type": "minecraft:block"
 }

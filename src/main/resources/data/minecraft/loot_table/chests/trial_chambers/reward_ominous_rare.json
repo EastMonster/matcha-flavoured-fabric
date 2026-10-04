@@ -1,43 +1,42 @@
 {
-	"type": "minecraft:chest",
 	"pools": [
 		{
 			"entries": [
 				{
-					"type": "minecraft:item",
 					"name": "minecraft:emerald_block",
+					"type": "minecraft:item",
 					"weight": 5
 				},
 				{
-					"type": "minecraft:item",
 					"name": "minecraft:iron_block",
+					"type": "minecraft:item",
 					"weight": 4,
 					"modifier": [
 						{
-							"type": "minecraft:set_count",
 							"count": {
-								"type": "minecraft:uniform",
+								"max": 9,
 								"min": 6,
-								"max": 9
-							}
+								"type": "minecraft:uniform"
+							},
+							"type": "minecraft:set_count"
 						}
 					]
 				},
 				{
+					"name": "minecraft:crossbow",
 					"type": "minecraft:item",
+					"weight": 4,
 					"modifier": [
 						{
-							"type": "minecraft:enchant_with_levels",
 							"levels": {
-								"type": "minecraft:uniform",
 								"max": 20,
-								"min": 5
+								"min": 5,
+								"type": "minecraft:uniform"
 							},
-							"options": "#minecraft:on_random_loot"
+							"options": "#minecraft:on_random_loot",
+							"type": "minecraft:enchant_with_levels"
 						}
-					],
-					"name": "minecraft:crossbow",
-					"weight": 4
+					]
 				},
 				{
 					"type": "minecraft:loot_table",
@@ -45,57 +44,45 @@
 					"weight": 3
 				},
 				{
+					"name": "minecraft:book",
 					"type": "minecraft:item",
+					"weight": 5,
 					"modifier": [
 						{
-							"type": "minecraft:enchant_randomly",
-							"options": "#minecraft:in_enchanting_table"
+							"options": "#minecraft:in_enchanting_table",
+							"type": "minecraft:enchant_randomly"
 						}
-					],
-					"name": "minecraft:book",
-					"weight": 2
+					]
 				},
 				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"type": "minecraft:enchant_randomly",
-							"options": ["minecraft:breach", "minecraft:density"]
-						}
-					],
-					"name": "minecraft:book",
-					"weight": 2
-				},
-				{
-					"type": "minecraft:item",
-					"modifier": [
-						{
-							"enchantments": {
-								"minecraft:wind_burst": 1
-							},
-							"type": "minecraft:set_enchantments"
-						}
-					],
-					"name": "minecraft:book",
-					"weight": 2
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:diamond_block"
+					"name": "minecraft:diamond_block",
+					"type": "minecraft:item"
 				},
 				{
 					"type": "minecraft:loot_table",
-					"value": "minecraft:chests/equipment/diamond",
-					"weight": 6
+					"value": "matcha:equipment/diamond/equipment",
+					"weight": 6,
+					"modifier": [
+						{
+							"options": "#minecraft:on_random_loot",
+							"type": "minecraft:enchant_randomly"
+						}
+					]
 				},
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:treasure/divine_fragment",
-					"weight": 1
+					"weight": 8
+				},
+				{
+					"name": "minecraft:music_disc_creator",
+					"type": "minecraft:item",
+					"weight": 2
 				}
 			],
 			"rolls": 1
 		}
 	],
-	"random_sequence": "minecraft:chests/trial_chambers/reward_ominous_rare"
+	"random_sequence": "minecraft:chests/trial_chambers/reward_ominous_rare",
+	"type": "minecraft:chest"
 }

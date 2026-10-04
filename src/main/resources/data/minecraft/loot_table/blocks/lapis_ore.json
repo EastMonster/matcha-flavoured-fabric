@@ -1,99 +1,95 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "bonus_rolls": 0,
-      "entries": [
-        {
-          "type": "minecraft:alternatives",
-          "children": [
-            {
-              "type": "minecraft:item",
-              "condition": {
-                "type": "minecraft:match_tool",
-                "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "matcha:adamant_tool"
-                      }
-                    ]
-                  }
-                }
-              },
-              "modifier": [
-                {
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "min": 2,
-                    "max": 5
-                  },
-                  "type": "minecraft:set_count"
-                },
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                },
-                {
-                  "enchantment": "matcha:electrum_tool",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                }
-              ],
-              "name": "minecraft:glass"
-            },
-            {
-              "type": "minecraft:item",
-              "condition": {
-                "type": "minecraft:match_tool",
-                "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              },
-              "name": "minecraft:lapis_ore"
-            },
-            {
-              "type": "minecraft:item",
-              "modifier": [
-                {
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "min": 2,
-                    "max": 5
-                  },
-                  "type": "minecraft:set_count"
-                },
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                },
-                {
-                  "enchantment": "matcha:electrum_tool",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                },
-                {
-                  "type": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:quartz"
-            }
-          ]
-        }
-      ],
-      "rolls": 1
-    }
-  ],
-  "random_sequence": "minecraft:blocks/lapis_ore"
+	"pools": [
+		{
+			"entries": [
+				{
+					"children": [
+						{
+							"name": "minecraft:lapis_ore",
+							"type": "minecraft:item",
+							"condition": {
+								"predicate": {
+									"predicates": {
+										"minecraft:enchantments": [
+											{
+												"enchantments": "minecraft:silk_touch",
+												"levels": {
+													"min": 1
+												}
+											}
+										]
+									}
+								},
+								"type": "minecraft:match_tool"
+							}
+						},
+						{
+							"name": "minecraft:glass",
+							"type": "minecraft:item",
+							"modifier": [
+								{
+									"count": {
+										"max": 5,
+										"min": 2,
+										"type": "minecraft:uniform"
+									},
+									"type": "minecraft:set_count"
+								},
+								{
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								},
+								{
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								}
+							],
+							"condition": {
+								"predicate": {
+									"predicates": {
+										"minecraft:enchantments": [
+											{
+												"enchantments": "matcha:adamant_tool"
+											}
+										]
+									}
+								},
+								"type": "minecraft:match_tool"
+							}
+						},
+						{
+							"name": "minecraft:quartz",
+							"type": "minecraft:item",
+							"modifier": [
+								{
+									"count": {
+										"max": 5,
+										"min": 2,
+										"type": "minecraft:uniform"
+									},
+									"type": "minecraft:set_count"
+								},
+								{
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								},
+								{
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								}
+							]
+						}
+					],
+					"type": "minecraft:alternatives"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:blocks/lapis_ore",
+	"type": "minecraft:block"
 }

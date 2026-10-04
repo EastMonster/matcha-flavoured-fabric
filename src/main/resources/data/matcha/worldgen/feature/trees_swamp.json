@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:random_selector",
+	"default": "matcha:swamp_oak",
+	"features": [
+		{
+			"chance": 0.2,
+			"feature": "matcha:swamp_bush"
+		},
+		{
+			"chance": 0.4,
+			"feature": "matcha:swamp_oak"
+		}
+	]
+}

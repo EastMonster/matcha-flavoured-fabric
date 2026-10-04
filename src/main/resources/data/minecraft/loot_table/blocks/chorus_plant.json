@@ -8,9 +8,6 @@
 					"type": "minecraft:loot_table",
 					"modifier": [
 						{
-							"type": "minecraft:explosion_decay"
-						},
-						{
 							"add": false,
 							"count": {
 								"type": "minecraft:uniform",
@@ -34,6 +31,9 @@
 							"parameters": {
 								"bonusMultiplier": 1
 							}
+						},
+						{
+							"type": "minecraft:explosion_decay"
 						}
 					],
 					"value": "matcha:food/minecraft/chorus_fruit"

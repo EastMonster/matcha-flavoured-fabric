@@ -1,138 +1,138 @@
 {
-	"type": "minecraft:block",
 	"pools": [
 		{
-			"bonus_rolls": 0,
-			"condition": {"type":"minecraft:all_of","terms":[
-				{
-					"block": "minecraft:large_fern",
-					"type": "minecraft:match_block",
-					"properties": {
-						"half": "lower"
-					}
-				},
-				{
-					"type": "minecraft:location_check",
-					"offsetY": 1,
-					"predicate": {
-						"block": {
-							"blocks": "minecraft:large_fern",
-							"state": {
-								"half": "upper"
-							}
-						}
-					}
-				}
-			]},
 			"entries": [
 				{
-					"type": "minecraft:alternatives",
 					"children": [
 						{
+							"name": "minecraft:fern",
 							"type": "minecraft:item",
-							"condition": {
-									"type": "minecraft:match_tool",
-									"predicate": {
-										"items": "minecraft:shears"
-									}
-								},
 							"modifier": [
 								{
-									"add": false,
 									"count": 2,
 									"type": "minecraft:set_count"
 								}
 							],
-							"name": "minecraft:fern"
+							"condition": {
+								"predicate": {
+									"items": "minecraft:shears"
+								},
+								"type": "minecraft:match_tool"
+							}
 						},
 						{
+							"name": "minecraft:fern",
 							"type": "minecraft:item",
-							"condition": {
-									"type": "minecraft:match_tool",
-									"predicate": {
-										"items": "#minecraft:hoes"
-									}
-								},
 							"modifier": [
 								{
-									"add": false,
 									"count": 2,
 									"type": "minecraft:set_count"
 								}
 							],
-							"name": "minecraft:fern"
+							"condition": {
+								"predicate": {
+									"items": "#minecraft:hoes"
+								},
+								"type": "minecraft:match_tool"
+							}
 						}
-					]
+					],
+					"type": "minecraft:alternatives"
 				}
 			],
-			"rolls": 1
+			"rolls": 1,
+			"condition": {
+				"terms": [
+					{
+						"type": "minecraft:match_block",
+						"blocks": "minecraft:large_fern",
+						"state": {
+							"half": "lower"
+						}
+					},
+					{
+						"offsetY": 1,
+						"predicate": {
+							"block": {
+								"blocks": "minecraft:large_fern",
+								"state": {
+									"half": "upper"
+								}
+							}
+						},
+						"type": "minecraft:location_check"
+					}
+				],
+				"type": "minecraft:all_of"
+			}
 		},
 		{
-			"bonus_rolls": 0,
-			"condition": {"type":"minecraft:all_of","terms":[
-				{
-					"block": "minecraft:large_fern",
-					"type": "minecraft:match_block",
-					"properties": {
-						"half": "upper"
-					}
-				},
-				{
-					"type": "minecraft:location_check",
-					"offsetY": -1,
-					"predicate": {
-						"block": {
-							"blocks": "minecraft:large_fern",
-							"state": {
-								"half": "lower"
-							}
-						}
-					}
-				}
-			]},
 			"entries": [
 				{
-					"type": "minecraft:alternatives",
 					"children": [
 						{
+							"name": "minecraft:fern",
 							"type": "minecraft:item",
-							"condition": {
-									"type": "minecraft:match_tool",
-									"predicate": {
-										"items": "minecraft:shears"
-									}
-								},
 							"modifier": [
 								{
-									"add": false,
 									"count": 2,
 									"type": "minecraft:set_count"
 								}
 							],
-							"name": "minecraft:fern"
+							"condition": {
+								"predicate": {
+									"items": "minecraft:shears"
+								},
+								"type": "minecraft:match_tool"
+							}
 						},
 						{
+							"name": "minecraft:fern",
 							"type": "minecraft:item",
-							"condition": {
-									"type": "minecraft:match_tool",
-									"predicate": {
-										"items": "#minecraft:hoes"
-									}
-								},
 							"modifier": [
 								{
-									"add": false,
 									"count": 2,
 									"type": "minecraft:set_count"
 								}
 							],
-							"name": "minecraft:fern"
+							"condition": {
+								"predicate": {
+									"items": "#minecraft:hoes"
+								},
+								"type": "minecraft:match_tool"
+							}
 						}
-					]
+					],
+					"type": "minecraft:alternatives"
 				}
 			],
-			"rolls": 1
+			"rolls": 1,
+			"condition": {
+				"terms": [
+					{
+						"type": "minecraft:match_block",
+						"blocks": "minecraft:large_fern",
+						"state": {
+							"half": "upper"
+						}
+					},
+					{
+						"offsetY": -1,
+						"predicate": {
+							"block": {
+								"blocks": "minecraft:large_fern",
+								"state": {
+									"half": "lower"
+								}
+							}
+						},
+						"type": "minecraft:location_check"
+					}
+				],
+				"type": "minecraft:all_of"
+			}
 		}
 	],
-	"random_sequence": "minecraft:blocks/large_fern"
+	"random_sequence": "minecraft:blocks/large_fern",
+	"type": "minecraft:block"
 }

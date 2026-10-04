@@ -15,8 +15,8 @@
 			"modifier": "multiply"
 		},
 		"minecraft:gameplay/natural_mob_spawns": {
-			"modifier": "overlay",
 			"argument": {
+				"spawn_costs": {},
 				"spawns_by_category": {
 					"ambient": [
 						{
@@ -25,39 +25,22 @@
 							"weight": 10
 						}
 					],
-					"axolotls": [],
 					"creature": [
-						{
-							"type": "minecraft:sheep",
-							"count": 4,
-							"weight": 12
-						},
 						{
 							"type": "minecraft:pig",
 							"count": 4,
 							"weight": 10
 						},
 						{
-							"type": "minecraft:chicken",
-							"count": 4,
-							"weight": 10
-						},
-						{
-							"type": "minecraft:cow",
-							"count": 4,
-							"weight": 8
-						},
-						{
 							"type": "minecraft:frog",
 							"count": {
 								"type": "minecraft:uniform",
-								"min_inclusive": 2,
-								"max_inclusive": 5
+								"max_inclusive": 5,
+								"min_inclusive": 2
 							},
-							"weight": 10
+							"weight": 20
 						}
 					],
-					"misc": [],
 					"monster": [
 						{
 							"type": "minecraft:spider",
@@ -73,8 +56,8 @@
 							"type": "minecraft:husk",
 							"count": {
 								"type": "minecraft:uniform",
-								"min_inclusive": 1,
-								"max_inclusive": 2
+								"max_inclusive": 2,
+								"min_inclusive": 1
 							},
 							"weight": 75
 						},
@@ -102,8 +85,8 @@
 							"type": "minecraft:enderman",
 							"count": {
 								"type": "minecraft:uniform",
-								"min_inclusive": 1,
-								"max_inclusive": 4
+								"max_inclusive": 4,
+								"min_inclusive": 1
 							},
 							"weight": 10
 						},
@@ -128,17 +111,15 @@
 							"type": "minecraft:glow_squid",
 							"count": {
 								"type": "minecraft:uniform",
-								"min_inclusive": 4,
-								"max_inclusive": 6
+								"max_inclusive": 6,
+								"min_inclusive": 4
 							},
 							"weight": 10
 						}
-					],
-					"water_ambient": [],
-					"water_creature": []
-				},
-				"spawn_costs": {}
-			}
+					]
+				}
+			},
+			"modifier": "overlay"
 		}
 	},
 	"carvers": [
@@ -148,9 +129,9 @@
 	],
 	"downfall": 0.9,
 	"effects": {
+		"grass_color": "#5d6d3b",
 		"dry_foliage_color": "#7b5334",
 		"foliage_color": "#6a7039",
-		"grass_color_modifier": "swamp",
 		"water_color": "#617b64"
 	},
 	"features": [
@@ -199,7 +180,7 @@
 		["minecraft:spring_water", "minecraft:spring_lava"],
 		[
 			"minecraft:glow_lichen",
-			"minecraft:trees_swamp",
+			"matcha:trees_swamp",
 			"minecraft:flower_swamp",
 			"minecraft:patch_grass_normal",
 			"minecraft:patch_dead_bush",

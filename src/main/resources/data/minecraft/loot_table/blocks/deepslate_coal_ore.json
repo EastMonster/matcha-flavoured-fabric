@@ -1,62 +1,59 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "entries": [
-        {
-          "type": "minecraft:alternatives",
-          "children": [
-            {
-              "type": "minecraft:item",
-              "condition": {
-                "type": "minecraft:match_tool",
-                "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              },
-              "name": "minecraft:deepslate_coal_ore"
-            },
-            {
-              "type": "minecraft:item",
-              "modifier": [
-                {
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "min": 2,
-                    "max": 4
-                  },
-                  "type": "minecraft:set_count"
-                },
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                },
-                {
-                  "enchantment": "matcha:electrum_tool",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                },
-                {
-                  "type": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:coal"
-            }
-          ]
-        }
-      ],
-      "rolls": 1
-    }
-  ],
-  "random_sequence": "minecraft:blocks/deepslate_coal_ore"
+	"pools": [
+		{
+			"entries": [
+				{
+					"children": [
+						{
+							"name": "minecraft:deepslate_coal_ore",
+							"type": "minecraft:item",
+							"condition": {
+								"predicate": {
+									"predicates": {
+										"minecraft:enchantments": [
+											{
+												"enchantments": "minecraft:silk_touch",
+												"levels": {
+													"min": 1
+												}
+											}
+										]
+									}
+								},
+								"type": "minecraft:match_tool"
+							}
+						},
+						{
+							"name": "minecraft:coal",
+							"type": "minecraft:item",
+							"modifier": [
+								{
+									"count": {
+										"max": 4,
+										"min": 2,
+										"type": "minecraft:uniform"
+									},
+									"type": "minecraft:set_count"
+								},
+								{
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								},
+								{
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								}
+							]
+						}
+					],
+					"type": "minecraft:alternatives"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:blocks/deepslate_coal_ore",
+	"type": "minecraft:block"
 }

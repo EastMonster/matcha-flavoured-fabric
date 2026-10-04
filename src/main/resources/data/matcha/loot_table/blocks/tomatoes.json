@@ -12,9 +12,9 @@
 							"type": "minecraft:loot_table",
 							"value": "matcha:food/matcha/tomato",
 							"condition": {
-								"block": "matcha:tomatoes",
 								"type": "minecraft:match_block",
-								"properties": {
+								"blocks": "matcha:tomatoes",
+								"state": {
 									"age": "3"
 								}
 							},

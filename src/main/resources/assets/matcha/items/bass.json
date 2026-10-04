@@ -1,6 +1,19 @@
 {
 	"model": {
-		"type": "minecraft:model",
-		"model": "matcha:item/bass"
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/fish/bass"
+				},
+				"when": ["fixed"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/bass"
+		},
+		"property": "minecraft:display_context"
 	}
 }

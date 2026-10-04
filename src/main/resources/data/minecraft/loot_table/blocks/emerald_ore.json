@@ -1,83 +1,76 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "bonus_rolls": 0,
-      "entries": [
-        {
-          "type": "minecraft:alternatives",
-          "children": [
-            {
-              "type": "minecraft:item",
-              "condition": {
-                "type": "minecraft:match_tool",
-                "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "matcha:adamant_tool"
-                      }
-                    ]
-                  }
-                }
-              },
-              "modifier": [
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                },
-                {
-                  "enchantment": "matcha:electrum_tool",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                }
-              ],
-              "name": "minecraft:prismarine_crystals"
-            },
-            {
-              "type": "minecraft:item",
-              "condition": {
-                "type": "minecraft:match_tool",
-                "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
-                  }
-                }
-              },
-              "name": "minecraft:emerald_ore"
-            },
-            {
-              "type": "minecraft:item",
-              "modifier": [
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                },
-                {
-                  "enchantment": "matcha:electrum_tool",
-                  "formula": "minecraft:ore_drops",
-                  "type": "minecraft:apply_bonus"
-                },
-                {
-                  "type": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:prismarine_shard"
-            }
-          ]
-        }
-      ],
-      "rolls": 1
-    }
-  ],
-  "random_sequence": "minecraft:blocks/emerald_ore"
+	"pools": [
+		{
+			"entries": [
+				{
+					"children": [
+						{
+							"name": "minecraft:emerald_ore",
+							"type": "minecraft:item",
+							"condition": {
+								"predicate": {
+									"predicates": {
+										"minecraft:enchantments": [
+											{
+												"enchantments": "minecraft:silk_touch"
+											}
+										]
+									}
+								},
+								"type": "minecraft:match_tool"
+							}
+						},
+						{
+							"name": "minecraft:prismarine_crystals",
+							"type": "minecraft:item",
+							"modifier": [
+								{
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								},
+								{
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								}
+							],
+							"condition": {
+								"predicate": {
+									"predicates": {
+										"minecraft:enchantments": [
+											{
+												"enchantments": "matcha:adamant_tool"
+											}
+										]
+									}
+								},
+								"type": "minecraft:match_tool"
+							}
+						},
+						{
+							"name": "minecraft:prismarine_shard",
+							"type": "minecraft:item",
+							"modifier": [
+								{
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								},
+								{
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:ore_drops",
+									"type": "minecraft:apply_bonus"
+								}
+							]
+						}
+					],
+					"type": "minecraft:alternatives"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:blocks/emerald_ore",
+	"type": "minecraft:block"
 }

@@ -14,15 +14,12 @@
 			}
 		}
 	},
-	"requirements": [
-		[
-			"cooked_the_food"
-		]
-	],
+	"requirements": [["cooked_the_food"]],
 	"rewards": {
 		"recipes": [
 			"matcha:food/crafting/pickled_mushrooms",
-			"matcha:food/crafting/stroganoff"
+			"matcha:food/crafting/stroganoff",
+			"matcha:food/crafting/mushroom_soup"
 		]
 	}
 }

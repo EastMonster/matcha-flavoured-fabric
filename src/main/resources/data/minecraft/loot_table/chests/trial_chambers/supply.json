@@ -1,104 +1,101 @@
 {
-	"type": "minecraft:chest",
 	"pools": [
 		{
 			"entries": [
 				{
+					"name": "minecraft:arrow",
 					"type": "minecraft:item",
+					"weight": 2,
 					"modifier": [
 						{
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 14,
-								"min": 4
+								"min": 4,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:arrow",
-					"weight": 2
+					]
 				},
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:food/minecraft/baked_potato",
-					"name": "minecraft:baked_potato",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:food/minecraft/glow_berries",
-					"name": "minecraft:glow_berries",
 					"weight": 2
 				},
 				{
+					"name": "minecraft:spruce_planks",
 					"type": "minecraft:item",
 					"modifier": [
 						{
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 6,
-								"min": 3
+								"min": 3,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:spruce_planks"
+					]
 				},
 				{
+					"name": "minecraft:moss_block",
 					"type": "minecraft:item",
 					"modifier": [
 						{
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 5,
-								"min": 2
+								"min": 2,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:moss_block"
+					]
 				},
 				{
+					"name": "minecraft:bone_meal",
 					"type": "minecraft:item",
 					"modifier": [
 						{
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 5,
-								"min": 2
+								"min": 2,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:bone_meal"
+					]
 				},
 				{
+					"name": "minecraft:tuff",
 					"type": "minecraft:item",
 					"modifier": [
 						{
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 10,
-								"min": 5
+								"min": 5,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:tuff"
+					]
 				},
 				{
+					"name": "minecraft:torch",
 					"type": "minecraft:item",
 					"modifier": [
 						{
 							"count": {
-								"type": "minecraft:uniform",
 								"max": 6,
-								"min": 3
+								"min": 3,
+								"type": "minecraft:uniform"
 							},
 							"type": "minecraft:set_count"
 						}
-					],
-					"name": "minecraft:torch"
+					]
 				},
 				{
 					"type": "minecraft:loot_table",
@@ -110,11 +107,12 @@
 				}
 			],
 			"rolls": {
-				"type": "minecraft:uniform",
 				"max": 5,
-				"min": 3
+				"min": 3,
+				"type": "minecraft:uniform"
 			}
 		}
 	],
-	"random_sequence": "minecraft:chests/trial_chambers/supply"
+	"random_sequence": "minecraft:chests/trial_chambers/supply",
+	"type": "minecraft:chest"
 }

@@ -1,87 +1,78 @@
 {
-  "type": "minecraft:block",
-  "modifier": [
-    {
-      "type": "minecraft:explosion_decay"
-    }
-  ],
-  "pools": [
-    {
-      "bonus_rolls": 0,
-      "entries": [
-        {
-          "type": "minecraft:alternatives",
-          "children": [
-            {
-              "type": "minecraft:item",
-              "modifier": [
-                {
-                  "type": "minecraft:set_count",
-                  "count": {
-                    "type": "minecraft:constant",
-                    "value": 1
-                  }
-                }
-              ],
-              "condition": {
-                  "block": "minecraft:wheat",
-                  "type": "minecraft:match_block",
-                  "properties": {
-                    "age": "7"
-                  }
-                },
-              "name": "minecraft:wheat"
-            },
-            {
-              "type": "minecraft:item",
-              "name": "minecraft:wheat_seeds"
-            }
-          ]
-        }
-      ],
-      "rolls": 1
-    },
-    {
-      "bonus_rolls": 0,
-      "condition": {
-          "block": "minecraft:wheat",
-          "type": "minecraft:match_block",
-          "properties": {
-            "age": "7"
-          }
-        },
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "modifier": [
-            {
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:binomial_with_bonus_count",
-              "type": "minecraft:apply_bonus",
-              "parameters": {
-                "extra": 3,
-                "probability": 0.5714286
-              }
-            }
-          ],
-          "name": "minecraft:wheat_seeds"
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": {
-              "enchantment": "matcha:electrum_tool",
-              "formula": "minecraft:binomial_with_bonus_count",
-              "type": "minecraft:apply_bonus",
-              "parameters": {
-                "extra": 3,
-                "probability": 0.5714286
-              }
-          },
-          "name": "minecraft:wheat_seeds"
-        }
-      ],
-      "rolls": 1
-    }
-  ],
-  "random_sequence": "minecraft:blocks/wheat"
+	"pools": [
+		{
+			"entries": [
+				{
+					"children": [
+						{
+							"name": "minecraft:wheat",
+							"type": "minecraft:item",
+							"condition": {
+								"type": "minecraft:match_block",
+								"blocks": "minecraft:wheat",
+								"state": {
+									"age": "7"
+								}
+							}
+						},
+						{
+							"name": "minecraft:wheat_seeds",
+							"type": "minecraft:item"
+						}
+					],
+					"type": "minecraft:alternatives"
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"entries": [
+				{
+					"name": "minecraft:wheat_seeds",
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"enchantment": "minecraft:fortune",
+							"formula": "minecraft:binomial_with_bonus_count",
+							"parameters": {
+								"extra": 3,
+								"probability": 0.5714286
+							},
+							"type": "minecraft:apply_bonus"
+						}
+					]
+				},
+				{
+					"name": "minecraft:wheat_seeds",
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"enchantment": "matcha:electrum_tool",
+							"formula": "minecraft:binomial_with_bonus_count",
+							"parameters": {
+								"extra": 3,
+								"probability": 0.5714286
+							},
+							"type": "minecraft:apply_bonus"
+						}
+					]
+				}
+			],
+			"rolls": 1,
+			"condition": {
+				"type": "minecraft:match_block",
+				"blocks": "minecraft:wheat",
+				"state": {
+					"age": "7"
+				}
+			}
+		}
+	],
+	"random_sequence": "minecraft:blocks/wheat",
+	"type": "minecraft:block",
+	"modifier": [
+		{
+			"type": "minecraft:explosion_decay"
+		}
+	]
 }
