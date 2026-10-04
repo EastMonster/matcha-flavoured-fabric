@@ -1,5 +1,32 @@
 [
 	{
+		"id": "mushroom_soup",
+		"source": "data/matcha/recipe/food/crafting/mushroom_soup.json",
+		"nutrition": 0,
+		"saturation": 0,
+		"alwaysEdible": true,
+		"consumeSeconds": 1.6,
+		"sound": "minecraft:entity.generic.drink",
+		"particles": true,
+		"remainder": "minecraft:bowl",
+		"effects": [
+			{
+				"type": "apply",
+				"probability": 1,
+				"effects": [
+					{
+						"id": "minecraft:regeneration",
+						"duration": 120,
+						"amplifier": 2,
+						"ambient": false,
+						"particles": false,
+						"icon": false
+					}
+				]
+			}
+		]
+	},
+	{
 		"id": "tomato",
 		"source": "data/matcha/loot_table/food/matcha/tomato.json",
 		"nutrition": 1,

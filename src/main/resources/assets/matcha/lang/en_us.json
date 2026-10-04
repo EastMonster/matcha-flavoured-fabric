@@ -1,4 +1,5 @@
 {
+	"item.matcha.mushroom_soup": "Clear Mushroom Soup",
 	"block.matcha.banner.classic_pride": "Classic Pride",
 	"block.matcha.banner.common_pride": "Common Pride",
 	"block.matcha.banner.new_pride": "New Pride",
@@ -853,7 +854,7 @@
 	"item.matcha.oil": "Oil",
 	"item.matcha.uncooked_pumpkin_curry": "Pumpkin Curry Stock",
 	"item.matcha.amnestic.desc": "Causes a villager to forget who they are",
-	"item.matcha.amnestic.instructions": "Place on the ground next to them",
+	"item.matcha.amnestic.instructions": "Use on a villager, or consume to forget your recipes",
 	"item.matcha.estus_flask": "Estus Flask",
 	"lore.matcha.fish_rarity.1": "§7⭐§8☆☆☆",
 	"lore.matcha.fish_rarity.2": "§a⭐⭐§8☆☆",

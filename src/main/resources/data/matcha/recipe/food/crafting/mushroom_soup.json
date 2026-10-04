@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+		"minecraft:dried_kelp",
+		"minecraft:carrot",
+		"matcha:braised_brown_mushroom",
+		"minecraft:bowl"
+	],
+	"result": { "id": "matcha:mushroom_soup", "count": 1 }
+}

@@ -93,6 +93,7 @@ public class ItemComponents {
 					properties.delayedComponent(DataComponents.USE_REMAINDER, provider -> decode(UseRemainder.CODEC, provider, json));
 			case "minecraft:food" ->
 					properties.component(DataComponents.FOOD, decode(FoodProperties.DIRECT_CODEC, json));
+			case "!minecraft:food" -> properties.component(DataComponents.FOOD, null);
 			case "minecraft:writable_book_content" ->
 					properties.delayedComponent(DataComponents.WRITABLE_BOOK_CONTENT, provider -> decode(DataComponents.WRITABLE_BOOK_CONTENT.codec(), provider, json));
 			case "minecraft:banner_patterns" ->

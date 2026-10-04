@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -39,7 +40,6 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.scores.ScoreHolder;
-import net.minecraft.world.phys.Vec3;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -106,6 +106,20 @@ public final class GameplayMechanics {
 			AMNESTIC_VILLAGERS.clear();
 		});
 		UseBlockCallback.EVENT.register(GameplayMechanics::useMechanicItem);
+		UseEntityCallback.EVENT.register((player, level, hand, entity, hit) -> {
+			ItemStack stack = player.getItemInHand(hand);
+			if (player.isSpectator() || !(entity instanceof Villager villager)
+					|| !isMatchaItem(stack, "amnestic")) {
+				return InteractionResult.PASS;
+			}
+			if (player instanceof ServerPlayer && level instanceof ServerLevel serverLevel) {
+				useAmnestic(villager, serverLevel);
+				if (!player.isCreative()) {
+					stack.shrink(1);
+				}
+			}
+			return InteractionResult.SUCCESS;
+		});
 		ServerEntityEvents.ENTITY_LOAD.register(GameplayMechanics::trackVillager);
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
 			VILLAGERS.remove(entity);
@@ -147,20 +161,14 @@ public final class GameplayMechanics {
 			net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit
 	) {
 		ItemStack stack = player.getItemInHand(hand);
-		boolean amnestic = isMatchaItem(stack, "amnestic");
 		boolean beacon = isMatchaItem(stack, "beacon_kindling");
-		if (!amnestic && !beacon) {
+		if (player.isSpectator() || !beacon) {
 			return InteractionResult.PASS;
 		}
 		if (!(player instanceof ServerPlayer serverPlayer)) {
 			return InteractionResult.SUCCESS;
 		}
-		BlockPos clicked = hit.getBlockPos();
-		BlockPos target = level.getBlockState(clicked).getCollisionShape(level, clicked).isEmpty()
-				? clicked : clicked.relative(hit.getDirection());
-		if (amnestic) {
-			useAmnestic(serverPlayer, (ServerLevel) level, target);
-		} else if (!BeaconKindlingMechanics.place(serverPlayer, (ServerLevel) level, hand, hit, stack)) {
+		if (!BeaconKindlingMechanics.place(serverPlayer, (ServerLevel) level, hand, hit, stack)) {
 			return InteractionResult.FAIL;
 		}
 		if (!serverPlayer.isCreative()) {
@@ -174,18 +182,37 @@ public final class GameplayMechanics {
 				.equals(Identifier.fromNamespaceAndPath("matcha", path));
 	}
 
-	private static void useAmnestic(ServerPlayer player, ServerLevel level, BlockPos pos) {
-		VILLAGERS.stream()
-				.filter(villager -> villager.level() == level && !villager.isRemoved())
-				.min(Comparator.comparingDouble(villager -> villager.distanceToSqr(Vec3.atCenterOf(pos))))
-				.ifPresent(villager -> {
-					AMNESTIC_VILLAGERS.add(villager.getUUID());
-					villager.removeTag("foodChecked");
-					villager.setVillagerData(villager.getVillagerData()
-							.withProfession(level.registryAccess(), VillagerProfession.NONE).withLevel(1));
-					villager.refreshBrain(level);
-					((VillagerAccessor) villager).matcha$setLastRestockGameTime(0);
-				});
+	private static void useAmnestic(Villager villager, ServerLevel level) {
+		AMNESTIC_VILLAGERS.add(villager.getUUID());
+		villager.removeTag("foodChecked");
+		villager.setVillagerXp(0);
+		villager.setVillagerData(villager.getVillagerData()
+				.withProfession(level.registryAccess(), VillagerProfession.NONE).withLevel(1));
+		villager.refreshBrain(level);
+		((VillagerAccessor) villager).matcha$setLastRestockGameTime(0);
+		level.playSound(null, villager.getX(), villager.getY(), villager.getZ(),
+				net.minecraft.sounds.SoundEvents.VILLAGER_AMBIENT, net.minecraft.sounds.SoundSource.NEUTRAL, 1.0F, 0.65F);
+	}
+
+	/** Mirrors recipe take * and advancement revoke from minecraft:recipes/root. */
+	public static void onAmnesticConsumed(ServerPlayer player, ItemStack stack) {
+		if (!isMatchaItem(stack, "amnestic")) {
+			return;
+		}
+		var server = player.level().getServer();
+		player.resetRecipes(server.getRecipeManager().getRecipes());
+		var manager = server.getAdvancements();
+		Identifier root = Identifier.withDefaultNamespace("recipes/root");
+		for (var advancement : manager.getAllAdvancements()) {
+			Identifier ancestor = advancement.id();
+			while (ancestor != null && !ancestor.equals(root)) {
+				var holder = manager.get(ancestor);
+				ancestor = holder == null ? null : holder.value().parent().orElse(null);
+			}
+			if (root.equals(ancestor)) {
+				WorldMechanics.revoke(player, advancement.id());
+			}
+		}
 	}
 
 	private static void assignFavoriteFoods() {

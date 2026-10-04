@@ -6,21 +6,16 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "rabbit_foot"
-						}
+						"items": "matcha:braised_brown_mushroom"
 					}
 				]
 			}
 		}
 	},
-	"requirements": [
-		[
-			"cooked_the_food"
-		]
-	],
+	"requirements": [["cooked_the_food"]],
 	"rewards": {
 		"recipes": [
+			"matcha:food/crafting/mushroom_soup",
 			"matcha:food/crafting/pickled_mushrooms",
 			"matcha:food/crafting/stroganoff"
 		]
