@@ -3,7 +3,6 @@ package monster.east.matchaff.enchantment;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
-import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
@@ -11,9 +10,10 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 
-final class AnemosEnchantment {
+public final class AnemosEnchantment {
 	private static final AttachmentType<Integer> READY_TICK = AttachmentRegistry.create(
 			net.minecraft.resources.Identifier.fromNamespaceAndPath("matcha-flavoured", "anemos_ready_tick")
 	);
@@ -23,22 +23,22 @@ final class AnemosEnchantment {
 	}
 
 	static void init() {
-		AttackEntityCallback.EVENT.register((player, level, hand, target, hitResult) -> {
-			maybeLaunch(player);
-			return InteractionResult.PASS;
-		});
 		AttackBlockCallback.EVENT.register((player, level, hand, pos, direction) -> {
-			maybeLaunch(player);
+			maybeLaunch(player, player.getMainHandItem());
 			return InteractionResult.PASS;
 		});
 	}
 
-	private static void maybeLaunch(Player player) {
+	public static void onPostAttack(ServerPlayer player, ItemStack weapon) {
+		maybeLaunch(player, weapon);
+	}
+
+	private static void maybeLaunch(Player player, ItemStack weapon) {
 		if (!(player instanceof ServerPlayer serverPlayer)) {
 			return;
 		}
 		Registry<Enchantment> enchantments = player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
-		if (EnchantmentUtil.maxLevel(player.getMainHandItem(), enchantments, ANEMOS) == 0) {
+		if (EnchantmentUtil.maxLevel(weapon, enchantments, ANEMOS) == 0) {
 			return;
 		}
 		int currentTick = serverPlayer.level().getServer().getTickCount();
