@@ -1,7 +1,13 @@
 package monster.east.matchaff.mixin;
 
+import monster.east.matchaff.enchantment.AnemosEnchantment;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -9,7 +15,10 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.function.Consumer;
 
 /**
  * The datapack's blessing books are vanilla enchanted books (stored
@@ -25,6 +34,14 @@ public abstract class EnchantmentHelperMixin {
 			CallbackInfoReturnable<DataComponentType<ItemEnchantments>> cir) {
 		if (stack.is(Items.ENCHANTED_BOOK) || stack.has(DataComponents.STORED_ENCHANTMENTS)) {
 			cir.setReturnValue(DataComponents.STORED_ENCHANTMENTS);
+		}
+	}
+
+	@Inject(method = "doPostAttackEffectsWithItemSourceOnBreak", at = @At("TAIL"))
+	private static void matcha$anemosPostAttack(ServerLevel level, Entity victim, DamageSource source,
+			ItemStack weapon, Consumer<Item> attackerlessOnBreak, CallbackInfo ci) {
+		if (weapon != null && source.getEntity() instanceof ServerPlayer player) {
+			AnemosEnchantment.onPostAttack(player, weapon);
 		}
 	}
 }
