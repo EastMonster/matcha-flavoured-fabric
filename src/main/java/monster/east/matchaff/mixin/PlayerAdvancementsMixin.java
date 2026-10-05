@@ -5,6 +5,9 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import monster.east.matchaff.mechanic.GameplayMechanics;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.PlayerAdvancements;
 import net.minecraft.server.ServerAdvancementManager;
@@ -18,6 +21,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -37,6 +41,14 @@ public abstract class PlayerAdvancementsMixin {
 	private static final Gson MATCHA$GSON = new GsonBuilder().setPrettyPrinting().create();
 
 	@Shadow @Final private Path playerSavePath;
+	@Shadow private ServerPlayer player;
+
+	@Inject(method = "award", at = @At(value = "INVOKE",
+			target = "Lnet/minecraft/advancements/AdvancementRewards;grant(Lnet/minecraft/server/level/ServerPlayer;)V",
+			shift = At.Shift.AFTER))
+	private void matcha$dragonReward(AdvancementHolder holder, String criterion, CallbackInfoReturnable<Boolean> callbackInfo) {
+		GameplayMechanics.rewardDragonAdvancement(this.player, holder.id());
+	}
 
 	@Inject(method = "load", at = @At("HEAD"))
 	private void matcha$migrateLegacyNamespace(ServerAdvancementManager manager, CallbackInfo callbackInfo) {
