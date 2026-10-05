@@ -2,10 +2,12 @@ package monster.east.matchaff.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import eu.pb4.trinkets.api.TrinketSlotAccess;
+import eu.pb4.trinkets.api.TrinketsApi;
 import eu.pb4.trinkets.api.client.TrinketRenderer;
 import eu.pb4.trinkets.api.client.TrinketRendererRegistry;
 import monster.east.matchaff.compat.TrinketsCompat;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.player.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -22,6 +24,7 @@ import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.world.entity.player.PlayerModelType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.TooltipDisplay;
@@ -49,8 +52,16 @@ public final class TrinketsCompatClient {
 			boolean hideTrinketsAttributes = display != null
 					&& !display.shows(DataComponents.ATTRIBUTE_MODIFIERS);
 			List<Component> slotLines = new ArrayList<>();
+			var player = Minecraft.getInstance().player;
+			boolean armorSuppressed = player != null && !player.getItemBySlot(EquipmentSlot.HEAD).isEmpty()
+					&& TrinketsApi.getAttachment(player).equipped(candidate -> candidate == stack, true).stream()
+							.anyMatch(slot -> slot.slotType().getId().equals("head/earring"));
 			for (int i = 0; i < lines.size(); i++) {
 				Component line = lines.get(i);
+				if (armorSuppressed && line.getContents() instanceof TranslatableContents contents
+						&& contents.getKey().equals("desc.matcha.armour")) {
+					lines.set(i, Component.translatable("desc.matcha.armour", "0").withStyle(line.getStyle()));
+				}
 				if (isTrinketsSlotLine(line)) {
 					slotLines.add(lines.remove(i--));
 				} else if (hideTrinketsAttributes && isTrinketsAttributeLine(line)) {
