@@ -138,7 +138,6 @@ public final class GameplayMechanics {
 				checkBedrockBuster(player);
 				checkApplication(player);
 				checkHappyGhast(player);
-				checkDragonReward(server, player);
 				checkSummonedWither(player, tick);
 				checkWitherSkeletons(player);
 				checkNetherWater(player);
@@ -362,16 +361,10 @@ public final class GameplayMechanics {
 		WorldMechanics.revoke(player, HAPPY_GHAST_HORN);
 	}
 
-	private static void checkDragonReward(MinecraftServer server, ServerPlayer player) {
-		if (!WorldMechanics.advancementDone(player, KILL_DRAGON)) {
-			return;
-		}
-		var scoreboard = server.getScoreboard();
-		var objective = scoreboard.getObjective("gamerule_safe_surface");
-		if (objective == null
-				|| scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly("gamerule"), objective).get() >= 1) {
-			return; // already rewarded
-		}
+	/** Runs at the same completion transition as vanilla advancement rewards. */
+	public static void rewardDragonAdvancement(ServerPlayer player, Identifier advancement) {
+		if (!KILL_DRAGON.equals(advancement)) return;
+		MinecraftServer server = player.level().getServer();
 		var end = server.getLevel(Level.END);
 		if (end != null) {
 			ItemEntity reward = new ItemEntity(end, 0, 100, 0, new ItemStack(Items.NETHER_STAR, 1));
@@ -380,7 +373,11 @@ public final class GameplayMechanics {
 		}
 		server.getPlayerList().broadcastSystemMessage(
 				Component.translatable("message.matcha.evil_banished").withStyle(ChatFormatting.GRAY), false);
-		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly("gamerule"), objective).set(1);
+		var scoreboard = server.getScoreboard();
+		var safeSurface = scoreboard.getObjective("gamerule_safe_surface");
+		if (safeSurface != null) {
+			scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly("gamerule"), safeSurface).set(1);
+		}
 	}
 
 	private static void checkSummonedWither(ServerPlayer player, int tick) {
