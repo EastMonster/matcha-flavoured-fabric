@@ -24,6 +24,7 @@ import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
@@ -111,6 +112,10 @@ final class BeaconKindlingMechanics {
 	static boolean place(
 			ServerPlayer player, ServerLevel level, InteractionHand hand, BlockHitResult hit, ItemStack stack
 	) {
+		if (!player.getAbilities().mayBuild
+				&& !stack.canPlaceOnBlockInAdventureMode(new BlockInWorld(level, hit.getBlockPos(), false))) {
+			return false;
+		}
 		BlockPlaceContext context = new BlockPlaceContext(level, player, hand, stack, hit);
 		if (!context.canPlace()) {
 			return false;
