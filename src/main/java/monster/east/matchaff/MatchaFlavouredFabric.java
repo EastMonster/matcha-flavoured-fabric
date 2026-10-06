@@ -3,6 +3,7 @@ package monster.east.matchaff;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import monster.east.matchaff.compat.FarmersDelightCompat;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.block.TomatoCropBlock;
 import monster.east.matchaff.enchantment.EnchantmentMechanics;
@@ -79,6 +80,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		registerClifftreeCompatPack();
 		SleepFastForwardPayload.register();
 		VanillaFoodDefaults.init();
+		FarmersDelightCompat.init();
 		PlayerMechanics.init();
 		EnchantmentMechanics.init();
 		if (FabricLoader.getInstance().isModLoaded(TrinketsCompat.MOD_ID)) {
@@ -269,6 +271,11 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 					BuiltInRegistries.ITEM.getValue(Identifier.parse(definition.remainder))
 			));
 		}
+		if (definition.craftRemainder != null) {
+			properties.craftRemainder(Objects.requireNonNull(
+					BuiltInRegistries.ITEM.getValue(Identifier.parse(definition.craftRemainder))
+			));
+		}
 		if (definition.lore != null) {
 			JsonElement lore = definition.lore;
 			if (lore.isJsonObject()) {
@@ -292,7 +299,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private record FoodDefinition(
 			String id, int nutrition, float saturation, boolean alwaysEdible,
 			Float consumeSeconds, String animation, String sound, Boolean particles,
-		String remainder, Integer maxStackSize, JsonElement lore, List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components, JsonElement customData
+		String remainder, String craftRemainder, Integer maxStackSize, JsonElement lore, List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components, JsonElement customData
 	) {}
 
 	private record ConsumeEffectDefinition(

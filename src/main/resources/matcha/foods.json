@@ -1690,6 +1690,7 @@
 		"sound": "minecraft:entity.wandering_trader.drink_milk",
 		"particles": false,
 		"remainder": "minecraft:glass_bottle",
+		"craftRemainder": "minecraft:glass_bottle",
 		"maxStackSize": 64,
 		"effects": [
 			{

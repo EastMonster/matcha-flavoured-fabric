@@ -1,0 +1,2020 @@
+[
+	{
+		"item": "farmersdelight:cooked_rice",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 36,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 160,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:08"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:bone_broth",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 48,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 320,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			],
+			"animation": "drink",
+			"sound": "minecraft:entity.generic.drink",
+			"has_consume_particles": false
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:16"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:beef_stew",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:chicken_soup",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:vegetable_soup",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 108,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:fish_stew",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:fried_rice",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 132,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:pumpkin_soup",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:baked_cod_stew",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 132,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:noodle_soup",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 144,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:onion_soup",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 96,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:roast_chicken",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:stuffed_pumpkin",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 96,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:honey_glazed_ham",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:gleaming_salad",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.aura",
+				"with": ["0:45"],
+				"color": "#0fffa3",
+				"italic": false
+			},
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		],
+		"customData": {
+			"matcha:aura_45s": {}
+		}
+	},
+	{
+		"item": "minecraft:mushroom_stew",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "minecraft:beetroot_soup",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "minecraft:rabbit_stew",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 144,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						},
+						{
+							"id": "minecraft:jump_boost",
+							"amplifier": 1,
+							"duration": 200,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.jump_boost_2",
+				"with": ["0:10"],
+				"color": "green",
+				"italic": false
+			},
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:bacon_and_eggs",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 96,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 320,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:16"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:pasta_with_meatballs",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 144,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:pasta_with_mutton_chop",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 144,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:mushroom_rice",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 132,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:roasted_mutton_chops",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 132,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:vegetable_noodles",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 144,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:steak_and_potatoes",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 168,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:ratatouille",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 108,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 320,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:16"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:squid_ink_pasta",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:grilled_salmon",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 132,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:barbecue_stick",
+		"source": "matcha:pickled_mushrooms",
+		"components": ["minecraft:consumable"],
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:egg_sandwich",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:remove_effects",
+					"effects": [
+						"minecraft:poison",
+						"minecraft:mining_fatigue",
+						"minecraft:wither",
+						"minecraft:weakness",
+						"minecraft:bad_omen",
+						"minecraft:blindness",
+						"minecraft:darkness",
+						"minecraft:infested",
+						"minecraft:weaving",
+						"minecraft:nausea",
+						"minecraft:oozing",
+						"minecraft:slowness"
+					]
+				},
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 96,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.cleanse_maleffect",
+				"color": "gray",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:chicken_sandwich",
+		"source": "matcha:pickled_potatoes",
+		"components": ["minecraft:consumable"],
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:hamburger",
+		"source": "matcha:pickled_potatoes",
+		"components": ["minecraft:consumable"],
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:mutton_wrap",
+		"source": "matcha:pickled_potatoes",
+		"components": ["minecraft:consumable"],
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:bacon_sandwich",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 108,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:dumplings",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 48,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:stuffed_potato",
+		"source": "matcha:glow_berry_crumble",
+		"components": ["minecraft:consumable"],
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:cabbage_rolls",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 60,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:salmon_roll",
+		"source": "matcha:pupusa",
+		"components": ["minecraft:consumable"],
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:cod_roll",
+		"source": "minecraft:apple",
+		"components": ["minecraft:consumable"],
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:kelp_roll",
+		"consumable": {
+			"consume_seconds": 2.4,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 108,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:water_breathing",
+							"duration": 12000,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.water_breathing",
+				"with": ["10:00"],
+				"color": "#7ec9e7",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:kelp_roll_slice",
+		"consumable": {
+			"consume_seconds": 0.8,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 36,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:water_breathing",
+							"duration": 3600,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.water_breathing",
+				"with": ["3:00"],
+				"color": "#7ec9e7",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:hot_cocoa",
+		"consumable": {
+			"animation": "drink",
+			"sound": "minecraft:entity.generic.drink",
+			"has_consume_particles": false,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:haste",
+							"duration": 9000,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.haste",
+				"with": ["7:30"],
+				"color": "yellow",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:apple_cider",
+		"consumable": {
+			"animation": "drink",
+			"sound": "minecraft:entity.generic.drink",
+			"has_consume_particles": false,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:regeneration",
+							"duration": 672,
+							"show_particles": false,
+							"show_icon": true
+						},
+						{
+							"id": "minecraft:absorption",
+							"duration": 1200,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.regen",
+				"with": ["0:30"],
+				"color": "#e85e8f",
+				"italic": false
+			},
+			{ "text": "❤❤ (1:00)", "color": "aqua", "italic": false }
+		]
+	},
+	{
+		"item": "farmersdelight:tomato_sauce",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 48,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:glow_berry_custard",
+		"customData": { "matcha:aura_45s": {} },
+		"consumable": {
+			"animation": "drink",
+			"sound": "minecraft:entity.generic.drink",
+			"has_consume_particles": false,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 96,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.aura",
+				"with": ["0:45"],
+				"color": "#0fffa3",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:mixed_salad",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 60,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:regeneration",
+							"duration": 160,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.regen",
+				"with": ["0:05"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:nether_salad",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 24,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				},
+				{
+					"type": "minecraft:apply_effects",
+					"probability": 0.3,
+					"effects": [
+						{
+							"id": "minecraft:nausea",
+							"duration": 240,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.nausea",
+				"with": ["0:12"],
+				"color": "#c74726",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:cake_slice",
+		"consumable": {
+			"consume_seconds": 1.6,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:instant_health",
+							"duration": 1,
+							"amplifier": 0,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:health_boost",
+							"duration": 3600,
+							"amplifier": 1,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:speed",
+							"duration": 400,
+							"amplifier": 0,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{ "text": "❤❤", "color": "red", "italic": false },
+			{ "text": "❤❤❤❤ (3:00)", "color": "gray", "italic": false },
+			{
+				"translate": "effect.matcha.speed",
+				"with": ["0:20"],
+				"color": "aqua",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:pumpkin_pie_slice",
+		"consumable": {
+			"consume_seconds": 1.6,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 24,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:speed",
+							"amplifier": 0,
+							"duration": 600,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.speed",
+				"with": ["0:30"],
+				"color": "aqua",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:apple_pie_slice",
+		"consumable": {
+			"consume_seconds": 1.6,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 48,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:speed",
+							"amplifier": 0,
+							"duration": 600,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.speed",
+				"with": ["0:30"],
+				"color": "aqua",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:sweet_berry_cheesecake_slice",
+		"consumable": {
+			"consume_seconds": 1.6,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 48,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:speed",
+							"amplifier": 0,
+							"duration": 600,
+							"show_particles": false,
+							"show_icon": true
+						},
+						{
+							"id": "minecraft:health_boost",
+							"amplifier": 1,
+							"duration": 3000,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{ "text": "❤❤❤❤ (2:30)", "color": "gray", "italic": false },
+			{
+				"translate": "effect.matcha.speed",
+				"with": ["0:30"],
+				"color": "aqua",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:shepherds_pie",
+		"consumable": {
+			"consume_seconds": 1.6,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"amplifier": 0,
+							"duration": 800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:40"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:sweet_berry_cookie",
+		"consumable": {
+			"consume_seconds": 0.8,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:health_boost",
+							"amplifier": 1,
+							"duration": 4800,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [{ "text": "❤❤❤❤ (4:00)", "color": "gray", "italic": false }]
+	},
+	{
+		"item": "farmersdelight:honey_cookie",
+		"consumable": {
+			"consume_seconds": 0.8,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:remove_effects",
+					"effects": [
+						"minecraft:poison",
+						"minecraft:mining_fatigue",
+						"minecraft:wither",
+						"minecraft:weakness",
+						"minecraft:bad_omen",
+						"minecraft:blindness",
+						"minecraft:darkness",
+						"minecraft:infested",
+						"minecraft:weaving",
+						"minecraft:nausea",
+						"minecraft:oozing",
+						"minecraft:slowness"
+					]
+				},
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 60,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.cleanse_maleffect",
+				"color": "gray",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:smoked_ham",
+		"source": "matcha:glow_berry_crumble",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:melon_juice",
+		"consumable": {
+			"animation": "drink",
+			"sound": "minecraft:entity.generic.drink",
+			"has_consume_particles": false,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 96,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:fire_resistance",
+							"duration": 6000,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.fire_resistance",
+				"with": ["5:00"],
+				"color": "gold",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:melon_popsicle",
+		"consumable": {
+			"consume_seconds": 0.8,
+			"on_consume_effects": [
+				{ "type": "farmersdelight:extinguish" },
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:fire_resistance",
+							"duration": 24000,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.fire_resistance",
+				"with": ["20:00"],
+				"color": "gold",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:fruit_salad",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 132,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "farmersdelight:chocolate_pie_slice",
+		"consumable": {
+			"consume_seconds": 1.6,
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:haste",
+							"amplifier": 0,
+							"duration": 6000,
+							"show_particles": false,
+							"show_icon": true
+						},
+						{
+							"id": "minecraft:speed",
+							"amplifier": 0,
+							"duration": 600,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.haste",
+				"with": ["5:00"],
+				"color": "yellow",
+				"italic": false
+			},
+			{
+				"translate": "effect.matcha.speed",
+				"with": ["0:30"],
+				"color": "aqua",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:beef_patty",
+		"source": "matcha:fried_egg",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:cooked_bacon",
+		"source": "matcha:fried_egg",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:cooked_chicken_cuts",
+		"source": "matcha:fried_egg",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:cooked_mutton_chops",
+		"source": "matcha:fried_egg",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:cooked_cod_slice",
+		"source": "matcha:fried_egg",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:cooked_salmon_slice",
+		"source": "matcha:fried_egg",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:dog_food",
+		"lore": [
+			{
+				"translate": "tooltip.farmersdelight.dog_food.when_feeding",
+				"color": "gray",
+				"italic": false
+			},
+			{
+				"text": " ",
+				"italic": false,
+				"extra": [
+					{
+						"translate": "desc.matcha.feeding_full_health",
+						"color": "red",
+						"italic": false
+					}
+				]
+			},
+			{
+				"text": " ",
+				"italic": false,
+				"extra": [
+					{
+						"translate": "effect.matcha.speed",
+						"with": ["5:00"],
+						"color": "aqua",
+						"italic": false
+					}
+				]
+			},
+			{
+				"text": " ",
+				"italic": false,
+				"extra": [
+					{
+						"translate": "effect.matcha.strength",
+						"with": ["5:00"],
+						"color": "#e65f33",
+						"italic": false
+					}
+				]
+			},
+			{
+				"text": " ",
+				"italic": false,
+				"extra": [
+					{
+						"translate": "effect.matcha.resistance",
+						"with": ["5:00"],
+						"color": "blue",
+						"italic": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:horse_feed",
+		"lore": [
+			{
+				"translate": "tooltip.farmersdelight.horse_feed.when_feeding",
+				"color": "gray",
+				"italic": false
+			},
+			{
+				"text": " ",
+				"italic": false,
+				"extra": [
+					{
+						"translate": "desc.matcha.feeding_full_health",
+						"color": "red",
+						"italic": false
+					}
+				]
+			},
+			{
+				"text": " ",
+				"italic": false,
+				"extra": [
+					{
+						"translate": "effect.matcha.speed_2",
+						"with": ["5:00"],
+						"color": "aqua",
+						"italic": false
+					}
+				]
+			},
+			{
+				"text": " ",
+				"italic": false,
+				"extra": [
+					{
+						"translate": "effect.matcha.jump_boost",
+						"with": ["5:00"],
+						"color": "green",
+						"italic": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:tomato",
+		"source": "matcha:tomato",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:cabbage",
+		"source": "minecraft:carrot",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:onion",
+		"source": "minecraft:carrot",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:pumpkin_slice",
+		"source": "minecraft:carrot",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:pie_crust",
+		"source": "minecraft:apple",
+		"components": ["minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:fried_egg",
+		"source": "matcha:fried_egg",
+		"components": ["minecraft:food", "minecraft:consumable"]
+	},
+	{
+		"item": "farmersdelight:skillet",
+		"source": "matcha:butcher_knife",
+		"components": ["minecraft:tooltip_display"],
+		"lore": [
+			{
+				"translate": "tooltip.farmersdelight.placeable_sneaking",
+				"color": "dark_gray",
+				"italic": true
+			}
+		]
+	},
+	{
+		"item": "farmersdelight:flint_knife",
+		"source": "matcha:butcher_knife",
+		"components": ["minecraft:tooltip_display"]
+	},
+	{
+		"item": "farmersdelight:copper_knife",
+		"source": "matcha:butcher_knife",
+		"components": ["minecraft:tooltip_display"]
+	},
+	{
+		"item": "farmersdelight:iron_knife",
+		"source": "matcha:butcher_knife",
+		"components": ["minecraft:tooltip_display"]
+	},
+	{
+		"item": "farmersdelight:golden_knife",
+		"source": "matcha:butcher_knife",
+		"components": ["minecraft:tooltip_display"],
+		"enchantments": { "minecraft:looting": 1 },
+		"glint": false,
+		"itemName": {
+			"translate": "item.farmersdelight.golden_knife",
+			"color": "white"
+		}
+	},
+	{
+		"item": "farmersdelight:diamond_knife",
+		"source": "matcha:butcher_knife",
+		"components": ["minecraft:tooltip_display"]
+	},
+	{
+		"item": "farmersdelight:netherite_knife",
+		"source": "matcha:adamant_claymore",
+		"components": [
+			"minecraft:tooltip_display",
+			"minecraft:enchantments",
+			"minecraft:repairable"
+		],
+		"itemName": {
+			"translate": "item.farmersdelight.netherite_knife",
+			"color": "gold"
+		}
+	}
+]

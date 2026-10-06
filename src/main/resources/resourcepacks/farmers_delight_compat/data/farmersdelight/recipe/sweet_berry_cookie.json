@@ -1,0 +1,5 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": ["minecraft:sweet_berries", "minecraft:sugar", "matcha:dough"],
+	"result": { "id": "farmersdelight:sweet_berry_cookie", "count": 1 }
+}

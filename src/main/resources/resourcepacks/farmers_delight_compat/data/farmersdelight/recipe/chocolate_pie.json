@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "fd_chocolate_pie",
+	"key": {
+		"O": "farmersdelight:pie_crust",
+		"c": "matcha:chocolate",
+		"m": "#c:drinks/milk",
+		"x": "minecraft:sugar"
+	},
+	"pattern": ["ccc", "mmm", "xOx"],
+	"result": {
+		"id": "farmersdelight:chocolate_pie"
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"parent": "farmersdelight:main/root",
+	"criteria": {
+		"cabbage_seeds": {
+			"conditions": {
+				"items": [
+					{
+						"items": "farmersdelight:cabbage_seeds"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"onion": {
+			"conditions": {
+				"items": [
+					{
+						"items": "farmersdelight:onion"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"rice": {
+			"conditions": {
+				"items": [
+					{
+						"items": "farmersdelight:rice"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"tomato_seeds": {
+			"conditions": {
+				"items": [
+					{
+						"items": "farmersdelight:tomato_seeds"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancements.farmersdelight.get_fd_seed.description"
+		},
+		"icon": {
+			"id": "farmersdelight:wild_onions"
+		},
+		"title": {
+			"translate": "advancements.farmersdelight.get_fd_seed.title"
+		}
+	},
+	"requirements": [["cabbage_seeds", "tomato_seeds", "onion", "rice"]],
+	"sends_telemetry_event": true
+}

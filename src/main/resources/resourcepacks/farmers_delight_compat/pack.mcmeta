@@ -1,0 +1,67 @@
+{
+	"pack": {
+		"description": "Matcha Flavoured + Farmer's Delight compatibility",
+		"min_format": [107, 1],
+		"max_format": [107, 1]
+	},
+	"filter": {
+		"block": [
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/cake_from_milk_bottle\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/food/cake_from_milk_bottle\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/fried_egg\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/food/fried_egg\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/fried_egg_from_campfire_cooking\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/food/fried_egg_from_campfire_cooking\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/milk_bottle\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/food/milk_bottle\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/wheat_dough_from_egg\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/food/wheat_dough_from_egg\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/wheat_dough_from_water\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/food/wheat_dough_from_water\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/bread_from_smelting\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/food/bread_from_smelting\\.json"
+			}
+		]
+	}
+}

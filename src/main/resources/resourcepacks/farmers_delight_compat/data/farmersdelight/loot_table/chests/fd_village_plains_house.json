@@ -1,0 +1,42 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3.0,
+								"min": 1.0
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "farmersdelight:onion"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3.0,
+								"min": 1.0
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "farmersdelight:tomato_seeds"
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 3.0,
+				"min": 1.0
+			}
+		}
+	]
+}

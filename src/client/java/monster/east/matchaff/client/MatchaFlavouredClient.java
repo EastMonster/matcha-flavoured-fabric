@@ -112,9 +112,6 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 
 	private static void appendFoodHealingTooltip(ItemStack stack, Item.TooltipContext context,
 			TooltipFlag flag, List<Component> lines) {
-		if (stack.get(DataComponents.FOOD) == null) {
-			return;
-		}
 		TooltipDisplay display = stack.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT);
 		if (!display.shows(DataComponents.LORE)) {
 			return;
@@ -185,7 +182,8 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 						|| (itemId.getPath().equals("elytra")
 								&& containsMaterial(repairable, Items.HONEYCOMB)
 								&& containsMaterial(repairable, Items.FEATHER)));
-		if (!matchaItem && !customVanillaItem) {
+		if (!matchaItem && !customVanillaItem
+				&& !itemId.equals(Identifier.fromNamespaceAndPath("farmersdelight", "netherite_knife"))) {
 			return;
 		}
 

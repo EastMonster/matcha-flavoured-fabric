@@ -51,10 +51,16 @@
 
 本项目是 Klei 原作 [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) 数据包的非官方 Fabric 移植版。原始设计、内容、贴图和数据包的相关功劳均属于 Klei 及原项目所列贡献者。
 
-原项目的完整致谢与灵感来源请参阅 [CREDITS.txt](CREDITS.txt)。
+第三方兼容内容的署名、原项目的完整致谢与灵感来源请参阅 [CREDITS.txt](CREDITS.txt)。
 
 感谢 OpenAI 和 Deepseek。
 
 ## 许可证
 
 本项目遵循原项目的许可条款，以 [CC BY-NC-SA 4.0](LICENSE) 许可证发布。
+
+Trinkets 兼容资源包中的第三方材质基于 Trinkets / Trinkets Updated，由 EastMonster 改色。这些材质保留其 [MIT 许可证及版权声明](src/main/resources/licenses/TrinketsUpdated-MIT.txt)，许可文本也随 JAR 分发。
+
+CliffTree 兼容数据包中的群系数据基于 Konci 及其所列贡献者的 [CliffTree](https://modrinth.com/datapack/clifftree) 3.3，由 EastMonster 修改世界生成特征以适配 Matcha。这些数据仍遵循 CC BY-NC-SA 4.0；署名及来源链接见 [CREDITS.txt](CREDITS.txt)。
+
+农夫乐事兼容资源包中的第三方材质基于 vectorwing 的 Farmer's Delight，由 EastMonster 修改为 Matcha 风格。这些材质保留其 [MIT 许可证及版权声明](src/main/resources/licenses/FarmersDelight-MIT.txt)，许可文本也随 JAR 分发。
