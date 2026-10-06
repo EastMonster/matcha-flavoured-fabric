@@ -8,8 +8,8 @@
 			}
 		},
 		"minecraft:gameplay/increased_fire_burnout": true,
-		"minecraft:visual/sky_color": "#78a7ff",
-		"minecraft:visual/water_fog_color": "#232317",
+		"minecraft:visual/sky_color": "#70ABBC",
+		"minecraft:visual/water_fog_color": "#111918",
 		"minecraft:visual/water_fog_end_distance": {
 			"argument": 0.85,
 			"modifier": "multiply"
@@ -31,7 +31,7 @@
 		"dry_foliage_color": "#7b5334",
 		"foliage_color": "#6a7039",
 		"grass_color_modifier": "swamp",
-		"water_color": "#617b64"
+		"water_color": "#4C6559"
 	},
 	"features": [
 		[],

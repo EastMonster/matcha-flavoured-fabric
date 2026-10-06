@@ -7,8 +7,8 @@
 				"sound": "minecraft:music.overworld.old_growth_taiga"
 			}
 		},
-		"minecraft:visual/sky_color": "#9ebbf8",
-		"minecraft:visual/water_fog_color": "#2e304c",
+		"minecraft:visual/sky_color": "#80B4E7",
+		"minecraft:visual/water_fog_color": "#03060A",
 		"minecraft:visual/fog_color": "#E6EEF0"
 	},
 	"carvers": [
@@ -18,7 +18,7 @@
 	],
 	"downfall": 0.8,
 	"effects": {
-		"water_color": "#aebfe2"
+		"water_color": "#2F628F"
 	},
 	"features": [
 		[],

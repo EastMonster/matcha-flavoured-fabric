@@ -1,8 +1,8 @@
 {
 	"attributes": {
-		"minecraft:visual/sky_color": "#c1cef0",
-		"minecraft:visual/fog_color": "#c0d8ff",
-		"minecraft:visual/water_fog_color": "#272844",
+		"minecraft:visual/sky_color": "#95BAED",
+		"minecraft:visual/fog_color": "#D0EDF0",
+		"minecraft:visual/water_fog_color": "#29313D",
 		"minecraft:visual/ambient_particles": {
 			"modifier": "override",
 			"argument": [
@@ -44,7 +44,7 @@
 	],
 	"downfall": 0.5,
 	"effects": {
-		"water_color": "#bbcae8"
+		"water_color": "#5273A4"
 	},
 	"features": [
 		["clifftree:disk_gravel_deep_ocean_floor"],

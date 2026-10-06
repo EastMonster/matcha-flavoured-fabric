@@ -7,7 +7,7 @@
 				"sound": "minecraft:music.overworld.dripstone_caves"
 			}
 		},
-		"minecraft:visual/sky_color": "#78a7ff",
+		"minecraft:visual/sky_color": "#2E4669",
 		"minecraft:gameplay/increased_fire_burnout": true,
 		"minecraft:visual/fog_color": "#332916",
 		"minecraft:visual/fog_start_distance": 0,
@@ -30,7 +30,7 @@
 	],
 	"downfall": 0.4,
 	"effects": {
-		"water_color": "#a2b5dd"
+		"water_color": "#4A6375"
 	},
 	"features": [
 		[],

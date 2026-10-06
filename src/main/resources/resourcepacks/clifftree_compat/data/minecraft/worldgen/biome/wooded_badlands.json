@@ -8,9 +8,9 @@
 			}
 		},
 		"minecraft:gameplay/snow_golem_melts": true,
-		"minecraft:visual/sky_color": "#a4cbdb",
-		"minecraft:visual/water_fog_color": "#4b605a",
-		"minecraft:visual/fog_color": 15519675,
+		"minecraft:visual/sky_color": "#659CB5",
+		"minecraft:visual/water_fog_color": "#03080A",
+		"minecraft:visual/fog_color": "#EDD7B2",
 		"minecraft:visual/fog_start_distance": -32,
 		"minecraft:visual/fog_end_distance": 768,
 		"minecraft:visual/sky_light_color": "#fffcfb",
@@ -30,7 +30,7 @@
 	"effects": {
 		"foliage_color": "#9e814d",
 		"grass_color": "#90814d",
-		"water_color": "#92a296"
+		"water_color": "#497F99"
 	},
 	"features": [
 		"#clifftree:badlands_terracotta",

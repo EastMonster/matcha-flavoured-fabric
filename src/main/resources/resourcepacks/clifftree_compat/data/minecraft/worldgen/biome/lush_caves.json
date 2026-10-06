@@ -7,7 +7,7 @@
 				"sound": "minecraft:music.overworld.lush_caves"
 			}
 		},
-		"minecraft:visual/sky_color": "#7ba4ff",
+		"minecraft:visual/sky_color": "#2E4669",
 		"minecraft:gameplay/increased_fire_burnout": true,
 		"minecraft:visual/fog_color": "#10261F",
 		"minecraft:visual/fog_start_distance": 0,
@@ -32,7 +32,7 @@
 	],
 	"downfall": 0.5,
 	"effects": {
-		"water_color": "#7ebee5",
+		"water_color": "#46CDCA",
 		"grass_color": "#B4D652",
 		"foliage_color": "#82AC1E"
 	},

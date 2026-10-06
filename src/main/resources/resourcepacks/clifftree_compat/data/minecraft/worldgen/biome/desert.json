@@ -8,8 +8,8 @@
 			}
 		},
 		"minecraft:gameplay/snow_golem_melts": true,
-		"minecraft:visual/sky_color": "#adc3cc",
-		"minecraft:visual/fog_color": 14537392,
+		"minecraft:visual/sky_color": "#7BBBD1",
+		"minecraft:visual/fog_color": "#DBE5CD",
 		"minecraft:visual/water_fog_color": "#03080A",
 		"minecraft:visual/fog_start_distance": -32,
 		"minecraft:visual/fog_end_distance": 768,
@@ -27,7 +27,7 @@
 	],
 	"downfall": 0,
 	"effects": {
-		"water_color": "#92a296"
+		"water_color": "#2B8C8A"
 	},
 	"features": [
 		[],

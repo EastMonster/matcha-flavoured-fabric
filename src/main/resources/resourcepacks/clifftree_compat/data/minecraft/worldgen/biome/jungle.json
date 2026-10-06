@@ -8,7 +8,7 @@
 			}
 		},
 		"minecraft:gameplay/increased_fire_burnout": true,
-		"minecraft:visual/sky_color": "#77a8ff",
+		"minecraft:visual/sky_color": "#5FAAC5",
 		"minecraft:visual/fog_color": "#93D9C8",
 		"minecraft:visual/fog_start_distance": -16,
 		"minecraft:visual/fog_end_distance": 512,
@@ -23,7 +23,7 @@
 	],
 	"downfall": 0.9,
 	"effects": {
-		"water_color": "#7ebee5",
+		"water_color": "#1499AC",
 		"grass_color": "#5DB433",
 		"foliage_color": "#4b9e17"
 	},

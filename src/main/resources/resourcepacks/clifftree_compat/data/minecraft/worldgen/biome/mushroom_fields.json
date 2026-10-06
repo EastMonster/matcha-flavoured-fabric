@@ -2,7 +2,7 @@
 	"attributes": {
 		"minecraft:gameplay/can_pillager_patrol_spawn": false,
 		"minecraft:gameplay/increased_fire_burnout": true,
-		"minecraft:visual/sky_color": "#77a8ff",
+		"minecraft:visual/sky_color": "#5E9FE8",
 		"minecraft:visual/fog_color": "#A890CA",
 		"minecraft:visual/fog_start_distance": -16,
 		"minecraft:visual/fog_end_distance": 512,
@@ -34,7 +34,7 @@
 	],
 	"downfall": 1.0,
 	"effects": {
-		"water_color": "#a2b5dd",
+		"water_color": "#605F57",
 		"grass_color": "#BDA2A9"
 	},
 	"features": [

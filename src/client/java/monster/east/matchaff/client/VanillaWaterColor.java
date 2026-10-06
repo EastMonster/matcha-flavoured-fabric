@@ -1,5 +1,6 @@
 package monster.east.matchaff.client;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -22,7 +23,8 @@ public final class VanillaWaterColor {
 	}
 
 	private static int get(Identifier id, int fallback) {
-		if (id == null || !id.getNamespace().equals("minecraft")) {
+		if (id == null || !id.getNamespace().equals("minecraft")
+				|| FabricLoader.getInstance().isModLoaded("clifftree")) {
 			return fallback;
 		}
 

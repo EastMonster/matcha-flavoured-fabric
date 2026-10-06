@@ -7,8 +7,8 @@
 				"sound": "minecraft:music.overworld.flower_forest"
 			}
 		},
-		"minecraft:visual/sky_color": "#78a7ff",
-		"minecraft:visual/water_fog_color": "#272844",
+		"minecraft:visual/sky_color": "#5CACE3",
+		"minecraft:visual/water_fog_color": "#03070A",
 		"minecraft:visual/fog_color": "#AEE3FC"
 	},
 	"carvers": [
@@ -18,7 +18,7 @@
 	],
 	"downfall": 0.8,
 	"effects": {
-		"water_color": "#a2b5dd"
+		"water_color": "#06609E"
 	},
 	"features": [
 		[],

@@ -7,8 +7,8 @@
 				"sound": "minecraft:music.overworld.stony_peaks"
 			}
 		},
-		"minecraft:visual/sky_color": "#9ebbf8",
-		"minecraft:visual/water_fog_color": "#2e304c",
+		"minecraft:visual/sky_color": "#4475D9",
+		"minecraft:visual/water_fog_color": "#03070A",
 		"minecraft:visual/fog_color": "#B2D7FF",
 		"minecraft:visual/fog_start_distance": -16,
 		"minecraft:visual/fog_end_distance": 512,
@@ -21,7 +21,7 @@
 	],
 	"downfall": 0.3,
 	"effects": {
-		"water_color": "#aebfe2"
+		"water_color": "#0097CC"
 	},
 	"features": [
 		[],

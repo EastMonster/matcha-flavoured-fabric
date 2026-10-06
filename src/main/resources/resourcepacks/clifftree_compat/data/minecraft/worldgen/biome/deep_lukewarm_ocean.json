@@ -17,8 +17,8 @@
 				"sound": "minecraft:music.under_water"
 			}
 		},
-		"minecraft:visual/sky_color": "#7ba4ff",
-		"minecraft:visual/water_fog_color": "#041633",
+		"minecraft:visual/sky_color": "#4BB5EC",
+		"minecraft:visual/water_fog_color": "#092C34",
 		"minecraft:visual/fog_color": "#AEE3FC"
 	},
 	"carvers": [
@@ -28,7 +28,7 @@
 	],
 	"downfall": 0.5,
 	"effects": {
-		"water_color": "#96b9e0"
+		"water_color": "#006B90"
 	},
 	"features": [
 		["clifftree:disk_sand_deep_ocean_floor"],

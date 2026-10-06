@@ -7,7 +7,7 @@
 				"sound": "minecraft:music.overworld.sparse_jungle"
 			}
 		},
-		"minecraft:visual/sky_color": "#77a8ff",
+		"minecraft:visual/sky_color": "#5FAAC5",
 		"minecraft:gameplay/increased_fire_burnout": true,
 		"minecraft:visual/fog_color": "#93D9C8",
 		"minecraft:visual/fog_start_distance": -16,
@@ -23,7 +23,7 @@
 	],
 	"downfall": 0.8,
 	"effects": {
-		"water_color": "#7ebee5",
+		"water_color": "#1499AC",
 		"grass_color": "#5EC541",
 		"foliage_color": "#3aa419"
 	},

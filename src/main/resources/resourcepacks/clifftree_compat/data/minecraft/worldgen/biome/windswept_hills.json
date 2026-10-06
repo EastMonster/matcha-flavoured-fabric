@@ -1,7 +1,7 @@
 {
 	"attributes": {
-		"minecraft:visual/sky_color": "#9ebbf8",
-		"minecraft:visual/water_fog_color": "#2e304c",
+		"minecraft:visual/sky_color": "#81B2E7",
+		"minecraft:visual/water_fog_color": "#03050A",
 		"minecraft:visual/fog_color": "#BBD6F0",
 		"minecraft:visual/fog_start_distance": -16,
 		"minecraft:visual/fog_end_distance": 512
@@ -13,7 +13,7 @@
 	],
 	"downfall": 0.3,
 	"effects": {
-		"water_color": "#aebfe2",
+		"water_color": "#2F628F",
 		"grass_color": "#96AB6F",
 		"foliage_color": "#89A457",
 		"dry_foliage_color": "#957B4A"

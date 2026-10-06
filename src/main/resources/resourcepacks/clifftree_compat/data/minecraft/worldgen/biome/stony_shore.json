@@ -1,6 +1,6 @@
 {
 	"attributes": {
-		"minecraft:visual/water_fog_color": "#2e304c",
+		"minecraft:visual/water_fog_color": "#03070A",
 		"minecraft:visual/sky_color": "#5CA1E3",
 		"minecraft:visual/fog_color": "#AEE3FC"
 	},
@@ -11,7 +11,7 @@
 	],
 	"downfall": 0.3,
 	"effects": {
-		"water_color": "#a2b5dd",
+		"water_color": "#08709D",
 		"grass_color": "#96AB6F",
 		"foliage_color": "#89A457"
 	},
