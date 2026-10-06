@@ -9,10 +9,12 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.category.extensions.vanilla.crafting.ICraftingCategoryExtension;
 import mezz.jei.api.constants.RecipeTypes;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IVanillaCategoryExtensionRegistration;
 import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.runtime.IJeiRuntime;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import monster.east.matchaff.compat.FarmersDelightCompat;
 import monster.east.matchaff.mixin.ClientAdvancementsAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.advancements.AdvancementProgress;
@@ -84,6 +86,17 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 	@Override
 	public void onRuntimeAvailable(IJeiRuntime runtime) {
 		jeiRuntime = runtime;
+		var ingredients = runtime.getIngredientManager();
+		var hidden = ingredients.getAllItemStacks().stream().filter(FarmersDelightCompat::isHidden).toList();
+		if (!hidden.isEmpty()) {
+			ingredients.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hidden);
+		}
+		var doughRecipes = runtime.getRecipeManager().createRecipeLookup(RecipeTypes.CRAFTING).includeHidden().get()
+				.filter(recipe -> recipe.id().identifier().equals(Identifier.parse("farmersdelight:wheat_dough_from_water")))
+				.toList();
+		if (!doughRecipes.isEmpty()) {
+			runtime.getRecipeManager().hideRecipes(RecipeTypes.CRAFTING, doughRecipes);
+		}
 		resetRecipeCache();
 		if (!tickListenerRegistered) {
 			ClientTickEvents.END_CLIENT_TICK.register(MatchaJeiPlugin::refreshSecretRecipes);

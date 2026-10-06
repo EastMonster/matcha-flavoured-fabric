@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": ["farmersdelight:rotten_tomato"],
+	"result": {
+		"id": "farmersdelight:tomato_seeds"
+	}
+}

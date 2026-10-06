@@ -51,10 +51,16 @@ Bug reports are welcome, but exact one-to-one compatibility with every data-pack
 
 This is an unofficial Fabric port of Klei's original [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) data pack. All credit for the original design, content, textures, and data pack goes to Klei and the contributors credited by the original project.
 
-See [CREDITS.txt](CREDITS.txt) for the original acknowledgements and sources of inspiration.
+See [CREDITS.txt](CREDITS.txt) for third-party compatibility credits, the original acknowledgements, and sources of inspiration.
 
 Thanks to OpenAI and Deepseek.
 
 ## License
 
 This project is distributed under the [CC BY-NC-SA 4.0 license](LICENSE), following the original project's licensing terms.
+
+Third-party textures in the Trinkets compatibility resource pack are derived from Trinkets / Trinkets Updated and recolored by EastMonster. These textures retain their [MIT license and copyright notices](src/main/resources/licenses/TrinketsUpdated-MIT.txt), which are also included in the distributed JAR.
+
+The CliffTree compatibility data pack contains biome data adapted from [CliffTree](https://modrinth.com/datapack/clifftree) 3.3 by Konci and its credited contributors. EastMonster modified world generation features for Matcha compatibility. This data remains under CC BY-NC-SA 4.0; attribution and source links are included in [CREDITS.txt](CREDITS.txt).
+
+Third-party textures in the Farmer's Delight compatibility resource pack are derived from Farmer's Delight by vectorwing and modified by EastMonster for the Matcha visual style. These textures retain their [MIT license and copyright notice](src/main/resources/licenses/FarmersDelight-MIT.txt), which are also included in the distributed JAR.

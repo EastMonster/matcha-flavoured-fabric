@@ -1,3 +1,38 @@
+THIRD-PARTY COMPATIBILITY CONTENT
+
+Farmer's Delight
+Textures in the Farmer's Delight compatibility resource pack are derived from
+Farmer's Delight by vectorwing, licensed under the MIT License.
+Modified by EastMonster for the Matcha visual style.
+Copyright (c) 2020 vectorwing
+Source: https://github.com/MehVahdJukaar/FarmersDelightRefabricated
+See licenses/FarmersDelight-MIT.txt in the distributed JAR, or
+src/main/resources/licenses/FarmersDelight-MIT.txt in the source repository.
+
+Trinkets Updated
+Textures in the Trinkets compatibility resource pack are derived from
+Trinkets / Trinkets Updated, licensed under the MIT License.
+Recolored by EastMonster for the Matcha visual style.
+Copyright (c) 2019-2024 Emily Rose Ploszaj
+Copyright (c) 2025-2026 Patbox
+Source: https://github.com/Patbox/trinkets
+See licenses/TrinketsUpdated-MIT.txt in the distributed JAR, or
+src/main/resources/licenses/TrinketsUpdated-MIT.txt in the source repository.
+
+CliffTree
+Biome data in the CliffTree compatibility data pack is derived from CliffTree
+3.3 by Konci (originally by Konci and Walls), with contributions credited to
+lunarbunten, Apollo, and NovaWostra in the supplied mod metadata.
+Modified by EastMonster to adapt world generation features to Matcha.
+Source: https://modrinth.com/datapack/clifftree
+Repository: https://github.com/Penumbra-MC/CliffTree
+Licensed under CC BY-NC-SA 4.0, including its disclaimer of warranties:
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+The project LICENSE contains the full license text.
+
+ORIGINAL MATCHA FLAVOURED ACKNOWLEDGEMENTS
+The following acknowledgements are reproduced from the upstream CREDITS.txt.
+
 PROPER CREDITS -----------------------------------------------------------------------------------------------
 
 Ciren: "Golden" music disc composed by Ciren. Added in memory of my dog, Dakota, who died in 2026 a few days after the summer solstice
@@ -7,14 +42,14 @@ Imtlx: Fishing sounds and Angler's Almanac (They did a ton of work, shout out!)
 DeBlezyBestie: Malachite, Crete, and Elegy of The Abbey Music Discs
 Check out their YT!: https://www.youtube.com/@deblezyboi
 
-Movpasd: Biome and Foliage Colour Maps (Gradated) 
+Movpasd: Biome and Foliage Colour Maps (Gradated)
 
 Vee Vaicekauskas: Refuge, Abbey, Ruby, Through Hell, and Estus Music Tracks
-Check out their bandcamp!: https://par4.bandcamp.com/ 
+Check out their bandcamp!: https://par4.bandcamp.com/
 
 All OTHER Textures and Data in the pack were made by me (Klei), so check the license and feel free to steal!!
-If you do credit me, feel free to link my YT page jsjs 
-https://www.youtube.com/@kleiwright 
+If you do credit me, feel free to link my YT page jsjs
+https://www.youtube.com/@kleiwright
 
 
 
@@ -25,29 +60,29 @@ This data-resource-pack was heavily inspired by Raspmary's wonderful modpack "Ra
 The modpack is really very good! If you want a cleaner version of this datapack go check it out
 https://www.curseforge.com/minecraft/modpacks/raspberry-flavoured
 
-The only reason I left behind raspmary's modpack was because I wanted a forever world, and I 
+The only reason I left behind raspmary's modpack was because I wanted a forever world, and I
 wanted it to be forever-vanilla compatible.
 
 The textures for this pack where heavily inspired by JermsyBoy. After he stopped updating his pack, I started
-updating it for my own use. Eventually, I went in and re-did everything myself, but a lot of the textures I 
+updating it for my own use. Eventually, I went in and re-did everything myself, but a lot of the textures I
 made where inspired directly from his work.
 His original texture pack: https://www.curseforge.com/minecraft/texture-packs/a-little-taste-of-jerm
-He also has a youtube channel, and has some stunning builds: https://www.youtube.com/channel/UCICnSwa3x5sHTWmTP6YO30w 
+He also has a youtube channel, and has some stunning builds: https://www.youtube.com/channel/UCICnSwa3x5sHTWmTP6YO30w
 
 
 I also want to thank
 
 MiziraGamez for providing a framework for endless repairing (No XP cap)
-You can find their datapack here: https://modrinth.com/datapack/repair-cost-remover 
+You can find their datapack here: https://modrinth.com/datapack/repair-cost-remover
 
 Gooporeal for providing inspiration for the Lichen re-models I did
 Their resource pack: https://modrinth.com/resourcepack/gooporeals-lichen
 
-Vectorwing for providing the inspiration for a lot of my textures 
+Vectorwing for providing the inspiration for a lot of my textures
 Their resourcepack: https://www.curseforge.com/minecraft/texture-packs/detail-brush
 (Gorgeous work)
 
-Rhythmic under PurpurMC for providing a framework for looting shears. 
+Rhythmic under PurpurMC for providing a framework for looting shears.
 Their datapack: https://modrinth.com/datapack/purpurpacks-looting-shears?version=26.1&loader=datapack
 
 

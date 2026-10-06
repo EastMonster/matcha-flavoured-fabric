@@ -1,0 +1,12 @@
+{
+	"type": "farmersdelight:cooking",
+	"experience": 1.0,
+	"ingredients": [
+		"#c:drinks/milk",
+		"minecraft:sugar",
+		"matcha:chocolate",
+		"matcha:chocolate"
+	],
+	"recipe_book_tab": "drinks",
+	"result": { "id": "farmersdelight:hot_cocoa" }
+}

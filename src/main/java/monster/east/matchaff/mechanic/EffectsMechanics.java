@@ -114,7 +114,7 @@ public final class EffectsMechanics {
 
 	public static void onConsumed(ServerPlayer player, ItemStack stack) {
 		var data = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
-		for (int seconds : new int[] {3, 30, 60}) {
+		for (int seconds : new int[] {3, 30, 45, 60}) {
 			if (data.getCompound("matcha:aura_" + seconds + "s").isEmpty()) {
 				continue;
 			}

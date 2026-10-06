@@ -3,6 +3,7 @@
 	"package": "monster.east.matchaff.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
+		"compat.FarmersDelightNourishmentMixin",
 		"DataFixTypesMixin",
 		"PlayerDataStorageMixin",
 		"PlayerAdvancementsMixin",
@@ -41,6 +42,8 @@
 		"WheatShapeMixin"
 	],
 	"client": [
+		"compat.FarmersDelightNourishmentOverlayMixin",
+		"compat.FarmersDelightFoodTooltipMixin",
 		"AirBubblesHudMixin",
 		"AdvancementsScreenMixin",
 		"AdvancementWidgetMixin",

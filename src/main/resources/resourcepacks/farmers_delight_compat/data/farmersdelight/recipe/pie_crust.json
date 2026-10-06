@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"M": "#c:drinks/milk",
+		"w": "matcha:flour"
+	},
+	"pattern": ["wMw", " w "],
+	"result": {
+		"id": "farmersdelight:pie_crust"
+	}
+}

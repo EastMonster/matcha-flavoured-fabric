@@ -1,0 +1,25 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_the_recipe": {
+			"conditions": {
+				"recipes": "farmersdelight:tomato_seeds"
+			},
+			"trigger": "minecraft:recipe_unlocked"
+		},
+		"has_tomato": {
+			"conditions": {
+				"items": [
+					{
+						"items": "farmersdelight:rotten_tomato"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [["has_the_recipe", "has_tomato"]],
+	"rewards": {
+		"recipes": ["farmersdelight:tomato_seeds"]
+	}
+}
