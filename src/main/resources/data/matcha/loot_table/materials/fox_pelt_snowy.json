@@ -1,0 +1,22 @@
+{
+	"pools": [
+		{
+			"entries": [
+				{
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "matcha:fox_pelt_snowy"
+							}
+						}
+					],
+					"name": "matcha:fox_pelt",
+					"type": "minecraft:item"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"type": "minecraft:chest"
+}

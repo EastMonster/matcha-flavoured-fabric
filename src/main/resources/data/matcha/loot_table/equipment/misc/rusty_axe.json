@@ -1,0 +1,14 @@
+{
+	"pools": [
+		{
+			"entries": [
+				{
+					"name": "matcha:rusty_axe",
+					"type": "minecraft:item"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"type": "minecraft:chest"
+}
