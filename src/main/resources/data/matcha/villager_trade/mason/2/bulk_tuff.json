@@ -1,21 +1,21 @@
 {
 	"max_uses": 999,
-	"xp": 5,
+	"xp": 15,
 	"wants": {
 		"count": 1,
 		"id": "minecraft:emerald"
 	},
 	"gives": {
-		"count": 4,
+		"count": 2,
 		"id": "minecraft:poisonous_potato",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "trade.matcha.bulk_diorite"
+				"translate": "trade.matcha.bulk_tuff"
 			},
-			"minecraft:item_model": "matcha:bulk_diorite",
+			"minecraft:item_model": "matcha:bulk_tuff",
 			"minecraft:lore": [
 				{
-					"translate": "trade.matcha.bulk_diorite.desc",
+					"translate": "trade.matcha.bulk_tuff.desc",
 					"color": "gray",
 					"italic": false
 				},
@@ -33,7 +33,7 @@
 				"!on_consume_effects": {}
 			},
 			"use_remainder": {
-				"id": "minecraft:diorite",
+				"id": "minecraft:tuff",
 				"count": 64
 			}
 		}
