@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
 	"ingredients": [
-		"matcha:tomato",
+		"#c:foods/tomato",
 		"minecraft:dandelion",
 		"minecraft:fern",
 		["minecraft:cooked_cod", "minecraft:cooked_salmon"],

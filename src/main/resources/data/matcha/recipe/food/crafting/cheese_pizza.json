@@ -5,7 +5,7 @@
 	"pattern": ["CCC", "TTT", "DDD"],
 	"key": {
 		"D": "matcha:dough",
-		"T": "matcha:tomato",
+		"T": "#c:foods/tomato",
 		"C": "matcha:cheese"
 	},
 	"result": {
