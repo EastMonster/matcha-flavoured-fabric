@@ -1,0 +1,48 @@
+{
+	"pools": [
+		{
+			"entries": [
+				{
+					"functions": [
+						{
+							"components": {
+								"!minecraft:food": {},
+								"minecraft:consumable": {
+									"!on_consume_effects": {},
+									"consume_seconds": 0,
+									"has_consume_particles": false,
+									"sound": "minecraft:block.stone.fall"
+								},
+								"minecraft:item_model": "minecraft:tuff",
+								"minecraft:item_name": {
+									"text": "Bulk Tuff"
+								},
+								"minecraft:lore": [
+									{
+										"color": "gray",
+										"italic": false,
+										"text": "x64 Tuff"
+									},
+									{
+										"color": "dark_gray",
+										"italic": false,
+										"text": "Use to unpack"
+									}
+								],
+								"use_remainder": {
+									"count": 64,
+									"id": "minecraft:tuff"
+								}
+							},
+							"function": "minecraft:set_components"
+						}
+					],
+					"name": "minecraft:poisonous_potato",
+					"type": "minecraft:item"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"type": "minecraft:chest"
+}
