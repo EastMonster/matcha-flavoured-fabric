@@ -6,7 +6,7 @@
 		"minecraft:sugar",
 		"matcha:milk_bottle",
 		"matcha:oil",
-		"matcha:tomato",
+		"#c:foods/tomato",
 		"matcha:cheese",
 		"minecraft:bowl"
 	],
