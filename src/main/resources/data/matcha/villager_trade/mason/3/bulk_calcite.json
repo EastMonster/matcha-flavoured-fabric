@@ -10,12 +10,12 @@
 		"id": "minecraft:poisonous_potato",
 		"components": {
 			"minecraft:item_name": {
-				"translate": "trade.matcha.bulk_smooth_sandstone"
+				"translate": "trade.matcha.bulk_calcite"
 			},
-			"minecraft:item_model": "matcha:bulk_smooth_sandstone",
+			"minecraft:item_model": "matcha:bulk_calcite",
 			"minecraft:lore": [
 				{
-					"translate": "trade.matcha.bulk_smooth_sandstone.desc",
+					"translate": "trade.matcha.bulk_calcite.desc",
 					"color": "gray",
 					"italic": false
 				},
@@ -33,7 +33,7 @@
 				"!on_consume_effects": {}
 			},
 			"use_remainder": {
-				"id": "minecraft:smooth_sandstone",
+				"id": "minecraft:calcite",
 				"count": 64
 			}
 		}

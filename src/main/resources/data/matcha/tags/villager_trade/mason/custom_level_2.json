@@ -1,10 +1,10 @@
 {
-  "values": [
-    "matcha:mason/2/deepslate",
-    "matcha:mason/2/smooth_red_sandstone",
-    "matcha:mason/2/smooth_sandstone",
-    "matcha:mason/2/tuff",
-    "matcha:mason/2/terracotta",
-    "matcha:mason/2/glass"
-  ]
+	"values": [
+		"matcha:mason/2/bulk_deepslate",
+		"matcha:mason/2/bulk_smooth_red_sandstone",
+		"matcha:mason/2/bulk_smooth_sandstone",
+		"matcha:mason/2/bulk_tuff",
+		"matcha:mason/2/bulk_terracotta",
+		"matcha:mason/2/bulk_glass"
+	]
 }

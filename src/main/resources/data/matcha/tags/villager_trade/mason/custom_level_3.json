@@ -1,8 +1,8 @@
 {
-  "values": [
-		"matcha:mason/3/calcite",
-		"matcha:mason/3/flowstone",
-		"matcha:mason/3/malachite",
-		"matcha:mason/3/cinnabar"
-  ]
+	"values": [
+		"matcha:mason/3/bulk_calcite",
+		"matcha:mason/3/bulk_flowstone",
+		"matcha:mason/3/bulk_malachite",
+		"matcha:mason/3/bulk_cinnabar"
+	]
 }
