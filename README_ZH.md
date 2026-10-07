@@ -38,6 +38,7 @@
 - Mod Menu 设置页面可以让每位客户端玩家单独关闭主世界的 True Darkness，不会改变服务器玩法。
 - 兼容 [Trinkets Updated](https://modrinth.com/mod/trinkets-updated)：现在可以同时佩戴耳环和头盔；已佩戴头盔时，耳环提供的护甲值不生效。
 - 兼容 [CliffTree](https://modrinth.com/datapack/clifftree) 的 Fabric Mod 版本。如果你想让 Matcha 兼容更多的地形模组，欢迎在 [Issues](https://github.com/EastMonster/matcha-flavoured-fabric/issues) 提出建议！
+- 兼容 [Farmer's Delight Refabricated](https://modrinth.com/mod/farmers-delight-refabricated). 享受种地吧!
 
 ## (可能) 导致行为差异的修改
 
