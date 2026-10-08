@@ -61,6 +61,14 @@
 			{
 				"namespace": "farmersdelight",
 				"path": "advancement/recipes/food/bread_from_smelting\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/bread_from_smoking\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/food/bread_from_smoking\\.json"
 			}
 		]
 	}
