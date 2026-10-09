@@ -1,0 +1,163 @@
+{
+	"gives": {
+		"id": "matcha:seed_bundle",
+		"count": 1
+	},
+	"max_uses": 999,
+	"wants": {
+		"count": 1,
+		"id": "minecraft:emerald"
+	},
+	"xp": 10,
+	"given_item_modifiers": [
+		{
+			"function": "minecraft:set_contents",
+			"component": "minecraft:bundle_contents",
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potato",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 4
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:carrot",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 4
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": {
+						"pools": [
+							{
+								"rolls": 1,
+								"entries": [
+									{
+										"type": "minecraft:loot_table",
+										"value": {
+											"pools": [
+												{
+													"rolls": 1,
+													"entries": [
+														{
+															"type": "minecraft:item",
+															"name": "matcha:tomato_seeds",
+															"functions": [
+																{
+																	"function": "minecraft:set_count",
+																	"count": 16
+																}
+															]
+														}
+													]
+												},
+												{
+													"rolls": 1,
+													"entries": [
+														{
+															"type": "minecraft:item",
+															"name": "minecraft:wheat_seeds",
+															"functions": [
+																{
+																	"function": "minecraft:set_count",
+																	"count": 16
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									},
+									{
+										"type": "minecraft:loot_table",
+										"value": {
+											"pools": [
+												{
+													"rolls": 1,
+													"entries": [
+														{
+															"type": "minecraft:item",
+															"name": "minecraft:beetroot_seeds",
+															"functions": [
+																{
+																	"function": "minecraft:set_count",
+																	"count": 16
+																}
+															]
+														}
+													]
+												},
+												{
+													"rolls": 1,
+													"entries": [
+														{
+															"type": "minecraft:item",
+															"name": "minecraft:wheat_seeds",
+															"functions": [
+																{
+																	"function": "minecraft:set_count",
+																	"count": 16
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									},
+									{
+										"type": "minecraft:loot_table",
+										"value": {
+											"pools": [
+												{
+													"rolls": 1,
+													"entries": [
+														{
+															"type": "minecraft:item",
+															"name": "minecraft:beetroot_seeds",
+															"functions": [
+																{
+																	"function": "minecraft:set_count",
+																	"count": 16
+																}
+															]
+														}
+													]
+												},
+												{
+													"rolls": 1,
+													"entries": [
+														{
+															"type": "minecraft:item",
+															"name": "matcha:tomato_seeds",
+															"functions": [
+																{
+																	"function": "minecraft:set_count",
+																	"count": 16
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}
