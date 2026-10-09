@@ -1,4 +1,6 @@
 {
+	"block.farmersdelight.straw_bale": "Balla di paglia secca",
+	"item.farmersdelight.straw": "Paglia secca",
 	"desc.matcha.feeding_full_health": "❤ Salute piena",
 	"effect.farmersdelight.nourishment.desc": " Nutrimento (%s)",
 	"item.farmersdelight.netherite_knife": "Coltello di Adamanto",

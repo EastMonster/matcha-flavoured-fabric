@@ -1,4 +1,6 @@
 {
+	"block.farmersdelight.straw_bale": "Бала суха слама",
+	"item.farmersdelight.straw": "Суха слама",
 	"desc.matcha.feeding_full_health": "❤ Пълно здраве",
 	"effect.farmersdelight.nourishment.desc": " Засищане (%s)",
 	"item.farmersdelight.netherite_knife": "Адамантиев нож",

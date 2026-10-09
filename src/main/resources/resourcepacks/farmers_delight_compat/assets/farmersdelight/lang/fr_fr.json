@@ -1,4 +1,6 @@
 {
+	"block.farmersdelight.straw_bale": "Botte de paille sèche",
+	"item.farmersdelight.straw": "Paille sèche",
 	"desc.matcha.feeding_full_health": "❤ Santé maximale",
 	"effect.farmersdelight.nourishment.desc": " Bien mangé (%s)",
 	"item.farmersdelight.netherite_knife": "Couteau en adamant",
