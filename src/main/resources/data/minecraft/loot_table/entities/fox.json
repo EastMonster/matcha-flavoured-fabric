@@ -17,36 +17,36 @@
 						{
 							"type": "minecraft:furnace_smelt",
 							"condition": {
-									"type": "minecraft:any_of",
-									"terms": [
-										{
-											"type": "minecraft:entity_properties",
-											"entity": "this",
-											"predicate": {
-												"flags": {
-													"is_on_fire": true
-												}
+								"type": "minecraft:any_of",
+								"terms": [
+									{
+										"type": "minecraft:entity_properties",
+										"entity": "this",
+										"predicate": {
+											"flags": {
+												"is_on_fire": true
 											}
-										},
-										{
-											"type": "minecraft:entity_properties",
-											"entity": "direct_attacker",
-											"predicate": {
-												"equipment": {
-													"mainhand": {
-														"predicates": {
-															"minecraft:enchantments": [
-																{
-																	"enchantments": "#minecraft:smelts_loot"
-																}
-															]
-														}
+										}
+									},
+									{
+										"type": "minecraft:entity_properties",
+										"entity": "direct_attacker",
+										"predicate": {
+											"equipment": {
+												"mainhand": {
+													"predicates": {
+														"minecraft:enchantments": [
+															{
+																"enchantments": "#minecraft:smelts_loot"
+															}
+														]
 													}
 												}
 											}
 										}
-									]
-								}
+									}
+								]
+							}
 						},
 						{
 							"type": "minecraft:enchanted_count_increase",
@@ -68,27 +68,32 @@
 					"type": "minecraft:item",
 					"name": "matcha:fox_pelt",
 					"condition": {
-							"type": "minecraft:entity_properties",
-							"entity": "this",
-							"predicate": {
-								"minecraft:components": {
-									"minecraft:fox/variant": "red"
-								}
+						"type": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {
+							"minecraft:components": {
+								"minecraft:fox/variant": "red"
 							}
 						}
-				},
+					}
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
 				{
 					"type": "minecraft:item",
 					"name": "matcha:fox_pelt",
 					"condition": {
-							"type": "minecraft:entity_properties",
-							"entity": "this",
-							"predicate": {
-								"minecraft:components": {
-									"minecraft:fox/variant": "snow"
-								}
+						"type": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {
+							"minecraft:components": {
+								"minecraft:fox/variant": "snow"
 							}
-						},
+						}
+					},
 					"modifier": [
 						{
 							"type": "minecraft:set_components",

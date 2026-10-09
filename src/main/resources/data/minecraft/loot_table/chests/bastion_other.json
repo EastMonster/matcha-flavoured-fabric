@@ -253,12 +253,6 @@
 					"type": "minecraft:item",
 					"modifier": [
 						{
-							"type": "minecraft:set_components",
-							"components": {
-								"!minecraft:entity_data": {}
-							}
-						},
-						{
 							"count": {
 								"type": "minecraft:uniform",
 								"max": 6,
@@ -267,7 +261,7 @@
 							"type": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:endermite_spawn_egg",
+					"name": "matcha:benzene",
 					"weight": 2
 				},
 				{
