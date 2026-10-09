@@ -1,4 +1,6 @@
 {
+	"block.farmersdelight.straw_bale": "Dry Straw Bale",
+	"item.farmersdelight.straw": "Dry Straw",
 	"desc.matcha.feeding_full_health": "❤ Full Health",
 	"effect.farmersdelight.nourishment.desc": "\ue030 Nourishment (%s)",
 	"item.farmersdelight.netherite_knife": "Adamant Knife",

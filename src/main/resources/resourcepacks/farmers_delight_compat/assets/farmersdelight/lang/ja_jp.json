@@ -1,4 +1,6 @@
 {
+	"block.farmersdelight.straw_bale": "乾いた藁の俵",
+	"item.farmersdelight.straw": "乾いた藁",
 	"desc.matcha.feeding_full_health": "❤ 体力全回復",
 	"effect.farmersdelight.nourishment.desc": " 栄養（%s）",
 	"item.farmersdelight.netherite_knife": "アダマントのナイフ",

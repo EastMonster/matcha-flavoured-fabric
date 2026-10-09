@@ -1,4 +1,6 @@
 {
+	"block.farmersdelight.straw_bale": "Тюк сухой соломы",
+	"item.farmersdelight.straw": "Сухая солома",
 	"desc.matcha.feeding_full_health": "❤ Полное здоровье",
 	"effect.farmersdelight.nourishment.desc": " Сытость (%s)",
 	"item.farmersdelight.netherite_knife": "Адамантовый нож",

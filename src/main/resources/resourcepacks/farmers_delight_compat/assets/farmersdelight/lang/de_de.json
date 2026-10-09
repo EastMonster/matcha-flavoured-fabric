@@ -1,4 +1,6 @@
 {
+	"block.farmersdelight.straw_bale": "Trockenes Strohbündel",
+	"item.farmersdelight.straw": "Trockenes Stroh",
 	"desc.matcha.feeding_full_health": "❤ Volle Gesundheit",
 	"effect.farmersdelight.nourishment.desc": " Gesättigt (%s)",
 	"item.farmersdelight.netherite_knife": "Adamantküchenmesser",

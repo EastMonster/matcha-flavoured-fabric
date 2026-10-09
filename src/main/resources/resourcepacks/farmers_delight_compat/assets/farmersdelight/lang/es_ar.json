@@ -1,4 +1,6 @@
 {
+	"block.farmersdelight.straw_bale": "Fardo de paja seca",
+	"item.farmersdelight.straw": "Paja seca",
 	"desc.matcha.feeding_full_health": "❤ Salud completa",
 	"effect.farmersdelight.nourishment.desc": " Nutrición (%s)",
 	"item.farmersdelight.netherite_knife": "Cuchillo de adamante",
