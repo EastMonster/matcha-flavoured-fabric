@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "Томаты",
 	"item.matcha.tomato_seeds": "Семена томата",
 	"item.matcha.beacon_kindling": "Сигнальная растопка",
-	"item.matcha.divine_fragment": "Божественный осколок",
 	"item.matcha.tallow": "Жир",
 	"item.matcha.nazar": "Назар",
 	"item.matcha.estus_flask": "Фляга с эстусом",
@@ -968,5 +967,7 @@
 	"subtitles.matcha.fishing.enchanted_book": "Выловлена книга из полымя",
 	"subtitles.matcha.fishing.nautilus_shell": "Выловлена раковина наутилуса",
 	"subtitles.matcha.fishing.frog": "Выловлена лягушка",
-	"trinkets.slot.head.earring": "Серьга"
+	"trinkets.slot.head.earring": "Серьга",
+	"item.matcha.pith": "Божественный осколок",
+	"item.matcha.mushroom_soup": "Прозрачный грибной суп"
 }

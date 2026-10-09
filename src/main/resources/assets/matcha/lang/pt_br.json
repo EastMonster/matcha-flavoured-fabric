@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "Tomates",
 	"item.matcha.tomato_seeds": "Sementes de Tomate",
 	"item.matcha.beacon_kindling": "Fogueira Sinalizadora",
-	"item.matcha.divine_fragment": "Fragmento Divino",
 	"item.matcha.tallow": "Sebo",
 	"item.matcha.nazar": "Olho Turco",
 	"item.matcha.estus_flask": "Frasco de Estus",
@@ -956,5 +955,8 @@
 	"advancements.matcha.anglers_almanac.estus_ash.desc": "Mesmo parecendo solúvel, Cinzas de Estus parece se compactar quando colocado na água.",
 	"advancements.matcha.anglers_almanac.sulfur_chunk.desc": "Um pedaço que ou significa que você vai explodir em mil pedaços ou vai ser lançado por um gêiser. Ou você está mais perto de fabricar corante verde, não sei.",
 	"advancements.matcha.anglers_almanac.goat_horn.desc": "Claramente quando você vai pescar, a primeira que você precisa é de um jeito de fazer um barulho muito alto para afastar tudo que devia estar perto.",
-	"trinkets.slot.head.earring": "Brinco"
+	"trinkets.slot.head.earring": "Brinco",
+	"item.matcha.pith": "Essência",
+	"item.matcha.mushroom_soup": "Sopa de Vegetal Coado",
+	"effect.matcha.jump_boost_2": " Supersalto II (%s)"
 }

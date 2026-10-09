@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "Domates",
 	"item.matcha.tomato_seeds": "Domates Tohumu",
 	"item.matcha.beacon_kindling": "Çırası",
-	"item.matcha.divine_fragment": "İlahi Parça",
 	"item.matcha.tallow": "Donyağı",
 	"item.matcha.nazar": "Nazar Boncuğu",
 	"item.matcha.estus_flask": "Estus Şişesi",
@@ -438,7 +437,7 @@
 	"enchantment.matcha.anemos": "Anemos",
 	"enchantment.matcha.bloodrage": "Kan Öfkesi",
 	"enchantment.matcha.cleanses_head": " Arındırır: Körlük, Karanlık",
-	"enchantment.matcha.cleanses_chest": " Arındırır: Zehir, Solma",
+	"enchantment.matcha.cleanses_chest": " Arındırır: Zehir",
 	"enchantment.matcha.cleanses_feet": " Arındırır: Yükselme",
 	"enchantment.matcha.cleanses_legs": " Arındırır: Yavaşlık",
 	"effect.matcha.cleanse_maleffect": " Kötücül Etki Arındırma",
@@ -947,5 +946,6 @@
 	"advancements.matcha.anglers_almanac.estus_ash.desc": "Çözünüyormuş gibi gözükse de, Estus külü zamanla çözeltiden ayrılır. Suda emülgatör olmadığından, diplerde katman oluşturur. Öyleyse, o katman niye bu kadar ince?",
 	"advancements.matcha.anglers_almanac.sulfur_chunk.desc": "Ya patlatıldığın ya da gayzer tarafından fışkırtıldığın anlamına gelen bir parça. Ya da yeşil boya yapmaya doğru bir adım daha. Belli olmaz.",
 	"advancements.matcha.anglers_almanac.goat_horn.desc": "Çünkü balık tutarken ilk lazım olan şey, yine yanlış balığı tuttuğunu herkese bildirmenin yüksek sesli bir yoludur.",
-	"trinkets.slot.head.earring": "Küpe"
+	"trinkets.slot.head.earring": "Küpe",
+	"item.matcha.pith": "İlahi Parça"
 }

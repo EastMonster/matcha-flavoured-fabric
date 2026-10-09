@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "Tomaten",
 	"item.matcha.tomato_seeds": "Tomatensamen",
 	"item.matcha.beacon_kindling": "Signalfeuer-Anzündholz",
-	"item.matcha.divine_fragment": "Heiliges Fragment",
 	"item.matcha.tallow": "Talg",
 	"item.matcha.nazar": "Nazar",
 	"item.matcha.estus_flask": "Estus-Flakon",
@@ -968,5 +967,8 @@
 	"subtitles.matcha.fishing.enchanted_book": "Buch der Verdammnis geangelt",
 	"subtitles.matcha.fishing.nautilus_shell": "Nautilusschale geangelt",
 	"subtitles.matcha.fishing.frog": "Frosch gefangen",
-	"trinkets.slot.head.earring": "Ohrring"
+	"trinkets.slot.head.earring": "Ohrring",
+	"item.matcha.pith": "Nukleus",
+	"item.matcha.mushroom_soup": "Klare Pilzsuppe",
+	"effect.matcha.jump_boost_2": " Sprungkraft II (%s)"
 }

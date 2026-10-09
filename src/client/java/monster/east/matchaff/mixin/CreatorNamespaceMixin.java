@@ -75,6 +75,7 @@ public abstract class CreatorNamespaceMixin implements FabricItem {
 			"cooked_chicken",
 			"cooked_mutton",
 			"cooked_porkchop",
+			"cookie",
 			"dried_kelp",
 			"enchanted_golden_apple",
 			"glow_berries",

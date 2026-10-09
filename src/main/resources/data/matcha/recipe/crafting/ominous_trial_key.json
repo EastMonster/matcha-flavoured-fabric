@@ -1,10 +1,7 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
-	"ingredients": [
-		"minecraft:trial_key",
-		"matcha:divine_fragment"
-	],
+	"ingredients": ["minecraft:trial_key", "matcha:pith"],
 	"result": {
 		"count": 1,
 		"id": "minecraft:ominous_trial_key"

@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "トマト",
 	"item.matcha.tomato_seeds": "トマトの種",
 	"item.matcha.beacon_kindling": "狼煙の焚き付け",
-	"item.matcha.divine_fragment": "神聖な破片",
 	"item.matcha.tallow": "獣脂",
 	"item.matcha.nazar": "ナザール",
 	"item.matcha.estus_flask": "エスト瓶",
@@ -666,7 +665,7 @@
 	"advancements.matcha.tutorial.obtain_oven.desc": "レンガと鉄でオーブンを造る",
 	"advancements.matcha.tutorial.obtain_paneer_mahkani.title": "甘くてスパイシー！",
 	"advancements.matcha.tutorial.obtain_paneer_mahkani.desc": "パニールマカニを作る。どんな食料にもベジタリアン向けの選択肢がある",
-	"advancements.matcha.tutorial.obtain_ramen.title": "最高のスープ！",
+	"advancements.matcha.tutorial.obtain_ramen.title": "ラーメン一丁！",
 	"advancements.matcha.tutorial.obtain_ramen.desc": "ラーメンを作る",
 	"advancements.matcha.tutorial.obtain_ruby.title": "第二篇",
 	"advancements.matcha.tutorial.obtain_ruby.desc": "パンデモニウムの残骸を略奪する",
@@ -968,5 +967,8 @@
 	"subtitles.matcha.fishing.enchanted_book": "ヘルバウンドの本を釣り上げる",
 	"subtitles.matcha.fishing.nautilus_shell": "オウムガイの殻を釣り上げる",
 	"subtitles.matcha.fishing.frog": "カエルを釣り上げる",
-	"trinkets.slot.head.earring": "イヤリング"
+	"trinkets.slot.head.earring": "イヤリング",
+	"item.matcha.pith": "精髄",
+	"item.matcha.mushroom_soup": "キノコのすまし汁",
+	"effect.matcha.jump_boost_2": " 跳躍力上昇 II（%s）"
 }

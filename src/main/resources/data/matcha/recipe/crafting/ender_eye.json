@@ -1,10 +1,7 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
-	"ingredients": [
-		"minecraft:blaze_rod",
-		"matcha:divine_fragment"
-	],
+	"ingredients": ["minecraft:blaze_rod", "matcha:pith"],
 	"result": {
 		"count": 16,
 		"id": "minecraft:ender_eye"

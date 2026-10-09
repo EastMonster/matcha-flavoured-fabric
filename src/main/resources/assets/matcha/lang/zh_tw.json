@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "番茄",
 	"item.matcha.tomato_seeds": "番茄種子",
 	"item.matcha.beacon_kindling": "狼煙柴火",
-	"item.matcha.divine_fragment": "神聖碎片",
 	"item.matcha.tallow": "獸脂",
 	"item.matcha.nazar": "邪眼",
 	"item.matcha.estus_flask": "原質瓶",
@@ -855,6 +854,7 @@
 	"advancements.matcha.anglers_almanac.freshwater_pufferfish.desc": "體型嬌小，一旦遇到危險就會膨脹成帶刺的氣球。滿合理的",
 	"advancements.matcha.anglers_almanac.fish_bones.desc": "魚跑掉了……顯然跑不夠快",
 	"advancements.matcha.anglers_almanac.frog.desc": "你本想釣一條魚，卻釣到了青蛙。釣魚的目標變得越來越模糊了",
-	"advancements.matcha.anglers_almanac.ink_sac.desc": "可疑的黑色囊狀物品，顯然其持有者不想被任何人目擊",
-	"trinkets.slot.head.earring": "耳環"
+	"advancements.matcha.anglers_almanac.ink_sac.desc": "可疑的黑色囊狀物品，顯然其失主不想被任何人目擊",
+	"trinkets.slot.head.earring": "耳環",
+	"item.matcha.pith": "神聖碎片"
 }

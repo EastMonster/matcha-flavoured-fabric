@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "Домати",
 	"item.matcha.tomato_seeds": "Доматени семена",
 	"item.matcha.beacon_kindling": "Подпалки за маяк",
-	"item.matcha.divine_fragment": "Божествен фрагмент",
 	"item.matcha.tallow": "Лой",
 	"item.matcha.nazar": "Назар",
 	"item.matcha.estus_flask": "Колба с Естус",
@@ -967,5 +966,7 @@
 	"subtitles.matcha.fishing.fish_bones": "Уловени са кости от риба",
 	"subtitles.matcha.fishing.enchanted_book": "Уловена е книга от Ада",
 	"subtitles.matcha.fishing.nautilus_shell": "Уловена е черупка на наутилус",
-	"subtitles.matcha.fishing.frog": "Уловена е жаба"
+	"subtitles.matcha.fishing.frog": "Уловена е жаба",
+	"item.matcha.pith": "Фрагмент от сърцевина",
+	"item.matcha.mushroom_soup": "Прозрачна гъбена супа"
 }

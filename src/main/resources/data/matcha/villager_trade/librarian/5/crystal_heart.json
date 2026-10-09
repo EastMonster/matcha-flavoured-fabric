@@ -3,7 +3,7 @@
 		"id": "minecraft:echo_shard"
 	},
 	"gives": {
-		"id": "matcha:divine_fragment",
+		"id": "matcha:pith",
 		"components": {
 			"minecraft:enchantment_glint_override": true,
 			"minecraft:rarity": "rare"

@@ -2,14 +2,10 @@
 	"type": "minecraft:crafting_shaped",
 	"category": "redstone",
 	"key": {
-		"#": "matcha:divine_fragment",
+		"#": "matcha:pith",
 		"X": "minecraft:tnt"
 	},
-	"pattern": [
-		"XXX",
-		"X#X",
-		"XXX"
-	],
+	"pattern": ["XXX", "X#X", "XXX"],
 	"result": {
 		"id": "matcha:bedrock_buster"
 	}

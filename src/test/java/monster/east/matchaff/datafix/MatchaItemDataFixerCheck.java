@@ -106,7 +106,7 @@ public final class MatchaItemDataFixerCheck {
 
 		CompoundTag divineFragmentCarrier = new CompoundTag();
 		divineFragmentCarrier.putString("id", "minecraft:turtle_scute");
-		assert "matcha:divine_fragment".equals(MatchaItemDataFixer.update(divineFragmentCarrier).getStringOr("id", ""));
+		assert "matcha:pith".equals(MatchaItemDataFixer.update(divineFragmentCarrier).getStringOr("id", ""));
 
 		CompoundTag nonItem = new CompoundTag();
 		nonItem.putString("id", "matcha-flavoured:abbey_overgrown");
@@ -530,7 +530,7 @@ public final class MatchaItemDataFixerCheck {
 		assert "matcha:bronze_sword".equals(migratedModifiers.getCompound(1).orElseThrow().getStringOr("id", ""));
 		assert "matcha:tomato".equals(migratedInventory.getCompound(1).orElseThrow().getStringOr("id", ""));
 		assert "matcha:tomato_seeds".equals(migratedInventory.getCompound(2).orElseThrow().getStringOr("id", ""));
-		assert migratedPlayer.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 7;
+		assert migratedPlayer.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 8;
 
 		CompoundTag chunk = new CompoundTag();
 		chunk.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 5);
@@ -554,7 +554,7 @@ public final class MatchaItemDataFixerCheck {
 				.getCompound("block_states").orElseThrow().getList("palette").orElseThrow();
 		assert "matcha:tomatoes".equals(migratedPalette.getCompound(0).orElseThrow().getStringOr("Name", ""));
 		assert "minecraft:wheat".equals(migratedPalette.getCompound(1).orElseThrow().getStringOr("Name", ""));
-		assert migratedChunk.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 7;
+		assert migratedChunk.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 8;
 	}
 
 	private static CompoundTag stackWithEnchantments(String id, String enchantment) {

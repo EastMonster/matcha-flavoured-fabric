@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "Tomates",
 	"item.matcha.tomato_seeds": "Graines de tomates",
 	"item.matcha.beacon_kindling": "Petit bois pour balise",
-	"item.matcha.divine_fragment": "Fragment divin",
 	"item.matcha.tallow": "Suif",
 	"item.matcha.nazar": "Nazar",
 	"item.matcha.estus_flask": "Fiole d'Estus",
@@ -967,5 +966,7 @@
 	"subtitles.matcha.fishing.enchanted_book": "Livre maudit récupéré",
 	"subtitles.matcha.fishing.nautilus_shell": "Coquille de nautile récupérée",
 	"subtitles.matcha.fishing.frog": "Grenouille attrapée",
-	"trinkets.slot.head.earring": "Boucle d'oreille"
+	"trinkets.slot.head.earring": "Boucle d'oreille",
+	"item.matcha.pith": "Moelle",
+	"item.matcha.mushroom_soup": "Soupe de champignons claire"
 }

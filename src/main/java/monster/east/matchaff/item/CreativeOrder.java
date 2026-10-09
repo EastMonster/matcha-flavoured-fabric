@@ -105,11 +105,12 @@ public class CreativeOrder {
 				String source = entry.has("source") ? entry.get("source").getAsString() : "inline result";
 				JsonObject result = entry.has("result")
 						? entry.getAsJsonObject("result")
-						: readResourceObject(source).getAsJsonObject("result");
+						: readResourceObject(source).getAsJsonObject(entry.has("field") ? entry.get("field").getAsString() : "result");
 				if (!id.toString().equals(result.get("id").getAsString())) {
 					throw new IllegalStateException("Creative override item does not match result: " + source);
 				}
-				overrides.add(new VanillaOverride(item, tab(entry.get("tab").getAsString()), result));
+				overrides.add(new VanillaOverride(item, tab(entry.get("tab").getAsString()), result,
+						entry.has("append") && entry.get("append").getAsBoolean()));
 			}
 			return overrides;
 		} catch (Exception exception) {
@@ -133,7 +134,12 @@ public class CreativeOrder {
 			ItemStack stack = ItemStack.CODEC.parse(RegistryOps.create(JsonOps.INSTANCE, holders), override.result())
 				.resultOrPartial(error -> { throw new IllegalStateException("Could not decode creative override: " + error); })
 				.orElseThrow();
-			replacements.put(override.item(), stack);
+			if (override.append()) {
+				stack.setCount(1);
+				output.accept(stack);
+			} else {
+				replacements.put(override.item(), stack);
+			}
 		}
 		replaceStacks(output.getDisplayStacks(), replacements);
 		replaceStacks(output.getSearchTabStacks(), replacements);
@@ -161,6 +167,6 @@ public class CreativeOrder {
 	public record Entry(Item item, ResourceKey<CreativeModeTab> tab) {
 	}
 
-	private record VanillaOverride(Item item, ResourceKey<CreativeModeTab> tab, JsonObject result) {
+	private record VanillaOverride(Item item, ResourceKey<CreativeModeTab> tab, JsonObject result, boolean append) {
 	}
 }

@@ -1,13 +1,9 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"ESE",
-		"DBD",
-		"EDE"
-	],
+	"pattern": ["ESE", "DBD", "EDE"],
 	"key": {
-		"S": "matcha:divine_fragment",
+		"S": "matcha:pith",
 		"B": "minecraft:enchanted_book",
 		"E": "minecraft:glowstone_dust",
 		"D": "minecraft:diamond"

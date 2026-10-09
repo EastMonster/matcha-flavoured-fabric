@@ -255,7 +255,6 @@
 			"pumpkin_empanada",
 			"brownie",
 			"chocolate",
-			"chocolate_chip_cookie",
 			"carrot_cupcake",
 			"golden_carrot_cupcake",
 			"chorus_mochi",
@@ -336,14 +335,7 @@
 			"trim_colour_shakudo",
 			"trim_colour_steel"
 		],
-		"gems": [
-			"amber",
-			"opal",
-			"ruby",
-			"topaz",
-			"raw_diamond",
-			"divine_fragment"
-		],
+		"gems": ["amber", "opal", "ruby", "topaz", "raw_diamond", "pith"],
 		"animal_materials": ["fish_bones", "fox_pelt", "sulfur_goo", "tallow"],
 		"seeds": ["tomato_seeds"],
 		"blessings": [
@@ -371,18 +363,6 @@
 			"blessing_yama",
 			"blessing_yamm",
 			"ofuda"
-		],
-		"flasks": [
-			"volatile_infested",
-			"volatile_invisibility",
-			"volatile_oozing",
-			"volatile_pitch",
-			"volatile_poison",
-			"volatile_slowness",
-			"volatile_weakness",
-			"volatile_weaving",
-			"volatile_wind_charged",
-			"volatile_wither"
 		],
 		"special_items": ["crystal_heart"],
 		"books": [

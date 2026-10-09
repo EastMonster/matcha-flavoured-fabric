@@ -74,7 +74,7 @@ final class DivineItemMechanics {
 							1, 0.05, 0.05, 0.05, 0);
 				}
 			} else if (stack.is(BuiltInRegistries.ITEM
-					.getValue(Identifier.fromNamespaceAndPath("matcha", "divine_fragment")))
+					.getValue(Identifier.fromNamespaceAndPath("matcha", "pith")))
 					|| stack.is(BuiltInRegistries.ITEM
 					.getValue(Identifier.fromNamespaceAndPath("matcha", "crystal_heart")))) {
 				if (everyTenTicks) {
@@ -95,7 +95,7 @@ final class DivineItemMechanics {
 				|| stack.is(Items.ENDER_EYE)
 				|| stack.is(Items.BLAZE_POWDER)
 				|| stack.is(BuiltInRegistries.ITEM
-				.getValue(Identifier.fromNamespaceAndPath("matcha", "divine_fragment")))
+				.getValue(Identifier.fromNamespaceAndPath("matcha", "pith")))
 				|| stack.is(BuiltInRegistries.ITEM
 						.getValue(Identifier.fromNamespaceAndPath("matcha", "crystal_heart")));
 	}

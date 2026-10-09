@@ -733,46 +733,6 @@
 		]
 	},
 	{
-		"id": "chocolate_chip_cookie",
-		"source": "data/matcha/recipe/food/crafting/chocolate_chip_cookie.json",
-		"lore": [
-			{
-				"translate": "effect.matcha.haste",
-				"with": ["5:00"],
-				"color": "yellow",
-				"italic": false
-			}
-		],
-		"nutrition": 0,
-		"saturation": 0,
-		"alwaysEdible": true,
-		"effects": [
-			{
-				"type": "apply",
-				"probability": 1,
-				"effects": [
-					{
-						"id": "minecraft:regeneration",
-						"duration": 48,
-						"amplifier": 2,
-						"ambient": false,
-						"particles": false,
-						"icon": false
-					},
-					{
-						"id": "minecraft:haste",
-						"duration": 6000,
-						"amplifier": 0,
-						"ambient": false,
-						"particles": false,
-						"icon": true
-					}
-				]
-			}
-		],
-		"consumeSeconds": 0.8
-	},
-	{
 		"id": "chorus_mochi",
 		"source": "data/matcha/recipe/food/crafting/chorus_mochi.json",
 		"lore": [

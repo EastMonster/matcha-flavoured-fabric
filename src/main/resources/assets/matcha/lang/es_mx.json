@@ -13,7 +13,6 @@
 	"block.matcha.tomatoes": "Tomates",
 	"item.matcha.tomato_seeds": "Semillas de tomate",
 	"item.matcha.beacon_kindling": "Leña humeante",
-	"item.matcha.divine_fragment": "Fragmento divino",
 	"item.matcha.tallow": "Sebo",
 	"item.matcha.nazar": "Ojo turco",
 	"item.matcha.estus_flask": "Frasco de estus",
@@ -617,7 +616,7 @@
 	"advancements.matcha.tutorial.light_campfire.title": "Al diablo con Prometeo",
 	"advancements.matcha.tutorial.light_campfire.desc": "Enciende leña usando yesca o un encendedor",
 	"advancements.matcha.tutorial.obtain_adamant.title": "Una aleación divina",
-	"advancements.matcha.tutorial.obtain_adamant.desc": "El adamante otorga a su portador una constitución Divina",
+	"advancements.matcha.tutorial.obtain_adamant.desc": "El adamante otorga a su portador una constitución divina",
 	"advancements.matcha.tutorial.obtain_adamant_tool.title": "Adamante apócrifo",
 	"advancements.matcha.tutorial.obtain_adamant_tool.desc": "Forja equipamiento de adamante a partir de diamante y aleación de adamante",
 	"advancements.matcha.tutorial.obtain_amber.title": "Canto III",
@@ -834,7 +833,7 @@
 	"item.matcha.pumpkin_curry": "Curry de calabaza",
 	"advancements.matcha.cook_pumpkin_curry.title": "Un platillo fortificador",
 	"advancements.matcha.cook_pumpkin_curry.desc": "Prepara curry de calabaza",
-	"item.matcha.trim_colour": "Color del ornamento",
+	"item.matcha.trim_colour": "Plantilla de color de ornamento",
 	"trim_material.matcha.shakudo": "Material de shakudo",
 	"trim_material.matcha.hepatizon": "Material de hepatizón",
 	"trim_material.matcha.electrum": "Material de electrum",
@@ -968,5 +967,8 @@
 	"subtitles.matcha.fishing.enchanted_book": "Libro infernal es atrapado",
 	"subtitles.matcha.fishing.nautilus_shell": "Caparazón de nautilo es atrapado",
 	"subtitles.matcha.fishing.frog": "Rana es atrapada",
-	"trinkets.slot.head.earring": "Arete"
+	"trinkets.slot.head.earring": "Arete",
+	"item.matcha.pith": "Esencia",
+	"item.matcha.mushroom_soup": "Sopa clara de hongos",
+	"effect.matcha.jump_boost_2": " Supersalto II (%s)"
 }

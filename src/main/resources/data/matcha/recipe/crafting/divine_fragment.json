@@ -1,11 +1,9 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
-	"ingredients": [
-		"minecraft:nether_star"
-	],
+	"ingredients": ["minecraft:nether_star"],
 	"result": {
 		"count": 9,
-		"id": "matcha:divine_fragment"
+		"id": "matcha:pith"
 	}
 }
