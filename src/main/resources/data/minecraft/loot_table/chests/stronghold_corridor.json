@@ -103,15 +103,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:endermite_spawn_egg",
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"!minecraft:entity_data": {}
-							}
-						}
-					]
+					"name": "matcha:benzene"
 				},
 				{
 					"type": "minecraft:loot_table",

@@ -68,7 +68,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:rabbit_hide",
+					"name": "matcha:fox_pelt",
 					"conditions": [
 						{
 							"condition": "minecraft:entity_properties",
@@ -76,17 +76,6 @@
 							"predicate": {
 								"minecraft:components": {
 									"minecraft:fox/variant": "red"
-								}
-							}
-						}
-					],
-					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:item_model": "matcha:fox_pelt",
-								"minecraft:item_name": {
-									"translate": "item.matcha.fox_pelt"
 								}
 							}
 						}
@@ -99,7 +88,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:rabbit_hide",
+					"name": "matcha:fox_pelt",
 					"conditions": [
 						{
 							"condition": "minecraft:entity_properties",
@@ -115,10 +104,7 @@
 						{
 							"function": "minecraft:set_components",
 							"components": {
-								"minecraft:item_model": "matcha:fox_pelt_snowy",
-								"minecraft:item_name": {
-									"translate": "item.matcha.fox_pelt"
-								}
+								"minecraft:item_model": "matcha:fox_pelt_snowy"
 							}
 						}
 					]
