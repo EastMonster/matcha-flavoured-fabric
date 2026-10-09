@@ -13,7 +13,7 @@
 	"block.matcha.tomatoes": "Tomates",
 	"item.matcha.tomato_seeds": "Graines de tomates",
 	"item.matcha.beacon_kindling": "Petit bois pour balise",
-	"item.matcha.divine_fragment": "Fragment divin",
+	"item.matcha.pith": "Moelle",
 	"item.matcha.tallow": "Suif",
 	"item.matcha.nazar": "Nazar",
 	"item.matcha.estus_flask": "Fiole d'Estus",
@@ -981,5 +981,6 @@
 	"trade.matcha.bulk_smooth_basalt.desc": "Basalte lisse ×64",
 	"trade.matcha.bulk_blackstone": "Roche noire en gros",
 	"trade.matcha.bulk_blackstone.desc": "Roche noire ×64",
+	"item.matcha.mushroom_soup": "Soupe de champignons claire",
 	"trinkets.slot.head.earring": "Boucle d'oreille"
 }

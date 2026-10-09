@@ -13,7 +13,7 @@
 	"block.matcha.tomatoes": "Томаты",
 	"item.matcha.tomato_seeds": "Семена томата",
 	"item.matcha.beacon_kindling": "Сигнальная растопка",
-	"item.matcha.divine_fragment": "Божественный осколок",
+	"item.matcha.pith": "Божественный осколок",
 	"item.matcha.tallow": "Жир",
 	"item.matcha.nazar": "Назар",
 	"item.matcha.estus_flask": "Фляга с эстусом",
@@ -982,5 +982,6 @@
 	"trade.matcha.bulk_smooth_basalt.desc": "x64 Гладкий базальт",
 	"trade.matcha.bulk_blackstone": "Связка чернита",
 	"trade.matcha.bulk_blackstone.desc": "x64 Чернит",
+	"item.matcha.mushroom_soup": "Прозрачный грибной суп",
 	"trinkets.slot.head.earring": "Серьга"
 }

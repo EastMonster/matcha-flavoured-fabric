@@ -13,7 +13,7 @@
 	"block.matcha.tomatoes": "Tomaten",
 	"item.matcha.tomato_seeds": "Tomatensamen",
 	"item.matcha.beacon_kindling": "Signalfeuer-Anzündholz",
-	"item.matcha.divine_fragment": "Heiliges Fragment",
+	"item.matcha.pith": "Nukleus",
 	"item.matcha.tallow": "Talg",
 	"item.matcha.nazar": "Nazar",
 	"item.matcha.estus_flask": "Estus-Flakon",
@@ -982,5 +982,7 @@
 	"trade.matcha.bulk_smooth_basalt.desc": "x64 Glatter Basalt",
 	"trade.matcha.bulk_blackstone": "Gehäufter Schwarzstein",
 	"trade.matcha.bulk_blackstone.desc": "x64 Schwarzstein",
+	"item.matcha.mushroom_soup": "Klare Pilzsuppe",
+	"effect.matcha.jump_boost_2": " Sprungkraft II (%s)",
 	"trinkets.slot.head.earring": "Ohrring"
 }

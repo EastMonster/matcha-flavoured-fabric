@@ -1,4 +1,5 @@
 {
+	"item.minecraft.cookie": "Chocolate Chip Cookie",
 	"block.minecraft.allium": "Hyacinth",
 	"block.minecraft.stone": "Limestone",
 	"item.minecraft.wheat": "Straw",
@@ -26,7 +27,7 @@
 	"item.minecraft.smithing_template.netherite_upgrade.ingredients": "Any Alloy",
 	"item.minecraft.netherite_upgrade_smithing_template.new": "Smithing Upgrade Template",
 	"container.upgrade.missing_template_tooltip": "Add Smithing Template or Leave Empty",
-	"item.minecraft.nether_star": "Divine Favor",
+	"item.minecraft.nether_star": "Amalgamated Pith",
 	"item.minecraft.honeycomb": "Wax",
 	"item.minecraft.enchanted_book": "§cHell-Bound Book",
 	"item.minecraft.emerald": "Obol",

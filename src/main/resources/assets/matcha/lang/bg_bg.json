@@ -13,7 +13,7 @@
 	"block.matcha.tomatoes": "Домати",
 	"item.matcha.tomato_seeds": "Доматени семена",
 	"item.matcha.beacon_kindling": "Подпалки за маяк",
-	"item.matcha.divine_fragment": "Божествен фрагмент",
+	"item.matcha.pith": "Фрагмент от сърцевина",
 	"item.matcha.tallow": "Лой",
 	"item.matcha.nazar": "Назар",
 	"item.matcha.estus_flask": "Колба с Естус",
@@ -981,5 +981,6 @@
 	"trade.matcha.bulk_smooth_basalt": "Гладък базалт на едро",
 	"trade.matcha.bulk_smooth_basalt.desc": "x64 Гладък базалт",
 	"trade.matcha.bulk_blackstone": "Черен камък на едро",
-	"trade.matcha.bulk_blackstone.desc": "x64 Черен камък"
+	"trade.matcha.bulk_blackstone.desc": "x64 Черен камък",
+	"item.matcha.mushroom_soup": "Прозрачна гъбена супа"
 }

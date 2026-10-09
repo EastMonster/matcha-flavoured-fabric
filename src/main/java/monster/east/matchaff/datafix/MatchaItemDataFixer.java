@@ -12,6 +12,7 @@ import monster.east.matchaff.datafix.fix.V4Migration;
 import monster.east.matchaff.datafix.fix.V5Migration;
 import monster.east.matchaff.datafix.fix.V6Migration;
 import monster.east.matchaff.datafix.fix.V7Migration;
+import monster.east.matchaff.datafix.fix.V8Migration;
 import monster.east.matchaff.datafix.schema.V1;
 import monster.east.matchaff.datafix.schema.V2;
 import monster.east.matchaff.datafix.schema.V3;
@@ -19,6 +20,7 @@ import monster.east.matchaff.datafix.schema.V4;
 import monster.east.matchaff.datafix.schema.V5;
 import monster.east.matchaff.datafix.schema.V6;
 import monster.east.matchaff.datafix.schema.V7;
+import monster.east.matchaff.datafix.schema.V8;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 
@@ -26,7 +28,7 @@ import net.minecraft.nbt.NbtOps;
 /** Migrates Matcha ItemStacks, block states, and banner patterns before their codecs resolve registry IDs. */
 public final class MatchaItemDataFixer {
 	public static final String DATA_VERSION_KEY = "matcha_data_version";
-	private static final int CURRENT_DATA_VERSION = 7;
+	private static final int CURRENT_DATA_VERSION = 8;
 	private static final DataFixer FIXER = createFixer();
 
 	private MatchaItemDataFixer() {
@@ -87,6 +89,8 @@ public final class MatchaItemDataFixer {
 		builder.addFixer(new V6Migration(v6));
 		Schema v7 = builder.addSchema(7, V7::new);
 		builder.addFixer(new V7Migration(v7));
+		Schema v8 = builder.addSchema(8, V8::new);
+		builder.addFixer(new V8Migration(v8));
 		return builder.build().fixer();
 	}
 }

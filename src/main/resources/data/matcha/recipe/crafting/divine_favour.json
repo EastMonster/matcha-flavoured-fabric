@@ -2,13 +2,9 @@
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
 	"key": {
-		"#": "matcha:divine_fragment"
+		"#": "matcha:pith"
 	},
-	"pattern": [
-		"###",
-		"###",
-		"###"
-	],
+	"pattern": ["###", "###", "###"],
 	"result": {
 		"count": 1,
 		"id": "minecraft:nether_star"

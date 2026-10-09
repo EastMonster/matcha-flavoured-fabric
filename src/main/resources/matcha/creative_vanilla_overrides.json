@@ -388,5 +388,159 @@
 		"id": "minecraft:wooden_sword",
 		"source": "data/matcha/recipe/crafting/wooden_sword.json",
 		"tab": "combat"
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"source": "data/matcha/villager_trade/cleric/1/splash_infested.json",
+		"field": "gives",
+		"tab": "ingredients",
+		"append": true
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"tab": "ingredients",
+		"append": true,
+		"result": {
+			"id": "minecraft:splash_potion",
+			"components": {
+				"minecraft:max_stack_size": 64,
+				"minecraft:potion_contents": {
+					"custom_effects": [
+						{
+							"id": "minecraft:invisibility",
+							"amplifier": 0,
+							"duration": 12000
+						}
+					]
+				},
+				"minecraft:tooltip_display": {
+					"hidden_components": ["minecraft:potion_contents"]
+				},
+				"minecraft:lore": [
+					{
+						"translate": "effect.matcha.invisibility",
+						"with": ["10:00"],
+						"color": "#92b7ce",
+						"italic": false
+					}
+				],
+				"minecraft:custom_name": {
+					"translate": "item.minecraft.splash_potion.effect.invisibility",
+					"italic": false
+				}
+			}
+		}
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"source": "data/matcha/villager_trade/cleric/1/splash_oozing.json",
+		"field": "gives",
+		"tab": "ingredients",
+		"append": true
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"source": "data/matcha/villager_trade/cleric/1/splash_pitch.json",
+		"field": "gives",
+		"tab": "ingredients",
+		"append": true
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"tab": "ingredients",
+		"append": true,
+		"result": {
+			"id": "minecraft:splash_potion",
+			"components": {
+				"minecraft:max_stack_size": 64,
+				"minecraft:potion_contents": {
+					"custom_effects": [
+						{
+							"id": "minecraft:poison",
+							"amplifier": 0,
+							"duration": 2400
+						}
+					]
+				},
+				"minecraft:tooltip_display": {
+					"hidden_components": ["minecraft:potion_contents"]
+				},
+				"minecraft:lore": [
+					{
+						"translate": "effect.matcha.poison",
+						"with": ["02:00"],
+						"color": "#48a53b",
+						"italic": false
+					}
+				],
+				"minecraft:custom_name": {
+					"translate": "item.minecraft.splash_potion.effect.poison",
+					"italic": false
+				}
+			}
+		}
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"source": "data/matcha/villager_trade/cleric/1/splash_slowness.json",
+		"field": "gives",
+		"tab": "ingredients",
+		"append": true
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"tab": "ingredients",
+		"append": true,
+		"result": {
+			"id": "minecraft:splash_potion",
+			"components": {
+				"minecraft:max_stack_size": 64,
+				"minecraft:potion_contents": {
+					"custom_effects": [
+						{
+							"id": "minecraft:weakness",
+							"amplifier": 0,
+							"duration": 6000
+						}
+					]
+				},
+				"minecraft:tooltip_display": {
+					"hidden_components": ["minecraft:potion_contents"]
+				},
+				"minecraft:lore": [
+					{
+						"translate": "effect.matcha.weakness",
+						"with": ["05:00"],
+						"color": "#92b7ce",
+						"italic": false
+					}
+				],
+				"minecraft:custom_name": {
+					"translate": "item.minecraft.splash_potion.effect.weakness",
+					"italic": false
+				}
+			}
+		}
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"source": "data/matcha/villager_trade/cleric/1/splash_weaving.json",
+		"field": "gives",
+		"tab": "ingredients",
+		"append": true
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"source": "data/matcha/villager_trade/cleric/1/splash_wind_charged.json",
+		"field": "gives",
+		"tab": "ingredients",
+		"append": true
+	},
+	{
+		"id": "minecraft:splash_potion",
+		"source": "data/matcha/villager_trade/cleric/1/splash_wither.json",
+		"field": "gives",
+		"tab": "ingredients",
+		"append": true
 	}
 ]

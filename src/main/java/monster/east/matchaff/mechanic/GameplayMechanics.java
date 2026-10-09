@@ -223,7 +223,7 @@ public final class GameplayMechanics {
 			}
 			String food = FAVORITE_FOODS[villager.getRandom().nextInt(FAVORITE_FOODS.length)];
 			villager.getOffers().add(0, new MerchantOffer(
-					new ItemCost(BuiltInRegistries.ITEM.getValue(id(food))),
+					new ItemCost(food.equals("chocolate_chip_cookie") ? Items.COOKIE : BuiltInRegistries.ITEM.getValue(id(food))),
 					new ItemStack(Items.EMERALD), 1, 1, 0.0F));
 			villager.addTag("foodChecked");
 		}

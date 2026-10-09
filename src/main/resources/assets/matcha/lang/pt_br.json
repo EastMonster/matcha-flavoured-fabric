@@ -13,7 +13,7 @@
 	"block.matcha.tomatoes": "Tomates",
 	"item.matcha.tomato_seeds": "Sementes de Tomate",
 	"item.matcha.beacon_kindling": "Fogueira Sinalizadora",
-	"item.matcha.divine_fragment": "Fragmento Divino",
+	"item.matcha.pith": "Essência",
 	"item.matcha.tallow": "Sebo",
 	"item.matcha.nazar": "Olho Turco",
 	"item.matcha.estus_flask": "Frasco de Estus",
@@ -981,5 +981,7 @@
 	"trade.matcha.bulk_smooth_basalt.desc": "x64 Basalto Liso",
 	"trade.matcha.bulk_blackstone": "Pedra-Negra Bruta",
 	"trade.matcha.bulk_blackstone.desc": "x64 Pedra-Negra",
+	"item.matcha.mushroom_soup": "Sopa de Vegetal Coado",
+	"effect.matcha.jump_boost_2": " Supersalto II (%s)",
 	"trinkets.slot.head.earring": "Brinco"
 }

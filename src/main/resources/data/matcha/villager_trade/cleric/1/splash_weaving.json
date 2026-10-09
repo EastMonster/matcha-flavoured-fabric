@@ -4,8 +4,35 @@
 		"count": 1
 	},
 	"gives": {
-		"id": "matcha:volatile_weaving",
-		"count": 16
+		"id": "minecraft:splash_potion",
+		"count": 16,
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:potion_contents": {
+				"custom_effects": [
+					{
+						"id": "minecraft:weaving",
+						"amplifier": 0,
+						"duration": 6000
+					}
+				]
+			},
+			"minecraft:tooltip_display": {
+				"hidden_components": ["minecraft:potion_contents"]
+			},
+			"minecraft:lore": [
+				{
+					"translate": "effect.matcha.weaving",
+					"with": ["05:00"],
+					"color": "#a78b93",
+					"italic": false
+				}
+			],
+			"minecraft:custom_name": {
+				"translate": "item.minecraft.splash_potion.effect.weaving",
+				"italic": false
+			}
+		}
 	},
 	"max_uses": 999,
 	"reputation_discount": 0,

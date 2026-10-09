@@ -3,13 +3,9 @@
 	"category": "misc",
 	"key": {
 		"d": "minecraft:diamond",
-		"s": "matcha:divine_fragment"
+		"s": "matcha:pith"
 	},
-	"pattern": [
-		"ddd",
-		"dsd",
-		"ddd"
-	],
+	"pattern": ["ddd", "dsd", "ddd"],
 	"result": {
 		"count": 1,
 		"id": "matcha:crystal_heart"

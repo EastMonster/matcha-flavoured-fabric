@@ -6,7 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "matcha:divine_fragment"
+						"items": "matcha:pith"
 					}
 				]
 			}
@@ -25,7 +25,7 @@
 		],
 		"icon": {
 			"count": 1,
-			"id": "matcha:divine_fragment"
+			"id": "matcha:pith"
 		},
 		"title": {
 			"translate": "advancements.matcha.tutorial.obtain_divine_fragment.title"
