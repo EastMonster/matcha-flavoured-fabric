@@ -3,6 +3,7 @@ package monster.east.matchaff.mechanic;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -110,7 +111,7 @@ final class WardingStoneMechanics {
 				stone.addTag("WardingStoneSetup");
 			}
 
-			// Anchor destroyed: refund blaze powder and remove the stone.
+			// Anchor destroyed: refund Raw Estus and remove the stone.
 			if (!level.getBlockState(pos).is(Blocks.LODESTONE)) {
 				for (ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, stone.getBoundingBox().inflate(3.0))) {
 					if (item.getItem().is(Items.LODESTONE)) {
@@ -120,7 +121,7 @@ final class WardingStoneMechanics {
 				level.sendParticles(ParticleTypes.LARGE_SMOKE, stoneX, stoneY + 0.25, stoneZ,
 						20, 0.25, 0.5, 0.25, 0.01);
 				level.addFreshEntity(new ItemEntity(level, stoneX, stoneY, stoneZ,
-						new ItemStack(Items.BLAZE_POWDER)));
+						new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", "raw_estus")))));
 				stone.discard();
 				continue;
 			}

@@ -6,15 +6,11 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "minecraft:blaze_powder"
+						"items": "matcha:raw_estus"
 					}
 				]
 			}
 		}
 	},
-	"requirements": [
-		[
-			"has_estus"
-		]
-	]
+	"requirements": [["has_estus"]]
 }

@@ -283,7 +283,7 @@ public final class GameplayMechanics {
 				consumed = false;
 				for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
 					ItemStack stack = player.getInventory().getItem(slot);
-					if (!stack.is(Items.BLAZE_POWDER)) {
+					if (!stack.is(BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", "raw_estus")))) {
 						continue;
 					}
 					stack.shrink(1);

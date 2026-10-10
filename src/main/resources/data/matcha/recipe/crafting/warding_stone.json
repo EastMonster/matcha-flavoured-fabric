@@ -4,13 +4,9 @@
 	"key": {
 		"#": "matcha:nazar",
 		"S": "minecraft:chiseled_stone_bricks",
-		"E": "minecraft:blaze_rod"
+		"E": "matcha:stabilized_estus"
 	},
-	"pattern": [
-		"S#S",
-		"#E#",
-		"S#S"
-	],
+	"pattern": ["S#S", "#E#", "S#S"],
 	"result": {
 		"count": 1,
 		"id": "matcha:warding_stone"

@@ -1,0 +1,19 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_blaze_rod": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:blaze_rod"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [["has_blaze_rod"]],
+	"rewards": {
+		"recipes": ["minecraft:blaze_powder"]
+	}
+}

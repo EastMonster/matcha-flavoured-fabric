@@ -9,7 +9,7 @@ import net.minecraft.resources.Identifier;
 
 public record SleepFastForwardPayload(boolean active) implements CustomPacketPayload {
 	public static final Type<SleepFastForwardPayload> TYPE = new Type<>(
-			Identifier.fromNamespaceAndPath("matcha-flavoured", "sleep_fast_forward"));
+			Identifier.fromNamespaceAndPath("matcha", "sleep_fast_forward"));
 	public static final StreamCodec<ByteBuf, SleepFastForwardPayload> CODEC =
 			ByteBufCodecs.BOOL.map(SleepFastForwardPayload::new, SleepFastForwardPayload::active);
 

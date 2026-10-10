@@ -834,7 +834,7 @@
 	"item.matcha.pumpkin_curry": "Гарбузове карі",
 	"advancements.matcha.cook_pumpkin_curry.title": "Ходить Гарбуз по городу...",
 	"advancements.matcha.cook_pumpkin_curry.desc": "Ой ти Гарбуз, ти Перистий, із чим Тебе будем їсти?\nМиску карі, молока - от і страва гопака!",
-	"item.matcha.trim_colour": "Колір орнаменту обладунків",
+	"item.matcha.trim_colour": "Барвник для оздоблення броні",
 	"trim_material.matcha.shakudo": "Сякудовий матеріал",
 	"trim_material.matcha.hepatizon": "Гепатизоновий матеріал",
 	"trim_material.matcha.electrum": "Електрумовий матеріал",
@@ -957,5 +957,9 @@
 	"advancements.matcha.anglers_almanac.estus_ash.desc": "Попіл давно забутого естусу. Вживати його, мабуть, не варто. Хоча після всього, що ти витягував із цієї водойми, це вже не найгірша ідея.",
 	"advancements.matcha.anglers_almanac.sulfur_chunk.desc": "Якийсь шматок. Або натяк на те, що тебе зараз розірве на шматки, або квиток на політ із гейзера. Ну або просто інгредієнт для зеленого барвника. Фіг його знає.",
 	"advancements.matcha.anglers_almanac.goat_horn.desc": "Бо коли йдеш ловити рибу, найперше, що тобі потрібне, це гучний спосіб повідомити всім, що ти знову спіймав не рибу.",
-	"trinkets.slot.head.earring": "Сережка"
+	"trinkets.slot.head.earring": "Сережка",
+	"item.matcha.raw_estus": "Сирий естус",
+	"item.matcha.stabilized_estus": "Стабілізований естус",
+	"item.matcha.mushroom_soup": "Прозорий грибний суп",
+	"effect.matcha.jump_boost_2": " Стрибучість II (%s)"
 }

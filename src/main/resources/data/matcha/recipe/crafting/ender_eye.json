@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
-	"ingredients": ["minecraft:blaze_rod", "matcha:pith"],
+	"ingredients": ["matcha:stabilized_estus", "matcha:pith"],
 	"result": {
 		"count": 16,
 		"id": "minecraft:ender_eye"

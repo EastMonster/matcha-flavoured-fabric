@@ -17,8 +17,6 @@ public abstract class CreatorNamespaceMixin implements FabricItem {
 	private static final Set<String> MATCHA$VANILLA_ITEMS = Set.of(
 			"beetroot",
 			"beetroot_seeds",
-			"blaze_powder",
-			"blaze_rod",
 			"brewing_stand",
 			"cod",
 			"cooked_cod",

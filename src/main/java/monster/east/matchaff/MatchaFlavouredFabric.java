@@ -69,6 +69,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		SleepFastForwardPayload.register();
+		BlazeRodDropsMechanics.init();
 		VanillaFoodDefaults.init();
 		FarmersDelightCompat.init();
 		PlayerMechanics.init();

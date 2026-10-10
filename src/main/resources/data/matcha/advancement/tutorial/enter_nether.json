@@ -24,16 +24,12 @@
 				"minecraft:enchantment_glint_override": true
 			},
 			"count": 1,
-			"id": "minecraft:blaze_rod"
+			"id": "matcha:stabilized_estus"
 		},
 		"title": {
 			"translate": "advancements.matcha.tutorial.enter_nether.title"
 		},
 		"frame": "goal"
 	},
-	"requirements": [
-		[
-			"entered_nether"
-		]
-	]
+	"requirements": [["entered_nether"]]
 }

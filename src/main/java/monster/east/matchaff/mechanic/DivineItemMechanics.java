@@ -68,7 +68,7 @@ final class DivineItemMechanics {
 				if (!level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 0.5, item.getZ())).isAir()) {
 					item.setDeltaMovement(0, 0.025, 0);
 				}
-			} else if (stack.is(Items.BLAZE_POWDER)) {
+			} else if (stack.is(BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", "raw_estus")))) {
 				if (everyTenTicks) {
 					level.sendParticles(ParticleTypes.SMOKE, item.getX(), item.getY() + 0.75, item.getZ(),
 							1, 0.05, 0.05, 0.05, 0);
@@ -93,7 +93,7 @@ final class DivineItemMechanics {
 	private static boolean isDivineItem(ItemStack stack) {
 		return stack.is(Items.NETHER_STAR)
 				|| stack.is(Items.ENDER_EYE)
-				|| stack.is(Items.BLAZE_POWDER)
+				|| stack.is(BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("matcha", "raw_estus")))
 				|| stack.is(BuiltInRegistries.ITEM
 				.getValue(Identifier.fromNamespaceAndPath("matcha", "pith")))
 				|| stack.is(BuiltInRegistries.ITEM

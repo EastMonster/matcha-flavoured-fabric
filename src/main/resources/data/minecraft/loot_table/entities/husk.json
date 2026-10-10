@@ -31,8 +31,8 @@
 				}
 			],
 			"condition": {
-					"type": "minecraft:killed_by_player"
-				}
+				"type": "minecraft:killed_by_player"
+			}
 		},
 		{
 			"rolls": 1,
@@ -43,7 +43,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:blaze_powder",
+					"name": "matcha:raw_estus",
 					"weight": 10,
 					"modifier": [
 						{
@@ -67,8 +67,8 @@
 				}
 			],
 			"condition": {
-					"type": "minecraft:killed_by_player"
-				}
+				"type": "minecraft:killed_by_player"
+			}
 		}
 	],
 	"random_sequence": "minecraft:entities/husk"

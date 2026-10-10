@@ -336,6 +336,7 @@
 			"trim_colour_steel"
 		],
 		"gems": ["amber", "opal", "ruby", "topaz", "raw_diamond", "pith"],
+		"estus": ["raw_estus", "stabilized_estus"],
 		"animal_materials": ["fish_bones", "fox_pelt", "sulfur_goo", "tallow"],
 		"seeds": ["tomato_seeds"],
 		"blessings": [

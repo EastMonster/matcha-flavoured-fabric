@@ -31,15 +31,15 @@
 				}
 			],
 			"condition": {
-					"type": "minecraft:killed_by_player"
-				}
+				"type": "minecraft:killed_by_player"
+			}
 		},
 		{
 			"rolls": 1,
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:blaze_powder",
+					"name": "matcha:raw_estus",
 					"weight": 10,
 					"modifier": [
 						{
@@ -68,28 +68,31 @@
 				}
 			],
 			"condition": {
-					"type": "minecraft:killed_by_player"
-				}
+				"type": "minecraft:killed_by_player"
+			}
 		},
 		{
 			"bonus_rolls": 0,
-			"condition": {"type":"minecraft:all_of","terms":[
-				{
-					"type": "minecraft:killed_by_player"
-				},
-				{
-					"type": "minecraft:entity_properties",
-					"entity": "this",
-					"predicate": {
-						"flags": {
-							"is_baby": true
-						},
-						"vehicle": {
-							"minecraft:entity_type": "minecraft:chicken"
+			"condition": {
+				"type": "minecraft:all_of",
+				"terms": [
+					{
+						"type": "minecraft:killed_by_player"
+					},
+					{
+						"type": "minecraft:entity_properties",
+						"entity": "this",
+						"predicate": {
+							"flags": {
+								"is_baby": true
+							},
+							"vehicle": {
+								"minecraft:entity_type": "minecraft:chicken"
+							}
 						}
 					}
-				}
-			]},
+				]
+			},
 			"entries": [
 				{
 					"type": "minecraft:item",
