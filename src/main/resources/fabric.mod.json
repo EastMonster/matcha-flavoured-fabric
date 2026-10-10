@@ -3,7 +3,7 @@
 	"id": "matcha-flavoured",
 	"version": "${version}",
 	"name": "Matcha Flavoured",
-	"description": "Klei Wright's Matcha Flavoured data and resource pack, packaged for Fabric 26.2.",
+	"description": "An unofficial Fabric mod port based on Klei Wright's Matcha Flavoured.",
 	"authors": ["Klei Wright"],
 	"contributors": [
 		"Alaska",
