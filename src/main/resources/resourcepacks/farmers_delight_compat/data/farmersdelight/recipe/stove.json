@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"B": "minecraft:bricks",
+		"C": "minecraft:campfire",
+		"T": "matcha:tinder",
+		"i": "#c:ingots/iron"
+	},
+	"pattern": ["iii", "BTB", "BCB"],
+	"result": {
+		"id": "farmersdelight:stove"
+	}
+}
