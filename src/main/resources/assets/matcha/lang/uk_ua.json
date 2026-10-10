@@ -16,8 +16,10 @@
 	"item.matcha.pith": "Осердя",
 	"item.matcha.tallow": "Жир",
 	"item.matcha.nazar": "Око Фатіми",
+	"item.matcha.raw_estus": "Сирий естус",
 	"item.matcha.estus_flask": "Фляга естусу",
 	"item.matcha.cheese": "Сир",
+	"item.matcha.stabilized_estus": "Стабілізований естус",
 	"block.matcha.banner.classic_pride": "Класичний прайд",
 	"block.matcha.banner.common_pride": "Загальний прайд",
 	"block.matcha.banner.new_pride": "Новий прайд",
@@ -836,7 +838,7 @@
 	"item.matcha.pumpkin_curry": "Гарбузове карі",
 	"advancements.matcha.cook_pumpkin_curry.title": "Ходить Гарбуз по городу...",
 	"advancements.matcha.cook_pumpkin_curry.desc": "Ой ти Гарбуз, ти Перистий, із чим Тебе будем їсти?\nМиску карі, молока - от і страва гопака!",
-	"item.matcha.trim_colour": "Колір орнаменту обладунків",
+	"item.matcha.trim_colour": "Барвник для оздоблення броні",
 	"trim_material.matcha.shakudo": "Сякудовий матеріал",
 	"trim_material.matcha.hepatizon": "Гепатизоновий матеріал",
 	"trim_material.matcha.electrum": "Електрумовий матеріал",
@@ -982,5 +984,7 @@
 	"trade.matcha.bulk_smooth_basalt.desc": "x64 Гладкий базальт",
 	"trade.matcha.bulk_blackstone": "Партія чорнокаменю",
 	"trade.matcha.bulk_blackstone.desc": "x64 Чорнокамінь",
+	"item.matcha.mushroom_soup": "Прозорий грибний суп",
+	"effect.matcha.jump_boost_2": " Стрибучість II (%s)",
 	"trinkets.slot.head.earring": "Сережка"
 }

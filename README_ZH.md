@@ -36,6 +36,7 @@
 - 食物回血改为按每次食用独立计时，不再依赖数据包使用的再生效果。原版再生同效果刷新不会叠加持续时间，连续吃同一种食物会静默丢失部分回血；现在每个食物隐藏的“回血模拟”段各自独立计时，连续食用能回满预期血量。
 - 树叶和发光地衣的破坏纹理不再延伸到空气中；树冠内部的树叶外延模型会被剔除，以减少渲染面数，同时保持树冠实心的观感。
 - Mod Menu 设置页面可以让每位客户端玩家单独关闭主世界的 True Darkness，不会改变服务器玩法。
+- OP 可以在 Mod Menu 中开启烈焰人额外掉落烈焰棒。该设置默认关闭、按存档保存，保留火焰弹掉落，并按原版烈焰棒掉率与抢夺规则即时生效，无需 reload。
 - 兼容 [Trinkets Updated](https://modrinth.com/mod/trinkets-updated)：现在可以同时佩戴耳环和头盔；已佩戴头盔时，耳环提供的护甲值不生效。
 - 兼容 [CliffTree](https://modrinth.com/datapack/clifftree) 的 Fabric Mod 版本。如果你想让 Matcha 兼容更多的地形模组，欢迎在 [Issues](https://github.com/EastMonster/matcha-flavoured-fabric/issues) 提出建议！
 - 兼容 [Farmer's Delight Refabricated](https://modrinth.com/mod/farmers-delight-refabricated). 享受种地吧!

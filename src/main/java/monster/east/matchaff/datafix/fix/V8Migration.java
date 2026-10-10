@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/** Returns cookies and volatile flasks to vanilla IDs and renames Divine Fragment to Pith. */
+/** Returns cookies and volatile flasks to vanilla IDs, renames Pith, and separates Estus carriers. */
 public final class V8Migration extends DataFix {
 	private static final Map<String, CompoundTag> VOLATILE_POTIONS = readVolatilePotions();
 
@@ -28,13 +28,28 @@ public final class V8Migration extends DataFix {
 	@Override
 	protected TypeRewriteRule makeRule() {
 		Type<?> root = getInputSchema().getType(MatchaDataFixSupport.ROOT);
-		return writeFixAndRead("Matcha V8 cookie, volatile potion and Pith migration", root, root,
+		return writeFixAndRead("Matcha V8 cookie, volatile potion, Pith and Estus migration", root, root,
 				data -> MatchaDataFixSupport.apply(data, V8Migration::migrate));
 	}
 
 	private static Tag migrate(Tag tag) {
 		if (tag instanceof CompoundTag compound) {
 			String id = compound.getStringOr("id", "");
+			String estus = switch (id) {
+				case "minecraft:blaze_powder" -> "raw_estus";
+				case "minecraft:blaze_rod" -> "stabilized_estus";
+				default -> null;
+			};
+			if (estus != null) {
+				compound.putString("id", "matcha:" + estus);
+				if (compound.get("components") instanceof CompoundTag components) {
+					String model = components.getStringOr("minecraft:item_model", "");
+					String carrier = estus.equals("raw_estus") ? "blaze_powder" : "blaze_rod";
+					if (model.equals(carrier) || model.equals("minecraft:" + carrier)) {
+						components.putString("minecraft:item_model", "matcha:" + estus);
+					}
+				}
+			}
 			if (id.equals("matcha:chocolate_chip_cookie") || id.equals("matcha-flavoured:chocolate_chip_cookie")) {
 				compound.putString("id", "minecraft:cookie");
 			}
@@ -42,6 +57,11 @@ public final class V8Migration extends DataFix {
 				compound.putString("id", "matcha:pith");
 			}
 			String translation = compound.getStringOr("translate", "");
+			if (translation.equals("item.minecraft.blaze_powder")) {
+				compound.putString("translate", "item.matcha.raw_estus");
+			} else if (translation.equals("item.minecraft.blaze_rod")) {
+				compound.putString("translate", "item.matcha.stabilized_estus");
+			}
 			if (translation.equals("item.matcha.divine_fragment") || translation.equals("item.matcha-flavoured.divine_fragment")) {
 				compound.putString("translate", "item.matcha.pith");
 			}

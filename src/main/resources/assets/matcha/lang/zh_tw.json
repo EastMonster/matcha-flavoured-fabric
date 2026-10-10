@@ -16,8 +16,10 @@
 	"item.matcha.pith": "神聖碎片",
 	"item.matcha.tallow": "獸脂",
 	"item.matcha.nazar": "邪眼",
+	"item.matcha.raw_estus": "粗原質",
 	"item.matcha.estus_flask": "原質瓶",
 	"item.matcha.cheese": "起司",
+	"item.matcha.stabilized_estus": "惰性原質",
 	"block.matcha.banner.classic_pride": "經典驕傲旗",
 	"block.matcha.banner.common_pride": "通用驕傲旗",
 	"block.matcha.banner.new_pride": "邁進驕傲旗",
@@ -982,5 +984,6 @@
 	"trade.matcha.bulk_smooth_basalt.desc": "平滑玄武岩×64",
 	"trade.matcha.bulk_blackstone": "一組黑石",
 	"trade.matcha.bulk_blackstone.desc": "黑石×64",
+	"effect.matcha.jump_boost_2": " 跳躍提升 II (%s)",
 	"trinkets.slot.head.earring": "耳環"
 }

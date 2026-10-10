@@ -5,22 +5,15 @@
 			"conditions": {
 				"items": [
 					{
-						"items": "minecraft:blaze_rod"
+						"items": "matcha:stabilized_estus"
 					}
 				]
 			},
 			"trigger": "minecraft:inventory_changed"
 		}
 	},
-	"requirements": [
-		[
-			"has_primary_material"
-		]
-	],
+	"requirements": [["has_primary_material"]],
 	"rewards": {
-		"recipes": [
-			"matcha:crafting/ender_eye",
-			"matcha:blessing/hell_bound_book"
-		]
+		"recipes": ["matcha:crafting/ender_eye", "matcha:blessing/hell_bound_book"]
 	}
 }

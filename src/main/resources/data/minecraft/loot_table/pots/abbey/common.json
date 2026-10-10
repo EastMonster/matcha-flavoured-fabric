@@ -121,7 +121,7 @@
 							"function": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:blaze_powder",
+					"name": "matcha:raw_estus",
 					"weight": 20
 				},
 				{

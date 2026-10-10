@@ -24,7 +24,7 @@
 				"minecraft:enchantment_glint_override": true
 			},
 			"count": 1,
-			"id": "minecraft:blaze_rod"
+			"id": "matcha:stabilized_estus"
 		},
 		"title": {
 			"translate": "advancements.matcha.hell.obtain_stabilised_estus.title"
@@ -34,14 +34,8 @@
 		"announce_to_chat": true,
 		"hidden": false
 	},
-	"requirements": [
-		[
-			"get_stabilised_estus"
-		]
-	],
+	"requirements": [["get_stabilised_estus"]],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_1"
-		]
+		"loot": ["matcha:advancement/obol_1"]
 	}
 }

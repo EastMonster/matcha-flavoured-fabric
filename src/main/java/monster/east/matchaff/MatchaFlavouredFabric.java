@@ -79,6 +79,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	public void onInitialize() {
 		registerClifftreeCompatPack();
 		SleepFastForwardPayload.register();
+		BlazeRodDropsMechanics.init();
 		VanillaFoodDefaults.init();
 		FarmersDelightCompat.init();
 		PlayerMechanics.init();
@@ -116,9 +117,12 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 				Identifier.fromNamespaceAndPath("matcha", "compound_bow")));
 		Item crook = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
 				Identifier.fromNamespaceAndPath("matcha", "crook")));
+		Item stabilizedEstus = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
+				Identifier.fromNamespaceAndPath("matcha", "stabilized_estus")));
 		FuelValueEvents.BUILD.register((builder, context) -> builder
 				.add(compoundBow, context.baseSmeltTime() * 3 / 2)
-				.add(crook, context.baseSmeltTime()));
+				.add(crook, context.baseSmeltTime())
+				.add(stabilizedEstus, context.baseSmeltTime() * 12));
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
 		equipment.forEach(entry -> creativeItems.add(new CreativeOrder.Entry(entry.item(), entry.tab())));
 		batchItems.stream().filter(entry -> !entry.hidden())

@@ -41,7 +41,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:blaze_powder",
+					"name": "matcha:raw_estus",
 					"weight": 10,
 					"functions": [
 						{

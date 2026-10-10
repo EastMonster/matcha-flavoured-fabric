@@ -47,6 +47,7 @@ import monster.east.matchaff.mechanic.FoodHealMechanics;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.MatchaFlavouredFabric;
 import monster.east.matchaff.network.SleepFastForwardPayload;
+import monster.east.matchaff.network.BlazeRodDropsPayload;
 
 public final class MatchaFlavouredClient implements ClientModInitializer {
 	private static final int CLOUD_TIME_SCALE = 100;
@@ -82,6 +83,12 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		ItemTooltipCallback.EVENT.register(MatchaFlavouredClient::appendRepairTooltip);
 		ClientPlayNetworking.registerGlobalReceiver(SleepFastForwardPayload.TYPE, (payload, context) ->
 				context.client().execute(() -> sleepRate = payload.active() ? CLOUD_TIME_SCALE : 0));
+		ClientPlayNetworking.registerGlobalReceiver(BlazeRodDropsPayload.TYPE, (payload, context) ->
+				context.client().execute(() -> {
+					if (context.client().gui.screen() instanceof MatchaConfigScreen screen) {
+						screen.updateBlazeRodDrops(payload.enabled());
+					}
+				}));
 		ClientTickEvents.END_CLIENT_TICK.register(MatchaFlavouredClient::tickCloudTime);
 		ClientTickEvents.END_CLIENT_TICK.register(DolabraVisuals::tick);
 		if (FabricLoader.getInstance().isModLoaded(TrinketsCompat.MOD_ID)) {

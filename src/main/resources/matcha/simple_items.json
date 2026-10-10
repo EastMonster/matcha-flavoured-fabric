@@ -1,5 +1,21 @@
 [
 	{
+		"id": "raw_estus",
+		"type": "item",
+		"tab": "ingredients",
+		"components": {}
+	},
+	{
+		"id": "stabilized_estus",
+		"type": "item",
+		"tab": "ingredients",
+		"source": "data/matcha/recipe/crafting/stabilised_estus.json",
+		"components": {
+			"minecraft:enchantment_glint_override": true,
+			"minecraft:rarity": "uncommon"
+		}
+	},
+	{
 		"id": "apotropaic_arrow",
 		"type": "arrow",
 		"tab": "combat",
