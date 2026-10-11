@@ -1,5 +1,6 @@
 package monster.east.matchaff.datafix;
 
+import net.minecraft.SharedConstants;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 
@@ -54,6 +55,51 @@ public final class MatchaEstusMigrationCheck {
 		items.add(stack("minecraft:blaze_powder", 1));
 		CompoundTag snapshot = upgraded.copy();
 		assert MatchaItemDataFixer.updateIfNeeded(upgraded).equals(snapshot);
+		checkChunkContainers();
+	}
+
+	private static void checkChunkContainers() {
+		SharedConstants.tryDetectVersion();
+		int vanillaVersion = SharedConstants.getCurrentVersion().dataVersion().version();
+		CompoundTag chunk = new CompoundTag();
+		chunk.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 7);
+		chunk.putInt("DataVersion", vanillaVersion);
+		CompoundTag chest = new CompoundTag();
+		chest.putString("id", "minecraft:trapped_chest");
+		ListTag items = new ListTag();
+		items.add(stack("matcha:divine_fragment", 34));
+		CompoundTag shulker = stack("minecraft:shulker_box", 1);
+		CompoundTag components = new CompoundTag();
+		ListTag contents = new ListTag();
+		for (String id : new String[] {"minecraft:blaze_rod", "matcha:divine_fragment"}) {
+			CompoundTag entry = new CompoundTag();
+			entry.putInt("slot", contents.size());
+			entry.put("item", stack(id, 11));
+			contents.add(entry);
+		}
+		components.put("minecraft:container", contents);
+		shulker.put("components", components);
+		items.add(shulker);
+		chest.put("Items", items);
+		ListTag blockEntities = new ListTag();
+		blockEntities.add(chest);
+		chunk.put("block_entities", blockEntities);
+
+		CompoundTag fixed = MatchaItemDataFixer.updateIfNeeded(chunk);
+		assert fixed.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 8;
+		assert fixed.getIntOr("DataVersion", -1) == vanillaVersion;
+		ListTag fixedItems = fixed.getList("block_entities").orElseThrow().getCompound(0).orElseThrow()
+				.getList("Items").orElseThrow();
+		assert fixedItems.getCompound(0).orElseThrow().getStringOr("id", "").equals("matcha:pith");
+		assert fixedItems.getCompound(0).orElseThrow().getIntOr("count", 0) == 34;
+		ListTag fixedContents = fixedItems.getCompound(1).orElseThrow().getCompound("components").orElseThrow()
+				.getList("minecraft:container").orElseThrow();
+		assert fixedContents.getCompound(0).orElseThrow().getCompound("item").orElseThrow()
+				.getStringOr("id", "").equals("matcha:stabilized_estus");
+		assert fixedContents.getCompound(1).orElseThrow().getCompound("item").orElseThrow()
+				.getStringOr("id", "").equals("matcha:pith");
+		CompoundTag snapshot = fixed.copy();
+		assert MatchaItemDataFixer.updateIfNeeded(fixed).equals(snapshot);
 	}
 
 	private static CompoundTag stack(String id, int count) {

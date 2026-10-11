@@ -2,7 +2,9 @@ package monster.east.matchaff.mixin;
 
 import monster.east.matchaff.datafix.MatchaItemDataFixer;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.Util;
 import net.minecraft.util.datafix.DataFixTypes;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.chunk.storage.SimpleRegionStorage;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,22 +14,26 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
-/** Migrates loaded block and entity region data whose vanilla DataVersion is current. */
+/** Migrates block and entity region data before callers can skip vanilla datafixing. */
 @Mixin(SimpleRegionStorage.class)
 public abstract class SimpleRegionStorageMixin {
 	@Shadow @Final private DataFixTypes dataFixType;
 
 	@Inject(
-			method = "upgradeChunkTag(Lnet/minecraft/nbt/CompoundTag;ILnet/minecraft/nbt/CompoundTag;I)Lnet/minecraft/nbt/CompoundTag;",
+			method = "read",
 			at = @At("RETURN"),
 			cancellable = true
 	)
-	private void matcha$migrateItems(CompoundTag chunkTag, int defaultVersion, CompoundTag contextTag, int targetVersion,
-			CallbackInfoReturnable<CompoundTag> cir) {
+	private void matcha$migrateItems(ChunkPos pos,
+			CallbackInfoReturnable<CompletableFuture<Optional<CompoundTag>>> cir) {
 		if (this.dataFixType == DataFixTypes.CHUNK || this.dataFixType == DataFixTypes.ENTITY_CHUNK) {
-			cir.setReturnValue(MatchaItemDataFixer.updateIfNeeded(cir.getReturnValue()));
+			// C2ME skips chunk upgrades when vanilla DataVersion is current, regardless of Matcha's version.
+			cir.setReturnValue(cir.getReturnValue().thenApplyAsync(
+					data -> data.map(MatchaItemDataFixer::updateIfNeeded), Util.backgroundExecutor()));
 		}
 	}
 
