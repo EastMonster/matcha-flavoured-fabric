@@ -1,7 +1,7 @@
 {
 	"given_item_modifier": [
 		{
-			"decoration": "minecraft:village_plains",
+			"decoration": "minecraft:banner_light_gray",
 			"destination": "#minecraft:on_trail_explorer_maps",
 			"type": "minecraft:exploration_map",
 			"search_radius": 100
@@ -16,7 +16,6 @@
 		{
 			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:filled_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}
@@ -27,7 +26,8 @@
 		}
 	],
 	"gives": {
-		"id": "minecraft:filled_map"
+		"id": "minecraft:filled_map",
+		"components": { "minecraft:item_model": "matcha:trail_ruins_map" }
 	},
 	"max_uses": 999,
 	"wants": {

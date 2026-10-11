@@ -9,7 +9,6 @@
 		{
 			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:snowy_village_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}

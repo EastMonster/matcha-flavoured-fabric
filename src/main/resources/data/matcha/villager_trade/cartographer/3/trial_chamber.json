@@ -9,7 +9,6 @@
 		{
 			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:buried_trial_chambers_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}

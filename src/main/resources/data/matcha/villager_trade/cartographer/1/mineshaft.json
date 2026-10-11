@@ -9,7 +9,6 @@
 		{
 			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:buried_mineshaft_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}
@@ -17,6 +16,13 @@
 			"on_fail": {
 				"type": "minecraft:discard"
 			}
+		},
+		{
+			"type": "minecraft:set_name",
+			"name": {
+				"translate": "item.minecraft.buried_mineshaft_map"
+			},
+			"target": "item_name"
 		}
 	],
 	"gives": {

@@ -9,7 +9,6 @@
 		{
 			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:desert_pyramid_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}

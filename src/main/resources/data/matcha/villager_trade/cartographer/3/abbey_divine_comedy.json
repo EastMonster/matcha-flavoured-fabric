@@ -1,7 +1,7 @@
 {
 	"given_item_modifier": [
 		{
-			"decoration": "minecraft:red_x",
+			"decoration": "minecraft:banner_green",
 			"destination": "#matcha-flavoured:on_abbey_explorer_maps",
 			"type": "minecraft:exploration_map",
 			"search_radius": 100
@@ -14,7 +14,6 @@
 		{
 			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:filled_map",
 				"predicates": { "minecraft:map_id": {} }
 			},
 			"on_fail": { "type": "minecraft:discard" }

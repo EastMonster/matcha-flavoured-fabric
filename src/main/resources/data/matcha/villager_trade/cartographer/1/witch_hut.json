@@ -9,7 +9,6 @@
 		{
 			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:swamp_hut_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}

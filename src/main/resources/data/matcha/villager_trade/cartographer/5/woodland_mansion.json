@@ -8,7 +8,6 @@
 		{
 			"type": "minecraft:filtered",
 			"item_filter": {
-				"items": "minecraft:woodland_mansion_map",
 				"predicates": {
 					"minecraft:map_id": {}
 				}
