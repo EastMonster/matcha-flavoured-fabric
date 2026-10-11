@@ -1,1 +1,19 @@
-{"model":{"type":"minecraft:model","model":"matcha:item/fried_egg"}}
+{
+	"model": {
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/food/fried_egg"
+				},
+				"when": ["fixed"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/fried_egg"
+		},
+		"property": "minecraft:display_context"
+	}
+}

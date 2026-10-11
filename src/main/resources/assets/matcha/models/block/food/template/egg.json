@@ -1,0 +1,47 @@
+{
+	"format_version": "26.3",
+	"credit": "Made with Blockbench",
+	"parent": "matcha:block/food/display_template/default",
+	"textures": {
+		"0": "matcha:item/models/egg",
+		"particle": "matcha:item/models/blue_egg"
+	},
+	"elements": [
+		{
+			"name": "egg",
+			"from": [6, 7, 6],
+			"to": [10, 13, 10],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 7, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [0, 6, 4, 12],
+					"texture": "#0"
+				},
+				"east": {
+					"uv": [4, 0, 0, 6],
+					"texture": "#0"
+				},
+				"south": {
+					"uv": [4, 6, 8, 12],
+					"texture": "#0"
+				},
+				"west": {
+					"uv": [8, 0, 4, 6],
+					"texture": "#0"
+				},
+				"up": {
+					"uv": [12, 4, 16, 8],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [12, 0, 16, 4],
+					"texture": "#0"
+				}
+			}
+		}
+	]
+}

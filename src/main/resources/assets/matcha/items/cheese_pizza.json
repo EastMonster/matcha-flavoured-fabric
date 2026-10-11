@@ -1,6 +1,19 @@
 {
 	"model": {
-		"type": "minecraft:model",
-		"model": "matcha:item/cheese_pizza"
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/food/cheese_pizza"
+				},
+				"when": ["fixed"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/cheese_pizza"
+		},
+		"property": "minecraft:display_context"
 	}
 }

@@ -1,0 +1,7 @@
+{
+	"parent": "matcha:block/food/template/egg",
+	"textures": {
+		"0": "matcha:item/models/blue_egg",
+		"particle": "item/blue_egg"
+	}
+}

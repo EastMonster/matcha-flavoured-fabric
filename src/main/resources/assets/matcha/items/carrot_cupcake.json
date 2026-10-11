@@ -1,1 +1,19 @@
-{"model":{"type":"minecraft:model","model":"matcha:item/carrot_cupcake"}}
+{
+	"model": {
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/food/carrot_cupcake"
+				},
+				"when": ["fixed"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/carrot_cupcake"
+		},
+		"property": "minecraft:display_context"
+	}
+}

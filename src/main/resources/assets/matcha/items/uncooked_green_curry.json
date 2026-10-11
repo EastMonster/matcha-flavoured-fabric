@@ -1,1 +1,19 @@
-{"model":{"type":"minecraft:model","model":"matcha:item/uncooked_green_curry"}}
+{
+	"model": {
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/food/uncooked_green_curry"
+				},
+				"when": ["fixed"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/uncooked_green_curry"
+		},
+		"property": "minecraft:display_context"
+	}
+}
