@@ -1,7 +1,11 @@
 package monster.east.matchaff.mixin;
 
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.inventory.AnvilMenu;
 import net.minecraft.world.inventory.DataSlot;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,6 +28,16 @@ public abstract class AnvilMenuMixin {
 	@Shadow
 	@Final
 	private DataSlot cost;
+
+	@Redirect(
+			method = "createResult",
+			at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Ljava/lang/Object;)Z", ordinal = 1)
+	)
+	private boolean matcha$acceptBlessingBooks(ItemStack stack, Object item) {
+		// The left book must bypass equipment eligibility just like vanilla enchanted books.
+		return stack.is((Item) item)
+				|| item == Items.ENCHANTED_BOOK && stack.has(DataComponents.STORED_ENCHANTMENTS);
+	}
 
 	@Inject(method = "createResult", at = @At("TAIL"))
 	private void matcha$freeAnvil(CallbackInfo ci) {
