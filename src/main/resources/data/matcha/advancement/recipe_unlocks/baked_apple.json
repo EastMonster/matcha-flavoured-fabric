@@ -6,19 +6,13 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "fermented_spider_eye"
-						}
+						"items": "matcha:baked_apple"
 					}
 				]
 			}
 		}
 	},
-	"requirements": [
-		[
-			"cooked_the_food"
-		]
-	],
+	"requirements": [["cooked_the_food"]],
 	"rewards": {
 		"recipes": [
 			"matcha:food/crafting/canned_apples",

@@ -6,19 +6,13 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "magma_cream"
-						}
+						"items": "matcha:sweet_berry_mash"
 					}
 				]
 			}
 		}
 	},
-	"requirements": [
-		[
-			"has_primary_material"
-		]
-	],
+	"requirements": [["has_primary_material"]],
 	"rewards": {
 		"recipes": [
 			"matcha:food/crafting/sweet_berry_jam",

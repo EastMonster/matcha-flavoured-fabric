@@ -6,9 +6,7 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "rabbit_foot"
-						}
+						"items": "matcha:braised_brown_mushroom"
 					}
 				]
 			}

@@ -86,11 +86,8 @@
 			}
 		],
 		"icon": {
-			"components": {
-				"minecraft:item_model": "matcha:electrum_pickaxe"
-			},
 			"count": 1,
-			"id": "minecraft:stone_sword"
+			"id": "matcha:electrum_pickaxe"
 		},
 		"title": {
 			"translate": "advancements.matcha.tutorial.obtain_electrum_tool.title"

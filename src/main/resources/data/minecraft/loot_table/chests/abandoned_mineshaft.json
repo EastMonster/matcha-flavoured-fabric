@@ -177,7 +177,7 @@
 					]
 				},
 				{
-					"name": "minecraft:beetroot_seeds",
+					"name": "matcha:tomato_seeds",
 					"type": "minecraft:item",
 					"weight": 10,
 					"modifier": [
