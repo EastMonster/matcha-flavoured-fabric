@@ -62,11 +62,8 @@
 			}
 		],
 		"icon": {
-			"components": {
-				"minecraft:item_model": "matcha:steel_dolabra"
-			},
 			"count": 1,
-			"id": "minecraft:stone_axe"
+			"id": "matcha:steel_dolabra"
 		},
 		"title": {
 			"translate": "advancements.matcha.tutorial.upgrade_mattock.title"

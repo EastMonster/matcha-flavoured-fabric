@@ -6,19 +6,13 @@
 			"conditions": {
 				"items": [
 					{
-						"components": {
-							"minecraft:item_model": "mushroom_stew"
-						}
+						"items": "matcha:chocolate"
 					}
 				]
 			}
 		}
 	},
-	"requirements": [
-		[
-			"cooked_the_food"
-		]
-	],
+	"requirements": [["cooked_the_food"]],
 	"rewards": {
 		"recipes": [
 			"matcha:food/crafting/brownie",

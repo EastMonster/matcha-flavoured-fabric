@@ -90,10 +90,7 @@
 						{
 							"condition": "minecraft:location_check",
 							"predicate": {
-								"biomes": [
-									"minecraft:mangrove_swamp",
-									"minecraft:swamp"
-								]
+								"biomes": ["minecraft:mangrove_swamp", "minecraft:swamp"]
 							}
 						}
 					],
@@ -117,10 +114,7 @@
 						{
 							"condition": "minecraft:location_check",
 							"predicate": {
-								"biomes": [
-									"minecraft:mangrove_swamp",
-									"minecraft:swamp"
-								]
+								"biomes": ["minecraft:mangrove_swamp", "minecraft:swamp"]
 							}
 						}
 					],
@@ -138,16 +132,13 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:chicken_spawn_egg",
+					"name": "minecraft:axolotl_spawn_egg",
 					"weight": 10,
 					"conditions": [
 						{
 							"condition": "minecraft:location_check",
 							"predicate": {
-								"biomes": [
-									"minecraft:dripstone_caves",
-									"minecraft:lush_caves"
-								]
+								"biomes": ["minecraft:dripstone_caves", "minecraft:lush_caves"]
 							}
 						}
 					],
