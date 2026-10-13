@@ -29,6 +29,7 @@
 		"FlintAndSteelInteractionMixin",
 		"FishingRodHookedTriggerMixin",
 		"FoodHealMixin",
+		"HungerRegenerationMixin",
 		"ConsumeItemTriggerMixin",
 		"MooshroomMilkingMixin",
 		"HoneycombInteractionMixin",

@@ -1,5 +1,7 @@
 package monster.east.matchaff.enchantment;
 
+import monster.east.matchaff.mechanic.EffectsMechanics;
+
 import net.minecraft.core.Registry;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -17,7 +19,7 @@ final class RegenerationEnchantment {
 	}
 
 	static void tick(ServerPlayer player, Registry<Enchantment> enchantments, List<ItemStack> extraHeadItems) {
-		if (player.hasEffect(MobEffects.REGENERATION)) {
+		if (EffectsMechanics.isHealingBlocked(player) || player.hasEffect(MobEffects.REGENERATION)) {
 			return;
 		}
 		if (EnchantmentUtil.maxLevel(player.getItemBySlot(EquipmentSlot.HEAD), enchantments, REGENERATION) > 0) {
