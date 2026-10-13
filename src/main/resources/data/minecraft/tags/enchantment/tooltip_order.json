@@ -1,0 +1,13 @@
+{
+	"replace": false,
+	"values": [
+		"matcha:shakudo_armour",
+		"matcha:magic_protection",
+		"matcha:max_magic_protection",
+		"matcha:cleanse_armor_head",
+		"matcha:cleanse_armor_chest",
+		"matcha:cleanse_armor_legs",
+		"matcha:cleanse_armor_feet",
+		"matcha:cleanse_armor_maleffect"
+	]
+}

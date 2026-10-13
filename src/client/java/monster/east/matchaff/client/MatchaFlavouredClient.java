@@ -244,6 +244,13 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		List<Component> generated = new ArrayList<>();
 		appendMiningSpeedLore(stack, generated);
 		appendBlockingLore(stack, generated);
+		ItemEnchantments enchantments = stack.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
+		if (hasEnchantment(enchantments, "shakudo_armour")) {
+			boolean elytra = Identifier.fromNamespaceAndPath("matcha", "shakudo_elytra")
+					.equals(BuiltInRegistries.ITEM.getKey(stack.getItem()));
+			generated.add(loreLine("enchantment.matcha.shakudo_wither_resistance",
+					elytra ? "Max" : "1", ChatFormatting.GRAY));
+		}
 		for (AttributeLore lore : EQUIPMENT_ATTRIBUTE_LORE) {
 			appendAttributeLore(generated, modifiers, slot, lore);
 		}
@@ -425,6 +432,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 							"enchantment.matcha.divinity.set_bonus",
 							"enchantment.matcha.warding3.set_bonus_apotropaic",
 							"enchantment.matcha.shakudo_regen_bonus",
+							"enchantment.matcha.shakudo_wither_resistance",
 							"enchantment.matcha.shakudo_elytra_regen_bonus" -> true;
 					default -> false;
 				};
