@@ -1,5 +1,6 @@
 package monster.east.matchaff.mechanic;
 
+import monster.east.matchaff.enchantment.EnchantmentMechanics;
 import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -37,19 +38,10 @@ import java.util.Set;
 public final class EffectsMechanics {
 	private static final TagKey<EntityType<?>> AURA_IMMUNE = TagKey.create(
 			Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath("matcha", "aura_immune"));
-	private static final String[] WITHER_COUNTDOWN = {
-			"\uE048\uE046\uE046\uE047",
-			"\uE048\uE046\uE046\uE049",
-			"\uE048\uE046\uE04B\uE049",
-			"\uE048\uE046\uE044\uE049",
-			"\uE048\uE04B\uE044\uE049",
-			"\uE048\uE044\uE044\uE049",
-			"\uE04A\uE044\uE044\uE049",
-			"\uE04A\uE044\uE044\uE049"
-	};
+	private static final Identifier HEARTBREAKER = Identifier.fromNamespaceAndPath("matcha", "hell/wither_breaks_heart");
 
 	private static final Map<UUID, AuraCharge> PENDING_AURA = new HashMap<>();
-	private static final Map<UUID, Integer> WITHER_TICKS = new HashMap<>();
+	private static final Map<UUID, WitherCountdown> WITHER_TICKS = new HashMap<>();
 	private static final Set<UUID> HUNGRY_PLAYERS = new HashSet<>();
 
 	private EffectsMechanics() {
@@ -138,35 +130,95 @@ public final class EffectsMechanics {
 
 	private static void tickWither(ServerPlayer player) {
 		UUID uuid = player.getUUID();
-		if (WorldMechanics.cachedDifficulty(player.level().getServer()) == Difficulty.EASY
+		Difficulty difficulty = WorldMechanics.cachedDifficulty(player.level().getServer());
+		if ((difficulty != Difficulty.NORMAL && difficulty != Difficulty.HARD)
 				|| !player.hasEffect(MobEffects.WITHER)) {
 			WITHER_TICKS.remove(uuid);
 			return;
 		}
 
-		int ticks = WITHER_TICKS.merge(uuid, 1, Integer::sum);
-		if (ticks % 20 != 0) {
+		WitherCountdown countdown = WITHER_TICKS.computeIfAbsent(uuid, ignored ->
+				new WitherCountdown(0, witherBudget(EnchantmentMechanics.shakudoWitherResistance(player)))).tick();
+		WITHER_TICKS.put(uuid, countdown);
+		if (countdown.ticks() % 20 != 0) {
 			return;
 		}
-		int seconds = ticks / 20;
-		if (seconds <= 8) {
-			Component bar = Component.literal("\uE010").withStyle(ChatFormatting.RED)
-					.append(Component.literal(" " + WITHER_COUNTDOWN[seconds - 1])
-							.withStyle(seconds == 8 ? ChatFormatting.RED : ChatFormatting.WHITE));
-			player.connection.send(new ClientboundSetActionBarTextPacket(bar));
+		int remaining = countdown.remaining();
+		boolean broken = remaining <= witherThreshold(difficulty);
+		var bar = Component.literal("\uE010").withStyle(ChatFormatting.RED)
+				.append(Component.literal(" " + witherBar(difficulty, remaining))
+						.withStyle(broken ? ChatFormatting.RED : ChatFormatting.WHITE));
+		if (remaining >= 9) {
+			String resistanceBar = switch (remaining) {
+				case 13 -> "\uE04F\uE044\uE049";
+				case 12 -> "\uE04F\uE044\uE047";
+				case 11 -> "\uE04F\uE045\uE047";
+				case 10 -> "\uE04F\uE046\uE047";
+				default -> "\uE052\uE046\uE047";
+			};
+			bar.append(Component.literal(" " + resistanceBar)
+					.withStyle(remaining == 9 ? ChatFormatting.RED : ChatFormatting.AQUA));
 		}
-		if (seconds < 8) {
+		player.connection.send(new ClientboundSetActionBarTextPacket(bar));
+		var sound = remaining >= 10 ? SoundEvents.LODESTONE_COMPASS_LOCK
+				: remaining == 9 ? SoundEvents.SHIELD_BREAK.value() : SoundEvents.EXPERIENCE_ORB_PICKUP;
+		if (!broken || difficulty == Difficulty.HARD) {
 			player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-					SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.5F, 1.0F);
+					sound, SoundSource.PLAYERS, remaining == 9 ? 1.0F : 0.5F, remaining >= 9 ? 2.0F : 1.0F);
+		}
+		if (!broken) {
 			return;
 		}
 
 		player.removeEffect(MobEffects.WITHER);
 		PlayerMechanics.loseHeart(player);
 		player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-				SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.25F, 1.0F);
+				SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.25F, 0.0F);
 		player.hurtServer(player.level(), player.level().damageSources().generic(), 0.1F);
+		var advancement = player.level().getServer().getAdvancements().get(HEARTBREAKER);
+		if (advancement != null) {
+			player.getAdvancements().award(advancement, "get_heart_broken");
+		}
 		WITHER_TICKS.remove(uuid);
+	}
+
+	static int witherBudget(int resistance) {
+		return resistance <= 0 ? 9 : 10 + Math.clamp(resistance, 1, 4);
+	}
+
+	static int witherThreshold(Difficulty difficulty) {
+		return difficulty == Difficulty.HARD ? 3 : 0;
+	}
+
+	static String witherBar(Difficulty difficulty, int remaining) {
+		if (difficulty == Difficulty.HARD) {
+			return switch (remaining) {
+				case 3, 4 -> "\uE04A\uE044\uE049";
+				case 5 -> "\uE048\uE044\uE049";
+				case 6 -> "\uE048\uE04B\uE049";
+				case 7 -> "\uE048\uE046\uE049";
+				default -> "\uE048\uE046\uE047";
+			};
+		}
+		return switch (remaining) {
+			case 0, 1 -> "\uE04A\uE044\uE044\uE044\uE049";
+			case 2 -> "\uE048\uE044\uE044\uE044\uE049";
+			case 3 -> "\uE048\uE04B\uE044\uE044\uE049";
+			case 4 -> "\uE048\uE046\uE044\uE044\uE049";
+			case 5 -> "\uE048\uE046\uE04B\uE044\uE049";
+			case 6 -> "\uE048\uE046\uE046\uE044\uE049";
+			case 7 -> "\uE048\uE046\uE046\uE04B\uE049";
+			case 8 -> "\uE048\uE046\uE046\uE046\uE049";
+			default -> "\uE048\uE046\uE046\uE046\uE047";
+		};
+	}
+
+	// Snapshot resistance at the start; changing armour must not refill an active countdown.
+	record WitherCountdown(int ticks, int remaining) {
+		WitherCountdown tick() {
+			int next = ticks + 1;
+			return new WitherCountdown(next, remaining - (next % 20 == 0 ? 1 : 0));
+		}
 	}
 
 	public static void onConsumed(ServerPlayer player, ItemStack stack) {

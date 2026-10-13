@@ -46,6 +46,11 @@ public final class EnchantmentMechanics {
 		});
 	}
 
+	public static int shakudoWitherResistance(ServerPlayer player) {
+		Registry<Enchantment> enchantments = player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+		return Math.clamp(ShakudoRegenEnchantment.armourPower(player, enchantments), 0, 4);
+	}
+
 	private static List<ItemStack> extraHeadItems(ServerPlayer player) {
 		if (EXTRA_HEAD_ITEMS.isEmpty()) {
 			return List.of();

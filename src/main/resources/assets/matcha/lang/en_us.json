@@ -272,6 +272,7 @@
 	"enchantment.matcha.shakudo_regen": "  (00:30)",
 	"enchantment.matcha.shakudo_armour": "  (00:30)",
 	"enchantment.matcha.shakudo_regen_bonus": "    -(00:04)",
+	"enchantment.matcha.shakudo_wither_resistance": "\uE04E %s",
 	"enchantment.matcha.shakudo_elytra_regen_bonus": "    -(00:10)",
 	"item.matcha.blessing.muhammad": "Prayer of The Prophet",
 	"item.matcha.blessing.moshe": "Prayer of Exodus",
@@ -1010,5 +1011,7 @@
 	"matcha.config.vanilla_preview": "Vanilla Appearance (Beta)",
 	"matcha.config.vanilla_preview.pack": "Matcha Flavoured: Vanilla Appearance Preview",
 	"matcha.config.vanilla_preview.tooltip": "Restore some modified textures to their vanilla versions.",
-	"trinkets.slot.head.earring": "Earring"
+	"trinkets.slot.head.earring": "Earring",
+	"advancements.matcha.hell.wither_breaks_heart.title": "Heartbreaker",
+	"advancements.matcha.hell.wither_breaks_heart.description": "Fail to clear the Wither effect before time runs out"
 }

@@ -17,13 +17,18 @@ final class ShakudoRegenEnchantment {
 	private ShakudoRegenEnchantment() {
 	}
 
-	static void tick(ServerPlayer player, Registry<Enchantment> enchantments) {
+	static int armourPower(ServerPlayer player, Registry<Enchantment> enchantments) {
 		int score = EnchantmentUtil.countArmor(player, enchantments, SHAKUDO_REGEN);
 		ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
 		if (EnchantmentUtil.maxLevel(chest, enchantments, SHAKUDO_REGEN) > 0
 				&& SHAKUDO_ELYTRA.equals(BuiltInRegistries.ITEM.getKey(chest.getItem()))) {
 			score += 4;
 		}
+		return score;
+	}
+
+	static void tick(ServerPlayer player, Registry<Enchantment> enchantments) {
+		int score = armourPower(player, enchantments);
 		if (score < 1 || score > 8) {
 			return;
 		}
