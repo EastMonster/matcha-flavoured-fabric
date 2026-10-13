@@ -86,6 +86,10 @@ public final class FoodHealMechanics {
 				return;
 			}
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+				if (EffectsMechanics.isHealingBlocked(player)) {
+					cancelHealing(player);
+					continue;
+				}
 				List<HealChain> chains = PENDING.get(player.getUUID());
 				if (chains == null || chains.isEmpty()) {
 					continue;
@@ -121,6 +125,9 @@ public final class FoodHealMechanics {
 	 * hidden-effect chain begins.
 	 */
 	public static boolean onConsumed(ServerPlayer player, List<MobEffectInstance> regens) {
+		if (EffectsMechanics.isHealingBlocked(player)) {
+			return false;
+		}
 		List<MobEffectInstance> chain = buildChain(regens);
 		if (chain.isEmpty()) {
 			return false;
@@ -133,6 +140,10 @@ public final class FoodHealMechanics {
 		boolean applied = first.start(player);
 		PENDING.computeIfAbsent(player.getUUID(), key -> new ArrayList<>()).add(healChain);
 		return applied;
+	}
+
+	public static void cancelHealing(ServerPlayer player) {
+		PENDING.remove(player.getUUID());
 	}
 
 	/** Returns the health points represented by the first high-amplifier regeneration segment. */
