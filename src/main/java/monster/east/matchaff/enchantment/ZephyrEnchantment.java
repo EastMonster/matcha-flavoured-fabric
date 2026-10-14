@@ -24,12 +24,13 @@ final class ZephyrEnchantment {
 	static void tick(ServerPlayer player, Registry<Enchantment> enchantments) {
 		int zephyrLevel = EnchantmentUtil.maxLevel(player.getItemBySlot(EquipmentSlot.FEET), enchantments, ZEPHYR);
 		if (zephyrLevel == 0) {
+			player.setAttached(TICKS, 0);
 			return;
 		}
 		int ticks = player.getAttachedOrElse(TICKS, 0);
 		var level = player.level();
 		if (player.isCrouching()) {
-			ticks++;
+			ticks = zephyrLevel >= 3 ? Math.min(ticks + 1, 46) : 0;
 			player.setAttached(TICKS, ticks);
 			player.addEffect(new MobEffectInstance(MobEffects.JUMP_BOOST, 5, 6, true, false));
 			if (zephyrLevel >= 2) {
@@ -43,19 +44,21 @@ final class ZephyrEnchantment {
 				level.playSound(null, player.getX(), player.getY(), player.getZ(),
 						SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.75F, 1.0F);
 			}
-		} else if (zephyrLevel >= 3 && ticks > 0 && !player.onGround() && player.hasEffect(MobEffects.SLOW_FALLING)) {
-			level.sendParticles(ParticleTypes.GUST,
-					player.getX(), player.getY() + 0.1, player.getZ(), 1, 0.1, 0, 0.1, 0);
-			if (ticks >= 45) {
+		} else {
+			if (canLaunch(zephyrLevel, ticks, player.onGround())) {
+				level.sendParticles(ParticleTypes.GUST,
+						player.getX(), player.getY() + 0.1, player.getZ(), 1, 0.1, 0, 0.1, 0);
 				level.sendParticles(ParticleTypes.POOF,
 						player.getX(), player.getY(), player.getZ(), 50, 0.1, 0.1, 0.1, 0.5);
-				player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 12, true, false));
+				player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 12));
+				level.playSound(null, player.getX(), player.getY(), player.getZ(),
+						SoundEvents.WIND_CHARGE_BURST.value(), SoundSource.PLAYERS, 0.5F, 1.0F);
 			}
-			level.playSound(null, player.getX(), player.getY(), player.getZ(),
-					SoundEvents.WIND_CHARGE_BURST.value(), SoundSource.HOSTILE, 0.5F, 1.0F);
-			player.setAttached(TICKS, 0);
-		} else if (!player.onGround()) {
 			player.setAttached(TICKS, 0);
 		}
+	}
+
+	static boolean canLaunch(int level, int ticks, boolean onGround) {
+		return level >= 3 && ticks >= 45 && !onGround;
 	}
 }
