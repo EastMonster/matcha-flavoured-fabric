@@ -1,8 +1,7 @@
 {
-    "parent":"block/cross_leaves",
-    "textures": {
-        "all":"block/acacia_leaves",
-        "outer_top": "block/acacia_leaves_outer_top",
-        "outer_bottom": "block/acacia_leaves_outer_bottom"
-    }
+	"parent": "block/cross_leaves",
+	"textures": {
+		"all": "block/acacia_leaves",
+		"bushy": "block/acacia_leaves_bush"
+	}
 }

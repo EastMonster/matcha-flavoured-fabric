@@ -1,8 +1,7 @@
 {
-    "parent":"block/cross_leaves",
-    "textures": {
-        "all":"block/oak_leaves",
-        "outer_top": "block/oak_leaves_outer_top",
-        "outer_bottom": "block/oak_leaves_outer_bottom"
-    }
+	"parent": "block/cross_leaves",
+	"textures": {
+		"all": "block/oak_leaves",
+		"bushy": "block/oak_leaves_bush"
+	}
 }

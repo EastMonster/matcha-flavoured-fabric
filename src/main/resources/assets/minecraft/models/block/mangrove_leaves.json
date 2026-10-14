@@ -1,8 +1,7 @@
 {
-    "parent":"block/cross_leaves",
-    "textures": {
-        "all":"block/mangrove_leaves",
-        "outer_top": "block/mangrove_leaves_outer_top",
-        "outer_bottom": "block/mangrove_leaves_outer_bottom"
-    }
+	"parent": "block/cross_leaves",
+	"textures": {
+		"all": "block/mangrove_leaves",
+		"bushy": "block/mangrove_leaves_bush"
+	}
 }
