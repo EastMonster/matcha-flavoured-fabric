@@ -1,6 +1,5 @@
 {
 	"exclusive_set": "#matcha:exclusive_set/intrinsic_weapon",
-	"primary_items": "#minecraft:enchantable/weapon",
 	"anvil_cost": 0,
 	"description": {
 		"translate": "enchantment.matcha.adamant_weapon",
@@ -31,9 +30,7 @@
 		"base": 1,
 		"per_level_above_first": 0
 	},
-	"slots": [
-		"mainhand"
-	],
+	"slots": ["mainhand"],
 	"supported_items": "#minecraft:enchantable/weapon",
 	"weight": 1
 }

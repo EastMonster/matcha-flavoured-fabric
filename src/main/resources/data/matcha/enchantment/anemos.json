@@ -13,22 +13,6 @@
 		"per_level_above_first": 0
 	},
 	"slots": ["mainhand"],
-	"supported_items": [
-		"minecraft:wooden_sword",
-		"minecraft:stone_sword",
-		"minecraft:copper_sword",
-		"minecraft:iron_sword",
-		"minecraft:diamond_sword",
-		"minecraft:netherite_sword",
-		"minecraft:stick",
-		"matcha:adamant_claymore",
-		"matcha:hepatizon_sword",
-		"matcha:butcher_knife",
-		"matcha:electrum_sword",
-		"matcha:shakudo_sword",
-		"matcha:silver_sword",
-		"matcha:steel_sword",
-		"matcha:warding_sword"
-	],
+	"supported_items": "#matcha:enchantable/anemos",
 	"weight": 1
 }

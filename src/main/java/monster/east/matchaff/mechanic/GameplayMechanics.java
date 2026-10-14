@@ -23,6 +23,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.npc.villager.Villager;
@@ -185,6 +186,8 @@ public final class GameplayMechanics {
 		AMNESTIC_VILLAGERS.add(villager.getUUID());
 		villager.removeTag("foodChecked");
 		villager.setVillagerXp(0);
+		villager.releasePoi(MemoryModuleType.JOB_SITE);
+		villager.getBrain().eraseMemory(MemoryModuleType.JOB_SITE);
 		villager.setVillagerData(villager.getVillagerData()
 				.withProfession(level.registryAccess(), VillagerProfession.NONE).withLevel(1));
 		villager.refreshBrain(level);

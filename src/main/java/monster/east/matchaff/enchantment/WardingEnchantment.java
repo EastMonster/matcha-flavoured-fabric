@@ -47,9 +47,6 @@ final class WardingEnchantment {
 		if (level > 0 && EnchantmentUtil.elapsed(player, level <= 2 ? 20 : 10)) {
 			aura(player, level);
 		}
-		if (armour == 4 && EnchantmentUtil.elapsed(player, 600)) {
-			player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 620, 0, false, false));
-		}
 	}
 
 	static int effectiveLevel(int heldScore, int armourScore) {

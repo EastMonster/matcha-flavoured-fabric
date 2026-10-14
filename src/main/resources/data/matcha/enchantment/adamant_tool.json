@@ -4,7 +4,6 @@
 		"translate": "enchantment.matcha.adamant_tool",
 		"color": "gold"
 	},
-	"effects": {},
 	"exclusive_set": "#matcha:exclusive_set/intrinsic_mining",
 	"max_cost": {
 		"base": 0,
@@ -15,9 +14,7 @@
 		"base": 0,
 		"per_level_above_first": 0
 	},
-	"slots": [
-		"mainhand"
-	],
+	"slots": ["mainhand"],
 	"supported_items": "#minecraft:enchantable/mining_loot",
 	"weight": 1
 }
