@@ -1638,7 +1638,7 @@
 		"nutrition": 2,
 		"saturation": 1.2,
 		"alwaysEdible": true,
-		"consumeSeconds": 1.6,
+		"consumeSeconds": 0.8,
 		"animation": "drink",
 		"sound": "minecraft:entity.wandering_trader.drink_milk",
 		"particles": false,
@@ -2817,10 +2817,7 @@
 					"color": "gray",
 					"italic": false
 				}
-			],
-			"minecraft:use_remainder": {
-				"id": "minecraft:bowl"
-			}
+			]
 		}
 	},
 	{
