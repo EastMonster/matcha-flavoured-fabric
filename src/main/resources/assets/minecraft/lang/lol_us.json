@@ -175,9 +175,14 @@
 	"filled_map.mansion": "MAP TO BIG W00DLUND HAUSE",
 	"item.minecraft.potion.effect.empty": "WATER BOTTLE BUT IT WET",
 	"filled_map.village_desert": "MAP 2 VILAGGE IN SAND PLACE",
+	"item.minecraft.desert_village_map": "MAP 2 VILAGGE IN SAND PLACE",
 	"filled_map.village_plains": "MAP TOO VILLAG IN DA GRAS PLACE",
+	"item.minecraft.plains_village_map": "MAP TOO VILLAG IN DA GRAS PLACE",
 	"filled_map.village_savanna": "map two villlage in da hot tree palce",
+	"item.minecraft.savanna_village_map": "map two villlage in da hot tree palce",
 	"filled_map.village_snowy": "cold pwdr everywhere willage mapp",
+	"item.minecraft.snowy_village_map": "cold pwdr everywhere willage mapp",
 	"filled_map.village_taiga": "Map 4 village with da BIG trees",
+	"item.minecraft.taiga_village_map": "Map 4 village with da BIG trees",
 	"filled_map.shipwreck": "Map 2 No worki underwota ship"
 }

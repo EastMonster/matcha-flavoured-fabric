@@ -12,7 +12,8 @@
 	"item.matcha.tomato": "Domates",
 	"block.matcha.tomatoes": "Domates",
 	"item.matcha.tomato_seeds": "Domates Tohumu",
-	"item.matcha.beacon_kindling": "Çırası",
+	"item.matcha.beacon_kindling": "İşaret Çırası",
+	"item.matcha.pith": "İlahi Parça",
 	"item.matcha.tallow": "Donyağı",
 	"item.matcha.nazar": "Nazar Boncuğu",
 	"item.matcha.raw_estus": "Ham Estus",
@@ -454,7 +455,7 @@
 	"enchantment.matcha.reach": "Reach",
 	"enchantment.matcha.regeneration": " ∞",
 	"enchantment.matcha.riposte": "Riposte",
-	"enchantment.matcha.sanguine": "",
+	"enchantment.matcha.shakudo_weapon": "",
 	"enchantment.matcha.slaughter": "Katliam",
 	"enchantment.matcha.traversal": "Poyraz",
 	"enchantment.matcha.electrum_armour": " +1",
@@ -464,8 +465,10 @@
 	"enchantment.matcha.warding_4": " 4",
 	"enchantment.matcha.warding3.set_bonus_apotropaic": "   Max",
 	"enchantment.matcha.shakudo_regen": "  (00:30)",
+	"enchantment.matcha.shakudo_armour": "  (00:30)",
 	"enchantment.matcha.shakudo_regen_bonus": "    -(00:04)",
 	"enchantment.matcha.shakudo_elytra_regen_bonus": "    -(00:10)",
+	"enchantment.matcha.electrum_tool": "",
 	"enchantment.matcha.zephyr": "Esinti",
 	"enchantment.matcha.adamant_tool": "",
 	"item.matcha.blessing": "Nimet",
@@ -948,6 +951,5 @@
 	"advancements.matcha.anglers_almanac.estus_ash.desc": "Çözünüyormuş gibi gözükse de, Estus külü zamanla çözeltiden ayrılır. Suda emülgatör olmadığından, diplerde katman oluşturur. Öyleyse, o katman niye bu kadar ince?",
 	"advancements.matcha.anglers_almanac.sulfur_chunk.desc": "Ya patlatıldığın ya da gayzer tarafından fışkırtıldığın anlamına gelen bir parça. Ya da yeşil boya yapmaya doğru bir adım daha. Belli olmaz.",
 	"advancements.matcha.anglers_almanac.goat_horn.desc": "Çünkü balık tutarken ilk lazım olan şey, yine yanlış balığı tuttuğunu herkese bildirmenin yüksek sesli bir yoludur.",
-	"trinkets.slot.head.earring": "Küpe",
-	"item.matcha.pith": "İlahi Parça"
+	"trinkets.slot.head.earring": "Küpe"
 }
