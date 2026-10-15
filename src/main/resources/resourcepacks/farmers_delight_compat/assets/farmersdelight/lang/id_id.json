@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Tanaman Tomat Marglobe",
+	"block.farmersdelight.budding_tomatoes": "Tunas Tomat Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "Tanaman Tomat Marglobe di Tali",
+	"item.farmersdelight.tomato": "Tomat Marglobe",
+	"item.farmersdelight.tomato_seeds": "Benih Tomat Marglobe",
 	"desc.matcha.feeding_full_health": "❤ Kesehatan penuh",
 	"effect.farmersdelight.nourishment.desc": " Bergizi (%s)",
 	"item.farmersdelight.netherite_knife": "Pisau Adamant",

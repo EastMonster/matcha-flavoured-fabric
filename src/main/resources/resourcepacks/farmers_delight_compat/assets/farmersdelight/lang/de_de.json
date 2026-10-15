@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Marglobe-Tomatenpflanze",
+	"block.farmersdelight.budding_tomatoes": "Sprießende Marglobe-Tomatenpflanze",
+	"block.farmersdelight.tomatoes_on_rope": "Marglobe-Tomatenpflanze am Seil",
+	"item.farmersdelight.tomato": "Marglobe-Tomate",
+	"item.farmersdelight.tomato_seeds": "Marglobe-Tomatensamen",
 	"block.farmersdelight.straw_bale": "Trockenes Strohbündel",
 	"item.farmersdelight.straw": "Trockenes Stroh",
 	"desc.matcha.feeding_full_health": "❤ Volle Gesundheit",

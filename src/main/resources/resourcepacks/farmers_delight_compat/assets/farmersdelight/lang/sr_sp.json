@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Стабљика парадајза Марглоб",
+	"block.farmersdelight.budding_tomatoes": "Младица парадајза Марглоб",
+	"block.farmersdelight.tomatoes_on_rope": "Стабљика парадајза Марглоб на ужету",
+	"item.farmersdelight.tomato": "Парадајз Марглоб",
+	"item.farmersdelight.tomato_seeds": "Семе парадајза Марглоб",
 	"desc.matcha.feeding_full_health": "❤ Пуно здравље",
 	"effect.farmersdelight.nourishment.desc": " Ухрањеност (%s)",
 	"item.farmersdelight.netherite_knife": "Адамантски нож",

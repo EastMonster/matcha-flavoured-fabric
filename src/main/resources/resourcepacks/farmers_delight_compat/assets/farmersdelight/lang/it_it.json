@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Pianta di pomodoro Marglobe",
+	"block.farmersdelight.budding_tomatoes": "Germoglio di pomodoro Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "Pianta di pomodoro Marglobe su corda",
+	"item.farmersdelight.tomato": "Pomodoro Marglobe",
+	"item.farmersdelight.tomato_seeds": "Semi di pomodoro Marglobe",
 	"block.farmersdelight.straw_bale": "Balla di paglia secca",
 	"item.farmersdelight.straw": "Paglia secca",
 	"desc.matcha.feeding_full_health": "❤ Salute piena",

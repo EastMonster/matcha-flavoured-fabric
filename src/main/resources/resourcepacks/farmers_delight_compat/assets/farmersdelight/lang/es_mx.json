@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Planta de tomate Marglobe",
+	"block.farmersdelight.budding_tomatoes": "Brote de tomate Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "Planta de tomate Marglobe en cuerda",
+	"item.farmersdelight.tomato": "Tomate Marglobe",
+	"item.farmersdelight.tomato_seeds": "Semillas de tomate Marglobe",
 	"block.farmersdelight.straw_bale": "Paca de paja seca",
 	"item.farmersdelight.straw": "Paja seca",
 	"desc.matcha.feeding_full_health": "❤ Salud completa",

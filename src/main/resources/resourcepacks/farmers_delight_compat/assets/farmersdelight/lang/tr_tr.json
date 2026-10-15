@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Marglobe Domates Bitkisi",
+	"block.farmersdelight.budding_tomatoes": "Filizlenen Marglobe Domates Bitkisi",
+	"block.farmersdelight.tomatoes_on_rope": "İpteki Marglobe Domates Bitkisi",
+	"item.farmersdelight.tomato": "Marglobe Domatesi",
+	"item.farmersdelight.tomato_seeds": "Marglobe Domates Tohumları",
 	"desc.matcha.feeding_full_health": "❤ Tam can",
 	"effect.farmersdelight.nourishment.desc": " Beslenme (%s)",
 	"item.farmersdelight.netherite_knife": "Adamantin Bıçak",

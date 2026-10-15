@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Marglobe paradicsompalánta",
+	"block.farmersdelight.budding_tomatoes": "Csírázó Marglobe paradicsompalánta",
+	"block.farmersdelight.tomatoes_on_rope": "Marglobe paradicsompalánta kötélen",
+	"item.farmersdelight.tomato": "Marglobe paradicsom",
+	"item.farmersdelight.tomato_seeds": "Marglobe paradicsommag",
 	"block.farmersdelight.straw_bale": "Száraz szalmabála",
 	"item.farmersdelight.straw": "Száraz szalma",
 	"desc.matcha.feeding_full_health": "❤ Teljes életerő",

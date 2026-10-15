@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Марглоб қызанағының сабағы",
+	"block.farmersdelight.budding_tomatoes": "Марглоб қызанағының өскіні",
+	"block.farmersdelight.tomatoes_on_rope": "Арқандағы Марглоб қызанағының сабағы",
+	"item.farmersdelight.tomato": "Марглоб қызанағы",
+	"item.farmersdelight.tomato_seeds": "Марглоб қызанағының тұқымы",
 	"desc.matcha.feeding_full_health": "❤ Толық денсаулық",
 	"effect.farmersdelight.nourishment.desc": " Нәрлену (%s)",
 	"item.farmersdelight.netherite_knife": "Адамант пышақ",

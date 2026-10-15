@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Кущ помідора Марглоб",
+	"block.farmersdelight.budding_tomatoes": "Паросток помідора Марглоб",
+	"block.farmersdelight.tomatoes_on_rope": "Кущ помідора Марглоб на мотузці",
+	"item.farmersdelight.tomato": "Помідор Марглоб",
+	"item.farmersdelight.tomato_seeds": "Насіння помідора Марглоб",
 	"desc.matcha.feeding_full_health": "❤ Повне здоров’я",
 	"effect.farmersdelight.nourishment.desc": " Ситість (%s)",
 	"item.farmersdelight.netherite_knife": "Адамантовий ніж",

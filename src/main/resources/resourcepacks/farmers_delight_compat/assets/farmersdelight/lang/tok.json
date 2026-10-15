@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "kasi pi kili loje Marglobe",
+	"block.farmersdelight.budding_tomatoes": "kasi sin pi kili loje Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "kasi pi kili loje Marglobe lon linja",
+	"item.farmersdelight.tomato": "kili loje Marglobe",
+	"item.farmersdelight.tomato_seeds": "sike mama pi kili loje Marglobe",
 	"desc.matcha.feeding_full_health": "❤ sijelo li pona ale",
 	"effect.farmersdelight.nourishment.desc": " moku suli (%s)",
 	"item.farmersdelight.netherite_knife": "ilo kipisi moku pi mani Adamant",

@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "マーグローブトマトの茎",
+	"block.farmersdelight.budding_tomatoes": "芽吹いたマーグローブトマトの茎",
+	"block.farmersdelight.tomatoes_on_rope": "ロープに絡んだマーグローブトマトの茎",
+	"item.farmersdelight.tomato": "マーグローブトマト",
+	"item.farmersdelight.tomato_seeds": "マーグローブトマトの種",
 	"block.farmersdelight.straw_bale": "乾いた藁の俵",
 	"item.farmersdelight.straw": "乾いた藁",
 	"desc.matcha.feeding_full_health": "❤ 体力全回復",

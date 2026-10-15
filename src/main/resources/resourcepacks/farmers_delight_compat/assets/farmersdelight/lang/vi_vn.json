@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Cây cà chua Marglobe",
+	"block.farmersdelight.budding_tomatoes": "Mầm cà chua Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "Cây cà chua Marglobe trên dây",
+	"item.farmersdelight.tomato": "Cà chua Marglobe",
+	"item.farmersdelight.tomato_seeds": "Hạt giống cà chua Marglobe",
 	"desc.matcha.feeding_full_health": "❤ Hồi đầy máu",
 	"effect.farmersdelight.nourishment.desc": " Nuôi dưỡng (%s)",
 	"item.farmersdelight.netherite_knife": "Dao Adamant",
