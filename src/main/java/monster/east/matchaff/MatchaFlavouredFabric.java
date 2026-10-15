@@ -48,6 +48,9 @@ import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -78,6 +81,11 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		registerClifftreeCompatPack();
+		ResourceKey<Block> busterAppearance = ResourceKey.create(Registries.BLOCK,
+				Identifier.fromNamespaceAndPath("matcha", "bedrock_buster"));
+		// TNT's synchronized block state supplies its appearance without a custom renderer or block item.
+		Registry.register(BuiltInRegistries.BLOCK, busterAppearance,
+				new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TNT).noLootTable().setId(busterAppearance)));
 		SleepFastForwardPayload.register();
 		BlazeRodDropsMechanics.init();
 		VanillaFoodDefaults.init();
