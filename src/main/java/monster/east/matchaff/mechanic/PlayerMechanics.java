@@ -53,7 +53,7 @@ import java.util.UUID;
  *     effective 20-point floor.
 	 *   * sleeping skips 12 hours by day and wakes at morning by night
  *   * icy water in frozen biomes applies blindness, slowness and freeze damage
- *     (freezing_protection III on the chest blocks it)
+ *     (any freezing_protection level on the chest blocks it)
  *   * xp is wiped every tick; anvils are free (AnvilMenuMixin)
  */
 public final class PlayerMechanics {
@@ -280,7 +280,7 @@ public final class PlayerMechanics {
 		Registry<Enchantment> enchantments = player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 		Holder.Reference<Enchantment> holder = enchantments.get(FREEZING_PROTECTION).orElse(null);
 		return holder != null
-				&& chest.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).getLevel(holder) >= 3;
+				&& chest.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).getLevel(holder) > 0;
 	}
 
 	// The gamerule controls how many players must sleep; once that threshold is
