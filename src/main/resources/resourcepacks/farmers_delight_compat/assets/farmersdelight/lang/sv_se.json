@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Marglobe-tomatplanta",
+	"block.farmersdelight.budding_tomatoes": "Groende Marglobe-tomatplanta",
+	"block.farmersdelight.tomatoes_on_rope": "Marglobe-tomatplanta på rep",
+	"item.farmersdelight.tomato": "Marglobe-tomat",
+	"item.farmersdelight.tomato_seeds": "Marglobe-tomatfrön",
 	"desc.matcha.feeding_full_health": "❤ Full hälsa",
 	"effect.farmersdelight.nourishment.desc": " Näring (%s)",
 	"item.farmersdelight.netherite_knife": "Adamantkniv",

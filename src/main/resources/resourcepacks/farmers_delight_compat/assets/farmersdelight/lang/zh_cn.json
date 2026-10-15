@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "马格洛布番茄藤蔓",
+	"block.farmersdelight.budding_tomatoes": "萌芽的马格洛布番茄藤蔓",
+	"block.farmersdelight.tomatoes_on_rope": "绳上的马格洛布番茄藤蔓",
+	"item.farmersdelight.tomato": "马格洛布番茄",
+	"item.farmersdelight.tomato_seeds": "马格洛布番茄种子",
 	"desc.matcha.feeding_full_health": "❤ 回满生命",
 	"effect.farmersdelight.nourishment.desc": " 滋养（%s）",
 	"item.farmersdelight.netherite_knife": "精金刀",

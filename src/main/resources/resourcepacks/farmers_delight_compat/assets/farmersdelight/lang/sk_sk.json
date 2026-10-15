@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Rastlina paradajky Marglobe",
+	"block.farmersdelight.budding_tomatoes": "Klíčiaca paradajka Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "Rastlina paradajky Marglobe na lane",
+	"item.farmersdelight.tomato": "Paradajka Marglobe",
+	"item.farmersdelight.tomato_seeds": "Semená paradajky Marglobe",
 	"desc.matcha.feeding_full_health": "❤ Plné zdravie",
 	"effect.farmersdelight.nourishment.desc": " Výživa (%s)",
 	"item.farmersdelight.netherite_knife": "Adamantový nôž",

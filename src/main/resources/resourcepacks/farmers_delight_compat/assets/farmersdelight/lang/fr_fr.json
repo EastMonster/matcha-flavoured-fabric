@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Plant de tomate Marglobe",
+	"block.farmersdelight.budding_tomatoes": "Jeune plant de tomate Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "Plant de tomate Marglobe sur corde",
+	"item.farmersdelight.tomato": "Tomate Marglobe",
+	"item.farmersdelight.tomato_seeds": "Graines de tomate Marglobe",
 	"block.farmersdelight.straw_bale": "Botte de paille sèche",
 	"item.farmersdelight.straw": "Paille sèche",
 	"desc.matcha.feeding_full_health": "❤ Santé maximale",

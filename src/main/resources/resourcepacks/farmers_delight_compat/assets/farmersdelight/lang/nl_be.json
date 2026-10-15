@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Marglobe-tomatenplant",
+	"block.farmersdelight.budding_tomatoes": "Ontkiemende Marglobe-tomatenplant",
+	"block.farmersdelight.tomatoes_on_rope": "Marglobe-tomatenplant aan touw",
+	"item.farmersdelight.tomato": "Marglobe-tomaat",
+	"item.farmersdelight.tomato_seeds": "Marglobe-tomatenzaden",
 	"desc.matcha.feeding_full_health": "❤ Volledige gezondheid",
 	"effect.farmersdelight.nourishment.desc": " Voeding (%s)",
 	"item.farmersdelight.netherite_knife": "Adamanten Mes",

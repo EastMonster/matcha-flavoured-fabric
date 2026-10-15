@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Marglobe-tomaattikasvi",
+	"block.farmersdelight.budding_tomatoes": "Itävä Marglobe-tomaattikasvi",
+	"block.farmersdelight.tomatoes_on_rope": "Marglobe-tomaattikasvi köydellä",
+	"item.farmersdelight.tomato": "Marglobe-tomaatti",
+	"item.farmersdelight.tomato_seeds": "Marglobe-tomaatin siemenet",
 	"desc.matcha.feeding_full_health": "❤ Täysi terveys",
 	"effect.farmersdelight.nourishment.desc": " Ravittu (%s)",
 	"item.farmersdelight.netherite_knife": "Adamanttiveitsi",

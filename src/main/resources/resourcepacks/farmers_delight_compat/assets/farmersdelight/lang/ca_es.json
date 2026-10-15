@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Tomaquera Marglobe",
+	"block.farmersdelight.budding_tomatoes": "Brot de tomaquera Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "Tomaquera Marglobe sobre corda",
+	"item.farmersdelight.tomato": "Tomàquet Marglobe",
+	"item.farmersdelight.tomato_seeds": "Llavors de tomàquet Marglobe",
 	"desc.matcha.feeding_full_health": "❤ Salut completa",
 	"effect.farmersdelight.nourishment.desc": " Nodrit (%s)",
 	"item.farmersdelight.netherite_knife": "Ganivet d'adamant",

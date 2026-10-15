@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Стъбло на домат Марглоуб",
+	"block.farmersdelight.budding_tomatoes": "Покълващо стъбло на домат Марглоуб",
+	"block.farmersdelight.tomatoes_on_rope": "Стъбло на домат Марглоуб върху въже",
+	"item.farmersdelight.tomato": "Домат Марглоуб",
+	"item.farmersdelight.tomato_seeds": "Семена от домат Марглоуб",
 	"block.farmersdelight.straw_bale": "Бала суха слама",
 	"item.farmersdelight.straw": "Суха слама",
 	"desc.matcha.feeding_full_health": "❤ Пълно здраве",

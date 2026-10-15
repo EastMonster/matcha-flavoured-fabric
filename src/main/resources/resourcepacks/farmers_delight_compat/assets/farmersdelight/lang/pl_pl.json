@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Krzak pomidora Marglobe",
+	"block.farmersdelight.budding_tomatoes": "Kiełkujący pomidor Marglobe",
+	"block.farmersdelight.tomatoes_on_rope": "Krzak pomidora Marglobe na linie",
+	"item.farmersdelight.tomato": "Pomidor Marglobe",
+	"item.farmersdelight.tomato_seeds": "Nasiona pomidora Marglobe",
 	"block.farmersdelight.straw_bale": "Bela suchej słomy",
 	"item.farmersdelight.straw": "Sucha słoma",
 	"desc.matcha.feeding_full_health": "❤ Pełne zdrowie",

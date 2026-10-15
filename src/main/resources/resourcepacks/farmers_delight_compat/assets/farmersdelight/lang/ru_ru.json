@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Куст томата Марглоб",
+	"block.farmersdelight.budding_tomatoes": "Росток томата Марглоб",
+	"block.farmersdelight.tomatoes_on_rope": "Куст томата Марглоб на верёвке",
+	"item.farmersdelight.tomato": "Томат Марглоб",
+	"item.farmersdelight.tomato_seeds": "Семена томата Марглоб",
 	"block.farmersdelight.straw_bale": "Тюк сухой соломы",
 	"item.farmersdelight.straw": "Сухая солома",
 	"desc.matcha.feeding_full_health": "❤ Полное здоровье",

@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "Marglobe Tomato Vine",
+	"block.farmersdelight.budding_tomatoes": "Budding Marglobe Tomato Vine",
+	"block.farmersdelight.tomatoes_on_rope": "Marglobe Tomato Vine on Rope",
+	"item.farmersdelight.tomato": "Marglobe Tomato",
+	"item.farmersdelight.tomato_seeds": "Marglobe Tomato Seeds",
 	"desc.matcha.feeding_full_health": "❤ Full Health",
 	"effect.farmersdelight.nourishment.desc": " Vonanamting (%s)",
 	"item.farmersdelight.netherite_knife": "Adamant Aistio",

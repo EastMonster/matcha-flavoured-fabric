@@ -1,4 +1,9 @@
 {
+	"block.farmersdelight.tomatoes": "마글로브 토마토 덩굴",
+	"block.farmersdelight.budding_tomatoes": "싹트는 마글로브 토마토 덩굴",
+	"block.farmersdelight.tomatoes_on_rope": "밧줄 위의 마글로브 토마토 덩굴",
+	"item.farmersdelight.tomato": "마글로브 토마토",
+	"item.farmersdelight.tomato_seeds": "마글로브 토마토 씨앗",
 	"desc.matcha.feeding_full_health": "❤ 체력 완전 회복",
 	"effect.farmersdelight.nourishment.desc": " 배부름 (%s)",
 	"item.farmersdelight.netherite_knife": "아다만트 식칼",
