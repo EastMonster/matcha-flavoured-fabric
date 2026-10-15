@@ -985,6 +985,8 @@
 	"trade.matcha.bulk_blackstone": "大量のブラックストーン",
 	"trade.matcha.bulk_blackstone.desc": "x64 ブラックストーン",
 	"item.matcha.mushroom_soup": "キノコのすまし汁",
+	"advancements.matcha.hell.wither_breaks_heart.title": "心やぶれぬ",
 	"effect.matcha.jump_boost_2": " 跳躍力上昇 II（%s）",
+	"enchantment.matcha.shakudo_wither_resistance": " %s",
 	"trinkets.slot.head.earring": "イヤリング"
 }

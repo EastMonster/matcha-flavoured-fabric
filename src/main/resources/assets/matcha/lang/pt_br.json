@@ -984,6 +984,8 @@
 	"trade.matcha.bulk_blackstone": "Pedra-Negra Bruta",
 	"trade.matcha.bulk_blackstone.desc": "x64 Pedra-Negra",
 	"item.matcha.mushroom_soup": "Sopa de Vegetal Coado",
+	"advancements.matcha.hell.wither_breaks_heart.title": "Coração Desgostoso",
 	"effect.matcha.jump_boost_2": " Supersalto II (%s)",
+	"enchantment.matcha.shakudo_wither_resistance": " %s",
 	"trinkets.slot.head.earring": "Brinco"
 }

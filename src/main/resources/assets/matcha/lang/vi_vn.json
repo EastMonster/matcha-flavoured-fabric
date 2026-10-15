@@ -713,7 +713,7 @@
 	"advancements.matcha.hell.obtain_ancient_debris.desc": "Xác thịt của Vong thần cổ xưa",
 	"advancements.matcha.hell.obtain_benzene.title": "Hóa học cấm kỵ",
 	"advancements.matcha.hell.obtain_benzene.desc": "Điều chế Benzene, một hóa chất cấm kỵ theo luật cổ",
-	"advancements.matcha.hell.obtain_stabilised_estus.title": "Chất kết dính của quỷ",
+	"advancements.matcha.hell.obtain_stabilised_estus.title": "Hỗn hợp từ địa ngục",
 	"advancements.matcha.hell.obtain_stabilised_estus.desc": "Kết dính Estus nguyên chất thành dạng Estus ổn định",
 	"advancements.matcha.hell.obtain_warding_stone.title": "Thánh hoả trụ",
 	"advancements.matcha.hell.obtain_warding_stone.desc": "Chế tạo đá đuổi tà",
@@ -985,6 +985,8 @@
 	"trade.matcha.bulk_blackstone": "Đá đen số lượng lớn",
 	"trade.matcha.bulk_blackstone.desc": "x64 Đá đen",
 	"item.matcha.mushroom_soup": "Canh nấm",
+	"advancements.matcha.hell.wither_breaks_heart.title": "Trái tim vỡ vụn",
 	"effect.matcha.jump_boost_2": " Nhảy cao II (%s)",
+	"enchantment.matcha.shakudo_wither_resistance": " %s",
 	"trinkets.slot.head.earring": "Khuyên tai"
 }

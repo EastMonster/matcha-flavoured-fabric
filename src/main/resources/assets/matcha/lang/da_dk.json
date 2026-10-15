@@ -297,10 +297,10 @@
 	"item.matcha.grilled_tomatoes": "Grillede tomater",
 	"item.matcha.pickled_tomatoes": "Soltørrede tomater",
 	"item.matcha.bruschetta": "Bruschetta",
-	"item.matcha.braised_brown_mushroom": "Brasede svampe",
-	"item.matcha.braised_crimson_fungus": "Brasede Karmoisinrødsvamp",
-	"item.matcha.braised_red_mushroom": "Brasede flugesvampe",
-	"item.matcha.braised_warped_fungus": "Brasede forvrængede svampe",
+	"item.matcha.braised_brown_mushroom": "Braiserede svampe",
+	"item.matcha.braised_crimson_fungus": "Braiserede Karmoisinrødsvamp",
+	"item.matcha.braised_red_mushroom": "Braiserede flugesvampe",
+	"item.matcha.braised_warped_fungus": "Braiserede forvrængede svampe",
 	"item.matcha.baked_apple": "Bagt æble",
 	"item.matcha.canned_apples": "Æbler på dåse",
 	"item.matcha.apple_empanada": "Æble empanada",
@@ -985,5 +985,8 @@
 	"trade.matcha.bulk_blackstone": "Parti sortsten",
 	"trade.matcha.bulk_blackstone.desc": "x64 Sortsten",
 	"item.matcha.mushroom_soup": "Klar champignonsuppe",
+	"advancements.matcha.hell.wither_breaks_heart.title": "Hjerteknuser",
+	"effect.matcha.jump_boost_2": " Superhop II (%s)",
+	"enchantment.matcha.shakudo_wither_resistance": " %s",
 	"trinkets.slot.head.earring": "Ørering"
 }

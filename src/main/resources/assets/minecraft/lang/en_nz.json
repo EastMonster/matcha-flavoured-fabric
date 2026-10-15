@@ -22,5 +22,10 @@
 	"item.minecraft.cookie": "Chocolate Chip Cookie",
 	"item.kleispack.rose_classic": "Rose",
 	"item.kleispack.cyan_rose_classic": "Cyan Rose",
-	"item.kleispack.dandelion_classic": "Dandelion"
+	"item.kleispack.dandelion_classic": "Dandelion",
+	"filled_map.village_desert": "Abandoned Desert Village Map",
+	"filled_map.village_plains": "Abandoned Plains Village Map",
+	"filled_map.village_savanna": "Abandoned Savanna Village Map",
+	"filled_map.village_snowy": "Abandoned Snowy Village Map",
+	"filled_map.village_taiga": "Abandoned Taiga Village Map"
 }

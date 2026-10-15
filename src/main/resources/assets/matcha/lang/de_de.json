@@ -985,6 +985,8 @@
 	"trade.matcha.bulk_blackstone": "Gehäufter Schwarzstein",
 	"trade.matcha.bulk_blackstone.desc": "x64 Schwarzstein",
 	"item.matcha.mushroom_soup": "Klare Pilzsuppe",
+	"advancements.matcha.hell.wither_breaks_heart.title": "Herzensbrecher",
 	"effect.matcha.jump_boost_2": " Sprungkraft II (%s)",
+	"enchantment.matcha.shakudo_wither_resistance": " %s",
 	"trinkets.slot.head.earring": "Ohrring"
 }

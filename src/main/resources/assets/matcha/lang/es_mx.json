@@ -985,6 +985,8 @@
 	"trade.matcha.bulk_blackstone": "Piedra negra a granel",
 	"trade.matcha.bulk_blackstone.desc": "x64 Piedra negra",
 	"item.matcha.mushroom_soup": "Sopa clara de hongos",
+	"advancements.matcha.hell.wither_breaks_heart.title": "Rompecorazones",
 	"effect.matcha.jump_boost_2": " Supersalto II (%s)",
+	"enchantment.matcha.shakudo_wither_resistance": " %s",
 	"trinkets.slot.head.earring": "Arete"
 }
