@@ -226,7 +226,8 @@ public final class GameplayMechanics {
 			}
 			String food = FAVORITE_FOODS[villager.getRandom().nextInt(FAVORITE_FOODS.length)];
 			villager.getOffers().add(0, new MerchantOffer(
-					new ItemCost(food.equals("chocolate_chip_cookie") ? Items.COOKIE : BuiltInRegistries.ITEM.getValue(id(food))),
+					new ItemCost(food.equals("chocolate_chip_cookie") ? Items.COOKIE : BuiltInRegistries.ITEM.getValue(id(food)),
+							favoriteFoodCount(food)),
 					new ItemStack(Items.EMERALD), 1, 1, 0.0F));
 			villager.addTag("foodChecked");
 		}
@@ -235,17 +236,29 @@ public final class GameplayMechanics {
 	public static boolean isFavoriteFoodOffer(MerchantOffer offer) {
 		ItemStack food = offer.getBaseCostA();
 		ItemStack result = offer.getResult();
-		if (food.getCount() != 1 || !offer.getCostB().isEmpty()
+		if (!offer.getCostB().isEmpty()
 				|| !result.is(Items.EMERALD) || result.getCount() != 1 || offer.getMaxUses() != 1) {
 			return false;
 		}
 		Identifier foodId = BuiltInRegistries.ITEM.getKey(food.getItem());
 		for (String favorite : FAVORITE_FOODS) {
-			if (foodId.equals(id(favorite))) {
-				return true;
+			if (foodId.equals(favorite.equals("chocolate_chip_cookie")
+					? BuiltInRegistries.ITEM.getKey(Items.COOKIE) : id(favorite))) {
+				// Existing villagers retain their old one-item offers.
+				return food.getCount() == 1 || food.getCount() == favoriteFoodCount(favorite);
 			}
 		}
 		return false;
+	}
+
+	static int favoriteFoodCount(String food) {
+		return switch (food) {
+			case "brachio_chicken_nugget", "ptero_chicken_nugget", "stego_chicken_nugget",
+					"tricero_chicken_nugget" -> 8;
+			case "puerquito" -> 4;
+			case "honey_ginger_tea" -> 3;
+			default -> 1;
+		};
 	}
 
 	private static void refreshAmnesticVillagers() {
