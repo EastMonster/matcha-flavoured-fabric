@@ -15,7 +15,7 @@ final class BloodrageEnchantment {
 
 	static void tick(ServerPlayer player, Registry<Enchantment> enchantments) {
 		if (EnchantmentUtil.maxLevel(player.getMainHandItem(), enchantments, BLOODRAGE) == 0
-				|| player.getHealth() > 10.0F) {
+				|| !isActive(player.getHealth(), player.getAbsorptionAmount())) {
 			return;
 		}
 		player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 20, 1, true, true));
@@ -23,5 +23,9 @@ final class BloodrageEnchantment {
 		var level = player.level();
 		level.sendParticles(new DustParticleOptions(0xFF0000, 1.0F),
 				player.getX(), player.getY() + 1.5, player.getZ(), 1, 0.25, 0.25, 0.25, 0.1);
+	}
+
+	static boolean isActive(float health, float absorption) {
+		return health + absorption <= 10.0F;
 	}
 }

@@ -2,11 +2,9 @@ package monster.east.matchaff.enchantment;
 
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
-import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.player.Player;
@@ -14,22 +12,18 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 public final class AnemosEnchantment {
-	private static final AttachmentType<Integer> READY_TICK = AttachmentRegistry.create(
-			net.minecraft.resources.Identifier.fromNamespaceAndPath("matcha-flavoured", "anemos_ready_tick")
-	);
+	private static AttachmentType<Integer> READY_TICK;
 	private static final net.minecraft.resources.Identifier ANEMOS = EnchantmentUtil.id("anemos");
 
 	private AnemosEnchantment() {
 	}
 
 	static void init() {
-		AttackBlockCallback.EVENT.register((player, level, hand, pos, direction) -> {
-			maybeLaunch(player, player.getMainHandItem());
-			return InteractionResult.PASS;
-		});
+		READY_TICK = AttachmentRegistry.create(
+				net.minecraft.resources.Identifier.fromNamespaceAndPath("matcha-flavoured", "anemos_ready_tick"));
 	}
 
-	public static void onPostAttack(ServerPlayer player, ItemStack weapon) {
+	public static void onHit(ServerPlayer player, ItemStack weapon) {
 		maybeLaunch(player, weapon);
 	}
 

@@ -53,6 +53,10 @@ final class WardingEnchantment {
 		return Math.max(Math.min(3, heldScore), Math.min(4, armourScore));
 	}
 
+	static int slownessAmplifier(int level) {
+		return level >= 3 ? 2 : 1;
+	}
+
 	private static int heldScore(ServerPlayer player, Registry<Enchantment> enchantments) {
 		int score = 0;
 		for (int tier = 0; tier < TIERS.length; tier++) {
@@ -89,7 +93,7 @@ final class WardingEnchantment {
 			if (target.is(slowedTag)
 					&& target.distanceToSqr(player) <= slowRadius * slowRadius
 					&& (level == 4 || !wearingCopperArmor(target))) {
-				target.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, level >= 3 ? 1 : 0, false, false));
+				target.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20, slownessAmplifier(level), false, false));
 				slownessParticles(serverLevel, target);
 			}
 		}
