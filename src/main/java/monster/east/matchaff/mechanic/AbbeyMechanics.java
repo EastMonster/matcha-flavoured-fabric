@@ -345,7 +345,7 @@ public final class AbbeyMechanics {
 		Vec3 anchor = localPos(marker, left, 0, 0);
 		for (ServerPlayer player : level.getEntitiesOfClass(ServerPlayer.class,
 				new AABB(anchor, anchor).inflate(1.0), p -> p.distanceToSqr(anchor) <= 1.0)) {
-			player.teleportTo(player.getX(), player.getY() + 3, player.getZ());
+			player.teleportTo(anchor.x, anchor.y + 3, anchor.z);
 		}
 	}
 
