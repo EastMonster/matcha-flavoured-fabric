@@ -11,6 +11,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -42,7 +43,7 @@ public abstract class EnchantmentHelperMixin {
 
 	@Inject(method = "doPostAttackEffectsWithItemSourceOnBreak", at = @At("TAIL"))
 	private static void matcha$anemosPostAttack(ServerLevel level, Entity victim, DamageSource source,
-			ItemStack weapon, Consumer<ItemStack> attackerlessOnBreak, CallbackInfo ci) {
+			ItemStack weapon, Consumer<Item> attackerlessOnBreak, CallbackInfo ci) {
 		if (weapon != null && source.getEntity() instanceof ServerPlayer player) {
 			AnemosEnchantment.onHit(player, weapon);
 		}
@@ -51,7 +52,7 @@ public abstract class EnchantmentHelperMixin {
 	@Inject(method = "onHitBlock", at = @At("TAIL"))
 	private static void matcha$anemosHitBlock(ServerLevel level, ItemStack weapon, LivingEntity owner,
 			Entity entity, EquipmentSlot slot, Vec3 hitLocation, BlockState hitBlock,
-			Consumer<ItemStack> onBreak, CallbackInfo ci) {
+			Consumer<Item> onBreak, CallbackInfo ci) {
 		if (entity instanceof ServerPlayer player && slot == EquipmentSlot.MAINHAND) {
 			AnemosEnchantment.onHit(player, weapon);
 		}
