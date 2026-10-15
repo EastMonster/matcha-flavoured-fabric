@@ -1,5 +1,9 @@
 package monster.east.matchaff.mechanic;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import monster.east.matchaff.enchantment.EnchantmentMechanics;
 import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
@@ -41,7 +45,9 @@ public final class EffectsMechanics {
 	private static final Identifier HEARTBREAKER = Identifier.fromNamespaceAndPath("matcha", "hell/wither_breaks_heart");
 
 	private static final Map<UUID, AuraCharge> PENDING_AURA = new HashMap<>();
-	private static final Map<UUID, WitherCountdown> WITHER_TICKS = new HashMap<>();
+	private static final AttachmentType<WitherCountdown> WITHER_TICKS = AttachmentRegistry.create(
+			Identifier.fromNamespaceAndPath("matcha", "wither_countdown"),
+			builder -> builder.persistent(WitherCountdown.CODEC));
 	private static final Set<UUID> HUNGRY_PLAYERS = new HashSet<>();
 
 	private EffectsMechanics() {
@@ -50,20 +56,18 @@ public final class EffectsMechanics {
 	public static void init() {
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			PENDING_AURA.clear();
-			WITHER_TICKS.clear();
 			HUNGRY_PLAYERS.clear();
 		});
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
 			if (entity instanceof ServerPlayer player) {
 				PENDING_AURA.remove(player.getUUID());
-				WITHER_TICKS.remove(player.getUUID());
+				player.removeAttached(WITHER_TICKS);
 				HUNGRY_PLAYERS.remove(player.getUUID());
 			}
 		});
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
 		{
 			PENDING_AURA.remove(handler.getPlayer().getUUID());
-			WITHER_TICKS.remove(handler.getPlayer().getUUID());
 			HUNGRY_PLAYERS.remove(handler.getPlayer().getUUID());
 		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
@@ -129,17 +133,19 @@ public final class EffectsMechanics {
 	}
 
 	private static void tickWither(ServerPlayer player) {
-		UUID uuid = player.getUUID();
 		Difficulty difficulty = WorldMechanics.cachedDifficulty(player.level().getServer());
 		if ((difficulty != Difficulty.NORMAL && difficulty != Difficulty.HARD)
 				|| !player.hasEffect(MobEffects.WITHER)) {
-			WITHER_TICKS.remove(uuid);
+			player.removeAttached(WITHER_TICKS);
 			return;
 		}
 
-		WitherCountdown countdown = WITHER_TICKS.computeIfAbsent(uuid, ignored ->
-				new WitherCountdown(0, witherBudget(EnchantmentMechanics.shakudoWitherResistance(player)))).tick();
-		WITHER_TICKS.put(uuid, countdown);
+		WitherCountdown countdown = player.getAttached(WITHER_TICKS);
+		if (countdown == null) {
+			countdown = new WitherCountdown(0, witherBudget(EnchantmentMechanics.shakudoWitherResistance(player)));
+		}
+		countdown = countdown.tick();
+		player.setAttached(WITHER_TICKS, countdown);
 		if (countdown.ticks() % 20 != 0) {
 			return;
 		}
@@ -179,7 +185,7 @@ public final class EffectsMechanics {
 		if (advancement != null) {
 			player.getAdvancements().award(advancement, "get_heart_broken");
 		}
-		WITHER_TICKS.remove(uuid);
+		player.removeAttached(WITHER_TICKS);
 	}
 
 	static int witherBudget(int resistance) {
@@ -215,6 +221,11 @@ public final class EffectsMechanics {
 
 	// Snapshot resistance at the start; changing armour must not refill an active countdown.
 	record WitherCountdown(int ticks, int remaining) {
+		static final Codec<WitherCountdown> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+				Codec.intRange(0, 280).fieldOf("ticks").forGetter(WitherCountdown::ticks),
+				Codec.intRange(0, 14).fieldOf("remaining").forGetter(WitherCountdown::remaining)
+		).apply(instance, WitherCountdown::new));
+
 		WitherCountdown tick() {
 			int next = ticks + 1;
 			return new WitherCountdown(next, remaining - (next % 20 == 0 ? 1 : 0));
