@@ -43,8 +43,8 @@ final class DivineItemMechanics {
 				item.setNoGravity(true);
 				item.needsSync = true;
 				if (everyTenTicks) {
-					level.sendParticles(ParticleTypes.END_ROD, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0, 0, 0, 0.05);
-					level.sendParticles(ParticleTypes.ELECTRIC_SPARK, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0.15, 0.15, 0.15, 0);
+					level.sendParticles(ParticleTypes.END_ROD, true, false, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0, 0, 0, 0.05);
+					level.sendParticles(ParticleTypes.ELECTRIC_SPARK, true, false, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0.15, 0.15, 0.15, 0);
 				}
 				if (everyThreeSeconds) {
 					level.sendParticles(ColorParticleOption.create(ParticleTypes.FLASH, 1.0F, 1.0F, 1.0F),
@@ -60,7 +60,7 @@ final class DivineItemMechanics {
 				item.setNoGravity(true);
 				item.needsSync = true;
 				if (everyTenTicks) {
-					level.sendParticles(ParticleTypes.PORTAL, item.getX(), item.getY() + 0.3, item.getZ(), 1, 0.1, 0.1, 0.1, 0.5);
+					level.sendParticles(ParticleTypes.PORTAL, item.getX(), item.getY() + 0.3, item.getZ(), 2, 0.1, 0.1, 0.1, 0.5);
 				}
 				if (level.getBlockState(BlockPos.containing(item.getX(), item.getY() - 3, item.getZ())).isAir()) {
 					item.setDeltaMovement(0, -0.1, 0);
@@ -78,7 +78,7 @@ final class DivineItemMechanics {
 					|| stack.is(BuiltInRegistries.ITEM
 					.getValue(Identifier.fromNamespaceAndPath("matcha", "crystal_heart")))) {
 				if (everyTenTicks) {
-					level.sendParticles(ParticleTypes.ELECTRIC_SPARK, item.getX(), item.getY() + 0.4, item.getZ(), 1, 0.1, 0.1, 0.1, 0);
+					level.sendParticles(ParticleTypes.ELECTRIC_SPARK, item.getX(), item.getY() + 0.4, item.getZ(), 2, 0.1, 0.1, 0.1, 0);
 				}
 			}
 		}
