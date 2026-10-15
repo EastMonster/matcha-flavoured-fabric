@@ -26,7 +26,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.entity.npc.villager.VillagerData;
 import net.minecraft.world.entity.npc.villager.VillagerProfession;
@@ -43,9 +42,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.scores.ScoreHolder;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -60,11 +56,9 @@ import java.util.UUID;
  * {@link TimedMechanics}.
  */
 public final class GameplayMechanics {
-	private static final Logger LOGGER = LoggerFactory.getLogger("matcha");
 	private static final Identifier ESTUS = id("mechanics/estus_obtained");
 	private static final Identifier CHEERFUL_STATUE = id("mechanics/cheerful_clay_statue");
 	private static final Identifier MOURNFUL_STATUE = id("mechanics/mournful_clay_statue");
-	private static final Identifier BEDROCK_BUSTER = id("mechanics/bedrock_buster");
 	private static final Identifier APPLICATION = id("mechanics/application");
 	private static final Identifier HAPPY_GHAST_HORN = id("mechanics/happy_ghast_horn");
 	private static final Identifier KILL_DRAGON = id("end/kill_dragon");
@@ -127,7 +121,7 @@ public final class GameplayMechanics {
 			VILLAGERS.remove(entity);
 		});
 		ServerTickEvents.START_SERVER_TICK.register(server -> {
-			TimedMechanics.startTick(server, server.getTickCount());
+			TimedMechanics.startTick(server);
 		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			if (!server.tickRateManager().runsNormally()) {
@@ -137,7 +131,6 @@ public final class GameplayMechanics {
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				checkEstus(player);
 				checkStatueWeather(player);
-				checkBedrockBuster(player);
 				checkApplication(player);
 				checkHappyGhast(player);
 				checkSummonedWither(player, tick);
@@ -333,21 +326,6 @@ public final class GameplayMechanics {
 		if (WorldMechanics.advancementDone(player, MOURNFUL_STATUE)) {
 			TimedMechanics.scheduleWeather(player, true, MOURNFUL_STATUE);
 		}
-	}
-
-	private static void checkBedrockBuster(ServerPlayer player) {
-		if (!WorldMechanics.advancementDone(player, BEDROCK_BUSTER)) {
-			return;
-		}
-		var level = player.level();
-		level.getEntitiesOfClass(PrimedTnt.class, player.getBoundingBox().inflate(16.0), PrimedTnt::hasGlowingTag)
-				.stream()
-				.min(Comparator.comparingDouble(tnt -> tnt.distanceToSqr(player)))
-				.ifPresentOrElse(
-						tnt -> TimedMechanics.scheduleBuster(player, tnt),
-						() -> LOGGER.warn("Bedrock buster triggered without a nearby glowing TNT for {}", player.getName().getString())
-				);
-		WorldMechanics.revoke(player, BEDROCK_BUSTER);
 	}
 
 	private static void checkApplication(ServerPlayer player) {

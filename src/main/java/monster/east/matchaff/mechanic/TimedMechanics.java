@@ -1,6 +1,7 @@
 package monster.east.matchaff.mechanic;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.Identifier;
@@ -25,17 +26,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 final class TimedMechanics {
 	private static final Logger LOGGER = LoggerFactory.getLogger("matcha");
 
 	private record WeatherTask(int triggerTick, boolean rain, UUID player, Identifier advancement) {
-	}
-
-	private record BusterTask(int triggerTick, ResourceKey<Level> level, UUID tnt) {
 	}
 
 	private record WitherTask(int triggerTick, ResourceKey<Level> level, UUID wither) {
@@ -45,7 +46,8 @@ final class TimedMechanics {
 	}
 
 	private static final List<WeatherTask> PENDING_WEATHER = new ArrayList<>();
-	private static final List<BusterTask> PENDING_BUSTER = new ArrayList<>();
+	private static final String BUSTER_TAG = "matcha:bedrock_buster";
+	private static final Set<PrimedTnt> BEDROCK_BUSTERS = Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final List<WitherTask> PENDING_WITHERS = new ArrayList<>();
 	private static final List<StarCleanupTask> PENDING_STAR_CLEANUP = new ArrayList<>();
 
@@ -53,20 +55,24 @@ final class TimedMechanics {
 	}
 
 	static void init() {
+		ServerEntityEvents.ENTITY_LOAD.register((entity, level) -> {
+			if (entity instanceof PrimedTnt tnt && tnt.entityTags().contains(BUSTER_TAG)) {
+				BEDROCK_BUSTERS.add(tnt);
+			}
+		});
+		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> BEDROCK_BUSTERS.remove(entity));
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			PENDING_WEATHER.clear();
-			PENDING_BUSTER.clear();
+			BEDROCK_BUSTERS.clear();
 			PENDING_WITHERS.clear();
 			PENDING_STAR_CLEANUP.clear();
 		});
 	}
 
-	static void startTick(MinecraftServer server, int tick) {
-		// The datapack's scheduled function runs before entities tick, so the
-		// glowing TNT is still alive (fuse 1) when bedrock is removed. Running
-		// this at END_SERVER_TICK left the TNT exploded and never found it.
+	static void startTick(MinecraftServer server) {
+		// Remove bedrock before the entity tick consumes the last fuse tick.
 		if (server.tickRateManager().runsNormally()) {
-			processBusterTasks(server, tick);
+			processBedrockBusters();
 		}
 	}
 
@@ -84,12 +90,6 @@ final class TimedMechanics {
 					player.level().getServer().getTickCount() + 60,
 					rain, player.getUUID(), advancement));
 		}
-	}
-
-	static void scheduleBuster(ServerPlayer player, PrimedTnt tnt) {
-		var level = player.level();
-		PENDING_BUSTER.add(new BusterTask(
-				level.getServer().getTickCount() + 79, level.dimension(), tnt.getUUID()));
 	}
 
 	static void scheduleWither(ServerPlayer player, int tick) {
@@ -162,36 +162,41 @@ final class TimedMechanics {
 		});
 	}
 
-	private static void processBusterTasks(MinecraftServer server, int tick) {
-		PENDING_BUSTER.removeIf(task -> {
-			if (task.triggerTick() > tick) {
-				return false;
+	static boolean shouldBreakBedrock(int fuse) {
+		return fuse >= 0 && fuse <= 1;
+	}
+
+	private static void processBedrockBusters() {
+		for (PrimedTnt tnt : new ArrayList<>(BEDROCK_BUSTERS)) {
+			if (tnt.isRemoved() || !tnt.entityTags().contains(BUSTER_TAG)) {
+				BEDROCK_BUSTERS.remove(tnt);
+				continue;
 			}
-			ServerLevel level = server.getLevel(task.level());
-			if (level != null) {
-				int removed = 0;
-				Entity entity = level.getEntity(task.tnt());
-				if (entity instanceof PrimedTnt tnt && tnt.hasGlowingTag()) {
-					BlockPos pos = tnt.blockPosition();
-					for (int dx = -1; dx <= 1; dx++) {
-						for (int dz = -1; dz <= 1; dz++) {
-							for (int dy = -3; dy <= 3; dy++) {
-								BlockPos target = pos.offset(dx, dy, dz);
-								if (level.getBlockState(target).is(Blocks.BEDROCK)) {
-									level.setBlockAndUpdate(target, Blocks.AIR.defaultBlockState());
-									removed++;
-								}
-							}
+			if (!(tnt.level() instanceof ServerLevel level)
+					|| !level.isPositionEntityTicking(tnt.blockPosition())
+					|| !shouldBreakBedrock(tnt.getFuse())) {
+				continue;
+			}
+			tnt.removeTag(BUSTER_TAG);
+			BEDROCK_BUSTERS.remove(tnt);
+			BlockPos pos = tnt.blockPosition();
+			int removed = 0;
+			for (int dx = -1; dx <= 1; dx++) {
+				for (int dz = -1; dz <= 1; dz++) {
+					for (int dy = -3; dy <= 3; dy++) {
+						BlockPos target = pos.offset(dx, dy, dz);
+						if (level.getBlockState(target).is(Blocks.BEDROCK)) {
+							level.setBlockAndUpdate(target, Blocks.AIR.defaultBlockState());
+							removed++;
 						}
 					}
-					level.sendParticles(ParticleTypes.END_ROD, pos.getX(), pos.getY(), pos.getZ(),
-							50, 0.5, 0.5, 0.5, 0.1);
-				}
-				if (removed > 0) {
-					LOGGER.info("Bedrock buster removed {} bedrock blocks", removed);
 				}
 			}
-			return true;
-		});
+			level.sendParticles(ParticleTypes.END_ROD, pos.getX(), pos.getY(), pos.getZ(),
+					50, 0.5, 0.5, 0.5, 0.1);
+			if (removed > 0) {
+				LOGGER.info("Bedrock buster removed {} bedrock blocks", removed);
+			}
+		}
 	}
 }
