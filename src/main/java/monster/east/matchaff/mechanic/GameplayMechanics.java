@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -100,7 +99,6 @@ public final class GameplayMechanics {
 			VILLAGERS.clear();
 			AMNESTIC_VILLAGERS.clear();
 		});
-		UseBlockCallback.EVENT.register(GameplayMechanics::useMechanicItem);
 		UseEntityCallback.EVENT.register((player, level, hand, entity, hit) -> {
 			ItemStack stack = player.getItemInHand(hand);
 			if (player.isSpectator() || !(entity instanceof Villager villager)
@@ -147,27 +145,6 @@ public final class GameplayMechanics {
 			BeaconKindlingMechanics.tick(server, tick);
 			WardingStoneMechanics.tick();
 		});
-	}
-
-	private static InteractionResult useMechanicItem(
-			net.minecraft.world.entity.player.Player player, Level level,
-			net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit
-	) {
-		ItemStack stack = player.getItemInHand(hand);
-		boolean beacon = isMatchaItem(stack, "beacon_kindling");
-		if (player.isSpectator() || !beacon) {
-			return InteractionResult.PASS;
-		}
-		if (!(player instanceof ServerPlayer serverPlayer)) {
-			return InteractionResult.SUCCESS;
-		}
-		if (!BeaconKindlingMechanics.place(serverPlayer, (ServerLevel) level, hand, hit, stack)) {
-			return InteractionResult.FAIL;
-		}
-		if (!serverPlayer.isCreative()) {
-			stack.shrink(1);
-		}
-		return InteractionResult.SUCCESS_SERVER;
 	}
 
 	private static boolean isMatchaItem(ItemStack stack, String path) {

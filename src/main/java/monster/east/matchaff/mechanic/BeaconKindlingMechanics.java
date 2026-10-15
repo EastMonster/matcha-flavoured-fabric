@@ -24,14 +24,13 @@ import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -41,7 +40,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-final class BeaconKindlingMechanics {
+public final class BeaconKindlingMechanics {
 	private static final Identifier LIGHT_BEACON =
 			Identifier.fromNamespaceAndPath("matcha", "tutorial/light_beacon");
 
@@ -109,14 +108,24 @@ final class BeaconKindlingMechanics {
 		});
 	}
 
-	static boolean place(
-			ServerPlayer player, ServerLevel level, InteractionHand hand, BlockHitResult hit, ItemStack stack
-	) {
-		if (!player.getAbilities().mayBuild
-				&& !stack.canPlaceOnBlockInAdventureMode(new BlockInWorld(level, hit.getBlockPos(), false))) {
-			return false;
+	public static InteractionResult useOn(UseOnContext context) {
+		var player = context.getPlayer();
+		if (player == null) {
+			return InteractionResult.PASS;
 		}
-		BlockPlaceContext context = new BlockPlaceContext(level, player, hand, stack, hit);
+		if (!(player instanceof ServerPlayer serverPlayer)) {
+			return InteractionResult.SUCCESS;
+		}
+		ItemStack stack = context.getItemInHand();
+		if (!place(serverPlayer, (ServerLevel) context.getLevel(), context)) {
+			return InteractionResult.FAIL;
+		}
+		stack.consume(1, player);
+		return InteractionResult.SUCCESS_SERVER;
+	}
+
+	private static boolean place(ServerPlayer player, ServerLevel level, UseOnContext useContext) {
+		BlockPlaceContext context = new BlockPlaceContext(useContext);
 		if (!context.canPlace()) {
 			return false;
 		}
