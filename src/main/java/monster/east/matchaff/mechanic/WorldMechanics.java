@@ -1,5 +1,6 @@
 package monster.east.matchaff.mechanic;
 
+import net.minecraft.commands.arguments.coordinates.LocalCoordinates;
 import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -327,11 +328,8 @@ public final class WorldMechanics {
 		};
 	}
 
-	static Vec3 localOffset(Entity entity, double right, double up, double forward) {
-		Vec3 look = entity.getLookAngle();
-		Vec3 f = new Vec3(look.x, 0, look.z).normalize();
-		Vec3 r = new Vec3(-f.z, 0, f.x);
-		return entity.position().add(r.scale(right)).add(0, up, 0).add(f.scale(forward));
+	static Vec3 localOffset(Entity entity, double left, double up, double forward) {
+		return new LocalCoordinates(left, up, forward).apply(entity.position(), entity.getRotationVector());
 	}
 
 	private static void boatParticles(ServerPlayer player) {

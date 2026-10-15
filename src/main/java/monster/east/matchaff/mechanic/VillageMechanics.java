@@ -6,16 +6,19 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.core.Holder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.protocol.game.ClientboundStopSoundPacket;
+import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.InteractionHand;
@@ -113,7 +116,7 @@ final class VillageMechanics {
 		};
 		if (step != 0) {
 			var ground = level.getBlockState(player.blockPosition().below());
-			eerieCue(player, level, ground, step);
+			eerieCue(player, ground, step);
 		}
 	}
 
@@ -184,37 +187,40 @@ final class VillageMechanics {
 		}
 	}
 
-	private static void eerieCue(ServerPlayer player, ServerLevel level, BlockState ground, int step) {
+	private static void eerieCue(ServerPlayer player, BlockState ground, int step) {
 		Vec3 pos = player.position();
 		if (ground.is(Blocks.COARSE_DIRT) && step <= 4) {
-			playAt(level, pos.x + step - 3, pos.y + 4, pos.z, SoundEvents.WOOD_STEP, 0.5F);
+			playAt(player, pos.x + step - 3, pos.y + 4, pos.z, SoundEvents.WOOD_STEP, 0.5F);
 		}
 		if (ground.is(Blocks.OAK_PLANKS)) {
 			if (step == 1 || step == 100) {
-				Vec3 right = WorldMechanics.localOffset(player, 5, 0, 0);
-				playAt(level, right.x, right.y, right.z, SoundEvents.GRASS_BREAK, 1.0F);
+				Vec3 left = WorldMechanics.localOffset(player, 5, 0, 0);
+				playAt(player, left.x, left.y, left.z, SoundEvents.GRASS_BREAK, 1.0F);
 			}
 			if (step == 1) {
-				level.playSound(null, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE.value(),
-						SoundSource.AMBIENT, 1.0F, 1.0F);
+				playAt(player, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE.value(), 1.0F, SoundSource.AMBIENT);
 			}
 		}
 		if (ground.is(Blocks.GRAVEL)) {
-			playAt(level, pos.x, pos.y, pos.z, step == 1 ? SoundEvents.GRAVEL_BREAK : SoundEvents.STONE_PLACE, 1.0F);
+			SoundEvent sound = gravelCueSound(step);
+			if (sound != null) {
+				Vec3 below = WorldMechanics.localOffset(player, 0, -3, 0);
+				playAt(player, below.x, below.y, below.z, sound, 1.0F);
+			}
 		}
 		if (ground.is(Blocks.SUSPICIOUS_GRAVEL) && step == 1) {
 			Vec3 behind = WorldMechanics.localOffset(player, 0, 0, -3);
-			playAt(level, behind.x, behind.y, behind.z, SoundEvents.WOODEN_DOOR_OPEN, 1.0F);
+			playAt(player, behind.x, behind.y, behind.z, SoundEvents.WOODEN_DOOR_OPEN, 1.0F);
 		}
 		if (ground.is(Blocks.GRASS_BLOCK)) {
 			if (step == 1) {
-				playAt(level, pos.x, pos.y - 4, pos.z, SoundEvents.GRASS_BREAK, 0.5F);
+				playAt(player, pos.x, pos.y - 4, pos.z, SoundEvents.GRASS_BREAK, 0.5F);
 			}
 			if (step >= 2 && step <= 4) {
-				playAt(level, pos.x + (5 - step), pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
+				playAt(player, pos.x + (5 - step), pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
 			}
 			if (step == 4) {
-				playAt(level, pos.x, pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
+				playAt(player, pos.x, pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
 			}
 		}
 	}
@@ -234,8 +240,21 @@ final class VillageMechanics {
 		return InteractionResult.PASS;
 	}
 
-	private static void playAt(ServerLevel level, double x, double y, double z, net.minecraft.sounds.SoundEvent sound, float volume) {
-		level.playSound(null, x, y, z, sound, SoundSource.PLAYERS, volume, 1.0F);
+	static SoundEvent gravelCueSound(int step) {
+		return switch (step) {
+			case 1 -> SoundEvents.GRAVEL_BREAK;
+			case 100 -> SoundEvents.STONE_PLACE;
+			default -> null;
+		};
+	}
+
+	private static void playAt(ServerPlayer player, double x, double y, double z, SoundEvent sound, float volume) {
+		playAt(player, x, y, z, sound, volume, SoundSource.PLAYERS);
+	}
+
+	private static void playAt(ServerPlayer player, double x, double y, double z, SoundEvent sound, float volume, SoundSource source) {
+		player.connection.send(new ClientboundSoundPacket(Holder.direct(sound), source,
+				x, y, z, volume, 1.0F, player.getRandom().nextLong()));
 	}
 
 	private static boolean inVillage(ServerLevel level, BlockPos pos) {
