@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * Cancels forbidden natural spawns before creation to avoid a visible flash.
- * MobSpawnMixin marks other forbidden spawn reasons for removal after creation,
+ * MobMechanics checks other spawn reasons on entity load,
  * preserving their normal spawn-side timing. Spawn eggs and commands are
  * intentionally exempt for creative-mode testing.
  */

@@ -32,6 +32,17 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import java.util.List;
 
 public final class MobMechanics {
+	public interface SpawnExemption {
+		boolean matcha$isSpawnExempt();
+		void matcha$setSpawnExempt(boolean exempt);
+	}
+
+	public static boolean isExemptSpawnReason(EntitySpawnReason reason) {
+		return reason == EntitySpawnReason.SPAWN_ITEM_USE
+				|| reason == EntitySpawnReason.DISPENSER
+				|| reason == EntitySpawnReason.COMMAND;
+	}
+
 	private static final TagKey<EntityType<?>> MUNDANE_HOSTILES = TagKey.create(
 			Registries.ENTITY_TYPE, id("mundane_hostiles")
 	);
@@ -72,7 +83,9 @@ public final class MobMechanics {
 				|| mob.entityTags().contains("SpawnChecked")) {
 			return;
 		}
-		if (mob.entityTags().contains("SpawnForbidden")) {
+		if (mob.entityTags().contains("SpawnForbidden")
+				|| (!((SpawnExemption) mob).matcha$isSpawnExempt()
+						&& isForbiddenSpawn(mob.getType(), level, mob.blockPosition()))) {
 			mob.discard();
 			return;
 		}

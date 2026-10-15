@@ -10,6 +10,7 @@
 		"SimpleRegionStorageMixin",
 		"SpawnPlacementsMixin",
 		"MobSpawnMixin",
+		"EntityTypeSpawnMixin",
 		"PlayerCanEatMixin",
 		"BlockSoundMixin",
 		"BlockHardnessMixin",
