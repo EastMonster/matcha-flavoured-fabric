@@ -22,7 +22,7 @@ import java.util.UUID;
  * intended totals exactly (same interval, same amount per tick).
  */
 public final class FoodHealMechanics {
-	private static final class HealTask {
+	static final class HealTask {
 		int ticksLeft;
 		final int interval;
 		final MobEffectInstance visibleEffect;
@@ -50,7 +50,7 @@ public final class FoodHealMechanics {
 	}
 
 	/** One food's regeneration chain (fast segment then lingering segment), run in sequence. */
-	private static final class HealChain {
+	static final class HealChain {
 		final Deque<HealTask> tasks = new ArrayDeque<>();
 
 		HealChain(List<MobEffectInstance> chain) {
@@ -66,6 +66,11 @@ public final class FoodHealMechanics {
 				tasks.add(new HealTask(segment, effective));
 				elapsed += effective;
 			}
+		}
+
+		boolean cancelRegeneration() {
+			tasks.removeIf(task -> task.visibleEffect != null);
+			return tasks.isEmpty();
 		}
 	}
 
@@ -144,6 +149,16 @@ public final class FoodHealMechanics {
 
 	public static void cancelHealing(ServerPlayer player) {
 		PENDING.remove(player.getUUID());
+	}
+
+	public static void cancelPendingRegeneration(ServerPlayer player) {
+		List<HealChain> chains = PENDING.get(player.getUUID());
+		if (chains != null) {
+			chains.removeIf(HealChain::cancelRegeneration);
+			if (chains.isEmpty()) {
+				PENDING.remove(player.getUUID());
+			}
+		}
 	}
 
 	/** Returns the health points represented by the first high-amplifier regeneration segment. */
