@@ -32,7 +32,6 @@ final class CleanseEnchantment {
 			player.removeEffect(MobEffects.LEVITATION);
 		}
 		if (EnchantmentUtil.countArmor(player, enchantments, MALEFFECT) > 0) {
-			player.removeEffect(MobEffects.HUNGER);
 			player.removeEffect(MobEffects.POISON);
 			player.removeEffect(MobEffects.MINING_FATIGUE);
 			player.removeEffect(MobEffects.WEAKNESS);
