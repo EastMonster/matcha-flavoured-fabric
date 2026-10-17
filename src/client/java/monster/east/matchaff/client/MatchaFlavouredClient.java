@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -46,6 +47,7 @@ import net.minecraft.world.effect.MobEffects;
 import monster.east.matchaff.mechanic.FoodHealMechanics;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.compat.EnchantmentDescriptionsCompat;
+import monster.east.matchaff.compat.BetterCombatCompat;
 import monster.east.matchaff.MatchaFlavouredFabric;
 import monster.east.matchaff.network.SleepFastForwardPayload;
 import monster.east.matchaff.network.BlazeRodDropsPayload;
@@ -80,8 +82,10 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		ItemTooltipCallback.EVENT.register(MatchaFlavouredClient::appendFoodHealingTooltip);
-		ItemTooltipCallback.EVENT.register(MatchaFlavouredClient::appendDynamicEquipmentLore);
-		ItemTooltipCallback.EVENT.register(MatchaFlavouredClient::appendRepairTooltip);
+		Identifier lorePhase = Identifier.fromNamespaceAndPath("matcha", "equipment_lore");
+		ItemTooltipCallback.EVENT.addPhaseOrdering(Event.DEFAULT_PHASE, lorePhase);
+		ItemTooltipCallback.EVENT.register(lorePhase, MatchaFlavouredClient::appendDynamicEquipmentLore);
+		ItemTooltipCallback.EVENT.register(lorePhase, MatchaFlavouredClient::appendRepairTooltip);
 		ClientPlayNetworking.registerGlobalReceiver(SleepFastForwardPayload.TYPE, (payload, context) ->
 				context.client().execute(() -> sleepRate = payload.active() ? CLOUD_TIME_SCALE : 0));
 		ClientPlayNetworking.registerGlobalReceiver(BlazeRodDropsPayload.TYPE, (payload, context) ->
@@ -93,7 +97,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(MatchaFlavouredClient::tickCloudTime);
 		ClientTickEvents.END_CLIENT_TICK.register(DolabraVisuals::tick);
 		if (FabricLoader.getInstance().isModLoaded(TrinketsCompat.MOD_ID)) {
-			TrinketsCompatClient.init();
+			TrinketsCompatClient.init(lorePhase);
 			ResourceLoader.registerBuiltinPack(
 					Identifier.parse(TRINKETS_MATCHA_PACK),
 					FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
@@ -241,6 +245,10 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		Equippable equippable = stack.get(DataComponents.EQUIPPABLE);
 		EquipmentSlot slot = equippable == null ? EquipmentSlot.MAINHAND : equippable.slot();
 		ItemAttributeModifiers modifiers = stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.EMPTY);
+		var player = Minecraft.getInstance().player;
+		double attackRange = BetterCombatCompat.attackRange(stack,
+				player == null ? 3.0 : player.getAttributeBaseValue(Attributes.ENTITY_INTERACTION_RANGE));
+		boolean showAttackRange = Double.isFinite(attackRange) && attackRange > 0;
 
 		List<Component> generated = new ArrayList<>();
 		appendMiningSpeedLore(stack, generated);
@@ -259,7 +267,14 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			}
 		}
 		for (AttributeLore lore : EQUIPMENT_ATTRIBUTE_LORE) {
+			if (showAttackRange && lore.attribute().equals(Attributes.ENTITY_INTERACTION_RANGE)) {
+				continue;
+			}
 			appendAttributeLore(generated, modifiers, slot, lore);
+		}
+		if (showAttackRange) {
+			generated.add(loreLine("desc.matcha.entity_interaction_range", formatLoreNumber(attackRange), ChatFormatting.DARK_GREEN));
+			lines.removeIf(BetterCombatCompat::isAttackRangeLine);
 		}
 		appendSetBonusLore(stack, generated);
 
@@ -401,8 +416,9 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 
 	private static void appendAttributeLore(List<Component> lines, ItemAttributeModifiers modifiers,
 			EquipmentSlot slot, AttributeLore lore) {
-		if (modifiers.modifiers().stream().noneMatch(entry -> entry.attribute() == lore.attribute()
-				&& entry.slot().test(slot))) {
+		if (modifiers.modifiers().stream().noneMatch(entry -> entry.slot().test(slot)
+				&& (entry.attribute() == lore.attribute()
+						|| (lore.attribute() == Attributes.ATTACK_SPEED && entry.attribute() == Attributes.ATTACK_DAMAGE)))) {
 			return;
 		}
 
