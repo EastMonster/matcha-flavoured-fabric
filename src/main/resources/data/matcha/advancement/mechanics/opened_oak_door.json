@@ -1,0 +1,17 @@
+{
+	"parent": "matcha:mechanics/root",
+	"criteria": {
+		"opened_door": {
+			"trigger": "minecraft:any_block_use",
+			"conditions": {
+				"location": {
+					"type": "minecraft:match_block",
+					"blocks": "minecraft:oak_door",
+					"state": {
+						"open": "true"
+					}
+				}
+			}
+		}
+	}
+}

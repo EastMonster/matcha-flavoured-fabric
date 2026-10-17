@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.Holder;
 import net.minecraft.core.BlockPos;
@@ -21,18 +20,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.GameType;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Marker;
 import net.minecraft.world.entity.decoration.Mannequin;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
@@ -45,13 +39,13 @@ import java.util.UUID;
 
 final class VillageMechanics {
 	private static final Identifier EERIE_ADVANCEMENT = id("mechanics/enter_village");
+	private static final Identifier OPENED_DOOR_ADVANCEMENT = id("mechanics/opened_oak_door");
 	private static final List<ResourceKey<Structure>> VILLAGES = List.of(
 			structure("village_plains"), structure("village_desert"), structure("village_savanna"),
 			structure("village_snowy"), structure("village_taiga")
 	);
 	private static HolderSet<Structure> villageHolders;
 	private static final AttachmentType<Boolean> EERIE = AttachmentRegistry.create(id("eerie"));
-	private static final AttachmentType<Integer> EERIE_TIMER = AttachmentRegistry.create(id("eerie_timer"));
 	private static final Set<Mannequin> HAUNTED_MANNEQUINS =
 			Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final Set<Marker> JUKEBOX_MARKERS =
@@ -81,10 +75,13 @@ final class VillageMechanics {
 			HAUNTED_MANNEQUINS.remove(entity);
 			JUKEBOX_MARKERS.remove(entity);
 		});
-		UseBlockCallback.EVENT.register(VillageMechanics::openVillageDoor);
 	}
 
 	static void tickPlayer(ServerPlayer player) {
+		if (WorldMechanics.advancementDone(player, OPENED_DOOR_ADVANCEMENT)) {
+			WorldMechanics.revoke(player, OPENED_DOOR_ADVANCEMENT);
+			openVillageDoor(player);
+		}
 		if (WorldMechanics.advancementDone(player, EERIE_ADVANCEMENT)) {
 			player.setAttached(EERIE, true);
 			WorldMechanics.revoke(player, EERIE_ADVANCEMENT);
@@ -95,25 +92,12 @@ final class VillageMechanics {
 		var level = player.level();
 		if (!inVillage(level, player.blockPosition())) {
 			player.setAttached(EERIE, false);
-			player.setAttached(EERIE_TIMER, 0);
 			return;
 		}
 		if (player.tickCount % 20 == 0) {
 			player.connection.send(new ClientboundStopSoundPacket(null, SoundSource.MUSIC));
 		}
-		int ticks = player.getAttachedOrElse(EERIE_TIMER, 0) + 1;
-		if (ticks > 3000) {
-			ticks = 1;
-		}
-		player.setAttached(EERIE_TIMER, ticks);
-		int step = switch (ticks) {
-			case 20 -> 1;
-			case 25 -> 2;
-			case 30 -> 3;
-			case 35 -> 4;
-			case 2000 -> 100;
-			default -> 0;
-		};
+		int step = eerieStep(level.getServer().getTickCount());
 		if (step != 0) {
 			var ground = level.getBlockState(player.blockPosition().below());
 			eerieCue(player, ground, step);
@@ -225,19 +209,27 @@ final class VillageMechanics {
 		}
 	}
 
-	private static InteractionResult openVillageDoor(Player player, Level level, InteractionHand hand, BlockHitResult hit) {
-		BlockState state = level.getBlockState(hit.getBlockPos());
-		if (!(player instanceof ServerPlayer serverPlayer)
-				|| serverPlayer.gameMode.getGameModeForPlayer() != GameType.SURVIVAL
-				|| !state.is(Blocks.OAK_DOOR) || state.getValue(BlockStateProperties.OPEN)) {
-			return InteractionResult.PASS;
+	private static void openVillageDoor(ServerPlayer player) {
+		if (player.gameMode.getGameModeForPlayer() != GameType.SURVIVAL) {
+			return;
 		}
 		HAUNTED_MANNEQUINS.stream()
-				.filter(mannequin -> mannequin.level() == level && !mannequin.isRemoved()
+				.filter(mannequin -> mannequin.level() == player.level() && !mannequin.isRemoved()
 						&& mannequin.distanceToSqr(player) <= 11 * 11)
 				.min(Comparator.comparingDouble(mannequin -> mannequin.distanceToSqr(player)))
 				.ifPresent(Mannequin::discard);
-		return InteractionResult.PASS;
+	}
+
+	static int eerieStep(int serverTick) {
+		// Upstream restarts the shared eerie stopwatch after 150.1 seconds.
+		return switch (Math.floorMod(serverTick, 3002)) {
+			case 20 -> 1;
+			case 25 -> 2;
+			case 30 -> 3;
+			case 35 -> 4;
+			case 2000 -> 100;
+			default -> 0;
+		};
 	}
 
 	static SoundEvent gravelCueSound(int step) {
