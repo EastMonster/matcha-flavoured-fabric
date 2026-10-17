@@ -38,13 +38,13 @@ public final class TrinketsCompatClient {
 	private TrinketsCompatClient() {
 	}
 
-	public static void init() {
+	public static void init(Identifier tooltipPhase) {
 		for (String id : TrinketsCompat.EARRING_IDS) {
 			Item item = Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(
 					Identifier.fromNamespaceAndPath("matcha", id)));
 			TrinketRendererRegistry.registerRenderer(item, EarringRenderer::new);
 		}
-		ItemTooltipCallback.EVENT.register((stack, context, flag, lines) -> {
+		ItemTooltipCallback.EVENT.register(tooltipPhase, (stack, context, flag, lines) -> {
 			if (!isMatchaEarring(stack)) {
 				return;
 			}
