@@ -32,6 +32,7 @@ public final class EnchantmentMechanics {
 	public static void init() {
 		AnemosEnchantment.init();
 		TraversalEnchantment.init();
+		ShakudoRegenEnchantment.init();
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			if (!server.tickRateManager().runsNormally()) {
 				return;

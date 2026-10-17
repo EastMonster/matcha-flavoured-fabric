@@ -22,6 +22,10 @@ final class ShakudoRegenEnchantment {
 	private ShakudoRegenEnchantment() {
 	}
 
+	static void init() {
+		// Force static attachment registration before player data is loaded.
+	}
+
 	static int armourPower(ServerPlayer player, Registry<Enchantment> enchantments) {
 		int score = EnchantmentUtil.countArmor(player, enchantments, SHAKUDO_REGEN);
 		ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
