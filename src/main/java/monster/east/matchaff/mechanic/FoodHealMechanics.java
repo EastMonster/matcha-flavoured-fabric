@@ -1,9 +1,14 @@
 package monster.east.matchaff.mechanic;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
+import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffectInstance;
 
 import java.util.ArrayList;
@@ -22,6 +27,10 @@ import java.util.UUID;
  * intended totals exactly (same interval, same amount per tick).
  */
 public final class FoodHealMechanics {
+	public static final AttachmentType<Boolean> HEALING_ANIMATION = AttachmentRegistry.create(
+			Identifier.fromNamespaceAndPath("matcha", "food_healing_animation"),
+			builder -> builder.syncWith(ByteBufCodecs.BOOL, AttachmentSyncPredicate.targetOnly()));
+
 	static final class HealTask {
 		int ticksLeft;
 		final int interval;
@@ -72,6 +81,11 @@ public final class FoodHealMechanics {
 			tasks.removeIf(task -> task.visibleEffect != null);
 			return tasks.isEmpty();
 		}
+
+		boolean isHealing() {
+			HealTask task = tasks.peek();
+			return task != null && task.visibleEffect == null && task.ticksLeft > 0;
+		}
 	}
 
 	private static final Map<UUID, List<HealChain>> PENDING = new HashMap<>();
@@ -83,7 +97,7 @@ public final class FoodHealMechanics {
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> PENDING.clear());
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
 			if (entity instanceof ServerPlayer player) {
-				PENDING.remove(player.getUUID());
+				cancelHealing(player);
 			}
 		});
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
@@ -97,6 +111,7 @@ public final class FoodHealMechanics {
 				}
 				List<HealChain> chains = PENDING.get(player.getUUID());
 				if (chains == null || chains.isEmpty()) {
+					syncAnimation(player);
 					continue;
 				}
 				chains.removeIf(chain -> {
@@ -120,6 +135,7 @@ public final class FoodHealMechanics {
 				if (chains.isEmpty()) {
 					PENDING.remove(player.getUUID());
 				}
+				syncAnimation(player);
 			}
 		});
 	}
@@ -144,11 +160,13 @@ public final class FoodHealMechanics {
 		}
 		boolean applied = first.start(player);
 		PENDING.computeIfAbsent(player.getUUID(), key -> new ArrayList<>()).add(healChain);
+		syncAnimation(player);
 		return applied;
 	}
 
 	public static void cancelHealing(ServerPlayer player) {
 		PENDING.remove(player.getUUID());
+		player.removeAttached(HEALING_ANIMATION);
 	}
 
 	public static void cancelPendingRegeneration(ServerPlayer player) {
@@ -157,6 +175,19 @@ public final class FoodHealMechanics {
 			chains.removeIf(HealChain::cancelRegeneration);
 			if (chains.isEmpty()) {
 				PENDING.remove(player.getUUID());
+			}
+		}
+		syncAnimation(player);
+	}
+
+	private static void syncAnimation(ServerPlayer player) {
+		List<HealChain> chains = PENDING.get(player.getUUID());
+		boolean active = chains != null && chains.stream().anyMatch(HealChain::isHealing);
+		if (active != player.getAttachedOrElse(HEALING_ANIMATION, false)) {
+			if (active) {
+				player.setAttached(HEALING_ANIMATION, true);
+			} else {
+				player.removeAttached(HEALING_ANIMATION);
 			}
 		}
 	}
