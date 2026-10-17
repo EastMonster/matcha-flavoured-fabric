@@ -48,6 +48,7 @@
 		"compat.FarmersDelightNourishmentOverlayMixin",
 		"compat.FarmersDelightFoodTooltipMixin",
 		"AirBubblesHudMixin",
+		"FoodHealHudMixin",
 		"AdvancementsScreenMixin",
 		"AdvancementWidgetMixin",
 		"ClientAdvancementsAccessor",
