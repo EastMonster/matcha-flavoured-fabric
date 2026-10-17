@@ -45,6 +45,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import monster.east.matchaff.mechanic.FoodHealMechanics;
 import monster.east.matchaff.compat.TrinketsCompat;
+import monster.east.matchaff.compat.EnchantmentDescriptionsCompat;
 import monster.east.matchaff.MatchaFlavouredFabric;
 import monster.east.matchaff.network.SleepFastForwardPayload;
 import monster.east.matchaff.network.BlazeRodDropsPayload;
@@ -250,6 +251,12 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 					.equals(BuiltInRegistries.ITEM.getKey(stack.getItem()));
 			generated.add(loreLine("enchantment.matcha.shakudo_wither_resistance",
 					elytra ? "Max" : "1", ChatFormatting.GRAY));
+			if (FabricLoader.getInstance().isModLoaded("enchdesc")) {
+				Component description = EnchantmentDescriptionsCompat.witherResistanceDescription(lines);
+				if (description != null) {
+					generated.add(description);
+				}
+			}
 		}
 		for (AttributeLore lore : EQUIPMENT_ATTRIBUTE_LORE) {
 			appendAttributeLore(generated, modifiers, slot, lore);
@@ -419,6 +426,9 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 	}
 
 	private static boolean isDynamicEquipmentLore(Component line) {
+		if (EnchantmentDescriptionsCompat.isWitherResistanceDescription(line)) {
+			return true;
+		}
 		if (!(line.getContents() instanceof TranslatableContents contents)) {
 			return false;
 		}
