@@ -70,7 +70,7 @@ public final class MobMechanics {
 	private static void initializeMundaneHostile(Entity entity, ServerLevel level) {
 		if (level.dimension() == Level.OVERWORLD && entity instanceof Husk husk
 				&& husk.getVehicle() instanceof CamelHusk) {
-			var replacement = EntityTypes.HUSK.create(level, EntitySpawnReason.COMMAND);
+			var replacement = EntityTypes.HUSK.create(level, EntitySpawnReason.EVENT);
 			if (replacement != null) {
 				replacement.setPos(husk.getX(), husk.getY(), husk.getZ());
 				level.addFreshEntity(replacement);
