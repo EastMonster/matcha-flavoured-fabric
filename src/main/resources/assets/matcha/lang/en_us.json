@@ -806,6 +806,7 @@
 	"effect.matcha.glowing": " Glowing (%s)",
 	"effect.matcha.jump_boost": " Jump Boost (%s)",
 	"effect.matcha.jump_boost_2": " Jump Boost II (%s)",
+	"effect.matcha.jump_boost_3": " Jump Boost III (%s)",
 	"effect.matcha.mining_fatigue": " Mining Fatigue (%s)",
 	"effect.matcha.nausea": " Nausea (%s)",
 	"effect.matcha.slow_falling": " Slow Falling (%s)",
@@ -1042,5 +1043,9 @@
 	"enchantment.matcha.warding_2.desc": "Slows and damages nearby undead mobs while held.",
 	"enchantment.matcha.warding_3.desc": "Slows and damages nearby undead mobs while held.",
 	"enchantment.matcha.warding_4.desc": "Slows and damages nearby undead mobs while held.",
-	"enchantment.matcha.zephyr.desc": "Sneaking boosts jumps, with slow falling and charged launches at higher levels."
+	"enchantment.matcha.zephyr.desc": "Sneaking boosts jumps, with slow falling and charged launches at higher levels.",
+	"item.matcha.braised_shelf_mushroom": "Braised Shelf Mushrooms",
+	"item.matcha.pickled_shelf_mushrooms": "Pickled Shelf Mushrooms",
+	"item.matcha.springy_stroganoff": "Springy Stroganoff",
+	"item.matcha.shelf_mushroom_kombucha": "Shelf Mushroom Kombucha"
 }

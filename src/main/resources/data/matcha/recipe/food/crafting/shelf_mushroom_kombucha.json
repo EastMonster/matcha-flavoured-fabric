@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+		"minecraft:shelf_mushroom",
+		"minecraft:sugar",
+		"minecraft:brown_mushroom",
+		"minecraft:potion"
+	],
+	"result": {
+		"id": "matcha:shelf_mushroom_kombucha",
+		"count": 1
+	}
+}

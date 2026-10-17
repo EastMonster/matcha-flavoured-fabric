@@ -195,6 +195,7 @@
 			"bokguk",
 			"gimmari"
 		],
+		"fresh_vegetables": ["tomato"],
 		"simple_cooked_foods": [
 			"fried_egg",
 			"charred_meat",
@@ -204,9 +205,11 @@
 			"baked_pumpkin",
 			"grilled_melon",
 			"grilled_tomatoes",
+			"nopales",
 			"steamed_carrots",
 			"golden_steamed_carrots",
 			"braised_brown_mushroom",
+			"braised_shelf_mushroom",
 			"braised_red_mushroom",
 			"braised_crimson_fungus",
 			"braised_warped_fungus",
@@ -217,6 +220,7 @@
 			"pickled_carrots",
 			"golden_pickled_carrots",
 			"pickled_mushrooms",
+			"pickled_shelf_mushrooms",
 			"pickled_red_mushrooms",
 			"pickled_crimson_fungus",
 			"pickled_warped_fungus",
@@ -231,6 +235,7 @@
 			"gnocchi",
 			"green_curry",
 			"japanese_curry",
+			"pumpkin_curry",
 			"paneer_makhani",
 			"ramen",
 			"kontomire_stew",
@@ -238,6 +243,7 @@
 			"crimson_stroganoff",
 			"red_mushroom_stroganoff",
 			"stroganoff",
+			"springy_stroganoff",
 			"warped_stroganoff"
 		],
 		"pizzas": ["cheese_pizza", "meat_pizza", "mushroom_pizza", "warped_pizza"],
@@ -268,6 +274,8 @@
 			"estus_flask",
 			"honey_ginger_tea",
 			"mead",
+			"bubbling_mead",
+			"shelf_mushroom_kombucha",
 			"melon_sorbet",
 			"glow_jam",
 			"pumpkin_jam",
@@ -283,12 +291,8 @@
 			"fish_and_chips",
 			"ice_cream",
 			"lumpia",
-			"oatmeal",
-			"nopales",
-			"pumpkin_curry",
-			"bubbling_mead"
-		],
-		"fresh_vegetables": ["tomato"]
+			"oatmeal"
+		]
 	},
 	"ingredients": {
 		"cooking_recipes": [

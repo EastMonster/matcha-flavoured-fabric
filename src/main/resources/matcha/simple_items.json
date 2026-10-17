@@ -1206,5 +1206,47 @@
 				}
 			]
 		}
+	},
+	{
+		"id": "shelf_mushroom_kombucha",
+		"source": "data/matcha/recipe/food/crafting/shelf_mushroom_kombucha.json",
+		"components": {
+			"minecraft:item_model": "matcha:shelf_mushroom_kombucha",
+			"minecraft:custom_name": {
+				"translate": "item.matcha.shelf_mushroom_kombucha",
+				"italic": false
+			},
+			"minecraft:lore": [
+				{
+					"translate": "desc.matcha.throwable",
+					"color": "gray",
+					"italic": false
+				},
+				{
+					"translate": "effect.matcha.jump_boost_3",
+					"with": ["5:00"],
+					"color": "#ece85f",
+					"italic": false
+				}
+			],
+			"minecraft:max_stack_size": 64,
+			"minecraft:potion_contents": {
+				"custom_color": 15515743,
+				"custom_effects": [
+					{
+						"id": "minecraft:jump_boost",
+						"amplifier": 2,
+						"duration": 6000,
+						"show_icon": true
+					}
+				]
+			},
+			"minecraft:tooltip_display": {
+				"hidden_components": ["minecraft:potion_contents"]
+			}
+		},
+		"type": "splash_potion",
+		"tab": "foods",
+		"carrier": "minecraft:splash_potion"
 	}
 ]

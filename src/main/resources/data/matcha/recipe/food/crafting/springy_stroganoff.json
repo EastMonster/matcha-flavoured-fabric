@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+		"minecraft:shelf_mushroom",
+		"minecraft:cooked_beef",
+		"matcha:dough",
+		"matcha:milk_bottle",
+		"minecraft:bowl"
+	],
+	"result": {
+		"id": "matcha:springy_stroganoff",
+		"count": 1
+	}
+}

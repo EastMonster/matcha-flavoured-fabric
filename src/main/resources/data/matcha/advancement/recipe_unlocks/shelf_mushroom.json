@@ -1,0 +1,24 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_primary_material": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:shelf_mushroom"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [["has_primary_material"]],
+	"rewards": {
+		"recipes": [
+			"matcha:food/oven/braised_shelf_mushroom",
+			"matcha:food/crafting/pickled_shelf_mushrooms",
+			"matcha:food/crafting/springy_stroganoff",
+			"matcha:food/crafting/shelf_mushroom_kombucha"
+		]
+	}
+}

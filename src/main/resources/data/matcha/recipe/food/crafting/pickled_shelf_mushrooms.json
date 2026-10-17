@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+		"minecraft:shelf_mushroom",
+		"minecraft:brown_mushroom",
+		"minecraft:glass_bottle"
+	],
+	"result": {
+		"id": "matcha:pickled_shelf_mushrooms",
+		"count": 1
+	}
+}

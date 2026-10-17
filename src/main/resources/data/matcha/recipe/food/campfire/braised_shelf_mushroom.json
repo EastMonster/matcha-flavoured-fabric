@@ -1,0 +1,10 @@
+{
+	"type": "minecraft:campfire_cooking",
+	"category": "food",
+	"cookingtime": 200,
+	"experience": 0.35,
+	"ingredient": "minecraft:shelf_mushroom",
+	"result": {
+		"id": "matcha:braised_shelf_mushroom"
+	}
+}
