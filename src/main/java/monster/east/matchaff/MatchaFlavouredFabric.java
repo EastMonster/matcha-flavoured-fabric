@@ -78,14 +78,25 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 			"fish_bones", "fox_pelt", "sulfur_goo", "tallow",
 			"avesta", "divine_comedy", "enoch", "paradise_lost", "quran", "solomon", "tanakh"
 	);
+
 	@Override
 	public void onInitialize() {
 		registerClifftreeCompatPack();
+		registerBlocks();
+		initializeMechanics();
+		registerNameColors();
+		registerItemsAndCreativeTabs();
+	}
+
+	private static void registerBlocks() {
 		ResourceKey<Block> busterAppearance = ResourceKey.create(Registries.BLOCK,
 				Identifier.fromNamespaceAndPath("matcha", "bedrock_buster"));
 		// TNT's synchronized block state supplies its appearance without a custom renderer or block item.
 		Registry.register(BuiltInRegistries.BLOCK, busterAppearance,
 				new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TNT).noLootTable().setId(busterAppearance)));
+	}
+
+	private static void initializeMechanics() {
 		SleepFastForwardPayload.register();
 		BlazeRodDropsMechanics.init();
 		VanillaFoodDefaults.init();
@@ -101,7 +112,9 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		AbbeyMechanics.init();
 		WorldMechanics.init();
 		FoodHealMechanics.init();
-		registerNameColors();
+	}
+
+	private static void registerItemsAndCreativeTabs() {
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		Item tomatoSeed = TomatoCropBlock.register();
 		List<Item> foods = registerFoods();
@@ -156,14 +169,14 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private static Item register(String name) {
 		Item.Properties properties = new Item.Properties();
 		switch (name) {
-		case "avesta" -> properties.rarity(Rarity.RARE);
-		case "divine_comedy" -> book(properties, "divine_comedy", Rarity.UNCOMMON,
+			case "avesta" -> properties.rarity(Rarity.RARE);
+			case "divine_comedy" -> book(properties, "divine_comedy", Rarity.UNCOMMON,
 					Component.translatable("item.matcha.divine_comedy.desc"));
 			case "enoch" -> book(properties, "enoch", Rarity.RARE, Component.literal("ספר חנוך"));
-		case "paradise_lost" -> book(properties, "paradise_lost", Rarity.UNCOMMON,
+			case "paradise_lost" -> book(properties, "paradise_lost", Rarity.UNCOMMON,
 					Component.translatable("item.matcha.paradise_lost.desc"));
 			case "quran" -> book(properties, "quran", Rarity.RARE, Component.literal("القرآن"));
-		case "solomon" -> book(properties, "solomon", Rarity.EPIC,
+			case "solomon" -> book(properties, "solomon", Rarity.EPIC,
 					Component.translatable("item.matcha.solomon.desc"));
 			case "tanakh" -> book(properties, "tanakh", Rarity.RARE, Component.literal("התנך"));
 			default -> {
@@ -244,7 +257,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private static Item registerFood(FoodDefinition definition) {
 		if (definition.components != null) {
 			Item.Properties properties = new Item.Properties();
-			definition.components.entrySet().forEach(entry -> ItemComponents.apply(properties, entry.getKey(), entry.getValue()));
+			definition.components.forEach((key, value) -> ItemComponents.apply(properties, key, value));
 			return register(definition.id, properties);
 		}
 		Consumable.Builder consumable = Consumable.builder();
@@ -254,22 +267,22 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		if (definition.particles != null) consumable.hasConsumeParticles(definition.particles);
 
 		for (ConsumeEffectDefinition effect : definition.effects) {
-            switch (effect.type) {
-                case "apply" -> {
-                    List<MobEffectInstance> instances = effect.effects.stream()
-                            .map(value -> new MobEffectInstance(
-                                    mobEffect(value.id), value.duration, value.amplifier,
-                                    value.ambient, value.particles, value.icon
-                            ))
-                            .toList();
-                    consumable.onConsume(new ApplyStatusEffectsConsumeEffect(instances, effect.probability));
-                }
-                case "remove" -> consumable.onConsume(new RemoveStatusEffectsConsumeEffect(
-                        HolderSet.direct(effect.effectIds.stream().map(MatchaFlavouredFabric::mobEffect).toList())
-                ));
-                case "clear" -> consumable.onConsume(new ClearAllStatusEffectsConsumeEffect());
-                default -> throw new IllegalArgumentException("Unknown consume effect: " + effect.type);
-            }
+			switch (effect.type) {
+				case "apply" -> {
+					List<MobEffectInstance> instances = effect.effects.stream()
+							.map(value -> new MobEffectInstance(
+									mobEffect(value.id), value.duration, value.amplifier,
+									value.ambient, value.particles, value.icon
+							))
+							.toList();
+					consumable.onConsume(new ApplyStatusEffectsConsumeEffect(instances, effect.probability));
+				}
+				case "remove" -> consumable.onConsume(new RemoveStatusEffectsConsumeEffect(
+						HolderSet.direct(effect.effectIds.stream().map(MatchaFlavouredFabric::mobEffect).toList())
+				));
+				case "clear" -> consumable.onConsume(new ClearAllStatusEffectsConsumeEffect());
+				default -> throw new IllegalArgumentException("Unknown consume effect: " + effect.type);
+			}
 		}
 
 		Item.Properties properties = new Item.Properties().food(
@@ -311,7 +324,8 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private record FoodDefinition(
 			String id, int nutrition, float saturation, boolean alwaysEdible,
 			Float consumeSeconds, String animation, String sound, Boolean particles,
-		String remainder, String craftRemainder, Integer maxStackSize, JsonElement lore, List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components, JsonElement customData
+			String remainder, String craftRemainder, Integer maxStackSize, JsonElement lore,
+			List<ConsumeEffectDefinition> effects, java.util.Map<String, JsonElement> components, JsonElement customData
 	) {}
 
 	private record ConsumeEffectDefinition(
