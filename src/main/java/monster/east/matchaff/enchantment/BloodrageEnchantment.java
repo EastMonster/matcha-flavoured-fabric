@@ -18,8 +18,8 @@ final class BloodrageEnchantment {
 				|| !isActive(player.getHealth(), player.getAbsorptionAmount())) {
 			return;
 		}
-		player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 20, 1, true, true));
-		player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 20, 0, true, true));
+		player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 20, 1, false, false));
+		player.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 20, 0, false, false));
 		var level = player.level();
 		level.sendParticles(new DustParticleOptions(0xFF0000, 1.0F),
 				player.getX(), player.getY() + 1.5, player.getZ(), 1, 0.25, 0.25, 0.25, 0.1);
