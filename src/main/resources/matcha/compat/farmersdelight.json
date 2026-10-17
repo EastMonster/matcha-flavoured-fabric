@@ -531,14 +531,14 @@
 						{
 							"id": "minecraft:regeneration",
 							"amplifier": 2,
-							"duration": 120,
+							"duration": 72,
 							"show_particles": false,
 							"show_icon": false
 						},
 						{
 							"id": "farmersdelight:nourishment",
 							"amplifier": 0,
-							"duration": 480,
+							"duration": 320,
 							"show_particles": false,
 							"show_icon": true
 						}
@@ -549,7 +549,7 @@
 		"lore": [
 			{
 				"translate": "effect.farmersdelight.nourishment.desc",
-				"with": ["0:24"],
+				"with": ["0:16"],
 				"color": "#e85e8f",
 				"italic": false
 			}
