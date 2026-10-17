@@ -169,7 +169,7 @@ public final class PlayerMechanics {
 			floor -= 2;
 			scoreboard.getOrCreatePlayerScore(player, minimumObjective).set(floor);
 			announceMinimum(player, floor, difficulty != Difficulty.EASY);
-			if (difficulty == Difficulty.NORMAL && floor == 10) {
+			if (difficulty == Difficulty.NORMAL && floor < 12) {
 				WorldMechanics.raiseDifficulty(server);
 			}
 			break;
