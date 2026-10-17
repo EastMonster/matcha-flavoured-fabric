@@ -45,6 +45,7 @@
 		"WheatShapeMixin"
 	],
 	"client": [
+		"compat.EnchantmentDescriptionsMixin",
 		"compat.FarmersDelightNourishmentOverlayMixin",
 		"compat.FarmersDelightFoodTooltipMixin",
 		"AirBubblesHudMixin",
