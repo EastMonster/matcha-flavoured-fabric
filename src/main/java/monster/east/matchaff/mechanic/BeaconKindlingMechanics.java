@@ -21,6 +21,7 @@ import net.minecraft.util.datafix.DataFixTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.npc.wanderingtrader.WanderingTrader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
@@ -44,10 +45,17 @@ public final class BeaconKindlingMechanics {
 	private static final Identifier LIGHT_BEACON =
 			Identifier.fromNamespaceAndPath("matcha", "tutorial/light_beacon");
 
-	private record BeaconTask(ResourceKey<Level> level, BlockPos pos, int startTick, UUID trader) {
+	private record BeaconTask(UUID owner, ResourceKey<Level> level, BlockPos pos, int startTick, UUID trader) {
 	}
 
 	record BeaconStatus(int remainingTicks, boolean traderSummoned) {
+	}
+
+	private record Timer(UUID id, int remainingTicks) {
+		private static final Codec<Timer> CODEC = RecordCodecBuilder.create(i -> i.group(
+				UUIDUtil.CODEC.fieldOf("id").forGetter(Timer::id),
+				Codec.INT.fieldOf("remaining_ticks").forGetter(Timer::remainingTicks)
+		).apply(i, Timer::new));
 	}
 
 	private record PersistedBeacon(
@@ -64,7 +72,9 @@ public final class BeaconKindlingMechanics {
 
 	private static final class BeaconSavedData extends SavedData {
 		private static final Codec<BeaconSavedData> CODEC = RecordCodecBuilder.create(i -> i.group(
-				PersistedBeacon.CODEC.listOf().fieldOf("beacons").forGetter(data -> data.beacons)
+				PersistedBeacon.CODEC.listOf().fieldOf("beacons").forGetter(data -> data.beacons),
+				Timer.CODEC.listOf().optionalFieldOf("cooldowns").forGetter(data -> data.cooldowns),
+				Timer.CODEC.listOf().optionalFieldOf("traders").forGetter(data -> data.traders)
 			).apply(i, BeaconSavedData::new));
 		private static final SavedDataType<BeaconSavedData> TYPE = new SavedDataType<>(
 				Identifier.fromNamespaceAndPath("matcha-flavoured", "beacons"),
@@ -72,38 +82,59 @@ public final class BeaconKindlingMechanics {
 		);
 
 		private List<PersistedBeacon> beacons;
+		private Optional<List<Timer>> cooldowns;
+		private Optional<List<Timer>> traders;
 
 		private BeaconSavedData() {
-			this(List.of());
+			this(List.of(), Optional.of(List.of()), Optional.of(List.of()));
 		}
 
-		private BeaconSavedData(List<PersistedBeacon> beacons) {
+		private BeaconSavedData(List<PersistedBeacon> beacons, Optional<List<Timer>> cooldowns,
+				Optional<List<Timer>> traders) {
 			this.beacons = new ArrayList<>(beacons);
+			this.cooldowns = cooldowns;
+			this.traders = traders;
 		}
 
 		private List<PersistedBeacon> beacons() {
 			return beacons;
 		}
 
-		private void replace(List<PersistedBeacon> beacons) {
-			if (!this.beacons.equals(beacons)) {
+		private void replace(List<PersistedBeacon> beacons, List<Timer> cooldowns, List<Timer> traders) {
+			if (!this.beacons.equals(beacons) || !this.cooldowns.equals(Optional.of(cooldowns))
+					|| !this.traders.equals(Optional.of(traders))) {
 				this.beacons = new ArrayList<>(beacons);
+				this.cooldowns = Optional.of(cooldowns);
+				this.traders = Optional.of(traders);
 				setDirty();
 			}
 		}
 	}
 
 	private static final HashMap<UUID, BeaconTask> BEACONS = new HashMap<>();
+	private static final HashMap<UUID, Integer> COOLDOWNS = new HashMap<>();
+	private static final HashMap<UUID, Integer> TRADERS = new HashMap<>();
+	private static final HashMap<UUID, WanderingTrader> LOADED_TRADERS = new HashMap<>();
 	private static boolean DATA_LOADED;
 
 	private BeaconKindlingMechanics() {
 	}
 
 	static void init() {
-		ServerEntityEvents.ENTITY_LOAD.register(BeaconKindlingMechanics::discardOrphanTrader);
+		ServerEntityEvents.ENTITY_LOAD.register(BeaconKindlingMechanics::trackTrader);
+		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
+			LOADED_TRADERS.remove(entity.getUUID());
+			if (entity.getRemovalReason() != null && entity.getRemovalReason().shouldDestroy()
+					&& TRADERS.remove(entity.getUUID()) != null) {
+				save(level.getServer(), level.getServer().getTickCount());
+			}
+		});
 		ServerLifecycleEvents.SERVER_STOPPING.register(server -> save(server, server.getTickCount()));
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			BEACONS.clear();
+			COOLDOWNS.clear();
+			TRADERS.clear();
+			LOADED_TRADERS.clear();
 			DATA_LOADED = false;
 		});
 	}
@@ -148,33 +179,47 @@ public final class BeaconKindlingMechanics {
 				30, 0.1, 0.1, 0.1, 0.07);
 		level.playSound(null, pos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
 		level.playSound(null, pos, SoundEvents.WITHER_SPAWN, SoundSource.BLOCKS, 0.5F, 1.0F);
-		if (BEACONS.containsKey(player.getUUID())) {
+		if (COOLDOWNS.containsKey(player.getUUID())) {
 			player.sendSystemMessage(Component.translatable("message.matcha.wandering_trader.beacon_placed")
 					.withStyle(ChatFormatting.GRAY));
 			return true;
 		}
-		BEACONS.put(player.getUUID(), new BeaconTask(level.dimension(), pos.immutable(), tick, null));
+		COOLDOWNS.put(player.getUUID(), 18000);
+		BEACONS.put(UUID.randomUUID(), new BeaconTask(player.getUUID(), level.dimension(), pos.immutable(), tick, null));
 		save(level.getServer(), tick);
-		level.getServer().getPlayerList().broadcastSystemMessage(
-				Component.translatable("message.matcha.wandering_trader.initialise")
-				.withStyle(ChatFormatting.GRAY), false);
+		announce(level, player.getX(), player.getY(), player.getZ(), "initialise");
 		return true;
 	}
 
 	static void tick(MinecraftServer server, int tick) {
 		load(server, tick);
+		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+			COOLDOWNS.computeIfPresent(player.getUUID(), (id, remaining) -> remaining > 1 ? remaining - 1 : null);
+		}
+		for (WanderingTrader trader : List.copyOf(LOADED_TRADERS.values())) {
+			Integer remaining = TRADERS.get(trader.getUUID());
+			if (remaining == null || trader.isRemoved()) {
+				continue;
+			}
+			if (remaining <= 1) {
+				removeTrader(trader.getUUID());
+				save(server, tick);
+			} else {
+				TRADERS.put(trader.getUUID(), remaining - 1);
+			}
+		}
 		for (var entry : new HashMap<>(BEACONS).entrySet()) {
-			UUID owner = entry.getKey();
+			UUID taskId = entry.getKey();
 			BeaconTask task = entry.getValue();
 			ServerLevel level = server.getLevel(task.level());
 			if (level == null || !level.isLoaded(task.pos())) {
-				BEACONS.put(owner, new BeaconTask(
-						task.level(), task.pos(), task.startTick() + 1, task.trader()));
+				BEACONS.put(taskId, new BeaconTask(
+						task.owner(), task.level(), task.pos(), task.startTick() + 1, task.trader()));
 				continue;
 			}
 			var state = level.getBlockState(task.pos());
 			if (!state.is(Blocks.CAMPFIRE) || !state.getValue(CampfireBlock.LIT)) {
-				end(server, owner, task, true, false);
+				end(server, taskId, task, true);
 				continue;
 			}
 			if (tick % 10 == 0) {
@@ -188,16 +233,20 @@ public final class BeaconKindlingMechanics {
 				if (trader != null) {
 					trader.setPos(task.pos().getX() + 1.5, task.pos().getY(), task.pos().getZ() + 0.5);
 					trader.setInvulnerable(true);
-					trader.setDespawnDelay(Math.max(1, 18000 - elapsed));
+					trader.setDespawnDelay(0);
 					trader.addTag("summoned_by_beacon");
-					BEACONS.put(owner, new BeaconTask(task.level(), task.pos(), task.startTick(), trader.getUUID()));
-					level.addFreshEntity(trader);
-					server.getPlayerList().broadcastSystemMessage(
-							Component.translatable("message.matcha.wandering_trader.summoned")
-							.withStyle(ChatFormatting.GRAY), false);
+					TRADERS.put(trader.getUUID(), 6000);
+					if (level.addFreshEntity(trader)) {
+						BEACONS.put(taskId, new BeaconTask(task.owner(), task.level(), task.pos(),
+								task.startTick(), trader.getUUID()));
+						announce(level, task.pos().getX(), task.pos().getY(), task.pos().getZ(), "summoned");
+						save(server, tick);
+					} else {
+						TRADERS.remove(trader.getUUID());
+					}
 				}
 			} else if (task.trader() != null && elapsed >= 18000) {
-				end(server, owner, task, false, true);
+				end(server, taskId, task, false);
 			}
 		}
 	}
@@ -208,9 +257,10 @@ public final class BeaconKindlingMechanics {
 		return BEACONS.values().stream()
 				.filter(task -> task.level().equals(level) && task.pos().equals(pos))
 				.map(task -> {
-					int limit = task.trader() == null ? 12000 : 18000;
-					return new BeaconStatus(
-							Math.max(0, limit - Math.max(0, tick - task.startTick())), task.trader() != null);
+					int remaining = task.trader() == null
+							? Math.max(0, 12000 - Math.max(0, tick - task.startTick()))
+							: TRADERS.getOrDefault(task.trader(), 0);
+					return new BeaconStatus(remaining, task.trader() != null);
 				})
 				.filter(status -> status.remainingTicks() > 0)
 				.min(Comparator.comparingInt(BeaconStatus::remainingTicks))
@@ -218,50 +268,61 @@ public final class BeaconKindlingMechanics {
 	}
 
 	private static void end(
-			MinecraftServer server, UUID owner, BeaconTask task, boolean early, boolean announce
+			MinecraftServer server, UUID taskId, BeaconTask task, boolean early
 	) {
+		if (early && task.trader() != null) {
+			removeTrader(task.trader());
+		}
 		ServerLevel level = server.getLevel(task.level());
 		if (level != null) {
-			Entity trader = task.trader() == null ? null : level.getEntityInAnyDimension(task.trader());
-			if (trader != null) {
-				ServerLevel traderLevel = (ServerLevel) trader.level();
-				traderLevel.sendParticles(ParticleTypes.POOF, trader.getX(), trader.getY() + 0.5, trader.getZ(),
-						50, 0.2, 1.0, 0.2, 0);
-				trader.discard();
-			}
 			var state = level.getBlockState(task.pos());
 			if (state.is(Blocks.CAMPFIRE)) {
 				level.setBlock(task.pos(), state.setValue(CampfireBlock.LIT, false), 3);
 			}
-			if (!early) {
-				level.sendParticles(ParticleTypes.LARGE_SMOKE,
-						task.pos().getX() + 0.5, task.pos().getY() + 0.5, task.pos().getZ() + 0.5,
-						10, 0.1, 0.1, 0.1, 0.1);
+			level.sendParticles(ParticleTypes.LARGE_SMOKE,
+					task.pos().getX() + 0.5, task.pos().getY() + 0.5, task.pos().getZ() + 0.5,
+					10, 0.1, 0.1, 0.1, 0.1);
+			if (early) {
+				announce(level, task.pos().getX(), task.pos().getY(), task.pos().getZ(), "kill_early");
 			}
 		}
-		BEACONS.remove(owner);
-		if (early) {
-			ServerPlayer player = server.getPlayerList().getPlayer(owner);
-			if (player != null) {
-				player.sendSystemMessage(Component.translatable("message.matcha.wandering_trader.kill_early")
-						.withStyle(ChatFormatting.GRAY));
-			}
-		} else if (announce) {
-			server.getPlayerList().broadcastSystemMessage(
-					Component.translatable("message.matcha.wandering_trader.kill")
-							.withStyle(ChatFormatting.GRAY), false);
-		}
+		BEACONS.remove(taskId);
 		save(server, server.getTickCount());
 	}
 
-	private static void discardOrphanTrader(Entity entity, ServerLevel level) {
-		if (entity.getType() != EntityTypes.WANDERING_TRADER
+	private static void trackTrader(Entity entity, ServerLevel level) {
+		if (!(entity instanceof WanderingTrader trader)
 				|| !entity.entityTags().contains("summoned_by_beacon")) {
 			return;
 		}
 		load(level.getServer(), level.getServer().getTickCount());
-		if (BEACONS.values().stream().noneMatch(task -> entity.getUUID().equals(task.trader()))) {
+		if (!TRADERS.containsKey(entity.getUUID())) {
 			entity.discard();
+		} else {
+			// Vanilla pauses despawning while trading; the upstream lifetime does not.
+			trader.setDespawnDelay(0);
+			LOADED_TRADERS.put(entity.getUUID(), trader);
+		}
+	}
+
+	private static void removeTrader(UUID id) {
+		TRADERS.remove(id);
+		WanderingTrader trader = LOADED_TRADERS.remove(id);
+		if (trader != null) {
+			ServerLevel level = (ServerLevel) trader.level();
+			announce(level, trader.getX(), trader.getY(), trader.getZ(), "kill");
+			level.sendParticles(ParticleTypes.POOF, trader.getX(), trader.getY() + 0.5, trader.getZ(),
+					50, 0.2, 1.0, 0.2, 0);
+			trader.discard();
+		}
+	}
+
+	private static void announce(ServerLevel level, double x, double y, double z, String message) {
+		for (ServerPlayer player : level.players()) {
+			if (player.distanceToSqr(x, y, z) <= 128 * 128) {
+				player.sendSystemMessage(Component.translatable("message.matcha.wandering_trader." + message)
+						.withStyle(ChatFormatting.GRAY));
+			}
 		}
 	}
 
@@ -273,14 +334,30 @@ public final class BeaconKindlingMechanics {
 		if (DATA_LOADED) {
 			return;
 		}
-		for (PersistedBeacon saved : data(server).beacons()) {
+		restore(data(server), tick);
+		DATA_LOADED = true;
+	}
+
+	private static void restore(BeaconSavedData data, int tick) {
+		for (PersistedBeacon saved : data.beacons()) {
 			int limit = saved.trader().isPresent() ? 18000 : 12000;
 			int remaining = Math.max(0, Math.min(limit, saved.remainingTicks()));
-			BEACONS.put(saved.owner(), new BeaconTask(
-					saved.level(), saved.pos(), tick - (limit - remaining), saved.trader().orElse(null)
+			BEACONS.put(UUID.randomUUID(), new BeaconTask(
+					saved.owner(), saved.level(), saved.pos(), tick - (limit - remaining), saved.trader().orElse(null)
 			));
+			// Old saves tied both timers to the beacon; preserve their remaining time once.
+			if (data.cooldowns.isEmpty()) {
+				COOLDOWNS.merge(saved.owner(), remaining + (saved.trader().isEmpty() ? 6000 : 0), Math::max);
+			}
+			if (data.traders.isEmpty()) {
+				saved.trader().ifPresent(id -> TRADERS.put(id, Math.min(6000, remaining)));
+			}
 		}
-		DATA_LOADED = true;
+		data.cooldowns.ifPresent(timers -> timers.forEach(timer -> {
+			if (timer.remainingTicks() > 0) COOLDOWNS.put(timer.id(), Math.min(18000, timer.remainingTicks()));
+		}));
+		data.traders.ifPresent(timers -> timers.forEach(timer ->
+				TRADERS.put(timer.id(), Math.clamp(timer.remainingTicks(), 0, 6000))));
 	}
 
 	private static void save(MinecraftServer server, int tick) {
@@ -292,9 +369,11 @@ public final class BeaconKindlingMechanics {
 			BeaconTask task = entry.getValue();
 			int limit = task.trader() == null ? 12000 : 18000;
 			int elapsed = Math.max(0, tick - task.startTick());
-			saved.add(new PersistedBeacon(entry.getKey(), task.level(), task.pos(),
+			saved.add(new PersistedBeacon(task.owner(), task.level(), task.pos(),
 					Math.max(0, limit - elapsed), Optional.ofNullable(task.trader())));
 		}
-		data(server).replace(saved);
+		data(server).replace(saved,
+				COOLDOWNS.entrySet().stream().map(entry -> new Timer(entry.getKey(), entry.getValue())).toList(),
+				TRADERS.entrySet().stream().map(entry -> new Timer(entry.getKey(), entry.getValue())).toList());
 	}
 }

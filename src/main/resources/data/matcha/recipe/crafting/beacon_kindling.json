@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "building",
-	"pattern": [
-		" o ",
-		" C ",
-		" X "
-	],
+	"pattern": ["o", "C", "X"],
 	"key": {
 		"X": "minecraft:hay_block",
 		"C": "minecraft:campfire",
