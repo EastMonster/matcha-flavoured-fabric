@@ -34,6 +34,7 @@
 		"minecraft:gameplay/straw_bed_rule": {
 			"can_set_spawn": "never",
 			"can_sleep": "always",
+			"destroy_on_use": false,
 			"destroy_on_leave": true,
 			"error_message": {
 				"translate": "block.minecraft.bed.no_sleep"
