@@ -62,7 +62,6 @@ public final class GameplayMechanics {
 	private static final Identifier ESTUS = id("mechanics/estus_obtained");
 	private static final Identifier CHEERFUL_STATUE = id("mechanics/cheerful_clay_statue");
 	private static final Identifier MOURNFUL_STATUE = id("mechanics/mournful_clay_statue");
-	private static final Identifier APPLICATION = id("mechanics/application");
 	private static final Identifier HAPPY_GHAST_HORN = id("mechanics/happy_ghast_horn");
 	private static final Identifier KILL_DRAGON = id("end/kill_dragon");
 	private static final Identifier SUMMONED_WITHER = id("mechanics/summoned_wither");
@@ -132,7 +131,6 @@ public final class GameplayMechanics {
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 				checkEstus(player);
 				checkStatueWeather(player);
-				checkApplication(player);
 				checkHappyGhast(player);
 				checkSummonedWither(player, tick);
 				checkWitherSkeletons(player);
@@ -309,17 +307,13 @@ public final class GameplayMechanics {
 		}
 	}
 
-	private static void checkApplication(ServerPlayer player) {
-		if (!WorldMechanics.advancementDone(player, APPLICATION)) {
+	public static void onAsylumSeekerSpawn(ServerLevel level, ItemStack stack, Entity entity) {
+		if (!(entity instanceof Villager villager) || !isMatchaItem(stack, "asylum_seeker")
+				|| level.getEntity(villager.getUUID()) != villager) {
 			return;
 		}
-		var level = player.level();
-		var villager = VILLAGERS.stream()
-				.filter(v -> v.level() == level)
-				.min(Comparator.comparingDouble(v -> v.distanceToSqr(player)));
-		villager.ifPresent(v -> level.sendParticles(ParticleTypes.POOF,
-				v.getX(), v.getY() + 0.5, v.getZ(), 40, 0.25, 1.0, 0.25, 0.05));
-		WorldMechanics.revoke(player, APPLICATION);
+		level.sendParticles(ParticleTypes.POOF,
+				villager.getX(), villager.getY() + 0.5, villager.getZ(), 40, 0.25, 1.0, 0.25, 0.05);
 	}
 
 	private static void checkHappyGhast(ServerPlayer player) {
