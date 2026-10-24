@@ -1,18 +1,14 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"FSF",
-		"FBF",
-		"FFF"
-	],
+	"pattern": ["SSS", "SBS", "SHS"],
 	"key": {
-		"S": "matcha:steel",
+		"S": "minecraft:wind_charge",
 		"B": "minecraft:enchanted_book",
-		"F": "minecraft:iron_block"
+		"H": "minecraft:gold_block"
 	},
 	"result": {
 		"count": 1,
-		"id": "matcha:blessing_talos"
+		"id": "matcha:blessing_aeolus"
 	}
 }

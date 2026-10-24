@@ -8,9 +8,9 @@
 					"children": [
 						{
 							"type": "minecraft:item",
+							"name": "minecraft:diamond_ore",
 							"conditions": [
 								{
-									"condition": "minecraft:match_tool",
 									"predicate": {
 										"predicates": {
 											"minecraft:enchantments": [
@@ -22,10 +22,40 @@
 												}
 											]
 										}
-									}
+									},
+									"condition": "minecraft:match_tool"
+								}
+							]
+						},
+						{
+							"type": "minecraft:item",
+							"name": "minecraft:diamond",
+							"conditions": [
+								{
+									"predicate": {
+										"predicates": {
+											"minecraft:enchantments": [
+												{
+													"enchantments": "matcha:adamant_tool"
+												}
+											]
+										}
+									},
+									"condition": "minecraft:match_tool"
 								}
 							],
-							"name": "minecraft:diamond_ore"
+							"functions": [
+								{
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:ore_drops",
+									"function": "minecraft:apply_bonus"
+								},
+								{
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:ore_drops",
+									"function": "minecraft:apply_bonus"
+								}
+							]
 						},
 						{
 							"type": "minecraft:loot_table",

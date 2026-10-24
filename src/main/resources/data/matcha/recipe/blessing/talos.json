@@ -1,18 +1,14 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"ASA",
-		"ABA",
-		"AAA"
-	],
+	"pattern": ["FSF", "FBF", "FFF"],
 	"key": {
-		"S": "minecraft:ender_pearl",
+		"S": "matcha:steel",
 		"B": "minecraft:enchanted_book",
-		"A": "minecraft:spectral_arrow"
+		"F": "minecraft:iron_block"
 	},
 	"result": {
 		"count": 1,
-		"id": "matcha:blessing_paris"
+		"id": "matcha:blessing_talos"
 	}
 }

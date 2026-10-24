@@ -6,6 +6,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
+					"name": "minecraft:wet_sponge",
 					"functions": [
 						{
 							"add": false,
@@ -25,8 +26,7 @@
 							"enchantment": "minecraft:looting",
 							"function": "minecraft:enchanted_count_increase"
 						}
-					],
-					"name": "minecraft:wet_sponge"
+					]
 				}
 			],
 			"rolls": 1,
@@ -40,7 +40,9 @@
 			"bonus_rolls": 0,
 			"entries": [
 				{
-					"type": "minecraft:item",
+					"type": "minecraft:loot_table",
+					"value": "matcha:gameplay/guardian_fish",
+					"weight": 2,
 					"functions": [
 						{
 							"count": {
@@ -52,21 +54,20 @@
 							"function": "minecraft:enchanted_count_increase"
 						},
 						{
+							"function": "minecraft:furnace_smelt",
 							"conditions": [
 								{
-									"condition": "minecraft:any_of",
 									"terms": [
 										{
-											"condition": "minecraft:entity_properties",
 											"entity": "this",
 											"predicate": {
 												"flags": {
 													"is_on_fire": true
 												}
-											}
+											},
+											"condition": "minecraft:entity_properties"
 										},
 										{
-											"condition": "minecraft:entity_properties",
 											"entity": "direct_attacker",
 											"predicate": {
 												"equipment": {
@@ -80,16 +81,15 @@
 														}
 													}
 												}
-											}
+											},
+											"condition": "minecraft:entity_properties"
 										}
-									]
+									],
+									"condition": "minecraft:any_of"
 								}
-							],
-							"function": "minecraft:furnace_smelt"
+							]
 						}
-					],
-					"name": "minecraft:cod",
-					"weight": 2
+					]
 				},
 				{
 					"type": "minecraft:empty"

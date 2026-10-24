@@ -9,7 +9,7 @@
 						"predicate": {
 							"minecraft:stepping_on": {
 								"block": {
-									"blocks": "minecraft:nether_quartz_ore"
+									"blocks": "#matcha:emits_sulfur_particles"
 								}
 							}
 						}
@@ -19,9 +19,5 @@
 			"trigger": "minecraft:location"
 		}
 	},
-	"requirements": [
-		[
-			"on_sulfur"
-		]
-	]
+	"requirements": [["on_sulfur"]]
 }

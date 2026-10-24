@@ -12,9 +12,7 @@
 		"base": 1,
 		"per_level_above_first": 0
 	},
-	"slots": [
-		"feet"
-	],
-	"supported_items": "#minecraft:enchantable/foot_armor",
+	"slots": ["feet"],
+	"supported_items": ["minecraft:leather_boots", "matcha:sturdy_leather_boots"],
 	"weight": 1
 }

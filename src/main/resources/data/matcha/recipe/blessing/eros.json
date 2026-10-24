@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"aSa",
-		"ABA",
-		"aAa"
-	],
+	"pattern": ["aSa", "ABA", "aAa"],
 	"key": {
 		"S": "matcha:shakudo",
 		"B": "minecraft:enchanted_book",

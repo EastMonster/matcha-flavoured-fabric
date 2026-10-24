@@ -1,19 +1,15 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"ESE",
-		"SBS",
-		"EIE"
-	],
+	"pattern": ["ESE", "IBI", "EIE"],
 	"key": {
-		"S": "minecraft:prismarine_crystals",
+		"S": "minecraft:ominous_bottle",
 		"B": "minecraft:enchanted_book",
-		"I": "gold_ingot",
+		"I": "minecraft:gold_block",
 		"E": "minecraft:glowstone_dust"
 	},
 	"result": {
 		"count": 1,
-		"id": "matcha:blessing_god_king"
+		"id": "matcha:blessing_midas"
 	}
 }

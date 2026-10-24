@@ -9,9 +9,9 @@
 					"children": [
 						{
 							"type": "minecraft:item",
+							"name": "minecraft:redstone_ore",
 							"conditions": [
 								{
-									"condition": "minecraft:match_tool",
 									"predicate": {
 										"predicates": {
 											"minecraft:enchantments": [
@@ -23,54 +23,32 @@
 												}
 											]
 										}
-									}
+									},
+									"condition": "minecraft:match_tool"
 								}
-							],
-							"name": "minecraft:redstone_ore"
+							]
 						},
 						{
-							"type": "minecraft:group",
-							"children": [
+							"type": "minecraft:item",
+							"name": "minecraft:bone",
+							"functions": [
 								{
-									"type": "minecraft:item",
-									"": "minecraft:item",
-									"name": "minecraft:gunpowder",
-									"functions": [
-										{
-											"function": "minecraft:apply_bonus",
-											"enchantment": "minecraft:fortune",
-											"formula": "minecraft:ore_drops"
-										},
-										{
-											"function": "minecraft:apply_bonus",
-											"enchantment": "matcha:electrum_tool",
-											"formula": "minecraft:ore_drops"
-										}
-									]
+									"count": {
+										"type": "minecraft:uniform",
+										"min": 2,
+										"max": 5
+									},
+									"function": "minecraft:set_count"
 								},
 								{
-									"type": "minecraft:item",
-									"functions": [
-										{
-											"function": "minecraft:set_count",
-											"count": {
-												"type": "minecraft:uniform",
-												"min": 2,
-												"max": 3
-											}
-										},
-										{
-											"enchantment": "minecraft:fortune",
-											"formula": "minecraft:ore_drops",
-											"function": "minecraft:apply_bonus"
-										},
-										{
-											"function": "minecraft:apply_bonus",
-											"enchantment": "matcha:electrum_tool",
-											"formula": "minecraft:ore_drops"
-										}
-									],
-									"name": "minecraft:quartz"
+									"enchantment": "minecraft:fortune",
+									"formula": "minecraft:ore_drops",
+									"function": "minecraft:apply_bonus"
+								},
+								{
+									"enchantment": "matcha:electrum_tool",
+									"formula": "minecraft:ore_drops",
+									"function": "minecraft:apply_bonus"
 								}
 							]
 						}

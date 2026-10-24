@@ -12,6 +12,8 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.numbers.StyledFormat;
+import net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket;
+import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -48,13 +50,15 @@ public final class WorldMechanics {
 	private static final String REWARD_VERSION_OBJECTIVE = "matcha_reward_version";
 	private static final String GAMERULES_OBJECTIVE = "matcha_gamerules_version";
 	private static final String GAMERULES_HOLDER = "current";
-	private static final int RECIPE_UNLOCK_VERSION = 1_12_03_005;
+	private static final String INITIAL_DIFFICULTY_NOTICE = "initial_difficulty_notice";
+	private static final int RECIPE_UNLOCK_VERSION = 1_12_08_001;
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
 	private static final String VERSION_LABEL = "1.12.7";
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("mechanics/glass_bottle_from_crafting");
 	private static final Identifier TWO_GLASS_BOTTLES_ADVANCEMENT = id("mechanics/two_glass_bottles_from_crafting");
 	private static final Identifier ELYTRA_ADVANCEMENT = id("item_contingencies/elytra");
+	private static final Identifier ON_SULFUR_ADVANCEMENT = id("particle/on_sulfur");
 	private static final Repairable ELYTRA_REPAIRABLE = new Repairable(HolderSet.direct(
 			Items.HONEYCOMB.builtInRegistryHolder(), Items.FEATHER.builtInRegistryHolder()));
 
@@ -113,6 +117,13 @@ public final class WorldMechanics {
 		// restore this rule before allowing the version check to short-circuit.
 		var rules = server.getGameRules();
 		rules.set(GameRules.ADVANCE_TIME, true, server);
+		// Pre-1.12.1 Mod worlds already have this objective, but no gamerule version marker.
+		boolean initialized = applied != null || scoreboard.getObjective(VERSION_OBJECTIVE) != null;
+		if (shouldLimitInitialDifficulty(initialized, server.getWorldData().isHardcore(),
+				server.getWorldData().getDifficulty())) {
+			server.setDifficulty(Difficulty.NORMAL, true);
+			scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(INITIAL_DIFFICULTY_NOTICE), objective).set(1);
+		}
 		if (applied != null && applied.value() >= GAMERULES_VERSION) {
 			return;
 		}
@@ -130,6 +141,10 @@ public final class WorldMechanics {
 		rules.set(GameRules.MAX_BLOCK_MODIFICATIONS, 200000, server);
 		rules.set(GameRules.COMMAND_BLOCK_OUTPUT, false, server);
 		scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(GAMERULES_HOLDER), objective).set(GAMERULES_VERSION);
+	}
+
+	static boolean shouldLimitInitialDifficulty(boolean initialized, boolean hardcore, Difficulty difficulty) {
+		return !initialized && !hardcore && difficulty == Difficulty.HARD;
 	}
 
 	private static void cacheDifficulty(MinecraftServer server) {
@@ -178,7 +193,6 @@ public final class WorldMechanics {
 		}
 		int tick = server.getTickCount();
 		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-			VillageMechanics.tickPlayer(player);
 			boatParticles(player);
 			sulfurousHellstone(player);
 			glassBottleReward(player);
@@ -186,7 +200,7 @@ public final class WorldMechanics {
 			updateElytra(player);
 		}
 		DivineItemMechanics.tick(tick);
-		VillageMechanics.tick(server, tick);
+		VillageMechanics.tick(server);
 	}
 
 	private static void welcome(ServerPlayer player) {
@@ -196,6 +210,20 @@ public final class WorldMechanics {
 		player.sendSystemMessage(Component.translatable("message.matcha.welcome.desc")
 				.withStyle(style -> style.withColor(TextColor.fromRgb(0x8FB398))));
 		difficultyWelcome(player);
+		var scoreboard = player.level().getServer().getScoreboard();
+		var objective = scoreboard.getObjective(GAMERULES_OBJECTIVE);
+		if (objective != null) {
+			var notice = scoreboard.getPlayerScoreInfo(ScoreHolder.forNameOnly(INITIAL_DIFFICULTY_NOTICE), objective);
+			if (notice != null && notice.value() == 1) {
+				player.connection.send(new ClientboundSetSubtitleTextPacket(
+						Component.translatable("error.matcha.hard_too_early.subtitle").withStyle(ChatFormatting.RED)));
+				player.connection.send(new ClientboundSetTitleTextPacket(
+						Component.translatable("error.matcha.hard_too_early").withStyle(ChatFormatting.RED)));
+				player.sendSystemMessage(Component.translatable("error.matcha.hard_too_early.desc")
+						.withStyle(ChatFormatting.GRAY));
+				scoreboard.getOrCreatePlayerScore(ScoreHolder.forNameOnly(INITIAL_DIFFICULTY_NOTICE), objective).set(0);
+			}
+		}
 	}
 
 	/**
@@ -378,14 +406,13 @@ public final class WorldMechanics {
 	}
 
 	private static void sulfurousHellstone(ServerPlayer player) {
-		if (player.tickCount % 3 != 0) {
+		if (!advancementDone(player, ON_SULFUR_ADVANCEMENT)) {
 			return;
 		}
+		revoke(player, ON_SULFUR_ADVANCEMENT);
 		var level = player.level();
-		if (level.getBlockState(player.blockPosition().below()).is(Blocks.NETHER_QUARTZ_ORE)) {
-			level.sendParticles(ParticleTypes.NOXIOUS_GAS,
-					player.getX(), player.getY() + 0.1, player.getZ(), 1, 0.5, 0, 0.5, 0);
-		}
+		level.sendParticles(ParticleTypes.NOXIOUS_GAS,
+				player.getX(), player.getY() + 0.1, player.getZ(), 3, 0.5, 0, 0.5, 0);
 	}
 
 	public static void glassBottleReward(ServerPlayer player) {

@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"aba",
-		"FBF",
-		"aFa"
-	],
+	"pattern": ["aba", "FBF", "aFa"],
 	"key": {
 		"B": "minecraft:enchanted_book",
 		"F": "minecraft:echo_shard",

@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"SsS",
-		"LBL",
-		"SLS"
-	],
+	"pattern": ["SsS", "LBL", "SLS"],
 	"key": {
 		"S": "matcha:nazar",
 		"B": "minecraft:enchanted_book",

@@ -1,18 +1,14 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"SSS",
-		"SBS",
-		"SHS"
-	],
+	"pattern": ["ESE", "SBS", "ESE"],
 	"key": {
-		"S": "minecraft:wind_charge",
+		"S": "minecraft:fire_charge",
 		"B": "minecraft:enchanted_book",
-		"H": "minecraft:gold_block"
+		"E": "minecraft:gold_ingot"
 	},
 	"result": {
 		"count": 1,
-		"id": "matcha:blessing_aeolus"
+		"id": "matcha:blessing_yama"
 	}
 }

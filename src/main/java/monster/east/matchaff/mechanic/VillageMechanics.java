@@ -1,5 +1,6 @@
 package monster.east.matchaff.mechanic;
 
+import com.mojang.serialization.Codec;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
@@ -7,53 +8,38 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.Holder;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.protocol.game.ClientboundStopSoundPacket;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.StructureTags;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Marker;
 import net.minecraft.world.entity.decoration.Mannequin;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
 final class VillageMechanics {
-	private static final Identifier EERIE_ADVANCEMENT = id("mechanics/enter_village");
 	private static final Identifier OPENED_DOOR_ADVANCEMENT = id("mechanics/opened_oak_door");
-	private static final List<ResourceKey<Structure>> VILLAGES = List.of(
-			structure("village_plains"), structure("village_desert"), structure("village_savanna"),
-			structure("village_snowy"), structure("village_taiga")
-	);
-	private static HolderSet<Structure> villageHolders;
-	private static final AttachmentType<Boolean> EERIE = AttachmentRegistry.create(id("eerie"));
+	private static final AttachmentType<Integer> JUKEBOX_CLEANUP = AttachmentRegistry.create(
+			id("village_jukebox_cleanup"), builder -> builder.persistent(Codec.INT));
 	private static final Set<Mannequin> HAUNTED_MANNEQUINS =
 			Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final Set<Marker> JUKEBOX_MARKERS =
 			Collections.newSetFromMap(new IdentityHashMap<>());
-	private static final List<HopperCleanupTask> HOPPER_CLEANUPS = new ArrayList<>();
-
-	private record HopperCleanupTask(int triggerTick, ResourceKey<Level> level, UUID marker, BlockPos pos) {
-	}
 
 	private VillageMechanics() {
 	}
@@ -62,13 +48,6 @@ final class VillageMechanics {
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
 			HAUNTED_MANNEQUINS.clear();
 			JUKEBOX_MARKERS.clear();
-			HOPPER_CLEANUPS.clear();
-			villageHolders = null;
-		});
-		ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) -> {
-			if (success) {
-				villageHolders = null;
-			}
 		});
 		ServerEntityEvents.ENTITY_LOAD.register(VillageMechanics::trackVillageEntity);
 		ServerEntityEvents.ENTITY_UNLOAD.register((entity, level) -> {
@@ -77,90 +56,99 @@ final class VillageMechanics {
 		});
 	}
 
-	static void tickPlayer(ServerPlayer player) {
+	private static boolean tickPlayer(ServerPlayer player) {
 		if (WorldMechanics.advancementDone(player, OPENED_DOOR_ADVANCEMENT)) {
 			WorldMechanics.revoke(player, OPENED_DOOR_ADVANCEMENT);
 			openVillageDoor(player);
 		}
-		if (WorldMechanics.advancementDone(player, EERIE_ADVANCEMENT)) {
-			player.setAttached(EERIE, true);
-			WorldMechanics.revoke(player, EERIE_ADVANCEMENT);
-		}
-		if (!player.getAttachedOrElse(EERIE, false)) {
-			return;
-		}
 		var level = player.level();
 		if (!inVillage(level, player.blockPosition())) {
-			player.setAttached(EERIE, false);
-			return;
+			return false;
 		}
-		if (player.tickCount % 20 == 0) {
-			player.connection.send(new ClientboundStopSoundPacket(null, SoundSource.MUSIC));
-		}
+		player.connection.send(new ClientboundStopSoundPacket(null, SoundSource.MUSIC));
 		int step = eerieStep(level.getServer().getTickCount());
 		if (step != 0) {
-			var ground = level.getBlockState(player.blockPosition().below());
+			var ground = level.getBlockState(BlockPos.containing(player.getX(), player.getY() - 0.5, player.getZ()));
 			eerieCue(player, ground, step);
+		}
+		return true;
+	}
+
+	static void tick(MinecraftServer server) {
+		Set<Mannequin> activeMannequins = Collections.newSetFromMap(new IdentityHashMap<>());
+		Set<Marker> activeJukeboxes = Collections.newSetFromMap(new IdentityHashMap<>());
+		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+			if (!tickPlayer(player)) continue;
+			HAUNTED_MANNEQUINS.stream()
+					.filter(entity -> entity.level() == player.level() && !entity.isRemoved())
+					.min(Comparator.comparingDouble(player::distanceToSqr)).ifPresent(activeMannequins::add);
+			JUKEBOX_MARKERS.stream()
+					.filter(entity -> entity.level() == player.level() && !entity.isRemoved())
+					.min(Comparator.comparingDouble(player::distanceToSqr)).ifPresent(activeJukeboxes::add);
+		}
+		for (Mannequin mannequin : activeMannequins) {
+			if (mannequin.isRemoved()) continue;
+			ServerLevel level = (ServerLevel) mannequin.level();
+			Marker marker = JUKEBOX_MARKERS.stream()
+					.filter(entity -> entity.level() == level && !entity.isRemoved())
+					.min(Comparator.comparingDouble(mannequin::distanceToSqr)).orElse(null);
+			if (level.players().stream().anyMatch(player -> player.gameMode.getGameModeForPlayer() == GameType.SURVIVAL
+					&& (player.distanceToSqr(mannequin) <= 25 || marker != null && player.distanceToSqr(marker) <= 4))) {
+				mannequin.discard();
+				continue;
+			}
+			level.players().stream().min(Comparator.comparingDouble(mannequin::distanceToSqr))
+					.ifPresent(player -> mannequin.lookAt(EntityAnchorArgument.Anchor.EYES, player.getEyePosition()));
+		}
+		// Process each marker once, regardless of how many players selected it.
+		for (Marker marker : List.copyOf(JUKEBOX_MARKERS)) {
+			if (marker.isRemoved()) continue;
+			ServerLevel level = (ServerLevel) marker.level();
+			BlockPos center = marker.blockPosition();
+			if (!level.hasChunksAt(center.offset(-1, 0, -1), center.offset(1, 0, 1))) continue;
+			int remaining = marker.getAttachedOrElse(JUKEBOX_CLEANUP, -1);
+			if (!marker.hasAttached(JUKEBOX_CLEANUP)) {
+				boolean hasRedstone = false;
+				for (BlockPos pos : BlockPos.betweenClosed(center.offset(-1, 0, -1), center.offset(1, 0, 1))) {
+					hasRedstone |= level.getBlockState(pos).is(Blocks.REDSTONE_BLOCK);
+				}
+				// Legacy playback removed the redstone even if its mannequin or pending task was lost.
+				remaining = initialJukeboxCountdown(hasRedstone, marker.entityTags().contains("music_played"));
+				marker.setAttached(JUKEBOX_CLEANUP, remaining);
+				if (remaining >= 0) {
+					marker.addTag("music_played");
+					continue;
+				}
+			}
+			if (remaining >= 0) {
+				remaining = nextJukeboxCountdown(remaining);
+				marker.setAttached(JUKEBOX_CLEANUP, remaining);
+				if (remaining == 0) {
+					for (BlockPos pos : BlockPos.betweenClosed(center.offset(-1, 0, -1), center.offset(1, 0, 1))) {
+						if (level.getBlockState(pos).is(Blocks.HOPPER)) level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+					}
+					marker.discard();
+				}
+				continue;
+			}
+			if (!activeJukeboxes.contains(marker) || level.players().stream().noneMatch(player ->
+					player.gameMode.getGameModeForPlayer() == GameType.SURVIVAL && player.distanceToSqr(marker) <= 30 * 30)) {
+				continue;
+			}
+			for (BlockPos pos : BlockPos.betweenClosed(center.offset(-1, 0, -1), center.offset(1, 0, 1))) {
+				if (level.getBlockState(pos).is(Blocks.REDSTONE_BLOCK)) level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+			}
+			marker.addTag("music_played");
+			marker.setAttached(JUKEBOX_CLEANUP, 2);
 		}
 	}
 
-	static void tick(MinecraftServer server, int tick) {
-		for (Mannequin mannequin : List.copyOf(HAUNTED_MANNEQUINS)) {
-			if (mannequin.isRemoved() || !(mannequin.level() instanceof ServerLevel level)) {
-				HAUNTED_MANNEQUINS.remove(mannequin);
-				continue;
-			}
-			ServerPlayer player = server.getPlayerList().getPlayers().stream()
-					.filter(candidate -> candidate.level() == level
-							&& candidate.gameMode.getGameModeForPlayer() == GameType.SURVIVAL
-							&& candidate.getAttachedOrElse(EERIE, false))
-					.min(Comparator.comparingDouble(candidate -> candidate.distanceToSqr(mannequin)))
-					.orElse(null);
-			if (player == null) {
-				continue;
-			}
-			mannequin.lookAt(EntityAnchorArgument.Anchor.EYES, player.getEyePosition());
-			Marker marker = JUKEBOX_MARKERS.stream()
-					.filter(candidate -> candidate.level() == level && !candidate.isRemoved())
-					.min(Comparator.comparingDouble(candidate -> candidate.distanceToSqr(mannequin)))
-					.orElse(null);
-			if (!mannequin.entityTags().contains("music_played") && player.distanceToSqr(mannequin) <= 30 * 30) {
-				mannequin.addTag("music_played");
-				if (marker != null) {
-					for (BlockPos pos : BlockPos.betweenClosed(marker.blockPosition().offset(-1, 0, -1),
-							marker.blockPosition().offset(1, 0, 1))) {
-						if (level.getBlockState(pos).is(Blocks.REDSTONE_BLOCK)) {
-							level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-						}
-					}
-					HOPPER_CLEANUPS.add(new HopperCleanupTask(
-							tick + 2, level.dimension(), marker.getUUID(), marker.blockPosition().immutable()));
-				}
-			}
-			if (player.distanceToSqr(mannequin) <= 25
-					|| marker != null && player.distanceToSqr(marker) <= 4) {
-				mannequin.discard();
-			}
-		}
-		HOPPER_CLEANUPS.removeIf(task -> {
-			if (task.triggerTick() > tick) {
-				return false;
-			}
-			ServerLevel level = server.getLevel(task.level());
-			if (level != null) {
-				for (BlockPos pos : BlockPos.betweenClosed(task.pos().offset(-1, 0, -1),
-						task.pos().offset(1, 0, 1))) {
-					if (level.getBlockState(pos).is(Blocks.HOPPER)) {
-						level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-					}
-				}
-				Entity marker = level.getEntity(task.marker());
-				if (marker != null) {
-					marker.discard();
-				}
-			}
-			return true;
-		});
+	static int initialJukeboxCountdown(boolean hasRedstone, boolean played) {
+		return played || !hasRedstone ? 2 : -1;
+	}
+
+	static int nextJukeboxCountdown(int remaining) {
+		return Math.max(0, remaining - 1);
 	}
 
 	private static void trackVillageEntity(Entity entity, ServerLevel level) {
@@ -221,8 +209,8 @@ final class VillageMechanics {
 	}
 
 	static int eerieStep(int serverTick) {
-		// Upstream restarts the shared eerie stopwatch after 150.1 seconds.
-		return switch (Math.floorMod(serverTick, 3002)) {
+		// Upstream restarts the shared eerie stopwatch after 150 seconds.
+		return switch (Math.floorMod(serverTick, 3000)) {
 			case 20 -> 1;
 			case 25 -> 2;
 			case 30 -> 3;
@@ -250,15 +238,7 @@ final class VillageMechanics {
 	}
 
 	private static boolean inVillage(ServerLevel level, BlockPos pos) {
-		if (villageHolders == null) {
-			var lookup = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
-			villageHolders = HolderSet.direct(VILLAGES.stream().map(lookup::getOrThrow).toList());
-		}
-		return level.structureManager().getStructureWithPieceAt(pos, villageHolders).isValid();
-	}
-
-	private static ResourceKey<Structure> structure(String path) {
-		return ResourceKey.create(Registries.STRUCTURE, Identifier.fromNamespaceAndPath("minecraft", path));
+		return level.structureManager().getStructureWithPieceAt(pos, StructureTags.VILLAGE).isValid();
 	}
 
 	private static Identifier id(String path) {

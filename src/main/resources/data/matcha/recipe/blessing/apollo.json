@@ -1,19 +1,15 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"SbS",
-		"FBF",
-		"SFS"
-	],
+	"pattern": ["SbS", "FBF", "SFS"],
 	"key": {
 		"S": "minecraft:spectral_arrow",
 		"B": "minecraft:enchanted_book",
-		"F": "minecraft:porkchop",
-		"b": "minecraft:prismarine_crystals"
+		"F": "minecraft:gold_ingot",
+		"b": "minecraft:disc_fragment_5"
 	},
 	"result": {
 		"count": 1,
-		"id": "matcha:blessing_artemis"
+		"id": "matcha:blessing_apollo"
 	}
 }

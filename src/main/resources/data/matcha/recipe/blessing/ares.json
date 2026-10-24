@@ -1,18 +1,11 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		" b ",
-		"aBc",
-		" F "
-	],
+	"pattern": [" b ", "aBc", " F "],
 	"key": {
 		"B": "minecraft:enchanted_book",
 		"b": "minecraft:red_dye",
-		"a": [
-			"minecraft:iron_sword",
-			"minecraft:iron_spear"
-		],
+		"a": ["minecraft:iron_sword", "minecraft:iron_spear"],
 		"F": "minecraft:iron_helmet",
 		"c": "minecraft:shield"
 	},

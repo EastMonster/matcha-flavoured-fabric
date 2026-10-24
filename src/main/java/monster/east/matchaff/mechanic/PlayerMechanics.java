@@ -263,7 +263,7 @@ public final class PlayerMechanics {
 		}
 		var level = player.level();
 		var pos = player.blockPosition();
-		if (level.getBlockState(pos.above()).is(Blocks.WATER)
+		if (player.isInWater()
 				&& level.getBiome(pos).is(FROZEN_BIOME)
 				&& !hasFreezingProtection(player)) {
 			player.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100, 4, true, false));
