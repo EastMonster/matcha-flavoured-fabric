@@ -251,6 +251,10 @@ public final class BeaconKindlingMechanics {
 			}
 		}
 		BEACONS.remove(taskId);
+		// An unloaded older beacon must not clear another active beacon's cooldown.
+		if (early && BEACONS.values().stream().noneMatch(beacon -> beacon.owner().equals(task.owner()))) {
+			COOLDOWNS.remove(task.owner());
+		}
 		save(server, server.getTickCount());
 	}
 
