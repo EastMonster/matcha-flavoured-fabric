@@ -108,8 +108,12 @@ public final class SimpleItemRegistrar {
 
 	private static Item createItem(BatchDefinition definition, Item.Properties properties) {
 		return switch (definition.type) {
-			case "item" -> "crystal_heart".equals(definition.id)
-					? new CrystalHeartItem(properties) : new Item(properties);
+			case "item" -> switch (definition.id) {
+				case "crystal_heart" -> new CrystalHeartItem(properties);
+				case "beacon_kindling" -> new BeaconKindlingItem(properties);
+				case "warding_stone" -> new WardingStoneItem(properties);
+				default -> new Item(properties);
+			};
 			case "arrow" -> "minecraft:tipped_arrow".equals(definition.carrier)
 					? new MatchaTippedArrowItem(properties)
 					: new ArrowItem(properties);
@@ -120,11 +124,7 @@ public final class SimpleItemRegistrar {
 			case "shears" -> new ShearsItem(properties);
 			case "flint_and_steel" -> new FlintAndSteelItem(properties);
 			case "splash_potion" -> new SplashPotionItem(properties);
-			case "spawn_egg" -> switch (definition.id) {
-				case "warding_stone" -> new WardingStoneItem(properties);
-				case "beacon_kindling" -> new BeaconKindlingItem(properties);
-				default -> new SpawnEggItem(properties);
-			};
+			case "spawn_egg" -> new SpawnEggItem(properties);
 			case "item_frame" -> new ItemFrameItem(EntityTypes.ITEM_FRAME, properties);
 			case "instrument" -> new InstrumentItem(properties);
 			case "music_disc" -> new Item(properties);

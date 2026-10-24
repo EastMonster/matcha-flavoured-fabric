@@ -437,17 +437,11 @@
 	},
 	{
 		"id": "beacon_kindling",
-		"type": "spawn_egg",
+		"type": "item",
 		"tab": "functional_blocks",
 		"source": "data/matcha/recipe/crafting/beacon_kindling.json",
 		"carrier": "minecraft:chicken_spawn_egg",
 		"components": {
-			"minecraft:entity_data": {
-				"id": "minecraft:marker",
-				"NoGravity": true,
-				"Invulnerable": true,
-				"Tags": ["beacon_kindling"]
-			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.beacon_kindling"
 			}
@@ -455,7 +449,7 @@
 	},
 	{
 		"id": "warding_stone",
-		"type": "spawn_egg",
+		"type": "item",
 		"tab": "functional_blocks",
 		"source": "data/matcha/recipe/crafting/warding_stone.json",
 		"carrier": "minecraft:chicken_spawn_egg",
