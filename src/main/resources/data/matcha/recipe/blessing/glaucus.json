@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		" b ",
-		"FBF",
-		" F "
-	],
+	"pattern": [" b ", "FBF", " F "],
 	"key": {
 		"B": "minecraft:enchanted_book",
 		"F": "minecraft:nautilus_shell",

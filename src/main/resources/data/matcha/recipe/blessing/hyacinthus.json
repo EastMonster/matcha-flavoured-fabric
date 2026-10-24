@@ -1,19 +1,15 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"SbS",
-		"FBF",
-		"SFS"
-	],
+	"pattern": ["SHS", "FBF", "SFS"],
 	"key": {
 		"S": "minecraft:wind_charge",
 		"B": "minecraft:enchanted_book",
 		"F": "minecraft:feather",
-		"b": "minecraft:honeycomb"
+		"H": "minecraft:allium"
 	},
 	"result": {
 		"count": 1,
-		"id": "matcha:blessing_icarus"
+		"id": "matcha:blessing_hyacinthus"
 	}
 }

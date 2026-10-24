@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"ESE",
-		"pBd",
-		"EDE"
-	],
+	"pattern": ["ESE", "pBd", "EDE"],
 	"key": {
 		"S": "minecraft:nether_star",
 		"B": "minecraft:enchanted_book",

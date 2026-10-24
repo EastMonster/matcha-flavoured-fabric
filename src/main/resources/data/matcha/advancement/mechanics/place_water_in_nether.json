@@ -1,0 +1,33 @@
+{
+	"parent": "matcha:mechanics/root",
+	"criteria": {
+		"placed_water": {
+			"trigger": "minecraft:placed_block",
+			"conditions": {
+				"location": {
+					"type": "minecraft:all_of",
+					"terms": [
+						{
+							"type": "minecraft:match_tool",
+							"predicate": {
+								"items": "minecraft:water_bucket"
+							}
+						},
+						{
+							"type": "minecraft:location_check",
+							"predicate": {
+								"dimension": "minecraft:the_nether",
+								"position": {
+									"y": {
+										"min": 0,
+										"max": 127
+									}
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+}

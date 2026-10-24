@@ -3,14 +3,16 @@
 		"id": "blessing_aeolus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/wind_burst_anemos.json",
+		"source": "data/matcha/recipe/blessing/aeolus.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
-				"matcha:anemos": 1,
-				"minecraft:wind_burst": 1
+				"matcha:anemos": 1
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -26,14 +28,17 @@
 		"id": "blessing_apollo",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/piercing_impaling.json",
+		"source": "data/matcha/recipe/blessing/apollo.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:impaling": 3,
 				"minecraft:piercing": 2
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
 				{
@@ -49,13 +54,16 @@
 		"id": "blessing_arachnae",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/bane_of_arthopods.json",
+		"source": "data/matcha/recipe/blessing/arachnae.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:bane_of_arthropods": 5
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -71,14 +79,17 @@
 		"id": "blessing_ares",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/lunge_breach.json",
+		"source": "data/matcha/recipe/blessing/ares.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:lunge": 2,
 				"minecraft:breach": 2
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -94,14 +105,17 @@
 		"id": "blessing_artemis",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/power_multishot.json",
+		"source": "data/matcha/recipe/blessing/artemis.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:power": 2,
 				"minecraft:multishot": 1
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
 				{
@@ -117,13 +131,16 @@
 		"id": "blessing_clement",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/traversal.json",
+		"source": "data/matcha/recipe/blessing/clement.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"matcha:traversal": 3
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -139,14 +156,17 @@
 		"id": "blessing_cronus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/swift_sneak_soul_speed.json",
+		"source": "data/matcha/recipe/blessing/cronus.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:swift_sneak": 2,
 				"minecraft:soul_speed": 2
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -162,14 +182,17 @@
 		"id": "blessing_daedalus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/efficiency_unbreaking.json",
+		"source": "data/matcha/recipe/blessing/daedalus.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:efficiency": 3,
 				"minecraft:unbreaking": 3
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -185,14 +208,17 @@
 		"id": "blessing_demeter",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/frost_walker_frost_protection.json",
+		"source": "data/matcha/recipe/blessing/demeter.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:frost_walker": 2,
 				"matcha:freezing_protection": 2
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -208,13 +234,16 @@
 		"id": "blessing_eros",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/silk_touch.json",
+		"source": "data/matcha/recipe/blessing/eros.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:silk_touch": 1
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -230,7 +259,7 @@
 		"id": "blessing_glaucus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/lure_luck_of_the_sea.json",
+		"source": "data/matcha/recipe/blessing/glaucus.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -238,7 +267,10 @@
 				"minecraft:lure": 3,
 				"minecraft:loyalty": 1
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -254,14 +286,17 @@
 		"id": "blessing_god_king",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/channeling_smite.json",
+		"source": "data/matcha/recipe/blessing/god_king.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:smite": 4,
 				"minecraft:channeling": 1
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -277,13 +312,17 @@
 		"id": "blessing_hyacinthus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/zephyr.json",
+		"source": "data/matcha/recipe/blessing/hyacinthus.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
-				"matcha:zephyr": 1
+				"matcha:zephyr": 1,
+				"minecraft:wind_burst": 1
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -299,13 +338,16 @@
 		"id": "blessing_icarus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/feather_falling.json",
+		"source": "data/matcha/recipe/blessing/icarus.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:feather_falling": 2
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -321,13 +363,16 @@
 		"id": "blessing_lu_ban",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/mending.json",
+		"source": "data/matcha/recipe/blessing/lu_ban.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:mending": 1
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "epic",
 			"minecraft:lore": [
 				{
@@ -343,14 +388,17 @@
 		"id": "blessing_midas",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/looting_fortune.json",
+		"source": "data/matcha/recipe/blessing/midas.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:fortune": 1,
 				"minecraft:looting": 3
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -366,10 +414,13 @@
 		"id": "blessing_paris",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/infinity.json",
+		"source": "data/matcha/recipe/blessing/paris.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:stored_enchantments": {
 				"minecraft:infinity": 1
@@ -388,13 +439,16 @@
 		"id": "blessing_prometheus",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/unbreaking.json",
+		"source": "data/matcha/recipe/blessing/prometheus.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"minecraft:unbreaking": 2
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -410,7 +464,7 @@
 		"id": "blessing_talos",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/density_knockback_punch.json",
+		"source": "data/matcha/recipe/blessing/talos.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -419,7 +473,10 @@
 				"minecraft:punch": 2
 			},
 			"minecraft:rarity": "rare",
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:lore": [
 				{
 					"translate": "item.matcha.blessing.talos",
@@ -434,7 +491,7 @@
 		"id": "blessing_warding",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/warding.json",
+		"source": "data/matcha/recipe/blessing/man.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -442,7 +499,10 @@
 				"minecraft:smite": 2
 			},
 			"minecraft:rarity": "rare",
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:lore": [
 				{
 					"translate": "item.matcha.blessing.man",
@@ -457,13 +517,16 @@
 		"id": "blessing_will",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/reach.json",
+		"source": "data/matcha/recipe/blessing/will.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
 				"matcha:reach": 1
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -479,7 +542,7 @@
 		"id": "blessing_yama",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/flame_fire_aspect_fire_protection.json",
+		"source": "data/matcha/recipe/blessing/yama.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -487,7 +550,10 @@
 				"minecraft:fire_aspect": 1,
 				"minecraft:fire_protection": 3
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{
@@ -503,7 +569,7 @@
 		"id": "blessing_yamm",
 		"type": "item",
 		"tab": "ingredients",
-		"source": "data/matcha/recipe/blessing/depth_strider_riptide_aqua_affinity_respiration.json",
+		"source": "data/matcha/recipe/blessing/yamm.json",
 		"carrier": "minecraft:enchanted_book",
 		"components": {
 			"minecraft:stored_enchantments": {
@@ -512,7 +578,10 @@
 				"minecraft:aqua_affinity": 1,
 				"minecraft:respiration": 2
 			},
-			"minecraft:custom_name": { "translate": "item.matcha.blessing", "italic": false },
+			"minecraft:custom_name": {
+				"translate": "item.matcha.blessing",
+				"italic": false
+			},
 			"minecraft:rarity": "rare",
 			"minecraft:lore": [
 				{

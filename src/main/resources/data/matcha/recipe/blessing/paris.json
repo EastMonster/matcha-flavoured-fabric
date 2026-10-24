@@ -1,18 +1,14 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"ESE",
-		"SBS",
-		"ESE"
-	],
+	"pattern": ["ASA", "ABA", "AAA"],
 	"key": {
-		"S": "minecraft:fire_charge",
+		"S": "minecraft:ender_pearl",
 		"B": "minecraft:enchanted_book",
-		"E": "minecraft:gold_ingot"
+		"A": "minecraft:spectral_arrow"
 	},
 	"result": {
 		"count": 1,
-		"id": "matcha:blessing_yama"
+		"id": "matcha:blessing_paris"
 	}
 }

@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"CLC",
-		"WBW",
-		"   "
-	],
+	"pattern": ["CLC", "WBW", "   "],
 	"key": {
 		"B": "minecraft:enchanted_book",
 		"C": "minecraft:emerald",

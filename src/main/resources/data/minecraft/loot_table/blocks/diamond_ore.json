@@ -20,10 +20,41 @@
 												}
 											}
 										]
+									}
 								}
-							}
 							},
 							"name": "minecraft:diamond_ore"
+						},
+						{
+							"type": "minecraft:item",
+							"condition": {
+								"type": "minecraft:match_tool",
+								"predicate": {
+									"predicates": {
+										"minecraft:enchantments": [
+											{
+												"enchantments": "matcha:adamant_tool"
+											}
+										]
+									}
+								}
+							},
+							"modifier": {
+								"type": "minecraft:sequence",
+								"functions": [
+									{
+										"enchantment": "minecraft:fortune",
+										"formula": "minecraft:ore_drops",
+										"type": "minecraft:apply_bonus"
+									},
+									{
+										"type": "minecraft:apply_bonus",
+										"enchantment": "matcha:electrum_tool",
+										"formula": "minecraft:ore_drops"
+									}
+								]
+							},
+							"name": "minecraft:diamond"
 						},
 						{
 							"type": "minecraft:loot_table",

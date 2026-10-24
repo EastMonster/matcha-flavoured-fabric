@@ -9,15 +9,19 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Prediction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -63,11 +67,11 @@ public final class GameplayMechanics {
 	private static final Identifier KILL_DRAGON = id("end/kill_dragon");
 	private static final Identifier SUMMONED_WITHER = id("mechanics/summoned_wither");
 	private static final Identifier ENTER_FORTRESS = id("mechanics/enter_fortress");
+	private static final Identifier PLACE_WATER_IN_NETHER = id("mechanics/place_water_in_nether");
 	private static final AttachmentType<Integer> WATER_BOTTLE_INVENTORY_VERSION = AttachmentRegistry.create(
 			id("water_bottle_inventory_version")
 	);
 
-	private static final Map<UUID, Integer> LAST_WATER_BUCKET_USE = new HashMap<>();
 	private static final Map<UUID, Integer> LAST_CAKE_SLICES = new HashMap<>();
 	private static final Set<Villager> VILLAGERS =
 			Collections.newSetFromMap(new IdentityHashMap<>());
@@ -95,7 +99,6 @@ public final class GameplayMechanics {
 		WardingStoneMechanics.init();
 		TimedMechanics.init();
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
-			LAST_WATER_BUCKET_USE.clear();
 			LAST_CAKE_SLICES.clear();
 			VILLAGERS.clear();
 			AMNESTIC_VILLAGERS.clear();
@@ -192,6 +195,7 @@ public final class GameplayMechanics {
 		for (Villager villager : VILLAGERS) {
 			if (villager.isRemoved() || villager.entityTags().contains("foodChecked")
 					|| villager.getVillagerData().profession().is(VillagerProfession.NONE)
+					|| villager.getVillagerData().profession().is(VillagerProfession.FISHERMAN)
 					|| villager.getVillagerXp() == 0) {
 				continue;
 			}
@@ -376,19 +380,23 @@ public final class GameplayMechanics {
 	}
 
 	private static void checkNetherWater(ServerPlayer player) {
-		int current = player.getStats().getValue(Stats.ITEM_USED.get(Items.WATER_BUCKET));
-		Integer previous = LAST_WATER_BUCKET_USE.put(player.getUUID(), current);
-		if (previous == null || current <= previous || player.level().dimension() != Level.NETHER
-				|| player.getY() < 0 || player.getY() > 127) {
+		if (!WorldMechanics.advancementDone(player, PLACE_WATER_IN_NETHER)) {
 			return;
 		}
+		WorldMechanics.revoke(player, PLACE_WATER_IN_NETHER);
 		ServerLevel level = player.level();
+		if (level.dimension() != Level.NETHER) {
+			return;
+		}
 		BlockPos center = player.blockPosition();
 		for (BlockPos pos : BlockPos.betweenClosed(center.offset(-20, -20, -20), center.offset(20, 20, 20))) {
 			if (level.getBlockState(pos).is(Blocks.WATER)) {
 				level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
 			}
 		}
+		player.connection.send(new ClientboundSoundPacket(Holder.direct(SoundEvents.FIRE_EXTINGUISH),
+				SoundSource.BLOCKS, player.getX(), player.getY(), player.getZ(), 0.5F, 2.0F,
+				player.getRandom().nextLong()));
 	}
 
 	private static void checkCake(ServerPlayer player) {

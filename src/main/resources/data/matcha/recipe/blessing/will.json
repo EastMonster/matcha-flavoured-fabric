@@ -1,17 +1,13 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		" S ",
-		"SBS",
-		" S "
-	],
+	"pattern": [" S ", "SBS", " S "],
 	"key": {
-		"S": "minecraft:nautilus_shell",
+		"S": "minecraft:ender_pearl",
 		"B": "minecraft:enchanted_book"
 	},
 	"result": {
 		"count": 1,
-		"id": "matcha:blessing_yamm"
+		"id": "matcha:blessing_will"
 	}
 }

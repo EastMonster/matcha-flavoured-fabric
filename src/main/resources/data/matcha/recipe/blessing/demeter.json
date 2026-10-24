@@ -1,11 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"category": "misc",
-	"pattern": [
-		"SbS",
-		"FBF",
-		"SFS"
-	],
+	"pattern": ["SbS", "FBF", "SFS"],
 	"key": {
 		"S": "minecraft:golden_apple",
 		"B": "minecraft:enchanted_book",

@@ -1,30 +1,98 @@
 {
 	"parent": "matcha:hell/craft_blessing",
 	"criteria": {
-		"bane_of_arthopods": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/bane_of_arthopods" } },
-		"channeling_smite": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/channeling_smite" } },
-		"density_knockback_punch": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/density_knockback_punch" } },
-		"depth_strider_riptide_aqua_affinity_respiration": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/depth_strider_riptide_aqua_affinity_respiration" } },
-		"efficiency_unbreaking": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/efficiency_unbreaking" } },
-		"feather_falling": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/feather_falling" } },
-		"flame_fire_aspect_fire_protection": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/flame_fire_aspect_fire_protection" } },
-		"frost_walker_frost_protection": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/frost_walker_frost_protection" } },
-		"hell_bound_book": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/hell_bound_book" } },
-		"infinity": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/infinity" } },
-		"lunge_breach": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/lunge_breach" } },
-		"lure_luck_of_the_sea": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/lure_luck_of_the_sea" } },
-		"mending": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/mending" } },
-		"piercing_impaling": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/piercing_impaling" } },
-		"power_multishot": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/power_multishot" } },
-		"reach": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/reach" } },
-		"silk_touch": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/silk_touch" } },
-		"swift_sneak_soul_speed": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/swift_sneak_soul_speed" } },
-		"traversal": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/traversal" } },
-		"unbreaking": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/unbreaking" } },
-		"warding": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/warding" } },
-		"wind_burst_anemos": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/wind_burst_anemos" } },
-		"zephyr": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/zephyr" } },
-		"looting_fortune": { "trigger": "minecraft:recipe_crafted", "conditions": { "recipes": "matcha:blessing/looting_fortune" } }
+		"bane_of_arthopods": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/arachnae" }
+		},
+		"channeling_smite": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/god_king" }
+		},
+		"density_knockback_punch": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/talos" }
+		},
+		"depth_strider_riptide_aqua_affinity_respiration": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/yamm" }
+		},
+		"efficiency_unbreaking": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/daedalus" }
+		},
+		"feather_falling": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/icarus" }
+		},
+		"flame_fire_aspect_fire_protection": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/yama" }
+		},
+		"frost_walker_frost_protection": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/demeter" }
+		},
+		"infinity": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/paris" }
+		},
+		"lunge_breach": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/ares" }
+		},
+		"lure_luck_of_the_sea": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/glaucus" }
+		},
+		"mending": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/lu_ban" }
+		},
+		"piercing_impaling": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/apollo" }
+		},
+		"power_multishot": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/artemis" }
+		},
+		"reach": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/will" }
+		},
+		"silk_touch": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/eros" }
+		},
+		"swift_sneak_soul_speed": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/cronus" }
+		},
+		"traversal": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/clement" }
+		},
+		"unbreaking": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/prometheus" }
+		},
+		"warding": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/man" }
+		},
+		"wind_burst_anemos": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/aeolus" }
+		},
+		"zephyr": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/hyacinthus" }
+		},
+		"looting_fortune": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": { "recipes": "matcha:blessing/midas" }
+		}
 	},
 	"display": {
 		"description": [
@@ -38,39 +106,38 @@
 			}
 		],
 		"icon": { "count": 1, "id": "matcha:blessing_god_king" },
-		"title": { "translate": "advancements.matcha.hell.steal_all_prayers.title" },
+		"title": {
+			"translate": "advancements.matcha.hell.steal_all_prayers.title"
+		},
 		"hidden": false,
 		"frame": "challenge"
 	},
 	"requirements": [
-		[ "bane_of_arthopods" ],
-		[ "channeling_smite" ],
-		[ "density_knockback_punch" ],
-		[ "depth_strider_riptide_aqua_affinity_respiration" ],
-		[ "efficiency_unbreaking" ],
-		[ "feather_falling" ],
-		[ "flame_fire_aspect_fire_protection" ],
-		[ "frost_walker_frost_protection" ],
-		[ "hell_bound_book" ],
-		[ "infinity" ],
-		[ "lunge_breach" ],
-		[ "lure_luck_of_the_sea" ],
-		[ "mending" ],
-		[ "piercing_impaling" ],
-		[ "power_multishot" ],
-		[ "reach" ],
-		[ "silk_touch" ],
-		[ "swift_sneak_soul_speed" ],
-		[ "traversal" ],
-		[ "unbreaking" ],
-		[ "warding" ],
-		[ "wind_burst_anemos" ],
-		[ "zephyr" ],
-		[ "looting_fortune" ]
+		["bane_of_arthopods"],
+		["channeling_smite"],
+		["density_knockback_punch"],
+		["depth_strider_riptide_aqua_affinity_respiration"],
+		["efficiency_unbreaking"],
+		["feather_falling"],
+		["flame_fire_aspect_fire_protection"],
+		["frost_walker_frost_protection"],
+		["infinity"],
+		["lunge_breach"],
+		["lure_luck_of_the_sea"],
+		["mending"],
+		["piercing_impaling"],
+		["power_multishot"],
+		["reach"],
+		["silk_touch"],
+		["swift_sneak_soul_speed"],
+		["traversal"],
+		["unbreaking"],
+		["warding"],
+		["wind_burst_anemos"],
+		["zephyr"],
+		["looting_fortune"]
 	],
 	"rewards": {
-		"loot": [
-				"matcha:advancement/obol_10"
-		]
+		"loot": ["matcha:advancement/obol_10"]
 	}
 }

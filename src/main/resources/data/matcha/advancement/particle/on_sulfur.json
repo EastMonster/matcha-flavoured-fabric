@@ -2,14 +2,18 @@
 	"criteria": {
 		"on_sulfur": {
 			"conditions": {
-				"player": {"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:stepping_on":{"block":{"blocks":"minecraft:nether_quartz_ore"}}}}
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:stepping_on": {
+							"block": { "blocks": "#matcha:emits_sulfur_particles" }
+						}
+					}
+				}
 			},
 			"trigger": "minecraft:location"
 		}
 	},
-	"requirements": [
-		[
-			"on_sulfur"
-		]
-	]
+	"requirements": [["on_sulfur"]]
 }
