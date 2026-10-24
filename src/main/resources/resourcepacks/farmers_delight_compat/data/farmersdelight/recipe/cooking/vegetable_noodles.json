@@ -1,0 +1,15 @@
+{
+	"type": "farmersdelight:cooking",
+	"experience": 1.0,
+	"ingredients": [
+		"#c:crops/carrot",
+		"minecraft:brown_mushroom",
+		"#c:foods/pasta",
+		"#c:foods/leafy_green",
+		"#c:foods/vegetable"
+	],
+	"recipe_book_tab": "meals",
+	"result": {
+		"id": "farmersdelight:vegetable_noodles"
+	}
+}
