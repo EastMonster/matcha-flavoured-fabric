@@ -190,7 +190,8 @@ public final class GameplayMechanics {
 
 	private static void assignFavoriteFoods() {
 		for (Villager villager : VILLAGERS) {
-			if (villager.isRemoved() || villager.entityTags().contains("foodChecked")
+			// Defer reordering until the trade menu is closed; the next scan will retry.
+			if (villager.isRemoved() || villager.isTrading() || villager.entityTags().contains("foodChecked")
 					|| villager.getVillagerData().profession().is(VillagerProfession.NONE)
 					|| villager.getVillagerData().profession().is(VillagerProfession.FISHERMAN)
 					|| villager.getVillagerXp() == 0) {
