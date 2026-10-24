@@ -36,8 +36,7 @@ final class AdamantArmourEnchantment {
 		level.playSound(null, player.getX(), player.getY(), player.getZ(),
 				SoundEvents.APPLY_EFFECT_RAID_OMEN, SoundSource.HOSTILE, 0.4F, 2.0F);
 		for (LivingEntity target : targets) {
-			level.sendParticles(ParticleTypes.FLAME, target.getX(), target.getEyeY(), target.getZ(),
-					pieces == 1 ? 3 : pieces == 4 ? 12 : 8, 0.1, 0.2, 0.1, 0.05);
+			level.sendParticles(ParticleTypes.FLAME, target.getX(), target.getEyeY(), target.getZ(), 3, 0.1, 0.2, 0.1, 0.05);
 			target.hurtServer(level, level.damageSources().fellOutOfWorld(), damage(pieces));
 			target.removeEffect(MobEffects.WEAKNESS);
 		}
