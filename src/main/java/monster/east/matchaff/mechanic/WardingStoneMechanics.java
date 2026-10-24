@@ -114,7 +114,7 @@ final class WardingStoneMechanics {
 			// Anchor destroyed: refund Raw Estus and remove the stone.
 			if (!level.getBlockState(pos).is(Blocks.LODESTONE)) {
 				for (ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, stone.getBoundingBox().inflate(3.0))) {
-					if (item.getItem().is(Items.LODESTONE)) {
+					if (item.getItem().is(Items.LODESTONE) && item.distanceToSqr(stone) <= 9.0) {
 						item.discard();
 					}
 				}
