@@ -69,6 +69,22 @@
 			{
 				"namespace": "farmersdelight",
 				"path": "advancement/recipes/food/bread_from_smoking\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/cooking/mushroom_stew\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/cooking/mushroom_stew\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/cooking/rabbit_stew\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/cooking/rabbit_stew\\.json"
 			}
 		]
 	}
