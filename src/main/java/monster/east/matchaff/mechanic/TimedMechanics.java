@@ -90,6 +90,8 @@ final class TimedMechanics {
 					player.level().getServer().getTickCount() + 60,
 					rain, player.getUUID(), advancement));
 		}
+		// An existing task also consumes repeated triggers so none survive logout.
+		WorldMechanics.revoke(player, advancement);
 	}
 
 	static void scheduleWither(ServerPlayer player, int tick) {
@@ -154,10 +156,6 @@ final class TimedMechanics {
 			int duration = (task.rain() ? ServerLevel.RAIN_DURATION : ServerLevel.RAIN_DELAY)
 					.sample(server.overworld().getRandom());
 			server.setWeatherParameters(task.rain() ? 0 : duration, task.rain() ? duration : 0, task.rain(), false);
-			ServerPlayer player = server.getPlayerList().getPlayer(task.player());
-			if (player != null) {
-				WorldMechanics.revoke(player, task.advancement());
-			}
 			return true;
 		});
 	}
