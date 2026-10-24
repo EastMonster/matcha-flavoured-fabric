@@ -1,62 +1,49 @@
 package monster.east.matchaff.item;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SpawnEggItem;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.Spawner;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
 
-/** Spawn-egg behaviour with a pre-check for the Warding Stone's lodestone anchor. */
-public final class WardingStoneItem extends SpawnEggItem {
+import java.util.Map;
+
+public final class WardingStoneItem extends BlockItem {
 	public WardingStoneItem(Item.Properties properties) {
-		super(properties);
+		super(Blocks.LODESTONE, properties);
 	}
 
 	@Override
-	public InteractionResult useOn(UseOnContext context) {
-		if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof Spawner) {
-			return super.useOn(context);
+	protected boolean placeBlock(BlockPlaceContext context, BlockState state) {
+		if (!(context.getLevel() instanceof ServerLevel level)) {
+			return super.placeBlock(context, state);
 		}
-		BlockPos pos = spawnPos(context.getLevel(), context.getClickedPos(), context.getClickedFace());
-		return canPlaceAnchor(context.getLevel(), context.getPlayer(), pos)
-				? super.useOn(context) : InteractionResult.FAIL;
-	}
-
-	@Override
-	public InteractionResult use(Level level, Player player, InteractionHand hand) {
-		BlockHitResult hit = getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
-		if (hit.getType() == HitResult.Type.BLOCK
-				&& level.getBlockState(hit.getBlockPos()).getBlock() instanceof LiquidBlock
-				&& !canPlaceAnchor(level, player, hit.getBlockPos())) {
-			return InteractionResult.FAIL;
-		}
-		return super.use(level, player, hand);
-	}
-
-	private static BlockPos spawnPos(Level level, BlockPos clicked, Direction face) {
-		BlockState state = level.getBlockState(clicked);
-		return state.getCollisionShape(level, clicked).isEmpty() ? clicked : clicked.relative(face);
-	}
-
-	private static boolean canPlaceAnchor(Level level, Player player, BlockPos pos) {
-		if (!level.isInWorldBounds(pos)) {
+		var pos = context.getClickedPos();
+		var stone = EntityTypes.ARMOR_STAND.create(level,
+				EntityType.createDefaultStackConfig(level, context.getItemInHand(), context.getPlayer()),
+				pos, EntitySpawnReason.SPAWN_ITEM_USE, false, false);
+		if (stone == null) {
 			return false;
 		}
-		BlockState lodestone = Blocks.LODESTONE.defaultBlockState();
-		return level.getBlockState(pos).canBeReplaced()
-				&& lodestone.canSurvive(level, pos)
-				&& level.isUnobstructed(lodestone, pos, CollisionContext.placementContext(player));
+		BlockState previousState = level.getBlockState(pos);
+		if (!super.placeBlock(context, state)) {
+			return false;
+		}
+		if (level.addFreshEntity(stone)) {
+			return true;
+		}
+		// Do not leave a free lodestone behind if the mechanism could not be added.
+		level.setBlock(pos, previousState, 3);
+		return false;
+	}
+
+	@Override
+	public void registerBlocks(Map<Block, Item> map, Item item) {
+		// Fabric must not replace the lodestone's vanilla item mapping with this item.
 	}
 }

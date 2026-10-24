@@ -25,14 +25,8 @@ import net.minecraft.world.entity.npc.wanderingtrader.WanderingTrader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -139,42 +133,13 @@ public final class BeaconKindlingMechanics {
 		});
 	}
 
-	public static InteractionResult useOn(UseOnContext context) {
-		var player = context.getPlayer();
-		if (player == null) {
-			return InteractionResult.PASS;
-		}
-		if (!(player instanceof ServerPlayer serverPlayer)) {
-			return InteractionResult.SUCCESS;
-		}
-		ItemStack stack = context.getItemInHand();
-		if (!place(serverPlayer, (ServerLevel) context.getLevel(), context)) {
-			return InteractionResult.FAIL;
-		}
-		stack.consume(1, player);
-		return InteractionResult.SUCCESS_SERVER;
-	}
-
-	private static boolean place(ServerPlayer player, ServerLevel level, UseOnContext useContext) {
-		BlockPlaceContext context = new BlockPlaceContext(useContext);
-		if (!context.canPlace()) {
-			return false;
-		}
-		BlockPos pos = context.getClickedPos();
-		BlockState state = Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.SIGNAL_FIRE, true);
-		if (!state.canSurvive(level, pos)
-				|| !level.isUnobstructed(state, pos, CollisionContext.placementContext(player))
-				|| !level.setBlock(pos, state, 3)) {
-			return false;
-		}
-
+	public static void onPlaced(ServerPlayer player, ServerLevel level, BlockPos pos) {
 		int tick = level.getServer().getTickCount();
 		load(level.getServer(), tick);
 		AdvancementHolder advancement = level.getServer().getAdvancements().get(LIGHT_BEACON);
 		if (advancement != null) {
 			player.getAdvancements().award(advancement, "placed_beacon");
 		}
-		level.setBlock(pos, Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.SIGNAL_FIRE, true), 3);
 		level.sendParticles(ParticleTypes.FLAME, pos.getX() + 0.5, pos.getY() + 0.7, pos.getZ() + 0.5,
 				30, 0.1, 0.1, 0.1, 0.07);
 		level.playSound(null, pos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -182,13 +147,12 @@ public final class BeaconKindlingMechanics {
 		if (COOLDOWNS.containsKey(player.getUUID())) {
 			player.sendSystemMessage(Component.translatable("message.matcha.wandering_trader.beacon_placed")
 					.withStyle(ChatFormatting.GRAY));
-			return true;
+			return;
 		}
 		COOLDOWNS.put(player.getUUID(), 18000);
 		BEACONS.put(UUID.randomUUID(), new BeaconTask(player.getUUID(), level.dimension(), pos.immutable(), tick, null));
 		save(level.getServer(), tick);
 		announce(level, player.getX(), player.getY(), player.getZ(), "initialise");
-		return true;
 	}
 
 	static void tick(MinecraftServer server, int tick) {
