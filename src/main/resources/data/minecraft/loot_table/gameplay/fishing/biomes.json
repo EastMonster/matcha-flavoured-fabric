@@ -1,8 +1,9 @@
 {
-	"type": "minecraft:entity",
+	"type": "minecraft:fishing",
 	"pools": [
 		{
 			"rolls": 1,
+			"bonus_rolls": 0,
 			"entries": [
 				{
 					"type": "minecraft:alternatives",
@@ -119,7 +120,7 @@
 						},
 						{
 							"type": "minecraft:loot_table",
-							"value": "minecraft:gameplay/fishing/fish/echo_fish",
+							"value": "minecraft:gameplay/fishing/deep_dark",
 							"condition": {
 								"type": "minecraft:location_check",
 								"predicate": {
@@ -129,7 +130,7 @@
 						},
 						{
 							"type": "minecraft:loot_table",
-							"value": "minecraft:gameplay/fishing/freshwater_temperate",
+							"value": "minecraft:gameplay/fishing/sulfur_caves",
 							"condition": {
 								"type": "minecraft:location_check",
 								"predicate": {
@@ -152,7 +153,7 @@
 						},
 						{
 							"type": "minecraft:loot_table",
-							"value": "minecraft:gameplay/fishing/fish/pale_fish",
+							"value": "minecraft:gameplay/fishing/pale_garden",
 							"condition": {
 								"type": "minecraft:location_check",
 								"predicate": {
@@ -172,11 +173,12 @@
 						},
 						{
 							"type": "minecraft:loot_table",
-							"value": "minecraft:gameplay/fishing/saltwater_temperate"
+							"value": "minecraft:gameplay/fishing/junk"
 						}
 					]
 				}
 			]
 		}
-	]
+	],
+	"random_sequence": "minecraft:gameplay/fishing/biomes"
 }
