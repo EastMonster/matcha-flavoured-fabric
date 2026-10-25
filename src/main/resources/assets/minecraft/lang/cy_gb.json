@@ -35,7 +35,6 @@
 	"block.minecraft.deepslate_coal_ore": "Dyddodyn Glo Dwfnlech",
 	"block.minecraft.nether_gold_ore": "Ufferngraig Euraid",
 	"block.minecraft.nether_quartz_ore": "Ufferngraig Sylffyraidd",
-	"block.minecraft.redstone_ore": "Dyddodyn Cwarts Sylffyraidd",
 	"block.minecraft.deepslate_redstone_ore": "Dyddodyn Sylffwr",
 	"block.minecraft.lapis_ore": "Dyddodyn Cwarts",
 	"block.minecraft.comparator": "Cymharydd Trydanol",
@@ -147,5 +146,6 @@
 	"item.kleispack.rose_classic": "Rhosyn",
 	"item.kleispack.cyan_rose_classic": "Rhosyn Gwyrddlas",
 	"item.kleispack.dandelion_classic": "Dant y Llew",
-	"item.minecraft.potion.effect.empty": "Potel o Ddŵr"
+	"item.minecraft.potion.effect.empty": "Potel o Ddŵr",
+	"block.minecraft.redstone_ore": "Dyddodyn Cwarts Sylffyraidd"
 }
