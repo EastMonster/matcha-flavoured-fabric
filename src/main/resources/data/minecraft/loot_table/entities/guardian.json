@@ -45,15 +45,6 @@
 					"weight": 2,
 					"functions": [
 						{
-							"count": {
-								"type": "minecraft:uniform",
-								"max": 1,
-								"min": 0
-							},
-							"enchantment": "minecraft:looting",
-							"function": "minecraft:enchanted_count_increase"
-						},
-						{
 							"function": "minecraft:furnace_smelt",
 							"conditions": [
 								{

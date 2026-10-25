@@ -1,0 +1,216 @@
+{
+	"type": "minecraft:fishing",
+	"pools": [
+		{
+			"rolls": 1,
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/freshwater_cold",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:freshwater_cold"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/freshwater_cool",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:freshwater_cool"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/freshwater_temperate",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:freshwater_temperate"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/freshwater_hot_wet",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:freshwater_hot_wet"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/freshwater_hot_dry",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:freshwater_hot_dry"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/saltwater_cold",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:saltwater_cold"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/saltwater_cool",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:saltwater_cool"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/saltwater_temperate",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:saltwater_temperate"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/saltwater_warm",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:saltwater_warm"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/saltwater_hot",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:saltwater_hot"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/swamps",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:swamps"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/deep_dark",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "minecraft:deep_dark"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/sulfur_caves",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "minecraft:sulfur_caves"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/freshwater_temperate",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": [
+											"minecraft:dripstone_caves",
+											"minecraft:lush_caves"
+										]
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/pale_garden",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "minecraft:pale_garden"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/saltwater_temperate",
+							"conditions": [
+								{
+									"predicate": {
+										"biomes": "#minecraft:fallback"
+									},
+									"condition": "minecraft:location_check"
+								}
+							]
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "minecraft:gameplay/fishing/junk"
+						}
+					]
+				}
+			]
+		}
+	],
+	"random_sequence": "minecraft:gameplay/fishing/biomes"
+}
