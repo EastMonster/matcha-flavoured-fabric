@@ -1,0 +1,58 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:brown_mushroom",
+					"weight": 30,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 3,
+							"max": 8
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:red_mushroom",
+					"weight": 9,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 3,
+							"max": 8
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:shelf_mushroom",
+					"weight": 15,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 3,
+							"max": 8
+						}
+					}
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/truffle",
+					"weight": 1,
+					"condition": {
+						"type": "matcha:pig_is_muddy"
+					}
+				}
+			]
+		}
+	],
+	"random_sequence": "matcha:gameplay/pig_gift/default"
+}

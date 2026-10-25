@@ -1,0 +1,7 @@
+{
+	"values": [
+		"#matcha:animal_affects/pig_diggable",
+		"#matcha:animal_affects/pig_playable",
+		"minecraft:farmland"
+	]
+}

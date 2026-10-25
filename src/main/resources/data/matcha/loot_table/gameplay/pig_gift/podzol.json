@@ -1,0 +1,94 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:leaf_litter",
+					"weight": 15,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 7,
+							"max": 12
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:bone_meal",
+					"weight": 15,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 3,
+							"max": 6
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:brown_mushroom",
+					"weight": 12,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:red_mushroom",
+					"weight": 10,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:shelf_mushroom",
+					"weight": 12,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potato",
+					"weight": 12
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/minecraft/carrot",
+					"weight": 12
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/truffle",
+					"weight": 1,
+					"condition": {
+						"type": "matcha:pig_is_muddy"
+					}
+				}
+			]
+		}
+	],
+	"random_sequence": "matcha:gameplay/pig_gift/default"
+}
