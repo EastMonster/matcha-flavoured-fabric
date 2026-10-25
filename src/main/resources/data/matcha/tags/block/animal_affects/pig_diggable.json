@@ -1,0 +1,9 @@
+{
+	"values": [
+		"#matcha:animal_affects/pig_grass_block",
+		"#matcha:animal_affects/pig_rooted_dirt",
+		"#matcha:animal_affects/pig_gravel",
+		"#matcha:animal_affects/pig_podzol",
+		"#matcha:animal_affects/pig_mycelium"
+	]
+}
