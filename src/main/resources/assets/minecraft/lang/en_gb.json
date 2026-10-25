@@ -1,4 +1,9 @@
 {
+	"filled_map.village_desert": "Abandoned Desert Village Map",
+	"filled_map.village_plains": "Abandoned Plains Village Map",
+	"filled_map.village_savanna": "Abandoned Savanna Village Map",
+	"filled_map.village_snowy": "Abandoned Snowy Village Map",
+	"filled_map.village_taiga": "Abandoned Taiga Village Map",
 	"item.minecraft.wheat": "Straw",
 	"block.minecraft.wheat": "Straw",
 	"container.inventory": "",
@@ -7,7 +12,6 @@
 	"container.upgrade": "",
 	"item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "Add armour weapon or tool",
 	"block.minecraft.nether_quartz_ore": "Sulphurous Hellstone",
-	"block.minecraft.redstone_ore": "Sulphurous Quartz Deposit",
 	"block.minecraft.deepslate_redstone_ore": "Sulphur Deposit",
 	"item.minecraft.gunpowder": "Sulphur Chunk",
 	"block.minecraft.light_gray_shulker_box": "Light Grey Sack",
@@ -22,9 +26,9 @@
 	"item.kleispack.rose_classic": "Rose",
 	"item.kleispack.cyan_rose_classic": "Cyan Rose",
 	"item.kleispack.dandelion_classic": "Dandelion",
-	"filled_map.village_desert": "Abandoned Desert Village Map",
-	"filled_map.village_plains": "Abandoned Plains Village Map",
-	"filled_map.village_savanna": "Abandoned Savanna Village Map",
-	"filled_map.village_snowy": "Abandoned Snowy Village Map",
-	"filled_map.village_taiga": "Abandoned Taiga Village Map"
+	"item.minecraft.desert_village_map": "Abandoned Desert Village Map",
+	"item.minecraft.plains_village_map": "Abandoned Plains Village Map",
+	"item.minecraft.savanna_village_map": "Abandoned Savanna Village Map",
+	"item.minecraft.snowy_village_map": "Abandoned Snowy Village Map",
+	"item.minecraft.taiga_village_map": "Abandoned Taiga Village Map"
 }

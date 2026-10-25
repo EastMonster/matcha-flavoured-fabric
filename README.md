@@ -40,7 +40,6 @@ Create a new world to play this mod. Existing items from the data-pack version a
 - [Trinkets Updated](https://modrinth.com/mod/trinkets-updated) compatibility lets earrings be worn alongside a helmet. Earring armor bonuses do not apply while a helmet is equipped.
 - [CliffTree](https://modrinth.com/datapack/clifftree) compatibility (Fabric Mod version only). If you would like Matcha to support more terrain mods, feel free to submit suggestions in [Issues](https://github.com/EastMonster/matcha-flavoured-fabric/issues)!
 - [Farmer's Delight Refabricated](https://modrinth.com/mod/farmers-delight-refabricated) compatibility. Enjoy farmer life!
-- [Enchantment Descriptions](https://modrinth.com/mod/enchantment-descriptions) compatibility.
 
 ## Changes that (may) cause behavioral differences
 
