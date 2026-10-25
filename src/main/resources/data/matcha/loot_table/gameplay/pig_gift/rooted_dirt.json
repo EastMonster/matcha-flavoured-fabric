@@ -1,0 +1,107 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:hanging_roots",
+					"weight": 36,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 3,
+							"max": 6
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potato",
+					"weight": 12,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/minecraft/carrot",
+					"weight": 12,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:beetroot_seeds",
+					"weight": 12,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:wheat_seeds",
+					"weight": 12,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cocoa_beans",
+					"weight": 12,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					},
+					"condition": {
+						"type": "minecraft:location_check",
+						"predicate": {
+							"biomes": [
+								"minecraft:jungle",
+								"minecraft:bamboo_jungle",
+								"minecraft:sparse_jungle"
+							]
+						}
+					}
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/truffle",
+					"weight": 1,
+					"condition": {
+						"type": "matcha:pig_is_muddy"
+					}
+				}
+			]
+		}
+	],
+	"random_sequence": "matcha:gameplay/pig_gift/default"
+}
