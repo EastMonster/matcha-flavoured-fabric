@@ -1,0 +1,6 @@
+{
+	"asset_id": "matcha:entity/pig/muddy_pig_warm",
+	"baby_asset_id": "matcha:entity/pig/muddy_pig_warm_baby",
+	"model": "normal",
+	"spawn_conditions": []
+}

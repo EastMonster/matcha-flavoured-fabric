@@ -195,7 +195,7 @@
 			"bokguk",
 			"gimmari"
 		],
-		"fresh_vegetables": ["tomato"],
+		"fresh_vegetables": ["tomato", "truffle"],
 		"simple_cooked_foods": [
 			"fried_egg",
 			"charred_meat",

@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:gameplay/pig_gift/default",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/truffle",
+					"weight": 1
+				}
+			]
+		}
+	],
+	"random_sequence": "matcha:gameplay/pig_gift/muddy"
+}
