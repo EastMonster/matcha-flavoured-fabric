@@ -388,15 +388,19 @@
 			"minecraft:bundle_contents": [
 				{
 					"id": "minecraft:red_mushroom",
-					"count": 21
+					"count": 16
 				},
 				{
 					"id": "minecraft:brown_mushroom",
-					"count": 21
+					"count": 16
 				},
 				{
 					"id": "minecraft:glow_lichen",
-					"count": 21
+					"count": 16
+				},
+				{
+					"id": "minecraft:shelf_mushroom",
+					"count": 16
 				}
 			]
 		}
