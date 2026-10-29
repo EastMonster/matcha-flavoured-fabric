@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.DustColorTransitionOptions;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
@@ -11,15 +12,16 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import org.slf4j.Logger;
@@ -42,14 +44,10 @@ final class TimedMechanics {
 	private record WitherTask(int triggerTick, ResourceKey<Level> level, UUID wither) {
 	}
 
-	private record StarCleanupTask(int triggerTick, ResourceKey<Level> level, Vec3 position) {
-	}
-
 	private static final List<WeatherTask> PENDING_WEATHER = new ArrayList<>();
 	private static final String BUSTER_TAG = "matcha:bedrock_buster";
 	private static final Set<PrimedTnt> BEDROCK_BUSTERS = Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final List<WitherTask> PENDING_WITHERS = new ArrayList<>();
-	private static final List<StarCleanupTask> PENDING_STAR_CLEANUP = new ArrayList<>();
 
 	private TimedMechanics() {
 	}
@@ -65,7 +63,6 @@ final class TimedMechanics {
 			PENDING_WEATHER.clear();
 			BEDROCK_BUSTERS.clear();
 			PENDING_WITHERS.clear();
-			PENDING_STAR_CLEANUP.clear();
 		});
 	}
 
@@ -79,7 +76,6 @@ final class TimedMechanics {
 	static void tick(MinecraftServer server, int tick) {
 		processWeatherTasks(server, tick);
 		processWitherTasks(server, tick);
-		processStarCleanup(server, tick);
 	}
 
 	static void scheduleWeather(ServerPlayer player, boolean rain, Identifier advancement) {
@@ -96,7 +92,8 @@ final class TimedMechanics {
 
 	static void scheduleWither(ServerPlayer player, int tick) {
 		ServerLevel level = player.level();
-		level.getEntitiesOfClass(WitherBoss.class, player.getBoundingBox().inflate(64.0), Entity::isAlive)
+		level.getEntitiesOfClass(WitherBoss.class, player.getBoundingBox().inflate(64.0),
+				wither -> wither.isAlive() && wither.getInvulnerableTicks() > 0)
 				.stream().min(Comparator.comparingDouble(wither -> wither.distanceToSqr(player)))
 				.ifPresent(wither -> {
 					BlockPos pos = wither.blockPosition();
@@ -106,9 +103,13 @@ final class TimedMechanics {
 							&& pos.getY() == level.getChunkSource().getGenerator().getBaseHeight(
 									pos.getX(), pos.getZ(), Heightmap.Types.WORLD_SURFACE_WG,
 									level, level.getChunkSource().randomState());
-					if (!onOverworldSurface) {
-						player.sendSystemMessage(Component.translatable("error.matcha.wither_spawn_invalid")
-								.withStyle(ChatFormatting.RED));
+					if (!onOverworldSurface && PENDING_WITHERS.stream().noneMatch(task -> task.wither().equals(wither.getUUID()))) {
+						for (ServerPlayer nearby : level.players()) {
+							if (nearby.distanceToSqr(wither) <= 100.0 * 100.0) {
+								nearby.sendSystemMessage(Component.translatable("error.matcha.wither_spawn_invalid")
+										.withStyle(ChatFormatting.RED));
+							}
+						}
 						PENDING_WITHERS.add(new WitherTask(tick + 23, level.dimension(), wither.getUUID()));
 					}
 				});
@@ -122,27 +123,13 @@ final class TimedMechanics {
 			ServerLevel level = server.getLevel(task.level());
 			if (level != null && level.getEntity(task.wither()) instanceof WitherBoss wither && wither.isAlive()) {
 				Vec3 position = wither.position();
-				wither.kill(level);
-				PENDING_STAR_CLEANUP.add(new StarCleanupTask(tick + 1, task.level(), position));
-			}
-			return true;
-		});
-	}
-
-	private static void processStarCleanup(MinecraftServer server, int tick) {
-		PENDING_STAR_CLEANUP.removeIf(task -> {
-			if (task.triggerTick() > tick) {
-				return false;
-			}
-			ServerLevel level = server.getLevel(task.level());
-			if (level != null) {
-				Vec3 pos = task.position();
-				AABB area = new AABB(pos.x - 8, pos.y - 8, pos.z - 8,
-						pos.x + 8, pos.y + 8, pos.z + 8);
-				for (ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, area,
-						entity -> entity.getItem().is(Items.NETHER_STAR))) {
-					item.discard();
-				}
+				wither.discard();
+				level.sendParticles(new DustColorTransitionOptions(0xFF0000, 0x000000, 2.0F),
+						position.x, position.y, position.z, 50, 1.0, 1.0, 1.0, 1.0);
+				level.playSound(null, position.x, position.y, position.z, SoundEvents.WITHER_HURT,
+						SoundSource.HOSTILE, 2.0F, 1.0F);
+				level.addFreshEntity(new ItemEntity(level, position.x, position.y, position.z,
+						new ItemStack(Items.WITHER_SKELETON_SKULL, 3)));
 			}
 			return true;
 		});
