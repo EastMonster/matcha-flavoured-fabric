@@ -15,7 +15,7 @@
 					"type": "minecraft:loot_table",
 					"value": "minecraft:gameplay/fishing/treasure",
 					"weight": 5,
-					"quality": 2,
+					"quality": 1,
 					"conditions": [
 						{
 							"entity": "this",
@@ -32,7 +32,7 @@
 					"type": "minecraft:loot_table",
 					"value": "minecraft:gameplay/fishing/biomes",
 					"weight": 85,
-					"quality": -1
+					"quality": 1
 				}
 			]
 		}
