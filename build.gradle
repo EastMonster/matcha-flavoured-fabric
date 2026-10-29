@@ -58,6 +58,13 @@ processResources {
 	filesMatching("fabric.mod.json") {
 		expand "version": version
 	}
+
+	// Built-in packs override Sodium's bundled vanilla models; keep one source for our models.
+	from("src/main/resources/assets/minecraft/models/block") {
+		include "flower_pot.json", "flower_pot_cross.json", "flower_pot_cross_emissive.json", "tinted_flower_pot_cross.json"
+		include "potted_bamboo.json", "template_potted_azalea_bush.json", "bell_floor.json", "potted_mangrove_propagule.json"
+		into "resourcepacks/sodium_compat/assets/minecraft/models/block"
+	}
 }
 
 tasks.withType(JavaCompile).configureEach {
