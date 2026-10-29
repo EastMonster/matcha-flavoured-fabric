@@ -12,6 +12,7 @@
 		"MobSpawnMixin",
 		"EntityTypeSpawnMixin",
 		"PlayerCanEatMixin",
+		"CakeBlockMixin",
 		"BlockSoundMixin",
 		"BlockHardnessMixin",
 		"BlockToolMixin",
