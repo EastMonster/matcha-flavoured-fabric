@@ -85,6 +85,14 @@
 			{
 				"namespace": "farmersdelight",
 				"path": "advancement/recipes/cooking/rabbit_stew\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "recipe/organic_compost_from_rotten_flesh\\.json"
+			},
+			{
+				"namespace": "farmersdelight",
+				"path": "advancement/recipes/building_blocks/organic_compost_from_rotten_flesh\\.json"
 			}
 		]
 	}
