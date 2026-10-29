@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/misc/amethyst_earrings"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/misc/diamond_earrings"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:equipment/misc/lapis_earrings"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/toolsmith_gift"
+}

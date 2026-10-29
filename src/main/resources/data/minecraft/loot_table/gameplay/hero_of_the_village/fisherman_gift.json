@@ -1,0 +1,68 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cod",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 4
+						}
+					],
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:salmon",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 4
+						}
+					],
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:tropical_fish",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 4
+						}
+					],
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cod_bucket",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:salmon_bucket",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:tropical_fish_bucket",
+					"weight": 5
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:fishing_rod",
+					"functions": [
+						{
+							"function": "minecraft:enchant_randomly"
+						}
+					]
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/fisherman_gift"
+}

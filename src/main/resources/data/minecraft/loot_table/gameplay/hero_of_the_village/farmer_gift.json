@@ -1,0 +1,143 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:bone_meal",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 16
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:melon_seeds",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:pumpkin_seeds",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/minecraft/sweet_berries",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/minecraft/glow_berries",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:red_mushroom",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:brown_mushroom",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:glow_lichen",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:wheat_seeds",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "matcha:tomato_seeds",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/minecraft/carrot",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 2
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potato",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 2
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "matcha:fertilised_blue_egg"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "matcha:fertilised_brown_egg"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "matcha:fertilised_egg"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/farmer_gift"
+}

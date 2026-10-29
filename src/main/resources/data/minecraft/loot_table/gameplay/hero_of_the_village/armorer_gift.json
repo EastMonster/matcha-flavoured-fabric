@@ -1,0 +1,151 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:redstone_torch",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:redstone_block",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:repeater",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:comparator",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:target",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:crafter",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:piston",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:hopper",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:observer",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:dispenser",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:dropper",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:note_block",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:redstone_lamp",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:waxed_copper_bulb",
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": 8
+						}
+					]
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/armorer_gift"
+}

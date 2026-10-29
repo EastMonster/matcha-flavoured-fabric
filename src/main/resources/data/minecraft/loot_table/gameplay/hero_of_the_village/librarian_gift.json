@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:writable_book"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/librarian_gift"
+}

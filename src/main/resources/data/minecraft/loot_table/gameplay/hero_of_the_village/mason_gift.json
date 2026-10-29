@@ -1,0 +1,79 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/andesite"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/blackstone"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/calcite"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/cinnabar"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/deepslate"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/diorite"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/flowstone"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/glass"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/granite"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/malachite"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/smooth_basalt"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/smooth_quartz"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/smooth_red_sandstone"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/smooth_sandstone"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/stone"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/terracotta"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/bulk/tuff"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/mason_gift"
+}
