@@ -1,0 +1,139 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:white_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:orange_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:magenta_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:light_blue_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:yellow_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:lime_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:pink_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:gray_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:light_gray_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cyan_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:purple_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:blue_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:brown_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:green_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:red_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:black_wool",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": 8
+					}
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/shepherd_gift"
+}

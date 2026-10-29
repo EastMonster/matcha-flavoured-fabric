@@ -1,0 +1,107 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/bokguk"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/bruschetta"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/cheese_pizza"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/chorus_mochi"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/crimson_stroganoff"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/fish_and_chips"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/gimmari"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/gnocchi"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/kontomire_stew"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/latke"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/lumpia"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/chorus_mochi"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/meat_pizza"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/mushroom_pizza"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/nopales"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/pad_thai"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/paneer_makhani"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/ramen"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/red_mushroom_stroganoff"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/stroganoff"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/warped_pizza"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/matcha/warped_stroganoff"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/minecraft/baked_potato"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:food/minecraft/cooked_mutton"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/butcher_gift"
+}

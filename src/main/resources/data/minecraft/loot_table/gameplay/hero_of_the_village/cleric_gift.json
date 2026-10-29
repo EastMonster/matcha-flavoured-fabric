@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potion",
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:water"
+					}
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:gameplay/hero_of_the_village/cleric_gift"
+}

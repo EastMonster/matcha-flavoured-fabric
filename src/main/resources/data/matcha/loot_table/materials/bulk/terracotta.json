@@ -1,48 +1,46 @@
 {
+	"type": "minecraft:chest",
 	"pools": [
 		{
+			"rolls": 1,
 			"entries": [
 				{
-					"functions": [
-						{
-							"components": {
-								"!minecraft:food": {},
-								"minecraft:consumable": {
-									"!on_consume_effects": {},
-									"consume_seconds": 0,
-									"has_consume_particles": false,
-									"sound": "minecraft:block.stone.fall"
-								},
-								"minecraft:item_model": "minecraft:terracotta",
-								"minecraft:item_name": {
-									"translate": "item.kleispack.trade.bulk_terracotta"
-								},
-								"minecraft:lore": [
-									{
-										"color": "gray",
-										"italic": false,
-										"translate": "item.kleispack.trade.bulk_terracotta.desc"
-									},
-									{
-										"color": "dark_gray",
-										"italic": false,
-										"text": "Use to unpack"
-									}
-								],
-								"use_remainder": {
-									"count": 64,
-									"id": "minecraft:terracotta"
-								}
-							},
-							"function": "minecraft:set_components"
-						}
-					],
+					"type": "minecraft:item",
 					"name": "minecraft:poisonous_potato",
-					"type": "minecraft:item"
+					"modifier": {
+						"type": "minecraft:set_components",
+						"components": {
+							"minecraft:item_name": {
+								"translate": "trade.matcha.bulk_terracotta"
+							},
+							"minecraft:item_model": "matcha:bulk_terracotta",
+							"minecraft:lore": [
+								{
+									"translate": "trade.matcha.bulk_terracotta.desc",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"translate": "trade.matcha.bulk.desc",
+									"color": "dark_gray",
+									"italic": false
+								}
+							],
+							"!minecraft:food": {},
+							"minecraft:consumable": {
+								"consume_seconds": 0,
+								"sound": "minecraft:block.stone.fall",
+								"has_consume_particles": false,
+								"!on_consume_effects": {}
+							},
+							"use_remainder": {
+								"id": "minecraft:terracotta",
+								"count": 64
+							}
+						}
+					}
 				}
-			],
-			"rolls": 1
+			]
 		}
-	],
-	"type": "minecraft:chest"
+	]
 }
