@@ -246,7 +246,7 @@ public final class BeaconKindlingMechanics {
 			level.sendParticles(ParticleTypes.LARGE_SMOKE,
 					task.pos().getX() + 0.5, task.pos().getY() + 0.5, task.pos().getZ() + 0.5,
 					10, 0.1, 0.1, 0.1, 0.1);
-			if (early) {
+			if (early && task.trader() == null) {
 				announce(level, task.pos().getX(), task.pos().getY(), task.pos().getZ(), "kill_early");
 			}
 		}
