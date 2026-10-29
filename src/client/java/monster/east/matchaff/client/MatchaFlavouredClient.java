@@ -106,6 +106,14 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			);
 		}
 		MatchaClientConfig.load();
+		if (FabricLoader.getInstance().isModLoaded("sodium")) {
+			ResourceLoader.registerBuiltinPack(
+					Identifier.parse("matcha:sodium_compat"),
+					FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
+					Component.literal("Matcha Flavoured: Sodium compatibility"),
+					PackActivationType.ALWAYS_ENABLED
+			);
+		}
 		ClientLifecycleEvents.CLIENT_STARTED.register(MatchaFlavouredClient::refreshVanillaPreview);
 		InvalidateRenderStateCallback.EVENT.register(() -> refreshVanillaPreview(Minecraft.getInstance()));
 		ResourceLoader.registerBuiltinPack(
