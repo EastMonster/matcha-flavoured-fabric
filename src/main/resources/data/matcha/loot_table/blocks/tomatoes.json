@@ -9,6 +9,41 @@
 					"type": "minecraft:alternatives",
 					"children": [
 						{
+							"type": "minecraft:group",
+							"children": [
+								{
+									"type": "minecraft:loot_table",
+									"value": "matcha:food/matcha/tomato",
+									"condition": {
+										"type": "minecraft:match_block",
+										"blocks": "matcha:tomatoes",
+										"state": {
+											"age": "3"
+										}
+									},
+									"modifier": {
+										"type": "minecraft:set_count",
+										"count": 2
+									}
+								},
+								{
+									"type": "minecraft:item",
+									"name": "matcha:tomato_seeds",
+									"modifier": {
+										"type": "minecraft:set_count",
+										"count": 2
+									}
+								}
+							],
+							"condition": {
+								"type": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"minecraft:entity_type": "minecraft:villager"
+								}
+							}
+						},
+						{
 							"type": "minecraft:loot_table",
 							"value": "matcha:food/matcha/tomato",
 							"condition": {
