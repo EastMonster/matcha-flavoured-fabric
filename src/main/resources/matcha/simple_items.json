@@ -110,7 +110,7 @@
 			"minecraft:enchantments": {
 				"matcha:max_magic_protection": 1,
 				"matcha:cleanse_armor_maleffect": 1,
-				"matcha:shakudo_armour": 1
+				"matcha:shakudo_elytra": 1
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
@@ -216,36 +216,6 @@
 		}
 	},
 	{
-		"id": "exotic_seed_bundle",
-		"type": "bundle",
-		"tab": "tools",
-		"source": "data/matcha/villager_trade/farmer/1/exotic_seed_bundle.json",
-		"carrier": "minecraft:bundle",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha.exotic_seed_bundle"
-			},
-			"minecraft:bundle_contents": [
-				{
-					"id": "minecraft:melon_seeds",
-					"count": 16
-				},
-				{
-					"id": "pumpkin_seeds",
-					"count": 16
-				},
-				{
-					"id": "minecraft:sweet_berries",
-					"count": 8
-				},
-				{
-					"id": "minecraft:glow_berries",
-					"count": 8
-				}
-			]
-		}
-	},
-	{
 		"id": "rose_classic",
 		"type": "item",
 		"tab": "ingredients",
@@ -282,68 +252,6 @@
 		}
 	},
 	{
-		"id": "floral_bundle",
-		"type": "bundle",
-		"tab": "tools",
-		"source": "data/matcha/villager_trade/farmer/1/floral_bundle.json",
-		"carrier": "minecraft:bundle",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha.floral_bundle"
-			},
-			"minecraft:bundle_contents": [
-				{
-					"id": "minecraft:golden_dandelion",
-					"count": 1
-				},
-				{
-					"id": "dandelion",
-					"count": 3
-				},
-				{
-					"id": "minecraft:sunflower",
-					"count": 4
-				},
-				{
-					"id": "minecraft:poppy",
-					"count": 4
-				},
-				{
-					"id": "minecraft:rose_bush",
-					"count": 4
-				},
-				{
-					"id": "minecraft:cornflower",
-					"count": 8
-				},
-				{
-					"id": "minecraft:allium",
-					"count": 8
-				},
-				{
-					"id": "minecraft:lilac",
-					"count": 4
-				},
-				{
-					"id": "minecraft:peony",
-					"count": 4
-				},
-				{
-					"id": "minecraft:azure_bluet",
-					"count": 8
-				},
-				{
-					"id": "minecraft:oxeye_daisy",
-					"count": 8
-				},
-				{
-					"id": "minecraft:lily_of_the_valley",
-					"count": 8
-				}
-			]
-		}
-	},
-	{
 		"id": "gnocchi_recipe",
 		"type": "item",
 		"tab": "ingredients",
@@ -371,32 +279,6 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.golden_compass"
 			}
-		}
-	},
-	{
-		"id": "mushy_bundle",
-		"type": "bundle",
-		"tab": "tools",
-		"source": "data/matcha/villager_trade/farmer/1/mushy_bundle.json",
-		"carrier": "minecraft:bundle",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha.mushy_bundle"
-			},
-			"minecraft:bundle_contents": [
-				{
-					"id": "minecraft:red_mushroom",
-					"count": 21
-				},
-				{
-					"id": "minecraft:brown_mushroom",
-					"count": 21
-				},
-				{
-					"id": "minecraft:glow_lichen",
-					"count": 21
-				}
-			]
 		}
 	},
 	{
@@ -493,36 +375,6 @@
 				"translate": "item.matcha.pickled_red_mushrooms",
 				"italic": false
 			}
-		}
-	},
-	{
-		"id": "seed_bundle",
-		"type": "bundle",
-		"tab": "tools",
-		"source": "data/matcha/villager_trade/farmer/1/seed_bundle.json",
-		"carrier": "minecraft:bundle",
-		"components": {
-			"minecraft:item_name": {
-				"translate": "item.matcha.seed_bundle"
-			},
-			"minecraft:bundle_contents": [
-				{
-					"id": "minecraft:wheat_seeds",
-					"count": 16
-				},
-				{
-					"id": "matcha:tomato_seeds",
-					"count": 16
-				},
-				{
-					"id": "minecraft:carrot",
-					"count": 4
-				},
-				{
-					"id": "minecraft:potato",
-					"count": 4
-				}
-			]
 		}
 	},
 	{
@@ -782,43 +634,6 @@
 					"minecraft:consumable",
 					"minecraft:potion_contents"
 				]
-			}
-		}
-	},
-	{
-		"id": "lava_kit",
-		"type": "bundle",
-		"tab": "tools",
-		"source": "data/matcha/villager_trade/armorer/5/lava_kit.json",
-		"carrier": "minecraft:red_bundle",
-		"components": {
-			"minecraft:bundle_contents": [
-				{
-					"id": "minecraft:dripstone_block",
-					"count": 4
-				},
-				{
-					"id": "minecraft:pointed_dripstone",
-					"count": 4
-				},
-				{
-					"id": "minecraft:lava_bucket",
-					"components": {
-						"minecraft:max_stack_size": 64
-					},
-					"count": 4
-				},
-				{
-					"id": "minecraft:cauldron",
-					"count": 4
-				},
-				{
-					"id": "minecraft:glass",
-					"count": 8
-				}
-			],
-			"minecraft:item_name": {
-				"translate": "item.matcha.lava_kit"
 			}
 		}
 	},

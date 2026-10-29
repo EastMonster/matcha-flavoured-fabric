@@ -262,9 +262,8 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		appendMiningSpeedLore(stack, generated);
 		appendBlockingLore(stack, generated);
 		ItemEnchantments enchantments = stack.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
-		if (hasEnchantment(enchantments, "shakudo_armour")) {
-			boolean elytra = Identifier.fromNamespaceAndPath("matcha", "shakudo_elytra")
-					.equals(BuiltInRegistries.ITEM.getKey(stack.getItem()));
+		boolean elytra = hasEnchantment(enchantments, "shakudo_elytra");
+		if (elytra || hasEnchantment(enchantments, "shakudo_armour")) {
 			generated.add(loreLine("enchantment.matcha.shakudo_wither_resistance",
 					elytra ? "Max" : "1", ChatFormatting.GRAY));
 			if (FabricLoader.getInstance().isModLoaded("enchdesc")) {
@@ -386,16 +385,12 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			lines.add(loreLine("enchantment.matcha.divinity.set_bonus", ChatFormatting.AQUA));
 		}
 
-		if (hasEnchantment(enchantments, "shakudo_armour")) {
-			boolean elytra = Identifier.fromNamespaceAndPath("matcha", "shakudo_elytra")
-					.equals(BuiltInRegistries.ITEM.getKey(stack.getItem()));
-			if (elytra) {
-				lines.add(loreLine("tooltip.matcha.elytra_bonus", ChatFormatting.DARK_GRAY));
-				lines.add(loreLine("enchantment.matcha.shakudo_elytra_regen_bonus", TextColor.fromRgb(0xE85E8F)));
-			} else {
-				lines.add(loreLine("tooltip.matcha.per_equipment_bonus", ChatFormatting.DARK_GRAY));
-				lines.add(loreLine("enchantment.matcha.shakudo_regen_bonus", TextColor.fromRgb(0xE85E8F)));
-			}
+		if (hasEnchantment(enchantments, "shakudo_elytra")) {
+			lines.add(loreLine("tooltip.matcha.elytra_bonus", ChatFormatting.DARK_GRAY));
+			lines.add(loreLine("enchantment.matcha.shakudo_elytra_regen_bonus", TextColor.fromRgb(0xE85E8F)));
+		} else if (hasEnchantment(enchantments, "shakudo_armour")) {
+			lines.add(loreLine("tooltip.matcha.per_equipment_bonus", ChatFormatting.DARK_GRAY));
+			lines.add(loreLine("enchantment.matcha.shakudo_regen_bonus", TextColor.fromRgb(0xE85E8F)));
 		}
 	}
 

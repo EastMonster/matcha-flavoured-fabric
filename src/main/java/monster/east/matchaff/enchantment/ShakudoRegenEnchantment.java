@@ -4,7 +4,6 @@ import com.mojang.serialization.Codec;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -29,9 +28,8 @@ final class ShakudoRegenEnchantment {
 	static int armourPower(ServerPlayer player, Registry<Enchantment> enchantments) {
 		int score = EnchantmentUtil.countArmor(player, enchantments, SHAKUDO_REGEN);
 		ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
-		if (EnchantmentUtil.maxLevel(chest, enchantments, SHAKUDO_REGEN) > 0
-				&& SHAKUDO_ELYTRA.equals(BuiltInRegistries.ITEM.getKey(chest.getItem()))) {
-			score += 4;
+		if (EnchantmentUtil.maxLevel(chest, enchantments, SHAKUDO_ELYTRA) > 0) {
+			score += 5;
 		}
 		return score;
 	}

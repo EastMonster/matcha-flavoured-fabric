@@ -1,7 +1,27 @@
 {
 	"gives": {
-		"id": "matcha:mushy_bundle",
-		"count": 1
+		"id": "minecraft:bundle",
+		"count": 1,
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha.mushy_bundle"
+			},
+			"minecraft:bundle_contents": [
+				{
+					"id": "minecraft:red_mushroom",
+					"count": 21
+				},
+				{
+					"id": "minecraft:brown_mushroom",
+					"count": 21
+				},
+				{
+					"id": "minecraft:glow_lichen",
+					"count": 21
+				}
+			],
+			"minecraft:item_model": "matcha:mushy_bundle"
+		}
 	},
 	"max_uses": 999,
 	"wants": {

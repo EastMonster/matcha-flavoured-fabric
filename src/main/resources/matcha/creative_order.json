@@ -52,13 +52,6 @@
 			"crook"
 		],
 		"shears": ["copper_shears", "shepherds_shears", "steel_shears"],
-		"bundles": [
-			"seed_bundle",
-			"exotic_seed_bundle",
-			"floral_bundle",
-			"mushy_bundle",
-			"lava_kit"
-		],
 		"compasses": ["copper_compass", "golden_compass", "titanium_compass"],
 		"clay_statues": ["cheerful_clay_statue", "mournful_clay_statue"],
 		"music_discs": [

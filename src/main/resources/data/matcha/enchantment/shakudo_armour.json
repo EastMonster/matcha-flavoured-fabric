@@ -4,8 +4,7 @@
 		"matcha:shakudo_helmet",
 		"matcha:shakudo_chestplate",
 		"matcha:shakudo_leggings",
-		"matcha:shakudo_boots",
-		"matcha:shakudo_elytra"
+		"matcha:shakudo_boots"
 	],
 	"anvil_cost": 0,
 	"description": {
@@ -20,8 +19,7 @@
 		"matcha:shakudo_helmet",
 		"matcha:shakudo_chestplate",
 		"matcha:shakudo_leggings",
-		"matcha:shakudo_boots",
-		"matcha:shakudo_elytra"
+		"matcha:shakudo_boots"
 	],
 	"weight": 1
 }
