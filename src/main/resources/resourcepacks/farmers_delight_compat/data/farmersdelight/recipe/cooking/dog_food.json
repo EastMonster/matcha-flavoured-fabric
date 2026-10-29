@@ -1,0 +1,13 @@
+{
+	"type": "farmersdelight:cooking",
+	"experience": 1.0,
+	"ingredients": [
+		"#c:foods/safe_raw_fish",
+		"minecraft:bone_meal",
+		"#c:foods/raw_meat",
+		"#c:crops/rice"
+	],
+	"result": {
+		"id": "farmersdelight:dog_food"
+	}
+}
