@@ -27,6 +27,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.structure.Structure;
 
 import java.util.List;
@@ -69,13 +70,16 @@ public final class MobMechanics {
 
 	private static void initializeMundaneHostile(Entity entity, ServerLevel level) {
 		if (level.dimension() == Level.OVERWORLD && entity instanceof Husk husk
-				&& husk.getVehicle() instanceof CamelHusk) {
+				&& husk.getVehicle() instanceof CamelHusk camel) {
 			var replacement = EntityTypes.HUSK.create(level, EntitySpawnReason.EVENT);
 			if (replacement != null) {
 				replacement.setPos(husk.getX(), husk.getY(), husk.getZ());
 				level.addFreshEntity(replacement);
 			}
 			husk.discard();
+			if (!level.getBiome(camel.blockPosition()).is(Biomes.DESERT)) {
+				camel.discard();
+			}
 			return;
 		}
 		if (!(entity instanceof Mob mob)
