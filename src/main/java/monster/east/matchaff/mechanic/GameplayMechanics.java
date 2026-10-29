@@ -40,17 +40,14 @@ import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.scores.ScoreHolder;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IdentityHashMap;
-import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -71,7 +68,6 @@ public final class GameplayMechanics {
 			id("water_bottle_inventory_version")
 	);
 
-	private static final Map<UUID, Integer> LAST_CAKE_SLICES = new HashMap<>();
 	private static final Set<Villager> VILLAGERS =
 			Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final Set<UUID> AMNESTIC_VILLAGERS = new HashSet<>();
@@ -98,7 +94,6 @@ public final class GameplayMechanics {
 		WardingStoneMechanics.init();
 		TimedMechanics.init();
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
-			LAST_CAKE_SLICES.clear();
 			VILLAGERS.clear();
 			AMNESTIC_VILLAGERS.clear();
 		});
@@ -135,7 +130,6 @@ public final class GameplayMechanics {
 				checkSummonedWither(player, tick);
 				checkWitherSkeletons(player);
 				checkNetherWater(player);
-				checkCake(player);
 				stackWaterBottles(player);
 			}
 			refreshAmnesticVillagers();
@@ -392,16 +386,6 @@ public final class GameplayMechanics {
 		player.connection.send(new ClientboundSoundPacket(Holder.direct(SoundEvents.FIRE_EXTINGUISH),
 				SoundSource.BLOCKS, player.getX(), player.getY(), player.getZ(), 0.5F, 2.0F,
 				player.getRandom().nextLong()));
-	}
-
-	private static void checkCake(ServerPlayer player) {
-		int current = player.getStats().getValue(Stats.CUSTOM, Stats.EAT_CAKE_SLICE);
-		Integer previous = LAST_CAKE_SLICES.put(player.getUUID(), current);
-		if (previous == null || current <= previous) {
-			return;
-		}
-		player.addEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 1, 0, false, false));
-		player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3600, 1, false, false));
 	}
 
 	private static void stackWaterBottles(ServerPlayer player) {
