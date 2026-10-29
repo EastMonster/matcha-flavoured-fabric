@@ -24,7 +24,8 @@ public final class EnchantmentDescriptionsCompat {
 			for (int i = 0; i < siblings.size(); i++) {
 				Component sibling = siblings.get(i);
 				if (sibling.getContents() instanceof TranslatableContents contents
-						&& contents.getKey().equals("enchantment.matcha.shakudo_armour.desc")) {
+						&& (contents.getKey().equals("enchantment.matcha.shakudo_armour.desc")
+						|| contents.getKey().equals("enchantment.matcha.shakudo_elytra.desc"))) {
 					Component description = line.copy();
 					description.getSiblings().set(i, Component.translatable(WITHER_RESISTANCE_DESCRIPTION)
 							.withStyle(sibling.getStyle()));

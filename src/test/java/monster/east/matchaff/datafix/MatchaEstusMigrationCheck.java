@@ -35,7 +35,7 @@ public final class MatchaEstusMigrationCheck {
 		inventory.add(stack("minecraft:resin_brick", 2));
 		data.put("Inventory", inventory);
 		CompoundTag upgraded = MatchaItemDataFixer.updateIfNeeded(data);
-		assert upgraded.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 8;
+		assert upgraded.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 9;
 		ListTag items = upgraded.getList("Inventory").orElseThrow();
 		CompoundTag stabilized = items.getCompound(0).orElseThrow();
 		assert stabilized.getStringOr("id", "").equals("matcha:stabilized_estus");
@@ -86,7 +86,7 @@ public final class MatchaEstusMigrationCheck {
 		chunk.put("block_entities", blockEntities);
 
 		CompoundTag fixed = MatchaItemDataFixer.updateIfNeeded(chunk);
-		assert fixed.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 8;
+		assert fixed.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 9;
 		assert fixed.getIntOr("DataVersion", -1) == vanillaVersion;
 		ListTag fixedItems = fixed.getList("block_entities").orElseThrow().getCompound(0).orElseThrow()
 				.getList("Items").orElseThrow();

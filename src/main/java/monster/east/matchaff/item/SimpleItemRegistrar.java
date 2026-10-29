@@ -13,7 +13,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.BrushItem;
-import net.minecraft.world.item.BundleItem;
 import net.minecraft.world.item.CompassItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -45,7 +44,7 @@ import java.util.Objects;
 /**
  * Registers the Matcha fish and simple item definition batches.
  *
- * <p>The datapack used vanilla items as carriers (salmon, bundle, tipped
+ * <p>The datapack used vanilla items as carriers (salmon, compass, tipped
  * arrow, ...), so each migrated item keeps its original carrier's behaviour by
  * registering the same vanilla {@link Item} subclass the carrier used.</p>
  */
@@ -85,9 +84,6 @@ public final class SimpleItemRegistrar {
 		if (definition.carrier != null) {
 			CarrierDefaults.apply(properties, definition.carrier);
 		}
-		if (definition.type.equals("bundle")) {
-			properties.stacksTo(1);
-		}
 		for (Map.Entry<String, JsonElement> entry : definition.components.entrySet()) {
 			ItemComponents.apply(properties, entry.getKey(), entry.getValue());
 		}
@@ -118,7 +114,6 @@ public final class SimpleItemRegistrar {
 					? new MatchaTippedArrowItem(properties)
 					: new ArrowItem(properties);
 			case "bow" -> new BowItem(properties);
-			case "bundle" -> new BundleItem(properties);
 			case "brush" -> new BrushItem(properties);
 			case "compass" -> new CompassItem(properties);
 			case "shears" -> new ShearsItem(properties);

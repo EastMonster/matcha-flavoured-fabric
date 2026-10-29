@@ -1,0 +1,21 @@
+{
+	"exclusive_set": "#matcha:exclusive_set/intrinsic_armor",
+	"primary_items": ["matcha:shakudo_elytra"],
+	"anvil_cost": 0,
+	"description": {
+		"translate": "enchantment.matcha.shakudo_elytra",
+		"color": "#e85e8f"
+	},
+	"max_cost": {
+		"base": 1,
+		"per_level_above_first": 0
+	},
+	"max_level": 1,
+	"min_cost": {
+		"base": 1,
+		"per_level_above_first": 0
+	},
+	"slots": ["armor"],
+	"supported_items": ["matcha:shakudo_elytra"],
+	"weight": 1
+}

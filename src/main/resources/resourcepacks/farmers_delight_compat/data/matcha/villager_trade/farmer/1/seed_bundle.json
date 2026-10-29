@@ -1,7 +1,31 @@
 {
 	"gives": {
-		"id": "matcha:seed_bundle",
-		"count": 1
+		"id": "minecraft:bundle",
+		"count": 1,
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha.seed_bundle"
+			},
+			"minecraft:bundle_contents": [
+				{
+					"id": "minecraft:wheat_seeds",
+					"count": 16
+				},
+				{
+					"id": "matcha:tomato_seeds",
+					"count": 16
+				},
+				{
+					"id": "minecraft:carrot",
+					"count": 4
+				},
+				{
+					"id": "minecraft:potato",
+					"count": 4
+				}
+			],
+			"minecraft:item_model": "matcha:seed_bundle"
+		}
 	},
 	"max_uses": 999,
 	"wants": {
@@ -9,17 +33,17 @@
 		"id": "minecraft:emerald"
 	},
 	"xp": 10,
-	"given_item_modifiers": [
+	"given_item_modifier": [
 		{
-			"function": "minecraft:set_contents",
+			"type": "minecraft:set_contents",
 			"component": "minecraft:bundle_contents",
 			"entries": [
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:potato",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": 4
 						}
 					]
@@ -27,9 +51,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:carrot",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": 4
 						}
 					]
@@ -51,9 +75,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "matcha:tomato_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -66,9 +90,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:wheat_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -88,9 +112,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:beetroot_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -103,9 +127,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:wheat_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -125,9 +149,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:beetroot_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -140,9 +164,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "matcha:tomato_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]

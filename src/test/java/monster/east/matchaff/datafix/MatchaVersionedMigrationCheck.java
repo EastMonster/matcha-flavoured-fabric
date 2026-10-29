@@ -30,7 +30,7 @@ public final class MatchaVersionedMigrationCheck {
 			assert fixedComponents.getStringOr("minecraft:jukebox_playable", "").equals("matcha:" + song);
 			assert fixedComponents.getCompound("minecraft:custom_data").orElseThrow().equals(custom);
 			assert itemId(migrated).equals("minecraft:resin_brick");
-			assert migrated.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 8;
+			assert migrated.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 9;
 			assert MatchaItemDataFixer.updateIfNeeded(migrated).equals(migrated);
 		}
 		CompoundTag unrelated = playerData(6);
@@ -180,7 +180,7 @@ public final class MatchaVersionedMigrationCheck {
 				assert actualComponents.getCompound("minecraft:custom_data").orElseThrow().equals(custom);
 				assert actualComponents.getList("minecraft:bundle_contents").orElseThrow()
 						.getCompound(0).orElseThrow().getStringOr("id", "").equals("minecraft:cookie");
-				assert fixed.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 8;
+				assert fixed.getIntOr(MatchaItemDataFixer.DATA_VERSION_KEY, 0) == 9;
 				CompoundTag expected = fixed.copy();
 				assert MatchaItemDataFixer.updateIfNeeded(fixed).equals(expected);
 			}
@@ -238,7 +238,7 @@ public final class MatchaVersionedMigrationCheck {
 			CompoundTag current = data.copy();
 			current.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 7);
 			CompoundTag currentExpected = current.copy();
-			currentExpected.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 8);
+			currentExpected.putInt(MatchaItemDataFixer.DATA_VERSION_KEY, 9);
 			CompoundTag fixed = MatchaItemDataFixer.updateIfNeeded(data);
 			CompoundTag actual = fixed.getList("Inventory").orElseThrow().getCompound(0).orElseThrow()
 					.getCompound("components").orElseThrow();

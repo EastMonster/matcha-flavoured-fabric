@@ -13,7 +13,6 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.alchemy.PotionContents;
-import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.WritableBookContent;
@@ -113,9 +112,6 @@ final class CarrierDefaults {
 			case "minecraft:shears" -> properties
 					.durability(238)
 					.component(DataComponents.TOOL, ShearsItem.createToolProperties());
-			case "minecraft:bundle", "minecraft:red_bundle" -> properties
-					.stacksTo(1)
-					.component(DataComponents.BUNDLE_CONTENTS, BundleContents.EMPTY);
 			case "minecraft:bow" -> properties.durability(384).enchantable(1);
 			case "minecraft:brush", "minecraft:flint_and_steel" -> properties.durability(64);
             case "minecraft:potion" -> properties

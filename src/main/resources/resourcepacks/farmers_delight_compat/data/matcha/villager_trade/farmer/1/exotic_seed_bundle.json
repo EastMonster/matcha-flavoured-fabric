@@ -4,20 +4,44 @@
 		"count": 1
 	},
 	"gives": {
-		"id": "matcha:exotic_seed_bundle",
-		"count": 1
+		"id": "minecraft:bundle",
+		"count": 1,
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha.exotic_seed_bundle"
+			},
+			"minecraft:bundle_contents": [
+				{
+					"id": "minecraft:melon_seeds",
+					"count": 16
+				},
+				{
+					"id": "pumpkin_seeds",
+					"count": 16
+				},
+				{
+					"id": "minecraft:sweet_berries",
+					"count": 8
+				},
+				{
+					"id": "minecraft:glow_berries",
+					"count": 8
+				}
+			],
+			"minecraft:item_model": "matcha:exotic_seed_bundle"
+		}
 	},
-	"given_item_modifiers": [
+	"given_item_modifier": [
 		{
-			"function": "minecraft:set_contents",
+			"type": "minecraft:set_contents",
 			"component": "minecraft:bundle_contents",
 			"entries": [
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:glow_berries",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": 8
 						}
 					]
@@ -25,9 +49,9 @@
 				{
 					"type": "minecraft:item",
 					"name": "minecraft:sweet_berries",
-					"functions": [
+					"modifier": [
 						{
-							"function": "minecraft:set_count",
+							"type": "minecraft:set_count",
 							"count": 8
 						}
 					]
@@ -49,9 +73,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:rice",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -64,9 +88,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:melon_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -86,9 +110,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:rice",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -101,9 +125,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:pumpkin_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -123,9 +147,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:rice",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -138,9 +162,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:tomato_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -160,9 +184,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:rice",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -175,9 +199,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:cabbage_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -197,9 +221,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:pumpkin_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -212,9 +236,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:melon_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -234,9 +258,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:tomato_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -249,9 +273,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:melon_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -271,9 +295,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:cabbage_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -286,9 +310,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:melon_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -308,9 +332,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:tomato_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -323,9 +347,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:pumpkin_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -345,9 +369,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:cabbage_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -360,9 +384,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "minecraft:pumpkin_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -382,9 +406,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:cabbage_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]
@@ -397,9 +421,9 @@
 														{
 															"type": "minecraft:item",
 															"name": "farmersdelight:tomato_seeds",
-															"functions": [
+															"modifier": [
 																{
-																	"function": "minecraft:set_count",
+																	"type": "minecraft:set_count",
 																	"count": 16
 																}
 															]

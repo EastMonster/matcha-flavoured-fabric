@@ -1,7 +1,31 @@
 {
 	"gives": {
-		"id": "matcha:seed_bundle",
-		"count": 1
+		"id": "minecraft:bundle",
+		"count": 1,
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.matcha.seed_bundle"
+			},
+			"minecraft:bundle_contents": [
+				{
+					"id": "minecraft:wheat_seeds",
+					"count": 16
+				},
+				{
+					"id": "matcha:tomato_seeds",
+					"count": 16
+				},
+				{
+					"id": "minecraft:carrot",
+					"count": 4
+				},
+				{
+					"id": "minecraft:potato",
+					"count": 4
+				}
+			],
+			"minecraft:item_model": "matcha:seed_bundle"
+		}
 	},
 	"max_uses": 999,
 	"wants": {
@@ -10,4 +34,3 @@
 	},
 	"xp": 10
 }
-
