@@ -3,12 +3,10 @@ package monster.east.matchaff.mechanic;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.animal.pig.Pig;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import snownee.jade.api.BlockAccessor;
-import snownee.jade.api.EntityAccessor;
 import snownee.jade.api.IWailaCommonRegistration;
 import snownee.jade.api.IWailaPlugin;
 import snownee.jade.api.IServerDataProvider;
@@ -19,27 +17,6 @@ public final class MatchaJadePlugin implements IWailaPlugin {
 	@Override
 	public void register(IWailaCommonRegistration registration) {
 		registration.registerBlockDataProvider(BeaconKindlingProvider.INSTANCE, CampfireBlock.class);
-		registration.registerEntityDataProvider(PigForagingProvider.INSTANCE, Pig.class);
-	}
-
-	static final class PigForagingProvider implements IServerDataProvider<EntityAccessor> {
-		static final PigForagingProvider INSTANCE = new PigForagingProvider();
-		static final Identifier UID = Identifier.fromNamespaceAndPath("matcha", "pig_foraging");
-		static final String DATA_KEY = UID.toString();
-		static final String ANIMATION_KEY = DATA_KEY + ".animation";
-
-		@Override
-		public void appendServerData(CompoundTag data, EntityAccessor accessor) {
-			if (accessor.getEntity() instanceof Pig pig && pig.isAlive()) {
-				data.putInt(DATA_KEY, PigMechanics.foragingCooldown(pig));
-				data.putInt(ANIMATION_KEY, PigMechanics.animationTicks(pig));
-			}
-		}
-
-		@Override
-		public Identifier getUid() {
-			return UID;
-		}
 	}
 
 	static final class BeaconKindlingProvider implements IServerDataProvider<BlockAccessor> {

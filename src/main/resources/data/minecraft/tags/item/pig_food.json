@@ -1,8 +1,0 @@
-{
-	"replace": false,
-	"values": [
-		"#matcha:pig_food_not_breedable",
-		"minecraft:golden_carrot",
-		"minecraft:golden_apple"
-	]
-}

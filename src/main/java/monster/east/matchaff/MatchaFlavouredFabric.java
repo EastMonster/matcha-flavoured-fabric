@@ -98,7 +98,6 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		}
 		EffectsMechanics.init();
 		GameplayMechanics.init();
-		PigMechanics.init();
 		FishingStatsMechanics.init();
 		AbbeyMechanics.init();
 		WorldMechanics.init();
@@ -164,13 +163,13 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 					"baked_golden_apple", "braised_crimson_fungus", "braised_warped_fungus",
 					"canned_golden_apples", "chorus_mochi", "crimson_stroganoff", "gnocchi",
 					"golden_apple_empanada", "golden_carrot_cupcake", "golden_pickled_carrots",
-					"golden_steamed_carrots", "pickled_warped_fungus", "sweet_berry_toast", "warped_stroganoff", "truffle"
+					"golden_steamed_carrots", "pickled_warped_fungus", "sweet_berry_toast", "warped_stroganoff"
 			)) {
 				int color = switch (name) {
 					case "amber" -> 0xFFAA00;
 					case "ruby" -> 0xFF5555;
 					case "topaz", "baked_golden_apple", "canned_golden_apples", "golden_apple_empanada",
-							"golden_carrot_cupcake", "golden_pickled_carrots", "golden_steamed_carrots", "truffle" -> 0xFFFF55;
+							"golden_carrot_cupcake", "golden_pickled_carrots", "golden_steamed_carrots" -> 0xFFFF55;
 					case "braised_crimson_fungus", "crimson_stroganoff" -> 0xC54457;
 					case "braised_warped_fungus", "pickled_warped_fungus", "warped_stroganoff" -> 0x3CC6C8;
 					case "chorus_mochi" -> 0xAE6CBC;

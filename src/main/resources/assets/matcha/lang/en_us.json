@@ -1052,11 +1052,5 @@
 	"matcha.config.vanilla_preview.pack": "Matcha Flavoured: Vanilla Appearance Preview",
 	"matcha.config.vanilla_preview.tooltip": "Restore some modified textures to their vanilla versions.",
 	"trinkets.slot.head.earring": "Earring",
-	"tooltip.matcha.wither_resistance.desc": "Delays heart shattering caused by the Wither effect.",
-	"item.matcha.truffle": "Truffle",
-	"tooltip.matcha.pig.foraging_cooldown": "Next forage: %s",
-	"tooltip.matcha.pig.foraging_ready": "Ready to forage",
-	"tooltip.matcha.pig.digging": "Foraging...",
-	"tooltip.matcha.pig.mud_play": "Playing in mud...",
-	"config.jade.plugin_matcha.pig_foraging": "Pig Foraging"
+	"tooltip.matcha.wither_resistance.desc": "Delays heart shattering caused by the Wither effect."
 }
