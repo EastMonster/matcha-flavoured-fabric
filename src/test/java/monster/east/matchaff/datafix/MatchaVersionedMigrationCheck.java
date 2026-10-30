@@ -190,7 +190,7 @@ public final class MatchaVersionedMigrationCheck {
 			data.getList("Inventory").orElseThrow().getCompound(0).orElseThrow().putString("id", id);
 			assert itemId(MatchaItemDataFixer.updateIfNeeded(data)).equals(id);
 		}
-		CompoundTag current = playerData(8);
+		CompoundTag current = playerData(9);
 		current.getList("Inventory").orElseThrow().getCompound(0).orElseThrow()
 				.putString("id", "matcha:chocolate_chip_cookie");
 		CompoundTag expected = current.copy();
