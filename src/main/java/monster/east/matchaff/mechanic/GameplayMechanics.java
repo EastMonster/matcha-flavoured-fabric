@@ -57,7 +57,6 @@ import java.util.UUID;
  */
 public final class GameplayMechanics {
 	private static final Identifier ESTUS = id("mechanics/estus_obtained");
-	private static final Identifier CHEERFUL_STATUE = id("mechanics/cheerful_clay_statue");
 	private static final Identifier MOURNFUL_STATUE = id("mechanics/mournful_clay_statue");
 	private static final Identifier HAPPY_GHAST_HORN = id("mechanics/happy_ghast_horn");
 	private static final Identifier KILL_DRAGON = id("end/kill_dragon");
@@ -124,12 +123,7 @@ public final class GameplayMechanics {
 			}
 			int tick = server.getTickCount();
 			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-				checkEstus(player);
-				checkStatueWeather(player);
-				checkHappyGhast(player);
-				checkSummonedWither(player, tick);
-				checkWitherSkeletons(player);
-				checkNetherWater(player);
+				MechanicAdvancementTriggers.run(player, MechanicAdvancementTriggers.Stage.GAMEPLAY);
 				stackWaterBottles(player);
 			}
 			refreshAmnesticVillagers();
@@ -230,6 +224,9 @@ public final class GameplayMechanics {
 	}
 
 	private static void refreshAmnesticVillagers() {
+		if (AMNESTIC_VILLAGERS.isEmpty()) {
+			return;
+		}
 		// Vanilla only appends the next tier when a trade grants XP; rebuild all tiers here.
 		for (Villager villager : VILLAGERS) {
 			if (villager.isRemoved()
@@ -293,12 +290,19 @@ public final class GameplayMechanics {
 		WorldMechanics.revoke(player, ESTUS);
 	}
 
-	private static void checkStatueWeather(ServerPlayer player) {
-		if (WorldMechanics.advancementDone(player, CHEERFUL_STATUE)) {
-			TimedMechanics.scheduleWeather(player, false, CHEERFUL_STATUE);
-		}
-		if (WorldMechanics.advancementDone(player, MOURNFUL_STATUE)) {
-			TimedMechanics.scheduleWeather(player, true, MOURNFUL_STATUE);
+	static void handleAdvancement(ServerPlayer player, Identifier advancement) {
+		switch (advancement.getPath()) {
+			case "mechanics/estus_obtained" -> checkEstus(player);
+			case "mechanics/cheerful_clay_statue", "mechanics/mournful_clay_statue" -> {
+				if (WorldMechanics.advancementDone(player, advancement)) {
+					TimedMechanics.scheduleWeather(player, advancement.equals(MOURNFUL_STATUE), advancement);
+				}
+			}
+			case "mechanics/happy_ghast_horn" -> checkHappyGhast(player);
+			case "mechanics/summoned_wither" -> checkSummonedWither(player, player.level().getServer().getTickCount());
+			case "mechanics/enter_fortress" -> checkWitherSkeletons(player);
+			case "mechanics/place_water_in_nether" -> checkNetherWater(player);
+			default -> throw new IllegalArgumentException("Unexpected mechanic advancement: " + advancement);
 		}
 	}
 

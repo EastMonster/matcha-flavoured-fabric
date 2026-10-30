@@ -56,11 +56,15 @@ final class VillageMechanics {
 		});
 	}
 
-	private static boolean tickPlayer(ServerPlayer player) {
+	static void handleDoorAdvancement(ServerPlayer player) {
 		if (WorldMechanics.advancementDone(player, OPENED_DOOR_ADVANCEMENT)) {
 			WorldMechanics.revoke(player, OPENED_DOOR_ADVANCEMENT);
 			openVillageDoor(player);
 		}
+	}
+
+	private static boolean tickPlayer(ServerPlayer player) {
+		MechanicAdvancementTriggers.run(player, MechanicAdvancementTriggers.Stage.VILLAGE);
 		var level = player.level();
 		if (!inVillage(level, player.blockPosition())) {
 			return false;

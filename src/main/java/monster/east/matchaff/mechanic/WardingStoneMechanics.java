@@ -146,23 +146,28 @@ final class WardingStoneMechanics {
 			level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, stoneX, stoneY + 0.5, stoneZ,
 					1, 0.5, 0.5, 0.5, 0);
 			if (effectsTick) {
-				for (LivingEntity target : level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(24.0),
-						u -> u.is(WARDING_STONE_TARGETS)
-								&& u.distanceToSqr(stone) <= 24.0 * 24.0)) {
+				// Withers have damage priority even though they are not in the stone's target tag.
+				List<LivingEntity> targets = level.getEntitiesOfClass(LivingEntity.class, stone.getBoundingBox().inflate(24.0),
+						u -> (u.is(WARDING_STONE_TARGETS) || u.getType() == EntityTypes.WITHER)
+								&& u.distanceToSqr(stone) <= 24.0 * 24.0);
+				for (LivingEntity target : targets) {
+					if (!target.is(WARDING_STONE_TARGETS)) {
+						continue;
+					}
 					target.addEffect(new MobEffectInstance(
 							MobEffects.SLOWNESS, 20, 2, false, false));
 					level.sendParticles(ParticleTypes.SCULK_SOUL, target.getX(), target.getY() + 0.1, target.getZ(),
 							5, 0.25, 0.0, 0.25, 0.01);
 				}
 
-				LivingEntity witherTarget = nearestTarget(level, stone, 24.0,
-						target -> target.getType() == EntityTypes.WITHER, false);
+				LivingEntity witherTarget = nearestTarget(targets, stone,
+						target -> target.getType() == EntityTypes.WITHER);
 				if (witherTarget != null) {
 					damage(level, witherTarget, 2.0F);
 					continue;
 				}
 
-				LivingEntity damageTarget = nearestTarget(level, stone, 24.0, target -> true);
+				LivingEntity damageTarget = nearestTarget(targets, stone, target -> target.is(WARDING_STONE_TARGETS));
 				if (damageTarget != null) {
 					damage(level, damageTarget, 7.0F);
 				}
@@ -177,21 +182,10 @@ final class WardingStoneMechanics {
 	}
 
 	private static LivingEntity nearestTarget(
-			ServerLevel level, LivingEntity center, double radius, Predicate<LivingEntity> predicate
+			List<LivingEntity> targets, LivingEntity center, Predicate<LivingEntity> predicate
 	) {
-		return nearestTarget(level, center, radius, predicate, true);
-	}
-
-	private static LivingEntity nearestTarget(
-			ServerLevel level, LivingEntity center, double radius,
-			Predicate<LivingEntity> predicate, boolean requireTargetTag
-	) {
-		double radiusSquared = radius * radius;
-		return level.getEntitiesOfClass(LivingEntity.class, center.getBoundingBox().inflate(radius), target ->
-				(!requireTargetTag || target.is(WARDING_STONE_TARGETS))
-						&& predicate.test(target)
-						&& target.distanceToSqr(center) <= radiusSquared)
-				.stream()
+		return targets.stream()
+				.filter(target -> predicate.test(target) && target.distanceToSqr(center) <= 24.0 * 24.0)
 				.min(Comparator.comparingDouble(target -> target.distanceToSqr(center)))
 				.orElse(null);
 	}

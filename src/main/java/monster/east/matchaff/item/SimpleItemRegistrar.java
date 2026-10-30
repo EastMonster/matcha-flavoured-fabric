@@ -84,6 +84,10 @@ public final class SimpleItemRegistrar {
 		if (definition.carrier != null) {
 			CarrierDefaults.apply(properties, definition.carrier);
 		}
+		if (definition.craftRemainder != null) {
+			properties.craftRemainder(Objects.requireNonNull(
+					BuiltInRegistries.ITEM.getValue(Identifier.parse(definition.craftRemainder))));
+		}
 		for (Map.Entry<String, JsonElement> entry : definition.components.entrySet()) {
 			ItemComponents.apply(properties, entry.getKey(), entry.getValue());
 		}
@@ -161,6 +165,7 @@ public final class SimpleItemRegistrar {
 		private String type;
 		private String tab;
 		private String carrier;
+		private String craftRemainder;
 		private String source;
 		private boolean hidden;
 		private Map<String, JsonElement> components;

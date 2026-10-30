@@ -19,7 +19,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Prediction;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.Entity;
@@ -57,8 +56,6 @@ public final class WorldMechanics {
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
 	private static final String VERSION_LABEL = "1.13.0";
-	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("mechanics/glass_bottle_from_crafting");
-	private static final Identifier TWO_GLASS_BOTTLES_ADVANCEMENT = id("mechanics/two_glass_bottles_from_crafting");
 	private static final Identifier ELYTRA_ADVANCEMENT = id("item_contingencies/elytra");
 	private static final Identifier ON_SULFUR_ADVANCEMENT = id("particle/on_sulfur");
 	private static final Repairable ELYTRA_REPAIRABLE = new Repairable(HolderSet.direct(
@@ -70,6 +67,7 @@ public final class WorldMechanics {
 	}
 
 	public static void init() {
+		MechanicAdvancementTriggers.init();
 		MobMechanics.init();
 		VillageMechanics.init();
 		DivineItemMechanics.init();
@@ -196,10 +194,8 @@ public final class WorldMechanics {
 		int tick = server.getTickCount();
 		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 			boatParticles(player);
-			sulfurousHellstone(player);
-			glassBottleReward(player);
-			twoGlassBottleReward(player);
-			updateElytra(player);
+			MechanicAdvancementTriggers.run(player, MechanicAdvancementTriggers.Stage.WORLD_SULFUR);
+			MechanicAdvancementTriggers.run(player, MechanicAdvancementTriggers.Stage.WORLD_ELYTRA);
 		}
 		DivineItemMechanics.tick(tick);
 		VillageMechanics.tick(server);
@@ -406,6 +402,14 @@ public final class WorldMechanics {
 				count, spreadX, spreadY, spreadZ, speed);
 	}
 
+	static void handleAdvancement(ServerPlayer player, Identifier advancement) {
+		if (advancement.equals(ON_SULFUR_ADVANCEMENT)) {
+			sulfurousHellstone(player);
+		} else if (advancement.equals(ELYTRA_ADVANCEMENT)) {
+			updateElytra(player);
+		}
+	}
+
 	private static void sulfurousHellstone(ServerPlayer player) {
 		if (!advancementDone(player, ON_SULFUR_ADVANCEMENT)) {
 			return;
@@ -414,28 +418,6 @@ public final class WorldMechanics {
 		var level = player.level();
 		level.sendParticles(ParticleTypes.NOXIOUS_GAS,
 				player.getX(), player.getY() + 0.1, player.getZ(), 3, 0.5, 0, 0.5, 0);
-	}
-
-	public static void glassBottleReward(ServerPlayer player) {
-		glassBottleReward(player, GLASS_BOTTLE_ADVANCEMENT, 1);
-	}
-
-	public static void twoGlassBottleReward(ServerPlayer player) {
-		glassBottleReward(player, TWO_GLASS_BOTTLES_ADVANCEMENT, 2);
-	}
-
-	private static void glassBottleReward(ServerPlayer player, Identifier advancementId, int count) {
-		if (advancementDone(player, advancementId)) {
-			ItemStack reward = new ItemStack(Items.GLASS_BOTTLE, count);
-			if (!player.addItem(reward)) {
-				var dropped = player.drop(reward, false, Prediction.SERVER_ONLY);
-				if (dropped != null) {
-					dropped.setNoPickUpDelay();
-					dropped.setTarget(player.getUUID());
-				}
-			}
-			revoke(player, advancementId);
-		}
 	}
 
 	private static void updateElytra(ServerPlayer player) {
@@ -455,10 +437,12 @@ public final class WorldMechanics {
 
 	static boolean advancementDone(ServerPlayer player, Identifier advancementId) {
 		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(advancementId);
-		return advancement != null && player.getAdvancements().getOrStartProgress(advancement).isDone();
+		boolean done = advancement != null && player.getAdvancements().getOrStartProgress(advancement).isDone();
+		return done;
 	}
 
 	static void revoke(ServerPlayer player, Identifier advancementId) {
+		MechanicAdvancementTriggers.clear(player.getUUID(), advancementId);
 		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(advancementId);
 		if (advancement != null) {
 			for (String criterion : advancement.value().criteria().keySet()) {

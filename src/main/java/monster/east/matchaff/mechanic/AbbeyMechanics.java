@@ -3,7 +3,6 @@ package monster.east.matchaff.mechanic;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -66,9 +65,7 @@ public final class AbbeyMechanics {
 			if (!server.tickRateManager().runsNormally()) {
 				return;
 			}
-			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-				checkCopperEye(player);
-			}
+			MechanicAdvancementTriggers.runAbbey(server);
 			tickCopperEyes();
 		});
 	}
@@ -95,7 +92,7 @@ public final class AbbeyMechanics {
 	 * every set-up marker whose target block is powered (or missing) and runs the
 	 * matching action, and finally revokes the advancement for all players.
 	 */
-	private static void checkCopperEye(ServerPlayer player) {
+	static void checkCopperEye(ServerPlayer player) {
 		if (!hisHitCopperEye(player)) {
 			return;
 		}
@@ -378,16 +375,10 @@ public final class AbbeyMechanics {
 	}
 
 	private static boolean hisHitCopperEye(ServerPlayer player) {
-		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(AbbeyMechanics.HIT_COPPER_EYE);
-		return advancement != null && player.getAdvancements().getOrStartProgress(advancement).isDone();
+		return WorldMechanics.advancementDone(player, HIT_COPPER_EYE);
 	}
 
 	private static void revokeCopperEyeHit(ServerPlayer player) {
-		AdvancementHolder advancement = player.level().getServer().getAdvancements().get(AbbeyMechanics.HIT_COPPER_EYE);
-		if (advancement != null) {
-			for (String criterion : advancement.value().criteria().keySet()) {
-				player.getAdvancements().revoke(advancement, criterion);
-			}
-		}
+		WorldMechanics.revoke(player, HIT_COPPER_EYE);
 	}
 }

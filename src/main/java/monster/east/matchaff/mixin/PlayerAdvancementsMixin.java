@@ -6,6 +6,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import monster.east.matchaff.mechanic.GameplayMechanics;
+import monster.east.matchaff.mechanic.MechanicAdvancementTriggers;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.Identifier;
@@ -46,7 +47,8 @@ public abstract class PlayerAdvancementsMixin {
 	@Inject(method = "award", at = @At(value = "INVOKE",
 			target = "Lnet/minecraft/advancements/AdvancementRewards;grant(Lnet/minecraft/server/level/ServerPlayer;)V",
 			shift = At.Shift.AFTER))
-	private void matcha$dragonReward(AdvancementHolder holder, String criterion, CallbackInfoReturnable<Boolean> callbackInfo) {
+	private void matcha$completedAdvancement(AdvancementHolder holder, String criterion, CallbackInfoReturnable<Boolean> callbackInfo) {
+		MechanicAdvancementTriggers.completed(this.player, holder.id());
 		GameplayMechanics.rewardDragonAdvancement(this.player, holder.id());
 	}
 
