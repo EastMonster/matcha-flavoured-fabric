@@ -12,14 +12,12 @@
 			"trigger": "minecraft:inventory_changed"
 		}
 	},
-	"requirements": [
-		[
-			"has_primary_material"
-		]
-	],
+	"requirements": [["has_primary_material"]],
 	"rewards": {
 		"recipes": [
-			"matcha:kiln/deepslate"
+			"matcha:kiln/deepslate",
+			"matcha:kiln/polished_deepslate",
+			"matcha:crafting/cobbled_deepslate_from_slabs"
 		]
 	}
 }

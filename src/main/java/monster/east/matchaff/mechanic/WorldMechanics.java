@@ -53,10 +53,10 @@ public final class WorldMechanics {
 	private static final String GAMERULES_OBJECTIVE = "matcha_gamerules_version";
 	private static final String GAMERULES_HOLDER = "current";
 	private static final String INITIAL_DIFFICULTY_NOTICE = "initial_difficulty_notice";
-	private static final int RECIPE_UNLOCK_VERSION = 1_12_08_001;
+	private static final int RECIPE_UNLOCK_VERSION = 1_13_00_001;
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
-	private static final String VERSION_LABEL = "1.12.8";
+	private static final String VERSION_LABEL = "1.13.0";
 	private static final Identifier GLASS_BOTTLE_ADVANCEMENT = id("mechanics/glass_bottle_from_crafting");
 	private static final Identifier TWO_GLASS_BOTTLES_ADVANCEMENT = id("mechanics/two_glass_bottles_from_crafting");
 	private static final Identifier ELYTRA_ADVANCEMENT = id("item_contingencies/elytra");
