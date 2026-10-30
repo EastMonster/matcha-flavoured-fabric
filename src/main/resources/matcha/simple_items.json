@@ -489,6 +489,7 @@
 	},
 	{
 		"id": "benzene",
+		"craftRemainder": "minecraft:glass_bottle",
 		"type": "item",
 		"tab": "ingredients",
 		"source": "data/matcha/recipe/crafting/benzene.json",
@@ -639,6 +640,7 @@
 	},
 	{
 		"id": "oil",
+		"craftRemainder": "minecraft:glass_bottle",
 		"type": "item",
 		"tab": "ingredients",
 		"source": "data/matcha/recipe/food/crafting/oil.json",

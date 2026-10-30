@@ -20,7 +20,7 @@
 		"BrushInteractionMixin",
 		"CompassItemMixin",
 		"RecipeManagerMixin",
-		"RecipeCraftedMixin",
+		"PotionCraftingRemainderMixin",
 		"ItemInstanceMixin",
 		"AdvancementNodeMixin",
 		"AdvancementTreeMixin",
