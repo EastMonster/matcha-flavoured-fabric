@@ -1,0 +1,21 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_primary_material": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "#minecraft:poplar_logs"
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"matcha:stonecutting/stripped_poplar_log_from_stonecutting_poplar_logs",
+			"matcha:stonecutting/stripped_poplar_wood_from_stonecutting_poplar_logs"
+		]
+	}
+}

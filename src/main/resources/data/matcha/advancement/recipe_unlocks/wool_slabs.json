@@ -1,0 +1,35 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_primary_material": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "#minecraft:wool_slabs"
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"matcha:crafting/white_wool_from_white_wool_slabs",
+			"matcha:crafting/orange_wool_from_orange_wool_slabs",
+			"matcha:crafting/magenta_wool_from_magenta_wool_slabs",
+			"matcha:crafting/light_blue_wool_from_light_blue_wool_slabs",
+			"matcha:crafting/yellow_wool_from_yellow_wool_slabs",
+			"matcha:crafting/lime_wool_from_lime_wool_slabs",
+			"matcha:crafting/pink_wool_from_pink_wool_slabs",
+			"matcha:crafting/gray_wool_from_gray_wool_slabs",
+			"matcha:crafting/light_gray_wool_from_light_gray_wool_slabs",
+			"matcha:crafting/cyan_wool_from_cyan_wool_slabs",
+			"matcha:crafting/purple_wool_from_purple_wool_slabs",
+			"matcha:crafting/blue_wool_from_blue_wool_slabs",
+			"matcha:crafting/brown_wool_from_brown_wool_slabs",
+			"matcha:crafting/green_wool_from_green_wool_slabs",
+			"matcha:crafting/red_wool_from_red_wool_slabs",
+			"matcha:crafting/black_wool_from_black_wool_slabs"
+		]
+	}
+}

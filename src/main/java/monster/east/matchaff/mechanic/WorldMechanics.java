@@ -52,10 +52,10 @@ public final class WorldMechanics {
 	private static final String GAMERULES_OBJECTIVE = "matcha_gamerules_version";
 	private static final String GAMERULES_HOLDER = "current";
 	private static final String INITIAL_DIFFICULTY_NOTICE = "initial_difficulty_notice";
-	private static final int RECIPE_UNLOCK_VERSION = 1_13_00_001;
+	private static final int RECIPE_UNLOCK_VERSION = 1_12_09_001;
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
-	private static final String VERSION_LABEL = "1.13.0";
+	private static final String VERSION_LABEL = "1.12.9";
 	private static final Identifier ELYTRA_ADVANCEMENT = id("item_contingencies/elytra");
 	private static final Identifier ON_SULFUR_ADVANCEMENT = id("particle/on_sulfur");
 	private static final Repairable ELYTRA_REPAIRABLE = new Repairable(HolderSet.direct(
@@ -224,6 +224,11 @@ public final class WorldMechanics {
 		}
 	}
 
+	static boolean shouldRefreshRecipeUnlocks(int playerVersion) {
+		// Upstream renamed the unreleased 1.13.0 to 1.12.9; refresh that development marker once.
+		return playerVersion < RECIPE_UNLOCK_VERSION || playerVersion == 1_13_00_001;
+	}
+
 	/**
 	 * One-time per-player recipe unlock migration (datapack decision 15.3,
 	 * option 1): on first join with a newer recipe version, revoke the hidden
@@ -242,7 +247,7 @@ public final class WorldMechanics {
 		}
 		boolean updated = false;
 		int playerVersion = server.getScoreboard().getOrCreatePlayerScore(player, objective).get();
-		if (playerVersion < RECIPE_UNLOCK_VERSION) {
+		if (shouldRefreshRecipeUnlocks(playerVersion)) {
 			for (AdvancementHolder advancement : server.getAdvancements().getAllAdvancements()) {
 				Identifier id = advancement.id();
 				if (id.getNamespace().equals("matcha") && id.getPath().startsWith("recipe_unlocks/")) {

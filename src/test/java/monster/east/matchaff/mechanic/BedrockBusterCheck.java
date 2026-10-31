@@ -3,6 +3,8 @@ package monster.east.matchaff.mechanic;
 import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /** Run with assertions enabled to check the detonation boundary and the spawned entity marker. */
 public final class BedrockBusterCheck {
@@ -12,6 +14,13 @@ public final class BedrockBusterCheck {
 		assert TimedMechanics.shouldBreakBedrock(1);
 		assert TimedMechanics.shouldBreakBedrock(0);
 		assert !TimedMechanics.shouldBreakBedrock(-1);
+		try (var stream = BedrockBusterCheck.class.getResourceAsStream("/data/matcha/tags/block/bedrock_bustable.json")) {
+			assert stream != null;
+			var values = JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
+					.getAsJsonObject().getAsJsonArray("values");
+			assert values.asList().stream().map(value -> value.getAsString()).collect(Collectors.toSet())
+					.equals(Set.of("minecraft:bedrock", "minecraft:trial_spawner", "minecraft:vault"));
+		}
 		try (var stream = BedrockBusterCheck.class.getResourceAsStream("/matcha/behavior_music.json")) {
 			assert stream != null;
 			var definitions = JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8)).getAsJsonArray();

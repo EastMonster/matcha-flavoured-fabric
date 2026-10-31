@@ -1,0 +1,35 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_primary_material": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "#minecraft:concrete_slabs"
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"matcha:crafting/white_concrete_from_white_concrete_slabs",
+			"matcha:crafting/orange_concrete_from_orange_concrete_slabs",
+			"matcha:crafting/magenta_concrete_from_magenta_concrete_slabs",
+			"matcha:crafting/light_blue_concrete_from_light_blue_concrete_slabs",
+			"matcha:crafting/yellow_concrete_from_yellow_concrete_slabs",
+			"matcha:crafting/lime_concrete_from_lime_concrete_slabs",
+			"matcha:crafting/pink_concrete_from_pink_concrete_slabs",
+			"matcha:crafting/gray_concrete_from_gray_concrete_slabs",
+			"matcha:crafting/light_gray_concrete_from_light_gray_concrete_slabs",
+			"matcha:crafting/cyan_concrete_from_cyan_concrete_slabs",
+			"matcha:crafting/purple_concrete_from_purple_concrete_slabs",
+			"matcha:crafting/blue_concrete_from_blue_concrete_slabs",
+			"matcha:crafting/brown_concrete_from_brown_concrete_slabs",
+			"matcha:crafting/green_concrete_from_green_concrete_slabs",
+			"matcha:crafting/red_concrete_from_red_concrete_slabs",
+			"matcha:crafting/black_concrete_from_black_concrete_slabs"
+		]
+	}
+}
