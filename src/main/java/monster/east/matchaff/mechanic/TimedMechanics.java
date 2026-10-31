@@ -7,6 +7,8 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.DustColorTransitionOptions;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.TagKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -21,6 +23,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 
@@ -46,6 +49,8 @@ final class TimedMechanics {
 
 	private static final List<WeatherTask> PENDING_WEATHER = new ArrayList<>();
 	private static final String BUSTER_TAG = "matcha:bedrock_buster";
+	private static final TagKey<Block> BEDROCK_BUSTABLE = TagKey.create(
+			Registries.BLOCK, Identifier.fromNamespaceAndPath("matcha", "bedrock_bustable"));
 	private static final Set<PrimedTnt> BEDROCK_BUSTERS = Collections.newSetFromMap(new IdentityHashMap<>());
 	private static final List<WitherTask> PENDING_WITHERS = new ArrayList<>();
 
@@ -170,7 +175,7 @@ final class TimedMechanics {
 				for (int dz = -1; dz <= 1; dz++) {
 					for (int dy = -3; dy <= 3; dy++) {
 						BlockPos target = pos.offset(dx, dy, dz);
-						if (level.getBlockState(target).is(Blocks.BEDROCK)) {
+						if (level.getBlockState(target).is(BEDROCK_BUSTABLE)) {
 							level.setBlockAndUpdate(target, Blocks.AIR.defaultBlockState());
 							removed++;
 						}
@@ -180,7 +185,7 @@ final class TimedMechanics {
 			level.sendParticles(ParticleTypes.END_ROD, pos.getX(), pos.getY(), pos.getZ(),
 					50, 0.5, 0.5, 0.5, 0.1);
 			if (removed > 0) {
-				LOGGER.info("Bedrock buster removed {} bedrock blocks", removed);
+				LOGGER.info("Bedrock buster removed {} blocks", removed);
 			}
 		}
 	}

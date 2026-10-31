@@ -77,7 +77,7 @@ public abstract class SpawnEggInteractionMixin {
 			clearSpawners(level, player.blockPosition(), 8);
 			clearSpawners(level, player.blockPosition(), 16);
 		}
-		player.hurtServer(level, level.damageSources().generic(), 20.0F);
+		player.hurtServer(level, level.damageSources().generic(), 1.0F);
 	}
 
 	@Unique
