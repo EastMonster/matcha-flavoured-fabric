@@ -5,7 +5,19 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "matcha:rusty_axe"
+					"name": "minecraft:blade_pottery_sherd"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:explorer_pottery_sherd"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:mourner_pottery_sherd"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:plenty_pottery_sherd"
 				},
 				{
 					"type": "minecraft:item",
@@ -13,34 +25,22 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha:rusty_axe"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "matcha:rusty_axe"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "matcha:rusty_axe"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "matcha:rusty_axe",
+					"name": "minecraft:emerald",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha:rusty_axe",
+					"name": "minecraft:ink_sac",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha:rusty_axe",
+					"name": "minecraft:coal",
 					"weight": 2
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha:rusty_axe",
+					"name": "minecraft:gold_nugget",
 					"weight": 2
 				},
 				{
@@ -50,7 +50,7 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "matcha:rusty_axe",
+					"name": "minecraft:nautilus_shell",
 					"quality": 1
 				}
 			],

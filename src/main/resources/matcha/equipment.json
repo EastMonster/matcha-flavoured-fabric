@@ -565,7 +565,7 @@
 	},
 	{
 		"id": "rusty_axe",
-		"source": "data/minecraft/loot_table/archaeology/ocean_ruin_cold.json",
+		"source": "data/matcha/loot_table/equipment/misc/rusty_axe.json",
 		"carrier": "minecraft:iron_axe",
 		"components": {
 			"minecraft:damage": 140,
