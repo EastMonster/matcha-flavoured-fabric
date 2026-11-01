@@ -51,7 +51,7 @@
 		"components": {
 			"minecraft:max_damage": 800,
 			"minecraft:item_name": {
-				"translate": "item.matcha.bronze_elytra",
+				"translate": "item.matcha.hepatizon_elytra",
 				"color": "#ac7b5c"
 			},
 			"minecraft:attribute_modifiers": [

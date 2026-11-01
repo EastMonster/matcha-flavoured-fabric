@@ -152,7 +152,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 
 	/**
 	 * Some display names are coloured in the datapack. Item.Properties-level ITEM_NAME is
-	 * overwritten by the 26.2 default-component baker, and CUSTOM_NAME forces
+	 * overwritten by the default-component baker, and CUSTOM_NAME forces
 	 * italics at render time, so the colour is applied through the runtime
 	 * default-component event instead (renders non-italic).
 	 */
@@ -163,7 +163,8 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 					"baked_golden_apple", "braised_crimson_fungus", "braised_warped_fungus",
 					"canned_golden_apples", "chorus_mochi", "crimson_stroganoff", "gnocchi",
 					"golden_apple_empanada", "golden_carrot_cupcake", "golden_pickled_carrots",
-					"golden_steamed_carrots", "pickled_warped_fungus", "sweet_berry_toast", "warped_stroganoff"
+					"golden_steamed_carrots", "pickled_warped_fungus", "sweet_berry_toast", "warped_stroganoff",
+					"warped_pizza", "hepatizon_elytra"
 			)) {
 				int color = switch (name) {
 					case "amber" -> 0xFFAA00;
@@ -171,7 +172,8 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 					case "topaz", "baked_golden_apple", "canned_golden_apples", "golden_apple_empanada",
 							"golden_carrot_cupcake", "golden_pickled_carrots", "golden_steamed_carrots" -> 0xFFFF55;
 					case "braised_crimson_fungus", "crimson_stroganoff" -> 0xC54457;
-					case "braised_warped_fungus", "pickled_warped_fungus", "warped_stroganoff" -> 0x3CC6C8;
+					case "braised_warped_fungus", "pickled_warped_fungus", "warped_stroganoff", "warped_pizza" -> 0x3CC6C8;
+					case "hepatizon_elytra" -> 0xAC7B5C;
 					case "chorus_mochi" -> 0xAE6CBC;
 					case "gnocchi" -> 0xE1BC62;
 					case "sweet_berry_toast" -> 0xE85E8F;
