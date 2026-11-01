@@ -33,8 +33,7 @@
 			],
 			"minecraft:item_name": {
 				"translate": "item.matcha.lava_kit"
-			},
-			"minecraft:item_model": "matcha:lava_kit"
+			}
 		}
 	},
 	"max_uses": 999,
