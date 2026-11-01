@@ -7,9 +7,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.numbers.StyledFormat;
@@ -22,12 +20,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.ItemEnchantments;
-import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gamerules.GameRules;
@@ -56,10 +49,7 @@ public final class WorldMechanics {
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
 	private static final String VERSION_LABEL = "1.12.9";
-	private static final Identifier ELYTRA_ADVANCEMENT = id("item_contingencies/elytra");
 	private static final Identifier ON_SULFUR_ADVANCEMENT = id("particle/on_sulfur");
-	private static final Repairable ELYTRA_REPAIRABLE = new Repairable(HolderSet.direct(
-			Items.HONEYCOMB.builtInRegistryHolder(), Items.FEATHER.builtInRegistryHolder()));
 
 	private static final Map<UUID, Integer> LAST_BOATING_DISTANCE = new HashMap<>();
 
@@ -195,7 +185,6 @@ public final class WorldMechanics {
 		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
 			boatParticles(player);
 			MechanicAdvancementTriggers.run(player, MechanicAdvancementTriggers.Stage.WORLD_SULFUR);
-			MechanicAdvancementTriggers.run(player, MechanicAdvancementTriggers.Stage.WORLD_ELYTRA);
 		}
 		DivineItemMechanics.tick(tick);
 		VillageMechanics.tick(server);
@@ -410,8 +399,6 @@ public final class WorldMechanics {
 	static void handleAdvancement(ServerPlayer player, Identifier advancement) {
 		if (advancement.equals(ON_SULFUR_ADVANCEMENT)) {
 			sulfurousHellstone(player);
-		} else if (advancement.equals(ELYTRA_ADVANCEMENT)) {
-			updateElytra(player);
 		}
 	}
 
@@ -423,21 +410,6 @@ public final class WorldMechanics {
 		var level = player.level();
 		level.sendParticles(ParticleTypes.NOXIOUS_GAS,
 				player.getX(), player.getY() + 0.1, player.getZ(), 3, 0.5, 0, 0.5, 0);
-	}
-
-	private static void updateElytra(ServerPlayer player) {
-		if (!advancementDone(player, ELYTRA_ADVANCEMENT)) {
-			return;
-		}
-		ItemStack elytra = player.getItemBySlot(EquipmentSlot.CHEST);
-		if (elytra.is(Items.ELYTRA)
-				&& elytra.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).isEmpty()
-				&& Identifier.withDefaultNamespace("elytra").equals(elytra.get(DataComponents.ITEM_MODEL))
-				&& !ELYTRA_REPAIRABLE.equals(elytra.get(DataComponents.REPAIRABLE))) {
-			elytra.set(DataComponents.REPAIRABLE, ELYTRA_REPAIRABLE);
-			player.setItemSlot(EquipmentSlot.CHEST, elytra);
-		}
-		revoke(player, ELYTRA_ADVANCEMENT);
 	}
 
 	static boolean advancementDone(ServerPlayer player, Identifier advancementId) {

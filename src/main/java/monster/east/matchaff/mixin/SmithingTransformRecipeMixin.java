@@ -37,6 +37,9 @@ public abstract class SmithingTransformRecipeMixin {
 			return result;
 		}
 
+		// Base stack patches must not override the upgraded item's repair materials.
+		result.copyFrom(DataComponents.REPAIRABLE, resultTemplate);
+
 		ItemEnchantments baseEnchantments = base.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
 		ItemEnchantments intrinsicEnchantments = resultTemplate.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
 		ItemEnchantments.Mutable merged = new ItemEnchantments.Mutable(intrinsicEnchantments);

@@ -36,6 +36,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.ItemLore;
+import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect;
@@ -74,7 +75,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	public void onInitialize() {
 		registerBlocks();
 		initializeMechanics();
-		registerNameColors();
+		registerDefaultComponents();
 		registerItemsAndCreativeTabs();
 	}
 
@@ -151,13 +152,17 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	}
 
 	/**
+	 * Set vanilla repair materials and restore coloured display names.
 	 * Some display names are coloured in the datapack. Item.Properties-level ITEM_NAME is
 	 * overwritten by the default-component baker, and CUSTOM_NAME forces
 	 * italics at render time, so the colour is applied through the runtime
 	 * default-component event instead (renders non-italic).
 	 */
-	private static void registerNameColors() {
+	private static void registerDefaultComponents() {
 		DefaultItemComponentEvents.MODIFY.register(context -> {
+			context.modify(Items.ELYTRA, (builder, registries, ignored) -> builder.set(
+					DataComponents.REPAIRABLE, new Repairable(HolderSet.direct(
+							Items.HONEYCOMB.builtInRegistryHolder(), Items.FEATHER.builtInRegistryHolder()))));
 			for (String name : List.of(
 					"amber", "opal", "ruby", "topaz",
 					"baked_golden_apple", "braised_crimson_fungus", "braised_warped_fungus",

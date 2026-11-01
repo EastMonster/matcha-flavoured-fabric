@@ -25,7 +25,6 @@ public final class MechanicAdvancementTriggers {
 				"mechanics/mournful_clay_statue", "mechanics/happy_ghast_horn",
 				"mechanics/summoned_wither", "mechanics/enter_fortress", "mechanics/place_water_in_nether"),
 		WORLD_SULFUR("particle/on_sulfur"),
-		WORLD_ELYTRA("item_contingencies/elytra"),
 		VILLAGE("mechanics/opened_oak_door"),
 		ABBEY("mechanics/hit_copper_eye");
 
@@ -71,7 +70,7 @@ public final class MechanicAdvancementTriggers {
 			cursor = stage.order.indexOf(action);
 			switch (stage) {
 				case GAMEPLAY -> GameplayMechanics.handleAdvancement(player, action);
-				case WORLD_SULFUR, WORLD_ELYTRA -> WorldMechanics.handleAdvancement(player, action);
+				case WORLD_SULFUR -> WorldMechanics.handleAdvancement(player, action);
 				case VILLAGE -> VillageMechanics.handleDoorAdvancement(player);
 				case ABBEY -> AbbeyMechanics.checkCopperEye(player);
 			}
