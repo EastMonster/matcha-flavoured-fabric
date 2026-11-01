@@ -18,11 +18,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
- * Smithing transform results normally replace the whole enchantments
- * component, dropping enchantments already on the base tool. This merges the
- * base enchantments back in, keeping the highest level where the recipe's own
- * intrinsic enchantments overlap, then removes conflicts with the result's
- * intrinsic enchantments (not enchantments inherited from the base).
+ * Start with the result's default enchantments plus recipe overrides, then
+ * merge base enchantments at their highest levels. Resolve conflicts against
+ * the result's intrinsic enchantments, not enchantments inherited from the base.
  */
 @Mixin(SmithingTransformRecipe.class)
 public abstract class SmithingTransformRecipeMixin {
@@ -40,17 +38,12 @@ public abstract class SmithingTransformRecipeMixin {
 		}
 
 		ItemEnchantments baseEnchantments = base.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
-		if (baseEnchantments.isEmpty()) {
-			return result;
-		}
-
-		ItemEnchantments resultEnchantments = result.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
-		ItemEnchantments.Mutable merged = new ItemEnchantments.Mutable(resultEnchantments);
+		ItemEnchantments intrinsicEnchantments = resultTemplate.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
+		ItemEnchantments.Mutable merged = new ItemEnchantments.Mutable(intrinsicEnchantments);
 		for (Object2IntMap.Entry<Holder<Enchantment>> entry : baseEnchantments.entrySet()) {
 			merged.upgrade(entry.getKey(), entry.getIntValue());
 		}
-		for (Holder<Enchantment> intrinsic : resultTemplate
-				.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY).keySet()) {
+		for (Holder<Enchantment> intrinsic : intrinsicEnchantments.keySet()) {
 			if (intrinsic.is(Identifier.fromNamespaceAndPath("matcha", "electrum_tool"))) {
 				merged.removeIf(enchantment -> enchantment.is(Enchantments.SILK_TOUCH)
 						|| enchantment.is(Enchantments.FORTUNE));
