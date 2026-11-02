@@ -15,6 +15,7 @@
 	"container.furnace": "オーブン",
 	"container.smoker": "土窯",
 	"block.minecraft.brewing_stand": "やかん",
+	"container.brewing": "",
 	"item.minecraft.brewing_stand": "やかん",
 	"container.cartography_table": "",
 	"container.upgrade": "",
