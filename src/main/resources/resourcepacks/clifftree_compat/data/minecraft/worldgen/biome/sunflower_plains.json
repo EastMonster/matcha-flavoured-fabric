@@ -1,0 +1,190 @@
+{
+	"carvers": [
+		"minecraft:cave",
+		"minecraft:cave_extra_underground",
+		"minecraft:canyon"
+	],
+	"downfall": 0.4,
+	"attributes": {
+		"minecraft:gameplay/creature_world_gen_spawn_probability": 0.15,
+		"minecraft:gameplay/natural_mob_spawns": {
+			"argument": {
+				"spawn_costs": {},
+				"spawns_by_category": {
+					"ambient": [],
+					"axolotls": [],
+					"creature": [
+						{
+							"type": "minecraft:sheep",
+							"count": {
+								"type": "minecraft:uniform",
+								"max_inclusive": 4,
+								"min_inclusive": 4
+							},
+							"weight": 12
+						},
+						{
+							"type": "minecraft:pig",
+							"count": {
+								"type": "minecraft:uniform",
+								"max_inclusive": 4,
+								"min_inclusive": 4
+							},
+							"weight": 10
+						},
+						{
+							"type": "minecraft:cow",
+							"count": {
+								"type": "minecraft:uniform",
+								"max_inclusive": 4,
+								"min_inclusive": 4
+							},
+							"weight": 8
+						},
+						{
+							"type": "minecraft:rabbit",
+							"weight": 12,
+							"count": 4
+						}
+					],
+					"misc": [],
+					"monster": [
+						{
+							"type": "minecraft:spider",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:zombie",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:zombie_villager",
+							"count": 1,
+							"weight": 5
+						},
+						{
+							"type": "minecraft:skeleton",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:creeper",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:slime",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:enderman",
+							"count": {
+								"type": "minecraft:uniform",
+								"min_inclusive": 1,
+								"max_inclusive": 4
+							},
+							"weight": 10
+						},
+						{
+							"type": "minecraft:witch",
+							"count": 1,
+							"weight": 5
+						},
+						{
+							"type": "minecraft:zombie_horse",
+							"count": 1,
+							"weight": 5
+						},
+						{
+							"type": "minecraft:husk",
+							"count": {
+								"type": "minecraft:uniform",
+								"min_inclusive": 1,
+								"max_inclusive": 2
+							},
+							"weight": 75
+						}
+					],
+					"underground_water_creature": [
+						{
+							"type": "minecraft:glow_squid",
+							"count": {
+								"type": "minecraft:uniform",
+								"min_inclusive": 4,
+								"max_inclusive": 6
+							},
+							"weight": 10
+						}
+					],
+					"water_ambient": [],
+					"water_creature": []
+				}
+			},
+			"modifier": "overlay"
+		},
+		"minecraft:visual/sky_color": "#48a1d4",
+		"minecraft:visual/fog_color": "#b7daeb",
+		"minecraft:visual/water_fog_color": "#03070A"
+	},
+	"effects": {
+		"water_color": "#2D86BC",
+		"grass_color": "#B6DB61"
+	},
+	"features": [
+		[],
+		["minecraft:lake_lava_underground"],
+		["minecraft:amethyst_geode"],
+		["minecraft:monster_room", "minecraft:monster_room_deep"],
+		[],
+		["clifftree:stone_cliff"],
+		[
+			"minecraft:ore_dirt",
+			"minecraft:ore_gravel",
+			"minecraft:ore_granite_upper",
+			"minecraft:ore_granite_lower",
+			"minecraft:ore_diorite_upper",
+			"minecraft:ore_diorite_lower",
+			"minecraft:ore_andesite_upper",
+			"minecraft:ore_andesite_lower",
+			"minecraft:ore_tuff",
+			"minecraft:ore_coal_upper",
+			"minecraft:ore_coal_lower",
+			"minecraft:ore_iron_upper",
+			"minecraft:ore_iron_middle",
+			"minecraft:ore_iron_small",
+			"minecraft:ore_gold",
+			"minecraft:ore_gold_lower",
+			"minecraft:ore_redstone",
+			"minecraft:ore_redstone_lower",
+			"minecraft:ore_diamond",
+			"minecraft:ore_diamond_medium",
+			"minecraft:ore_diamond_large",
+			"minecraft:ore_diamond_buried",
+			"minecraft:ore_lapis",
+			"minecraft:ore_lapis_buried",
+			"minecraft:ore_copper",
+			"minecraft:underwater_magma",
+			"matcha:ore_emerald_deep"
+		],
+		[],
+		["minecraft:spring_water", "minecraft:spring_lava"],
+		[
+			"minecraft:glow_lichen",
+			"clifftree:patch_pumpkin_sunflower",
+			"minecraft:patch_tall_grass_2",
+			"minecraft:patch_sunflower",
+			"minecraft:patch_grass_plain",
+			"minecraft:brown_mushroom_normal",
+			"minecraft:red_mushroom_normal",
+			"minecraft:patch_sugar_cane",
+			"clifftree:sunflower_flower_dandelion",
+			"clifftree:bonemeal/dandelion"
+		],
+		["minecraft:freeze_top_layer"]
+	],
+	"has_precipitation": true,
+	"temperature": 0.8
+}

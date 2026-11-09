@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:sequence",
+	"features": {
+		"feature": "clifftree:tree/poplar/select_poplar",
+		"placement": []
+	}
+}

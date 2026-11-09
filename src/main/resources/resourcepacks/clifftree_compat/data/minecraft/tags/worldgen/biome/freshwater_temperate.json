@@ -1,0 +1,17 @@
+{
+	"values": [
+		"clifftree:caves",
+		"clifftree:dirt_caves",
+		"clifftree:dusty_river",
+		"clifftree:lukewarm_caves",
+		"clifftree:mushroom_caves",
+		"clifftree:sparse_forest",
+		"clifftree:sky/atmospore",
+		"clifftree:sky/azure_skies",
+		"clifftree:sky/celadon_skies",
+		"clifftree:sky/cerulean_skies",
+		"clifftree:sky/indigo_skies",
+		"clifftree:sky/the_frontier",
+		"clifftree:sky/viridian_skies"
+	]
+}

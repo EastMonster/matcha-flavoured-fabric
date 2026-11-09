@@ -1,0 +1,12 @@
+{
+	"values": [
+		"minecraft:ice_caves",
+		"clifftree:glacier_cliff",
+		"clifftree:glacier_valley",
+		"clifftree:mantled_forest",
+		"clifftree:snowy_old_growth_taiga",
+		"clifftree:tundra",
+		"clifftree:sky/frozen_summit",
+		"clifftree:sky/jagged_summit"
+	]
+}

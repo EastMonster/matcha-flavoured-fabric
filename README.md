@@ -38,7 +38,7 @@ Create a new world to play this mod. Existing items from the data-pack version a
 - The Mod Menu settings screen can disable Overworld True Darkness per client without changing server gameplay.
 - Operators can enable extra blaze rod drops in Mod Menu. This world setting defaults to off, preserves fire charge drops, and applies vanilla blaze rod and Looting rates immediately without a reload.
 - [Trinkets Updated](https://modrinth.com/mod/trinkets-updated) compatibility lets earrings be worn alongside a helmet. Earring armor bonuses do not apply while a helmet is equipped.
-- [CliffTree](https://modrinth.com/datapack/clifftree) compatibility (Fabric Mod version only). If you would like Matcha to support more terrain mods, feel free to submit suggestions in [Issues](https://github.com/EastMonster/matcha-flavoured-fabric/issues)!
+- [CliffTree](https://modrinth.com/datapack/clifftree) compatibility (Fabric Mod version only; CliffTree 4.0.0 on Minecraft 26.3). An internal compatibility data pack is required and automatically enabled when CliffTree is installed. It retains CliffTree's terrain, colors and poplars, Matcha's Beta villages with CliffTree's village biome ranges, and Matcha's emerald ore and snow-block drops. CliffTree's sky-biome setting remains available. If you would like Matcha to support more terrain mods, feel free to submit suggestions in [Issues](https://github.com/EastMonster/matcha-flavoured-fabric/issues)!
 - [Farmer's Delight Refabricated](https://modrinth.com/mod/farmers-delight-refabricated) compatibility. Enjoy farmer life!
 
 ## Changes that (may) cause behavioral differences
@@ -63,6 +63,6 @@ This project is distributed under the [CC BY-NC-SA 4.0 license](LICENSE), follow
 
 Third-party textures in the Trinkets compatibility resource pack are derived from Trinkets / Trinkets Updated and recolored by EastMonster. These textures retain their [MIT license and copyright notices](src/main/resources/licenses/TrinketsUpdated-MIT.txt), which are also included in the distributed JAR.
 
-The CliffTree compatibility data pack contains biome data adapted from [CliffTree](https://modrinth.com/datapack/clifftree) 3.3 by Konci and its credited contributors. EastMonster modified world generation features for Matcha compatibility. This data remains under CC BY-NC-SA 4.0; attribution and source links are included in [CREDITS.txt](CREDITS.txt).
+The CliffTree compatibility data pack contains data adapted from [CliffTree](https://modrinth.com/datapack/clifftree) 4.0.0 by Konci and its credited contributors. EastMonster modified world generation features for Matcha compatibility. This data remains under CC BY-NC-SA 4.0; attribution and source links are included in [CREDITS.txt](CREDITS.txt).
 
 Third-party textures in the Farmer's Delight compatibility resource pack are derived from Farmer's Delight by vectorwing and modified by EastMonster for the Matcha visual style. These textures retain their [MIT license and copyright notice](src/main/resources/licenses/FarmersDelight-MIT.txt), which are also included in the distributed JAR.

@@ -3,6 +3,7 @@ package monster.east.matchaff;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import monster.east.matchaff.compat.CliffTreeCompat;
 import monster.east.matchaff.compat.FarmersDelightCompat;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.block.TomatoCropBlock;
@@ -92,6 +93,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		BlazeRodDropsMechanics.init();
 		VanillaFoodDefaults.init();
 		FarmersDelightCompat.init();
+		CliffTreeCompat.init();
 		PlayerMechanics.init();
 		EnchantmentMechanics.init();
 		if (FabricLoader.getInstance().isModLoaded(TrinketsCompat.MOD_ID)) {

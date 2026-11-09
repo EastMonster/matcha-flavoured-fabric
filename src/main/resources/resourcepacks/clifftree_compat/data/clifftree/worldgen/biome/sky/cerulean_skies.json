@@ -1,0 +1,77 @@
+{
+	"attributes": {
+		"minecraft:gameplay/can_pillager_patrol_spawn": false,
+		"minecraft:gameplay/natural_mob_spawns": {
+			"argument": {
+				"spawn_costs": {},
+				"spawns_by_category": {
+					"monster": [
+						{
+							"type": "minecraft:spider",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:zombie",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:zombie_villager",
+							"count": 1,
+							"weight": 5
+						},
+						{
+							"type": "minecraft:creeper",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:slime",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:enderman",
+							"count": {
+								"type": "minecraft:uniform",
+								"min_inclusive": 1,
+								"max_inclusive": 4
+							},
+							"weight": 10
+						},
+						{
+							"type": "minecraft:drowned",
+							"count": 1,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:husk",
+							"count": {
+								"type": "minecraft:uniform",
+								"min_inclusive": 1,
+								"max_inclusive": 2
+							},
+							"weight": 75
+						}
+					]
+				}
+			},
+			"modifier": "overlay"
+		},
+		"minecraft:visual/sky_color": "#2b71b7",
+		"minecraft:visual/fog_color": "#9ac3d9",
+		"minecraft:visual/star_brightness": 0.5,
+		"minecraft:visual/fog_start_distance": 0,
+		"minecraft:visual/fog_end_distance": 640,
+		"minecraft:visual/sky_fog_end_distance": 256
+	},
+	"carvers": [],
+	"downfall": 0.4,
+	"effects": {
+		"water_color": "#00679F"
+	},
+	"features": [],
+	"has_precipitation": false,
+	"temperature": 0.8
+}

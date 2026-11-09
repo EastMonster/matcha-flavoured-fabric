@@ -1,0 +1,172 @@
+{
+	"carvers": [
+		"minecraft:cave",
+		"minecraft:cave_extra_underground",
+		"minecraft:canyon",
+		"clifftree:inferno_cave"
+	],
+	"downfall": 0.4,
+	"attributes": {
+		"minecraft:audio/background_music": {
+			"default": {
+				"max_delay": 24000,
+				"min_delay": 12000,
+				"sound": "minecraft:music.overworld.deep_dark"
+			}
+		},
+		"minecraft:gameplay/natural_mob_spawns": {
+			"argument": {
+				"spawn_costs": {},
+				"spawns_by_category": {
+					"monster": [
+						{
+							"type": "minecraft:spider",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:zombie",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:zombie_villager",
+							"count": 1,
+							"weight": 5
+						},
+						{
+							"type": "minecraft:skeleton",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:creeper",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:slime",
+							"count": 4,
+							"weight": 100
+						},
+						{
+							"type": "minecraft:enderman",
+							"count": {
+								"type": "minecraft:uniform",
+								"min_inclusive": 1,
+								"max_inclusive": 4
+							},
+							"weight": 10
+						},
+						{
+							"type": "minecraft:husk",
+							"count": {
+								"type": "minecraft:uniform",
+								"min_inclusive": 1,
+								"max_inclusive": 2
+							},
+							"weight": 75
+						}
+					],
+					"underground_water_creature": [
+						{
+							"type": "minecraft:glow_squid",
+							"count": {
+								"type": "minecraft:uniform",
+								"min_inclusive": 4,
+								"max_inclusive": 6
+							},
+							"weight": 10
+						}
+					]
+				}
+			},
+			"modifier": "overlay"
+		},
+		"minecraft:gameplay/snow_golem_melts": true,
+		"minecraft:visual/sky_color": "#442b2b",
+		"minecraft:visual/fog_color": "#171413",
+		"minecraft:visual/fog_start_distance": 0,
+		"minecraft:visual/fog_end_distance": 128,
+		"minecraft:visual/cloud_color": "#00000000",
+		"minecraft:visual/water_fog_color": "#576B81",
+		"minecraft:visual/ambient_particles": [
+			{
+				"particle": {
+					"type": "minecraft:white_ash"
+				},
+				"probability": 0.02
+			}
+		],
+		"minecraft:visual/sunrise_sunset_color": "#00000000",
+		"minecraft:visual/default_dripstone_particle": {
+			"type": "minecraft:dripping_dripstone_lava"
+		},
+		"minecraft:visual/block_light_tint": "#f9ac69",
+		"minecraft:visual/ambient_light_color": "#1a100f"
+	},
+	"effects": {
+		"water_color": "#63A3F2"
+	},
+	"features": [
+		[],
+		[
+			"minecraft:lake_lava_underground",
+			"clifftree:lake_lava_underground_inferno",
+			"clifftree:inferno_cinnabar"
+		],
+		[
+			"minecraft:amethyst_geode",
+			"clifftree:inferno_caves_delta",
+			"clifftree:inferno_column"
+		],
+		[
+			"minecraft:fossil_upper",
+			"minecraft:fossil_lower",
+			"minecraft:monster_room",
+			"minecraft:monster_room_deep"
+		],
+		[],
+		[],
+		[
+			"minecraft:ore_dirt",
+			"minecraft:ore_gravel",
+			"minecraft:ore_granite_upper",
+			"minecraft:ore_granite_lower",
+			"minecraft:ore_diorite_upper",
+			"minecraft:ore_diorite_lower",
+			"minecraft:ore_andesite_upper",
+			"minecraft:ore_andesite_lower",
+			"minecraft:ore_tuff",
+			"minecraft:ore_coal_upper",
+			"minecraft:ore_coal_lower",
+			"minecraft:ore_iron_upper",
+			"minecraft:ore_iron_middle",
+			"minecraft:ore_gold",
+			"minecraft:ore_gold_lower",
+			"minecraft:ore_redstone",
+			"minecraft:ore_redstone_lower",
+			"minecraft:ore_diamond",
+			"minecraft:ore_diamond_medium",
+			"minecraft:ore_diamond_large",
+			"minecraft:ore_diamond_buried",
+			"minecraft:ore_lapis",
+			"minecraft:ore_lapis_buried",
+			"minecraft:ore_copper",
+			"minecraft:underwater_magma",
+			"clifftree:spring_closed",
+			"clifftree:ore_inferno_iron",
+			"clifftree:ore_inferno_iron_superdeep",
+			"clifftree:tuff_noise",
+			"clifftree:tuff_noise_ceiling",
+			"clifftree:ore_gravel_deep",
+			"matcha:ore_emerald_deep"
+		],
+		[],
+		["clifftree:inferno_caves_lava_spring", "minecraft:spring_lava"],
+		[],
+		["minecraft:freeze_top_layer"]
+	],
+	"has_precipitation": true,
+	"temperature": 2
+}

@@ -1,0 +1,61 @@
+{
+	"type": "minecraft:sequence",
+	"features": [
+		{
+			"feature": "clifftree:tree/poplar/poplar_orange",
+			"placement": []
+		},
+		{
+			"feature": {
+				"type": "weighted_random_selector",
+				"features": [
+					{
+						"data": {
+							"feature": "clifftree:leaf_litter",
+							"placement": []
+						},
+						"weight": 1
+					},
+					{
+						"data": {
+							"feature": "clifftree:leaf_litter_dense",
+							"placement": []
+						},
+						"weight": 2
+					}
+				]
+			},
+			"placement": []
+		},
+		{
+			"feature": {
+				"type": "minecraft:overlay",
+				"features": [
+					{
+						"feature": "clifftree:tree/decorator/trunk_vine",
+						"placement": [
+							{
+								"type": "minecraft:random_chance",
+								"chance": 0.4
+							}
+						]
+					},
+					{
+						"feature": "clifftree:tree/decorator/shelf_mushroom",
+						"placement": [
+							{
+								"type": "minecraft:count",
+								"count": 96
+							},
+							{
+								"type": "minecraft:random_chance",
+								"chance": 0.015
+							}
+						]
+					}
+				]
+			},
+			"placement": []
+		}
+	]
+}
