@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import monster.east.matchaff.compat.CliffTreeCompat;
 import monster.east.matchaff.compat.FarmersDelightCompat;
+import monster.east.matchaff.compat.ThirdPartyFoodCompat;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.block.TomatoCropBlock;
 import monster.east.matchaff.enchantment.EnchantmentMechanics;
@@ -93,6 +94,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		BlazeRodDropsMechanics.init();
 		VanillaFoodDefaults.init();
 		FarmersDelightCompat.init();
+		ThirdPartyFoodCompat.init();
 		CliffTreeCompat.init();
 		PlayerMechanics.init();
 		EnchantmentMechanics.init();
