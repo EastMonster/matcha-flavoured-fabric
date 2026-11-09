@@ -27,6 +27,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.animal.cow.Cow;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.npc.villager.Villager;
@@ -35,6 +36,7 @@ import net.minecraft.world.entity.npc.villager.VillagerProfession;
 import net.minecraft.world.entity.animal.happyghast.HappyGhast;
 import net.minecraft.world.entity.monster.skeleton.WitherSkeleton;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
@@ -98,7 +100,18 @@ public final class GameplayMechanics {
 		});
 		UseEntityCallback.EVENT.register((player, level, hand, entity, hit) -> {
 			ItemStack stack = player.getItemInHand(hand);
-			if (player.isSpectator() || !(entity instanceof Villager villager)
+			if (player.isSpectator()) {
+				return InteractionResult.PASS;
+			}
+			if (entity instanceof Cow cow && !cow.isBaby() && stack.is(Items.GLASS_BOTTLE)) {
+				if (level instanceof ServerLevel) {
+					ItemStack milk = new ItemStack(BuiltInRegistries.ITEM.getValue(id("milk_bottle")));
+					player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, milk));
+					cow.playSound(SoundEvents.COW_MILK, 1.0F, 1.0F);
+				}
+				return InteractionResult.SUCCESS;
+			}
+			if (!(entity instanceof Villager villager)
 					|| !isMatchaItem(stack, "amnestic")) {
 				return InteractionResult.PASS;
 			}
