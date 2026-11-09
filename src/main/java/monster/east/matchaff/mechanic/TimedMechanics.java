@@ -152,7 +152,7 @@ final class TimedMechanics {
 		});
 	}
 
-	static boolean shouldBreakBedrock(int fuse) {
+	private static boolean shouldBreakBedrock(int fuse) {
 		return fuse >= 0 && fuse <= 1;
 	}
 

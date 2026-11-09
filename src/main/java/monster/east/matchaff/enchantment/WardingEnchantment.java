@@ -49,11 +49,11 @@ final class WardingEnchantment {
 		}
 	}
 
-	static int effectiveLevel(int heldScore, int armourScore) {
+	private static int effectiveLevel(int heldScore, int armourScore) {
 		return Math.max(Math.min(3, heldScore), Math.min(4, armourScore));
 	}
 
-	static int slownessAmplifier(int level) {
+	private static int slownessAmplifier(int level) {
 		return level >= 3 ? 2 : 1;
 	}
 

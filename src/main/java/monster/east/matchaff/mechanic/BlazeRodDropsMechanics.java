@@ -61,19 +61,19 @@ public final class BlazeRodDropsMechanics {
 		}
 	}
 
-	static final class Settings extends SavedData {
-		static final Codec<Settings> CODEC = Codec.BOOL.optionalFieldOf("blaze_rod_drops", false)
+	private static final class Settings extends SavedData {
+		private static final Codec<Settings> CODEC = Codec.BOOL.optionalFieldOf("blaze_rod_drops", false)
 				.xmap(Settings::new, settings -> settings.enabled).codec();
 		private static final SavedDataType<Settings> TYPE = new SavedDataType<>(
 				Identifier.fromNamespaceAndPath("matcha", "blaze_rod_drops"),
 				() -> new Settings(false), CODEC, DataFixTypes.SAVED_DATA_COMMAND_STORAGE);
 		private boolean enabled;
 
-		Settings(boolean enabled) {
+		private Settings(boolean enabled) {
 			this.enabled = enabled;
 		}
 
-		boolean setEnabled(boolean enabled) {
+		private boolean setEnabled(boolean enabled) {
 			if (this.enabled == enabled) {
 				return false;
 			}

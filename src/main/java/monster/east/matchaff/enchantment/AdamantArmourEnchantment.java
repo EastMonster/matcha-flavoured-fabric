@@ -42,7 +42,7 @@ final class AdamantArmourEnchantment {
 		}
 	}
 
-	static int radius(int pieces) {
+	private static int radius(int pieces) {
 		return switch (pieces) {
 			case 1 -> 12;
 			case 2 -> 16;
@@ -51,7 +51,7 @@ final class AdamantArmourEnchantment {
 		};
 	}
 
-	static float damage(int pieces) {
+	private static float damage(int pieces) {
 		return switch (pieces) {
 			case 1 -> 3.0F;
 			case 2 -> 6.0F;

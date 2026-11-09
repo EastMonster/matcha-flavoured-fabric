@@ -36,10 +36,6 @@ public final class MatchaItemDataFixer {
 	private MatchaItemDataFixer() {
 	}
 
-	public static CompoundTag update(CompoundTag tag) {
-		return (CompoundTag) update(new Dynamic<>(NbtOps.INSTANCE, tag)).getValue();
-	}
-
 	public static CompoundTag updateIfNeeded(CompoundTag tag) {
 		int fromVersion = tag.getIntOr(DATA_VERSION_KEY, 0);
 		if (fromVersion >= CURRENT_DATA_VERSION) {
@@ -64,10 +60,6 @@ public final class MatchaItemDataFixer {
 
 	public static void markCurrent(CompoundTag tag) {
 		if (tag != null) tag.putInt(DATA_VERSION_KEY, CURRENT_DATA_VERSION);
-	}
-
-	public static <T> Dynamic<T> update(Dynamic<T> data) {
-		return update(data, 0);
 	}
 
 	private static <T> Dynamic<T> update(Dynamic<T> data, int fromVersion) {

@@ -213,7 +213,7 @@ public final class WorldMechanics {
 		}
 	}
 
-	static boolean shouldRefreshRecipeUnlocks(int playerVersion) {
+	private static boolean shouldRefreshRecipeUnlocks(int playerVersion) {
 		// Upstream renamed the unreleased 1.13.0 to 1.12.9; refresh that development marker once.
 		return playerVersion < RECIPE_UNLOCK_VERSION || playerVersion == 1_13_00_001;
 	}
