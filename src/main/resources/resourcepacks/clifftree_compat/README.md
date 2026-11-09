@@ -1,6 +1,6 @@
 # CliffTree compatibility
 
-Source: CliffTree 4.0.0 Fabric for Minecraft 26.3, under CC BY-NC-SA 4.0.
+Source: CliffTree 4.0.1 Fabric for Minecraft 26.3, under CC BY-NC-SA 4.0.
 See the mod's CREDITS.txt for attribution and source links.
 
 This server data pack is registered as `matcha:clifftree_compat`, always enabled
@@ -39,6 +39,9 @@ is not detected. No additional dependency or Mixin is needed.
   redstone ore feature, including its rock-patch overlay and extra placements.
 - Keep all five Matcha Beta village structure definitions except `biomes`, which
   uses CliffTree's corresponding vanilla biome tags.
+- Add `clifftree:shipwreck` to `minecraft:on_shipwreck_explorer_maps` because
+  CliffTree 4.0.1 generates shipwrecks under that structure ID. This preserves
+  Matcha's cartographer shipwreck-map destination.
 - Keep Matcha's dimension gameplay attributes and 72000-tick day, time markers,
   gameplay tracks and linear sun angle. Use CliffTree's visual attributes and
   other visual timeline tracks, with keyframe times multiplied by three.

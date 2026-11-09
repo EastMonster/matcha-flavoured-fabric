@@ -21,7 +21,7 @@ src/main/resources/licenses/TrinketsUpdated-MIT.txt in the source repository.
 
 CliffTree
 Data in the CliffTree compatibility data pack is derived from CliffTree
-4.0.0 by Konci (originally by Konci and Walls), with contributions credited to
+4.0.1 by Konci (originally by Konci and Walls), with contributions credited to
 Apollo, MiziraGamez, NovaWostra, and lunarbunten in the supplied mod metadata.
 Modified by EastMonster to adapt world generation features to Matcha.
 Source: https://modrinth.com/datapack/clifftree
