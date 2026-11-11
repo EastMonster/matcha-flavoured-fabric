@@ -5,6 +5,7 @@ import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -48,7 +49,9 @@ public final class WorldMechanics {
 	private static final int RECIPE_UNLOCK_VERSION = 1_12_09_001;
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
-	private static final String VERSION_LABEL = "1.12.9";
+	private static final String VERSION_LABEL = FabricLoader.getInstance()
+			.getModContainer("matcha-flavoured").orElseThrow().getMetadata().getVersion().getFriendlyString()
+			.replaceFirst("[-+].*$", "");
 	private static final Identifier ON_SULFUR_ADVANCEMENT = id("particle/on_sulfur");
 
 	private static final Map<UUID, Integer> LAST_BOATING_DISTANCE = new HashMap<>();
