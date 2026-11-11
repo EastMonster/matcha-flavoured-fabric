@@ -1,17 +1,69 @@
-# Automatically build the project and run any configured tests when a tag is pushed.
+# Build once and publish the same release JAR to both platforms.
 
 name: build
 on:
   push:
     tags:
-      - '*'
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version_tag:
+        description: 'Version tag to validate and publish to Modrinth and CurseForge (v<mod_version>)'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   build:
     runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.release.outputs.version }}
+      game-version: ${{ steps.release.outputs.game-version }}
+      release-type: ${{ steps.release.outputs.release-type }}
+      jar: ${{ steps.release.outputs.jar }}
     steps:
       - name: checkout repository
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: validate release metadata
+        id: release
+        env:
+          VERSION_TAG: ${{ github.event_name == 'push' && github.ref_name || inputs.version_tag }}
+        run: |
+          version=$(sed -n 's/^mod_version=//p' gradle.properties | tr -d '\r')
+          game_version=$(sed -n 's/^minecraft_version=//p' gradle.properties | tr -d '\r')
+          if [[ "$VERSION_TAG" != "v$version" ||
+                ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+-(r|beta|alpha)\.[0-9]+\+mc[0-9][a-zA-Z0-9.-]*$ ||
+                "$version" != *"+mc$game_version" ]]; then
+            echo '::error::The tag must match v<mod_version> and its Minecraft suffix must match minecraft_version.'
+            exit 1
+          fi
+
+          case "${version%%+*}" in
+            *-r.*) release_type=release ;;
+            *-beta.*) release_type=beta ;;
+            *-alpha.*) release_type=alpha ;;
+          esac
+
+          mkdir release
+          if ! git show HEAD:CHANGELOG.md > release/CHANGELOG.md || [[ ! -s release/CHANGELOG.md ]]; then
+            echo '::error::The selected commit must contain a non-empty CHANGELOG.md at the repository root.'
+            exit 1
+          fi
+
+          {
+            echo "version=$version"
+            echo "game-version=$game_version"
+            echo "release-type=$release_type"
+            echo "jar=matcha-flavoured-fabric-$version.jar"
+          } >> "$GITHUB_OUTPUT"
       - name: validate gradle wrapper
         uses: gradle/actions/wrapper-validation@v6
       - name: setup jdk
@@ -23,8 +75,85 @@ jobs:
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build
-      - name: capture build artifacts
+      - name: collect release JAR
+        env:
+          JAR: ${{ steps.release.outputs.jar }}
+        run: cp "build/libs/$JAR" release/
+      - name: capture release files
         uses: actions/upload-artifact@v7
         with:
-          name: Artifacts
-          path: build/libs/
+          name: release
+          path: release/
+          if-no-files-found: error
+          overwrite: true
+
+  publish-modrinth:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: release
+          path: release
+      - name: upload to Modrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          VERSION: ${{ needs.build.outputs.version }}
+          GAME_VERSION: ${{ needs.build.outputs.game-version }}
+          RELEASE_TYPE: ${{ needs.build.outputs.release-type }}
+          JAR: ${{ needs.build.outputs.jar }}
+        run: |
+          : "${MODRINTH_TOKEN:?Configure the MODRINTH_TOKEN repository secret}"
+          jq -n --arg version "$VERSION" --arg game "$GAME_VERSION" --arg channel "$RELEASE_TYPE" \
+            --rawfile changelog release/CHANGELOG.md '{
+              project_id: "9LKX5H57",
+              name: $version,
+              version_number: $version,
+              changelog: $changelog,
+              game_versions: [$game],
+              loaders: ["fabric"],
+              version_type: $channel,
+              featured: false,
+              status: "listed",
+              dependencies: [{project_id: "P7dR8mSH", dependency_type: "required"}],
+              file_parts: ["file"],
+              primary_file: "file"
+            }' > metadata.json
+          curl --fail-with-body --silent --show-error \
+            --user-agent 'EastMonster/matcha-flavoured-fabric (https://github.com/EastMonster/matcha-flavoured-fabric)' \
+            --header "Authorization: $MODRINTH_TOKEN" \
+            --form 'data=<metadata.json;type=application/json' \
+            --form "file=@release/$JAR;type=application/java-archive" \
+            https://api.modrinth.com/v2/version | jq -er '.id'
+
+  publish-curseforge:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: release
+          path: release
+      - name: upload to CurseForge
+        env:
+          CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          VERSION: ${{ needs.build.outputs.version }}
+          GAME_VERSION: ${{ needs.build.outputs.game-version }}
+          RELEASE_TYPE: ${{ needs.build.outputs.release-type }}
+          JAR: ${{ needs.build.outputs.jar }}
+        run: |
+          : "${CURSEFORGE_TOKEN:?Configure the CURSEFORGE_TOKEN repository secret}"
+          jq -n --arg version "$VERSION" --arg game "$GAME_VERSION" --arg channel "$RELEASE_TYPE" \
+            --rawfile changelog release/CHANGELOG.md '{
+              displayName: $version,
+              changelog: $changelog,
+              changelogType: "markdown",
+              gameVersionNames: [$game, "Fabric", "Client", "Server"],
+              releaseType: $channel,
+              relations: {projects: [{slug: "fabric-api", type: "requiredDependency"}]}
+            }' > metadata.json
+          curl --fail-with-body --silent --show-error \
+            --header "X-Api-Token: $CURSEFORGE_TOKEN" \
+            --form 'metadata=<metadata.json;type=application/json' \
+            --form "file=@release/$JAR;type=application/java-archive" \
+            https://minecraft.curseforge.com/api/projects/1695322/upload-file | jq -er '.id'
