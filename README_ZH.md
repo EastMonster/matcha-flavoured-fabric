@@ -4,8 +4,8 @@
 [![Modrinth](https://img.shields.io/badge/dynamic/json?labelColor=black&color=grey&label=&suffix=%20followers&query=followers&url=https://api.modrinth.com/v2/project/9LKX5H57&style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJPUExURQAAABvZahWnUha1WAYzGQlHIxvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZahvZav///9ScwmYAAADDdFJOUwAAAAAAAA8zW3uOYwIBK3rB6Pn+ml18KiGL5HEDquOIH07R/UzKz2zu+uLHIibtafWkVCMNBRqg7/RQuT8EQbvT+5ETDBSU/NAgCSdZlcQKii7mtxJY5fF/7D1SRkB+EcWh4UilOOtPMdTCR1PqN969vmGDCw7G4DSSsAcGHrSPr3bds5CEwDKoXumcZdwcG4KmjayX32A79pjOqRjIFoXynVYVgPi6qxDnL78p2obVJFquNbGZCPdyvHPZ1yhuh8s+iRzcsrEAAAABYktHRMQUDBvhAAAAB3RJTUUH5wQXDwgZWDUtiQAAAqRJREFUOMttU/k7lFEU/k4L4hsxtNAnhRgiJZOiSfbI2oJpmRFCi2kV0aaNVLTIEpVISmnf97r/WO+534yZnqfzw73vOe+559xz7rmKIoVYvLx95vj6qUSqVBW3sGrwnxsQaAwSwcDz5i9g0wxPfmFIqJCyiEgLE4vDl7iD8PGlETotIqOQahlAdJTLA5sWY5JsbNzysHiihEBWViRqRDOlgyFmJVtMq5JWJ5vhvyZlLevrEmUILKl8PihtvYWcYt6QLmNwFjjEb4SSkZnlZLO5yJzcPBg35bODwZfPZxYwWbC5sKjYzwBUkssxSg1wKNsCtHUb89vTy3GwopBxDmcJ9YdDJYB1B9t2WmUtcbtkqt18Mxsp9irsezS2VEu+uka/mqUWSrFd2VsnhLEetoZ9TFv3HwCexdUdjBWi0aH4YTuEvtoPM3/EO1nnuTpEjD2qHIM54DhR0wmA5hZySzIntyknsbZyi8IB0tp07tRpBDKfgeWsdDjHDlFGRIjnl3O0t573gcMFUBeVS1gvlxB1dOZxv0pIu9IF01UDZRdjr1SuZQhxvbvnRrmsMePmrdsrGPRaKP8OLtmn9KM7A4N3xb8yNExUb5RlZt2btpZbXajzPoYkBaDKrtADp3HkYdloo56ndgx37UcHxSP0tIWBGH9cg1nx6TJFTNhS7eCfcA1PJ+GgDbLDs2GuX3V05Ohj0xYSBGumyq/yfApw4EWTRxPJqxQvIF6+ks9Gr0d4nN+8Nbhoi+NdJEwVSc6hVNvHOUvg+5qeDxoP3GQz6x8/qXLuZ6Op7SPy+gNTnydSELabk1Z8Mbs/hlr4dbobfUgxJMS3UdXza9H33jqnA3/OH41FCZ7/l7HW8vOXiWc9GvPf06D953/T2O/EP8HBNtcH0Zm/lqFNUgTAex4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDQtMjNUMTU6MDg6MjQrMDA6MDAE5dOaAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA0LTIzVDE1OjA4OjI0KzAwOjAwdbhrJgAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wNC0yM1QxNTowODoyNSswMDowMITaQU0AAAAASUVORK5CYII=)](https://modrinth.com/mod/matcha-flavoured-fabric)
 
 > [!WARNING]
-> - 此非官方 Fabric 移植版的核心内容已经过测试，但部分边缘情况可能与原数据包不同。游玩前请备份存档。
-> - 本 mod 不支持直接使用原数据包的存档游玩，请创建新世界。
+> - 此非官方 Fabric 移植版的核心内容已经过测试，但部分边缘情况可能与原数据包不同。
+> - 本 mod 不支持直接使用原数据包的存档游玩，请创建一个新世界。
 > - 本 mod 尚未完整测试多人游戏下的表现，请谨慎使用。
 
 > [!NOTE]
@@ -19,10 +19,12 @@
 
 ## 环境要求
 
-|Minecraft|26.2|26.3|
+|Minecraft|26.3|26.2 (Matcha ≤ 1.12.9)|
 |---|---|---|
-|Fabric Loader|0.19.3+|0.19.5+|
-|Fabric API|0.156.0+|0.160.6+|
+|Fabric Loader|0.19.5+|0.19.3+|
+|Fabric API|0.160.6+|0.156.0+|
+
+**本项目从 Matcha 1.12.9 开始已中止对 Minecraft 26.2 的支持。**
 
 ## 安装
 
@@ -36,9 +38,9 @@
 - 食物回血改为按每次食用独立计时，不再依赖数据包使用的再生效果。原版再生同效果刷新不会叠加持续时间，连续吃同一种食物会静默丢失部分回血；现在每个食物隐藏的“回血模拟”段各自独立计时，连续食用能回满预期血量。
 - 树叶和发光地衣的破坏纹理不再延伸到空气中；树冠内部的树叶外延模型会被剔除，以减少渲染面数，同时保持树冠实心的观感。
 - Mod Menu 设置页面可以让每位客户端玩家单独关闭主世界的 True Darkness，不会改变服务器玩法。
-- OP 可以在 Mod Menu 中开启烈焰人额外掉落烈焰棒。该设置默认关闭、按存档保存，保留火焰弹掉落，并按原版烈焰棒掉率与抢夺规则即时生效，无需 reload。
+- 管理员可以在 Mod Menu 中开启烈焰人额外掉落烈焰棒。该设置默认关闭、按存档保存，保留火焰弹掉落，并按原版烈焰棒掉率与抢夺规则即时生效，无需 reload。
 - 兼容 [Trinkets Updated](https://modrinth.com/mod/trinkets-updated)：现在可以同时佩戴耳环和头盔；已佩戴头盔时，耳环提供的护甲值不生效。
-- 兼容 [CliffTree](https://modrinth.com/datapack/clifftree) 的 Fabric Mod 版本。如果你想让 Matcha 兼容更多的地形模组，欢迎在 [Issues](https://github.com/EastMonster/matcha-flavoured-fabric/issues) 提出建议！
+- 兼容 [CliffTree](https://modrinth.com/datapack/clifftree) 的 Fabric Mod 版本 (目前支持到 4.0.1）。
 - 兼容 [Farmer's Delight Refabricated](https://modrinth.com/mod/farmers-delight-refabricated). 享受种地吧!
 
 ## (可能) 导致行为差异的修改
@@ -63,6 +65,6 @@
 
 Trinkets 兼容资源包中的第三方材质基于 Trinkets / Trinkets Updated，由 EastMonster 改色。这些材质保留其 [MIT 许可证及版权声明](src/main/resources/licenses/TrinketsUpdated-MIT.txt)，许可文本也随 JAR 分发。
 
-CliffTree 兼容数据包中的群系数据基于 Konci 及其所列贡献者的 [CliffTree](https://modrinth.com/datapack/clifftree) 3.3，由 EastMonster 修改世界生成特征以适配 Matcha。这些数据仍遵循 CC BY-NC-SA 4.0；署名及来源链接见 [CREDITS.txt](CREDITS.txt)。
+CliffTree 兼容数据包中的群系数据基于 Konci 及其所列贡献者的 [CliffTree](https://modrinth.com/datapack/clifftree) 4.0.1，由 EastMonster 修改世界生成特征以适配 Matcha。这些数据仍遵循 CC BY-NC-SA 4.0；署名及来源链接见 [CREDITS.txt](CREDITS.txt)。
 
 农夫乐事兼容资源包中的第三方材质基于 vectorwing 的 Farmer's Delight，由 EastMonster 修改为 Matcha 风格。这些材质保留其 [MIT 许可证及版权声明](src/main/resources/licenses/FarmersDelight-MIT.txt)，许可文本也随 JAR 分发。
