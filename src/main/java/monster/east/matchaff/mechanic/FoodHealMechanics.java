@@ -1,10 +1,11 @@
 package monster.east.matchaff.mechanic;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.codec.ByteBufCodecs;
@@ -14,10 +15,8 @@ import net.minecraft.world.effect.MobEffectInstance;
 import java.util.ArrayList;
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.Optional;
 
 /**
  * Replaces the datapack's regeneration-based food healing with an independent
@@ -32,10 +31,24 @@ public final class FoodHealMechanics {
 			builder -> builder.syncWith(ByteBufCodecs.BOOL, AttachmentSyncPredicate.targetOnly()));
 
 	static final class HealTask {
+		private static final Codec<HealTask> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+				Codec.intRange(1, Integer.MAX_VALUE).fieldOf("ticks_left").forGetter(task -> task.ticksLeft),
+				Codec.intRange(0, Integer.MAX_VALUE).fieldOf("interval").forGetter(task -> task.interval),
+				MobEffectInstance.CODEC.optionalFieldOf("regeneration").forGetter(task -> Optional.ofNullable(task.visibleEffect)),
+				Codec.BOOL.optionalFieldOf("started", false).forGetter(task -> task.started)
+		).apply(instance, HealTask::new));
+
 		int ticksLeft;
 		final int interval;
 		final MobEffectInstance visibleEffect;
 		boolean started;
+
+		private HealTask(int ticksLeft, int interval, Optional<MobEffectInstance> visibleEffect, boolean started) {
+			this.ticksLeft = ticksLeft;
+			this.interval = interval;
+			this.visibleEffect = visibleEffect.orElse(null);
+			this.started = started;
+		}
 
 		HealTask(MobEffectInstance segment, int duration) {
 			this.ticksLeft = duration;
@@ -60,9 +73,16 @@ public final class FoodHealMechanics {
 
 	/** One food's regeneration chain (fast segment then lingering segment), run in sequence. */
 	static final class HealChain {
-		final Deque<HealTask> tasks = new ArrayDeque<>();
+		private static final Codec<HealChain> CODEC = HealTask.CODEC.listOf().xmap(
+				tasks -> new HealChain(new ArrayDeque<>(tasks)), chain -> List.copyOf(chain.tasks));
+		final Deque<HealTask> tasks;
+
+		private HealChain(Deque<HealTask> tasks) {
+			this.tasks = tasks;
+		}
 
 		HealChain(List<MobEffectInstance> chain) {
+			this(new ArrayDeque<HealTask>());
 			// Vanilla hides the lower-amplitude segment but ticks its duration down
 			// while the main effect runs, so each following segment only has
 			// (original - elapsed) ticks left once it takes over.
@@ -84,17 +104,18 @@ public final class FoodHealMechanics {
 
 		boolean isHealing() {
 			HealTask task = tasks.peek();
-			return task != null && task.visibleEffect == null && task.ticksLeft > 0;
+			return task != null && task.interval > 0 && task.visibleEffect == null && task.ticksLeft > 0;
 		}
 	}
 
-	private static final Map<UUID, List<HealChain>> PENDING = new HashMap<>();
+	private static final AttachmentType<List<HealChain>> PENDING = AttachmentRegistry.createPersistent(
+			Identifier.fromNamespaceAndPath("matcha", "pending_food_healing"),
+			HealChain.CODEC.listOf().<List<HealChain>>xmap(ArrayList::new, chains -> chains));
 
 	private FoodHealMechanics() {
 	}
 
 	public static void init() {
-		ServerLifecycleEvents.SERVER_STOPPED.register(server -> PENDING.clear());
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
 			if (entity instanceof ServerPlayer player) {
 				cancelHealing(player);
@@ -109,7 +130,7 @@ public final class FoodHealMechanics {
 					cancelHealing(player);
 					continue;
 				}
-				List<HealChain> chains = PENDING.get(player.getUUID());
+				List<HealChain> chains = player.getAttached(PENDING);
 				if (chains == null || chains.isEmpty()) {
 					syncAnimation(player);
 					continue;
@@ -122,7 +143,7 @@ public final class FoodHealMechanics {
 					task.start(player);
 					// Mirrors RegenerationMobEffect: heal when duration % interval == 0,
 					// then decrement; real regeneration segments are applied normally.
-					if (task.visibleEffect == null && task.ticksLeft % task.interval == 0
+					if (task.visibleEffect == null && task.interval > 0 && task.ticksLeft % task.interval == 0
 							&& player.getHealth() < player.getMaxHealth()) {
 						player.heal(1.0F);
 					}
@@ -133,7 +154,7 @@ public final class FoodHealMechanics {
 					return chain.tasks.isEmpty();
 				});
 				if (chains.isEmpty()) {
-					PENDING.remove(player.getUUID());
+					player.removeAttached(PENDING);
 				}
 				syncAnimation(player);
 			}
@@ -159,29 +180,29 @@ public final class FoodHealMechanics {
 			return false;
 		}
 		boolean applied = first.start(player);
-		PENDING.computeIfAbsent(player.getUUID(), key -> new ArrayList<>()).add(healChain);
+		player.getAttachedOrCreate(PENDING, ArrayList::new).add(healChain);
 		syncAnimation(player);
 		return applied;
 	}
 
 	public static void cancelHealing(ServerPlayer player) {
-		PENDING.remove(player.getUUID());
+		player.removeAttached(PENDING);
 		player.removeAttached(HEALING_ANIMATION);
 	}
 
 	public static void cancelPendingRegeneration(ServerPlayer player) {
-		List<HealChain> chains = PENDING.get(player.getUUID());
+		List<HealChain> chains = player.getAttached(PENDING);
 		if (chains != null) {
 			chains.removeIf(HealChain::cancelRegeneration);
 			if (chains.isEmpty()) {
-				PENDING.remove(player.getUUID());
+				player.removeAttached(PENDING);
 			}
 		}
 		syncAnimation(player);
 	}
 
 	private static void syncAnimation(ServerPlayer player) {
-		List<HealChain> chains = PENDING.get(player.getUUID());
+		List<HealChain> chains = player.getAttached(PENDING);
 		boolean active = chains != null && chains.stream().anyMatch(HealChain::isHealing);
 		if (active != player.getAttachedOrElse(HEALING_ANIMATION, false)) {
 			if (active) {
