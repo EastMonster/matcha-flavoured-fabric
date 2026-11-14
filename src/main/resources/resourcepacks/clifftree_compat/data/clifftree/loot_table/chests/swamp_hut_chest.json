@@ -1,0 +1,424 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": {
+				"type": "minecraft:uniform",
+				"min": 1,
+				"max": 3
+			},
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:redstone",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 8,
+							"max": 1
+						},
+						"add": false
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:glass_bottle",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 6
+						},
+						"add": false
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:gunpowder",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 6
+						},
+						"add": false
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:spider_eye",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 6
+						},
+						"add": false
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:sugar",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 6
+						},
+						"add": false
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:stick",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 6
+						},
+						"add": false
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:brown_mushroom",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 6
+						},
+						"add": false
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:red_mushroom",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 6
+						},
+						"add": false
+					}
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:emerald",
+					"weight": 4,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 5
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "matcha:tomato",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 8
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:experience_bottle",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:golden_carrot",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:magma_cream",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:pufferfish",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:glistering_melon_slice",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:rabbit_foot",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:fermented_spider_eye",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:amethyst_shard",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 8
+						}
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:phantom_membrane",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"min": 1,
+							"max": 3
+						}
+					}
+				}
+			]
+		},
+		{
+			"rolls": {
+				"type": "minecraft:uniform",
+				"min": 0,
+				"max": 2
+			},
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potion",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:healing"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potion",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:fire_resistance"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potion",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:swiftness"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:potion",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:water_breathing"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:splash_potion",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:harming"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:splash_potion",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:slowness"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:splash_potion",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:poison"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:splash_potion",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:set_potion",
+						"id": "minecraft:weakness"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:ominous_bottle",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:set_ominous_bottle_amplifier",
+						"amplifier": 0
+					}
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:empty",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book",
+					"weight": 5,
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": "#minecraft:on_random_loot"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book",
+					"weight": 1,
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": "minecraft:mending"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": "minecraft:depth_strider"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": "minecraft:respiration"
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:book",
+					"weight": 2,
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": "minecraft:vanishing_curse"
+					}
+				}
+			]
+		}
+	],
+	"modifier": "clifftree:loot_modifier"
+}
