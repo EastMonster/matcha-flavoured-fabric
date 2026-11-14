@@ -1,0 +1,58 @@
+{
+	"type": "farmersdelight:cooking",
+	"recipe_book_tab": "meals",
+	"ingredients": [
+		"minecraft:dried_kelp",
+		"minecraft:carrot",
+		"matcha:braised_brown_mushroom"
+	],
+	"container": {
+		"id": "minecraft:bowl"
+	},
+	"result": {
+		"id": "matcha:mushroom_soup",
+		"count": 1,
+		"components": {
+			"minecraft:consumable": {
+				"consume_seconds": 1.6,
+				"sound": "minecraft:entity.generic.drink",
+				"has_consume_particles": true,
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"probability": 1,
+						"effects": [
+							{
+								"id": "minecraft:regeneration",
+								"duration": 120,
+								"amplifier": 2,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": false
+							}
+						]
+					},
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "farmersdelight:nourishment",
+								"duration": 160,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					}
+				]
+			},
+			"minecraft:lore": [
+				{
+					"translate": "effect.farmersdelight.nourishment.desc",
+					"with": ["0:08"],
+					"color": "#e85e8f",
+					"italic": false
+				}
+			]
+		}
+	}
+}

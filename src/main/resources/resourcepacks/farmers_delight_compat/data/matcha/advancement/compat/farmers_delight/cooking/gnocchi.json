@@ -1,0 +1,27 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/crafting/gnocchi"
+			}
+		},
+		"gnocchi_recipe_has_the_recipe_paper": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:gnocchi_recipe"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		["original_unlocked", "gnocchi_recipe_has_the_recipe_paper"]
+	],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/gnocchi"]
+	}
+}

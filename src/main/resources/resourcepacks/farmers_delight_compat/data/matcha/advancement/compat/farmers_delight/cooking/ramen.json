@@ -1,0 +1,27 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/oven/ramen"
+			}
+		},
+		"uncooked_ramen_has_primary_material": {
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:uncooked_ramen"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [
+		["original_unlocked", "uncooked_ramen_has_primary_material"]
+	],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/ramen"]
+	}
+}

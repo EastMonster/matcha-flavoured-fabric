@@ -1,0 +1,31 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/crafting/crimson_stroganoff"
+			}
+		},
+		"original_already_known": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:type_specific/player": {
+							"recipes": {
+								"matcha:food/crafting/crimson_stroganoff": true
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"requirements": [["original_unlocked", "original_already_known"]],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/crimson_stroganoff"]
+	}
+}

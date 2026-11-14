@@ -1,0 +1,16 @@
+{
+	"type": "farmersdelight:cooking",
+	"recipe_book_tab": "meals",
+	"ingredients": [
+		"minecraft:crimson_fungus",
+		"minecraft:cooked_beef",
+		"matcha:dough",
+		"matcha:milk_bottle"
+	],
+	"container": {
+		"id": "minecraft:bowl"
+	},
+	"result": {
+		"id": "matcha:crimson_stroganoff"
+	}
+}

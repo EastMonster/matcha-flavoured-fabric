@@ -1,0 +1,25 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/crafting/bokguk"
+			}
+		},
+		"pufferfish_has_primary_material": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:pufferfish"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [["original_unlocked", "pufferfish_has_primary_material"]],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/bokguk"]
+	}
+}

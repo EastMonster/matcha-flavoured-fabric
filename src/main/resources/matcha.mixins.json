@@ -5,6 +5,9 @@
 	"mixins": [
 		"compat.FarmersDelightNourishmentMixin",
 		"compat.FarmersDelightSkilletHeatMixin",
+		"compat.FarmersDelightCookingPotBlockMixin",
+		"compat.FarmersDelightCookingPotMenuMixin",
+		"compat.FarmersDelightCookingPotResultSlotMixin",
 		"DataFixTypesMixin",
 		"PlayerDataStorageMixin",
 		"PlayerAdvancementsMixin",

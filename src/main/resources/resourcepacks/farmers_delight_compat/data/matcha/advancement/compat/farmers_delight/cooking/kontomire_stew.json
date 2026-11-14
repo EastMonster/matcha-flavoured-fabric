@@ -1,0 +1,48 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/crafting/kontomire_stew"
+			}
+		},
+		"bowl_has_primary_material": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:bowl"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"tomato_has_the_recipe": {
+			"conditions": {
+				"recipes": "matcha:crafting/tomato_seeds_from_tomato"
+			},
+			"trigger": "minecraft:recipe_unlocked"
+		},
+		"tomato_has_primary_material": {
+			"conditions": {
+				"items": [
+					{
+						"items": "#c:foods/tomato"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [
+		[
+			"original_unlocked",
+			"bowl_has_primary_material",
+			"tomato_has_the_recipe",
+			"tomato_has_primary_material"
+		]
+	],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/kontomire_stew"]
+	}
+}

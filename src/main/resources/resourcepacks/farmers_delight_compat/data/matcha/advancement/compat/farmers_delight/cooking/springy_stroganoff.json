@@ -1,0 +1,27 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/crafting/springy_stroganoff"
+			}
+		},
+		"shelf_mushroom_has_primary_material": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:shelf_mushroom"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [
+		["original_unlocked", "shelf_mushroom_has_primary_material"]
+	],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/springy_stroganoff"]
+	}
+}

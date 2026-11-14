@@ -1,0 +1,27 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/crafting/stroganoff"
+			}
+		},
+		"braised_brown_mushroom_cooked_the_food": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:braised_brown_mushroom"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		["original_unlocked", "braised_brown_mushroom_cooked_the_food"]
+	],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/stroganoff"]
+	}
+}

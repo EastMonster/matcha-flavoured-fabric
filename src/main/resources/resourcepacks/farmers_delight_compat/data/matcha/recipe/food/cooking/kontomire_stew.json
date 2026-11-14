@@ -1,0 +1,85 @@
+{
+	"type": "farmersdelight:cooking",
+	"recipe_book_tab": "meals",
+	"ingredients": [
+		"#c:foods/tomato",
+		"minecraft:dandelion",
+		"minecraft:fern",
+		["minecraft:cooked_cod", "minecraft:cooked_salmon"],
+		"#minecraft:eggs"
+	],
+	"container": {
+		"id": "minecraft:bowl"
+	},
+	"result": {
+		"id": "matcha:kontomire_stew",
+		"components": {
+			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.drink",
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"probability": 1,
+						"effects": [
+							{
+								"id": "minecraft:strength",
+								"duration": 6000,
+								"amplifier": 0,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": true
+							},
+							{
+								"id": "minecraft:regeneration",
+								"duration": 144,
+								"amplifier": 2,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": false
+							},
+							{
+								"id": "minecraft:regeneration",
+								"duration": 1200,
+								"amplifier": 0,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					},
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "farmersdelight:nourishment",
+								"duration": 160,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					}
+				]
+			},
+			"minecraft:lore": [
+				{
+					"translate": "effect.matcha.strength",
+					"with": ["5:00"],
+					"color": "#e65f33",
+					"italic": false
+				},
+				{
+					"translate": "effect.matcha.regen",
+					"with": ["1:00"],
+					"color": "#e85e8f",
+					"italic": false
+				},
+				{
+					"translate": "effect.farmersdelight.nourishment.desc",
+					"with": ["0:08"],
+					"color": "#e85e8f",
+					"italic": false
+				}
+			]
+		}
+	}
+}

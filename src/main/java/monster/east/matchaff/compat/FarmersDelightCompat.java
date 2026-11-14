@@ -13,8 +13,12 @@ import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.RegistryOps;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.component.Consumable;
@@ -44,6 +48,29 @@ public final class FarmersDelightCompat {
 
 	public static boolean hasCustomLore(ItemStack stack) {
 		return CUSTOM_LORE_ITEMS.contains(BuiltInRegistries.ITEM.getKey(stack.getItem()));
+	}
+
+	public static void discoverCookingPotRecipe(Player player, ItemStack serving) {
+		if (!(player instanceof ServerPlayer serverPlayer) || serving.isEmpty()) {
+			return;
+		}
+		Identifier item = BuiltInRegistries.ITEM.getKey(serving.getItem());
+		if (!item.getNamespace().equals("matcha")) {
+			return;
+		}
+		String criterion = switch (item.getPath()) {
+			case "crimson_stroganoff", "warped_stroganoff", "gnocchi" -> item.getPath();
+			default -> null;
+		};
+		if (criterion != null) {
+			var advancement = serverPlayer.level().getServer().getAdvancements()
+					.get(Identifier.fromNamespaceAndPath("matcha", "tutorial/cook_secret_meal"));
+			if (advancement != null) {
+				serverPlayer.getAdvancements().award(advancement, criterion);
+			}
+			serverPlayer.awardRecipesByKey(List.of(
+					ResourceKey.create(Registries.RECIPE, item.withPrefix("food/crafting/"))));
+		}
 	}
 
 	public static void init() {

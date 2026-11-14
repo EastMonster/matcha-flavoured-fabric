@@ -1,0 +1,27 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/oven/green_curry"
+			}
+		},
+		"uncooked_green_curry_has_primary_material": {
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:uncooked_green_curry"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [
+		["original_unlocked", "uncooked_green_curry_has_primary_material"]
+	],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/green_curry"]
+	}
+}

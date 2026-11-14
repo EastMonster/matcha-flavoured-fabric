@@ -1,0 +1,76 @@
+{
+	"type": "farmersdelight:cooking",
+	"recipe_book_tab": "meals",
+	"ingredients": [
+		"minecraft:brown_mushroom",
+		"minecraft:dried_kelp",
+		"#minecraft:eggs",
+		"matcha:dough",
+		"matcha:oil",
+		["minecraft:porkchop", "minecraft:chicken", "matcha:seitan"]
+	],
+	"container": {
+		"id": "minecraft:bowl"
+	},
+	"cookingtime": 300,
+	"experience": 0.35,
+	"result": {
+		"id": "matcha:ramen",
+		"components": {
+			"minecraft:consumable": {
+				"consume_seconds": 3,
+				"animation": "drink",
+				"has_consume_particles": true,
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"probability": 1,
+						"effects": [
+							{
+								"id": "minecraft:regeneration",
+								"duration": 240,
+								"amplifier": 2,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": false
+							},
+							{
+								"id": "minecraft:haste",
+								"duration": 36000,
+								"amplifier": 1,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					},
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "farmersdelight:nourishment",
+								"duration": 160,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					}
+				]
+			},
+			"minecraft:lore": [
+				{
+					"translate": "effect.matcha.haste_2",
+					"with": ["30:00"],
+					"color": "yellow",
+					"italic": false
+				},
+				{
+					"translate": "effect.farmersdelight.nourishment.desc",
+					"with": ["0:08"],
+					"color": "#e85e8f",
+					"italic": false
+				}
+			]
+		}
+	}
+}

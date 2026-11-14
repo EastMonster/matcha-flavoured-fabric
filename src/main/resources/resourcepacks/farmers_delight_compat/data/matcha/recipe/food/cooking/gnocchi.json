@@ -1,0 +1,56 @@
+{
+	"type": "farmersdelight:cooking",
+	"recipe_book_tab": "meals",
+	"ingredients": [
+		"minecraft:baked_potato",
+		"matcha:cheese",
+		"#minecraft:eggs",
+		"matcha:flour"
+	],
+	"container": {
+		"id": "minecraft:bowl"
+	},
+	"result": {
+		"id": "matcha:gnocchi",
+		"count": 1,
+		"components": {
+			"minecraft:consumable": {
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"probability": 1.0,
+						"effects": [
+							{
+								"id": "minecraft:regeneration",
+								"duration": 192,
+								"amplifier": 2,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": false
+							}
+						]
+					},
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "farmersdelight:nourishment",
+								"duration": 160,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					}
+				]
+			},
+			"minecraft:lore": [
+				{
+					"translate": "effect.farmersdelight.nourishment.desc",
+					"with": ["0:08"],
+					"color": "#e85e8f",
+					"italic": false
+				}
+			]
+		}
+	}
+}

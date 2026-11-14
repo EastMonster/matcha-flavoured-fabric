@@ -1,0 +1,71 @@
+{
+	"type": "farmersdelight:cooking",
+	"recipe_book_tab": "meals",
+	"ingredients": [
+		"minecraft:warped_fungus",
+		"minecraft:cooked_beef",
+		"matcha:dough",
+		"matcha:milk_bottle"
+	],
+	"container": {
+		"id": "minecraft:bowl"
+	},
+	"result": {
+		"id": "matcha:warped_stroganoff",
+		"count": 1,
+		"components": {
+			"minecraft:consumable": {
+				"consume_seconds": 1.8,
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"probability": 1.0,
+						"effects": [
+							{
+								"id": "minecraft:invisibility",
+								"duration": 12000,
+								"amplifier": 0,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": true
+							},
+							{
+								"id": "minecraft:regeneration",
+								"duration": 144,
+								"amplifier": 2,
+								"ambient": false,
+								"show_particles": false,
+								"show_icon": false
+							}
+						]
+					},
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "farmersdelight:nourishment",
+								"duration": 160,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					}
+				]
+			},
+			"minecraft:lore": [
+				{
+					"translate": "effect.matcha.invisibility",
+					"with": ["10:00"],
+					"color": "#92b7ce",
+					"italic": false
+				},
+				{
+					"translate": "effect.farmersdelight.nourishment.desc",
+					"with": ["0:08"],
+					"color": "#e85e8f",
+					"italic": false
+				}
+			]
+		}
+	}
+}

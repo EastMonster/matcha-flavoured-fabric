@@ -1,0 +1,25 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"original_unlocked": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipes": "matcha:food/crafting/oatmeal"
+			}
+		},
+		"bowl_has_primary_material": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:bowl"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [["original_unlocked", "bowl_has_primary_material"]],
+	"rewards": {
+		"recipes": ["matcha:food/cooking/oatmeal"]
+	}
+}

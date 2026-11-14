@@ -1,0 +1,83 @@
+{
+	"type": "farmersdelight:cooking",
+	"recipe_book_tab": "meals",
+	"ingredients": [
+		"minecraft:honey_bottle",
+		"matcha:milk_bottle",
+		"minecraft:glowstone_dust",
+		"minecraft:apple",
+		"minecraft:wheat_seeds",
+		"minecraft:wheat_seeds"
+	],
+	"container": {
+		"id": "minecraft:bowl"
+	},
+	"result": {
+		"id": "matcha:oatmeal",
+		"count": 1,
+		"components": {
+			"minecraft:consumable": {
+				"consume_seconds": 1.8,
+				"on_consume_effects": [
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "minecraft:speed",
+								"amplifier": 0,
+								"duration": 12000,
+								"show_particles": false,
+								"show_icon": true
+							},
+							{
+								"id": "minecraft:regeneration",
+								"amplifier": 2,
+								"duration": 120,
+								"show_particles": false,
+								"show_icon": false
+							},
+							{
+								"id": "minecraft:regeneration",
+								"amplifier": 0,
+								"duration": 2400,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					},
+					{
+						"type": "minecraft:apply_effects",
+						"effects": [
+							{
+								"id": "farmersdelight:nourishment",
+								"duration": 160,
+								"show_particles": false,
+								"show_icon": true
+							}
+						]
+					}
+				]
+			},
+			"minecraft:lore": [
+				{
+					"translate": "effect.matcha.regen",
+					"with": ["2:00"],
+					"color": "#e85e8f",
+					"italic": false
+				},
+				{
+					"translate": "effect.matcha.speed",
+					"with": ["10:00"],
+					"color": "#37cafb",
+					"italic": false
+				},
+				{
+					"translate": "effect.farmersdelight.nourishment.desc",
+					"with": ["0:08"],
+					"color": "#e85e8f",
+					"italic": false
+				}
+			]
+		}
+	}
+}

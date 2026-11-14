@@ -11,6 +11,7 @@ import mezz.jei.api.recipe.category.extensions.vanilla.crafting.ICraftingCategor
 import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IVanillaCategoryExtensionRegistration;
+import mezz.jei.api.recipe.types.IRecipeHolderType;
 import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.runtime.IJeiRuntime;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -48,6 +49,7 @@ import java.util.stream.Stream;
 @JeiPlugin
 public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExtension<ShapedRecipe> {
     private static final Identifier UID = Identifier.fromNamespaceAndPath("matcha-flavoured", "jei");
+	private static final Identifier FD_COOKING = Identifier.fromNamespaceAndPath("farmersdelight", "cooking");
 	private static final List<SecretRecipe> SECRET_RECIPES = List.of(
 			new SecretRecipe("matcha:food/oven/golden_steamed_carrots", "matcha:tutorial/cook_secret_food", "golden_steamed_carrots"),
 			new SecretRecipe("matcha:food/campfire/golden_steamed_carrots", "matcha:tutorial/cook_secret_food", "golden_steamed_carrots"),
@@ -98,6 +100,7 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 			runtime.getRecipeManager().hideRecipes(RecipeTypes.CRAFTING, doughRecipes);
 		}
 		resetRecipeCache();
+		refreshSecretRecipes(Minecraft.getInstance());
 		if (!tickListenerRegistered) {
 			ClientTickEvents.END_CLIENT_TICK.register(MatchaJeiPlugin::refreshSecretRecipes);
 			tickListenerRegistered = true;
@@ -239,6 +242,13 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 		updateVisibility(RecipeTypes.CRAFTING, craftingRecipes, unlockedMask);
 		updateVisibility(RecipeTypes.SMELTING, smeltingRecipes, unlockedMask);
 		updateVisibility(RecipeTypes.CAMPFIRE_COOKING, campfireRecipes, unlockedMask);
+		if (jeiRuntime.getRecipeManager().getRecipeType(FD_COOKING).orElse(null) instanceof IRecipeHolderType<?> cooking) {
+			updateCookingVisibility(cooking, unlockedMask);
+		}
+	}
+
+	private static <R extends Recipe<?>> void updateCookingVisibility(IRecipeHolderType<R> type, long unlockedMask) {
+		updateVisibility(type, lookup(type), unlockedMask);
 	}
 
 	private static void resetRecipeCache() {
@@ -308,8 +318,14 @@ public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExten
 	}
 
 	private static int secretIndex(Identifier recipeId) {
+		Identifier original = switch (recipeId.toString()) {
+			case "matcha:food/cooking/crimson_stroganoff" -> Identifier.parse("matcha:food/crafting/crimson_stroganoff");
+			case "matcha:food/cooking/warped_stroganoff" -> Identifier.parse("matcha:food/crafting/warped_stroganoff");
+			case "matcha:food/cooking/gnocchi" -> Identifier.parse("matcha:food/crafting/gnocchi");
+			default -> recipeId;
+		};
 		for (int i = 0; i < SECRET_RECIPES.size(); i++) {
-			if (SECRET_RECIPES.get(i).recipeId().equals(recipeId)) {
+			if (SECRET_RECIPES.get(i).recipeId().equals(original)) {
 				return i;
 			}
 		}
