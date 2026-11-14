@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"key": {
+		"B": "minecraft:cocoa_beans",
+		"C": "matcha:chocolate",
+		"I": "minecraft:ice",
+		"S": "minecraft:stick"
+	},
+	"pattern": [" BB", "ICC", "SI "],
+	"result": {
+		"count": 1,
+		"id": "moredelight:chocolate_popsicle"
+	}
+}

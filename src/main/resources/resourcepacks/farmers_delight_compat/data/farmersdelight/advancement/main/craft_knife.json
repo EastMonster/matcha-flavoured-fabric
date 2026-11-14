@@ -70,6 +70,12 @@
 				]
 			},
 			"trigger": "minecraft:inventory_changed"
+		},
+		"moredelight_knife": {
+			"conditions": {
+				"items": [{ "items": "#matcha:moredelight_knives" }]
+			},
+			"trigger": "minecraft:inventory_changed"
 		}
 	},
 	"display": {
@@ -91,7 +97,8 @@
 			"iron_knife",
 			"diamond_knife",
 			"golden_knife",
-			"netherite_knife"
+			"netherite_knife",
+			"moredelight_knife"
 		]
 	],
 	"sends_telemetry_event": true

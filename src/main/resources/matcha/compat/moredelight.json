@@ -1,0 +1,799 @@
+[
+	{
+		"item": "moredelight:diced_potatoes",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 12,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:chocolate_popsicle",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:haste",
+							"duration": 3000,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.haste",
+				"with": ["2:30"],
+				"color": "yellow",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:omelette",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 36,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:cooked_rice_with_chicken_cuts",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"duration": 320,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:16"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:cooked_rice_with_beef",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"duration": 320,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:16"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:cooked_rice_with_porkchop",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"duration": 320,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:16"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:creamy_pasta_with_ham",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 144,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:creamy_pasta_with_chicken_cuts",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 132,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"duration": 480,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:24"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:mashed_potatoes",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:diced_potatoes_with_chicken_cuts",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 108,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:diced_potatoes_with_beef",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 108,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:diced_potatoes_with_porkchop",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 108,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:diced_potatoes_with_egg_and_tomato",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 96,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:potato_salad",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 60,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:regeneration",
+							"duration": 160,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.regen",
+				"with": ["0:05"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:chicken_salad",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 84,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:regeneration",
+							"duration": 184,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.regen",
+				"with": ["0:05"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:carrot_soup",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 60,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "farmersdelight:nourishment",
+							"duration": 160,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.farmersdelight.nourishment.desc",
+				"with": ["0:08"],
+				"color": "#e85e8f",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:simple_hamburger",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 72,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:hamburger_with_egg",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 96,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:loaded_hamburger",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 192,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:chicken_sandwich_with_egg_and_tomato",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 132,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:steak_sandwich",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:porkchop_sandwich",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 120,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:egg_with_bacon_sandwich",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 108,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:tomato_sandwich",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 60,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:bread_slice",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 12,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:toast",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 12,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:toast_with_egg",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 36,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": []
+	},
+	{
+		"item": "moredelight:toast_with_honey",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:remove_effects",
+					"effects": [
+						"minecraft:poison",
+						"minecraft:mining_fatigue",
+						"minecraft:wither",
+						"minecraft:weakness",
+						"minecraft:bad_omen",
+						"minecraft:blindness",
+						"minecraft:darkness",
+						"minecraft:infested",
+						"minecraft:weaving",
+						"minecraft:nausea",
+						"minecraft:oozing",
+						"minecraft:slowness"
+					]
+				},
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 48,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.cleanse_maleffect",
+				"color": "gray",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:toast_with_sweet_berries",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 36,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:health_boost",
+							"duration": 2400,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [{ "text": "❤❤ (2:00)", "color": "gray", "italic": false }]
+	},
+	{
+		"item": "moredelight:toast_with_glow_berries",
+		"customData": { "matcha:aura_30s": {} },
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 36,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.aura",
+				"with": ["0:30"],
+				"color": "#0fffa3",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:toast_with_chocolate",
+		"consumable": {
+			"on_consume_effects": [
+				{
+					"type": "minecraft:apply_effects",
+					"effects": [
+						{
+							"id": "minecraft:regeneration",
+							"amplifier": 2,
+							"duration": 48,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"id": "minecraft:haste",
+							"duration": 1200,
+							"show_particles": false,
+							"show_icon": true
+						}
+					]
+				}
+			]
+		},
+		"lore": [
+			{
+				"translate": "effect.matcha.haste",
+				"with": ["1:00"],
+				"color": "yellow",
+				"italic": false
+			}
+		]
+	},
+	{
+		"item": "moredelight:wooden_knife",
+		"source": "matcha:butcher_knife",
+		"components": ["minecraft:tooltip_display"]
+	},
+	{
+		"item": "moredelight:stone_knife",
+		"source": "matcha:butcher_knife",
+		"components": ["minecraft:tooltip_display"]
+	}
+]

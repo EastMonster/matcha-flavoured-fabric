@@ -22,6 +22,7 @@ import net.minecraft.world.item.component.CustomData;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -31,7 +32,8 @@ public final class FarmersDelightCompat {
 	private static final Set<Identifier> CUSTOM_LORE_ITEMS = new HashSet<>();
 	private static final Set<Identifier> HIDDEN_ITEMS = Set.of(
 			Identifier.parse("farmersdelight:milk_bottle"), Identifier.parse("farmersdelight:fried_egg"),
-			Identifier.parse("farmersdelight:wheat_dough"));
+			Identifier.parse("farmersdelight:wheat_dough"), Identifier.parse("moredelight:toast_with_sweet_berries"),
+			Identifier.parse("moredelight:stone_knife"));
 
 	private FarmersDelightCompat() {
 	}
@@ -57,13 +59,14 @@ public final class FarmersDelightCompat {
 				FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
 				PackActivationType.ALWAYS_ENABLED
 		);
-		Replacement[] replacements;
-		String path = "/matcha/compat/farmersdelight.json";
-		try (var stream = FarmersDelightCompat.class.getResourceAsStream(path);
-			 var reader = new InputStreamReader(Objects.requireNonNull(stream, path), StandardCharsets.UTF_8)) {
-			replacements = Objects.requireNonNull(new Gson().fromJson(reader, Replacement[].class), path);
-		} catch (Exception exception) {
-			throw new IllegalStateException("Could not load Farmer's Delight component replacements", exception);
+		List<Replacement> replacements = new ArrayList<>(loadReplacements("/matcha/compat/farmersdelight.json"));
+		if (FabricLoader.getInstance().isModLoaded("moredelight")) {
+			ResourceLoader.registerBuiltinPack(
+					Identifier.fromNamespaceAndPath("matcha", "moredelight_compat"),
+					FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
+					PackActivationType.ALWAYS_ENABLED
+			);
+			replacements.addAll(loadReplacements("/matcha/compat/moredelight.json"));
 		}
 		for (Replacement replacement : replacements) {
 			if (replacement.lore != null) {
@@ -111,6 +114,15 @@ public final class FarmersDelightCompat {
 				});
 			}
 		});
+	}
+
+	private static List<Replacement> loadReplacements(String path) {
+		try (var stream = FarmersDelightCompat.class.getResourceAsStream(path);
+			 var reader = new InputStreamReader(Objects.requireNonNull(stream, path), StandardCharsets.UTF_8)) {
+			return List.of(Objects.requireNonNull(new Gson().fromJson(reader, Replacement[].class), path));
+		} catch (Exception exception) {
+			throw new IllegalStateException("Could not load component replacements: " + path, exception);
+		}
 	}
 
 	static <T> void copyComponent(DataComponentMap.Builder builder, DataComponentMap source, DataComponentType<T> type) {

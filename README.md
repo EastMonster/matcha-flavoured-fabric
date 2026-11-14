@@ -41,7 +41,7 @@ Create a new world to play this mod. Existing items from the data-pack version a
 - Operators can enable extra blaze rod drops in Mod Menu. This world setting defaults to off, preserves fire charge drops, and applies vanilla blaze rod and Looting rates immediately without a reload.
 - [Trinkets Updated](https://modrinth.com/mod/trinkets-updated) compatibility lets earrings be worn alongside a helmet. Earring armor bonuses do not apply while a helmet is equipped.
 - [CliffTree](https://modrinth.com/datapack/clifftree) compatibility (Fabric Mod version only; CliffTree 4.0.1 on Minecraft 26.3).
-- [Farmer's Delight Refabricated](https://modrinth.com/mod/farmers-delight-refabricated) compatibility. Enjoy farmer life!
+- [Farmer's Delight](https://modrinth.com/mod/farmers-delight-refabricated) & [More Delight](https://modrinth.com/mod/more-delight) compatibility. Enjoy farmer life!
 
 ## Changes that (may) cause behavioral differences
 

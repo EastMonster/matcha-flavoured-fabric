@@ -1,0 +1,27 @@
+{
+	"pack": {
+		"description": "Matcha Flavoured + More Delight compatibility",
+		"min_format": [97, 1],
+		"max_format": [121, 0]
+	},
+	"filter": {
+		"block": [
+			{
+				"namespace": "moredelight",
+				"path": "recipe/toast_with_sweet_berries\\.json"
+			},
+			{
+				"namespace": "moredelight",
+				"path": "advancement/recipes/food/toast_with_sweet_berries\\.json"
+			},
+			{
+				"namespace": "moredelight",
+				"path": "recipe/stone_knife\\.json"
+			},
+			{
+				"namespace": "moredelight",
+				"path": "advancement/combat/stone_knife\\.json"
+			}
+		]
+	}
+}

@@ -41,7 +41,7 @@
 - 管理员可以在 Mod Menu 中开启烈焰人额外掉落烈焰棒。该设置默认关闭、按存档保存，保留火焰弹掉落，并按原版烈焰棒掉率与抢夺规则即时生效，无需 reload。
 - 兼容 [Trinkets Updated](https://modrinth.com/mod/trinkets-updated)：现在可以同时佩戴耳环和头盔；已佩戴头盔时，耳环提供的护甲值不生效。
 - 兼容 [CliffTree](https://modrinth.com/datapack/clifftree) 的 Fabric Mod 版本 (目前支持到 4.0.1）。
-- 兼容 [Farmer's Delight Refabricated](https://modrinth.com/mod/farmers-delight-refabricated). 享受种地吧!
+- 兼容 [农夫乐事](https://modrinth.com/mod/farmers-delight-refabricated)及[多趣乐事 (More Delight)](https://modrinth.com/mod/more-delight)。享受种地吧!
 
 ## (可能) 导致行为差异的修改
 
