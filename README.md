@@ -39,8 +39,12 @@ Create a new world to play this mod. Existing items from the data-pack version a
 - Breaking cracks no longer appear floating in the air around leaves and glow lichen: the breaking animation now drops quads that fall outside the block's bounds. The out-of-bounds leaf extension panels are also culled inside canopies to reduce the number of rendered faces, while the canopy keeps its solid look.
 - The Mod Menu settings screen can disable Overworld True Darkness per client without changing server gameplay.
 - Operators can enable extra blaze rod drops in Mod Menu. This world setting defaults to off, preserves fire charge drops, and applies vanilla blaze rod and Looting rates immediately without a reload.
-- [Trinkets Updated](https://modrinth.com/mod/trinkets-updated) compatibility lets earrings be worn alongside a helmet. Earring armor bonuses do not apply while a helmet is equipped.
-- [CliffTree](https://modrinth.com/datapack/clifftree) compatibility (Fabric Mod version only; CliffTree 4.0.1 on Minecraft 26.3).
+
+### Third-party mods compatibility
+
+- [Trinkets](https://modrinth.com/mod/trinkets-updated) compatibility lets earrings be worn alongside a helmet. Earring armor bonuses do not apply while a helmet is equipped.
+- [CliffTree](https://modrinth.com/datapack/clifftree) compatibility (Fabric version; currently supports 4.0.1).
+- [Tectonic](https://modrinth.com/datapack/tectonic) compatibility (Fabric version; currently supports 3.1.0+beta2).
 - [Farmer's Delight](https://modrinth.com/mod/farmers-delight-refabricated) & [More Delight](https://modrinth.com/mod/more-delight) compatibility. Enjoy farmer life!
 
 ## Changes that (may) cause behavioral differences

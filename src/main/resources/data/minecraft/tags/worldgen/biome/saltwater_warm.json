@@ -1,6 +1,8 @@
 {
-  "values": [
-    "minecraft:lukewarm_ocean",
-    "minecraft:deep_lukewarm_ocean"
-  ]
+	"values": [
+		"minecraft:lukewarm_ocean",
+		"minecraft:deep_lukewarm_ocean",
+		{ "id": "tectonic:volcanic_island", "required": false },
+		{ "id": "tectonic:volcanic_crater", "required": false }
+	]
 }

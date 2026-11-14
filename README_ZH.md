@@ -39,9 +39,13 @@
 - 树叶和发光地衣的破坏纹理不再延伸到空气中；树冠内部的树叶外延模型会被剔除，以减少渲染面数，同时保持树冠实心的观感。
 - Mod Menu 设置页面可以让每位客户端玩家单独关闭主世界的 True Darkness，不会改变服务器玩法。
 - 管理员可以在 Mod Menu 中开启烈焰人额外掉落烈焰棒。该设置默认关闭、按存档保存，保留火焰弹掉落，并按原版烈焰棒掉率与抢夺规则即时生效，无需 reload。
+
+### 第三方模组兼容性
+
 - 兼容 [Trinkets Updated](https://modrinth.com/mod/trinkets-updated)：现在可以同时佩戴耳环和头盔；已佩戴头盔时，耳环提供的护甲值不生效。
-- 兼容 [CliffTree](https://modrinth.com/datapack/clifftree) 的 Fabric Mod 版本 (目前支持到 4.0.1）。
-- 兼容 [农夫乐事](https://modrinth.com/mod/farmers-delight-refabricated)及[多趣乐事 (More Delight)](https://modrinth.com/mod/more-delight)。享受种地吧!
+- 兼容 [CliffTree](https://modrinth.com/datapack/clifftree) 的 Fabric 版本 (目前支持到 4.0.1).
+- 兼容 [Tectonic](https://modrinth.com/datapack/tectonic) 的 Fabric 版本 (目前支持到 3.1.0+beta2).
+- 兼容 [农夫乐事](https://modrinth.com/mod/farmers-delight-refabricated)和[多趣乐事 (More Delight)](https://modrinth.com/mod/more-delight)。享受种地吧!
 
 ## (可能) 导致行为差异的修改
 

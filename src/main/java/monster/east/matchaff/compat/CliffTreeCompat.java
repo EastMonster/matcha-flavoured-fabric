@@ -10,12 +10,21 @@ public final class CliffTreeCompat {
 	}
 
 	public static void init() {
-		if (FabricLoader.getInstance().isModLoaded("clifftree")) {
+		FabricLoader loader = FabricLoader.getInstance();
+		if (loader.isModLoaded("clifftree")) {
+			var matcha = loader.getModContainer("matcha-flavoured").orElseThrow();
 			ResourceLoader.registerBuiltinPack(
 					Identifier.fromNamespaceAndPath("matcha", "clifftree_compat"),
-					FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
+					matcha,
 					PackActivationType.ALWAYS_ENABLED
 			);
+			if (loader.isModLoaded("tectonic")) {
+				ResourceLoader.registerBuiltinPack(
+						Identifier.fromNamespaceAndPath("matcha", "clifftree_tectonic_compat"),
+						matcha,
+						PackActivationType.ALWAYS_ENABLED
+				);
+			}
 		}
 	}
 }

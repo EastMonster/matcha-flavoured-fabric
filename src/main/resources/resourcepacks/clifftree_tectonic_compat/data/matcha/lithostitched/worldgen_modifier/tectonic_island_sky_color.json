@@ -1,0 +1,10 @@
+{
+	"type": "lithostitched:set_biome_attributes",
+	"biomes": "#matcha:tectonic_islands",
+	"append": true,
+	"attributes": {
+		"minecraft:visual/sky_color": "#4cafe0",
+		"minecraft:visual/fog_color": "#b0def4",
+		"minecraft:visual/cloud_color": "#ccffffff"
+	}
+}

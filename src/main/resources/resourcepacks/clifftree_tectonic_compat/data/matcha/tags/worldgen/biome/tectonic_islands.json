@@ -1,0 +1,8 @@
+{
+	"values": [
+		{ "id": "tectonic:island", "required": false },
+		{ "id": "tectonic:lagoon", "required": false },
+		{ "id": "tectonic:volcanic_island", "required": false },
+		{ "id": "tectonic:volcanic_crater", "required": false }
+	]
+}

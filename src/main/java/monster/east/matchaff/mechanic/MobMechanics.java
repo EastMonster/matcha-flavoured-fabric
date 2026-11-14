@@ -109,8 +109,7 @@ public final class MobMechanics {
 		}
 		boolean sky = level.canSeeSky(pos);
 		if (isSafeSurface(level)) {
-			return sky || (pos.getY() >= 63 && pos.getY() <= 350
-					&& (type == EntityTypes.DROWNED || !inDungeon(level, pos)));
+			return sky || (pos.getY() >= 63 && (type == EntityTypes.DROWNED || !inDungeon(level, pos)));
 		}
 		if (type == EntityTypes.CREEPER && (sky || (pos.getY() >= 63 && !inDungeon(level, pos)))) {
 			return true;
