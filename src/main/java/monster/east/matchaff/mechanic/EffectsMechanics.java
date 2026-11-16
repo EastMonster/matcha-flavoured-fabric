@@ -87,7 +87,7 @@ public final class EffectsMechanics {
 				player.hasEffect(MobEffects.HUNGER));
 	}
 
-	static boolean blocksHealing(Difficulty difficulty, boolean hungry) {
+	public static boolean blocksHealing(Difficulty difficulty, boolean hungry) {
 		return hungry && (difficulty == Difficulty.NORMAL || difficulty == Difficulty.HARD);
 	}
 

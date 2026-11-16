@@ -38,12 +38,9 @@ import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.component.Consumable;
-import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.item.equipment.Equippable;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import monster.east.matchaff.mechanic.FoodHealMechanics;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.compat.EnchantmentDescriptionsCompat;
@@ -141,16 +138,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			return;
 		}
 
-		int healingPoints = 0;
-		for (var consumeEffect : consumable.onConsumeEffects()) {
-			if (!(consumeEffect instanceof ApplyStatusEffectsConsumeEffect apply) || apply.probability() <= 0.0F) {
-				continue;
-			}
-			List<MobEffectInstance> regens = apply.effects().stream()
-					.filter(effect -> effect.getEffect() == MobEffects.REGENERATION)
-					.toList();
-			healingPoints += FoodHealMechanics.firstHealingPoints(regens);
-		}
+		int healingPoints = FoodHealMechanics.foodHealingPoints(consumable);
 		if (healingPoints <= 0) {
 			return;
 		}

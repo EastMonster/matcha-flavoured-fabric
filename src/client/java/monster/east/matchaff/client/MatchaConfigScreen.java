@@ -35,7 +35,7 @@ public final class MatchaConfigScreen extends Screen {
 				.build());
 
 		addRenderableWidget(Button.builder(leafExtensionsLabel(), this::toggleLeafExtensions)
-				.bounds(width / 2 - 100, height / 2 - 34, 200, 20)
+				.bounds(width / 2 - 100, height / 2 - 37, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.leaf_extensions.tooltip")))
 				.build());
 
@@ -43,7 +43,7 @@ public final class MatchaConfigScreen extends Screen {
 					MatchaClientConfig.toggleTrueDarkness();
 					button.setMessage(trueDarknessLabel());
 				})
-				.bounds(width / 2 - 100, height / 2 - 8, 200, 20)
+				.bounds(width / 2 - 100, height / 2 - 14, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.true_darkness.tooltip")))
 				.build());
 
@@ -51,8 +51,16 @@ public final class MatchaConfigScreen extends Screen {
 					MatchaClientConfig.toggleDolabraVisuals();
 					button.setMessage(dolabraVisualsLabel());
 				})
-				.bounds(width / 2 - 100, height / 2 + 18, 200, 20)
+				.bounds(width / 2 - 100, height / 2 + 9, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.dolabra_visuals.tooltip")))
+				.build());
+
+		addRenderableWidget(Button.builder(foodHealingPreviewLabel(), button -> {
+					MatchaClientConfig.toggleFoodHealingPreview();
+					button.setMessage(foodHealingPreviewLabel());
+				})
+				.bounds(width / 2 - 100, height / 2 + 32, 200, 20)
+				.tooltip(Tooltip.create(Component.translatable("matcha.config.food_healing_preview.tooltip")))
 				.build());
 
 		blazeRodDropsButton = addRenderableWidget(Button.builder(blazeRodDropsLabel(), button -> {
@@ -60,7 +68,7 @@ public final class MatchaConfigScreen extends Screen {
 					button.active = false;
 					ClientPlayNetworking.send(new BlazeRodDropsPayload.Request(true, !blazeRodDrops));
 				})
-				.bounds(width / 2 - 100, height / 2 + 44, 200, 20)
+				.bounds(width / 2 - 100, height / 2 + 55, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.blaze_rod_drops.tooltip")))
 				.build());
 		blazeRodDropsButton.active = false;
@@ -145,6 +153,11 @@ public final class MatchaConfigScreen extends Screen {
 		return CommonComponents.optionStatus(
 				Component.translatable("matcha.config.dolabra_visuals"),
 				MatchaClientConfig.dolabraVisuals());
+	}
+
+	private static Component foodHealingPreviewLabel() {
+		return CommonComponents.optionStatus(
+				Component.translatable("matcha.config.food_healing_preview"), MatchaClientConfig.foodHealingPreview());
 	}
 
 	@Override

@@ -17,6 +17,7 @@ public final class MatchaClientConfig {
 			.resolve("matcha-flavoured-client.properties");
 	private static boolean trueDarkness = true;
 	private static boolean dolabraVisuals = true;
+	private static boolean foodHealingPreview = true;
 
 	private MatchaClientConfig() {
 	}
@@ -30,6 +31,7 @@ public final class MatchaClientConfig {
 			properties.load(reader);
 			trueDarkness = Boolean.parseBoolean(properties.getProperty("true_darkness", "true"));
 			dolabraVisuals = Boolean.parseBoolean(properties.getProperty("dolabra_visuals", "true"));
+			foodHealingPreview = Boolean.parseBoolean(properties.getProperty("food_healing_preview", "true"));
 		} catch (IOException exception) {
 			LOGGER.warn("Could not read Matcha client config", exception);
 		}
@@ -53,10 +55,20 @@ public final class MatchaClientConfig {
 		save();
 	}
 
+	public static boolean foodHealingPreview() {
+		return foodHealingPreview;
+	}
+
+	static void toggleFoodHealingPreview() {
+		foodHealingPreview = !foodHealingPreview;
+		save();
+	}
+
 	private static void save() {
 		Properties properties = new Properties();
 		properties.setProperty("true_darkness", Boolean.toString(trueDarkness));
 		properties.setProperty("dolabra_visuals", Boolean.toString(dolabraVisuals));
+		properties.setProperty("food_healing_preview", Boolean.toString(foodHealingPreview));
 		try {
 			Files.createDirectories(PATH.getParent());
 			try (Writer writer = Files.newBufferedWriter(PATH)) {

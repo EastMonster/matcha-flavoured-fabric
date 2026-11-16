@@ -30,6 +30,13 @@ Licensed under CC BY-NC-SA 4.0, including its disclaimer of warranties:
 https://creativecommons.org/licenses/by-nc-sa/4.0/
 The project LICENSE contains the full license text.
 
+DESIGN INSPIRATION
+
+AppleSkin by squeek502 inspired the interaction and visual effects of the
+held-food healing preview. Matcha implements the preview with its own code
+and uses vanilla Minecraft heart sprites.
+Source: https://github.com/squeek502/AppleSkin
+
 ORIGINAL MATCHA FLAVOURED ACKNOWLEDGEMENTS
 The following acknowledgements are reproduced from the upstream CREDITS.txt.
 

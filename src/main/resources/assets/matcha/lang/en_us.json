@@ -965,6 +965,8 @@
 	"advancements.matcha.cook_pumpkin_curry.desc": "Make Pumpkin Curry",
 	"matcha.config.dolabra_visuals": "Adaptive Dolabra Visuals",
 	"matcha.config.dolabra_visuals.tooltip": "Automatically orient dolabras toward the effective head for the block under the crosshair.",
+	"matcha.config.food_healing_preview": "Food Healing Preview",
+	"matcha.config.food_healing_preview.tooltip": "Flash the hearts that the food you are holding can restore.",
 	"tooltip.matcha.beacon_kindling.arrival": "Wandering Trader arrives in: %s",
 	"tooltip.matcha.beacon_kindling.departure": "Wandering Trader leaves in: %s",
 	"config.jade.plugin_matcha-flavoured.beacon_kindling": "Beacon Kindling",

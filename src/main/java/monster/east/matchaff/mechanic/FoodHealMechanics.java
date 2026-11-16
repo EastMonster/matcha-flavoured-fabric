@@ -11,6 +11,9 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 import java.util.ArrayList;
 import java.util.ArrayDeque;
@@ -213,15 +216,27 @@ public final class FoodHealMechanics {
 		}
 	}
 
-	/** Returns the health points represented by the first high-amplifier regeneration segment. */
-	public static int firstHealingPoints(List<MobEffectInstance> regens) {
+	public static int foodHealingPoints(Consumable consumable) {
+		int healingPoints = 0;
+		for (var consumeEffect : consumable.onConsumeEffects()) {
+			if (consumeEffect instanceof ApplyStatusEffectsConsumeEffect apply && apply.probability() > 0.0F) {
+				List<MobEffectInstance> regens = apply.effects().stream()
+						.filter(effect -> effect.getEffect() == MobEffects.REGENERATION)
+						.toList();
+				healingPoints += firstHealingPoints(regens);
+			}
+		}
+		return healingPoints;
+	}
+
+	private static int firstHealingPoints(List<MobEffectInstance> regens) {
 		int elapsed = 0;
 		for (MobEffectInstance segment : buildChain(regens)) {
 			int effectiveDuration = segment.getDuration() - elapsed;
 			if (effectiveDuration <= 0) {
 				break;
 			}
-			if (segment.getAmplifier() >= 2) {
+			if (isHealingSimulation(segment)) {
 				return effectiveDuration / healingInterval(segment);
 			}
 			elapsed += effectiveDuration;
