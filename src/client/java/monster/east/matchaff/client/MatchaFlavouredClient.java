@@ -15,6 +15,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.InvalidateRenderStateCallback;
+import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
@@ -83,6 +84,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		ScreenEvents.AFTER_INIT.register(PauseMenuSettings::afterInit);
 		ItemTooltipCallback.EVENT.register(MatchaFlavouredClient::appendFoodHealingTooltip);
 		Identifier lorePhase = Identifier.fromNamespaceAndPath("matcha", "equipment_lore");
 		ItemTooltipCallback.EVENT.addPhaseOrdering(Event.DEFAULT_PHASE, lorePhase);
