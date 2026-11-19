@@ -1,5 +1,8 @@
 package monster.east.matchaff.client;
 
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.sounds.SoundEvents;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -46,6 +49,7 @@ import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.compat.EnchantmentDescriptionsCompat;
 import monster.east.matchaff.compat.BetterCombatCompat;
 import monster.east.matchaff.MatchaFlavouredFabric;
+import monster.east.matchaff.network.AnglersAlmanacPayload;
 import monster.east.matchaff.network.SleepFastForwardPayload;
 import monster.east.matchaff.network.BlazeRodDropsPayload;
 
@@ -85,6 +89,10 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		ItemTooltipCallback.EVENT.register(lorePhase, MatchaFlavouredClient::appendRepairTooltip);
 		ClientPlayNetworking.registerGlobalReceiver(SleepFastForwardPayload.TYPE, (payload, context) ->
 				context.client().execute(() -> sleepRate = payload.active() ? CLOUD_TIME_SCALE : 0));
+		ClientPlayNetworking.registerGlobalReceiver(AnglersAlmanacPayload.TYPE, (payload, context) -> {
+			context.client().setScreenAndShow(new AnglersAlmanacScreen(payload));
+			context.client().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.BOOK_PAGE_TURN, 1.0F, 1.0F));
+		});
 		ClientPlayNetworking.registerGlobalReceiver(BlazeRodDropsPayload.TYPE, (payload, context) ->
 				context.client().execute(() -> {
 					if (context.client().gui.screen() instanceof MatchaConfigScreen screen) {

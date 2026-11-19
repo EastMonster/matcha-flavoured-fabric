@@ -57,6 +57,8 @@ Bug reports are welcome, but exact one-to-one compatibility with every data-pack
 
 ## Credits
 
+**Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.**
+
 This is an unofficial Fabric port of Klei's original [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) data pack. All credit for the original design, content, textures, and data pack goes to Klei and the contributors credited by the original project.
 
 See [CREDITS.txt](CREDITS.txt) for third-party compatibility credits, the original acknowledgements, and sources of inspiration.

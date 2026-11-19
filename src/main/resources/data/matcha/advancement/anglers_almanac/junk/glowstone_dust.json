@@ -1,52 +1,50 @@
 {
-  "parent": "matcha:anglers_almanac/junk/tripwire_hook",
-  "display": {
-    "icon": {
-      "id": "glowstone_dust"
-    },
-    "title": {
-      "translate": "item.minecraft.glowstone_dust"
-    },
-    "description": [
-      {
+	"parent": "matcha:anglers_almanac/junk/ink_sac",
+	"display": {
+		"icon": {
+			"id": "glowstone_dust"
+		},
+		"title": {
+			"translate": "item.minecraft.glowstone_dust"
+		},
+		"description": [
+			{
 				"translate": "advancements.matcha.anglers_almanac.estus_ash.desc",
-        "color": "dark_aqua",
-        "italic": true
-      },
-      "\n",
-      {
-        "translate": "advancements.matcha.anglers_almanac.chance",
-        "with": [
-          "9%"
-        ],
-        "color": "gray",
-        "italic": false
-      }
-    ],
-    "show_toast": true,
-    "announce_to_chat": false,
-    "hidden": true
-  },
-  "criteria": {
-    "catch": {
-      "trigger": "minecraft:fishing_rod_hooked",
-      "conditions": {
-        "player": {"type":"minecraft:entity_properties","entity":"this","predicate":{
-          "minecraft:type_specific/player": {
-            "advancements": {
-              "matcha:anglers_almanac/root": true
-            }
-          }
-        }},
-        "item": {
-          "items": "minecraft:glowstone_dust"
-        }
-      }
-    }
-  },
-  "requirements": [
-    [
-      "catch"
-    ]
-  ]
+				"color": "dark_aqua",
+				"italic": true
+			},
+			"\n",
+			{
+				"translate": "advancements.matcha.anglers_almanac.chance",
+				"with": ["12.8%"],
+				"color": "gray",
+				"italic": false
+			}
+		],
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"criteria": {
+		"catch": {
+			"trigger": "minecraft:fishing_rod_hooked",
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:type_specific/player": {
+							"advancements": {
+								"matcha:anglers_almanac/root": true
+							}
+						}
+					}
+				},
+				"item": {
+					"items": "minecraft:glowstone_dust"
+				}
+			}
+		}
+	},
+	"requirements": [["catch"]]
 }

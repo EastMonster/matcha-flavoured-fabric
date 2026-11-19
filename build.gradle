@@ -51,7 +51,26 @@ dependencies {
 	compileOnly "maven.modrinth:jade:${project.jade_version}+fabric"
 }
 
+def almanacSilhouettes = layout.buildDirectory.dir('generated/almanacSilhouettes')
+def generateAlmanacSilhouettes = tasks.register('generateAlmanacSilhouettes') {
+	def generator = file('gradle/generateAlmanacSilhouettes.groovy')
+	def vanillaClient = providers.provider { loom.minecraftProvider.minecraftClientJar }
+	inputs.file(generator)
+	inputs.dir('src/main/resources')
+	inputs.file(vanillaClient)
+	outputs.dir(almanacSilhouettes)
+	doLast {
+		def target = almanacSilhouettes.get().asFile
+		delete(target)
+		new GroovyShell(getClass().classLoader, new Binding(args: [
+				file('src/main/resources').absolutePath, vanillaClient.get().absolutePath, target.absolutePath
+		] as String[])).evaluate(generator)
+	}
+}
+
 processResources {
+	dependsOn(generateAlmanacSilhouettes)
+	from(almanacSilhouettes)
 	def version = project.version
 	inputs.property "version", version
 
@@ -86,6 +105,7 @@ java {
 jar {
 	def projectName = project.name
 	inputs.property "projectName", projectName
+	from("CREDITS.txt")
 
 	from("LICENSE") {
 		rename { "${it}_$projectName"}

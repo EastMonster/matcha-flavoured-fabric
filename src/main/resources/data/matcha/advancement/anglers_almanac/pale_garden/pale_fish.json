@@ -1,58 +1,56 @@
 {
-  "parent": "matcha:anglers_almanac/pale_garden/pale_hanging_moss",
-  "display": {
-    "icon": {
-      "id": "matcha:pale_fish",
-      "components": {}
-    },
-    "title": {
-      "translate": "item.matcha.pale_fish"
-    },
-    "description": [
-      {
-        "translate": "advancements.matcha.anglers_almanac.pale_fish.desc",
-        "color": "dark_aqua",
-        "italic": true
-      },
-      "\n",
-      {
-        "translate": "lore.matcha.fish_rarity.3",
-        "italic": false
-      },
-      "\n",
-      {
-        "translate": "advancements.matcha.anglers_almanac.chance",
-        "with": [
-          "25%"
-        ],
-        "color": "gray",
-        "italic": false
-      }
-    ],
-    "show_toast": true,
-    "announce_to_chat": false,
-    "hidden": true
-  },
-  "criteria": {
-    "catch": {
-      "trigger": "minecraft:fishing_rod_hooked",
-      "conditions": {
-        "player": {"type":"minecraft:entity_properties","entity":"this","predicate":{
-          "minecraft:type_specific/player": {
-            "advancements": {
-              "matcha:anglers_almanac/root": true
-            }
-          }
-        }},
-        "item": {
-          "items": "matcha:pale_fish"
-        }
-      }
-    }
-  },
-  "requirements": [
-    [
-      "catch"
-    ]
-  ]
+	"parent": "matcha:anglers_almanac/pale_garden/pale_hanging_moss",
+	"display": {
+		"icon": {
+			"id": "matcha:pale_fish",
+			"components": {}
+		},
+		"title": {
+			"translate": "item.matcha.pale_fish"
+		},
+		"description": [
+			{
+				"translate": "advancements.matcha.anglers_almanac.pale_fish.desc",
+				"color": "dark_aqua",
+				"italic": true
+			},
+			"\n",
+			{
+				"translate": "lore.matcha.fish_rarity.3",
+				"italic": false
+			},
+			"\n",
+			{
+				"translate": "advancements.matcha.anglers_almanac.chance",
+				"with": ["17.9%"],
+				"color": "gray",
+				"italic": false
+			}
+		],
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"criteria": {
+		"catch": {
+			"trigger": "minecraft:fishing_rod_hooked",
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:type_specific/player": {
+							"advancements": {
+								"matcha:anglers_almanac/root": true
+							}
+						}
+					}
+				},
+				"item": {
+					"items": "matcha:pale_fish"
+				}
+			}
+		}
+	},
+	"requirements": [["catch"]]
 }

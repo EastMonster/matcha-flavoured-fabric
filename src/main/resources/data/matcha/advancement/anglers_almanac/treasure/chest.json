@@ -1,52 +1,50 @@
 {
-  "parent": "matcha:anglers_almanac/treasure/crystal_heart",
-  "display": {
-    "icon": {
-      "id": "chest"
-    },
-    "title": {
-      "translate": "block.minecraft.chest"
-    },
-    "description": [
-      {
-        "translate": "advancements.matcha.anglers_almanac.chest.desc",
-        "color": "dark_aqua",
-        "italic": true
-      },
-      "\n",
-      {
-        "translate": "advancements.matcha.anglers_almanac.chance",
-        "with": [
-          "1.6%"
-        ],
-        "color": "gray",
-        "italic": false
-      }
-    ],
-    "show_toast": true,
-    "announce_to_chat": false,
-    "hidden": true
-  },
-  "criteria": {
-    "catch": {
-      "trigger": "minecraft:fishing_rod_hooked",
-      "conditions": {
-        "player": {"type":"minecraft:entity_properties","entity":"this","predicate":{
-          "minecraft:type_specific/player": {
-            "advancements": {
-              "matcha:anglers_almanac/root": true
-            }
-          }
-        }},
-        "item": {
-          "items": "minecraft:chest"
-        }
-      }
-    }
-  },
-  "requirements": [
-    [
-      "catch"
-    ]
-  ]
+	"parent": "matcha:anglers_almanac/treasure/crystal_heart",
+	"display": {
+		"icon": {
+			"id": "chest"
+		},
+		"title": {
+			"translate": "block.minecraft.chest"
+		},
+		"description": [
+			{
+				"translate": "advancements.matcha.anglers_almanac.chest.desc",
+				"color": "dark_aqua",
+				"italic": true
+			},
+			"\n",
+			{
+				"translate": "advancements.matcha.anglers_almanac.chance",
+				"with": ["0.6%"],
+				"color": "gray",
+				"italic": false
+			}
+		],
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"criteria": {
+		"catch": {
+			"trigger": "minecraft:fishing_rod_hooked",
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:type_specific/player": {
+							"advancements": {
+								"matcha:anglers_almanac/root": true
+							}
+						}
+					}
+				},
+				"item": {
+					"items": "minecraft:chest"
+				}
+			}
+		}
+	},
+	"requirements": [["catch"]]
 }

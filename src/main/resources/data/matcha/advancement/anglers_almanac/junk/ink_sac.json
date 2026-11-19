@@ -1,52 +1,50 @@
 {
-  "parent": "matcha:anglers_almanac/junk/stick",
-  "display": {
-    "icon": {
-      "id": "ink_sac"
-    },
-    "title": {
-      "translate": "item.minecraft.ink_sac"
-    },
-    "description": [
-      {
-        "translate": "advancements.matcha.anglers_almanac.ink_sac.desc",
-        "color": "dark_aqua",
-        "italic": true
-      },
-      "\n",
-      {
-        "translate": "advancements.matcha.anglers_almanac.chance",
-        "with": [
-          "0.9%"
-        ],
-        "color": "gray",
-        "italic": false
-      }
-    ],
-    "show_toast": true,
-    "announce_to_chat": false,
-    "hidden": true
-  },
-  "criteria": {
-    "catch": {
-      "trigger": "minecraft:fishing_rod_hooked",
-      "conditions": {
-        "player": {"type":"minecraft:entity_properties","entity":"this","predicate":{
-          "minecraft:type_specific/player": {
-            "advancements": {
-              "matcha:anglers_almanac/root": true
-            }
-          }
-        }},
-        "item": {
-          "items": "minecraft:ink_sac"
-        }
-      }
-    }
-  },
-  "requirements": [
-    [
-      "catch"
-    ]
-  ]
+	"parent": "matcha:anglers_almanac/junk/stick",
+	"display": {
+		"icon": {
+			"id": "ink_sac"
+		},
+		"title": {
+			"translate": "item.minecraft.ink_sac"
+		},
+		"description": [
+			{
+				"translate": "advancements.matcha.anglers_almanac.ink_sac.desc",
+				"color": "dark_aqua",
+				"italic": true
+			},
+			"\n",
+			{
+				"translate": "advancements.matcha.anglers_almanac.chance",
+				"with": ["1.3%"],
+				"color": "gray",
+				"italic": false
+			}
+		],
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"criteria": {
+		"catch": {
+			"trigger": "minecraft:fishing_rod_hooked",
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:type_specific/player": {
+							"advancements": {
+								"matcha:anglers_almanac/root": true
+							}
+						}
+					}
+				},
+				"item": {
+					"items": "minecraft:ink_sac"
+				}
+			}
+		}
+	},
+	"requirements": [["catch"]]
 }

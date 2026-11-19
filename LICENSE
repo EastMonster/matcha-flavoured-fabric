@@ -1,3 +1,26 @@
+PROJECT LICENSE SCOPE NOTICE (not part of the Creative Commons license text)
+
+The following Minecraft-derived texture is excluded from this project's
+CC BY-NC-SA 4.0 license:
+
+    src/main/resources/assets/matcha/textures/gui/anglers_almanac/background.png
+
+In the distributed JAR, its path is:
+
+    assets/matcha/textures/gui/anglers_almanac/background.png
+
+Original Minecraft elements remain the property of Mojang Studios. This
+project does not grant a Creative Commons license to this file. Use is
+subject to the Minecraft EULA and Usage Guidelines:
+https://www.minecraft.net/en-us/eula
+https://www.minecraft.net/en-us/usage-guidelines
+
+See CREDITS.txt for the source and modification credits for this texture.
+This notice does not grant additional redistribution rights or modify
+the Creative Commons license text reproduced below.
+
+=======================================================================
+
 Attribution-NonCommercial-ShareAlike 4.0 International
 
 =======================================================================

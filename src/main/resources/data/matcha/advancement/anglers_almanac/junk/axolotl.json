@@ -19,7 +19,7 @@
 			"\n",
 			{
 				"translate": "advancements.matcha.anglers_almanac.chance",
-				"with": ["9%"],
+				"with": ["11.4%"],
 				"color": "gray",
 				"italic": false
 			},

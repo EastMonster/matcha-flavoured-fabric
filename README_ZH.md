@@ -57,6 +57,8 @@
 
 ## 原项目与致谢
 
+**本项目并非 Minecraft 官方产品，未经 Mojang 或 Microsoft 认可，亦与其无关联。**
+
 本项目是 Klei 原作 [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) 数据包的非官方 Fabric 移植版。原始设计、内容、贴图和数据包的相关功劳均属于 Klei 及原项目所列贡献者。
 
 第三方兼容内容的署名、原项目的完整致谢与灵感来源请参阅 [CREDITS.txt](CREDITS.txt)。

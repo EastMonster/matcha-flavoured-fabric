@@ -1,6 +1,11 @@
 {
 	"sources": [
 		{
+			"type": "minecraft:directory",
+			"source": "almanac_silhouette",
+			"prefix": "almanac_silhouette/"
+		},
+		{
 			"type": "paletted_permutations",
 			"textures": [
 				"trims/items/leggings_trim",

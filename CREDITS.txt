@@ -30,6 +30,33 @@ Licensed under CC BY-NC-SA 4.0, including its disclaimer of warranties:
 https://creativecommons.org/licenses/by-nc-sa/4.0/
 The project LICENSE contains the full license text.
 
+RESOURCE REFERENCES
+
+Minecraft-derived GUI texture
+File: assets/matcha/textures/gui/anglers_almanac/background.png in the distributed
+JAR, or src/main/resources/assets/matcha/textures/gui/anglers_almanac/background.png
+in the source repository.
+The Angler's Almanac background is derived from Minecraft's
+recipe book GUI texture, originally created by Mojang Studios.
+Adapted and edited by EastMonster.
+
+Original Minecraft assets remain the property of Mojang Studios.
+This file is excluded from this project's CC BY-NC-SA 4.0 license.
+Use is subject to the Minecraft EULA and Usage Guidelines:
+https://www.minecraft.net/en-us/eula
+https://www.minecraft.net/en-us/usage-guidelines
+
+Minecraft Wiki biome icons
+Source file pages, copyright notices and recorded contributors are listed in
+licenses/minecraft-wiki-biome-icons.csv in the distributed JAR, or
+src/main/resources/licenses/minecraft-wiki-biome-icons.csv in the source repository.
+The CSV records all users in the available file upload history, including bots;
+these records do not necessarily identify every original artist.
+Mojang-owned elements remain copyright Mojang Studios.
+Applicable Minecraft terms:
+https://www.minecraft.net/en-us/eula
+https://www.minecraft.net/en-us/usage-guidelines
+
 DESIGN INSPIRATION
 
 AppleSkin by squeek502 inspired the interaction and visual effects of the

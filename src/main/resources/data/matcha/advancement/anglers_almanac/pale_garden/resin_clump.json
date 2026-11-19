@@ -1,52 +1,50 @@
 {
-  "parent": "matcha:anglers_almanac/pale_garden/pale_fish",
-  "display": {
-    "icon": {
-      "id": "resin_clump"
-    },
-    "title": {
-      "translate": "item.minecraft.resin_clump"
-    },
-    "description": [
-      {
-        "translate": "advancements.matcha.anglers_almanac.resin_clump.desc",
-        "color": "dark_aqua",
-        "italic": true
-      },
-      "\n",
-      {
-        "translate": "advancements.matcha.anglers_almanac.chance",
-        "with": [
-          "3.6%"
-        ],
-        "color": "gray",
-        "italic": false
-      }
-    ],
-    "show_toast": true,
-    "announce_to_chat": false,
-    "hidden": true
-  },
-  "criteria": {
-    "catch": {
-      "trigger": "minecraft:fishing_rod_hooked",
-      "conditions": {
-        "player": {"type":"minecraft:entity_properties","entity":"this","predicate":{
-          "minecraft:type_specific/player": {
-            "advancements": {
-              "matcha:anglers_almanac/root": true
-            }
-          }
-        }},
-        "item": {
-          "items": "minecraft:resin_clump"
-        }
-      }
-    }
-  },
-  "requirements": [
-    [
-      "catch"
-    ]
-  ]
+	"parent": "matcha:anglers_almanac/pale_garden/pale_fish",
+	"display": {
+		"icon": {
+			"id": "resin_clump"
+		},
+		"title": {
+			"translate": "item.minecraft.resin_clump"
+		},
+		"description": [
+			{
+				"translate": "advancements.matcha.anglers_almanac.resin_clump.desc",
+				"color": "dark_aqua",
+				"italic": true
+			},
+			"\n",
+			{
+				"translate": "advancements.matcha.anglers_almanac.chance",
+				"with": ["30.8%"],
+				"color": "gray",
+				"italic": false
+			}
+		],
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": true
+	},
+	"criteria": {
+		"catch": {
+			"trigger": "minecraft:fishing_rod_hooked",
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:type_specific/player": {
+							"advancements": {
+								"matcha:anglers_almanac/root": true
+							}
+						}
+					}
+				},
+				"item": {
+					"items": "minecraft:resin_clump"
+				}
+			}
+		}
+	},
+	"requirements": [["catch"]]
 }
