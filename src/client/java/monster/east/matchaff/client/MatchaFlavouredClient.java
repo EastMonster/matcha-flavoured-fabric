@@ -72,6 +72,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 	private static int sleepRate;
 	private static ClientLevel trackedLevel;
 	private static long extraCloudTicks;
+	private static volatile boolean leafExtensionsActive = true;
 	public static final String NO_LEAF_EXTENSIONS_PACK = "matcha-flavoured:no_leaf_extensions";
 	public static final String VANILLA_PREVIEW_PACK = "matcha-flavoured:vanilla_preview";
 	public static final String TRINKETS_MATCHA_PACK = "matcha-flavoured:trinkets_matcha";
@@ -119,8 +120,8 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 					PackActivationType.ALWAYS_ENABLED
 			);
 		}
-		ClientLifecycleEvents.CLIENT_STARTED.register(MatchaFlavouredClient::refreshVanillaPreview);
-		InvalidateRenderStateCallback.EVENT.register(() -> refreshVanillaPreview(Minecraft.getInstance()));
+		ClientLifecycleEvents.CLIENT_STARTED.register(MatchaFlavouredClient::refreshResourcePackState);
+		InvalidateRenderStateCallback.EVENT.register(() -> refreshResourcePackState(Minecraft.getInstance()));
 		ResourceLoader.registerBuiltinPack(
 				Identifier.parse(NO_LEAF_EXTENSIONS_PACK),
 				FabricLoader.getInstance().getModContainer("matcha-flavoured").orElseThrow(),
@@ -478,8 +479,14 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		}
 	}
 
-	private static void refreshVanillaPreview(Minecraft client) {
-		boolean active = client.getResourcePackRepository().getSelectedIds().contains(VANILLA_PREVIEW_PACK);
+	public static boolean leafExtensionsActive() {
+		return leafExtensionsActive;
+	}
+
+	private static void refreshResourcePackState(Minecraft client) {
+		var selected = client.getResourcePackRepository().getSelectedIds();
+		boolean active = selected.contains(VANILLA_PREVIEW_PACK);
+		leafExtensionsActive = !active && !selected.contains(NO_LEAF_EXTENSIONS_PACK);
 		boolean changed = active != MatchaFlavouredFabric.vanillaPreviewActive();
 		MatchaFlavouredFabric.setVanillaPreviewActive(active);
 		if (client.level != null && (active || changed)) {

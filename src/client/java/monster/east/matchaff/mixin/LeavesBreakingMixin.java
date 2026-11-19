@@ -1,5 +1,7 @@
 package monster.east.matchaff.mixin;
 
+import com.llamalad7.mixinextras.sugar.Local;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.fabricmc.fabric.api.client.renderer.v1.Renderer;
 import net.fabricmc.fabric.api.client.renderer.v1.mesh.Mesh;
 import net.fabricmc.fabric.api.client.renderer.v1.mesh.MutableMesh;
@@ -18,8 +20,8 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
  * through Fabric's {@link ExtendedBlockModelSubmit}.
  * This mixin filters that Mesh, dropping any quad whose vertices fall outside
  * the 0..1 normalized block box, so the breaking cracks no longer show up in
- * the air around leaves. Normal rendering is untouched (it uses the chunk
- * mesh, not this path), so the out-of-bounds decoration stays visible.
+ * the air around leaves. Only submissions with a breaking decal pose are
+ * filtered, so normal rendering keeps its out-of-bounds decoration.
  * Blocks without out-of-bounds quads are passed through unchanged.
  *
  * <p>The filtered mesh is rebuilt through {@link Renderer#get()} so it uses
@@ -34,8 +36,9 @@ public abstract class LeavesBreakingMixin {
 		at = @At("HEAD"),
 		argsOnly = true
 	)
-	private static Mesh matcha$dropOutOfBoundsBreakingQuads(Mesh mesh) {
-		return filterOutOfBounds(mesh);
+	private static Mesh matcha$dropOutOfBoundsBreakingQuads(
+			Mesh mesh, @Local(argsOnly = true, ordinal = 1) PoseStack.Pose sheetedDecalPose) {
+		return sheetedDecalPose == null ? mesh : filterOutOfBounds(mesh);
 	}
 
 	@Unique

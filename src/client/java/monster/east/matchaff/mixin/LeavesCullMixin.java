@@ -1,6 +1,5 @@
 package monster.east.matchaff.mixin;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
@@ -27,12 +26,6 @@ public abstract class LeavesCullMixin extends Block {
 
 	@Override
 	public boolean skipRendering(BlockState state, BlockState neighborState, Direction direction) {
-		return matcha$extensionsActive() && neighborState.getBlock() instanceof LeavesBlock;
-	}
-
-	private static boolean matcha$extensionsActive() {
-		var selected = Minecraft.getInstance().getResourcePackRepository().getSelectedIds();
-		return !selected.contains(MatchaFlavouredClient.NO_LEAF_EXTENSIONS_PACK)
-				&& !selected.contains(MatchaFlavouredClient.VANILLA_PREVIEW_PACK);
+		return MatchaFlavouredClient.leafExtensionsActive() && neighborState.getBlock() instanceof LeavesBlock;
 	}
 }

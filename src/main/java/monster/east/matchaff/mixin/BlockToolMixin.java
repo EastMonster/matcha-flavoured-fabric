@@ -29,14 +29,18 @@ public abstract class BlockToolMixin {
 	}
 
 	private static boolean matcha$isWrongTool(ItemStack stack, BlockState state) {
+		if (!state.is(Blocks.TARGET) && !state.is(Blocks.PETRIFIED_OAK_SLAB)) {
+			return false;
+		}
 		Tool tool = stack.get(DataComponents.TOOL);
 		if (tool == null) {
 			return false;
 		}
-		boolean worksOnHay = tool.isCorrectForDrops(Blocks.HAY_BLOCK.defaultBlockState());
-		boolean worksOnCobblestone = tool.isCorrectForDrops(Blocks.COBBLESTONE.defaultBlockState());
-		boolean worksOnDirt = tool.isCorrectForDrops(Blocks.DIRT.defaultBlockState());
-		return state.is(Blocks.TARGET) && worksOnHay && !worksOnCobblestone
-				|| state.is(Blocks.PETRIFIED_OAK_SLAB) && worksOnCobblestone && !worksOnDirt;
+		if (state.is(Blocks.TARGET)) {
+			return tool.isCorrectForDrops(Blocks.HAY_BLOCK.defaultBlockState())
+					&& !tool.isCorrectForDrops(Blocks.COBBLESTONE.defaultBlockState());
+		}
+		return tool.isCorrectForDrops(Blocks.COBBLESTONE.defaultBlockState())
+				&& !tool.isCorrectForDrops(Blocks.DIRT.defaultBlockState());
 	}
 }

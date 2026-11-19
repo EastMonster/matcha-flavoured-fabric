@@ -33,7 +33,10 @@ public abstract class WheatRaycastMixin {
 		LocalPlayer player = (LocalPlayer) (Object) this;
 		Vec3 from = cameraEntity.getEyePosition(partialTick);
 		double distance = player.blockInteractionRange();
-		Vec3 to = from.add(cameraEntity.getViewVector(partialTick).scale(distance));
+		HitResult originalHit = cir.getReturnValue();
+		double hitDistanceSqr = originalHit.getLocation().distanceToSqr(from);
+		double searchDistance = Math.min(distance, Math.sqrt(hitDistanceSqr));
+		Vec3 to = from.add(cameraEntity.getViewVector(partialTick).scale(searchDistance));
 		BlockHitResult wheatHit = BlockGetter.traverseBlocks(
 				from, to, cameraEntity.level(),
 				(level, pos) -> {
@@ -44,8 +47,7 @@ public abstract class WheatRaycastMixin {
 		);
 		if (wheatHit != null
 				&& wheatHit.getLocation().distanceToSqr(from) < distance * distance
-				&& wheatHit.getLocation().distanceToSqr(from)
-						< cir.getReturnValue().getLocation().distanceToSqr(from)) {
+				&& wheatHit.getLocation().distanceToSqr(from) < hitDistanceSqr) {
 			cir.setReturnValue(wheatHit);
 		}
 	}
