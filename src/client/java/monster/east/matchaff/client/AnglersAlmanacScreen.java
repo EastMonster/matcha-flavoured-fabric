@@ -117,20 +117,16 @@ final class AnglersAlmanacScreen extends Screen {
 	private void selectCatch(int index) {
 		if (index >= 0 && index < water().catches().size() && index != catchIndex) {
 			boolean changePage = index / gridSize() != catchIndex / gridSize();
-			boolean gridFocused = catchChoices.contains(getFocused());
 			catchIndex = index;
 			descriptionStart = 0;
 			if (changePage) {
 				catchChoices.forEach(this::removeWidget);
 				catchChoices.clear();
 				addCatchGrid();
-				if (gridFocused) {
-					setFocused(catchChoices.get(index % gridSize()));
-				}
 			}
 			back.visible = catchIndex > 0;
 			forward.visible = catchIndex + 1 < water().catches().size();
-			setFocused(getFocused());
+			setFocused(catchChoices.get(index % gridSize()));
 		}
 	}
 
@@ -393,9 +389,12 @@ final class AnglersAlmanacScreen extends Screen {
 				graphics.fakeItem(waters.get(index).icon(), x + 5, y + 4);
 				return;
 			}
-			boolean selected = index == catchIndex || isHoveredOrFocused();
+			boolean selected = index == catchIndex;
 			if (selected) {
 				graphics.fill(x + 10, y + 2, x + 30, y + 22, 0x40698b53);
+			}
+			if (isFocused() && !selected) {
+				graphics.fill(x + 13, y + 22, x + 27, y + 23, INK);
 			}
 			var entry = water().catches().get(index);
 			boolean discovered = entry.count() > 0;
