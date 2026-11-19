@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "The Wither can only be summoned on the surface of the overworld",
 	"item.matcha.raw_diamond": "Raw Diamond",
 	"advancements.matcha.anglers_almanac.title": "Angler's Almanac",
+	"item.matcha.anglers_almanac": "Angler's Almanac",
 	"advancements.matcha.anglers_almanac.desc": "Discover the fish that inhabit this world",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Cold Freshwater",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Cool Freshwater",

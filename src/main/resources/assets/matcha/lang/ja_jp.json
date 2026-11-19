@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "ウィザーはオーバーワールドの地上でのみ召喚できます。",
 	"item.matcha.raw_diamond": "ダイヤモンドの原石",
 	"advancements.matcha.anglers_almanac.title": "お魚図鑑",
+	"item.matcha.anglers_almanac": "お魚図鑑",
 	"advancements.matcha.anglers_almanac.desc": "魚の世界へようこそ！",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "寒帯淡水",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "亜寒帯淡水",

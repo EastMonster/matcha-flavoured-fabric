@@ -870,9 +870,7 @@
 	"lore.matcha.fish_rarity.3": "§b⭐⭐⭐§8☆",
 	"lore.matcha.fish_rarity.4": "§d⭐⭐⭐⭐",
 	"advancements.matcha.anglers_almanac.title": "Angler's Almanac",
-	"book.matcha.anglers_almanac.caught": "Caught: %s",
-	"book.matcha.anglers_almanac.biomes": "Biomes",
-	"book.matcha.anglers_almanac.unknown": "Undiscovered",
+	"item.matcha.anglers_almanac": "Angler's Almanac",
 	"advancements.matcha.anglers_almanac.desc": "Discover the fish that inhabit this world",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Cold Freshwater",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Cool Freshwater",
@@ -968,8 +966,6 @@
 	"advancements.matcha.cook_pumpkin_curry.desc": "Make Pumpkin Curry",
 	"matcha.config.dolabra_visuals": "Adaptive Dolabra Visuals",
 	"matcha.config.dolabra_visuals.tooltip": "Automatically orient dolabras toward the effective head for the block under the crosshair.",
-	"matcha.config.food_healing_preview": "Food Healing Preview",
-	"matcha.config.food_healing_preview.tooltip": "Flash the hearts that the food you are holding can restore.",
 	"tooltip.matcha.beacon_kindling.arrival": "Wandering Trader arrives in: %s",
 	"tooltip.matcha.beacon_kindling.departure": "Wandering Trader leaves in: %s",
 	"config.jade.plugin_matcha-flavoured.beacon_kindling": "Beacon Kindling",
@@ -1056,6 +1052,8 @@
 	"matcha.config.vanilla_preview": "Vanilla Appearance (Beta)",
 	"matcha.config.vanilla_preview.pack": "Matcha Flavoured: Vanilla Appearance Preview",
 	"matcha.config.vanilla_preview.tooltip": "Restore some modified textures to their vanilla versions.",
+	"matcha.config.food_healing_preview": "Food Healing Preview",
+	"matcha.config.food_healing_preview.tooltip": "Flash the hearts that the food you are holding can restore.",
 	"trinkets.slot.head.earring": "Earring",
 	"tooltip.matcha.wither_resistance.desc": "Delays heart shattering caused by the Wither effect.",
 	"item.matcha.truffle": "Truffle",
@@ -1063,5 +1061,8 @@
 	"tooltip.matcha.pig.foraging_ready": "Ready to forage",
 	"tooltip.matcha.pig.digging": "Foraging...",
 	"tooltip.matcha.pig.mud_play": "Playing in mud...",
-	"config.jade.plugin_matcha.pig_foraging": "Pig Foraging"
+	"config.jade.plugin_matcha.pig_foraging": "Pig Foraging",
+	"book.matcha.anglers_almanac.caught": "Caught: %s",
+	"book.matcha.anglers_almanac.biomes": "Biomes",
+	"book.matcha.anglers_almanac.unknown": "Undiscovered"
 }

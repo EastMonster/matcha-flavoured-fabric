@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "Уидърът може да бъде призован само на повърхността на горния свят",
 	"item.matcha.raw_diamond": "Необработен диамант",
 	"advancements.matcha.anglers_almanac.title": "Алманахът на рибаря",
+	"item.matcha.anglers_almanac": "Алманахът на рибаря",
 	"advancements.matcha.anglers_almanac.desc": "Открий рибите, обитаващи този свят",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Студена сладка вода",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Хладка сладка вода",

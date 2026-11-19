@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "Witherul poate fi invocat numai deasupra suprafeței",
 	"item.matcha.raw_diamond": "Diamant brut",
 	"advancements.matcha.anglers_almanac.title": "Almanahul pescarului",
+	"item.matcha.anglers_almanac": "Almanahul pescarului",
 	"advancements.matcha.anglers_almanac.desc": "Învață mai multe despre peștii care ocupă această lume",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Apă dulce rece",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Apă dulce recișoară",

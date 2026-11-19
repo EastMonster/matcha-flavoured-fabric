@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "A Wither csak a felszínen idézhető meg",
 	"item.matcha.raw_diamond": "Nyers gyémánt",
 	"advancements.matcha.anglers_almanac.title": "HAL-latlan",
+	"item.matcha.anglers_almanac": "HAL-latlan",
 	"advancements.matcha.anglers_almanac.desc": "Találd meg az összes halat, ami ebben a világban lakozik",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Hideg édesvízi",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Hűvös édesvízi",

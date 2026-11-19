@@ -10,7 +10,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.advancements.AdvancementNode;
 import net.minecraft.advancements.predicates.LocationPredicate;
 import net.minecraft.core.Holder;
-import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.resources.Identifier;
@@ -42,8 +42,8 @@ import java.util.Optional;
 import java.util.Set;
 
 public final class AnglersAlmanac {
-	private static final Identifier MODEL = Identifier.fromNamespaceAndPath("matcha", "anglers_almanac");
-	private static final Identifier ROOT = MODEL.withSuffix("/root");
+	private static final Identifier ALMANAC = Identifier.fromNamespaceAndPath("matcha", "anglers_almanac");
+	private static final Identifier ROOT = ALMANAC.withSuffix("/root");
 	private static final String FISHING_PATH = "gameplay/fishing/";
 	private static final ResourceKey<LootTable> BIOMES = ResourceKey.create(Registries.LOOT_TABLE,
 			Identifier.withDefaultNamespace(FISHING_PATH + "biomes"));
@@ -59,7 +59,7 @@ public final class AnglersAlmanac {
 					&& player.fishing != null && player.isShiftKeyDown()) {
 				book = player.getOffhandItem();
 			}
-			if (player.isSpectator() || !book.is(Items.BOOK) || !MODEL.equals(book.get(DataComponents.ITEM_MODEL))) {
+			if (player.isSpectator() || !ALMANAC.equals(BuiltInRegistries.ITEM.getKey(book.getItem()))) {
 				return InteractionResult.PASS;
 			}
 			if (player instanceof ServerPlayer serverPlayer) {
@@ -187,6 +187,6 @@ public final class AnglersAlmanac {
 				.map(ResourceKey::identifier)
 				.filter(id -> id.getNamespace().equals("minecraft") && id.getPath().startsWith(FISHING_PATH))
 				.map(id -> id.getPath().substring(FISHING_PATH.length()).replaceFirst("^(freshwater|saltwater)_", "$1/"))
-				.map(path -> MODEL.withSuffix("/" + path + "/root"));
+				.map(path -> ALMANAC.withSuffix("/" + path + "/root"));
 	}
 }

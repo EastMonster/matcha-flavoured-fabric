@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "Иссушителя можно призвать только на поверхности Верхнего мира",
 	"item.matcha.raw_diamond": "Сырой алмаз",
 	"advancements.matcha.anglers_almanac.title": "Альманах рыболова",
+	"item.matcha.anglers_almanac": "Альманах рыболова",
 	"advancements.matcha.anglers_almanac.desc": "Откройте для себя рыб, населяющих этот мир",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Холодные пресные воды",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Прохладные пресные воды",

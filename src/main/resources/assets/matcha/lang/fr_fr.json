@@ -867,6 +867,7 @@
 	"effect.matcha.speed_2": " +40%% (%s)",
 	"error.matcha.wither_spawn_invalid": "Le wither ne peut être invoqué qu'à la surface",
 	"advancements.matcha.anglers_almanac.title": "L'almanach du pêcheur",
+	"item.matcha.anglers_almanac": "L'almanach du pêcheur",
 	"advancements.matcha.anglers_almanac.desc": "Découvrez les poissons qui peuplent ce monde",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Eau douce gelée",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Eau douce froide",

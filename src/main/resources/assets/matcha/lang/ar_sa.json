@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "لا يمكن استدعاء الوذر إلا على سطح العالم العلوي",
 	"item.matcha.raw_diamond": "ألماس خام",
 	"advancements.matcha.anglers_almanac.title": "دليل الصياد",
+	"item.matcha.anglers_almanac": "دليل الصياد",
 	"advancements.matcha.anglers_almanac.desc": "اكتشف الأسماك التي تعيش في هذا العالم",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "مياه عذبة باردة",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "مياه عذبة معتدلة البرودة",

@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "O Wither só pode ser invocado na Superfície",
 	"item.matcha.raw_diamond": "Diamante Bruto",
 	"advancements.matcha.anglers_almanac.title": "Almanaque do Pescador",
+	"item.matcha.anglers_almanac": "Almanaque do Pescador",
 	"advancements.matcha.anglers_almanac.desc": "Descubra os variados tipos de Peixe que habitam esse mundo!",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Água Doce Gelada",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Água Doce Fria",

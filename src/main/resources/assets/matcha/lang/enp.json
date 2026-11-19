@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "The Wither can only be beckoned on the topside of the overworld",
 	"item.matcha.raw_diamond": "Raw Athamans",
 	"advancements.matcha.anglers_almanac.title": "Fishlore Kenbook",
+	"item.matcha.anglers_almanac": "Fishlore Kenbook",
 	"advancements.matcha.anglers_almanac.desc": "Underget the fish that bow the earth",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Cold Freshwater",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Cool Freshwater",

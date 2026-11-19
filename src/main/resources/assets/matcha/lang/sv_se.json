@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "Wither kan endast kallas på ytan av övervärlden",
 	"item.matcha.raw_diamond": "Rå diamant",
 	"advancements.matcha.anglers_almanac.title": "Fiskarens almanacka",
+	"item.matcha.anglers_almanac": "Fiskarens almanacka",
 	"advancements.matcha.anglers_almanac.desc": "Upptäck fiskarna i denna värld",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Kallt sötvatten",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Svalt sötvatten",

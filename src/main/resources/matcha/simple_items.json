@@ -1,5 +1,20 @@
 [
 	{
+		"id": "anglers_almanac",
+		"type": "item",
+		"tab": "tools",
+		"source": "data/matcha/villager_trade/fisherman/1/anglers_almanac.json",
+		"components": {
+			"minecraft:lore": [
+				{
+					"translate": "advancements.matcha.anglers_almanac.desc",
+					"color": "gray",
+					"italic": false
+				}
+			]
+		}
+	},
+	{
 		"id": "raw_estus",
 		"type": "item",
 		"tab": "ingredients",

@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "El Wither solo puede ser invocado en la superficie del mundo",
 	"item.matcha.raw_diamond": "Diamante en bruto",
 	"advancements.matcha.anglers_almanac.title": "Almanaque del pescador",
+	"item.matcha.anglers_almanac": "Almanaque del pescador",
 	"advancements.matcha.anglers_almanac.desc": "Descubre los peces que habitan este mundo",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Agua dulce gélida",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Agua dulce fría",

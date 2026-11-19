@@ -868,6 +868,7 @@
 	"error.matcha.wither_spawn_invalid": "Der Wither kann nur auf der Oberfläche der Oberwelt beschworen werden",
 	"item.matcha.raw_diamond": "Rohdiamant",
 	"advancements.matcha.anglers_almanac.title": "Fischer-Almanach",
+	"item.matcha.anglers_almanac": "Fischer-Almanach",
 	"advancements.matcha.anglers_almanac.desc": "Entdecke die Fische, die unsere Welt bewohnen",
 	"advancements.matcha.anglers_almanac.category.freshwater.cold.title": "Süßwasser (Kalt)",
 	"advancements.matcha.anglers_almanac.category.freshwater.cool.title": "Süßwasser (Kühl)",
