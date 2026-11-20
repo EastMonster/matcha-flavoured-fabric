@@ -1,6 +1,7 @@
 package monster.east.matchaff.client;
 
 import monster.east.matchaff.network.BlazeRodDropsPayload;
+import monster.east.matchaff.network.HeartContainerLossPayload;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
@@ -17,6 +18,9 @@ public final class MatchaConfigScreen extends Screen {
 	private Button blazeRodDropsButton;
 	private boolean blazeRodDrops;
 	private boolean blazeRodDropsSynced;
+	private Button heartContainerLossButton;
+	private boolean heartContainerLoss = true;
+	private boolean heartContainerLossSynced;
 
 	public MatchaConfigScreen(Screen parent) {
 		super(Component.translatable("matcha.config.title"));
@@ -26,16 +30,17 @@ public final class MatchaConfigScreen extends Screen {
 	@Override
 	protected void init() {
 		blazeRodDropsSynced = false;
+		heartContainerLossSynced = false;
 		addRenderableWidget(new StringWidget(
-				(width - font.width(title)) / 2, 25, font.width(title), 20, title, font));
+				(width - font.width(title)) / 2, 10, font.width(title), 20, title, font));
 
 		addRenderableWidget(Button.builder(vanillaPreviewLabel(), this::toggleVanillaPreview)
-				.bounds(width / 2 - 100, height / 2 - 60, 200, 20)
+				.bounds(width / 2 - 100, height / 2 - 83, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.vanilla_preview.tooltip")))
 				.build());
 
 		addRenderableWidget(Button.builder(leafExtensionsLabel(), this::toggleLeafExtensions)
-				.bounds(width / 2 - 100, height / 2 - 37, 200, 20)
+				.bounds(width / 2 - 100, height / 2 - 60, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.leaf_extensions.tooltip")))
 				.build());
 
@@ -43,7 +48,7 @@ public final class MatchaConfigScreen extends Screen {
 					MatchaClientConfig.toggleTrueDarkness();
 					button.setMessage(trueDarknessLabel());
 				})
-				.bounds(width / 2 - 100, height / 2 - 14, 200, 20)
+				.bounds(width / 2 - 100, height / 2 - 37, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.true_darkness.tooltip")))
 				.build());
 
@@ -51,7 +56,7 @@ public final class MatchaConfigScreen extends Screen {
 					MatchaClientConfig.toggleDolabraVisuals();
 					button.setMessage(dolabraVisualsLabel());
 				})
-				.bounds(width / 2 - 100, height / 2 + 9, 200, 20)
+				.bounds(width / 2 - 100, height / 2 - 14, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.dolabra_visuals.tooltip")))
 				.build());
 
@@ -59,7 +64,7 @@ public final class MatchaConfigScreen extends Screen {
 					MatchaClientConfig.toggleFoodHealingPreview();
 					button.setMessage(foodHealingPreviewLabel());
 				})
-				.bounds(width / 2 - 100, height / 2 + 32, 200, 20)
+				.bounds(width / 2 - 100, height / 2 + 9, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.food_healing_preview.tooltip")))
 				.build());
 
@@ -68,12 +73,25 @@ public final class MatchaConfigScreen extends Screen {
 					button.active = false;
 					ClientPlayNetworking.send(new BlazeRodDropsPayload.Request(true, !blazeRodDrops));
 				})
-				.bounds(width / 2 - 100, height / 2 + 55, 200, 20)
+				.bounds(width / 2 - 100, height / 2 + 32, 200, 20)
 				.tooltip(Tooltip.create(Component.translatable("matcha.config.blaze_rod_drops.tooltip")))
 				.build());
 		blazeRodDropsButton.active = false;
 		if (ClientPlayNetworking.canSend(BlazeRodDropsPayload.Request.TYPE)) {
 			ClientPlayNetworking.send(new BlazeRodDropsPayload.Request(false, false));
+		}
+
+		heartContainerLossButton = addRenderableWidget(Button.builder(heartContainerLossLabel(), button -> {
+					heartContainerLossSynced = false;
+					button.active = false;
+					ClientPlayNetworking.send(new HeartContainerLossPayload.Request(true, !heartContainerLoss));
+				})
+				.bounds(width / 2 - 100, height / 2 + 55, 200, 20)
+				.tooltip(Tooltip.create(Component.translatable("matcha.config.heart_container_loss_on_death.tooltip")))
+				.build());
+		heartContainerLossButton.active = false;
+		if (ClientPlayNetworking.canSend(HeartContainerLossPayload.Request.TYPE)) {
+			ClientPlayNetworking.send(new HeartContainerLossPayload.Request(false, false));
 		}
 
 		addRenderableWidget(Button.builder(CommonComponents.GUI_DONE, button -> onClose())
@@ -88,10 +106,30 @@ public final class MatchaConfigScreen extends Screen {
 		updateBlazeRodDropsPermission();
 	}
 
+	void updateHeartContainerLoss(boolean enabled) {
+		heartContainerLoss = enabled;
+		heartContainerLossSynced = true;
+		heartContainerLossButton.setMessage(heartContainerLossLabel());
+		updateHeartContainerLossPermission();
+	}
+
+	private void updateHeartContainerLossPermission() {
+		Minecraft client = Minecraft.getInstance();
+		heartContainerLossButton.active = heartContainerLossSynced && client.player != null
+				&& ClientPlayNetworking.canSend(HeartContainerLossPayload.Request.TYPE)
+				&& client.player.permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER);
+	}
+
+	private Component heartContainerLossLabel() {
+		return CommonComponents.optionStatus(
+				Component.translatable("matcha.config.heart_container_loss_on_death"), heartContainerLoss);
+	}
+
 	@Override
 	public void tick() {
 		super.tick();
 		updateBlazeRodDropsPermission();
+		updateHeartContainerLossPermission();
 	}
 
 	private void updateBlazeRodDropsPermission() {

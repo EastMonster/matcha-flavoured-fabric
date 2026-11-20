@@ -1,5 +1,7 @@
 package monster.east.matchaff.mechanic;
 
+import com.mojang.serialization.Codec;
+import monster.east.matchaff.network.HeartContainerLossPayload;
 import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -12,6 +14,10 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.permissions.Permissions;
+import net.minecraft.util.datafix.DataFixTypes;
+import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.saveddata.SavedDataType;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
@@ -82,6 +88,23 @@ public final class PlayerMechanics {
 	}
 
 	public static void init() {
+		HeartContainerLossPayload.register();
+		ServerPlayNetworking.registerGlobalReceiver(HeartContainerLossPayload.Request.TYPE, (payload, context) -> {
+			DeathSettings settings = deathSettings(context.server());
+			if (payload.update() && context.player().permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER)
+					&& settings.setEnabled(payload.enabled())) {
+				context.server().getPlayerList().broadcastSystemMessage(
+						Component.translatable(settings.enabled
+								? "message.matcha.heart_container_loss_on_death.enabled"
+								: "message.matcha.heart_container_loss_on_death.disabled")
+								.withStyle(ChatFormatting.YELLOW), false);
+				for (ServerPlayer player : context.server().getPlayerList().getPlayers()) {
+					syncDeathSettings(player, settings.enabled);
+				}
+			} else {
+				syncDeathSettings(context.player(), settings.enabled);
+			}
+		});
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			sleepRate = 0;
 			SLEEP_REMAINING.clear();
@@ -123,10 +146,42 @@ public final class PlayerMechanics {
 			sendSleepRate(player);
 		});
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
-			if (entity instanceof ServerPlayer player) {
+			if (entity instanceof ServerPlayer player && deathSettings(player.level().getServer()).enabled) {
 				loseHeart(player);
 			}
 		});
+	}
+
+	private static DeathSettings deathSettings(MinecraftServer server) {
+		return server.overworld().getDataStorage().computeIfAbsent(DeathSettings.TYPE);
+	}
+
+	private static void syncDeathSettings(ServerPlayer player, boolean enabled) {
+		if (ServerPlayNetworking.canSend(player, HeartContainerLossPayload.TYPE)) {
+			ServerPlayNetworking.send(player, new HeartContainerLossPayload(enabled));
+		}
+	}
+
+	private static final class DeathSettings extends SavedData {
+		private static final Codec<DeathSettings> CODEC = Codec.BOOL.optionalFieldOf("heart_container_loss_on_death", true)
+				.xmap(DeathSettings::new, settings -> settings.enabled).codec();
+		private static final SavedDataType<DeathSettings> TYPE = new SavedDataType<>(
+				Identifier.fromNamespaceAndPath("matcha", "heart_container_loss_on_death"),
+				() -> new DeathSettings(true), CODEC, DataFixTypes.SAVED_DATA_COMMAND_STORAGE);
+		private boolean enabled;
+
+		private DeathSettings(boolean enabled) {
+			this.enabled = enabled;
+		}
+
+		private boolean setEnabled(boolean enabled) {
+			if (this.enabled == enabled) {
+				return false;
+			}
+			this.enabled = enabled;
+			setDirty();
+			return true;
+		}
 	}
 
 	private static void tick(ServerPlayer player) {

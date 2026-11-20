@@ -46,7 +46,7 @@ public final class WorldMechanics {
 	private static final String GAMERULES_OBJECTIVE = "matcha_gamerules_version";
 	private static final String GAMERULES_HOLDER = "current";
 	private static final String INITIAL_DIFFICULTY_NOTICE = "initial_difficulty_notice";
-	private static final int RECIPE_UNLOCK_VERSION = 1_12_09_001;
+	private static final int RECIPE_UNLOCK_VERSION = 1_12_09_003;
 	private static final int GAMERULES_VERSION = 2;
 	private static final int REWARD_UPSTREAM_VERSION = 1_12_01;
 	private static final String VERSION_LABEL = FabricLoader.getInstance()

@@ -920,6 +920,9 @@
 	"item.matcha.springy_stroganoff": "말랑한 스트로가노프",
 	"enchantment.matcha.shakudo_wither_resistance": " %s",
 	"item.matcha.shelf_mushroom_kombucha": "선반 버섯 콤부차",
+	"item.matcha.concha_pink": "콘챠",
+	"item.matcha.concha_white": "콘챠",
+	"item.matcha.concha_yellow": "콘챠",
 	"trinkets.slot.head.earring": "귀걸이",
 	"tooltip.matcha.wither_resistance.desc": "시듦 효과로 심장이 부서지는 시간을 늦춥니다."
 }
