@@ -53,6 +53,7 @@ import monster.east.matchaff.MatchaFlavouredFabric;
 import monster.east.matchaff.network.AnglersAlmanacPayload;
 import monster.east.matchaff.network.SleepFastForwardPayload;
 import monster.east.matchaff.network.BlazeRodDropsPayload;
+import monster.east.matchaff.network.HeartContainerLossPayload;
 
 public final class MatchaFlavouredClient implements ClientModInitializer {
 	private static final int CLOUD_TIME_SCALE = 100;
@@ -100,6 +101,12 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 				context.client().execute(() -> {
 					if (context.client().gui.screen() instanceof MatchaConfigScreen screen) {
 						screen.updateBlazeRodDrops(payload.enabled());
+					}
+				}));
+		ClientPlayNetworking.registerGlobalReceiver(HeartContainerLossPayload.TYPE, (payload, context) ->
+				context.client().execute(() -> {
+					if (context.client().gui.screen() instanceof MatchaConfigScreen screen) {
+						screen.updateHeartContainerLoss(payload.enabled());
 					}
 				}));
 		ClientTickEvents.END_CLIENT_TICK.register(MatchaFlavouredClient::tickCloudTime);

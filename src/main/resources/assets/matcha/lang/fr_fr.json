@@ -995,6 +995,9 @@
 	"item.matcha.springy_stroganoff": "Stroganov caoutchouteux",
 	"enchantment.matcha.shakudo_wither_resistance": " %s",
 	"item.matcha.shelf_mushroom_kombucha": "Kombucha aux polypores",
+	"item.matcha.concha_pink": "Concha",
+	"item.matcha.concha_white": "Concha",
+	"item.matcha.concha_yellow": "Concha",
 	"trinkets.slot.head.earring": "Boucle d'oreille",
 	"tooltip.matcha.wither_resistance.desc": "Retarde la destruction d'un cœur causée par l'effet Wither."
 }
