@@ -104,6 +104,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		EffectsMechanics.init();
 		GameplayMechanics.init();
 		PigMechanics.init();
+		SheepMechanics.init();
 		FishingStatsMechanics.init();
 		AnglersAlmanac.init();
 		AbbeyMechanics.init();
