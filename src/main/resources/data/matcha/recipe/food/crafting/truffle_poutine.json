@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		"minecraft:baked_potato",
+		"matcha:flour",
+		["minecraft:cooked_beef", "matcha:seitan"],
+		"matcha:milk_bottle",
+		"matcha:truffle",
+		"matcha:cheese",
+		"minecraft:bowl"
+	],
+	"result": {
+		"id": "matcha:truffle_poutine",
+		"count": 1
+	}
+}

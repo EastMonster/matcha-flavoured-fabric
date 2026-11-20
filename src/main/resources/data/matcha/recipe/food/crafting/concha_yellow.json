@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "concha",
+	"ingredients": [
+		"minecraft:cocoa_beans",
+		"minecraft:yellow_dye",
+		"minecraft:sugar",
+		"matcha:milk_bottle",
+		"minecraft:bread"
+	],
+	"result": {
+		"id": "matcha:concha_yellow",
+		"count": 2
+	}
+}

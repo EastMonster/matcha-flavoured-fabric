@@ -1064,5 +1064,11 @@
 	"config.jade.plugin_matcha.pig_foraging": "Pig Foraging",
 	"book.matcha.anglers_almanac.caught": "Caught: %s",
 	"book.matcha.anglers_almanac.biomes": "Biomes",
-	"book.matcha.anglers_almanac.unknown": "Undiscovered"
+	"book.matcha.anglers_almanac.unknown": "Undiscovered",
+	"item.matcha.concha_white": "Concha",
+	"item.matcha.concha_pink": "Concha",
+	"item.matcha.concha_yellow": "Concha",
+	"item.matcha.matzah_ball_soup": "Matzah Ball Soup",
+	"item.matcha.truffle_poutine": "Truffle Poutine",
+	"item.matcha.truffle_quiche": "Truffle Quiche"
 }

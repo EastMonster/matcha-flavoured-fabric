@@ -226,6 +226,7 @@
 		],
 		"main_meals": [
 			"mushroom_soup",
+			"matzah_ball_soup",
 			"gnocchi",
 			"green_curry",
 			"japanese_curry",
@@ -238,7 +239,8 @@
 			"red_mushroom_stroganoff",
 			"stroganoff",
 			"springy_stroganoff",
-			"warped_stroganoff"
+			"warped_stroganoff",
+			"truffle_poutine"
 		],
 		"pizzas": ["cheese_pizza", "meat_pizza", "mushroom_pizza", "warped_pizza"],
 		"breads_and_savouries": [
@@ -247,13 +249,17 @@
 			"honied_french_toast",
 			"latke",
 			"naan",
-			"pupusa"
+			"pupusa",
+			"truffle_quiche"
 		],
 		"sweets": [
 			"apple_empanada",
 			"golden_apple_empanada",
 			"pumpkin_empanada",
 			"brownie",
+			"concha_white",
+			"concha_pink",
+			"concha_yellow",
 			"chocolate",
 			"carrot_cupcake",
 			"golden_carrot_cupcake",
