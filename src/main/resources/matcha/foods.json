@@ -1582,7 +1582,7 @@
 		"lore": [
 			{
 				"translate": "effect.matcha.fire_resistance",
-				"with": ["10:00"],
+				"with": ["5:00"],
 				"color": "gold",
 				"italic": false
 			}
@@ -1597,7 +1597,7 @@
 				"effects": [
 					{
 						"id": "minecraft:fire_resistance",
-						"duration": 12000,
+						"duration": 6000,
 						"amplifier": 0,
 						"ambient": false,
 						"particles": false,
@@ -2082,7 +2082,7 @@
 		"lore": [
 			{
 				"translate": "effect.matcha.fire_resistance",
-				"with": ["5:00"],
+				"with": ["3:00"],
 				"color": "gold",
 				"italic": false
 			}
@@ -2097,7 +2097,7 @@
 				"effects": [
 					{
 						"id": "minecraft:fire_resistance",
-						"duration": 6000,
+						"duration": 3600,
 						"amplifier": 0,
 						"ambient": false,
 						"particles": false,

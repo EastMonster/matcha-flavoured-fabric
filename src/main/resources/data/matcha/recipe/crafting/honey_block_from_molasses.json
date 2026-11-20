@@ -5,10 +5,7 @@
 	"key": {
 		"#": "matcha:molasses"
 	},
-	"pattern": [
-		"##",
-		"##"
-	],
+	"pattern": ["###", "###", "###"],
 	"result": {
 		"id": "minecraft:honey_block"
 	}

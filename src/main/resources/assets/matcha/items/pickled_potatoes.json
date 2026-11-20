@@ -1,1 +1,19 @@
-{"model":{"type":"minecraft:model","model":"matcha:item/pickled_potatoes"}}
+{
+	"model": {
+		"type": "minecraft:select",
+		"cases": [
+			{
+				"model": {
+					"type": "minecraft:model",
+					"model": "matcha:block/food/pickled_potatoes"
+				},
+				"when": ["fixed"]
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "matcha:item/pickled_potatoes"
+		},
+		"property": "minecraft:display_context"
+	}
+}
