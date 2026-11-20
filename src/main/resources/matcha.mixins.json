@@ -44,6 +44,7 @@
 		"ConsumeItemTriggerMixin",
 		"MooshroomMilkingMixin",
 		"PigInteractionMixin",
+		"SheepInteractionMixin",
 		"HoneycombInteractionMixin",
 		"PowderSnowBootsMixin",
 		"ShearsCompatibilityMixin",
