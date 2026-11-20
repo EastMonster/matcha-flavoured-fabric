@@ -57,12 +57,14 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 
-/** Pig behaviour from upstream fe725d9e; timers belong to each loaded, ticking pig. */
+/** Pig behaviour from upstream fe725d9e, with sand digging from 5b00bd4c; timers belong to each loaded, ticking pig. */
 public final class PigMechanics {
 	private static final TagKey<Block> INTERACTABLE = blockTag("pig_interactable");
 	private static final TagKey<Block> DIGGABLE = blockTag("pig_diggable");
 	private static final TagKey<Block> EDIBLE = blockTag("pig_edible");
 	private static final TagKey<Block> MUD = blockTag("pig_playable");
+	private static final TagKey<Block> SAND = blockTag("pig_sand");
+	private static final TagKey<Block> SOUL_SAND = blockTag("pig_soul_sand");
 	private static final AttachmentType<Integer> GIFT_TIMER = timer("pig_gift_timer");
 	private static final AttachmentType<Integer> MUD_TIMER = timer("pig_mud_timer");
 	private static final AttachmentType<Integer> INFANT_TIMER = timer("pig_infant_timer");
@@ -73,7 +75,7 @@ public final class PigMechanics {
 	// The signed end time stays constant during an action; late trackers receive its current phase.
 	private static final AttachmentType<Long> ANIMATION_END = AttachmentRegistry.create(id("pig_animation_end"),
 			builder -> builder.syncWith(ByteBufCodecs.VAR_LONG, AttachmentSyncPredicate.all()));
-	private static final List<String> GIFT_GROUNDS = List.of("grass_block", "rooted_dirt", "gravel", "podzol", "mycelium");
+	private static final List<String> GIFT_GROUNDS = List.of("grass_block", "rooted_dirt", "gravel", "podzol", "mycelium", "soul_sand", "sand");
 	private static final Set<Pig> PIGS = Collections.newSetFromMap(new IdentityHashMap<>());
 
 	private PigMechanics() {
@@ -166,7 +168,7 @@ public final class PigMechanics {
 			var level = pig.level();
 			return foragingCooldown(pig) == 0 && level.getBlockState(at(pig, -0.8)).is(INTERACTABLE)
 					&& (level.getBlockState(at(pig, -0.8)).is(MUD) || level.getBlockState(at(pig, 0.5)).is(EDIBLE)
-					|| level.getBlockState(at(pig, -1)).is(DIGGABLE));
+					|| level.getBlockState(at(pig, -0.8)).is(DIGGABLE));
 		}
 
 		@Override
@@ -224,7 +226,9 @@ public final class PigMechanics {
 		if (animation > 0) {
 			if (remaining == 29 || remaining == 20 || remaining == 10) {
 				Vec3 front = Vec3.directionFromRotation(0, pig.getYRot()).scale(0.5).add(pig.position());
-				particles(level, front, Blocks.DIRT, remaining == 10 ? 50 : 20, 0.1, 0.1);
+				var ground = level.getBlockState(at(pig, -0.8));
+				Block particleBlock = ground.is(SOUL_SAND) ? Blocks.SOUL_SAND : ground.is(SAND) ? Blocks.SAND : Blocks.DIRT;
+				particles(level, front, particleBlock, remaining == 10 ? 50 : 20, 0.1, 0.1);
 				sound(pig, level, SoundEvents.CROP_BREAK, 1.0F);
 				if (remaining != 10) sound(pig, level, pigSounds(pig).ambientSound().value(), 1.0F);
 			}
@@ -285,16 +289,19 @@ public final class PigMechanics {
 					level.sendParticles(ParticleTypes.HEART, pig.getX(), pig.getY() + 1, pig.getZ(), 10, 0.3, 0.1, 0.3, 0.1);
 				}
 			}
-		} else if (level.getBlockState(at(pig, -1)).is(DIGGABLE)) {
+		} else if (level.getBlockState(at(pig, -0.8)).is(DIGGABLE)) {
+			// Soul sand lowers the pig's standing position, so use the same ground sample as action selection.
+			BlockPos groundPos = at(pig, -0.8);
+			var groundState = level.getBlockState(groundPos);
 			ResourceKey<LootTable> gift = null;
 			for (String ground : GIFT_GROUNDS) {
-				if (level.getBlockState(at(pig, -0.8)).is(blockTag("pig_" + ground))) {
+				if (groundState.is(blockTag("pig_" + ground))) {
 					gift = ResourceKey.create(Registries.LOOT_TABLE, id("gameplay/pig_gift/" + ground));
 					break;
 				}
 			}
-			level.levelEvent(2001, at(pig, -1), Block.getId(level.getBlockState(at(pig, -1))));
-			level.setBlock(at(pig, -1), Blocks.DIRT.defaultBlockState(), 3);
+			level.levelEvent(2001, groundPos, Block.getId(groundState));
+			level.setBlock(groundPos, (groundState.is(SOUL_SAND) ? Blocks.SOUL_SOIL : Blocks.DIRT).defaultBlockState(), 3);
 			if (gift == null) return;
 			pig.dropFromGiftLootTable(level, gift, (world, stack) -> {
 				ItemEntity item = new ItemEntity(world, pig.getX(), pig.getY() + 0.1, pig.getZ(), stack);

@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "concha",
+	"ingredients": [
+		"minecraft:cocoa_beans",
+		"minecraft:sugar",
+		"matcha:milk_bottle",
+		"minecraft:bread"
+	],
+	"result": {
+		"id": "matcha:concha_white",
+		"count": 2
+	}
+}

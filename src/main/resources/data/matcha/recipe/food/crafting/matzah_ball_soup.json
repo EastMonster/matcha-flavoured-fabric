@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+		"minecraft:carrot",
+		["minecraft:cooked_chicken", "matcha:seitan"],
+		"matcha:flour",
+		"matcha:dough",
+		"minecraft:bowl"
+	],
+	"result": {
+		"id": "matcha:matzah_ball_soup",
+		"count": 1
+	}
+}

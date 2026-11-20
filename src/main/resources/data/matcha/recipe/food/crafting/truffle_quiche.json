@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [" C ", "eTe", "ddd"],
+	"key": {
+		"C": "matcha:cheese",
+		"e": "#minecraft:eggs",
+		"T": "matcha:truffle",
+		"d": "matcha:dough"
+	},
+	"result": {
+		"id": "matcha:truffle_quiche",
+		"count": 6
+	}
+}
