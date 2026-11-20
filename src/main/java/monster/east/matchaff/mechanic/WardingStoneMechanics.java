@@ -129,7 +129,7 @@ final class WardingStoneMechanics {
 			// Placed inside a forbidden structure: destroy it. The structure cannot
 			// change around a normally placed stone, so test each stone once.
 			if (!stone.entityTags().contains("WardingStoneForbiddenChecked")) {
-				if (level.structureManager().getStructureWithPieceAt(pos, forbiddenStructures(level)).isValid()) {
+				if (level.structureManager().getStructureWithPieceAt(pos, forbiddenStructures(level)) != null) {
 					level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
 					var tnt = EntityTypes.TNT.create(level, EntitySpawnReason.EVENT);
 					tnt.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);

@@ -5,32 +5,26 @@
 
 > [!WARNING]
 > - 此非官方 Fabric 移植版的核心内容已经过测试，但部分边缘情况可能与原数据包不同。
-> - 本 mod 不支持直接使用原数据包的存档游玩，请创建一个新世界。
+> - 本 mod 不支持直接使用原数据包的存档游玩，**请创建一个新世界**。
 > - 本 mod 尚未完整测试多人游戏下的表现，请谨慎使用。
 
 > [!NOTE]
-> **信息披露：**本项目包含 AI 生成的代码。如果您对此介意，请勿使用本 mod。
+> 本项目包含 AI 生成的代码。如果您对此介意，请勿使用本 mod。
 
 [English](README.md)
 
-这是 Klei Wright 制作的 [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) 数据包与资源包的非官方 Fabric mod 移植版。**与原作者无隶属关系，也未获得原作者认可。**
+这是 Klei Wright 制作的 [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) 的**非官方** Fabric mod 移植版。**与原作者无隶属关系，也未获得原作者认可。**
 
 制作这个移植版的主要原因，是我个人不太喜欢数据包通过大幅修改原版物品来充当新物品的实现方式。这种方式与 JEI 结合使用时也不够方便。因此，Fabric 版把装备、食物、鱼、祝福、唱片及大部分其他自定义内容注册成了真正独立的 mod 物品。
 
 ## 环境要求
 
-|Minecraft|26.3|26.2 (Matcha ≤ 1.12.9)|
+|Minecraft|26.4|26.3|
 |---|---|---|
-|Fabric Loader|0.19.5+|0.19.3+|
-|Fabric API|0.160.6+|0.156.0+|
+|Fabric Loader|0.20.1+|0.19.5+|
+|Fabric API|0.166.3+|0.160.6+|
 
 **本项目从 Matcha 1.12.9 开始已中止对 Minecraft 26.2 的支持。**
-
-## 安装
-
-安装 Fabric Loader 和 Fabric API，然后把本 mod 的 JAR 文件放入 `mods` 文件夹。
-
-请创建新世界游玩。数据包版本中基于原版物品制作的已有物品，不会自动转换为本 mod 独立注册的物品。
 
 ## 对数据包的改进
 
@@ -47,6 +41,8 @@
 - 兼容 [Tectonic](https://modrinth.com/datapack/tectonic) 的 Fabric 版本 (目前支持到 3.1.0+beta2).
 - 兼容 [农夫乐事](https://modrinth.com/mod/farmers-delight-refabricated)和[多趣乐事 (More Delight)](https://modrinth.com/mod/more-delight)。享受种地吧!
 
+由于许可证原因，本项目不会提供 Terralith 兼容支持。
+
 ## (可能) 导致行为差异的修改
 
 - 将依赖命令的玩法机制改写为 Java。已经测试的主要玩法以对齐数据包为目标，但部分边缘情况仍可能不同。
@@ -59,7 +55,7 @@
 
 **本项目并非 Minecraft 官方产品，未经 Mojang 或 Microsoft 认可，亦与其无关联。**
 
-本项目是 Klei 原作 [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) 数据包的非官方 Fabric 移植版。原始设计、内容、贴图和数据包的相关功劳均属于 Klei 及原项目所列贡献者。
+本项目是 Klei 原作 [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) 数据包的**非官方** Fabric 移植版。原始设计、内容、贴图和数据包的相关功劳均属于 Klei 及原项目所列贡献者。
 
 第三方兼容内容的署名、原项目的完整致谢与灵感来源请参阅 [CREDITS.txt](CREDITS.txt)。
 

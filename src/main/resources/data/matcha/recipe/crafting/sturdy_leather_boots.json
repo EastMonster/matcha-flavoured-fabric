@@ -41,6 +41,7 @@
 				"matcha:traversal": 1
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "feet",
 				"asset_id": "matcha:sturdy_leather"
 			},

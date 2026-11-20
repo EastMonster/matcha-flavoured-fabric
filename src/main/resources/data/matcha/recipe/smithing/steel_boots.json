@@ -38,6 +38,7 @@
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "feet",
 				"asset_id": "matcha:steel"
 			},

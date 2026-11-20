@@ -8,6 +8,7 @@
 		"id": "minecraft:cooked_salmon",
 		"components": {
 			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.eat",
 				"consume_seconds": 1.6,
 				"has_consume_particles": true,
 				"on_consume_effects": [

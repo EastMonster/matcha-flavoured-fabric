@@ -105,7 +105,7 @@ final class TimedMechanics {
 					// Use generated terrain height
 					boolean onOverworldSurface = level.dimension() == Level.OVERWORLD
 							&& pos.getY() > 62
-							&& pos.getY() == level.getChunkSource().getGenerator().getBaseHeight(
+							&& pos.getY() == level.getChunkSource().getGenerator().getFirstFreeHeight(
 									pos.getX(), pos.getZ(), Heightmap.Types.WORLD_SURFACE_WG,
 									level, level.getChunkSource().randomState());
 					if (!onOverworldSurface && PENDING_WITHERS.stream().noneMatch(task -> task.wither().equals(wither.getUUID()))) {

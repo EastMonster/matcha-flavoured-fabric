@@ -5,7 +5,7 @@
 
 > [!WARNING]
 > - The core content of this unofficial Fabric port has been tested, but some edge cases may differ from the original data pack.
-> - This mod does not support playing directly in worlds previously used with the data pack. Please create a new world.
+> - This mod does not support playing directly in worlds previously used with the data pack. **Please create a new world.**
 > - Multiplayer behavior has not been fully tested. Use this mod with caution in multiplayer.
 
 > [!NOTE]
@@ -13,24 +13,18 @@
 
 [中文说明](README_ZH.md)
 
-A Fabric mod port of Klei Wright's [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured) data and resource pack. **Not affiliated with or endorsed by the original author.**
+An **unofficial** Fabric mod port of Klei Wright's [**Matcha Flavoured**](https://modrinth.com/datapack/matcha-flavoured) [(GitHub)](https://github.com/kleiwright/matcha-flavoured). **Not affiliated with or endorsed by the original author.**
 
 I made this port because I am not particularly fond of using heavily modified vanilla items as new items, as the original data pack does. That approach also makes browsing and using the content with JEI inconvenient. The Fabric version therefore registers its equipment, food, fish, blessings, music discs, and most other custom content as proper mod items.
 
 ## Requirements
 
-|Minecraft|26.3|26.2 (Matcha ≤ 1.12.9)|
+|Minecraft|26.4|26.3|
 |---|---|---|
-|Fabric Loader|0.19.5+|0.19.3+|
-|Fabric API|0.160.6+|0.156.0+|
+|Fabric Loader|0.20.1+|0.19.5+|
+|Fabric API|0.166.3+|0.160.6+|
 
 **This project has stopped supporting Minecraft 26.2 since Matcha 1.12.9.**
-
-## Installation
-
-Install Fabric Loader and Fabric API, then place the mod JAR in your `mods` folder.
-
-Create a new world to play this mod. Existing items from the data-pack version are not automatically converted into the mod's independently registered items.
 
 ## Improvements
 
@@ -38,7 +32,7 @@ Create a new world to play this mod. Existing items from the data-pack version a
 - Food healing is now scheduled per meal instead of relying on the regeneration effect the data pack uses. Vanilla regeneration refreshes in place (its duration never stacks), so eating the same food twice in a row silently lost part of the heal. Each food's hidden healing-simulation segment now ticks independently, so consecutive bites heal their full intended amount. 
 - Breaking cracks no longer appear floating in the air around leaves and glow lichen: the breaking animation now drops quads that fall outside the block's bounds. The out-of-bounds leaf extension panels are also culled inside canopies to reduce the number of rendered faces, while the canopy keeps its solid look.
 - The Mod Menu settings screen can disable Overworld True Darkness per client without changing server gameplay.
-- Operators can enable extra blaze rod drops in Mod Menu. This world setting defaults to off, preserves fire charge drops, and applies vanilla blaze rod and Looting rates immediately without a reload.
+- Admins can enable extra blaze rod drops in Mod Menu. This world setting defaults to off, preserves fire charge drops, and applies vanilla blaze rod and Looting rates immediately without a reload.
 
 ### Third-party mods compatibility
 
@@ -46,6 +40,8 @@ Create a new world to play this mod. Existing items from the data-pack version a
 - [CliffTree](https://modrinth.com/datapack/clifftree) compatibility (Fabric version; currently supports 4.0.1).
 - [Tectonic](https://modrinth.com/datapack/tectonic) compatibility (Fabric version; currently supports 3.1.0+beta2).
 - [Farmer's Delight](https://modrinth.com/mod/farmers-delight-refabricated) & [More Delight](https://modrinth.com/mod/more-delight) compatibility. Enjoy farmer life!
+
+Due to license restrictions, this project will not provide compatibility support for Terralith.
 
 ## Changes that (may) cause behavioral differences
 
@@ -59,7 +55,7 @@ Bug reports are welcome, but exact one-to-one compatibility with every data-pack
 
 **Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.**
 
-This is an unofficial Fabric port of Klei's original [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) data pack. All credit for the original design, content, textures, and data pack goes to Klei and the contributors credited by the original project.
+This is an **unofficial** Fabric port of Klei's original [Matcha Flavoured](https://modrinth.com/datapack/matcha-flavoured) data pack. All credit for the original design, content, textures, and data pack goes to Klei and the contributors credited by the original project.
 
 See [CREDITS.txt](CREDITS.txt) for third-party compatibility credits, the original acknowledgements, and sources of inspiration.
 

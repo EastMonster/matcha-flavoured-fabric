@@ -252,7 +252,7 @@ public final class AbbeyMechanics {
 		fireball.setDeltaMovement(0, -0.25, 0);
 		level.addFreshEntity(fireball);
 		level.playSound(null, pos.x, pos.y - 2, pos.z,
-				SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+				SoundEvents.CHAIN.breakSound().orElseThrow().value(), SoundSource.BLOCKS, 1.0F, 1.0F);
 		marker.discard();
 	}
 
@@ -352,7 +352,7 @@ public final class AbbeyMechanics {
 	 * command source's {@code execute positioned}, using the marker's rotation.
 	 */
 	private static Vec3 localPos(Marker marker, double left, double up, double forward) {
-		return new LocalCoordinates(left, up, forward)
+		return new LocalCoordinates.XYZ(left, up, forward)
 				.apply(marker.position(), new Vec2(marker.getXRot(), marker.getYRot()));
 	}
 

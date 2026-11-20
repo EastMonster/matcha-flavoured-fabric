@@ -32,6 +32,7 @@
 				"minecraft:projectile_protection": 4
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "chest",
 				"asset_id": "matcha:sturdy_leather"
 			},

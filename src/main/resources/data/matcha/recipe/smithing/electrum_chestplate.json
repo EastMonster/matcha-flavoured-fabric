@@ -33,6 +33,7 @@
 				"matcha:electrum_armour": 1
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "chest",
 				"asset_id": "matcha:electrum"
 			},

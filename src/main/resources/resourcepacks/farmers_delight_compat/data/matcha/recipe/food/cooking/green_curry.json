@@ -18,6 +18,7 @@
 		"id": "matcha:green_curry",
 		"components": {
 			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.eat",
 				"consume_seconds": 3,
 				"animation": "drink",
 				"has_consume_particles": true,

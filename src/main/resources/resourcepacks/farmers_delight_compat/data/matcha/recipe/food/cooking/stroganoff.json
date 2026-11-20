@@ -15,6 +15,7 @@
 		"count": 1,
 		"components": {
 			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.eat",
 				"consume_seconds": 1.8,
 				"on_consume_effects": [
 					{

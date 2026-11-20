@@ -1,23 +1,20 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"category": "misc",
-	"ingredients": [
-		"minecraft:dried_kelp_block"
-	],
+	"ingredients": ["minecraft:dried_kelp_block"],
 	"result": {
 		"id": "minecraft:dried_kelp",
 		"components": {
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.water_breathing",
-						"with": [
-							"0:10"
-						],
+					"with": ["0:10"],
 					"color": "#7ec9e7",
 					"italic": false
 				}
 			],
 			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.eat",
 				"consume_seconds": 0.5,
 				"has_consume_particles": true,
 				"on_consume_effects": [

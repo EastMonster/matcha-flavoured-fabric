@@ -351,7 +351,7 @@ public final class WorldMechanics {
 	}
 
 	static Vec3 localOffset(Entity entity, double left, double up, double forward) {
-		return new LocalCoordinates(left, up, forward).apply(entity.position(), entity.getRotationVector());
+		return new LocalCoordinates.XYZ(left, up, forward).apply(entity.position(), entity.getRotationVector());
 	}
 
 	private static void boatParticles(ServerPlayer player) {

@@ -264,6 +264,7 @@
 			"minecraft:rarity": "rare",
 			"minecraft:enchantment_glint_override": true,
 			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.eat",
 				"consume_seconds": 60,
 				"animation": "spyglass",
 				"has_consume_particles": false,
@@ -428,6 +429,7 @@
 			],
 			"!minecraft:food": {},
 			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.eat",
 				"consume_seconds": 1.6,
 				"has_consume_particles": true,
 				"on_consume_effects": []

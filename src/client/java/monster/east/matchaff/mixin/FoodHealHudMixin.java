@@ -8,7 +8,8 @@ import monster.east.matchaff.mechanic.EffectsMechanics;
 import monster.east.matchaff.mechanic.FoodHealMechanics;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.Hud;
-import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.gui.GuiPipeline;
+import net.minecraft.util.ARGB;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
@@ -86,6 +87,6 @@ public abstract class FoodHealHudMixin {
 		Identifier sprite = Identifier.withDefaultNamespace("hud/heart/" + (hardcore ? "hardcore_" : "")
 				+ (half ? "half" : "full"));
 		float alpha = 0.35F + 0.25F * Mth.cos(this.tickCount * Mth.TWO_PI / 24.0F);
-		graphics.blitSprite(RenderPipelines.GUI_TEXTURED, sprite, x, y, 9, 9, alpha);
+		graphics.blitSprite(GuiPipeline.TEXTURED, sprite, x, y, 9, 9, ARGB.white(alpha));
 	}
 }

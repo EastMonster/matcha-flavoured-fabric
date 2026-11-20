@@ -14,7 +14,9 @@ import net.minecraft.util.datafix.DataFixTypes;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import org.jspecify.annotations.Nullable;
 
 public final class BlazeRodDropsMechanics {
 	private BlazeRodDropsMechanics() {
@@ -53,6 +55,17 @@ public final class BlazeRodDropsMechanics {
 		@Override
 		public MapCodec<EnabledCondition> codec() {
 			return CODEC;
+		}
+
+		@Override
+		public @Nullable Boolean constantValue(LootItemCondition.ConstantConditionEvaluationContext context) {
+			// World settings can change after loot tables are loaded.
+			return null;
+		}
+
+		@Override
+		public void validate(ValidationContext context) {
+			// This condition only reads server settings, not loot-context parameters.
 		}
 
 		@Override

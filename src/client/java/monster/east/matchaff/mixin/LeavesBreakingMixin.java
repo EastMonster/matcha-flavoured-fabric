@@ -1,79 +1,37 @@
 package monster.east.matchaff.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.fabricmc.fabric.api.client.renderer.v1.Renderer;
-import net.fabricmc.fabric.api.client.renderer.v1.mesh.Mesh;
-import net.fabricmc.fabric.api.client.renderer.v1.mesh.MutableMesh;
-import net.fabricmc.fabric.api.client.renderer.v1.mesh.QuadEmitter;
-import net.fabricmc.fabric.api.client.renderer.v1.mesh.QuadView;
-import net.fabricmc.fabric.api.client.renderer.v1.render.submit.ExtendedBlockModelSubmit;
+import com.mojang.blaze3d.vertex.QuadInstance;
+import com.mojang.blaze3d.vertex.SheetedDecalTextureGenerator;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.renderer.feature.BlockModelFeatureRenderer;
+import net.minecraft.client.resources.model.geometry.BakedQuad;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * Fabric API takes over the breaking animation for block models: it generates
- * a Mesh from the block model (including out-of-bounds leaf panels from the
- * datapack's cross_leaves and glow lichen ground models) and submits it
- * through Fabric's {@link ExtendedBlockModelSubmit}.
- * This mixin filters that Mesh, dropping any quad whose vertices fall outside
- * the 0..1 normalized block box, so the breaking cracks no longer show up in
- * the air around leaves. Only submissions with a breaking decal pose are
- * filtered, so normal rendering keeps its out-of-bounds decoration.
- * Blocks without out-of-bounds quads are passed through unchanged.
- *
- * <p>The filtered mesh is rebuilt through {@link Renderer#get()} so it uses
- * whichever renderer owns the breaking mesh (Indigo or Sodium's FRAPI
- * implementation). Hardcoding Indigo's MutableMeshImpl here would crash with a
- * ClassCastException whenever Sodium owns the mesh.
- */
-@Mixin(ExtendedBlockModelSubmit.class)
+@Mixin(BlockModelFeatureRenderer.class)
 public abstract class LeavesBreakingMixin {
-	@ModifyVariable(
-		method = "<init>",
-		at = @At("HEAD"),
-		argsOnly = true
-	)
-	private static Mesh matcha$dropOutOfBoundsBreakingQuads(
-			Mesh mesh, @Local(argsOnly = true, ordinal = 1) PoseStack.Pose sheetedDecalPose) {
-		return sheetedDecalPose == null ? mesh : filterOutOfBounds(mesh);
+	// FRAPI is disabled in 26.4 snapshot 10; recheck the breaking render path and Sodium compatibility when it returns.
+	@Inject(method = "putQuad", at = @At("HEAD"), cancellable = true)
+	private static void matcha$dropOutOfBoundsBreakingQuads(
+			PoseStack.Pose pose, BakedQuad quad, QuadInstance instance,
+			int baseTintColor, int[] tintLayers, VertexConsumer buffer, CallbackInfo ci) {
+		// Only breaking decals should omit the decorative panels outside the block.
+		if (buffer instanceof SheetedDecalTextureGenerator && matcha$quadOutOfBounds(quad)) {
+			ci.cancel();
+		}
 	}
 
 	@Unique
-	private static Mesh filterOutOfBounds(Mesh mesh) {
-		if (mesh == null) {
-			return null;
-		}
-		boolean[] hasOutOfBounds = {false};
-		mesh.forEach(quad -> {
-			if (quadOutOfBounds(quad)) {
-				hasOutOfBounds[0] = true;
-			}
-		});
-		if (!hasOutOfBounds[0]) {
-			return mesh;
-		}
-
-		MutableMesh rebuilt = Renderer.get().mutableMesh();
-		QuadEmitter emitter = rebuilt.emitter();
-		mesh.forEach(quad -> {
-			if (!quadOutOfBounds(quad)) {
-				emitter.copyFrom(quad);
-				emitter.emit();
-			}
-		});
-		return rebuilt.immutableCopy();
-	}
-
-	@Unique
-	private static boolean quadOutOfBounds(QuadView quad) {
+	private static boolean matcha$quadOutOfBounds(BakedQuad quad) {
 		for (int i = 0; i < 4; i++) {
-			// Fabric mesh quad positions are normalized to 0..1 (same space as BakedQuad).
-			if (quad.x(i) < 0.0F || quad.x(i) > 1.0F
-					|| quad.y(i) < 0.0F || quad.y(i) > 1.0F
-					|| quad.z(i) < 0.0F || quad.z(i) > 1.0F) {
+			var position = quad.position(i);
+			if (position.x() < 0.0F || position.x() > 1.0F
+					|| position.y() < 0.0F || position.y() > 1.0F
+					|| position.z() < 0.0F || position.z() > 1.0F) {
 				return true;
 			}
 		}

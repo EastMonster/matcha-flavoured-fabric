@@ -11,15 +11,16 @@ import monster.east.matchaff.block.TomatoCropBlock;
 import monster.east.matchaff.enchantment.EnchantmentMechanics;
 import monster.east.matchaff.item.*;
 import monster.east.matchaff.mechanic.*;
+import monster.east.matchaff.mixin.WorkAtComposterAccessor;
 import monster.east.matchaff.network.SleepFastForwardPayload;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
-import net.fabricmc.fabric.api.registry.VillagerInteractionRegistries;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.dispenser.DispenseBehaviorIds;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.ChatFormatting;
@@ -44,7 +45,6 @@ import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffe
 import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.VillagerFood;
-import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -114,7 +114,9 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		Item tomatoSeed = TomatoCropBlock.register();
 		List<Item> foods = registerFoods();
-		VillagerInteractionRegistries.registerCompostable(tomatoSeed);
+		List<Item> compostableItems = new ArrayList<>(WorkAtComposterAccessor.matcha$getCompostableItems());
+		compostableItems.add(tomatoSeed);
+		WorkAtComposterAccessor.matcha$setCompostableItems(List.copyOf(compostableItems));
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
 		List<SimpleItemRegistrar.BatchItem> batchItems = SimpleItemRegistrar.registerAll();
 		List<CreativeOrder.Entry> creativeItems = new ArrayList<>();
@@ -202,13 +204,11 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 
 	private static Item register(String name, Item.Properties properties) {
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha", name));
-		Item item = Registry.register(BuiltInRegistries.ITEM, key,
-				name.equals("tallow") ? new HoneycombItem(properties.setId(key)) : new Item(properties.setId(key)));
 		if (name.equals("tallow")) {
-			DispenserBlock.registerBehavior(item,
-					Objects.requireNonNull(DispenserBlock.DISPENSER_REGISTRY.get(Items.HONEYCOMB)));
+			properties.dispensed(DispenseBehaviorIds.HONEYCOMB);
 		}
-		return item;
+		return Registry.register(BuiltInRegistries.ITEM, key,
+				name.equals("tallow") ? new HoneycombItem(properties.setId(key)) : new Item(properties.setId(key)));
 	}
 
 	private static List<Item> registerFoods() {

@@ -49,6 +49,7 @@
 		"ShearsInteractionMixin",
 		"SpawnEggInteractionMixin",
 		"VillagerAccessor",
+		"WorkAtComposterAccessor",
 		"LivingEntityEquipmentMixin",
 		"WolfTamingMixin",
 		"WheatShapeMixin"

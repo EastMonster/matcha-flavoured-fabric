@@ -10,14 +10,13 @@
 			"minecraft:lore": [
 				{
 					"translate": "effect.matcha.levitation_3",
-						"with": [
-							"0:03"
-						],
+					"with": ["0:03"],
 					"color": "#ae6cbc",
 					"italic": false
 				}
 			],
 			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.eat",
 				"consume_seconds": 0.8,
 				"has_consume_particles": true,
 				"on_consume_effects": [

@@ -37,6 +37,7 @@
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "head",
 				"asset_id": "matcha:amber_earrings"
 			},
@@ -76,6 +77,7 @@
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "head",
 				"asset_id": "matcha:diamond_earrings"
 			},
@@ -112,6 +114,7 @@
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "head",
 				"asset_id": "matcha:amethyst_earrings"
 			},
@@ -148,6 +151,7 @@
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "head",
 				"asset_id": "matcha:lapis_earrings"
 			},
@@ -258,6 +262,7 @@
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "head",
 				"asset_id": "matcha:hepatizon_laurel"
 			},
@@ -517,6 +522,7 @@
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "head",
 				"asset_id": "matcha:opal_earrings"
 			},
@@ -554,6 +560,7 @@
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "head",
 				"asset_id": "matcha:ruby_circlet"
 			},
@@ -755,6 +762,7 @@
 				"hidden_components": ["minecraft:attribute_modifiers"]
 			},
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "head",
 				"asset_id": "matcha:topaz_earrings"
 			},

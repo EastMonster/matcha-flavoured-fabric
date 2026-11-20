@@ -129,7 +129,7 @@ public final class MobMechanics {
 			dungeonStructures = HolderSet.direct(
 					structures.getOrThrow(TRIAL_CHAMBERS), structures.getOrThrow(ABBEY));
 		}
-		return level.structureManager().getStructureWithPieceAt(pos, dungeonStructures).isValid();
+		return level.structureManager().getStructureWithPieceAt(pos, dungeonStructures) != null;
 	}
 
 	private static void modifyMob(Mob mob, Difficulty difficulty) {

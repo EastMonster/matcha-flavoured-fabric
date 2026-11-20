@@ -91,6 +91,7 @@
 			"minecraft:enchantments": {},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "chest",
 				"asset_id": "matcha:hepatizon_elytra"
 			},
@@ -130,6 +131,7 @@
 			},
 			"minecraft:enchantment_glint_override": false,
 			"minecraft:equippable": {
+				"equip_sound": "minecraft:item.armor.equip_generic",
 				"slot": "chest",
 				"asset_id": "matcha:shakudo_elytra"
 			},

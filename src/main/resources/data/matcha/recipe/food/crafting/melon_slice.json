@@ -6,6 +6,7 @@
 	"result": {
 		"components": {
 			"minecraft:consumable": {
+				"sound": "minecraft:entity.generic.eat",
 				"on_consume_effects": [
 					{
 						"type": "minecraft:apply_effects",

@@ -2,6 +2,6 @@
 	"pack": {
 		"description": "Matcha Flavoured + CliffTree 4.0.1 compatibility (Minecraft 26.3)",
 		"min_format": 121,
-		"max_format": 121
+		"max_format": 128
 	}
 }

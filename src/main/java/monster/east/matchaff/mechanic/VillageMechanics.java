@@ -166,12 +166,12 @@ final class VillageMechanics {
 	private static void eerieCue(ServerPlayer player, BlockState ground, int step) {
 		Vec3 pos = player.position();
 		if (ground.is(Blocks.COARSE_DIRT) && step <= 4) {
-			playAt(player, pos.x + step - 3, pos.y + 4, pos.z, SoundEvents.WOOD_STEP, 0.5F);
+			playAt(player, pos.x + step - 3, pos.y + 4, pos.z, SoundEvents.WOOD.stepSound().orElseThrow().value(), 0.5F);
 		}
 		if (ground.is(Blocks.OAK_PLANKS)) {
 			if (step == 1 || step == 100) {
 				Vec3 left = WorldMechanics.localOffset(player, 5, 0, 0);
-				playAt(player, left.x, left.y, left.z, SoundEvents.GRASS_BREAK, 1.0F);
+				playAt(player, left.x, left.y, left.z, SoundEvents.GRASS.breakSound().orElseThrow().value(), 1.0F);
 			}
 			if (step == 1) {
 				playAt(player, pos.x, pos.y, pos.z, SoundEvents.AMBIENT_CAVE.value(), 1.0F, SoundSource.AMBIENT);
@@ -190,13 +190,13 @@ final class VillageMechanics {
 		}
 		if (ground.is(Blocks.GRASS_BLOCK)) {
 			if (step == 1) {
-				playAt(player, pos.x, pos.y - 4, pos.z, SoundEvents.GRASS_BREAK, 0.5F);
+				playAt(player, pos.x, pos.y - 4, pos.z, SoundEvents.GRASS.breakSound().orElseThrow().value(), 0.5F);
 			}
 			if (step >= 2 && step <= 4) {
-				playAt(player, pos.x + (5 - step), pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
+				playAt(player, pos.x + (5 - step), pos.y - 4, pos.z, SoundEvents.STONE.placeSound().orElseThrow().value(), 0.5F);
 			}
 			if (step == 4) {
-				playAt(player, pos.x, pos.y - 4, pos.z, SoundEvents.STONE_PLACE, 0.5F);
+				playAt(player, pos.x, pos.y - 4, pos.z, SoundEvents.STONE.placeSound().orElseThrow().value(), 0.5F);
 			}
 		}
 	}
@@ -226,8 +226,8 @@ final class VillageMechanics {
 
 	static SoundEvent gravelCueSound(int step) {
 		return switch (step) {
-			case 1 -> SoundEvents.GRAVEL_BREAK;
-			case 100 -> SoundEvents.STONE_PLACE;
+			case 1 -> SoundEvents.GRAVEL.breakSound().orElseThrow().value();
+			case 100 -> SoundEvents.STONE.placeSound().orElseThrow().value();
 			default -> null;
 		};
 	}
@@ -242,7 +242,7 @@ final class VillageMechanics {
 	}
 
 	private static boolean inVillage(ServerLevel level, BlockPos pos) {
-		return level.structureManager().getStructureWithPieceAt(pos, StructureTags.VILLAGE).isValid();
+		return level.structureManager().getStructureWithPieceAt(pos, StructureTags.VILLAGE) != null;
 	}
 
 	private static Identifier id(String path) {

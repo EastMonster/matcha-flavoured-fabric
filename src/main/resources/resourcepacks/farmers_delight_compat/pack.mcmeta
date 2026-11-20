@@ -2,7 +2,7 @@
 	"pack": {
 		"description": "Matcha Flavoured + Farmer's Delight compatibility",
 		"min_format": [97, 1],
-		"max_format": [121, 0]
+		"max_format": [128, 0]
 	},
 	"filter": {
 		"block": [

@@ -10,7 +10,7 @@ import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.PageButton;
 import net.minecraft.client.input.InputWithModifiers;
-import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.gui.GuiPipeline;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
@@ -93,8 +93,8 @@ final class AnglersAlmanacScreen extends Screen {
 		int right = left + RIGHT_PAGE;
 		back = addRenderableWidget(new PageButton(right + 14, top + 145, false, button -> selectCatch(catchIndex - 1), true));
 		forward = addRenderableWidget(new PageButton(right + 110, top + 145, true, button -> selectCatch(catchIndex + 1), true));
-		back.visible = catchIndex > 0;
-		forward.visible = catchIndex + 1 < water().catches().size();
+		back.setVisible(catchIndex > 0);
+		forward.setVisible(catchIndex + 1 < water().catches().size());
 		addRenderableWidget(Button.builder(CommonComponents.GUI_DONE, button -> onClose())
 				.bounds((width - 132) / 2, top + PAGE_HEIGHT + 5, 132, 20).build());
 	}
@@ -124,8 +124,8 @@ final class AnglersAlmanacScreen extends Screen {
 				catchChoices.clear();
 				addCatchGrid();
 			}
-			back.visible = catchIndex > 0;
-			forward.visible = catchIndex + 1 < water().catches().size();
+			back.setVisible(catchIndex > 0);
+			forward.setVisible(catchIndex + 1 < water().catches().size());
 			setFocused(catchChoices.get(index % gridSize()));
 		}
 	}
@@ -134,9 +134,9 @@ final class AnglersAlmanacScreen extends Screen {
 	public void setFocused(GuiEventListener focused) {
 		// Mouse clicks assign focus after the button callback, so reject hidden arrows here too.
 		if (focused != null) {
-			if (focused == back && !back.visible) {
+			if (focused == back && !back.isVisible()) {
 				focused = forward;
-			} else if (focused == forward && !forward.visible) {
+			} else if (focused == forward && !forward.isVisible()) {
 				focused = back;
 			}
 		}
@@ -194,23 +194,23 @@ final class AnglersAlmanacScreen extends Screen {
 	}
 
 	@Override
-	public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
-		super.extractBackground(graphics, mouseX, mouseY, partialTick);
+	public void extractBackground(GuiGraphicsExtractor graphics) {
+		super.extractBackground(graphics);
 		int left = left();
 		int top = top();
 		int bookWidth = RIGHT_PAGE + PAGE_WIDTH;
-		graphics.blit(RenderPipelines.GUI_TEXTURED, PAPER, left, top, 0.0F, 0.0F,
+		graphics.blit(GuiPipeline.TEXTURED, PAPER, left, top, 0.0F, 0.0F,
 				bookWidth, PAGE_HEIGHT, bookWidth, PAGE_HEIGHT);
 	}
 
 	@Override
-	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
-		super.extractRenderState(graphics, mouseX, mouseY, partialTick);
+	public void extractRenderState(GuiGraphicsExtractor graphics) {
+		super.extractRenderState(graphics);
 		int left = left();
 		int top = top();
 		drawHeading(graphics, water().title(), left + 72, top + 14);
-		drawBiomes(graphics, left, top, mouseX, mouseY);
-		drawCatch(graphics, left + RIGHT_PAGE, top, mouseX, mouseY);
+		drawBiomes(graphics, left, top, graphics.mouseX(), graphics.mouseY());
+		drawCatch(graphics, left + RIGHT_PAGE, top, graphics.mouseX(), graphics.mouseY());
 	}
 
 	private void drawBiomes(GuiGraphicsExtractor graphics, int left, int top, int mouseX, int mouseY) {
@@ -229,7 +229,7 @@ final class AnglersAlmanacScreen extends Screen {
 			}
 			Identifier icon = Identifier.fromNamespaceAndPath("matcha", "textures/gui/anglers_almanac/biome/" + biome.getPath() + ".png");
 			if (biome.getNamespace().equals("minecraft") && minecraft.getResourceManager().getResource(icon).isPresent()) {
-				graphics.blit(RenderPipelines.GUI_TEXTURED, icon, left + 14, y, 0.0F, 0.0F, 16, 16, 16, 16);
+				graphics.blit(GuiPipeline.TEXTURED, icon, left + 14, y, 0.0F, 0.0F, 16, 16, 16, 16);
 			}
 			String label = name.getString();
 			boolean truncated = font.width(label) > 90;
@@ -379,12 +379,12 @@ final class AnglersAlmanacScreen extends Screen {
 		}
 
 		@Override
-		protected void extractContents(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+		protected void extractContents(GuiGraphicsExtractor graphics) {
 			int x = getX();
 			int y = getY();
 			if (tab) {
 				boolean selected = index == waterIndex;
-				graphics.blitSprite(RenderPipelines.GUI_TEXTURED, selected || isHoveredOrFocused() ? SELECTED_TAB : TAB,
+				graphics.blitSprite(GuiPipeline.TEXTURED, selected || isHovered() || isFocused() ? SELECTED_TAB : TAB,
 						x, y, getWidth(), getHeight());
 				graphics.fakeItem(waters.get(index).icon(), x + 5, y + 4);
 				return;

@@ -1,7 +1,4 @@
 {
-	"default_block": {
-		"id": "minecraft:netherrack"
-	},
 	"default_fluid": {
 		"id": "minecraft:lava",
 		"properties": {
@@ -23,9 +20,19 @@
 			"left": {
 				"type": "minecraft:squeeze",
 				"input": {
-					"type": "minecraft:interpolated",
-					"cell_size_xz": 1,
-					"cell_size_y": 1,
+					"type": "minecraft:upscale",
+					"x": {
+						"mode": "interpolate_linear",
+						"cell_size": 1
+					},
+					"y": {
+						"mode": "interpolate_linear",
+						"cell_size": 1
+					},
+					"z": {
+						"mode": "interpolate_linear",
+						"cell_size": 1
+					},
 					"input": {
 						"type": "minecraft:mul",
 						"left": 0.64,
@@ -566,9 +573,19 @@
 				"left": {
 					"type": "minecraft:squeeze",
 					"input": {
-						"type": "minecraft:interpolated",
-						"cell_size_xz": 1,
-						"cell_size_y": 1,
+						"type": "minecraft:upscale",
+						"x": {
+							"mode": "interpolate_linear",
+							"cell_size": 1
+						},
+						"y": {
+							"mode": "interpolate_linear",
+							"cell_size": 1
+						},
+						"z": {
+							"mode": "interpolate_linear",
+							"cell_size": 1
+						},
 						"input": {
 							"type": "minecraft:mul",
 							"left": 0.64,

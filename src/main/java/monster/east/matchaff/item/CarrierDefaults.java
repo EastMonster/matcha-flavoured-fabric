@@ -111,7 +111,7 @@ final class CarrierDefaults {
 					);
 			case "minecraft:shears" -> properties
 					.durability(238)
-					.component(DataComponents.TOOL, ShearsItem.createToolProperties());
+					.delayedComponent(DataComponents.TOOL, ShearsItem::createToolProperties);
 			case "minecraft:bow" -> properties.durability(384).enchantable(1);
 			case "minecraft:brush", "minecraft:flint_and_steel" -> properties.durability(64);
             case "minecraft:potion" -> properties

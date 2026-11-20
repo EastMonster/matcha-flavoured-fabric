@@ -43,8 +43,7 @@ public abstract class TitleScreenMixin {
 	}
 
 	@Inject(method = "extractRenderState", at = @At("TAIL"))
-	private void matcha$renderVersion(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick,
-			CallbackInfo ci) {
+	private void matcha$renderVersion(GuiGraphicsExtractor graphics, CallbackInfo ci) {
 		graphics.text(((TitleScreen) (Object) this).getFont(), MATCHA$VERSION, 2, graphics.guiHeight() - 10,
 				matcha$versionColor);
 	}
