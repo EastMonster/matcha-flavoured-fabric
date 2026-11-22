@@ -9,6 +9,14 @@
 					"name": "matcha:compound_bow",
 					"modifier": [
 						{
+							"type": "minecraft:set_components",
+							"components": {
+								"minecraft:max_damage": 384,
+								"minecraft:enchantments": {},
+								"!minecraft:enchantment_glint_override": {}
+							}
+						},
+						{
 							"type": "minecraft:set_damage",
 							"damage": {
 								"type": "minecraft:uniform",

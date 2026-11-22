@@ -65,8 +65,7 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.bedrock_buster"
 			},
-			"minecraft:rarity": "rare",
-			"minecraft:max_stack_size": 1
+			"minecraft:rarity": "rare"
 		}
 	},
 	{
@@ -466,8 +465,7 @@
 			"minecraft:item_name": {
 				"translate": "item.matcha.warding_stone",
 				"color": "aqua"
-			},
-			"minecraft:max_stack_size": 1
+			}
 		}
 	},
 	{
