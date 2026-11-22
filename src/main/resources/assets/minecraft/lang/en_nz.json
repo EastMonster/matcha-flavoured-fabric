@@ -116,7 +116,7 @@
 	"entity.minecraft.villager.leatherworker": "Forester",
 	"entity.minecraft.villager.cartographer": "Archaeologist",
 	"entity.minecraft.villager.armorer": "Engineer",
-	"entity.minecraft.villager.cleric": "Chemist",
+	"entity.minecraft.villager.cleric": "Tea Master",
 	"entity.minecraft.villager.toolsmith": "Jeweler",
 	"entity.minecraft.villager.butcher": "Cook",
 	"entity.minecraft.villager.librarian": "Mouthpiece",
@@ -169,7 +169,7 @@
 	"item.minecraft.woodland_mansion_map": "Mansion Map",
 	"item.minecraft.desert_village_map": "Abandoned Desert Village Map",
 	"item.minecraft.plains_village_map": "Abandoned Plains Village Map",
-	"item.minecraft.savanna_village_map": "Abandoned Savanna Village Map",
+	"item.minecraft.savanna_village_map": "Abandoned Savannah Village Map",
 	"item.minecraft.snowy_village_map": "Abandoned Snowy Village Map",
 	"item.minecraft.taiga_village_map": "Abandoned Taiga Village Map",
 	"filled_map.shipwreck": "Shipwreck Map",
@@ -186,7 +186,7 @@
 	"filled_map.mansion": "Mansion Map",
 	"filled_map.village_desert": "Abandoned Desert Village Map",
 	"filled_map.village_plains": "Abandoned Plains Village Map",
-	"filled_map.village_savanna": "Abandoned Savanna Village Map",
+	"filled_map.village_savanna": "Abandoned Savannah Village Map",
 	"filled_map.village_snowy": "Abandoned Snowy Village Map",
 	"filled_map.village_taiga": "Abandoned Taiga Village Map"
 }

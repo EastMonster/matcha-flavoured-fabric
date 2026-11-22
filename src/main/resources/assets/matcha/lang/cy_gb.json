@@ -443,13 +443,9 @@
 	"item.matcha.rose_classic": "Rhosyn",
 	"item.matcha.cyan_rose_classic": "Rhosyn Gwyrddlas",
 	"item.matcha.dandelion_classic": "Dant y Llew",
-	"advancements.matcha.tutorial.obtain_amber.title": "Trydedd Gainc",
-	"advancements.matcha.tutorial.obtain_opal.title": "Gainc Gyntaf",
 	"advancements.matcha.tutorial.obtain_oven.title": "Popty Ping",
 	"advancements.matcha.tutorial.obtain_oven.desc": "Crefftiwch Popty o Friciau a Haearn",
-	"advancements.matcha.tutorial.obtain_ruby.title": "Ail Gainc",
 	"advancements.matcha.tutorial.obtain_smithing_table.title": "Gweithfan Gofannon",
-	"advancements.matcha.tutorial.obtain_topaz.title": "Pedwaredd Gainc",
 	"advancements.matcha.tutorial.preserve_everything.desc": "Cyffeithiwch Bopeth!",
 	"advancements.matcha.tutorial.preserve_food.title": "Piclau & Jamiau",
 	"advancements.matcha.tutorial.preserve_food.desc": "Bydd cyffeithio bwyd yn atgyfnerthu ei flas",
@@ -509,6 +505,8 @@
 	"lore.matcha.fish_rarity.2": "§a⭐⭐§8☆☆",
 	"lore.matcha.fish_rarity.3": "§b⭐⭐⭐§8☆",
 	"lore.matcha.fish_rarity.4": "§d⭐⭐⭐⭐",
+	"advancements.matcha.tutorial.obtain_amber.title": "Trydedd Gainc",
+	"advancements.matcha.tutorial.obtain_topaz.title": "Pedwaredd Gainc",
 	"trinkets.slot.head.earring": "Clustdlws",
 	"tooltip.matcha.wither_resistance.desc": "Yn gohirio calon rhag chwalu oherwydd effaith Wither."
 }
