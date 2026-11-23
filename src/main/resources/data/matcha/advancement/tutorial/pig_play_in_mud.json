@@ -1,0 +1,25 @@
+{
+	"parent": "matcha:tutorial/breed_animals",
+	"criteria": {
+		"placed_trough": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"translate": "adv.matcha.pig_play_in_mud.desc",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "minecraft:mud"
+		},
+		"title": {
+			"translate": "adv.matcha.pig_play_in_mud"
+		},
+		"hidden": false,
+		"frame": "task"
+	}
+}

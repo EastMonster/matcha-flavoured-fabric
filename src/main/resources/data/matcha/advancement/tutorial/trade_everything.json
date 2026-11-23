@@ -1,6 +1,18 @@
 {
 	"parent": "matcha:tutorial/trade_fish",
 	"criteria": {
+		"weaponsmith": {
+			"trigger": "minecraft:villager_trade",
+			"conditions": {
+				"villager": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:nbt": "{VillagerData:{profession:\"minecraft:weaponsmith\"}}"
+					}
+				}
+			}
+		},
 		"fisherman": {
 			"trigger": "minecraft:villager_trade",
 			"conditions": {
@@ -182,7 +194,8 @@
 		["librarian"],
 		["mason"],
 		["shepherd"],
-		["toolsmith"]
+		["toolsmith"],
+		["weaponsmith"]
 	],
 	"rewards": {
 		"loot": ["matcha:advancement/obol_5"]

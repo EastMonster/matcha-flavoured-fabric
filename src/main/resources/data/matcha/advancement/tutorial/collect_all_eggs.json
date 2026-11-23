@@ -1,0 +1,92 @@
+{
+	"parent": "matcha:tutorial/breed_animals",
+	"criteria": {
+		"green_egg": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:green_egg"
+					}
+				]
+			}
+		},
+		"speckled_green_egg": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:speckled_green_egg"
+					}
+				]
+			}
+		},
+		"small_egg": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:small_egg"
+					}
+				]
+			}
+		},
+		"brown_egg": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:brown_egg"
+					}
+				]
+			}
+		},
+		"blue_egg": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:blue_egg"
+					}
+				]
+			}
+		},
+		"egg": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:egg"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "adv.matcha.collect_all_eggs.desc",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"components": {
+				"minecraft:item_model": "matcha:all_eggs"
+			},
+			"count": 1,
+			"id": "minecraft:poisonous_potato"
+		},
+		"title": {
+			"translate": "adv.matcha.collect_all_eggs"
+		},
+		"hidden": false,
+		"frame": "goal"
+	},
+	"rewards": {
+		"loot": ["matcha:advancement/obol_2"]
+	}
+}

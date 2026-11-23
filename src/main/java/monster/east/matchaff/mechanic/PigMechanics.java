@@ -262,6 +262,11 @@ public final class PigMechanics {
 					pig.setAttached(MUD_TIMER, seconds(pig, 900, 1200));
 				}
 				pig.setAttached(MUDDY, true);
+				Player player = level.getNearestPlayer(pig, -1);
+				var advancement = level.getServer().getAdvancements().get(id("tutorial/pig_play_in_mud"));
+				if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer && advancement != null) {
+					serverPlayer.getAdvancements().award(advancement, "placed_trough");
+				}
 			}
 		}
 		if (remaining == 1) {

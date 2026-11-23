@@ -1,0 +1,39 @@
+{
+	"parent": "matcha:tutorial/pig_play_in_mud",
+	"criteria": {
+		"get_primary_material": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:truffle"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "adv.matcha.truffle.desc",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"id": "matcha:truffle",
+			"count": 1
+		},
+		"title": {
+			"translate": "adv.matcha.truffle"
+		},
+		"hidden": false,
+		"frame": "challenge"
+	},
+	"rewards": {
+		"loot": ["matcha:advancement/obol_3"]
+	}
+}

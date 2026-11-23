@@ -269,9 +269,7 @@ public final class WorldMechanics {
 
 	private static boolean isRewardAdvancementToRevoke(Identifier id) {
 		// Mirror the upstream `matcha:setup/revoke_all_recipe_unlock_advancements`
-		// whitelist exactly. The function revokes trade_everything even though
-		// its comment only spares `catch_everything` ("fish everything") and
-		// `steal_all_prayers`, so keep it revoked to match upstream behaviour.
+		// whitelist, except trade_everything: preserve its migrated completion and avoid paying it twice.
 		return REWARD_ADVANCEMENTS.contains(id.getPath());
 	}
 
@@ -318,7 +316,6 @@ public final class WorldMechanics {
 			"tutorial/root",
 			"tutorial/smith_silver_sword",
 			"tutorial/smith_warding_shield",
-			"tutorial/trade_everything",
 			"tutorial/trade_fish",
 			"tutorial/trade_for_asylum_seeker",
 			"tutorial/upgrade_mattock");

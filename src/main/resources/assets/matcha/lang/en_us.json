@@ -1107,5 +1107,17 @@
 	"item.matcha.concha_yellow": "Concha",
 	"item.matcha.matzah_ball_soup": "Matzah Ball Soup",
 	"item.matcha.truffle_poutine": "Truffle Poutine",
-	"item.matcha.truffle_quiche": "Truffle Quiche"
+	"item.matcha.truffle_quiche": "Truffle Quiche",
+	"adv.matcha.breed_animals": "Stockman",
+	"adv.matcha.breed_animals.desc": "Animals enjoy their favourite snacks, but only particularly hearty foods encourage them to reproduce",
+	"adv.matcha.collect_all_eggs": "Birdwatcher",
+	"adv.matcha.collect_all_eggs.desc": "Collect an egg from every bird species",
+	"adv.matcha.pig_play_in_mud": "Playful Pigs",
+	"adv.matcha.pig_play_in_mud.desc": "Let a pig play in mud",
+	"adv.matcha.truffle": "Truffle!",
+	"adv.matcha.truffle.desc": "Obtain a truffle dug up by a happy pig",
+	"adv.matcha.cook_any_curry": "Curry Curious",
+	"adv.matcha.cook_any_curry.desc": "Prepare and cook a stock into a hearty curry",
+	"adv.matcha.cook_all_curries": "Master Chef",
+	"adv.matcha.cook_all_curries.desc": "Cook every curry"
 }
