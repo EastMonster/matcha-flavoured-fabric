@@ -73,6 +73,23 @@ jobs:
           distribution: 'microsoft'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
+      - name: install oxipng
+        env:
+          OXIPNG_VERSION: '10.2.1'
+          # Official release asset digest; update together with OXIPNG_VERSION.
+          OXIPNG_SHA256: '46e3c4beb9aae57290ad809dd3374b07153579d3322a3778c53900633618b7c6'
+        run: |
+          archive="$RUNNER_TEMP/oxipng.tar.gz"
+          install_dir="$RUNNER_TEMP/oxipng"
+          curl --fail --silent --show-error --location --retry 3 \
+            "https://github.com/oxipng/oxipng/releases/download/v${OXIPNG_VERSION}/oxipng-${OXIPNG_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
+            --output "$archive"
+          printf '%s  %s\n' "$OXIPNG_SHA256" "$archive" | sha256sum --check --strict -
+          mkdir -p "$install_dir"
+          tar -xzf "$archive" -C "$install_dir" --strip-components=1
+          chmod +x "$install_dir/oxipng"
+          "$install_dir/oxipng" --version
+          echo "$install_dir" >> "$GITHUB_PATH"
       - name: build
         run: ./gradlew build
       - name: collect release JAR
@@ -104,10 +121,12 @@ jobs:
           JAR: ${{ needs.build.outputs.jar }}
         run: |
           : "${MODRINTH_TOKEN:?Configure the MODRINTH_TOKEN repository secret}"
-          jq -n --arg version "$VERSION" --arg game "$GAME_VERSION" --arg channel "$RELEASE_TYPE" \
+          version_label="${VERSION%%+*}"
+          title="${version_label%%-*} ${RELEASE_TYPE^} ${version_label##*.} for MC $GAME_VERSION"
+          jq -n --arg title "$title" --arg version "$VERSION" --arg game "$GAME_VERSION" --arg channel "$RELEASE_TYPE" \
             --rawfile changelog release/CHANGELOG.md '{
               project_id: "9LKX5H57",
-              name: $version,
+              name: $title,
               version_number: $version,
               changelog: $changelog,
               game_versions: [$game],
