@@ -1,4 +1,12 @@
 {
+	"entity.minecart.inside": {
+		"sounds": [
+			{
+				"name": "minecart/inside",
+				"volume": 0.1
+			}
+		]
+	},
 	"music.overworld.forest": {
 		"sounds": [
 			{
