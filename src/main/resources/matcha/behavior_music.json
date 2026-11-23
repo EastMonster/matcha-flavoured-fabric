@@ -518,5 +518,35 @@
 				"translate": "item.matcha.fertilised_egg"
 			}
 		}
+	},
+	{
+		"id": "duck_spawn_egg",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "matcha:duck"
+			}
+		}
+	},
+	{
+		"id": "seagull_spawn_egg",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "matcha:seagull"
+			}
+		}
+	},
+	{
+		"id": "bobwhite_spawn_egg",
+		"type": "spawn_egg",
+		"tab": "spawn_eggs",
+		"components": {
+			"minecraft:entity_data": {
+				"id": "matcha:bobwhite"
+			}
+		}
 	}
 ]

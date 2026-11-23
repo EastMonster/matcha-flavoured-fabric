@@ -166,5 +166,99 @@
 	"entity.experience_orb.pickup": {
 		"sounds": ["matcha:random/orb"],
 		"subtitle": "subtitles.matcha.experience_orb.pickup"
+	},
+	"entity.bobwhite.ambient": {
+		"sounds": [
+			{
+				"name": "matcha:custom/mob/chicken/bobwhite/say1",
+				"volume": 0.6
+			},
+			{
+				"name": "matcha:custom/mob/chicken/bobwhite/say2",
+				"volume": 0.6
+			},
+			{
+				"name": "matcha:custom/mob/chicken/bobwhite/say3",
+				"volume": 0.6
+			},
+			{
+				"name": "matcha:custom/mob/chicken/bobwhite/say4",
+				"volume": 0.6
+			}
+		],
+		"subtitle": "subtitles.matcha.bobwhite"
+	},
+	"entity.bobwhite.hurt": {
+		"sounds": [
+			{
+				"name": "matcha:custom/mob/chicken/bobwhite/hurt",
+				"volume": 1.0
+			}
+		],
+		"subtitle": "subtitles.matcha.bobwhite_hurt"
+	},
+	"entity.duck.ambient": {
+		"sounds": [
+			{
+				"name": "matcha:custom/mob/chicken/duck/say1",
+				"volume": 0.6
+			},
+			{
+				"name": "matcha:custom/mob/chicken/duck/say2",
+				"volume": 0.6
+			},
+			{
+				"name": "matcha:custom/mob/chicken/duck/say3",
+				"volume": 0.6
+			},
+			{
+				"name": "matcha:custom/mob/chicken/duck/say4",
+				"volume": 0.6
+			},
+			{
+				"name": "matcha:custom/mob/chicken/duck/say5",
+				"volume": 0.6
+			}
+		],
+		"subtitle": "subtitles.matcha.duck"
+	},
+	"entity.duck.hurt": {
+		"sounds": [
+			{
+				"name": "matcha:custom/mob/chicken/duck/hurt",
+				"volume": 1.0
+			}
+		],
+		"subtitle": "subtitles.matcha.duck_hurt"
+	},
+	"entity.seagull.ambient": {
+		"sounds": [
+			{
+				"name": "matcha:custom/mob/chicken/seagull/say1",
+				"volume": 0.4
+			},
+			{
+				"name": "matcha:custom/mob/chicken/seagull/say2",
+				"volume": 0.4
+			},
+			{
+				"name": "matcha:custom/mob/chicken/seagull/say3",
+				"volume": 0.4
+			},
+			{
+				"name": "matcha:custom/mob/chicken/seagull/say5",
+				"volume": 0.4
+			}
+		],
+		"subtitle": "subtitles.matcha.seagull"
+	},
+	"entity.seagull.hurt": {
+		"sounds": [
+			{
+				"name": "matcha:custom/mob/chicken/seagull/hurt",
+				"volume": 1.0
+			}
+		],
+		"subtitle": "subtitles.matcha.seagull_hurt"
 	}
 }

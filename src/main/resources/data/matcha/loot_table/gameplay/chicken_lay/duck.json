@@ -1,0 +1,173 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:gameplay/chicken_lay/duck_diving_seagrass",
+							"weight": 5,
+							"condition": {
+								"type": "minecraft:all_of",
+								"terms": [
+									{
+										"type": "matcha:bird_state",
+										"state": "diving"
+									},
+									{
+										"type": "matcha:bird_state",
+										"state": "seagrass"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:gameplay/chicken_lay/duck_diving_water",
+							"weight": 5,
+							"condition": {
+								"type": "minecraft:all_of",
+								"terms": [
+									{
+										"type": "minecraft:any_of",
+										"terms": [
+											{
+												"type": "matcha:bird_state",
+												"state": "diving"
+											}
+										]
+									},
+									{
+										"type": "minecraft:inverted",
+										"term": {
+											"type": "matcha:bird_state",
+											"state": "seagrass"
+										}
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:materials/green_egg",
+							"weight": 5,
+							"modifier": {
+								"type": "minecraft:set_count",
+								"count": {
+									"type": "minecraft:uniform",
+									"min": 1,
+									"max": 4
+								}
+							},
+							"condition": {
+								"type": "minecraft:all_of",
+								"terms": [
+									{
+										"type": "minecraft:any_of",
+										"terms": [
+											{
+												"type": "matcha:bird_state",
+												"state": "mama"
+											}
+										]
+									},
+									{
+										"type": "minecraft:inverted",
+										"term": {
+											"type": "matcha:bird_state",
+											"state": "diving"
+										}
+									},
+									{
+										"type": "minecraft:inverted",
+										"term": {
+											"type": "matcha:bird_state",
+											"state": "seagrass"
+										}
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:materials/green_egg",
+					"weight": 1,
+					"condition": {
+						"type": "minecraft:all_of",
+						"terms": [
+							{
+								"type": "minecraft:inverted",
+								"term": {
+									"type": "matcha:bird_state",
+									"state": "seagrass"
+								}
+							},
+							{
+								"type": "minecraft:inverted",
+								"term": {
+									"type": "matcha:bird_state",
+									"state": "mama"
+								}
+							},
+							{
+								"type": "minecraft:inverted",
+								"term": {
+									"type": "matcha:bird_state",
+									"state": "diving"
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:feather",
+					"weight": 1,
+					"condition": {
+						"type": "minecraft:all_of",
+						"terms": [
+							{
+								"type": "minecraft:inverted",
+								"term": {
+									"type": "matcha:bird_state",
+									"state": "seagrass"
+								}
+							},
+							{
+								"type": "minecraft:inverted",
+								"term": {
+									"type": "matcha:bird_state",
+									"state": "mama"
+								}
+							},
+							{
+								"type": "minecraft:inverted",
+								"term": {
+									"type": "matcha:bird_state",
+									"state": "diving"
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"random_sequence": "matcha:gameplay/chicken_lay/bobwhite"
+}

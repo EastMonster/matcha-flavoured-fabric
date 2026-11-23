@@ -1,0 +1,6 @@
+{
+	"asset_id": "matcha:entity/chicken/duck",
+	"baby_asset_id": "matcha:entity/chicken/duck_baby",
+	"model": "normal",
+	"spawn_conditions": []
+}

@@ -87,6 +87,8 @@ public class ItemComponents {
 					properties.delayedComponent(DataComponents.POTION_CONTENTS, provider -> decode(PotionContents.CODEC, provider, json));
 			case "minecraft:entity_data" ->
 					properties.delayedComponent(DataComponents.ENTITY_DATA, provider -> decode(DataComponents.ENTITY_DATA.codec(), provider, json));
+			case "minecraft:chicken/variant" ->
+					properties.delayedComponent(DataComponents.CHICKEN_VARIANT, provider -> decode(DataComponents.CHICKEN_VARIANT.codec(), provider, json));
 			case "minecraft:instrument" ->
 					properties.delayedComponent(DataComponents.INSTRUMENT, provider -> decode(DataComponents.INSTRUMENT.codec(), provider, json));
 			case "minecraft:jukebox_playable" ->

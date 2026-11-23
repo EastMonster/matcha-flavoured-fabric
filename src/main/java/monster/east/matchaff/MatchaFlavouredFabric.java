@@ -9,6 +9,7 @@ import monster.east.matchaff.compat.ThirdPartyFoodCompat;
 import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.block.TomatoCropBlock;
 import monster.east.matchaff.enchantment.EnchantmentMechanics;
+import monster.east.matchaff.entity.BirdEntities;
 import monster.east.matchaff.item.*;
 import monster.east.matchaff.mechanic.*;
 import monster.east.matchaff.network.SleepFastForwardPayload;
@@ -75,6 +76,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		BirdEntities.init();
 		registerBlocks();
 		initializeMechanics();
 		registerDefaultComponents();
@@ -105,6 +107,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		EffectsMechanics.init();
 		GameplayMechanics.init();
 		PigMechanics.init();
+		BirdMechanics.init();
 		SheepMechanics.init();
 		FishingStatsMechanics.init();
 		AnglersAlmanac.init();

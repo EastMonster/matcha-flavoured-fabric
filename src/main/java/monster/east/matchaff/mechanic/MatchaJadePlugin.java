@@ -4,6 +4,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.animal.pig.Pig;
+import net.minecraft.world.entity.animal.chicken.Chicken;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,6 +21,27 @@ public final class MatchaJadePlugin implements IWailaPlugin {
 	public void register(IWailaCommonRegistration registration) {
 		registration.registerBlockDataProvider(BeaconKindlingProvider.INSTANCE, CampfireBlock.class);
 		registration.registerEntityDataProvider(PigForagingProvider.INSTANCE, Pig.class);
+		registration.registerEntityDataProvider(BirdForagingProvider.INSTANCE, Chicken.class);
+	}
+
+	static final class BirdForagingProvider implements IServerDataProvider<EntityAccessor> {
+		static final BirdForagingProvider INSTANCE = new BirdForagingProvider();
+		static final Identifier UID = Identifier.fromNamespaceAndPath("matcha", "bird_foraging");
+		static final String DATA_KEY = UID.toString();
+		static final String ACTION_KEY = DATA_KEY + ".action";
+		static final String PERSONALITY_KEY = DATA_KEY + ".personality";
+
+		@Override
+		public void appendServerData(CompoundTag data, EntityAccessor accessor) {
+			if (accessor.getEntity() instanceof Chicken chicken && chicken.isAlive() && BirdMechanics.isManaged(chicken)) {
+				data.putInt(DATA_KEY, BirdMechanics.foragingCooldown(chicken));
+				data.putString(ACTION_KEY, BirdMechanics.foragingAction(chicken));
+				data.putString(PERSONALITY_KEY, BirdMechanics.personality(chicken));
+			}
+		}
+
+		@Override
+		public Identifier getUid() { return UID; }
 	}
 
 	static final class PigForagingProvider implements IServerDataProvider<EntityAccessor> {

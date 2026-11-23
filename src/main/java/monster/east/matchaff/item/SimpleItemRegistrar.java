@@ -26,6 +26,7 @@ import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.EggItem;
 import net.minecraft.world.item.SplashPotionItem;
 import net.minecraft.world.item.TippedArrowItem;
 import net.minecraft.world.item.WritableBookItem;
@@ -93,7 +94,7 @@ public final class SimpleItemRegistrar {
 		}
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha", definition.id));
 		Item item = Registry.register(BuiltInRegistries.ITEM, key, createItem(definition, properties.setId(key)));
-		if (item instanceof ArrowItem || item instanceof SplashPotionItem) {
+		if (item instanceof ArrowItem || item instanceof SplashPotionItem || item instanceof EggItem) {
 			DispenserBlock.registerProjectileBehavior(item);
 		} else if (item instanceof ShearsItem) {
 			DispenserBlock.registerBehavior(item, new ShearsDispenseItemBehavior());
@@ -118,6 +119,7 @@ public final class SimpleItemRegistrar {
 					? new MatchaTippedArrowItem(properties)
 					: new ArrowItem(properties);
 			case "bow" -> new BowItem(properties);
+			case "egg" -> new EggItem(properties);
 			case "brush" -> new BrushItem(properties);
 			case "compass" -> new CompassItem(properties);
 			case "shears" -> new ShearsItem(properties);

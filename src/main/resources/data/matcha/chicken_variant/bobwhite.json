@@ -1,0 +1,6 @@
+{
+	"asset_id": "matcha:entity/chicken/bobwhite",
+	"baby_asset_id": "matcha:entity/chicken/bobwhite_baby",
+	"model": "cold",
+	"spawn_conditions": []
+}

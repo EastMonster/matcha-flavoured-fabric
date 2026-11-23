@@ -50,6 +50,9 @@ import monster.east.matchaff.compat.TrinketsCompat;
 import monster.east.matchaff.compat.EnchantmentDescriptionsCompat;
 import monster.east.matchaff.compat.BetterCombatCompat;
 import monster.east.matchaff.MatchaFlavouredFabric;
+import monster.east.matchaff.entity.BirdEntities;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.renderer.entity.ChickenRenderer;
 import monster.east.matchaff.network.AnglersAlmanacPayload;
 import monster.east.matchaff.network.SleepFastForwardPayload;
 import monster.east.matchaff.network.BlazeRodDropsPayload;
@@ -85,6 +88,9 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		EntityRendererRegistry.register(BirdEntities.DUCK, ChickenRenderer::new);
+		EntityRendererRegistry.register(BirdEntities.SEAGULL, ChickenRenderer::new);
+		EntityRendererRegistry.register(BirdEntities.BOBWHITE, ChickenRenderer::new);
 		ScreenEvents.AFTER_INIT.register(PauseMenuSettings::afterInit);
 		ItemTooltipCallback.EVENT.register(MatchaFlavouredClient::appendFoodHealingTooltip);
 		Identifier lorePhase = Identifier.fromNamespaceAndPath("matcha", "equipment_lore");

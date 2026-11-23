@@ -1,0 +1,94 @@
+{
+	"type": "minecraft:gift",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:gameplay/chicken_lay/temperate",
+							"condition": {
+								"type": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"minecraft:components": {
+										"minecraft:chicken/variant": "minecraft:temperate"
+									}
+								}
+							}
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:gameplay/chicken_lay/warm",
+							"condition": {
+								"type": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"minecraft:components": {
+										"minecraft:chicken/variant": "minecraft:warm"
+									}
+								}
+							}
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:gameplay/chicken_lay/cold",
+							"condition": {
+								"type": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"minecraft:components": {
+										"minecraft:chicken/variant": "minecraft:cold"
+									}
+								}
+							}
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:gameplay/chicken_lay/seagull",
+							"condition": {
+								"type": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"minecraft:components": {
+										"minecraft:chicken/variant": "matcha:seagull"
+									}
+								}
+							}
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:gameplay/chicken_lay/duck",
+							"condition": {
+								"type": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"minecraft:components": {
+										"minecraft:chicken/variant": "matcha:duck"
+									}
+								}
+							}
+						},
+						{
+							"type": "minecraft:loot_table",
+							"value": "matcha:gameplay/chicken_lay/bobwhite",
+							"condition": {
+								"type": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"minecraft:components": {
+										"minecraft:chicken/variant": "matcha:bobwhite"
+									}
+								}
+							}
+						}
+					]
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "matcha:gameplay/chicken_lay/totipotent"
+}

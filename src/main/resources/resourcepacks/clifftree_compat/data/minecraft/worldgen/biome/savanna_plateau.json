@@ -73,11 +73,6 @@
 					],
 					"creature": [
 						{
-							"type": "minecraft:chicken",
-							"count": 4,
-							"weight": 10
-						},
-						{
 							"type": "minecraft:cow",
 							"count": 4,
 							"weight": 8

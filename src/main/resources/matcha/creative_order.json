@@ -341,7 +341,15 @@
 		],
 		"gems": ["amber", "opal", "ruby", "topaz", "raw_diamond", "pith"],
 		"estus": ["raw_estus", "stabilized_estus"],
-		"animal_materials": ["fish_bones", "fox_pelt", "sulfur_goo", "tallow"],
+		"animal_materials": [
+			"fish_bones",
+			"fox_pelt",
+			"sulfur_goo",
+			"tallow",
+			"green_egg",
+			"speckled_green_egg",
+			"small_egg"
+		],
 		"seeds": ["tomato_seeds"],
 		"blessings": [
 			"blessing_aeolus",
@@ -382,6 +390,7 @@
 	},
 	"spawn_eggs": {
 		"misc_spawn_items": ["asylum_seeker"],
+		"birds": ["duck_spawn_egg", "seagull_spawn_egg", "bobwhite_spawn_egg"],
 		"calves": ["crate_cold_cow", "crate_temperate_cow", "crate_warm_cow"],
 		"piglets": ["crate_cold_pig", "crate_temperate_pig", "crate_warm_pig"],
 		"lambs": ["crate_sheep_black", "crate_sheep_white", "crate_sheep_brown"],
