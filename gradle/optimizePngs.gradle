@@ -1,0 +1,114 @@
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
+import javax.inject.Inject
+import org.gradle.api.DefaultTask
+import org.gradle.api.file.DirectoryProperty
+import org.gradle.api.file.RegularFileProperty
+import org.gradle.api.file.FileSystemOperations
+import org.gradle.api.file.FileType
+import org.gradle.api.provider.ListProperty
+import org.gradle.api.tasks.CacheableTask
+import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.InputDirectory
+import org.gradle.api.tasks.InputFile
+import org.gradle.api.tasks.OutputDirectory
+import org.gradle.api.tasks.Optional
+import org.gradle.api.tasks.PathSensitive
+import org.gradle.api.tasks.PathSensitivity
+import org.gradle.api.tasks.TaskAction
+import org.gradle.process.ExecOperations
+import org.gradle.work.ChangeType
+import org.gradle.work.Incremental
+import org.gradle.work.InputChanges
+
+@CacheableTask
+abstract class OptimizeJarPngs extends DefaultTask {
+    @Incremental
+    @InputDirectory
+    @PathSensitive(PathSensitivity.RELATIVE)
+    abstract DirectoryProperty getInputDirectory()
+
+    @InputFile
+    @Optional
+    @PathSensitive(PathSensitivity.NONE)
+    abstract RegularFileProperty getOptimizer()
+
+    @Input
+    abstract ListProperty<String> getOptimizerArguments()
+
+    @OutputDirectory
+    abstract DirectoryProperty getOutputDirectory()
+
+    @Inject
+    abstract ExecOperations getExecOperations()
+
+    @Inject
+    abstract FileSystemOperations getFileSystemOperations()
+
+    static File findOptimizer(String searchPath, boolean windows) {
+        def name = windows ? 'oxipng.exe' : 'oxipng'
+        for (String directory : searchPath.split(File.pathSeparator)) {
+            if (!directory) continue
+            def candidate = new File(directory.replaceAll('^"|"$', ''), name)
+            if (candidate.isFile() && candidate.canExecute()) return candidate
+        }
+        return null
+    }
+
+    @TaskAction
+    void optimize(InputChanges changes) {
+        def optimizerExecutable = optimizer.getOrNull()?.asFile
+        if (optimizerExecutable == null) {
+            logger.warn('oxipng was not found on PATH; continuing with unoptimized PNG copies.')
+        }
+        def output = outputDirectory.get().asFile.toPath()
+        if (!changes.incremental) {
+            fileSystemOperations.delete { delete(output.toFile()) }
+        }
+        Files.createDirectories(output)
+        def pending = []
+        changes.getFileChanges(inputDirectory).each { change ->
+            if (change.fileType == FileType.DIRECTORY || !change.normalizedPath.endsWith('.png')) {
+                return
+            }
+            def target = output.resolve(change.normalizedPath)
+            if (change.changeType == ChangeType.REMOVED) {
+                Files.deleteIfExists(target)
+            } else {
+                Files.createDirectories(target.parent)
+                Files.copy(change.file.toPath(), target, StandardCopyOption.REPLACE_EXISTING)
+                pending.add(target.toFile())
+            }
+        }
+        // Bound command length on Windows; unchanged PNGs are never recompressed.
+        (optimizerExecutable == null ? [] : pending.collate(32)).each { batch ->
+            execOperations.exec {
+                executable(optimizerExecutable.absolutePath)
+                args(optimizerArguments.get())
+                args(batch.collect { it.absolutePath })
+            }
+        }
+    }
+}
+
+def optimizedPngs = tasks.register('optimizeJarPngs', OptimizeJarPngs) {
+    description = 'Optimize processed PNG copies with oxipng and Zopfli for the distributable JAR.'
+    group = 'build'
+    inputDirectory.set(layout.dir(tasks.named('processResources').map { it.destinationDir }))
+    optimizer.set(layout.file(providers.environmentVariable('PATH').map {
+        OptimizeJarPngs.findOptimizer(it, System.getProperty('os.name').startsWith('Windows'))
+    }))
+    optimizerArguments.set(['-q', '-o', 'max', '--fast', '--ng', '-z', '--zi', '15', '-t', '4'])
+    outputDirectory.set(layout.buildDirectory.dir('optimizedJarPngs'))
+}
+
+tasks.named('jar') {
+    from(optimizedPngs.flatMap { it.outputDirectory })
+    // Do not alter processResources output: runClient must keep using its original PNGs.
+    eachFile { details ->
+        if (details.name.endsWith('.png') && details.file.toPath().startsWith(
+                optimizedPngs.get().inputDirectory.get().asFile.toPath())) {
+            details.exclude()
+        }
+    }
+}
