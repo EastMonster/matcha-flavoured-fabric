@@ -1,0 +1,17 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "minecraft:potion",
+		"potion_contents": {
+			"potions": "minecraft:water",
+			"effects": {}
+		}
+	},
+	"output": {
+		"id": "matcha:kombu_dashi",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:dried_kelp"
+	}
+}

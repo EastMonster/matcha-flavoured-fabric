@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"key": {
+		"#": "minecraft:leather",
+		"B": "minecraft:bucket",
+		"C": "minecraft:copper_ingot"
+	},
+	"pattern": ["C# ", "CBC"],
+	"result": {
+		"id": "matcha:kettle",
+		"count": 1
+	}
+}

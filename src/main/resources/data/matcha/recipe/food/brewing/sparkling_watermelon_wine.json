@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:watermelon_wine"
+	},
+	"output": {
+		"id": "matcha:sparkling_watermelon_wine",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:sugar"
+	}
+}

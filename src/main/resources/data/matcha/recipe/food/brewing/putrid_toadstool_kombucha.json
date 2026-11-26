@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:sparkling_toadstool_kombucha"
+	},
+	"output": {
+		"id": "matcha:putrid_toadstool_kombucha",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:gunpowder"
+	}
+}

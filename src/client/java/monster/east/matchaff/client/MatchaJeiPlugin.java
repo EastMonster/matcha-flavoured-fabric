@@ -11,6 +11,10 @@ import mezz.jei.api.recipe.category.extensions.vanilla.crafting.ICraftingCategor
 import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IVanillaCategoryExtensionRegistration;
+import mezz.jei.api.registration.IRecipeCategoryRegistration;
+import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
+import monster.east.matchaff.recipe.KettleBrewingRecipe;
 import mezz.jei.api.recipe.types.IRecipeHolderType;
 import mezz.jei.api.recipe.types.IRecipeType;
 import mezz.jei.api.runtime.IJeiRuntime;
@@ -48,6 +52,26 @@ import java.util.stream.Stream;
 
 @JeiPlugin
 public final class MatchaJeiPlugin implements IModPlugin, ICraftingCategoryExtension<ShapedRecipe> {
+	@Override
+	public void registerCategories(IRecipeCategoryRegistration registration) {
+		registration.addRecipeCategories(new KettleJeiCategory());
+	}
+
+	@Override
+	public void registerRecipes(IRecipeRegistration registration) {
+		var level = Minecraft.getInstance().level;
+		if (level != null) {
+			registration.addRecipes(KettleJeiCategory.TYPE,
+					List.copyOf(level.recipeAccess().getSynchronizedRecipes().getAllOfType(KettleBrewingRecipe.TYPE)));
+		}
+	}
+
+	@Override
+	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+		registration.addRecipeCatalyst(new ItemStack(BuiltInRegistries.ITEM.getValue(
+				Identifier.fromNamespaceAndPath("matcha", "kettle"))), KettleJeiCategory.TYPE);
+	}
+
     private static final Identifier UID = Identifier.fromNamespaceAndPath("matcha-flavoured", "jei");
 	private static final Identifier FD_COOKING = Identifier.fromNamespaceAndPath("farmersdelight", "cooking");
 	private static final List<SecretRecipe> SECRET_RECIPES = List.of(

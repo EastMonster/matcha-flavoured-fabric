@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:chorus_boba"
+	},
+	"output": {
+		"id": "matcha:chilly_chorus_boba",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:ice"
+	}
+}

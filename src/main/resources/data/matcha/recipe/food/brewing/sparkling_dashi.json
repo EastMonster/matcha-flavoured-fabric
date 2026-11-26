@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:shiitake_dashi"
+	},
+	"output": {
+		"id": "matcha:sparkling_dashi",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:sugar"
+	}
+}

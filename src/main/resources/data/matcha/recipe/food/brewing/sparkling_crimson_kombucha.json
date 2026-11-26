@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:crimson_kombucha"
+	},
+	"output": {
+		"id": "matcha:sparkling_crimson_kombucha",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:sugar"
+	}
+}

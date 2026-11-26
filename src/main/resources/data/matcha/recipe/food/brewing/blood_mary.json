@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:tomato_juice"
+	},
+	"output": {
+		"id": "matcha:bloody_mary",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:brown_mushroom"
+	}
+}

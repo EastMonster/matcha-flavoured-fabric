@@ -56,9 +56,9 @@
 			}
 		},
 		"mead": {
-			"trigger": "minecraft:recipe_crafted",
+			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"recipes": "matcha:food/crafting/mead"
+				"items": [{ "items": "matcha:mead" }]
 			}
 		},
 		"pumpkin_jam": {

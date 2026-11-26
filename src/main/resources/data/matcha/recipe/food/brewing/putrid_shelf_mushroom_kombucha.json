@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:sparkling_shelf_mushroom_kombucha"
+	},
+	"output": {
+		"id": "matcha:putrid_shelf_mushroom_kombucha",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:gunpowder"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:sparkling_sweet_berry_wine"
+	},
+	"output": {
+		"id": "matcha:putrid_sweet_berry_wine",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:gunpowder"
+	}
+}

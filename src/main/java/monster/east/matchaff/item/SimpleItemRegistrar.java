@@ -5,6 +5,8 @@ import com.google.gson.JsonElement;
 import net.minecraft.core.dispenser.FlintAndSteelDispenseItemBehavior;
 import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityTypes;
@@ -28,6 +30,8 @@ import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.EggItem;
 import net.minecraft.world.item.SplashPotionItem;
+import net.minecraft.world.item.LingeringPotionItem;
+import net.minecraft.world.item.ThrowablePotionItem;
 import net.minecraft.world.item.TippedArrowItem;
 import net.minecraft.world.item.WritableBookItem;
 import net.minecraft.world.level.block.DispenserBlock;
@@ -94,7 +98,7 @@ public final class SimpleItemRegistrar {
 		}
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("matcha", definition.id));
 		Item item = Registry.register(BuiltInRegistries.ITEM, key, createItem(definition, properties.setId(key)));
-		if (item instanceof ArrowItem || item instanceof SplashPotionItem || item instanceof EggItem) {
+		if (item instanceof ArrowItem || item instanceof ThrowablePotionItem || item instanceof EggItem) {
 			DispenserBlock.registerProjectileBehavior(item);
 		} else if (item instanceof ShearsItem) {
 			DispenserBlock.registerBehavior(item, new ShearsDispenseItemBehavior());
@@ -124,7 +128,24 @@ public final class SimpleItemRegistrar {
 			case "compass" -> new CompassItem(properties);
 			case "shears" -> new ShearsItem(properties);
 			case "flint_and_steel" -> new FlintAndSteelItem(properties);
-			case "splash_potion" -> new SplashPotionItem(properties);
+			case "splash_potion" -> new SplashPotionItem(properties) {
+				@Override
+				public Component getName(ItemStack stack) {
+					return stack.getOrDefault(DataComponents.ITEM_NAME, Component.translatable(getDescriptionId()));
+				}
+
+				@Override
+				public ItemStack getDefaultInstance() { return new ItemStack(this); }
+			};
+			case "lingering_potion" -> new LingeringPotionItem(properties) {
+				@Override
+				public Component getName(ItemStack stack) {
+					return stack.getOrDefault(DataComponents.ITEM_NAME, Component.translatable(getDescriptionId()));
+				}
+
+				@Override
+				public ItemStack getDefaultInstance() { return new ItemStack(this); }
+			};
 			case "spawn_egg" -> new SpawnEggItem(properties);
 			case "item_frame" -> new ItemFrameItem(EntityTypes.ITEM_FRAME, properties);
 			case "instrument" -> definition.id.endsWith("_gudi") ? new GudiItem(properties) : new InstrumentItem(properties);

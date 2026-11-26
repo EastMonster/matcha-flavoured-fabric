@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:shelf_mushroom_beoseot_cha"
+	},
+	"output": {
+		"id": "matcha:shelf_mushroom_kombucha",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:brown_mushroom"
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"multipart": [
+		{
+			"apply": {
+				"model": "matcha:block/kettle_closed"
+			},
+			"when": {
+				"OR": [
+					{
+						"has_bottle_0": "true"
+					},
+					{
+						"has_bottle_2": "true"
+					},
+					{
+						"has_bottle_1": "true"
+					}
+				]
+			}
+		},
+		{
+			"apply": {
+				"model": "matcha:block/kettle_open"
+			},
+			"when": {
+				"AND": [
+					{
+						"has_bottle_0": "false",
+						"has_bottle_1": "false",
+						"has_bottle_2": "false"
+					}
+				]
+			}
+		}
+	]
+}

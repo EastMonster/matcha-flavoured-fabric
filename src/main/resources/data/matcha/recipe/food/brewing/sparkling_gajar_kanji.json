@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:gajar_kanji"
+	},
+	"output": {
+		"id": "matcha:sparkling_gajar_kanji",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:sugar"
+	}
+}

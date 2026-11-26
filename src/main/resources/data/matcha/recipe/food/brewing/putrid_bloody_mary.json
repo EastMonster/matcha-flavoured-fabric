@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:sparkling_bloody_mary"
+	},
+	"output": {
+		"id": "matcha:putrid_bloody_mary",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:gunpowder"
+	}
+}

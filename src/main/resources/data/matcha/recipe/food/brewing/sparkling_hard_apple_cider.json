@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:hard_apple_cider"
+	},
+	"output": {
+		"id": "matcha:sparkling_hard_apple_cider",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:sugar"
+	}
+}

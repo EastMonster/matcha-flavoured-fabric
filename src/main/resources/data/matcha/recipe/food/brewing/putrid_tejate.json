@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:sparkling_tejate"
+	},
+	"output": {
+		"id": "matcha:putrid_tejate",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:gunpowder"
+	}
+}

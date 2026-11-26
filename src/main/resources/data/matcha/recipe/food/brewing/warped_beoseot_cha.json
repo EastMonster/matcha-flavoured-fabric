@@ -1,0 +1,17 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "minecraft:potion",
+		"potion_contents": {
+			"potions": "minecraft:water",
+			"effects": {}
+		}
+	},
+	"output": {
+		"id": "matcha:warped_beoseot_cha",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:warped_fungus"
+	}
+}

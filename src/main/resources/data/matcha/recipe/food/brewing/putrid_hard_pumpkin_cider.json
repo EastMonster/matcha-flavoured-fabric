@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:sparkling_hard_pumpkin_cider"
+	},
+	"output": {
+		"id": "matcha:putrid_hard_pumpkin_cider",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:gunpowder"
+	}
+}

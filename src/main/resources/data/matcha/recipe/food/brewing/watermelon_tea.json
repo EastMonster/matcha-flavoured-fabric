@@ -1,0 +1,17 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "minecraft:potion",
+		"potion_contents": {
+			"potions": "minecraft:water",
+			"effects": {}
+		}
+	},
+	"output": {
+		"id": "matcha:watermelon_tea",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:melon_slice"
+	}
+}

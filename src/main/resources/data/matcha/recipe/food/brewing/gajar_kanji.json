@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:carrot_juice"
+	},
+	"output": {
+		"id": "matcha:gajar_kanji",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:brown_mushroom"
+	}
+}

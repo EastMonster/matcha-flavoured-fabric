@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:hot_chocolate"
+	},
+	"output": {
+		"id": "matcha:tejate",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:brown_mushroom"
+	}
+}

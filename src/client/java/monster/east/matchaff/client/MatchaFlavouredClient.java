@@ -1,5 +1,7 @@
 package monster.east.matchaff.client;
 
+import monster.east.matchaff.inventory.KettleMenu;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.sounds.SoundEvents;
 
@@ -88,6 +90,7 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		MenuScreens.register(KettleMenu.TYPE, KettleScreen::new);
 		EntityRendererRegistry.register(BirdEntities.DUCK, ChickenRenderer::new);
 		EntityRendererRegistry.register(BirdEntities.SEAGULL, ChickenRenderer::new);
 		EntityRendererRegistry.register(BirdEntities.BOBWHITE, ChickenRenderer::new);

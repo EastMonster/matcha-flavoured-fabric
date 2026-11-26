@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:chorus_tea"
+	},
+	"output": {
+		"id": "matcha:chorus_milk_tea",
+		"count": 1
+	},
+	"reagent": {
+		"item": "matcha:milk_bottle"
+	}
+}

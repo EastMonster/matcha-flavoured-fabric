@@ -3,6 +3,8 @@
 	"package": "monster.east.matchaff.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
+		"PoiTypeAccessor",
+		"PoiTypesAccessor",
 		"compat.FarmersDelightNourishmentMixin",
 		"compat.FarmersDelightSkilletHeatMixin",
 		"compat.FarmersDelightCookingPotBlockMixin",

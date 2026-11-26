@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:kombu_dashi"
+	},
+	"output": {
+		"id": "matcha:shiitake_dashi",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:brown_mushroom"
+	}
+}

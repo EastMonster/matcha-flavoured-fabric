@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:chorus_milk_tea"
+	},
+	"output": {
+		"id": "matcha:chorus_boba",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:popped_chorus_fruit"
+	}
+}

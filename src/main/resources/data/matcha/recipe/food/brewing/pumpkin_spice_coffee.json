@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:coffee"
+	},
+	"output": {
+		"id": "matcha:pumpkin_spice_coffee",
+		"count": 1
+	},
+	"reagent": {
+		"item": "matcha:baked_pumpkin"
+	}
+}

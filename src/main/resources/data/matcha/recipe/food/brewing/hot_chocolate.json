@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:milk_bottle"
+	},
+	"output": {
+		"id": "matcha:hot_chocolate",
+		"count": 1
+	},
+	"reagent": {
+		"item": "matcha:chocolate"
+	}
+}

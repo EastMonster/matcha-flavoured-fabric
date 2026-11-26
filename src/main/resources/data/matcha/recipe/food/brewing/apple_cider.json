@@ -1,0 +1,17 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "minecraft:potion",
+		"potion_contents": {
+			"potions": "minecraft:water",
+			"effects": {}
+		}
+	},
+	"output": {
+		"id": "matcha:apple_cider",
+		"count": 1
+	},
+	"reagent": {
+		"item": "matcha:baked_apple"
+	}
+}

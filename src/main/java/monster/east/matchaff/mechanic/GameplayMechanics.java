@@ -29,6 +29,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.cow.Cow;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
+import net.minecraft.world.entity.ai.village.poi.PoiTypes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.entity.npc.villager.VillagerData;
@@ -160,6 +161,20 @@ public final class GameplayMechanics {
 		villager.removeTag("foodChecked");
 		villager.setVillagerXp(0);
 		villager.releasePoi(MemoryModuleType.JOB_SITE);
+		villager.getBrain().getMemory(MemoryModuleType.JOB_SITE).ifPresent(jobSite -> {
+			ServerLevel jobLevel = level.getServer().getLevel(jobSite.dimension());
+			if (jobLevel == null) return;
+			BlockPos pos = jobSite.pos();
+			var chunk = jobLevel.getChunkSource().getChunkNow(pos.getX() >> 4, pos.getZ() >> 4);
+			if (chunk == null) return;
+			var manager = jobLevel.getPoiManager();
+			var recorded = manager.getType(pos);
+			var actual = PoiTypes.forState(chunk.getBlockState(pos));
+			if (recorded.isPresent() && !recorded.equals(actual)) {
+				manager.remove(pos);
+				jobLevel.debugSynchronizers().dropPoi(pos);
+			}
+		});
 		villager.getBrain().eraseMemory(MemoryModuleType.JOB_SITE);
 		villager.setVillagerData(villager.getVillagerData()
 				.withProfession(level.registryAccess(), VillagerProfession.NONE).withLevel(1));

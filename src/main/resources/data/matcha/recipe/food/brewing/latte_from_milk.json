@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:milk_bottle"
+	},
+	"output": {
+		"id": "matcha:latte",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:cocoa_beans"
+	}
+}

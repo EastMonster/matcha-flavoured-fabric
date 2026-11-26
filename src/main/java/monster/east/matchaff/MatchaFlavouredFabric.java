@@ -11,6 +11,8 @@ import monster.east.matchaff.block.TomatoCropBlock;
 import monster.east.matchaff.enchantment.EnchantmentMechanics;
 import monster.east.matchaff.entity.BirdEntities;
 import monster.east.matchaff.item.*;
+import monster.east.matchaff.inventory.KettleMenu;
+import monster.east.matchaff.recipe.KettleBrewingRecipe;
 import monster.east.matchaff.mechanic.*;
 import monster.east.matchaff.network.SleepFastForwardPayload;
 import net.fabricmc.api.ModInitializer;
@@ -76,6 +78,8 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		KettleBrewingRecipe.init();
+		KettleMenu.init();
 		BirdEntities.init();
 		registerBlocks();
 		initializeMechanics();
@@ -120,6 +124,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	private static void registerItemsAndCreativeTabs() {
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		Item tomatoSeed = TomatoCropBlock.register();
+		Item kettle = monster.east.matchaff.block.KettleBlock.register();
 		List<Item> foods = registerFoods();
 		VillagerInteractionRegistries.registerCompostable(tomatoSeed);
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
@@ -131,6 +136,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		foods.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.FOOD_AND_DRINKS)));
 		creativeItems.add(new CreativeOrder.Entry(tomatoSeed, CreativeModeTabs.INGREDIENTS));
 		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
+		creativeItems.add(new CreativeOrder.Entry(kettle, CreativeModeTabs.FUNCTIONAL_BLOCKS));
 		CreativeOrder.register(creativeItems);
 		CreativeOrder.registerVanillaOverrides();
 	}

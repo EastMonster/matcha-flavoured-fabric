@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:sparkling_chorus_daiquiri"
+	},
+	"output": {
+		"id": "matcha:putrid_chorus_daiquiri",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:gunpowder"
+	}
+}

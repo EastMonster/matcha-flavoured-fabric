@@ -1,0 +1,13 @@
+{
+	"type": "matcha:brewing",
+	"input": {
+		"item": "matcha:glow_berry_wine"
+	},
+	"output": {
+		"id": "matcha:sparkling_glow_berry_wine",
+		"count": 1
+	},
+	"reagent": {
+		"item": "minecraft:sugar"
+	}
+}

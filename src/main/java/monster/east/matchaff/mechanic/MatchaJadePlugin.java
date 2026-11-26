@@ -1,5 +1,6 @@
 package monster.east.matchaff.mechanic;
 
+import monster.east.matchaff.block.entity.KettleBlockEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
@@ -19,9 +20,28 @@ import snownee.jade.api.WailaPlugin;
 public final class MatchaJadePlugin implements IWailaPlugin {
 	@Override
 	public void register(IWailaCommonRegistration registration) {
+		registration.registerBlockDataProvider(KettleProvider.INSTANCE, KettleBlockEntity.class);
 		registration.registerBlockDataProvider(BeaconKindlingProvider.INSTANCE, CampfireBlock.class);
 		registration.registerEntityDataProvider(PigForagingProvider.INSTANCE, Pig.class);
 		registration.registerEntityDataProvider(BirdForagingProvider.INSTANCE, Chicken.class);
+	}
+
+	static final class KettleProvider implements IServerDataProvider<BlockAccessor> {
+		static final KettleProvider INSTANCE = new KettleProvider();
+		static final Identifier UID = Identifier.fromNamespaceAndPath("matcha", "kettle");
+		static final String FUEL_KEY = UID + ".fuel";
+		static final String TIME_KEY = UID + ".time";
+
+		@Override
+		public void appendServerData(CompoundTag data, BlockAccessor accessor) {
+			if (accessor.getBlockEntity() instanceof KettleBlockEntity kettle) {
+				data.putInt(FUEL_KEY, kettle.fuelUses());
+				data.putInt(TIME_KEY, kettle.brewingTicks());
+			}
+		}
+
+		@Override
+		public Identifier getUid() { return UID; }
 	}
 
 	static final class BirdForagingProvider implements IServerDataProvider<EntityAccessor> {

@@ -1366,65 +1366,6 @@
 		"particles": true
 	},
 	{
-		"id": "honey_ginger_tea",
-		"source": "data/matcha/recipe/food/oven/honey_ginger_tea.json",
-		"components": {
-			"minecraft:food": {
-				"nutrition": 0,
-				"saturation": 0,
-				"can_always_eat": true
-			},
-			"minecraft:max_stack_size": 64,
-			"minecraft:lore": [
-				{
-					"translate": "effect.matcha.speed",
-					"with": ["0:30"],
-					"color": "#37cafb",
-					"italic": false
-				},
-				{
-					"translate": "effect.matcha.cleanse_maleffect",
-					"color": "gray",
-					"italic": false
-				}
-			],
-			"minecraft:use_remainder": {
-				"id": "minecraft:glass_bottle"
-			},
-			"minecraft:consumable": {
-				"consume_seconds": 0.8,
-				"on_consume_effects": [
-					{
-						"type": "minecraft:remove_effects",
-						"effects": "#matcha:harmful"
-					},
-					{
-						"type": "minecraft:apply_effects",
-						"effects": [
-							{
-								"id": "minecraft:regeneration",
-								"amplifier": 2,
-								"duration": 24,
-								"show_particles": false,
-								"show_icon": false
-							},
-							{
-								"id": "minecraft:speed",
-								"amplifier": 0,
-								"duration": 600,
-								"show_particles": false,
-								"show_icon": true
-							}
-						]
-					}
-				],
-				"animation": "drink",
-				"sound": "minecraft:entity.generic.drink",
-				"has_consume_particles": false
-			}
-		}
-	},
-	{
 		"id": "honied_french_toast",
 		"source": "data/matcha/recipe/food/crafting/honied_french_toast.json",
 		"lore": [
@@ -1531,50 +1472,6 @@
 		],
 		"consumeSeconds": 2,
 		"particles": true
-	},
-	{
-		"id": "mead",
-		"source": "data/matcha/recipe/food/crafting/mead.json",
-		"lore": [
-			{
-				"translate": "effect.matcha.speed",
-				"with": ["5:00"],
-				"color": "#37cafb",
-				"italic": false
-			}
-		],
-		"nutrition": 0,
-		"saturation": 0,
-		"alwaysEdible": true,
-		"effects": [
-			{
-				"type": "apply",
-				"probability": 1.0,
-				"effects": [
-					{
-						"id": "minecraft:speed",
-						"duration": 6000,
-						"amplifier": 0,
-						"ambient": false,
-						"particles": false,
-						"icon": true
-					},
-					{
-						"id": "minecraft:regeneration",
-						"duration": 72,
-						"amplifier": 2,
-						"ambient": false,
-						"particles": false,
-						"icon": false
-					}
-				]
-			}
-		],
-		"consumeSeconds": 1.6,
-		"animation": "drink",
-		"sound": "minecraft:item.honey_bottle.drink",
-		"particles": false,
-		"remainder": "minecraft:glass_bottle"
 	},
 	{
 		"id": "melon_sorbet",

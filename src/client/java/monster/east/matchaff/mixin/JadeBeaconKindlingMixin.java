@@ -1,5 +1,7 @@
 package monster.east.matchaff.mixin;
 
+import monster.east.matchaff.block.KettleBlock;
+import monster.east.matchaff.mechanic.KettleJadeClientProvider;
 import monster.east.matchaff.mechanic.BeaconKindlingJadeClientProvider;
 import monster.east.matchaff.mechanic.PigForagingJadeClientProvider;
 import monster.east.matchaff.mechanic.BirdForagingJadeClientProvider;
@@ -19,6 +21,7 @@ import snownee.jade.api.JadeIds;
 public abstract class JadeBeaconKindlingMixin {
 	@Inject(method = "<init>", at = @At("TAIL"), require = 0)
 	private void matcha$registerProviders(CallbackInfo ci) {
+		((IWailaClientRegistration) (Object) this).registerBlockComponent(KettleJadeClientProvider.INSTANCE, KettleBlock.class);
 		((IWailaClientRegistration) (Object) this).registerBlockComponent(
 				BeaconKindlingJadeClientProvider.INSTANCE, CampfireBlock.class);
 		((IWailaClientRegistration) (Object) this).registerEntityComponent(
