@@ -548,5 +548,65 @@
 				"id": "matcha:bobwhite"
 			}
 		}
+	},
+	{
+		"id": "red_gudi",
+		"source": "data/matcha/loot_table/archaeology/gudi_red.json",
+		"type": "instrument",
+		"tab": "tools",
+		"carrier": "minecraft:goat_horn",
+		"components": {
+			"minecraft:instrument": "matcha:gudi_endless"
+		}
+	},
+	{
+		"id": "orange_gudi",
+		"source": "data/matcha/loot_table/archaeology/gudi_orange.json",
+		"type": "instrument",
+		"tab": "tools",
+		"carrier": "minecraft:goat_horn",
+		"components": {
+			"minecraft:instrument": "matcha:gudi_os_piano"
+		}
+	},
+	{
+		"id": "yellow_gudi",
+		"source": "data/matcha/loot_table/archaeology/gudi_yellow.json",
+		"type": "instrument",
+		"tab": "tools",
+		"carrier": "minecraft:goat_horn",
+		"components": {
+			"minecraft:instrument": "matcha:gudi_sweden"
+		}
+	},
+	{
+		"id": "green_gudi",
+		"source": "data/matcha/loot_table/archaeology/gudi_green.json",
+		"type": "instrument",
+		"tab": "tools",
+		"carrier": "minecraft:goat_horn",
+		"components": {
+			"minecraft:instrument": "matcha:gudi_labyrinthine"
+		}
+	},
+	{
+		"id": "blue_gudi",
+		"source": "data/matcha/loot_table/archaeology/gudi_blue.json",
+		"type": "instrument",
+		"tab": "tools",
+		"carrier": "minecraft:goat_horn",
+		"components": {
+			"minecraft:instrument": "matcha:gudi_subwoofer_lullaby"
+		}
+	},
+	{
+		"id": "purple_gudi",
+		"source": "data/matcha/loot_table/archaeology/gudi_purple.json",
+		"type": "instrument",
+		"tab": "tools",
+		"carrier": "minecraft:goat_horn",
+		"components": {
+			"minecraft:instrument": "matcha:gudi_infinite_amethyst"
+		}
 	}
 ]

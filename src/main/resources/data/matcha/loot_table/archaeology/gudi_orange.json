@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:entity",
+	"pools": [
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "matcha:orange_gudi"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "matcha:archaelogy/pet_whistle"
+}

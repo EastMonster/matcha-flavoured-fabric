@@ -1,0 +1,8 @@
+{
+	"sound_event": "matcha:gudi.labyrinthine",
+	"range": 12,
+	"use_duration": 5,
+	"description": {
+		"translate": "item.matcha.gudi.labyrinthine"
+	}
+}

@@ -1,0 +1,88 @@
+{
+	"parent": "matcha:tutorial/craft_brush",
+	"criteria": {
+		"gudi_red": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:red_gudi"
+					}
+				]
+			}
+		},
+		"gudi_orange": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:orange_gudi"
+					}
+				]
+			}
+		},
+		"gudi_yellow": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:yellow_gudi"
+					}
+				]
+			}
+		},
+		"gudi_green": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:green_gudi"
+					}
+				]
+			}
+		},
+		"gudi_blue": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:blue_gudi"
+					}
+				]
+			}
+		},
+		"gudi_purple": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "matcha:purple_gudi"
+					}
+				]
+			}
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": "10  ",
+				"color": "#ac7b5c"
+			},
+			{
+				"translate": "adv.matcha.with_songs.collect_all_gudi.desc",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"id": "matcha:red_gudi",
+			"count": 1
+		},
+		"title": {
+			"translate": "adv.matcha.with_songs.collect_all_gudi"
+		},
+		"frame": "challenge"
+	},
+	"rewards": {
+		"loot": ["matcha:advancement/obol_3"]
+	}
+}

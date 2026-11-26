@@ -63,6 +63,10 @@
 				{
 					"type": "minecraft:loot_table",
 					"value": "matcha:archaeology/statues"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:archaeology/gudi"
 				}
 			],
 			"rolls": 1

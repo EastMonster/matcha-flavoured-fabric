@@ -52,6 +52,14 @@
 			"bedrock_buster",
 			"crook"
 		],
+		"gudi": [
+			"red_gudi",
+			"orange_gudi",
+			"yellow_gudi",
+			"green_gudi",
+			"blue_gudi",
+			"purple_gudi"
+		],
 		"shears": ["copper_shears", "shepherds_shears", "steel_shears"],
 		"compasses": ["copper_compass", "golden_compass", "titanium_compass"],
 		"clay_statues": ["cheerful_clay_statue", "mournful_clay_statue"],
