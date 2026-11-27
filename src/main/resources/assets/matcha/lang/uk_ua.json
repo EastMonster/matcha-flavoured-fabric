@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Чорнокамінь",
 	"item.matcha.mushroom_soup": "Прозорий грибний суп",
 	"advancements.matcha.hell.wither_breaks_heart.title": "На ладан дише",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Не встигнути позбутися ефекту Висушення до завершення часу",
 	"effect.matcha.jump_boost_2": " Стрибучість II (%s)",
 	"effect.matcha.jump_boost_3": " Стрибучість III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Тушковані трутовики",

@@ -162,5 +162,9 @@
 				"stream": true
 			}
 		]
+	},
+	"entity.experience_orb.pickup": {
+		"sounds": ["matcha:random/orb"],
+		"subtitle": "subtitles.matcha.experience_orb.pickup"
 	}
 }

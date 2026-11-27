@@ -12,13 +12,10 @@
 			"trigger": "minecraft:inventory_changed"
 		}
 	},
-	"requirements": [
-		[
-			"has_primary_material"
-		]
-	],
+	"requirements": [["has_primary_material"]],
 	"rewards": {
 		"recipes": [
+			"matcha:crafting/bucket_from_copper",
 			"matcha:crafting/copper_wire",
 			"matcha:crafting/copper_helmet",
 			"matcha:crafting/copper_chestplate",

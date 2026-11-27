@@ -95,6 +95,26 @@ public final class MobMechanics {
 		}
 		modifyMob(mob, WorldMechanics.cachedDifficulty(level.getServer()));
 		mob.addTag("SpawnChecked");
+		supplementHusk(mob, level);
+	}
+
+	private static void supplementHusk(Mob mob, ServerLevel level) {
+		if (mob.getType() != EntityTypes.ZOMBIE || level.dimension() != Level.OVERWORLD
+				|| level.getDifficulty() == Difficulty.PEACEFUL
+				|| isForbiddenSpawn(EntityTypes.HUSK, level, mob.blockPosition())) {
+			return;
+		}
+		int radius = isSafeSurface(level) ? 45 : 70;
+		if (!level.getEntitiesOfClass(Husk.class, mob.getBoundingBox().inflate(radius),
+				husk -> husk.getType() == EntityTypes.HUSK && husk.distanceToSqr(mob) <= radius * radius).isEmpty()) {
+			return;
+		}
+		Husk husk = EntityTypes.HUSK.create(level, EntitySpawnReason.EVENT);
+		if (husk == null) return;
+		husk.snapTo(mob.getX(), mob.getY(), mob.getZ(), 0, 0);
+		// EVENT keeps the supplemental mob subject to the normal load-time restrictions.
+		husk.finalizeSpawn(level, level.getCurrentDifficultyAt(husk.blockPosition()), EntitySpawnReason.EVENT, null);
+		level.addFreshEntityWithPassengers(husk);
 	}
 
 	/**

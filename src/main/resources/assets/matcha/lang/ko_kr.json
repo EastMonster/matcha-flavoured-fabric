@@ -913,6 +913,7 @@
 	"trade.matcha.bulk_blackstone.desc": "흑암 x64",
 	"item.matcha.mushroom_soup": "버섯 스이모노",
 	"advancements.matcha.hell.wither_breaks_heart.title": "비탄",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "시간이 다하기 전에 시듦 효과를 제거하지 못했습니다",
 	"effect.matcha.jump_boost_2": " 점프 강화 II (%s)",
 	"effect.matcha.jump_boost_3": " 점프 강화 III (%s)",
 	"item.matcha.braised_shelf_mushroom": "선반 버섯 조림",

@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "matcha:sturdy_leather_leggings",
+					"modifier": {
+						"type": "minecraft:set_components",
+						"components": {
+							"minecraft:item_name": {
+								"translate": "item.matcha.sturdy_leather_leggings",
+								"color": "yellow"
+							},
+							"minecraft:enchantments": {
+								"minecraft:projectile_protection": 3,
+								"matcha:step_height_1_5": 1
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Чернит",
 	"item.matcha.mushroom_soup": "Суимоно",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Разбитые сердца",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Вам не удалось вовремя снять эффект Иссушения",
 	"effect.matcha.jump_boost_2": " Прыгучесть II (%s)",
 	"effect.matcha.jump_boost_3": " Прыгучесть III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Обжаренный трутовик",

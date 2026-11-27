@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Schwarzstein",
 	"item.matcha.mushroom_soup": "Klare Pilzsuppe",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Herzensbrecher",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Scheitere daran, den Verdorrungseffekt zu entfernen, bevor die Zeit abläuft",
 	"effect.matcha.jump_boost_2": " Sprungkraft II (%s)",
 	"effect.matcha.jump_boost_3": " Sprungkraft III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Geschmorte Baumpilze",

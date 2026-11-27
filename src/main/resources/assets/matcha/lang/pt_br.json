@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Pedra-Negra",
 	"item.matcha.mushroom_soup": "Sopa de Vegetal Coado",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Coração Desgostoso",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Falhe em purificar o efeito de Decomposição a tempo",
 	"effect.matcha.jump_boost_2": " Supersalto II (%s)",
 	"effect.matcha.jump_boost_3": " Supersalto III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Políporo Refogado",

@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Đá đen",
 	"item.matcha.mushroom_soup": "Súp Suimono",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Trái tim vỡ vụn",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Không giải trừ được hiệu ứng Khô héo trước khi quá trễ",
 	"effect.matcha.jump_boost_2": " Nhảy cao II (%s)",
 	"effect.matcha.jump_boost_3": " Nhảy cao III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Nấm hình quạt kho",

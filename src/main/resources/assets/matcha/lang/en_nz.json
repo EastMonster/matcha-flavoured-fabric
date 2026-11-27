@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Blackstone",
 	"item.matcha.mushroom_soup": "Suimono",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Heartbreaker",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Fail to clear the Wither effect before time runs out",
 	"effect.matcha.jump_boost_2": " Jump Boost II (%s)",
 	"effect.matcha.jump_boost_3": " Jump Boost III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Braised Shelf Mushrooms",

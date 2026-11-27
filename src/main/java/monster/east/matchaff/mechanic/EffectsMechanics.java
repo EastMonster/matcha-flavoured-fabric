@@ -1,5 +1,7 @@
 package monster.east.matchaff.mechanic;
 
+import monster.east.matchaff.MatchaSounds;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
@@ -110,9 +112,9 @@ public final class EffectsMechanics {
 		if (!isHealingBlocked(player)) {
 			if (HUNGRY_PLAYERS.remove(uuid)) {
 				player.connection.send(new ClientboundSetActionBarTextPacket(
-						Component.literal("\uE007 " + hungerBar(0)).withStyle(ChatFormatting.WHITE)));
+						Component.empty()));
 				player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-						SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.5F, 1.0F);
+						MatchaSounds.CHIME, SoundSource.PLAYERS, 0.5F, 1.0F);
 			}
 			return;
 		}
@@ -167,7 +169,7 @@ public final class EffectsMechanics {
 		}
 		player.connection.send(new ClientboundSetActionBarTextPacket(bar));
 		var sound = remaining >= 10 ? SoundEvents.LODESTONE_COMPASS_LOCK
-				: remaining == 9 ? SoundEvents.SHIELD_BREAK.value() : SoundEvents.EXPERIENCE_ORB_PICKUP;
+				: remaining == 9 ? SoundEvents.SHIELD_BREAK.value() : MatchaSounds.CHIME;
 		if (!broken || difficulty == Difficulty.HARD) {
 			player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
 					sound, SoundSource.PLAYERS, remaining == 9 ? 1.0F : 0.5F, remaining >= 9 ? 2.0F : 1.0F);

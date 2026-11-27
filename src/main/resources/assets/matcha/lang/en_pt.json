@@ -914,6 +914,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Rock o' black",
 	"item.matcha.mushroom_soup": "Shroom goulash",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Eart breaker",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Fail to clear th' wither effect before time runs out",
 	"effect.matcha.jump_boost_2": " High tide II (%s)",
 	"effect.matcha.jump_boost_3": " High tide III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Roasted shelf mushrooms",

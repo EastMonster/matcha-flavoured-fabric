@@ -5,7 +5,7 @@
 	},
 	"display": {
 		"description": {
-			"translate": "advancements.matcha.hell.wither_breaks_heart.description",
+			"translate": "advancements.matcha.hell.wither_breaks_heart.desc",
 			"color": "gray"
 		},
 		"icon": {

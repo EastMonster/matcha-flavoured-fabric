@@ -61,6 +61,14 @@
 							"type": "minecraft:item",
 							"modifier": [
 								{
+									"type": "minecraft:set_count",
+									"count": {
+										"type": "minecraft:uniform",
+										"min": 1,
+										"max": 2
+									}
+								},
+								{
 									"enchantment": "minecraft:fortune",
 									"formula": "minecraft:ore_drops",
 									"type": "minecraft:apply_bonus"

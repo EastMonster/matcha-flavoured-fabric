@@ -26,13 +26,6 @@
 					"amount": 2,
 					"operation": "add_value",
 					"slot": "feet"
-				},
-				{
-					"type": "minecraft:step_height",
-					"id": "leather_boot_step_height",
-					"amount": 1,
-					"operation": "add_value",
-					"slot": "feet"
 				}
 			],
 			"minecraft:enchantments": {

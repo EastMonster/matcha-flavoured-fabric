@@ -1,6 +1,8 @@
 package monster.east.matchaff.mechanic;
 
 import net.minecraft.ChatFormatting;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.commands.Commands;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -82,6 +84,21 @@ public final class PlayerMechanics {
 	}
 
 	public static void init() {
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
+				dispatcher.register(Commands.literal("undo_heartbreaker").executes(context -> {
+					ServerPlayer player = context.getSource().getPlayerOrException();
+					initializePlayerState(player);
+					int floor = getStoredMinimumHearts(player);
+					if (floor >= DEFAULT_MINIMUM_HEARTS) {
+						context.getSource().sendFailure(Component.translatable("message.matcha.heart.minimum.maximum"));
+						return 0;
+					}
+					int restored = Math.min(DEFAULT_MINIMUM_HEARTS, floor + 2);
+					var scoreboard = player.level().getServer().getScoreboard();
+					scoreboard.getOrCreatePlayerScore(player, scoreboard.getObjective(MINIMUM_HEARTS_OBJECTIVE)).set(restored);
+					context.getSource().sendSuccess(() -> Component.translatable("message.matcha.heart.minimum.restored", restored / 2), false);
+					return 1;
+				})));
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			sleepRate = 0;
 			SLEEP_REMAINING.clear();

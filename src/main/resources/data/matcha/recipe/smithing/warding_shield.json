@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "matcha:nazar",
+	"addition": "minecraft:prismarine_crystals",
 	"base": "minecraft:shield",
 	"result": {
 		"id": "matcha:warding_shield",
@@ -32,23 +32,18 @@
 				}
 			],
 			"minecraft:tooltip_display": {
-				"hidden_components": [
-					"minecraft:banner_patterns"
-				]
+				"hidden_components": ["minecraft:banner_patterns"]
 			},
 			"minecraft:enchantments": {
 				"matcha:warding_1": 1
 			},
 			"minecraft:repairable": {
-				"items": [
-					"matcha:nazar",
-					"minecraft:lapis_block"
-				]
+				"items": ["matcha:nazar", "minecraft:lapis_block"]
 			},
 			"minecraft:item_name": {
 				"translate": "item.matcha.warding_shield"
 			}
 		}
 	},
-	"template": "minecraft:prismarine_crystals"
+	"template": "matcha:nazar"
 }

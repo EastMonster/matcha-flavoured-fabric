@@ -1,0 +1,29 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"1": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:black_dye"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"2": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:orange_dye"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [["1", "2"]],
+	"rewards": {
+		"recipes": ["matcha:crafting/brown_dye_from_orange_black"]
+	}
+}

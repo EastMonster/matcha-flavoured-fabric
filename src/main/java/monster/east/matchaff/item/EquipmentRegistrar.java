@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -122,7 +124,9 @@ public final class EquipmentRegistrar {
 
 		@Override
 		public Component getName(ItemStack stack) {
-			return name;
+			// Loot variants can override the recipe's default name and colour.
+			var override = stack.getComponentsPatch().get(DataComponentMap.EMPTY, DataComponents.ITEM_NAME);
+			return override == null ? name : override;
 		}
 	}
 

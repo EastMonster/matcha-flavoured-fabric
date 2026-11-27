@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Svartsten",
 	"item.matcha.mushroom_soup": "Consommé",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Hjärtekrossare",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Lyckades inte ta bort vissnandeseffekten innan tiden gick ut",
 	"effect.matcha.jump_boost_2": " Hoppförstärkning II (%s)",
 	"effect.matcha.jump_boost_3": " Hoppförstärkning III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Breserade tickor",

@@ -29,7 +29,8 @@
 				}
 			],
 			"minecraft:enchantments": {
-				"minecraft:projectile_protection": 3
+				"minecraft:projectile_protection": 3,
+				"matcha:step_height": 1
 			},
 			"minecraft:equippable": {
 				"slot": "legs",

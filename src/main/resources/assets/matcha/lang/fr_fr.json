@@ -987,6 +987,7 @@
 	"trade.matcha.bulk_blackstone.desc": "Roche noire ×64",
 	"item.matcha.mushroom_soup": "Suimono aux champignons",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Brise-cœur",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Laissez l'effet Décomposition vous consumer un cœur",
 	"effect.matcha.jump_boost_2": " Sauts améliorés II (%s)",
 	"effect.matcha.jump_boost_3": " Sauts améliorés III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Polypores braisés",

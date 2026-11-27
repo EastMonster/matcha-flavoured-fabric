@@ -1,0 +1,29 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"1": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:yellow_dye"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"2": {
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:blue_dye"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [["1", "2"]],
+	"rewards": {
+		"recipes": ["matcha:crafting/green_dye_from_yellow_blue"]
+	}
+}

@@ -90,6 +90,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 	}
 
 	private static void initializeMechanics() {
+		MatchaSounds.init();
 		SleepFastForwardPayload.register();
 		BlazeRodDropsMechanics.init();
 		VanillaFoodDefaults.init();

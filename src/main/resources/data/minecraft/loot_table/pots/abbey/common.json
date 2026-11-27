@@ -46,7 +46,7 @@
 							"type": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:iron_ingot",
+					"name": "minecraft:raw_iron",
 					"weight": 70
 				},
 				{
@@ -61,7 +61,7 @@
 							"type": "minecraft:set_count"
 						}
 					],
-					"name": "minecraft:copper_ingot",
+					"name": "minecraft:raw_copper",
 					"weight": 80
 				},
 				{

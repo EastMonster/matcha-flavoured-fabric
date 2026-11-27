@@ -11,6 +11,7 @@
 		"minecraft:stray",
 		"minecraft:wither_skeleton",
 		"minecraft:bogged",
-		"minecraft:parched"
+		"minecraft:parched",
+		"minecraft:ghast"
 	]
 }

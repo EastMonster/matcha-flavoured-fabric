@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:smithing_transform",
-	"addition": "matcha:nazar",
+	"addition": "minecraft:prismarine_crystals",
 	"base": "minecraft:iron_sword",
 	"result": {
 		"id": "matcha:silver_sword",
@@ -38,5 +38,5 @@
 			}
 		}
 	},
-	"template": "minecraft:prismarine_crystals"
+	"template": "matcha:nazar"
 }

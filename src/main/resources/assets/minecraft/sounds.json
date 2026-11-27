@@ -25,5 +25,10 @@
 				"stream": true
 			}
 		]
+	},
+	"entity.experience_orb.pickup": {
+		"replace": true,
+		"sounds": [],
+		"subtitle": "subtitles.entity.experience_orb.pickup"
 	}
 }

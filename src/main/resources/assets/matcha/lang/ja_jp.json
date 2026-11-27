@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 ブラックストーン",
 	"item.matcha.mushroom_soup": "お吸い物",
 	"advancements.matcha.hell.wither_breaks_heart.title": "心やぶれぬ",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "時間内に「衰弱」の呪いを解くことができなかった…",
 	"effect.matcha.jump_boost_2": " 跳躍力上昇 II（%s）",
 	"effect.matcha.jump_boost_3": " 跳躍力上昇 III（%s）",
 	"item.matcha.braised_shelf_mushroom": "サルノコシカケの煮込み",

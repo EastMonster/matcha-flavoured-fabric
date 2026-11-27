@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Piedra negra",
 	"item.matcha.mushroom_soup": "Suimono",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Rompecorazones",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Falla en purificarte de la descomposición antes de que el tiempo se acabe.",
 	"effect.matcha.jump_boost_2": " Supersalto II (%s)",
 	"effect.matcha.jump_boost_3": " Supersalto III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Políporo ahumado",

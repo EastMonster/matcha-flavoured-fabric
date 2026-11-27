@@ -988,6 +988,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Schwarzstei",
 	"item.matcha.mushroom_soup": "Klari Pilzsuppe",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Härzensbrecher",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Schaff es nit de Verdörrigseffekt z entferne, bevor d zit ablauft.",
 	"effect.matcha.jump_boost_2": " Sprungchraft II (%s)",
 	"effect.matcha.jump_boost_3": " Sprungchraft III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Geschmorti Baumpilz",

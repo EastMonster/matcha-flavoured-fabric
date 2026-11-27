@@ -1,5 +1,7 @@
 package monster.east.matchaff.enchantment;
 
+import monster.east.matchaff.MatchaSounds;
+
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.minecraft.core.Registry;
@@ -42,7 +44,7 @@ final class ZephyrEnchantment {
 				level.sendParticles(ParticleTypes.DUST_PLUME,
 						player.getX(), player.getY(), player.getZ(), 50, 0.5, 0.1, 0.5, 0.1);
 				level.playSound(null, player.getX(), player.getY(), player.getZ(),
-						SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.75F, 1.0F);
+						MatchaSounds.CHIME, SoundSource.PLAYERS, 0.75F, 1.0F);
 			}
 		} else {
 			if (canLaunch(zephyrLevel, ticks, player.onGround())) {

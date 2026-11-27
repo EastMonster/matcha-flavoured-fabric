@@ -12,15 +12,13 @@
 			"trigger": "minecraft:inventory_changed"
 		}
 	},
-	"requirements": [
-		[
-			"has_primary_material"
-		]
-	],
+	"requirements": [["has_primary_material"]],
 	"rewards": {
 		"recipes": [
 			"matcha:food/oven/braised_red_mushroom",
-			"matcha:crafting/red_mushroom_from_red_mushroom_block"
+			"matcha:crafting/red_mushroom_from_red_mushroom_block",
+			"matcha:food/crafting/pickled_red_mushrooms",
+			"matcha:food/crafting/red_mushroom_stroganoff"
 		]
 	}
 }

@@ -915,6 +915,7 @@
 	"trade.matcha.bulk_blackstone.desc": "x64 Blackstone",
 	"item.matcha.mushroom_soup": "Clear Swamb Sew",
 	"advancements.matcha.hell.wither_breaks_heart.title": "Heartbreaker",
+	"advancements.matcha.hell.wither_breaks_heart.desc": "Don't clear the Wither rine before the time runs out",
 	"effect.matcha.jump_boost_2": " Leap Bolster II (%s)",
 	"effect.matcha.jump_boost_3": " Leap Bolster III (%s)",
 	"item.matcha.braised_shelf_mushroom": "Braised Shelfswamb",

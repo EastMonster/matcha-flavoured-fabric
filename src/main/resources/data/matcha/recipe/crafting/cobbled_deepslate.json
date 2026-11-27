@@ -3,14 +3,13 @@
 	"group": "cobbled_deepslate",
 	"key": {
 		"#": "minecraft:flint",
-		"X": "minecraft:clay_ball"
+		"X": "minecraft:clay_ball",
+		"D": "minecraft:cobbled_deepslate"
 	},
-	"pattern": [
-		"#X",
-		"X#"
-	],
+	"pattern": ["#X#", "XDX", "#X#"],
 	"result": {
-		"id": "minecraft:cobbled_deepslate"
+		"id": "minecraft:cobbled_deepslate",
+		"count": 4
 	},
 	"show_notification": true
 }
