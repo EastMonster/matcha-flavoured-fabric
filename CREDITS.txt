@@ -1,5 +1,16 @@
 THIRD-PARTY COMPATIBILITY CONTENT
 
+Just Enough Items (JEI)
+GUI textures under assets/jei/ are derived from Just Enough Items by mezz,
+licensed under the MIT License.
+Modified by EastMonster for the Matcha visual style.
+JEI-derived portions retain their MIT license and are excluded from this
+project's CC BY-NC-SA 4.0 license.
+Copyright (c) 2014-2015 mezz
+Source: https://github.com/mezz/JustEnoughItems
+See licenses/JEI-MIT.txt in the distributed JAR, or
+src/main/resources/licenses/JEI-MIT.txt in the source repository.
+
 Farmer's Delight
 Textures in the Farmer's Delight compatibility resource pack are derived from
 Farmer's Delight by vectorwing, licensed under the MIT License.

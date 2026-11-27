@@ -74,3 +74,5 @@ Trinkets 兼容资源包中的第三方材质基于 Trinkets / Trinkets Updated�
 CliffTree 兼容数据包中的群系数据基于 Konci 及其所列贡献者的 [CliffTree](https://modrinth.com/datapack/clifftree) 4.0.1，由 EastMonster 修改世界生成特征以适配 Matcha。这些数据仍遵循 CC BY-NC-SA 4.0；署名及来源链接见 [CREDITS.txt](CREDITS.txt)。
 
 农夫乐事兼容资源包中的第三方材质基于 vectorwing 的 Farmer's Delight，由 EastMonster 修改为 Matcha 风格。这些材质保留其 [MIT 许可证及版权声明](src/main/resources/licenses/FarmersDelight-MIT.txt)，许可文本也随 JAR 分发。
+
+JEI 的界面材质基于 mezz 的 [Just Enough Items](https://github.com/mezz/JustEnoughItems)，由 EastMonster 修改为 Matcha 风格。这些部分保留其 [MIT 许可证及版权声明](src/main/resources/licenses/JEI-MIT.txt)，不适用本项目的 CC BY-NC-SA 4.0 许可证；许可文本也随 JAR 分发。

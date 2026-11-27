@@ -74,3 +74,5 @@ Third-party textures in the Trinkets compatibility resource pack are derived fro
 The CliffTree compatibility data pack contains data adapted from [CliffTree](https://modrinth.com/datapack/clifftree) 4.0.1 by Konci and its credited contributors. EastMonster modified world generation features for Matcha compatibility. This data remains under CC BY-NC-SA 4.0; attribution and source links are included in [CREDITS.txt](CREDITS.txt).
 
 Third-party textures in the Farmer's Delight compatibility resource pack are derived from Farmer's Delight by vectorwing and modified by EastMonster for the Matcha visual style. These textures retain their [MIT license and copyright notice](src/main/resources/licenses/FarmersDelight-MIT.txt), which are also included in the distributed JAR.
+
+JEI-derived GUI textures are based on [Just Enough Items](https://github.com/mezz/JustEnoughItems) by mezz and modified by EastMonster for the Matcha visual style. These portions retain their [MIT license and copyright notice](src/main/resources/licenses/JEI-MIT.txt) and are excluded from this project's CC BY-NC-SA 4.0 license. The license text is also included in the distributed JAR.
