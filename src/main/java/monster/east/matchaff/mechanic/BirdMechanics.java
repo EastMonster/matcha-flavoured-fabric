@@ -33,10 +33,14 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.IdentityHashMap;
 import java.util.Set;
 import monster.east.matchaff.entity.Bird;
+import monster.east.matchaff.block.RoostBlock;
+import net.minecraft.world.entity.ai.village.poi.PoiManager;
+import net.minecraft.world.phys.AABB;
 import monster.east.matchaff.entity.BirdEntities;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
@@ -66,6 +70,7 @@ public final class BirdMechanics {
 	private static final TagKey<Block> EDIBLE = blockTag("chicken_edible");
 	private static final TagKey<Block> DIVABLE = blockTag("duck_divable");
 	private static final TagKey<Block> NESTABLE = blockTag("chicken_nestable");
+	private static final TagKey<Block> ROOST_REPLACEABLE = TagKey.create(Registries.BLOCK, id("custom_block_placeable"));
 	private static final TagKey<Block> PLANTABLE = blockTag("chicken_plantable");
 	private static final AttachmentType<Integer> GIFT_TIMER = timer("bird_gift_timer");
 	private static final AttachmentType<Integer> PLANT_TIMER = timer("bird_plant_timer");
@@ -292,14 +297,14 @@ public final class BirdMechanics {
 				chicken.needsSync = true;
 				sound(chicken, level, SoundEvents.GENERIC_SPLASH, 0.5F);
 			} else {
-				Block particle = action == NEST ? Blocks.TALL_DRY_GRASS : action == EAT ? Blocks.WHEAT : peckParticle(chicken, level);
+				Block particle = action == NEST ? Blocks.SHORT_GRASS : action == EAT ? Blocks.WHEAT : peckParticle(chicken, level);
 				if (particle != null) {
 					particles(level, front, particle, action == EAT ? 15 : 5);
 					sound(chicken, level, action == PECK && (particle == Blocks.SAND || particle == Blocks.RED_SAND) ? SoundEvents.SAND_HIT
 							: action == PECK && particle == Blocks.GRAVEL ? SoundEvents.GRAVEL_HIT : SoundEvents.CROP_BREAK, 1.0F);
 				}
 				if (action == NEST) {
-					particles(level, chicken.position().add(0, 0.1, 0), Blocks.TALL_DRY_GRASS, 15);
+					particles(level, chicken.position().add(0, 0.1, 0), Blocks.SHORT_GRASS, 15);
 					level.sendParticles(ParticleTypes.HAPPY_VILLAGER, chicken.getX(), chicken.getY() + 0.1, chicken.getZ(), 3, 0.2, 0.1, 0.2, 0.1);
 					sound(chicken, level, SoundEvents.GRASS_PLACE, 1.0F);
 				}
@@ -337,9 +342,14 @@ public final class BirdMechanics {
 	}
 
 	private static void makeNest(Chicken chicken, ServerLevel level) {
-		level.setBlockAndUpdate(at(chicken, -0.5), Blocks.DIRT_PATH.defaultBlockState());
-		level.setBlockAndUpdate(at(chicken, 0.5), Blocks.SHORT_DRY_GRASS.defaultBlockState());
-		if (chicken instanceof Bird.Duck || chicken instanceof Bird.Seagull) return;
+		BlockPos ground = at(chicken, -0.5);
+		level.setBlockAndUpdate(ground, Block.pushEntitiesUp(level.getBlockState(ground), Blocks.COARSE_DIRT.defaultBlockState(), level, ground));
+		BlockPos nest = chicken.blockPosition();
+		if (level.getBlockState(nest).is(ROOST_REPLACEABLE)
+				&& RoostBlock.TWIG.defaultBlockState().canSurvive(level, nest)) {
+			level.setBlockAndUpdate(nest, RoostBlock.TWIG.defaultBlockState());
+		}
+		if (chicken instanceof Bird.Seagull) return;
 		for (int i = 0; i < 2; i++) {
 			Chicken baby = (Chicken) chicken.getType().create(level, EntitySpawnReason.BREEDING);
 			if (baby == null) continue;
@@ -347,6 +357,30 @@ public final class BirdMechanics {
 			baby.setAge(-24000);
 			baby.snapTo(chicken.getX(), chicken.getY(), chicken.getZ(), chicken.getYRot(), 0);
 			level.addFreshEntity(baby);
+		}
+	}
+
+	public static void onRoostPlaced(ServerLevel level, BlockPos pos) {
+		Vec3 center = Vec3.atBottomCenterOf(pos);
+		for (Chicken chicken : level.getEntitiesOfClass(Chicken.class, new AABB(pos).inflate(15), BirdMechanics::isManaged)) {
+			double distance = chicken.position().distanceToSqr(center);
+			if (distance > 15 * 15) continue;
+			if (personality(chicken).equals("mama") && distance > 2 * 2) {
+				if (distance <= 10 * 10) level.sendParticles(ParticleTypes.ANGRY_VILLAGER,
+						chicken.getX(), chicken.getY() + 0.5, chicken.getZ(), 1, 0.1, 0.1, 0.1, 0.1);
+				continue;
+			}
+			// The new block's POI may still be queued; keep it as a candidate explicitly.
+			BlockPos nearest = level.getPoiManager().findAll(holder -> holder.is(RoostBlock.POI), candidate -> {
+				var chunk = level.getChunkSource().getChunkNow(candidate.getX() >> 4, candidate.getZ() >> 4);
+				return chunk != null && chunk.getBlockState(candidate).getBlock() instanceof RoostBlock;
+			}, chicken.blockPosition(), 16, PoiManager.Occupancy.ANY)
+					.min(Comparator.comparingDouble(candidate -> chicken.position().distanceToSqr(Vec3.atBottomCenterOf(candidate))))
+					.orElse(pos);
+			if (chicken.position().distanceToSqr(Vec3.atBottomCenterOf(nearest)) >= distance) nearest = pos;
+			// Moving a home keeps the personality's existing home radius.
+			chicken.setHomeTo(nearest, chicken.getHomeRadius());
+			level.sendParticles(ParticleTypes.HEART, chicken.getX(), chicken.getY() + 0.5, chicken.getZ(), 1, 0.1, 0.1, 0.1, 0.1);
 		}
 	}
 

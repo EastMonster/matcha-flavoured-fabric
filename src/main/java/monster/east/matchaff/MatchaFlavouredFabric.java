@@ -125,6 +125,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		List<Item> items = new ArrayList<>(SIMPLE_ITEMS.stream().map(MatchaFlavouredFabric::register).toList());
 		Item tomatoSeed = TomatoCropBlock.register();
 		Item kettle = monster.east.matchaff.block.KettleBlock.register();
+		List<Item> roosts = monster.east.matchaff.block.RoostBlock.register();
 		List<Item> foods = registerFoods();
 		VillagerInteractionRegistries.registerCompostable(tomatoSeed);
 		List<EquipmentRegistrar.EquipmentItem> equipment = EquipmentRegistrar.registerAll();
@@ -137,6 +138,7 @@ public final class MatchaFlavouredFabric implements ModInitializer {
 		creativeItems.add(new CreativeOrder.Entry(tomatoSeed, CreativeModeTabs.INGREDIENTS));
 		items.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.INGREDIENTS)));
 		creativeItems.add(new CreativeOrder.Entry(kettle, CreativeModeTabs.FUNCTIONAL_BLOCKS));
+		roosts.forEach(item -> creativeItems.add(new CreativeOrder.Entry(item, CreativeModeTabs.FUNCTIONAL_BLOCKS)));
 		CreativeOrder.register(creativeItems);
 		CreativeOrder.registerVanillaOverrides();
 	}

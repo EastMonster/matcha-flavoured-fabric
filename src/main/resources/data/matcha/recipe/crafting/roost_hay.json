@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "roost",
+	"pattern": ["X X", "XXX", "LLL"],
+	"key": {
+		"X": "minecraft:wheat",
+		"L": "minecraft:leaf_litter"
+	},
+	"result": {
+		"id": "matcha:roost_hay"
+	}
+}

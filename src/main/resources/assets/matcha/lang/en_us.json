@@ -1212,5 +1212,9 @@
 	"adv.matcha.cook_any_curry": "Curry Curious",
 	"adv.matcha.cook_any_curry.desc": "Prepare and cook a stock into a hearty curry",
 	"adv.matcha.cook_all_curries": "Master Chef",
-	"adv.matcha.cook_all_curries.desc": "Cook every curry"
+	"adv.matcha.cook_all_curries.desc": "Cook every curry",
+	"block.matcha.roost_hay": "Hay Roost",
+	"item.matcha.roost_hay": "Hay Roost",
+	"block.matcha.roost_twig": "Twig Roost",
+	"item.matcha.roost_twig": "Twig Roost"
 }

@@ -480,6 +480,8 @@
 	"functional_blocks": {
 		"special_blocks": [
 			"kettle",
+			"roost_hay",
+			"roost_twig",
 			"invisible_item_frame",
 			"beacon_kindling",
 			"warding_stone"
