@@ -156,6 +156,9 @@ public final class GameplayMechanics {
 	}
 
 	private static void useAmnestic(Villager villager, ServerLevel level) {
+		if (villager.getTradingPlayer() instanceof ServerPlayer trader) {
+			trader.closeContainer();
+		}
 		AMNESTIC_VILLAGERS.add(villager.getUUID());
 		villager.removeTag("foodChecked");
 		villager.setVillagerXp(0);
