@@ -6,6 +6,7 @@ import java.util.Set;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -114,9 +115,9 @@ public final class FishingSoundMechanics {
 			if (event != null) {
 				Holder<SoundEvent> sound = Holder.direct(SoundEvent.createVariableRangeEvent(
 						Identifier.fromNamespaceAndPath("matcha", event)));
-				player.level().playSound(
-						null, player.getX(), player.getY(), player.getZ(),
-						sound, SoundSource.RECORDS, 1.0F, 1.0F);
+				player.connection.send(new ClientboundSoundPacket(
+						sound, SoundSource.RECORDS, player.getX(), player.getY(), player.getZ(),
+						1.0F, 1.0F, player.getRandom().nextLong()));
 			}
 		}
 	}
