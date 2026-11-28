@@ -89,7 +89,7 @@ public final class AbbeyMechanics {
 	/**
 	 * Datapack {@code matcha:abbey/copper_eye_check}: fired by the hidden
 	 * {@code hit_copper_eye} advancement (any {@code target_hit}), then checks
-	 * every set-up marker whose target block is powered (or missing) and runs the
+	 * every valid set-up marker whose target block is powered and runs the
 	 * matching action, and finally revokes the advancement for all players.
 	 */
 	static void checkCopperEye(ServerPlayer player) {
@@ -106,6 +106,9 @@ public final class AbbeyMechanics {
 				continue;
 			}
 			if (!(marker.level() instanceof ServerLevel level)) {
+				continue;
+			}
+			if (!validateCopperEye(marker, level)) {
 				continue;
 			}
 			BlockState state = level.getBlockState(marker.blockPosition());
@@ -150,22 +153,22 @@ public final class AbbeyMechanics {
 			if (!marker.entityTags().contains("marker_setup")) {
 				continue;
 			}
-			if (!level.getBlockState(marker.blockPosition()).is(Blocks.TARGET)) {
-				marker.discard();
-				continue;
-			}
-			Set<String> tags = marker.entityTags();
-			if (tags.contains("copper_eye_lantern")
-					&& !level.getBlockState(marker.blockPosition().below(2)).is(Blocks.LANTERN)) {
-				marker.discard();
-				continue;
-			}
-			if ((tags.contains("copper_eye_grate_vertical_retract")
-					|| tags.contains("copper_eye_grate_horizontal_retract"))
-					&& !gratesIntact(marker, level)) {
-				marker.discard();
-			}
+			validateCopperEye(marker, level);
 		}
+	}
+
+	private static boolean validateCopperEye(Marker marker, ServerLevel level) {
+		Set<String> tags = marker.entityTags();
+		if (!level.getBlockState(marker.blockPosition()).is(Blocks.TARGET)
+				|| tags.contains("copper_eye_lantern")
+						&& !level.getBlockState(marker.blockPosition().below(2)).is(Blocks.LANTERN)
+				|| (tags.contains("copper_eye_grate_vertical_retract")
+						|| tags.contains("copper_eye_grate_horizontal_retract"))
+						&& !gratesIntact(marker, level)) {
+			marker.discard();
+			return false;
+		}
+		return true;
 	}
 
 	private static void setup(Marker marker, ServerLevel level) {
