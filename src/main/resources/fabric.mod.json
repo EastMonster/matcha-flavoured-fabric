@@ -102,6 +102,9 @@
 		},
 		{
 			"config": "matcha.jade.mixins.json"
+		},
+		{
+			"config": "matcha.enderscape.mixins.json"
 		}
 	],
 	"depends": {

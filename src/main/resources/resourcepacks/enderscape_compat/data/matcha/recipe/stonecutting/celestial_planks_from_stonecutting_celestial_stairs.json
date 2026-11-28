@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "celestial_planks",
+	"ingredient": "enderscape:celestial_stairs",
+	"result": {
+		"count": 1,
+		"id": "enderscape:celestial_planks"
+	}
+}

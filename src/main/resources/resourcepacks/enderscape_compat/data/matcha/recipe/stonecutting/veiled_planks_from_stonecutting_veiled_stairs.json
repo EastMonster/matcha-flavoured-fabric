@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "veiled_planks",
+	"ingredient": "enderscape:veiled_stairs",
+	"result": {
+		"count": 1,
+		"id": "enderscape:veiled_planks"
+	}
+}

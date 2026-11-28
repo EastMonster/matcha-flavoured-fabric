@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "murublight_slab",
+	"ingredient": "enderscape:murublight_trapdoor",
+	"result": {
+		"count": 1,
+		"id": "enderscape:murublight_slab"
+	}
+}

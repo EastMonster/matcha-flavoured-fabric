@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "veiled_shelf",
+	"ingredient": "#enderscape:veiled_logs",
+	"result": {
+		"count": 1,
+		"id": "enderscape:veiled_shelf"
+	}
+}

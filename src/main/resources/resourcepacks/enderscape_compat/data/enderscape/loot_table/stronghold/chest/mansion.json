@@ -1,0 +1,207 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 3,
+							"min": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 7,
+							"min": 2
+						}
+					},
+					"name": "minecraft:paper",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:enchant_with_levels",
+						"levels": 30,
+						"options": "#minecraft:on_random_loot"
+					},
+					"name": "minecraft:book",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:map",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:loot_table",
+					"weight": 3,
+					"value": "matcha:equipment/compass/any_weighted"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "enderscape:mirror",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": "enderscape:transdimensional"
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 6,
+				"min": 2
+			}
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:eye_armor_trim_smithing_template"
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:empty",
+					"weight": 12
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:bell"
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 8,
+							"min": 1
+						}
+					},
+					"name": "minecraft:bone",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:clock",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cod"
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 10,
+								"min": 0
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 0.8,
+								"min": 0.4
+							}
+						}
+					],
+					"name": "minecraft:crossbow",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:egg"
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 8,
+							"min": 1
+						}
+					},
+					"name": "minecraft:glass_bottle",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 3,
+							"min": 1
+						}
+					},
+					"name": "minecraft:iron_ingot",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:painting",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 8,
+							"min": 1
+						}
+					},
+					"name": "minecraft:rotten_flesh",
+					"weight": 6
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 4,
+				"min": 2
+			}
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/solomon"
+				}
+			],
+			"condition": {
+				"type": "minecraft:random_chance",
+				"chance": 0.1
+			}
+		}
+	]
+}

@@ -195,13 +195,18 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			return;
 		}
 		boolean matchaItem = "matcha".equals(itemId.getNamespace());
+		boolean enderscapeEquipment = "enderscape".equals(itemId.getNamespace()) && switch (itemId.getPath()) {
+			case "shadoline_helmet", "shadoline_chestplate", "shadoline_leggings", "shadoline_boots",
+					"drift_leggings", "rubble_shield" -> true;
+			default -> false;
+		};
 		boolean customVanillaItem = "minecraft".equals(itemId.getNamespace())
 				&& (itemId.getPath().startsWith("netherite_")
 						|| itemId.getPath().equals("trident")
 						|| (itemId.getPath().equals("elytra")
 								&& containsMaterial(repairable, Items.HONEYCOMB)
 								&& containsMaterial(repairable, Items.FEATHER)));
-		if (!matchaItem && !customVanillaItem
+		if (!matchaItem && !customVanillaItem && !enderscapeEquipment
 				&& !itemId.equals(Identifier.fromNamespaceAndPath("farmersdelight", "netherite_knife"))) {
 			return;
 		}
@@ -258,6 +263,8 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		boolean showAttackRange = Double.isFinite(attackRange) && attackRange > 0;
 
 		List<Component> generated = new ArrayList<>();
+		Identifier itemId = BuiltInRegistries.ITEM.getKey(stack.getItem());
+		boolean enderscapeEquipment = itemId.getNamespace().equals("enderscape");
 		appendMiningSpeedLore(stack, generated);
 		appendBlockingLore(stack, generated);
 		ItemEnchantments enchantments = stack.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY);
@@ -273,10 +280,16 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			}
 		}
 		for (AttributeLore lore : EQUIPMENT_ATTRIBUTE_LORE) {
+			if (enderscapeEquipment && lore.attribute() == Attributes.SAFE_FALL_DISTANCE) {
+				continue;
+			}
 			if (showAttackRange && lore.attribute().equals(Attributes.ENTITY_INTERACTION_RANGE)) {
 				continue;
 			}
 			appendAttributeLore(generated, modifiers, slot, lore);
+		}
+		if (enderscapeEquipment) {
+			appendEnderscapeAttributeLore(generated, modifiers, slot);
 		}
 		if (showAttackRange) {
 			generated.add(loreLine("desc.matcha.entity_interaction_range", formatLoreNumber(attackRange), ChatFormatting.DARK_GREEN));
@@ -296,7 +309,6 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 		if (generated.isEmpty()) {
 			return;
 		}
-		Identifier itemId = BuiltInRegistries.ITEM.getKey(stack.getItem());
 		if ("matcha".equals(itemId.getNamespace())
 				&& TrinketsCompat.EARRING_IDS.contains(itemId.getPath())) {
 			for (int i = 0; i < lines.size(); i++) {
@@ -314,6 +326,32 @@ public final class MatchaFlavouredClient implements ClientModInitializer {
 			}
 		}
 		lines.addAll(insertionIndex, generated);
+	}
+
+	private static void appendEnderscapeAttributeLore(List<Component> lines, ItemAttributeModifiers modifiers, EquipmentSlot slot) {
+		appendNamedAttributeLore(lines, modifiers, slot, Attributes.SAFE_FALL_DISTANCE, "\uE00D", 3.0, false, false);
+		appendNamedAttributeLore(lines, modifiers, slot, Attributes.GRAVITY, "\uE025", 1.0, true, false);
+		BuiltInRegistries.ATTRIBUTE.get(Identifier.fromNamespaceAndPath("enderscape", "stealth"))
+				.ifPresent(attribute -> appendNamedAttributeLore(lines, modifiers, slot, attribute, "\uE016", 1.0, true, false));
+		BuiltInRegistries.ATTRIBUTE.get(Identifier.fromNamespaceAndPath("enderscape", "backstab_damage"))
+				.ifPresent(attribute -> appendNamedAttributeLore(lines, modifiers, slot, attribute, "\uE0FF", 0.0, false, true));
+	}
+
+	private static void appendNamedAttributeLore(List<Component> lines, ItemAttributeModifiers modifiers, EquipmentSlot slot,
+			Holder<Attribute> attribute, String icon, double base, boolean percent, boolean backstab) {
+		if (modifiers.modifiers().stream().noneMatch(entry -> entry.slot().test(slot) && entry.attribute() == attribute)) {
+			return;
+		}
+		double value = modifiers.compute(attribute, base, slot) - base;
+		if (backstab) {
+			value += modifiers.compute(Attributes.ATTACK_DAMAGE, 1.0, slot);
+		} else if (percent) {
+			value *= 100.0;
+		}
+		String amount = (value > 0 && !backstab ? "+" : "") + formatLoreNumber(value) + (percent ? "%" : "");
+		lines.add(Component.literal(icon + " " + amount + " ")
+				.append(Component.translatable(attribute.value().getDescriptionId()))
+				.withStyle(style -> style.withColor(ChatFormatting.DARK_GREEN).withItalic(false)));
 	}
 
 	private static void appendMiningSpeedLore(ItemStack stack, List<Component> lines) {

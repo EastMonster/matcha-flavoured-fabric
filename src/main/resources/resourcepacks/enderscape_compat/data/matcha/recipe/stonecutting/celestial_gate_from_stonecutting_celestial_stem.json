@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "celestial_fence_gate",
+	"ingredient": "#enderscape:celestial_stems",
+	"result": {
+		"count": 1,
+		"id": "enderscape:celestial_fence_gate"
+	}
+}

@@ -5,11 +5,13 @@ import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ConsumeEffect;
 
@@ -30,14 +32,14 @@ public final class ThirdPartyFoodCompat {
 				Identifier.fromNamespaceAndPath("matcha", "farmers_delight_compat"), phase);
 		DefaultItemComponentEvents.MODIFY.register(phase, context -> context.modify(
 				item -> !EXCLUDED_NAMESPACES.contains(BuiltInRegistries.ITEM.getKey(item).getNamespace()),
-				(builder, registries, item) -> applyDefaults(builder)));
+				(builder, registries, item) -> applyDefaults(builder, BuiltInRegistries.ITEM.getKey(item))));
 	}
 
 	static int healingPoints(FoodProperties food) {
 		return Math.clamp((int) Math.floor(food.nutrition() / 2.0 + Math.floor(food.saturation() / 3.0)), 0, 12);
 	}
 
-	static void applyDefaults(DataComponentMap.Builder builder) {
+	static void applyDefaults(DataComponentMap.Builder builder, Identifier itemId) {
 		var components = builder.build();
 		var food = components.get(DataComponents.FOOD);
 		var consumable = components.get(DataComponents.CONSUMABLE);
@@ -45,6 +47,22 @@ public final class ThirdPartyFoodCompat {
 			return;
 		}
 		int points = healingPoints(food);
+		if (itemId.getNamespace().equals("enderscape")) {
+			switch (itemId.getPath()) {
+				case "puruberry" -> {
+					points = 1;
+					addEffectLore(builder, "\uE007", "void_purification", "0:15", 0xFFD559);
+				}
+				case "drift_jelly_bottle" -> {
+					points = 2;
+					addEffectLore(builder, "\uE00D", "low_gravity", "0:20", 0xFFA6F9);
+				}
+				case "murublight_bracket" -> {
+					points = 0;
+					addEffectLore(builder, "\uE03E", "void_corruption", "0:12", 0xAE6CBC);
+				}
+			}
+		}
 		if (points == 0) {
 			return;
 		}
@@ -55,7 +73,8 @@ public final class ThirdPartyFoodCompat {
 				return;
 			}
 		}
-		var heal = new MobEffectInstance(MobEffects.REGENERATION, points * 12, 2, false, false, false);
+		int healingDuration = points * 12;
+		var heal = new MobEffectInstance(MobEffects.REGENERATION, healingDuration, 2, false, false, false);
 		List<ConsumeEffect> effects = new ArrayList<>(consumable.onConsumeEffects());
 		boolean merged = false;
 		for (int i = 0; i < effects.size(); i++) {
@@ -65,7 +84,7 @@ public final class ThirdPartyFoodCompat {
 				var statuses = new ArrayList<MobEffectInstance>();
 				for (var status : apply.effects()) {
 					statuses.add(status.getEffect() == MobEffects.REGENERATION
-							? new MobEffectInstance(status.getEffect(), status.mapDuration(duration -> duration + points * 12),
+							? new MobEffectInstance(status.getEffect(), status.mapDuration(duration -> duration + healingDuration),
 									status.getAmplifier(), status.isAmbient(), status.isVisible(), status.showIcon())
 							: status);
 				}
@@ -80,5 +99,13 @@ public final class ThirdPartyFoodCompat {
 		}
 		builder.set(DataComponents.CONSUMABLE, new Consumable(consumable.consumeSeconds(), consumable.animation(),
 				consumable.sound(), consumable.hasConsumeParticles(), List.copyOf(effects)));
+	}
+
+	private static void addEffectLore(DataComponentMap.Builder builder, String icon, String effect, String duration, int color) {
+		var lines = new ArrayList<>(builder.build().getOrDefault(DataComponents.LORE, ItemLore.EMPTY).lines());
+		lines.add(Component.literal(icon + " ")
+				.append(Component.translatable("potion.withDuration", Component.translatable("effect.enderscape." + effect), duration))
+				.withStyle(style -> style.withColor(color).withItalic(false)));
+		builder.set(DataComponents.LORE, new ItemLore(lines));
 	}
 }

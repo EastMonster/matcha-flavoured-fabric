@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "celestial_shelf",
+	"ingredient": "#enderscape:celestial_stems",
+	"result": {
+		"count": 1,
+		"id": "enderscape:celestial_shelf"
+	}
+}

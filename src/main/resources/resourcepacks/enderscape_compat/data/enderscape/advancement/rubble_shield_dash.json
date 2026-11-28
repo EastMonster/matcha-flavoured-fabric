@@ -1,0 +1,26 @@
+{
+	"parent": "matcha:end/kill_dragon",
+	"criteria": {
+		"rubble_shield_dash": {
+			"conditions": {
+				"item": {
+					"items": "enderscape:rubble_shield"
+				}
+			},
+			"trigger": "enderscape:dash_jump"
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancement.enderscape.rubble_shield_dash.description"
+		},
+		"icon": {
+			"id": "enderscape:rubble_shield"
+		},
+		"title": {
+			"translate": "advancement.enderscape.rubble_shield_dash"
+		}
+	},
+	"requirements": [["rubble_shield_dash"]],
+	"sends_telemetry_event": true
+}

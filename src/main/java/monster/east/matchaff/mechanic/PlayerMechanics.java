@@ -1,5 +1,6 @@
 package monster.east.matchaff.mechanic;
 
+import monster.east.matchaff.compat.EnderscapeCompat;
 import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.Commands;
@@ -244,7 +245,7 @@ public final class PlayerMechanics {
 		}
 		ItemStack cooldownStack = stack.copy();
 		int countBefore = held.getCount();
-		if (!player.hurtServer(player.level(), player.level().damageSources().magic(), 999.0F)) {
+		if (!EnderscapeCompat.hurtForCrystalHeart(player)) {
 			return;
 		}
 		ItemStack heldAfter = player.getItemInHand(player.getUsedItemHand());

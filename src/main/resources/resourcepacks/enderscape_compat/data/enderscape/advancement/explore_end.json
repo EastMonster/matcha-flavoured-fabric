@@ -1,0 +1,188 @@
+{
+	"parent": "matcha:end/kill_dragon",
+	"criteria": {
+		"enderscape:celestial_grove": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "enderscape:celestial_grove"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"enderscape:corrupt_barrens": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "enderscape:corrupt_barrens"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"enderscape:magnia_fields": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "enderscape:magnia_fields"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"enderscape:veiled_woodlands": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "enderscape:veiled_woodlands"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"enderscape:void_depths": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "enderscape:void_depths"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"enderscape:void_skies": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "enderscape:void_skies"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"enderscape:void_sky_islands": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "enderscape:void_sky_islands"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"minecraft:end_highlands": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "minecraft:end_highlands"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"minecraft:end_midlands": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "minecraft:end_midlands"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"minecraft:small_end_islands": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "minecraft:small_end_islands"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"minecraft:the_end": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"biomes": "minecraft:the_end"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancement.enderscape.explore_end.description"
+		},
+		"frame": "challenge",
+		"icon": {
+			"id": "enderscape:shadoline_boots"
+		},
+		"title": {
+			"translate": "advancement.enderscape.explore_end"
+		}
+	},
+	"requirements": [
+		["minecraft:the_end"],
+		["minecraft:end_highlands"],
+		["minecraft:end_midlands"],
+		["minecraft:small_end_islands"],
+		["enderscape:veiled_woodlands"],
+		["enderscape:magnia_fields"],
+		["enderscape:celestial_grove"],
+		["enderscape:corrupt_barrens"],
+		["enderscape:void_depths"],
+		["enderscape:void_skies"],
+		["enderscape:void_sky_islands"]
+	],
+	"rewards": {
+		"experience": 1000
+	},
+	"sends_telemetry_event": true
+}

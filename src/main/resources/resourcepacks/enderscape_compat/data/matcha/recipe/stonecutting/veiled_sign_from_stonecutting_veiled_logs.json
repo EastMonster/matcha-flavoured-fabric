@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "veiled_sign",
+	"ingredient": "#enderscape:veiled_logs",
+	"result": {
+		"count": 2,
+		"id": "enderscape:veiled_sign"
+	}
+}

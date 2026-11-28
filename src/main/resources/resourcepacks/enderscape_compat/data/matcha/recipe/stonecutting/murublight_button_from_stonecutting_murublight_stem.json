@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "murublight_button",
+	"ingredient": "#enderscape:murublight_stems",
+	"result": {
+		"count": 8,
+		"id": "enderscape:murublight_button"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "murublight_pressure_plate",
+	"ingredient": "#enderscape:murublight_stems",
+	"result": {
+		"count": 4,
+		"id": "enderscape:murublight_pressure_plate"
+	}
+}

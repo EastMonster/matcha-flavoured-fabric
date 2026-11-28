@@ -1,0 +1,520 @@
+{
+	"type": "minecraft:vault",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 20,
+					"value": "matcha:equipment/diamond/sword"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 20,
+					"value": "matcha:equipment/diamond/spear"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 20,
+					"value": "matcha:equipment/diamond/pickaxe"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 20,
+					"value": "matcha:equipment/diamond/axe"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 20,
+					"value": "matcha:equipment/diamond/shovel"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 20,
+					"value": "matcha:equipment/diamond/hoe"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 30,
+					"value": "matcha:equipment/diamond/helmet"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 30,
+					"value": "matcha:equipment/diamond/chestplate"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 30,
+					"value": "matcha:equipment/diamond/leggings"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 30,
+					"value": "matcha:equipment/diamond/boots"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 20,
+					"value": "matcha:equipment/diamond/dolabra"
+				},
+				{
+					"type": "minecraft:loot_table",
+					"modifier": [
+						{
+							"type": "minecraft:enchant_with_levels",
+							"levels": {
+								"type": "minecraft:uniform",
+								"max": 40,
+								"min": 20
+							},
+							"options": "#minecraft:on_random_loot"
+						},
+						{
+							"type": "minecraft:set_damage",
+							"damage": {
+								"type": "minecraft:uniform",
+								"max": 1,
+								"min": 0.4
+							}
+						}
+					],
+					"weight": 20,
+					"value": "matcha:equipment/diamond/mattock"
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 2,
+				"min": 0
+			}
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 10,
+							"min": 4
+						}
+					},
+					"name": "minecraft:iron_ingot",
+					"weight": 30
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 6,
+							"min": 2
+						}
+					},
+					"name": "minecraft:gold_ingot",
+					"weight": 30
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 8,
+							"min": 2
+						}
+					},
+					"name": "minecraft:diamond",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 6,
+							"min": 2
+						}
+					},
+					"name": "minecraft:emerald",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 4,
+							"min": 2
+						}
+					},
+					"name": "minecraft:blaze_rod",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 12,
+							"min": 2
+						}
+					},
+					"name": "enderscape:nebulite_shards",
+					"weight": 3
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 3,
+				"min": 2
+			}
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 12,
+							"min": 4
+						}
+					},
+					"name": "minecraft:golden_carrot",
+					"weight": 40
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 2,
+							"min": 1
+						}
+					},
+					"name": "minecraft:golden_apple",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:enchanted_golden_apple"
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 1,
+				"min": 0
+			}
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:empty",
+					"weight": 40
+				},
+				{
+					"type": "minecraft:item",
+					"name": "enderscape:mirror",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:spire_armor_trim_smithing_template",
+					"weight": 6
+				},
+				{
+					"type": "minecraft:item",
+					"name": "enderscape:music_disc_glare",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"name": "enderscape:crescent_banner_pattern",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:item",
+					"name": "enderscape:stasis_armor_trim_smithing_template",
+					"weight": 3
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:empty",
+					"weight": 192
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": [
+							"minecraft:protection",
+							"minecraft:feather_falling",
+							"minecraft:sharpness",
+							"minecraft:bane_of_arthropods",
+							"minecraft:knockback",
+							"minecraft:looting",
+							"minecraft:efficiency",
+							"minecraft:fortune",
+							"minecraft:silk_touch",
+							"minecraft:unbreaking",
+							"minecraft:power",
+							"minecraft:punch"
+						]
+					},
+					"name": "minecraft:book",
+					"weight": 48
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": ["enderscape:rebound", "enderscape:resonance"]
+					},
+					"name": "minecraft:book",
+					"weight": 16
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": ["enderscape:transdimensional", "minecraft:mending"]
+					},
+					"name": "minecraft:book",
+					"weight": 8
+				}
+			],
+			"rolls": 2
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:elytra"
+				}
+			],
+			"rolls": 1
+		}
+	]
+}

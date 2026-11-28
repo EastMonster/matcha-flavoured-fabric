@@ -1,0 +1,96 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 3,
+							"min": 1
+						}
+					},
+					"name": "minecraft:book",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:set_count",
+						"count": {
+							"type": "minecraft:uniform",
+							"max": 7,
+							"min": 2
+						}
+					},
+					"name": "minecraft:paper",
+					"weight": 20
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:enchant_with_levels",
+						"levels": 30,
+						"options": "#minecraft:on_random_loot"
+					},
+					"name": "minecraft:book",
+					"weight": 10
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:map",
+					"weight": 3
+				},
+				{
+					"type": "minecraft:loot_table",
+					"weight": 3,
+					"value": "matcha:equipment/compass/any_weighted"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "enderscape:mirror",
+					"weight": 2
+				},
+				{
+					"type": "minecraft:item",
+					"modifier": {
+						"type": "minecraft:enchant_randomly",
+						"options": "enderscape:transdimensional"
+					},
+					"name": "minecraft:book",
+					"weight": 2
+				}
+			],
+			"rolls": {
+				"type": "minecraft:uniform",
+				"max": 10,
+				"min": 2
+			}
+		},
+		{
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:eye_armor_trim_smithing_template"
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "matcha:treasure/solomon"
+				}
+			],
+			"condition": {
+				"type": "minecraft:random_chance",
+				"chance": 0.25
+			}
+		}
+	]
+}

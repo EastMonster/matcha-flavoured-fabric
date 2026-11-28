@@ -734,6 +734,7 @@
 	"item.matcha.silver_sword": "银剑",
 	"item.matcha.warding_shield": "辟邪盾",
 	"message.matcha.welcome": " Matcha Flavoured 已加载，版本 %s",
+	"message.matcha.blaze_rod_drops_auto_enabled": "检测到已安装 %s，已自动启用烈焰棒掉落。",
 	"message.matcha.welcome.desc": "如果你迷路了或感到困惑，请查看进度",
 	"message.matcha.difficulty.is": "当前游戏难度:",
 	"message.matcha.difficulty.easy": "简单",

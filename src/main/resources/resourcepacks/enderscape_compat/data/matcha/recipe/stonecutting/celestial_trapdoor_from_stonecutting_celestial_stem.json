@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "celestial_trapdoor",
+	"ingredient": "#enderscape:celestial_stems",
+	"result": {
+		"count": 4,
+		"id": "enderscape:celestial_trapdoor"
+	}
+}

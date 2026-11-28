@@ -1,0 +1,24 @@
+{
+	"parent": "matcha:end/kill_dragon",
+	"criteria": {
+		"obtained": {
+			"conditions": {
+				"recipes": "enderscape:nebulite_from_shards"
+			},
+			"trigger": "minecraft:recipe_crafted"
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancement.enderscape.obtain_nebulite.description"
+		},
+		"icon": {
+			"id": "enderscape:nebulite"
+		},
+		"title": {
+			"translate": "advancement.enderscape.obtain_nebulite"
+		}
+	},
+	"requirements": [["obtained"]],
+	"sends_telemetry_event": true
+}

@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "veiled_log",
+	"ingredient": [
+		"enderscape:stripped_veiled_log",
+		"enderscape:veiled_wood",
+		"enderscape:stripped_veiled_wood"
+	],
+	"result": {
+		"count": 1,
+		"id": "enderscape:veiled_log"
+	}
+}

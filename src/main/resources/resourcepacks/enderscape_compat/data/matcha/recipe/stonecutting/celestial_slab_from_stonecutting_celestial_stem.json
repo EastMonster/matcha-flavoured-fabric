@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "celestial_slab",
+	"ingredient": "#enderscape:celestial_stems",
+	"result": {
+		"count": 8,
+		"id": "enderscape:celestial_slab"
+	}
+}

@@ -1,5 +1,14 @@
 THIRD-PARTY COMPATIBILITY CONTENT
 
+Enderscape
+Advancement and loot table data in the Enderscape compatibility data pack is
+based on Enderscape 3.0.6 (Minecraft 26.3, commit c5af2c3) by Penumbra,
+and modified by EastMonster for Matcha compatibility.
+Copyright (c) 2026 Penumbra
+Source: https://github.com/Penumbra-MC/Enderscape
+See licenses/Enderscape-MIT.txt in the distributed JAR, or
+src/main/resources/licenses/Enderscape-MIT.txt in the source repository.
+
 Just Enough Items (JEI)
 GUI textures under assets/jei/ are derived from Just Enough Items by mezz,
 licensed under the MIT License.

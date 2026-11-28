@@ -1,0 +1,28 @@
+{
+	"parent": "matcha:end/kill_dragon",
+	"criteria": {
+		"obtained": {
+			"conditions": {
+				"items": [
+					{
+						"items": "enderscape:drift_jelly_bottle"
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancement.enderscape.bottle_drift_jelly.description"
+		},
+		"icon": {
+			"id": "enderscape:drift_jelly_bottle"
+		},
+		"title": {
+			"translate": "advancement.enderscape.bottle_drift_jelly"
+		}
+	},
+	"requirements": [["obtained"]],
+	"sends_telemetry_event": true
+}

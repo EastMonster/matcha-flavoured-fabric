@@ -1,0 +1,14 @@
+{
+	"required": false,
+	"package": "monster.east.matchaff.mixin.compat",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"EnderscapeChorusCakeRollMixin",
+		"EnderscapeVoidManagerMixin",
+		"EnderscapeCrystalHeartMixin",
+		"EnderscapeElytraSoundMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}

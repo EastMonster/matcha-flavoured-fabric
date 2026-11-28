@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "celestial_stem",
+	"ingredient": "enderscape:celestial_hyphae",
+	"result": {
+		"count": 1,
+		"id": "enderscape:celestial_stem"
+	}
+}

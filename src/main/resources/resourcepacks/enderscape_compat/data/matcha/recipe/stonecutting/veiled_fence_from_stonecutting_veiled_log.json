@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "veiled_fence",
+	"ingredient": "#enderscape:veiled_logs",
+	"result": {
+		"count": 3,
+		"id": "enderscape:veiled_fence"
+	}
+}

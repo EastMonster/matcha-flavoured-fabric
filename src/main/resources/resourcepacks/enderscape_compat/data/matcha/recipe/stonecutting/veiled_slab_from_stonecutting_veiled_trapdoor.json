@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "veiled_slab",
+	"ingredient": "enderscape:veiled_trapdoor",
+	"result": {
+		"count": 1,
+		"id": "enderscape:veiled_slab"
+	}
+}

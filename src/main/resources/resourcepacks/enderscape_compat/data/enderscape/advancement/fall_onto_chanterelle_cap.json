@@ -1,0 +1,44 @@
+{
+	"parent": "matcha:end/kill_dragon",
+	"criteria": {
+		"fall_onto_cap": {
+			"conditions": {
+				"distance": {
+					"y": {
+						"min": 50.0
+					}
+				},
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:flags": {
+							"is_flying": false,
+							"is_on_ground": true,
+							"is_swimming": false
+						},
+						"minecraft:stepping_on": {
+							"block": {
+								"blocks": "#enderscape:chanterelle_cap_blocks"
+							}
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:fall_from_height"
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancement.enderscape.fall_onto_chanterelle_cap.description"
+		},
+		"icon": {
+			"id": "enderscape:celestial_cap"
+		},
+		"title": {
+			"translate": "advancement.enderscape.fall_onto_chanterelle_cap"
+		}
+	},
+	"requirements": [["fall_onto_cap"]],
+	"sends_telemetry_event": true
+}

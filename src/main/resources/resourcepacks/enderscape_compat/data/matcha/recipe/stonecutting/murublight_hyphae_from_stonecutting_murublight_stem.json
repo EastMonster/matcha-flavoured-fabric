@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "murublight_hyphae",
+	"ingredient": ["enderscape:murublight_stem"],
+	"result": {
+		"count": 1,
+		"id": "enderscape:murublight_hyphae"
+	}
+}

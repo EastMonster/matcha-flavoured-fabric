@@ -760,6 +760,7 @@
 	"desc.matcha.throwable": "",
 	"message.matcha.evil_banished": "Evil has been banished from the surface.",
 	"message.matcha.welcome": " Matcha Flavoured is now loaded on version %s",
+	"message.matcha.blaze_rod_drops_auto_enabled": "Detected %s; blaze rod drops have been enabled automatically.",
 	"message.matcha.welcome.desc": "If you get lost or confused, check the advancements",
 	"message.matcha.difficulty.is": "Your gamemode is",
 	"message.matcha.difficulty.is_now": "Game is now set to",

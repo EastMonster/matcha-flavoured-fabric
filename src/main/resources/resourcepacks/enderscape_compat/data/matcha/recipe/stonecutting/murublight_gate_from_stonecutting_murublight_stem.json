@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "murublight_fence_gate",
+	"ingredient": "#enderscape:murublight_stems",
+	"result": {
+		"count": 1,
+		"id": "enderscape:murublight_fence_gate"
+	}
+}

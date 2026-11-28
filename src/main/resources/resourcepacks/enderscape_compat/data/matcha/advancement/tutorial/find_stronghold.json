@@ -1,0 +1,54 @@
+{
+	"parent": "matcha:tutorial/enter_nether",
+	"criteria": {
+		"in_stronghold": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"structures": "minecraft:stronghold"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		},
+		"in_enderscape_stronghold": {
+			"conditions": {
+				"player": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:location": {
+							"structures": "enderscape:stronghold"
+						}
+					}
+				}
+			},
+			"trigger": "minecraft:location"
+		}
+	},
+	"display": {
+		"description": [
+			{
+				"text": " ",
+				"color": "red"
+			},
+			{
+				"translate": "advancements.matcha.tutorial.find_stronghold.desc",
+				"color": "gray"
+			}
+		],
+		"icon": {
+			"count": 1,
+			"id": "minecraft:ender_eye"
+		},
+		"title": {
+			"translate": "advancements.matcha.tutorial.find_stronghold.title"
+		},
+		"frame": "goal"
+	},
+	"requirements": [["in_stronghold", "in_enderscape_stronghold"]]
+}

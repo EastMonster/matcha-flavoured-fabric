@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:stonecutting",
+	"group": "celestial_pressure_plate",
+	"ingredient": "#enderscape:celestial_stems",
+	"result": {
+		"count": 4,
+		"id": "enderscape:celestial_pressure_plate"
+	}
+}

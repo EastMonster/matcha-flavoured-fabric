@@ -1,0 +1,33 @@
+{
+	"parent": "matcha:end/kill_dragon",
+	"criteria": {
+		"rustle_bucket": {
+			"conditions": {
+				"entity": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:entity_type": "enderscape:rustle"
+					}
+				},
+				"item": {
+					"items": "minecraft:bucket"
+				}
+			},
+			"trigger": "minecraft:player_interacted_with_entity"
+		}
+	},
+	"display": {
+		"description": {
+			"translate": "advancement.enderscape.rustle_bucket.description"
+		},
+		"icon": {
+			"id": "enderscape:rustle_bucket"
+		},
+		"title": {
+			"translate": "advancement.enderscape.rustle_bucket"
+		}
+	},
+	"requirements": [["rustle_bucket"]],
+	"sends_telemetry_event": true
+}
