@@ -185,7 +185,7 @@ final class WardingStoneMechanics {
 			List<LivingEntity> targets, LivingEntity center, Predicate<LivingEntity> predicate
 	) {
 		return targets.stream()
-				.filter(target -> predicate.test(target) && target.distanceToSqr(center) <= 24.0 * 24.0)
+				.filter(target -> target.isAlive() && predicate.test(target) && target.distanceToSqr(center) <= 24.0 * 24.0)
 				.min(Comparator.comparingDouble(target -> target.distanceToSqr(center)))
 				.orElse(null);
 	}

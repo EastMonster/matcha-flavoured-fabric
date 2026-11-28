@@ -123,7 +123,7 @@ final class WardingEnchantment {
 	private static LivingEntity nearestCopperTarget(List<LivingEntity> targets, LivingEntity center, double radius) {
 		double radiusSquared = radius * radius;
 		return targets.stream()
-				.filter(entity -> wearingCopperArmor(entity) && entity.distanceToSqr(center) <= radiusSquared)
+				.filter(entity -> entity.isAlive() && wearingCopperArmor(entity) && entity.distanceToSqr(center) <= radiusSquared)
 				.min(Comparator.comparingDouble(entity -> entity.distanceToSqr(center)))
 				.orElse(null);
 	}
@@ -140,7 +140,7 @@ final class WardingEnchantment {
 	) {
 		double radiusSquared = radius * radius;
 		return targets.stream()
-				.filter(entity -> entity.is(tag)
+				.filter(entity -> entity.isAlive() && entity.is(tag)
 						&& (type == null || entity.getType() == type)
 						&& entity.distanceToSqr(center) <= radiusSquared)
 				.min(Comparator.comparingDouble(entity -> entity.distanceToSqr(center)))
